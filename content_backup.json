@@ -1,0 +1,212 @@
+{
+	"en": {
+		"features": {
+			"badge": "Exclusive Features",
+			"title": "Why choose BOSLA for building your website?",
+			"subtitle": "We combine creativity with advanced technology to provide you with a website that achieves your business goals and surpasses your competitors",
+			"ctaBottom": {
+				"title": "Ready to build a website that achieves your goals?",
+				"subtitle": "Discover how your new website can change your business direction and achieve your goals",
+				"primary": "Contact us now",
+				"secondary": "See our previous work"
+			},
+			"accordionCta": "Request a custom quote",
+			"keyFeatures": "Key Features:",
+			"features": [
+				{
+					"title": "From idea to launch... Easy and fast design experience for your business growth",
+					"subtitle": "Fast Implementation",
+					"description": "Get your website within just five days without compromising on quality or details.",
+					"benefits": [
+						"Fast delivery within 5 business days",
+						"High quality and precise details",
+						"Simplified and efficient development process",
+						"Ready for immediate launch"
+					]
+				},
+				{
+					"title": "Custom design for your identity",
+					"subtitle": "Your website is designed to reflect your brand",
+					"description": "Your website is designed to reflect your brand and align with your visual style.",
+					"benefits": [
+						"Unique design that reflects your identity",
+						"Colors and fonts that match your brand",
+						"Attractive and distinctive visual experience",
+						"Enhanced digital presence"
+					]
+				},
+				{
+					"title": "We help you write your own content",
+					"subtitle": "Don't have ready content? Don't worry.",
+					"description": "Just provide us with the basic information, and our content writers will professionally prepare your website texts.",
+					"benefits": [
+						"Professional and attractive content writing",
+						"Save time and effort",
+						"SEO-friendly content",
+						"Clear and impactful message"
+					]
+				},
+				{
+					"title": "Diverse sections that suit your business",
+					"subtitle": "Flexible design that includes everything you need",
+					"description": "Flexible design that includes everything you need — from the homepage to the blog and contact form.",
+					"benefits": [
+						"Multiple pages (home, services, contact)",
+						"Ability to add a professional blog",
+						"Custom contact forms",
+						"Easy website expansion"
+					]
+				},
+				{
+					"title": "Showcase your products and services",
+					"subtitle": "Add your products or services easily",
+					"description": "Add your products or services easily with their images and descriptions, so your clients can browse them in an elegant and organized manner.",
+					"benefits": [
+						"Professional product and service showcase",
+						"Easy product management",
+						"Attractive detail and image display",
+						"Organized browsing experience for clients"
+					]
+				},
+				{
+					"title": "Easy-to-use control panel",
+					"subtitle": "Change your content and follow your website updates yourself",
+					"description": "Change your content and follow your website updates yourself without needing a programmer.",
+					"benefits": [
+						"Easy content management",
+						"Website updates yourself",
+						"No programming experience needed",
+						"Full control of your website"
+					]
+				},
+				{
+					"title": "Tangible results",
+					"subtitle": "Design focused on achieving your business goals quickly",
+					"description": "Design focused on achieving your business goals quickly and increasing engagement with your audience.",
+					"benefits": [
+						"Increased audience engagement",
+						"Achieving business goals quickly",
+						"Effective design oriented towards results",
+						"Continuous growth for your business"
+					]
+				}
+			]
+		},
+		"hero": {
+			"headline": "Break Through the Market Confidently Online",
+			"subheadline": "We build you a professional website that enhances your presence, increases your competitiveness, and highlights the value of your brand.",
+			"ctaPrimary": { "label": "Start Now", "href": "/contact" },
+			"ctaSecondary": { "label": "Explore Our Services", "href": "/portfolio" },
+			"image": {
+				"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
+				"alt": "BOSLA team"
+			},
+			"trustBadge": {
+				"badge1": "First Choice",
+				"badge2": "For Website Development"
+			},
+			"benefits": [
+				"Design that reflects your identity",
+				"Highest conversion rates",
+				"Rapid business growth"
+			],
+			"urgencyText": "Join our clients list at Orchado"
+		},
+		"vision": {
+			"title": "Our Vision",
+			"headline": "Your Digital Future, Crafted by Experts.",
+			"content": "To be the leading partner in crafting high-converting, identity-matching websites that drive unparalleled business growth and establish a dominant online presence for our clients.",
+			"region": "Worldwide",
+			"icon": "lightbulb"
+		},
+		"mission": {
+			"title": "Our Mission",
+			"headline": "Delivering Excellence in Every Line of Code",
+			"content": "Our mission is to empower businesses by providing innovative, high-quality website development services. We are committed to understanding your unique needs, translating them into powerful digital experiences, and ensuring measurable results that propel your business forward.",
+			"icon": "target"
+		},
+		"services": [
+			{
+				"title": "Custom Website Development",
+				"description": "Building bespoke websites from the ground up, tailored to your unique brand identity and business goals, ensuring high performance and scalability.",
+				"icon": "code"
+			},
+			{
+				"title": "Conversion-Optimized Design",
+				"description": "Designing intuitive and engaging user experiences (UX) and interfaces (UI) that not only look stunning but are strategically built to convert visitors into loyal customers.",
+				"icon": "bar-chart"
+			},
+			{
+				"title": "E-commerce Solutions",
+				"description": "Developing powerful and secure online stores that provide seamless shopping experiences, drive sales, and maximize your revenue potential.",
+				"icon": "shopping-cart"
+			},
+			{
+				"title": "Website Redesign & Revitalization",
+				"description": "Transforming outdated websites into modern, high-performing digital assets that reflect current trends and deliver improved user engagement and conversion rates.",
+				"icon": "paintbrush"
+			},
+			{
+				"title": "Website Maintenance & Support",
+				"description": "Ensuring your website remains secure, up-to-date, and performs optimally with ongoing maintenance, security updates, and technical support.",
+				"icon": "monitor"
+			}
+		],
+		"clients": {
+			"title": "Our Success Partners",
+			"subtitle": "Trust that extends over years of cooperation and tangible results",
+			"logos": [
+				"/images/logos/air cairo.jpg",
+				"/images/logos/dentex.svg",
+				"/images/logos/heroelab.svg",
+				"/images/logos/jarir.jpg",
+				"/images/logos/omega.jpg",
+				"/images/logos/pella.jpg",
+				"/images/logos/weasy.png",
+				"/images/logos/yalla vape.png"
+			]
+		},
+		"portfolio": {
+			"title": "Our Work",
+			"subtitle": "Selected projects with direct links",
+			"projects": [
+				{
+					"title": "Alemad Online",
+					"image": "/images/portfolio/alemadonline.png",
+					"live": "https://alemadonline.com/"
+				},
+				{
+					"title": "Dr. Abeer Abu Kamar",
+					"image": "/images/portfolio/dr-abeerabukamar.png",
+					"live": "https://dr-abeerabukamar.com/"
+				},
+				{
+					"title": "Future Printing Machines",
+					"image": "/images/portfolio/futureprintingmachines.png",
+					"live": "https://printmachine.at/"
+				},
+				{
+					"title": "Heroes Lab",
+					"image": "/images/portfolio/heroes-lab.png",
+					"live": "https://heroes-lab.com/"
+				},
+				{
+					"title": "North Sea Egypt",
+					"image": "/images/portfolio/northsea-eg.png",
+					"live": "https://www.northsea-eg.com/"
+				}
+			]
+		}
+	},
+	"ar": {
+		"features": {
+			"badge": "مميزات حصرية",
+			"title": "لماذا تختار بوصلة لبناء موقعك؟",
+			"subtitle": "نجمع بين الإبداع والتكنولوجيا المتقدمة لنقدم لك موقعاً إلكترونياً يحقق أهدافك التجارية ويتفوق على منافسيك",
+			"hero": {
+				"headline": "اخترق السوق بثقة عبر الإنترنت",
+				"subheadline": "نبني لك موقعًا احترافيًا يعزّز حضورك، ويزيد قدرتك على المنافسة، ويُبرز قيمة علامتك التجارية."
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"en": {
+		"title": "Contact Us",
+		"subtitle": "Let’s discuss your goals — clear answers within one business day.",
+		"hero": {
+			"image": {
+				"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
+				"alt": "BOSLA team"
+			}
+		},
+		"addresses": [],
+		"phones": [{ "label": "Phone", "value": "+20 111 2419980" }],
+		"emails": [],
+		"social": [
+			{ "platform": "LinkedIn", "url": "https://linkedin.com/company/bosla" },
+			{ "platform": "Twitter", "url": "https://x.com/bosla" }
+		]
+	},
+	"ar": {
+		"title": "تواصل معنا",
+		"subtitle": "لنتحدث عن أهدافك — نرد خلال يوم عمل واحد.",
+		"hero": {
+			"image": {
+				"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
+				"alt": "فريق عمل بوصلة"
+			}
+		},
+		"phones": [{ "label": "الهاتف", "value": "+20 111 2419980" }],
+		"emails": [],
+		"social": [
+			{ "platform": "LinkedIn", "url": "https://linkedin.com/company/bosla" },
+			{ "platform": "Twitter", "url": "https://x.com/bosla" }
+		]
+	}
+}

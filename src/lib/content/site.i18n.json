@@ -1,0 +1,30 @@
+{
+	"en": {
+		"siteName": "BOSLA",
+		"tagline": "Digital Solutions Agency",
+		"description": "Premium Digital Solutions for your business growth.",
+		"ogImage": "/images/bosla-logo.png",
+		"nav": {
+			"home": "Home",
+			"about": "About",
+			"services": "Services",
+			"portfolio": "Portfolio",
+			"contact": "Contact"
+		},
+		"langLabel": { "en": "English", "ar": "العربية" }
+	},
+	"ar": {
+		"siteName": "بوصلة",
+		"tagline": "وكالة حلول رقمية",
+		"description": "حلول رقمية متميزة لنمو أعمالك.",
+		"ogImage": "/images/bosla-logo.png",
+		"nav": {
+			"home": "الرئيسية",
+			"about": "من نحن",
+			"services": "الخدمات",
+			"portfolio": "أعمالنا",
+			"contact": "تواصل معنا"
+		},
+		"langLabel": { "en": "English", "ar": "العربية" }
+	}
+}

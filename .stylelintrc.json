@@ -1,0 +1,15 @@
+{
+	"extends": ["stylelint-config-standard"],
+	"rules": {
+		"declaration-property-value-disallowed-list": {
+			"*": ["/#/", "/rgb\\(/", "/rgba\\(/", "/hsl\\(/", "/hsla\\(/"]
+		},
+		"custom-property-pattern": [
+			"^--(color|opacity|radius|shadow|font|space|motion)-",
+			{
+				"message": "Design tokens must use semantic, role-based names (e.g., --color-primary)."
+			}
+		],
+		"color-named": "never"
+	}
+}

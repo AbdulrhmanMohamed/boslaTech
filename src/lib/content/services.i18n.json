@@ -1,0 +1,78 @@
+{
+	"en": {
+		"title": "Our Services",
+		"categories": [
+			{
+				"name": "Web Development",
+				"items": [
+					{ "title": "SvelteKit Websites", "desc": "Fast, secure, SEO‑friendly websites" },
+					{
+						"title": "Web Applications",
+						"desc": "Interactive, scalable apps for business workflows"
+					},
+					{
+						"title": "Admin Dashboards",
+						"desc": "Clean interfaces and excellent UX for operations"
+					}
+				]
+			},
+			{
+				"name": "Mobile Development",
+				"items": [
+					{
+						"title": "Android Apps",
+						"desc": "High‑quality applications aligned with platform guidelines"
+					},
+					{
+						"title": "iOS Apps",
+						"desc": "Polished experiences optimized for performance and accessibility"
+					},
+					{
+						"title": "Cross‑platform Apps",
+						"desc": "Shared codebases with modern tooling and secure integrations"
+					}
+				]
+			},
+			{
+				"name": "E‑Commerce",
+				"items": [
+					{ "title": "Online Stores", "desc": "Secure payments, product and inventory management" },
+					{ "title": "Payment Integration", "desc": "Gateways, subscriptions, invoicing" },
+					{
+						"title": "Conversion Optimization",
+						"desc": "Optimized checkout, analytics, and performance"
+					}
+				]
+			}
+		]
+	},
+	"ar": {
+		"title": "خدماتنا",
+		"categories": [
+			{
+				"name": "تطوير الويب",
+				"items": [
+					{ "title": "مواقع SvelteKit", "desc": "مواقع سريعة وآمنة ومتوافقة مع محركات البحث" },
+					{ "title": "تطبيقات الويب", "desc": "تطبيقات تفاعلية قابلة للتوسع لعمليات الأعمال" },
+					{ "title": "لوحات تحكم إدارية", "desc": "واجهات نظيفة وتجربة استخدام ممتازة للعمليات" }
+				]
+			},
+			{
+				"name": "تطوير الجوال",
+				"items": [
+					{ "title": "تطبيقات Android", "desc": "تطبيقات عالية الجودة متوافقة مع إرشادات المنصة" },
+					{ "title": "تطبيقات iOS", "desc": "تجارب مصقولة محسّنة للأداء وإمكانية الوصول" },
+					{ "title": "تطبيقات متعددة المنصات", "desc": "شفرة مشتركة بأدوات حديثة وتكاملات آمنة" }
+				]
+			},
+			{
+				"name": "التجارة الإلكترونية",
+				"items": [
+					{ "title": "متاجر إلكترونية", "desc": "دفع آمن وإدارة المنتجات والمخزون" },
+					{ "title": "تكامل الدفع", "desc": "بوابات دفع واشتراكات وفوترة" },
+					{ "title": "تحسين التحويل", "desc": "تحسين عملية الدفع والتحليلات والأداء" }
+				]
+			}
+		]
+	}
+}

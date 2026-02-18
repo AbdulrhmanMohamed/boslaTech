@@ -1,0 +1,289 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	/* Core Brand Tokens - Absolute Source of Truth */
+	--color-brand-blue: #0077ff;
+	--color-brand-blue-glow: #0077ff;
+	--color-brand-orange: #fb6220;
+	--color-brand-orange-logo: #fb6220;
+	--color-brand-black: #050505;
+	--color-brand-deep: #0a0a0a;
+
+	/* Semantic Roles - No Hallucinations */
+	--color-primary: var(--color-brand-blue);
+	--color-secondary: var(--color-brand-orange);
+
+	/* Theme Variables - Default Dark */
+	--color-background: var(--color-brand-black);
+	--color-surface: var(--color-brand-deep);
+	--color-on-surface: #ffffff;
+	--color-on-surface-muted: rgba(255, 255, 255, 0.6);
+	--color-text-base: #ffffff;
+	--color-text-muted: rgba(255, 255, 255, 0.6);
+	--color-text-dim: rgba(255, 255, 255, 0.4);
+
+	/* Glassmorphism Tokens */
+	--glass-bg: rgba(15, 15, 20, 0.6);
+	--glass-blur: 32px;
+	--glass-border: rgba(255, 255, 255, 0.12);
+	--glass-highlight: rgba(255, 255, 255, 0.08);
+
+	/* Premium Shadow */
+	--premium-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+	/* Fonts - IBM Plex Sans (Latin) and Arabic as primary font for both Arabic and English */
+	--font-sans:
+		'IBM Plex Sans', 'IBM Plex Sans Arabic', 'Outfit', ui-sans-serif, system-ui, -apple-system,
+		sans-serif;
+	--font-arabic: 'IBM Plex Sans Arabic', sans-serif;
+
+	--radius-sm: 0.375rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+	--radius-xl: 1rem;
+	--radius-2xl: 2rem;
+
+	/* Animations */
+	--motion-duration-slow: 0.7s;
+	--motion-duration-medium: 0.4s;
+	--motion-duration-fast: 0.2s;
+	--motion-ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+	color-scheme: dark;
+
+	/* Glows */
+	--glow-primary: 0 0 60px -15px var(--color-brand-blue-glow);
+	--glow-secondary: 0 0 60px -15px var(--color-brand-orange);
+
+	/* Obsidian Default (Dark) */
+	--obsidian-bg: rgba(5, 10, 21, 0.8);
+	--obsidian-border: rgba(11, 157, 217, 0.2);
+	--obsidian-inner-glow: rgba(11, 157, 217, 0.05);
+	--card-hover-bg: var(--color-surface);
+}
+
+[data-theme='light'] {
+	color-scheme: light;
+
+	/* Pearl & Glass Base */
+	--color-background: #fbfbfe;
+	--color-surface: #ffffff;
+	--color-on-surface: #0f172a;
+	--color-on-surface-muted: #475569;
+	--color-text-base: #0f172a;
+	--color-text-muted: #475569;
+	--color-text-dim: #94a3b8;
+
+	/* Reimagined Light Glass */
+	--glass-bg: rgba(255, 255, 255, 0.65);
+	--glass-blur: 32px;
+	--glass-border: rgba(11, 157, 217, 0.2);
+	--glass-highlight: rgba(11, 157, 217, 0.1);
+
+	/* Specific Light Cards */
+	--obsidian-bg: rgba(255, 255, 255, 0.95);
+	--obsidian-border: rgba(11, 157, 217, 0.2);
+	--obsidian-inner-glow: rgba(11, 157, 217, 0.06);
+	--card-hover-bg: #ffffff;
+
+	/* Soft Ambient Shadow */
+	--premium-shadow:
+		0 20px 40px -10px rgba(11, 157, 217, 0.12), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+
+	/* Light Glows - Subtle and Refined */
+	--glow-primary: 0 0 60px -20px rgba(11, 157, 217, 0.25);
+	--glow-secondary: 0 0 60px -20px rgba(251, 98, 32, 0.25);
+}
+
+/* Disable Hover Shifts in Light Theme */
+[data-theme='light'] .interactive-card:hover,
+[data-theme='light'] .btn-primary:hover,
+[data-theme='light'] .btn-secondary:hover,
+[data-theme='light'] .cinematic-glass:hover {
+	transform: none !important;
+}
+
+/* Base Styles */
+html,
+body {
+	overflow-x: hidden;
+	width: 100%;
+}
+
+body {
+	background-color: var(--color-background);
+	color: var(--color-text-base);
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transition:
+		background-color 0.5s ease,
+		color 0.5s ease;
+}
+
+/* Global Stacking Context for Safari Scroll Fix */
+section {
+	position: relative;
+	z-index: 0;
+	content-visibility: auto;
+	contain-intrinsic-size: 0 500px;
+}
+
+/* [dir='rtl'] body,
+[dir='rtl'] {
+	font-family: var(--font-arabic);
+} */
+
+/* Premium Utilities */
+@layer components {
+	.cinematic-glass {
+		@apply backdrop-blur-[24px] transition-all duration-700 ease-out;
+		contain: layout paint;
+		transform: translateZ(0);
+		will-change: transform;
+		background: var(--glass-bg);
+		border: 1px solid var(--glass-border);
+		box-shadow:
+			inset 0 0 0 1px var(--glass-highlight),
+			var(--premium-shadow);
+	}
+
+	.cinematic-glass:hover {
+		border-color: var(--color-primary);
+		box-shadow:
+			inset 0 0 0 1px var(--glass-highlight),
+			var(--glow-primary),
+			var(--premium-shadow);
+	}
+
+	.interactive-card {
+		@apply transition-all duration-500 ease-out;
+		background: linear-gradient(145deg, var(--glass-highlight) 0%, transparent 100%);
+		border: 1px solid var(--glass-border);
+	}
+
+	.interactive-card:hover {
+		will-change: transform;
+		@apply -translate-y-1;
+		border-color: var(--color-primary);
+		box-shadow: var(--glow-primary);
+	}
+
+	.text-gradient-blue {
+		@apply bg-gradient-to-r from-brand-blue to-[#0055ff] bg-clip-text text-transparent;
+	}
+
+	.text-gradient-orange {
+		@apply bg-gradient-to-r from-brand-orange to-[#ff7d4d] bg-clip-text text-transparent;
+	}
+
+	.btn-primary {
+		@apply relative flex items-center justify-center overflow-hidden rounded-2xl bg-brand-blue px-10 py-5 text-lg font-black text-white transition-all duration-700 ease-out;
+		box-shadow:
+			0 10px 25px -5px rgba(11, 157, 217, 0.3),
+			0 0 0 0 rgba(11, 157, 217, 0);
+	}
+
+	.btn-primary:hover {
+		@apply -translate-y-2 scale-[1.05];
+		background-color: color-mix(in srgb, var(--color-brand-blue), white 10%);
+		box-shadow:
+			0 20px 40px -10px rgba(11, 157, 217, 0.5),
+			0 0 25px 5px rgba(11, 157, 217, 0.2);
+	}
+
+	.btn-primary::before {
+		content: '';
+		@apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out;
+	}
+
+	.btn-primary:hover::before {
+		@apply translate-x-full;
+	}
+
+	.btn-secondary {
+		@apply relative flex items-center justify-center overflow-hidden rounded-2xl px-10 py-5 text-lg font-black transition-all duration-700 ease-out;
+		@apply backdrop-blur-[24px];
+		color: var(--color-text-base);
+		background: var(--glass-bg);
+		border: 1px solid var(--glass-border);
+		box-shadow:
+			inset 0 0 0 1px var(--glass-highlight),
+			var(--premium-shadow);
+	}
+
+	.btn-secondary:hover {
+		@apply -translate-y-2;
+		border-color: var(--color-primary);
+		box-shadow:
+			inset 0 0 0 1px var(--glass-highlight),
+			var(--glow-primary),
+			var(--premium-shadow);
+	}
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+	.cinematic-glass {
+		backdrop-blur: 12px !important;
+		will-change: auto;
+		background: var(--glass-bg) !important;
+		border-color: var(--glass-border) !important;
+	}
+
+	.btn-secondary {
+		backdrop-blur: 12px !important;
+		background: var(--glass-bg) !important;
+	}
+
+	.btn-primary {
+		box-shadow: 0 4px 12px rgba(11, 157, 217, 0.25) !important;
+	}
+
+	.btn-primary:hover {
+		box-shadow: 0 6px 20px rgba(11, 157, 217, 0.35) !important;
+	}
+
+	.cinematic-glass,
+	.btn-primary,
+	.btn-secondary,
+	.interactive-card {
+		transform: translateZ(0);
+	}
+
+	.interactive-card {
+		background: var(--glass-bg) !important;
+	}
+}
+
+/* Very small screens - minimal effects */
+@media (max-width: 480px) {
+	.cinematic-glass {
+		backdrop-blur: 4px !important;
+		box-shadow: none !important;
+		border-color: var(--glass-border) !important;
+	}
+
+	.btn-secondary {
+		backdrop-blur: 4px !important;
+		box-shadow: none !important;
+	}
+
+	.btn-primary {
+		box-shadow: 0 2px 8px rgba(11, 157, 217, 0.2) !important;
+	}
+}
+
+/* Hero Gradient Placeholder - Fast FCP */
+.hero-gradient-placeholder {
+	will-change: opacity;
+}
+
+.hero-gradient-placeholder.hidden {
+	opacity: 0;
+	pointer-events: none;
+}

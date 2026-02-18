@@ -1,0 +1,343 @@
+{
+	"features": {
+		"badge": "Exclusive Features",
+		"title": "Why choose BOSLA for building your website?",
+		"subtitle": "We combine creativity with advanced technology to provide you with a website that achieves your business goals and surpasses your competitors",
+		"ctaBottom": {
+			"title": "Ready to build a website that achieves your goals?",
+			"subtitle": "Discover how your new website can change your business direction and achieve your goals",
+			"primary": "Contact us now",
+			"secondary": "See our previous work"
+		},
+		"accordionCta": "Request a custom quote",
+		"keyFeatures": "Key Features:",
+		"features": [
+			{
+				"title": "From idea to launch... Easy and fast design experience for your business growth",
+				"subtitle": "Fast Implementation",
+				"description": "Get your website within just five days without compromising on quality or details.",
+				"benefits": [
+					"Fast delivery within 5 business days",
+					"High quality and precise details",
+					"Simplified and efficient development process",
+					"Ready for immediate launch"
+				]
+			},
+			{
+				"title": "Custom design for your identity",
+				"subtitle": "Your website is designed to reflect your brand",
+				"description": "Your website is designed to reflect your brand and align with your visual style.",
+				"benefits": [
+					"Unique design that reflects your identity",
+					"Colors and fonts that match your brand",
+					"Attractive and distinctive visual experience",
+					"Enhanced digital presence"
+				]
+			},
+			{
+				"title": "We help you write your own content",
+				"subtitle": "Don't have ready content? Don't worry.",
+				"description": "Just provide us with the basic information, and our content writers will professionally prepare your website texts.",
+				"benefits": [
+					"Professional and attractive content writing",
+					"Save time and effort",
+					"SEO-friendly content",
+					"Clear and impactful message"
+				]
+			},
+			{
+				"title": "Diverse sections that suit your business",
+				"subtitle": "Flexible design that includes everything you need",
+				"description": "Flexible design that includes everything you need — from the homepage to the blog and contact form.",
+				"benefits": [
+					"Multiple pages (home, services, contact)",
+					"Ability to add a professional blog",
+					"Custom contact forms",
+					"Easy website expansion"
+				]
+			},
+			{
+				"title": "Showcase your products and services",
+				"subtitle": "Add your products or services easily",
+				"description": "Add your products or services easily with their images and descriptions, so your clients can browse them in an elegant and organized manner.",
+				"benefits": [
+					"Professional product and service showcase",
+					"Easy product management",
+					"Attractive detail and image display",
+					"Organized browsing experience for clients"
+				]
+			},
+			{
+				"title": "Easy-to-use control panel",
+				"subtitle": "Change your content and follow your website updates yourself",
+				"description": "Change your content and follow your website updates yourself without needing a programmer.",
+				"benefits": [
+					"Easy content management",
+					"Website updates yourself",
+					"No programming experience needed",
+					"Full control of your website"
+				]
+			},
+			{
+				"title": "Tangible results",
+				"subtitle": "Design focused on achieving your business goals quickly",
+				"description": "Design focused on achieving your business goals quickly and increasing engagement with your audience.",
+				"benefits": [
+					"Increased audience engagement",
+					"Achieving business goals quickly",
+					"Effective design oriented towards results",
+					"Continuous growth for your business"
+				]
+			}
+		]
+	},
+	"hero": {
+		"headline": "<span class='text-brand-orange'>Break</span> Through the Market Confidently <span class='text-brand-orange'>Online</span>",
+		"subheadline": "We build you a professional website that enhances your presence, increases your competitiveness, and highlights the value of your brand.",
+		"ctaPrimary": { "label": "Start Now", "href": "/contact" },
+		"ctaSecondary": { "label": "Explore Our Services", "href": "/contact" },
+		"image": {
+			"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
+			"alt": "BOSLA team"
+		},
+		"trustBadge": {
+			"badge1": "First Choice",
+			"badge2": "For Website Development"
+		},
+		"benefits": [
+			"Design that reflects your identity",
+			"Highest conversion rates",
+			"Rapid business growth"
+		],
+		"urgencyText": "Join our clients list at Bosla"
+	},
+	"highlights": [
+		{ "value": "Proven", "label": "Excellence" },
+		{ "value": "Trusted", "label": "Results" },
+		{ "value": "Quality", "label": "Delivery" }
+	],
+	"metrics": [
+		{ "value": "Proven", "label": "Excellence" },
+		{ "value": "Trusted", "label": "Results" },
+		{ "value": "Quality", "label": "Delivery" }
+	],
+	"vision": {
+		"title": "Our Vision",
+		"headline": "Your Digital Future, Crafted by Experts.",
+		"content": "To be the leading partner in crafting high-converting, identity-matching websites that drive unparalleled business growth and establish a dominant online presence for our clients.",
+		"region": "Worldwide",
+		"icon": "lightbulb"
+	},
+	"mission": {
+		"title": "Our Mission",
+		"headline": "Delivering Excellence in Every Line of Code",
+		"content": "Our mission is to empower businesses by providing innovative, high-quality website development services. We are committed to understanding your unique needs, translating them into powerful digital experiences, and ensuring measurable results that propel your business forward.",
+		"icon": "target"
+	},
+	"section2": {
+		"head": "We increase business success",
+		"sub": "Through digital solutions",
+		"items": [
+			{
+				"head": "Vision",
+				"content": "To be the preferred digital partner for companies that seek growth and innovation in the region."
+			},
+			{
+				"head": "Mission",
+				"content": "Empowering companies to achieve their marketing and technical goals by providing integrated and innovative digital solutions."
+			}
+		],
+		"cta": "Start your project with us today"
+	},
+	"services": [
+		{
+			"title": "Custom Website Development",
+			"description": "Building bespoke websites from the ground up, tailored to your unique brand identity and business goals, ensuring high performance and scalability.",
+			"icon": "code"
+		},
+		{
+			"title": "Conversion-Optimized Design",
+			"description": "Designing intuitive and engaging user experiences (UX) and interfaces (UI) that not only look stunning but are strategically built to convert visitors into loyal customers.",
+			"icon": "bar-chart"
+		},
+		{
+			"title": "E-commerce Solutions",
+			"description": "Developing powerful and secure online stores that provide seamless shopping experiences, drive sales, and maximize your revenue potential.",
+			"icon": "shopping-cart"
+		},
+		{
+			"title": "Website Redesign & Revitalization",
+			"description": "Transforming outdated websites into modern, high-performing digital assets that reflect current trends and deliver improved user engagement and conversion rates.",
+			"icon": "paintbrush"
+		},
+		{
+			"title": "Website Maintenance & Support",
+			"description": "Ensuring your website remains secure, up-to-date, and performs optimally with ongoing maintenance, security updates, and technical support.",
+			"icon": "monitor"
+		}
+	],
+	"section4": {
+		"head": "Our Expertise",
+		"sub": "We offer a wide range of digital services to help your business grow.",
+		"items": [
+			{
+				"head": "Web Development",
+				"content": "Building responsive and high-performance websites."
+			},
+			{
+				"head": "Mobile App Development",
+				"content": "Creating intuitive and engaging mobile applications."
+			},
+			{
+				"head": "Digital Marketing",
+				"content": "Driving traffic and conversions through effective strategies."
+			},
+			{
+				"head": "UI/UX Design",
+				"content": "Designing user-friendly and aesthetically pleasing interfaces."
+			}
+		]
+	},
+	"clients": {
+		"title": "Our Success Partners",
+		"subtitle": "Trust that extends over years of cooperation and tangible results",
+		"empty": "No client logos available at the moment.",
+		"logos": [
+			"/images/logos/air cairo.jpg",
+			"/images/logos/dentex.svg",
+			"/images/logos/heroelab.svg",
+			"/images/logos/jarir.jpg",
+			"/images/logos/omega.jpg",
+			"/images/logos/pella.jpg",
+			"/images/logos/weasy.png",
+			"/images/logos/yalla vape.png"
+		],
+		"images": [
+			"/images/logos/498130912_4067457406834635_972587115347644993_n.jpg",
+			"/images/logos/8-02.png",
+			"/images/logos/8-03.png",
+			"/images/logos/8-04.png",
+			"/images/logos/8-05.png",
+			"/images/logos/8_2-03.png",
+			"/images/logos/8_2-04.png",
+			"/images/logos/8_2-05.png",
+			"/images/logos/DDA.png",
+			"/images/logos/Final%20Logo.png",
+			"/images/logos/Ocean.png",
+			"/images/logos/akhbrna-01.jpg",
+			"/images/logos/akyo-01.jpg",
+			"/images/logos/alemad.png",
+			"/images/logos/alexandria%20turm-01.jpg",
+			"/images/logos/alnowaisir-01.jpg",
+			"/images/logos/arabia%20kw-01.png",
+			"/images/logos/arabian1-01.jpg",
+			"/images/logos/aviation-logo.png",
+			"/images/logos/becoun.png",
+			"/images/logos/beta-01.jpg",
+			"/images/logos/book%20and%20go%20egypt.png",
+			"/images/logos/cosmoeve-01.jpg",
+			"/images/logos/dot%20help%20nation.png",
+			"/images/logos/dx-01.jpg",
+			"/images/logos/egy%20star.png",
+			"/images/logos/elmarwa.png",
+			"/images/logos/elwfaa%20trading.png",
+			"/images/logos/emdad%20pharma.png",
+			"/images/logos/excel%20ceutix.png",
+			"/images/logos/excel%20pharma.png",
+			"/images/logos/fashion%20styles-01.jpg",
+			"/images/logos/fpm-01.jpg",
+			"/images/logos/fug-01.jpg",
+			"/images/logos/grand%20mashreq-01.jpg",
+			"/images/logos/heroes%20lab.png",
+			"/images/logos/immigration.png",
+			"/images/logos/jawdda%20store.png",
+			"/images/logos/kepp.png",
+			"/images/logos/kl%20logo%20pc.jpg",
+			"/images/logos/lamoda.png",
+			"/images/logos/lasiesta-01.jpg",
+			"/images/logos/liquid-01.jpg",
+			"/images/logos/lumzug-01.jpg",
+			"/images/logos/mando.jpg",
+			"/images/logos/marfae.png",
+			"/images/logos/metex.jpg",
+			"/images/logos/modern%20decoration.jpg",
+			"/images/logos/moderntrans-01.jpg",
+			"/images/logos/new%20haven-01.jpg",
+			"/images/logos/nour-home.png",
+			"/images/logos/nsv.png",
+			"/images/logos/bosla-wide.png",
+			"/images/logos/prettier.jpg",
+			"/images/logos/purewell-01.jpg",
+			"/images/logos/rlimo-01.jpg",
+			"/images/logos/snaf-01.jpg",
+			"/images/logos/techno%20graphic.png",
+			"/images/logos/top%20chical%20group.png",
+			"/images/logos/tpad-01.jpg",
+			"/images/logos/weasy.png",
+			"/images/logos/yalla%20vape.png",
+			"/images/logos/%D8%A8%D9%86%D9%83%20%D8%A7%D9%84%D8%AD%D9%85-01.jpg",
+			"/images/logos/%D8%AF%D9%83%D8%AA%D9%88%D8%B1%20%D8%B9%D9%84%D8%A7%D8%A1-01.jpg",
+			"/images/logos/%D9%81%D9%8A%D9%88%D8%AA%D8%B4%D8%B1%20%D9%81%D9%8A%D8%AC%D9%86%20%D9%84%D9%84%D8%AA%D8%AF%D8%B1%D9%8A%D8%A8-01.jpg"
+		]
+	},
+	"servicesPage": {
+		"process": {
+			"title": "Our Work Process",
+			"steps": [
+				{
+					"title": "Discover",
+					"desc": "Clarify goals, audience, and KPIs to align outcomes.",
+					"timeline": "1–2 weeks"
+				},
+				{
+					"title": "Design",
+					"desc": "UX-first wireframes with theme-compliant visuals.",
+					"timeline": "1–2 weeks"
+				},
+				{
+					"title": "Build",
+					"desc": "Performance-focused implementation and accessibility.",
+					"timeline": "2–4 weeks"
+				},
+				{
+					"title": "Launch",
+					"desc": "Secure rollout with analytics and SEO readiness.",
+					"timeline": "1 week"
+				},
+				{
+					"title": "Grow",
+					"desc": "Continuous improvements and A/B testing mapped to KPIs.",
+					"timeline": "ongoing"
+				}
+			]
+		},
+		"testimonials": {
+			"title": "Results & Testimonials",
+			"kpis": [
+				{ "label": "Performance-driven traffic" },
+				{ "label": "Improved engagement" },
+				{ "label": "Quality conversions" }
+			],
+			"quotes": [
+				{
+					"quote": "Bosla helped us go from idea to launch in record time.",
+					"author": "Operations Manager"
+				},
+				{
+					"quote": "Clear process, strong communication, and measurable results.",
+					"author": "Marketing Lead"
+				}
+			]
+		}
+	},
+	"cta": {
+		"title": "Ready to Build Your High-Converting Website?",
+		"subtitle": "Let's create a powerful online presence that drives results. Schedule a free consultation today.",
+		"buttonText": "Get Your Free Consultation"
+	},
+	"nav": {
+		"home": "Home",
+		"about": "About",
+		"contact": "Contact"
+	}
+}
