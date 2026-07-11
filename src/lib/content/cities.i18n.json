@@ -1,0 +1,18 @@
+{
+	"en": [
+		{ "slug": "riyadh", "name": "Riyadh", "region": "Riyadh Province", "population": "8M+" },
+		{ "slug": "jeddah", "name": "Jeddah", "region": "Makkah Province", "population": "4.5M+" },
+		{ "slug": "dammam", "name": "Dammam", "region": "Eastern Province", "population": "1.5M+" },
+		{ "slug": "khobar", "name": "Al Khobar", "region": "Eastern Province", "population": "1M+" },
+		{ "slug": "mecca", "name": "Mecca", "region": "Makkah Province", "population": "2M+" },
+		{ "slug": "medina", "name": "Medina", "region": "Medina Province", "population": "1.5M+" }
+	],
+	"ar": [
+		{ "slug": "riyadh", "name": "الرياض", "region": "منطقة الرياض", "population": "8M+" },
+		{ "slug": "jeddah", "name": "جدة", "region": "منطقة مكة المكرمة", "population": "4.5M+" },
+		{ "slug": "dammam", "name": "الدمام", "region": "المنطقة الشرقية", "population": "1.5M+" },
+		{ "slug": "khobar", "name": "الخبر", "region": "المنطقة الشرقية", "population": "1M+" },
+		{ "slug": "mecca", "name": "مكة المكرمة", "region": "منطقة مكة المكرمة", "population": "2M+" },
+		{ "slug": "medina", "name": "المدينة المنورة", "region": "منطقة المدينة المنورة", "population": "1.5M+" }
+	]
+}

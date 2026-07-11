@@ -5,6 +5,8 @@ export const prerender = true;
 
 const siteUrl = 'https://hafatalnjom.com';
 
+const cities = ['riyadh', 'jeddah', 'dammam', 'khobar', 'mecca', 'medina'];
+
 const basePages = [
 	{ path: '', priority: '1.0', changefreq: 'weekly' },
 	{ path: 'about', priority: '0.7', changefreq: 'monthly' },
@@ -13,6 +15,7 @@ const basePages = [
 	{ path: 'services/seo', priority: '0.8', changefreq: 'monthly' },
 	{ path: 'services/digital-marketing', priority: '0.8', changefreq: 'monthly' },
 	{ path: 'contact', priority: '0.6', changefreq: 'monthly' },
+	...cities.map((c) => ({ path: `locations/${c}`, priority: '0.6', changefreq: 'monthly' })),
 ];
 
 function subServicePages() {

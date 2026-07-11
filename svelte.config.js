@@ -43,6 +43,12 @@ const config = {
 				'/services/digital-marketing/snapchat-tiktok-ads',
 				'/services/digital-marketing/email-marketing',
 				'/services/digital-marketing/brand-identity',
+				'/locations/riyadh',
+				'/locations/jeddah',
+				'/locations/dammam',
+				'/locations/khobar',
+				'/locations/mecca',
+				'/locations/medina',
 			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore 404 errors during prerendering
