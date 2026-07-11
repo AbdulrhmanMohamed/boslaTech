@@ -4,32 +4,21 @@
     "subtitle": "Comprehensive digital solutions to grow your business — from web development to SEO and marketing.",
     "process": {
       "title": "How We Work",
-      "subtitle": "A proven 5-step process that delivers results, from idea to launch and beyond.",
       "steps": [
         {
-          "title": "Discovery",
-          "desc": "We learn about your business, goals, target audience, and competitors. This forms the foundation of every decision we make.",
-          "icon": "search"
+          "icon": "pen-tool",
+          "title": "Consult & Plan",
+          "desc": "We understand your needs, define project goals and budget"
         },
         {
-          "title": "Strategy",
-          "desc": "We create a tailored roadmap — from site structure to content plan and technical specifications — aligned with your objectives.",
-          "icon": "clipboard-list"
+          "icon": "code",
+          "title": "Build & Develop",
+          "desc": "We build your digital solution professionally"
         },
         {
-          "title": "Design & Development",
-          "desc": "We build your solution using modern technology (SvelteKit, Tailwind, GSAP), ensuring speed, security, and an exceptional user experience.",
-          "icon": "code"
-        },
-        {
-          "title": "Launch",
-          "desc": "We deploy, configure analytics, test across devices, and make sure everything runs flawlessly before going live.",
-          "icon": "globe"
-        },
-        {
-          "title": "Grow",
-          "desc": "Post-launch support, SEO monitoring, performance optimization, and ongoing improvements to keep you ahead.",
-          "icon": "trending-up"
+          "icon": "rocket",
+          "title": "Launch & Support",
+          "desc": "We launch your project and support you post-launch"
         }
       ]
     },
@@ -38,340 +27,290 @@
         "slug": "web-development",
         "name": "Web Development",
         "icon": "code",
-        "description": "We build fast, secure, and SEO-friendly websites and web applications using modern technology like SvelteKit and Tailwind CSS. Every project is crafted to reflect your brand identity, deliver a seamless user experience, and drive measurable business results. Whether you need a simple landing page, a full e-commerce platform, or a complex web application, our team delivers production-ready solutions on time.",
-        "cta": "Learn more about Web Development",
+        "description": "We build WordPress sites, Shopify and Salla stores, and custom web applications for Saudi businesses. We focus on results—speed, SEO visibility, and exceptional user experience.",
+        "cta": "Get a free consultation for your project",
         "items": [
           {
-            "title": "Custom Websites",
-            "desc": "Fast, secure, SEO-friendly websites built with modern technology.",
-            "details": "We build custom websites from scratch using SvelteKit, the cutting-edge JavaScript framework. Each site is optimized for speed (near-perfect Lighthouse scores), fully responsive, and built with SEO best practices from day one. Whether it's a corporate site, a portfolio, or a landing page, you get a production-ready solution that loads fast and ranks well.",
+            "slug": "custom-websites",
+            "title": "Corporate Website Design",
+            "desc": "Professional websites that reflect your brand and attract new clients.",
+            "details": "We build complete corporate websites for all business sectors in Saudi Arabia. We focus on user experience, fast loading, and SEO optimization from day one. You get an easy-to-use content management system with full Arabic and English support.",
             "features": [
               "Responsive design that works on all devices",
-              "Easy Content Management System (CMS)",
-              "Complete SEO optimization out of the box",
+              "Easy-to-use content management system",
+              "Complete SEO optimization built-in",
               "Full Arabic & English bilingual support",
               "Free SSL certificate & advanced security",
-              "1 month technical support included"
-            ],
-            "slug": "custom-websites"
+              "1 month free technical support"
+            ]
           },
           {
-            "title": "E-commerce Solutions",
-            "desc": "Online stores with secure payments and optimized checkout.",
-            "details": "We develop powerful online stores with secure payment gateways, product management systems, and conversion-optimized checkout flows. Our e-commerce solutions are built to scale — from small shops to large catalogs — with full inventory management, order tracking, and analytics integration.",
+            "slug": "wordpress-development",
+            "title": "WordPress Website Development",
+            "desc": "Custom WordPress sites with professional themes, plugins, and WooCommerce stores.",
+            "details": "We develop WordPress websites from scratch—custom themes, bespoke plugins, and full WooCommerce stores with Saudi payment gateways. Your team can easily manage content while you enjoy unlimited scalability.",
             "features": [
-              "Complete shopping cart system",
-              "Multiple payment gateways (Mada, Visa, STC Pay)",
-              "Full inventory management system",
-              "Unlimited product listings & categories",
-              "Order tracking & shipping integration",
-              "Sales reports & analytics dashboard"
-            ],
-            "slug": "e-commerce-solutions"
+              "Custom WordPress theme matching your brand",
+              "WooCommerce store with Saudi payment gateways",
+              "Custom plugins for your business needs",
+              "Performance & speed optimization",
+              "Secure with regular updates",
+              "30-day post-launch support"
+            ]
           },
           {
-            "title": "Website Redesign",
-            "desc": "Transform outdated sites into modern, high-performing assets.",
-            "details": "If your current website is slow, outdated, or not converting, we can transform it into a modern digital asset. We preserve your SEO equity while rebuilding with modern technology, improving performance, user experience, and conversion rates. The result: a site that looks great, works great, and drives results.",
+            "slug": "online-stores",
+            "title": "Online Stores (Shopify - Salla - Zid)",
+            "desc": "Full-featured online stores on Shopify, Salla, or Zid with Saudi payment integration.",
+            "details": "We build online stores on the best platforms—Shopify, Salla, or Zid—based on your business needs. We integrate Saudi payment gateways (Mada, STC Pay, Apple Pay), inventory management, order tracking, and complete SEO optimization.",
             "features": [
-              "Preserve existing SEO rankings & traffic",
-              "Modern technology stack for blazing speed",
-              "Fresh responsive design refresh",
-              "User experience & conversion rate improvement",
-              "Content migration without data loss",
-              "1 month post-launch support"
-            ],
-            "slug": "website-redesign"
+              "Store on Shopify, Salla, or Zid — your choice",
+              "Saudi payment gateways (Mada, STC Pay, Apple Pay)",
+              "Inventory & order management system",
+              "Complete e-commerce SEO optimization",
+              "Mobile-responsive design",
+              "Arabic-language admin dashboard"
+            ]
+          },
+          {
+            "slug": "website-redesign",
+            "title": "Website Redesign & Migration",
+            "desc": "Modernize your existing site to be faster, more secure, and conversion-optimized.",
+            "details": "We redesign your current website to be more modern, faster, and mobile-friendly. We preserve your SEO rankings during migration and dramatically improve loading speed and user experience.",
+            "features": [
+              "Modern design that aligns with your brand",
+              "Speed & performance optimization",
+              "SEO-preserving migration process",
+              "Full mobile & tablet compatibility",
+              "Security upgrade & hardening",
+              "Team training on the new system"
+            ]
           },
           {
             "slug": "maintenance-and-support",
-            "title": "Maintenance & Support",
-            "desc": "Keep your website secure, fast, and up-to-date with ongoing maintenance.",
-            "details": "We offer comprehensive website maintenance packages including security patches, performance monitoring, content updates, and regular backups. Your site stays healthy, secure, and performing at its peak — so you can focus on growing your business.",
+            "title": "Website Maintenance & Support",
+            "desc": "Keep your site secure, fast, and up-to-date with ongoing maintenance plans.",
+            "details": "We offer comprehensive maintenance packages—security updates, performance monitoring, content updates, and regular backups. Your site stays healthy while you focus on growing your business.",
             "features": [
-              "Monthly security updates & patches",
+              "Monthly security patches & updates",
               "Performance monitoring & optimization",
               "Content updates (text, images, pages)",
-              "Regular backups with easy restore",
-              "Uptime monitoring & alerts",
-              "Priority email support"
-            ]
-          },
-          {
-            "slug": "mobile-app-development",
-            "title": "Mobile App Development",
-            "desc": "Native and cross-platform mobile apps for iOS and Android.",
-            "details": "We develop high-performance mobile applications using modern frameworks like React Native and Flutter. From MVP to full-featured apps, we deliver seamless user experiences with smooth performance, offline support, and push notifications.",
-            "features": [
-              "Cross-platform iOS & Android development",
-              "Push notifications & real-time updates",
-              "Offline mode support",
-              "Secure API integration",
-              "App store submission assistance",
-              "Post-launch support & updates"
+              "Weekly backups with instant restore",
+              "24/7 uptime monitoring",
+              "WhatsApp & email support"
             ]
           }
-        ],
-        "process": {
-          "title": "How We Build",
-          "steps": [
-            {
-              "title": "Plan & Design",
-              "desc": "We map out your site structure, wireframe key pages, and design a stunning interface that matches your brand identity.",
-              "icon": "pen-tool"
-            },
-            {
-              "title": "Develop & Test",
-              "desc": "We build your site with clean, performant code, integrating all features and testing across every device and browser.",
-              "icon": "code"
-            },
-            {
-              "title": "Launch & Optimize",
-              "desc": "We deploy to production, configure analytics and SEO, monitor performance, and provide ongoing support to keep your site running smoothly.",
-              "icon": "rocket"
-            }
-          ]
-        }
+        ]
       },
       {
         "slug": "seo",
-        "name": "SEO",
+        "name": "SEO Services",
         "icon": "search",
-        "description": "We help your website rank higher on Google and attract more qualified visitors through proven SEO strategies. Our approach combines technical audits, content optimization, and authority building to deliver sustainable organic growth. We focus on real results — more traffic, better leads, and higher revenue — not vanity metrics.",
-        "cta": "Learn more about SEO",
+        "description": "We improve your Google visibility—technically, locally, and through content. We target keywords that bring real customers to your Saudi business.",
+        "cta": "Get a free SEO audit for your website",
         "items": [
           {
+            "slug": "technical-seo",
             "title": "Technical SEO",
-            "desc": "Optimize site structure, speed, and crawlability.",
-            "details": "We audit and optimize your website's technical foundation: site structure, page speed, mobile-friendliness, XML sitemaps, robots.txt, canonical tags, and schema markup. Technical SEO ensures search engines can crawl, index, and understand your content efficiently — a prerequisite for ranking well.",
+            "desc": "Fix your site's technical foundation so Google can crawl, index, and rank it properly.",
+            "details": "We audit your site's technical health—loading speed, URL structure, page indexing, and Core Web Vitals. We fix issues that prevent your site from ranking and optimize overall performance.",
             "features": [
-              "Comprehensive technical site audit",
-              "Page speed optimization (Core Web Vitals)",
-              "Mobile-friendliness & usability fixes",
-              "Schema markup & structured data setup",
-              "Robots.txt & crawl budget optimization",
-              "XML sitemap creation & submission"
-            ],
-            "slug": "technical-seo"
+              "Full technical SEO audit",
+              "Core Web Vitals optimization",
+              "Internal link structure improvement",
+              "Crawl & index issue fixes",
+              "Robots.txt & sitemap optimization",
+              "Detailed report with actionable recommendations"
+            ]
           },
           {
-            "title": "Content SEO",
-            "desc": "Keyword research, on-page optimization, and content strategy.",
-            "details": "We research high-value keywords your customers are searching for, optimize your existing content, and create a content strategy that drives traffic. From meta tags and headings to internal linking and content silos, every element is optimized for both users and search engines.",
-            "features": [
-              "In-depth keyword research & gap analysis",
-              "On-page optimization (meta tags, headings, content)",
-              "Content strategy & editorial calendar",
-              "Internal linking structure optimization",
-              "SEO-optimized content writing",
-              "Monthly performance reports"
-            ],
-            "slug": "content-seo"
-          },
-          {
+            "slug": "local-seo",
             "title": "Local SEO",
-            "desc": "Dominate local search results in your area.",
-            "details": "We optimize your Google Business Profile, build local citations, manage reviews, and create location-specific content to help you dominate local search results. Perfect for businesses that serve customers in specific cities or regions — like Riyadh, Jeddah, or across Saudi Arabia.",
+            "desc": "Show up on Google when local clients search for your services in Riyadh, Jeddah, or Dammam.",
+            "details": "We optimize your local visibility—Google Business Profile optimization, local citation building, and city-specific service pages. We target customers who are actually near your business.",
             "features": [
               "Google Business Profile optimization",
-              "Local citation building (Yellow Pages, maps, directories)",
-              "Review management & response system",
-              "Location-specific landing pages",
-              "Google Maps rank tracking",
-              "Local SEO monthly reports"
-            ],
-            "slug": "local-seo"
+              "Local citation building (Saudi directories)",
+              "City-specific landing pages",
+              "Google Maps visibility improvement",
+              "Review management & optimization",
+              "Monthly local ranking reports"
+            ]
+          },
+          {
+            "slug": "content-seo",
+            "title": "Content SEO",
+            "desc": "SEO-optimized content that attracts real visitors and converts them into customers.",
+            "details": "We build a complete content strategy—keyword research, SEO-optimized article writing, and existing content optimization. We create content that answers your clients' questions and helps them make purchase decisions.",
+            "features": [
+              "Custom keyword research for your market",
+              "SEO-optimized blog & article writing",
+              "Existing content optimization",
+              "Blog content strategy & calendar",
+              "Meta title & description optimization",
+              "Competitor content analysis"
+            ]
           },
           {
             "slug": "link-building",
             "title": "Link Building",
-            "desc": "High-quality backlinks from authoritative Saudi and regional websites.",
-            "details": "We build your site's authority through strategic link acquisition from relevant, high-DA websites in the Saudi and GCC market. Our white-hat approach includes guest posting, digital PR, broken link building, and local business directory submissions.",
+            "desc": "High-quality backlinks from authoritative Saudi and GCC websites to boost your domain authority.",
+            "details": "We acquire quality backlinks from relevant, high-authority websites in the Saudi and GCC market. White-hat only—guest posting, digital PR, and valuable content outreach.",
             "features": [
-              "White-hat link building only",
-              "Focus on Saudi & GCC backlinks",
-              "Competitor backlink analysis",
-              "Guest posting on relevant sites",
+              "Backlinks from trusted Saudi websites",
+              "Guest posting on industry-relevant sites",
               "Digital PR campaigns",
+              "Competitor backlink analysis",
+              "Quality links only — no spam",
               "Monthly link progress reports"
             ]
           },
           {
             "slug": "seo-audit",
             "title": "SEO Audit & Analysis",
-            "desc": "Comprehensive technical and content audit with actionable recommendations.",
-            "details": "We perform a deep-dive SEO audit covering technical health, on-page optimization, content quality, backlink profile, and competitor benchmarking. You receive a prioritized roadmap with specific fixes ranked by impact.",
+            "desc": "Complete SEO audit with a prioritized roadmap to improve your Google rankings.",
+            "details": "We conduct a thorough audit—technical scan, on-page analysis, content quality review, and backlink assessment. You get a detailed report with prioritized fixes ranked by impact.",
             "features": [
-              "Full technical SEO crawl & analysis",
-              "On-page optimization audit",
-              "Content quality & gap analysis",
-              "Backlink profile assessment",
+              "Full technical site scan",
+              "On-page SEO analysis",
+              "Content quality & gap assessment",
+              "Backlink profile evaluation",
               "Competitor benchmarking",
               "Prioritized action roadmap"
             ]
+          },
+          {
+            "slug": "ecommerce-seo",
+            "title": "E-commerce SEO",
+            "desc": "Optimize your Shopify, Salla, or Zid store to rank on the first page of Google.",
+            "details": "We specialize in e-commerce SEO—product page optimization, category structure, checkout optimization, and store speed. We use product schema, reviews markup, and link building specific to online stores.",
+            "features": [
+              "Product & category page optimization",
+              "Product schema & review markup",
+              "Store speed & performance optimization",
+              "Mobile shopping experience optimization",
+              "E-commerce backlink building",
+              "Google Shopping & search performance analysis"
+            ]
           }
-        ],
-        "process": {
-          "title": "How We Grow Your Rankings",
-          "steps": [
-            {
-              "title": "Audit",
-              "desc": "We analyze your site's technical health, keyword opportunities, and competitive landscape to identify growth areas.",
-              "icon": "search"
-            },
-            {
-              "title": "Optimize",
-              "desc": "We implement technical fixes, optimize your content, build quality backlinks, and improve your overall search presence.",
-              "icon": "settings"
-            },
-            {
-              "title": "Monitor & Scale",
-              "desc": "We track rankings, traffic, and conversions monthly — refining the strategy and scaling what works to keep you ahead.",
-              "icon": "trending-up"
-            }
-          ]
-        }
+        ]
       },
       {
         "slug": "digital-marketing",
         "name": "Digital Marketing",
         "icon": "share",
-        "description": "We create data-driven marketing campaigns that reach the right audience, at the right time, with the right message. From social media to search ads to content marketing, every campaign is built around your specific goals — whether that's brand awareness, lead generation, or direct sales.",
-        "cta": "Learn more about Digital Marketing",
+        "description": "We help you reach your customers through paid ads, social media, and content marketing—everything your brand needs to grow in Saudi Arabia.",
+        "cta": "Get a free marketing consultation",
         "items": [
           {
-            "title": "Social Media Marketing",
-            "desc": "Targeted campaigns on Instagram, TikTok, LinkedIn, and more.",
-            "details": "We create and manage targeted social media campaigns across Instagram, TikTok, LinkedIn, Twitter, and Snapchat. From content creation to ad management to community engagement, we help you build a loyal following and convert followers into customers.",
+            "slug": "social-media-marketing",
+            "title": "Social Media Management",
+            "desc": "Manage your Instagram, Twitter (X), and Snapchat with professional content that attracts followers and customers.",
+            "details": "We build a complete social media strategy—visual content design, post writing, scheduling, audience engagement, and performance analysis. We focus on building a community around your brand, not just followers.",
             "features": [
-              "Social media account setup & management",
-              "Professional visual content creation (graphics, reels)",
-              "Targeted ad campaigns with precise audience targeting",
-              "Daily community engagement & responses",
-              "Weekly performance reports with insights",
-              "Audience growth & analytics tracking"
-            ],
-            "slug": "social-media-marketing"
+              "Custom content strategy for your brand",
+              "Professional post & video design",
+              "Daily content management & scheduling",
+              "Audience engagement & response",
+              "Monthly performance reports",
+              "Targeted social media ads"
+            ]
           },
           {
-            "title": "Google Ads",
-            "desc": "Paid search and display ads with precise ROI tracking.",
-            "details": "We manage Google Search Ads, Display Ads, Shopping Ads, and YouTube campaigns with precise targeting, A/B testing, and detailed ROI reporting. Every campaign is optimized for cost efficiency — maximizing conversions while minimizing cost per lead.",
+            "slug": "google-ads",
+            "title": "Google Ads Management",
+            "desc": "Paid Google campaigns that reach customers searching for your services right now.",
+            "details": "We manage Google Ads campaigns for Saudi businesses. We target keywords your customers are searching for, optimize ads for maximum ROI, and provide transparent reporting.",
             "features": [
-              "Google Search Ads campaign management",
-              "Display & YouTube remarketing campaigns",
-              "Shopping Ads for e-commerce stores",
-              "Continuous A/B split testing",
-              "Conversion tracking & attribution setup",
-              "Detailed ROI & cost-per-lead reporting"
-            ],
-            "slug": "google-ads"
-          },
-          {
-            "title": "Content Marketing",
-            "desc": "Blog posts, videos, and infographics that attract customers.",
-            "details": "We produce high-quality content that builds authority, educates your audience, and attracts potential customers. From blog posts and articles to videos, infographics, and whitepapers — our content is designed to be shared, linked to, and loved by both users and search engines.",
-            "features": [
-              "SEO-optimized blog posts & articles",
-              "Professional video production & editing",
-              "Custom infographics & visual assets",
-              "In-depth whitepapers & industry reports",
-              "Multi-channel content distribution",
-              "Content performance analytics"
-            ],
-            "slug": "content-marketing"
+              "Keyword research & ad targeting",
+              "Professional ad copywriting",
+              "Budget management & ROI optimization",
+              "Precise geographic targeting (city, district)",
+              "A/B testing for ads & landing pages",
+              "Weekly performance reports & recommendations"
+            ]
           },
           {
             "slug": "snapchat-tiktok-ads",
             "title": "Snapchat & TikTok Ads",
-            "desc": "High-engagement ad campaigns on Saudi Arabia's favorite platforms.",
-            "details": "We create and manage Snapchat and TikTok ad campaigns tailored to the Saudi market. From creative production to audience targeting and performance optimization, we help you reach the right audience on the platforms they use most.",
+            "desc": "Ad campaigns on Snapchat and TikTok targeting the young Saudi audience.",
+            "details": "We create and manage ad campaigns on Snapchat and TikTok—the most popular platforms among Saudi youth. We produce professional ad content, target audiences precisely, and optimize for maximum ROI.",
             "features": [
-              "Ad creative production (video & image)",
-              "Audience targeting & retargeting",
-              "Campaign management & optimization",
-              "A/B testing of creatives & audiences",
-              "Performance analytics & reporting",
-              "Budget management & ROI tracking"
+              "Professional video ad production",
+              "Precise audience targeting (age, location, interests)",
+              "Daily campaign management & optimization",
+              "Multi-variant A/B testing",
+              "Retargeting campaign setup",
+              "Detailed performance reporting"
+            ]
+          },
+          {
+            "slug": "content-marketing",
+            "title": "Content Marketing",
+            "desc": "Valuable content that builds trust with your audience and positions your brand as an authority.",
+            "details": "We build a content marketing strategy—articles, videos, infographics, and comprehensive guides. We publish content that answers your clients' questions, builds authority, and drives organic traffic.",
+            "features": [
+              "Complete content marketing strategy",
+              "Professional article & guide writing",
+              "Short-form video production",
+              "Infographic & graphic design",
+              "Multi-channel content distribution",
+              "Content performance tracking & optimization"
             ]
           },
           {
             "slug": "email-marketing",
             "title": "Email Marketing",
-            "desc": "Build relationships and drive sales with targeted email campaigns.",
-            "details": "We design and execute email marketing campaigns that nurture leads, retain customers, and drive repeat sales. From welcome sequences to promotional campaigns and abandoned cart recovery, we handle strategy, copy, design, and analytics.",
+            "desc": "Email campaigns that build customer relationships and drive repeat sales.",
+            "details": "We design and execute email marketing campaigns—welcome sequences, promotional offers, and abandoned cart recovery. We ensure your emails land in the inbox, not spam.",
             "features": [
-              "Email sequence strategy & planning",
               "Professional email template design",
-              "Segmentation & personalization",
+              "Automated email sequences",
+              "Audience segmentation & personalization",
               "A/B subject line testing",
-              "Open rate & click tracking",
-              "GDPR & Saudi spam law compliance"
+              "Open, click & conversion tracking",
+              "Saudi email regulation compliance"
             ]
           },
           {
             "slug": "brand-identity",
-            "title": "Brand Identity & Visual Design",
-            "desc": "Complete brand identity from logo to full visual system.",
-            "details": "We create cohesive brand identities that communicate your values and resonate with your target audience. From logo design and color palette to typography, business cards, and brand guidelines — everything you need for a professional, consistent brand presence.",
+            "title": "Brand Identity Design",
+            "desc": "Complete brand identity that makes your business unforgettable.",
+            "details": "We design comprehensive brand identities—logo, colors, typography, business cards, and social media graphics. We build an identity that reflects your company values and leaves a lasting impression.",
             "features": [
-              "Logo design (primary & alternate)",
+              "Logo design (primary & secondary)",
               "Color palette & typography system",
-              "Brand guidelines document",
+              "Comprehensive brand guidelines",
               "Business card & stationery design",
-              "Social media profile design",
-              "Brand collateral templates"
+              "Social media profile designs",
+              "Marketing material templates (brochures, proposals)"
             ]
           }
-        ],
-        "process": {
-          "title": "How We Drive Results",
-          "steps": [
-            {
-              "title": "Strategy",
-              "desc": "We define your target audience, choose the right channels, set budgets, and establish measurable KPIs aligned with your goals.",
-              "icon": "clipboard-list"
-            },
-            {
-              "title": "Execute & Launch",
-              "desc": "We create compelling ad creative, write persuasive copy, set up campaigns, and launch across selected channels.",
-              "icon": "play"
-            },
-            {
-              "title": "Analyze & Scale",
-              "desc": "We review performance data, A/B test variations, optimize budgets, and scale winning campaigns for maximum ROI.",
-              "icon": "bar-chart"
-            }
-          ]
-        }
+        ]
       }
     ],
     "faq": {
-      "title": "Frequently Asked Questions",
+      "title": "FAQ",
       "items": [
         {
           "q": "How much does a website cost?",
-          "a": "It depends on the project scope and your needs. Our prices start from 1,500 SAR for simple sites and go up to 5,000 SAR for full-featured websites. We offer a free consultation to determine the exact price based on your requirements — contact us for a custom quote."
+          "a": "It depends on the project scope. Our prices start from 1,000 SAR for simple sites and go up to 5,000 SAR for full e-commerce stores. Book a free consultation for an accurate quote."
         },
         {
           "q": "How long does it take to build a website?",
-          "a": "A typical website takes 5-10 business days from start to launch, depending on complexity. E-commerce sites and web applications may take longer. We'll give you a clear timeline during the discovery phase."
+          "a": "Simple websites take 7-10 business days. E-commerce stores take 2-3 weeks. Larger projects are scheduled based on scope."
         },
         {
-          "q": "Do you provide ongoing support after launch?",
-          "a": "Yes. We offer maintenance packages that include security updates, performance monitoring, content updates, and technical support. You can choose a plan that fits your needs."
+          "q": "Do you offer SEO services after the site is built?",
+          "a": "Yes, we provide SEO services for both new and existing websites. We recommend starting SEO from day one for best results."
         },
         {
-          "q": "What makes your SEO services different?",
-          "a": "We focus on sustainable, white-hat SEO strategies that deliver long-term results. Our approach combines technical audits, content optimization, and authority building — all tailored to your business and target market."
+          "q": "Which e-commerce platforms do you work with?",
+          "a": "We work with Shopify, Salla, Zid, and WooCommerce (WordPress). We help you choose the best platform for your business."
         },
         {
-          "q": "Do you work with clients outside Saudi Arabia?",
-          "a": "Absolutely. While we are based in Riyadh, we work with clients across the GCC and internationally. All our services are delivered remotely with regular video calls and progress updates."
-        },
-        {
-          "q": "How do I get started?",
-          "a": "Simply contact us via the form on our contact page, WhatsApp, or phone. We'll schedule a free consultation to discuss your project, goals, and budget, then provide a tailored proposal within 1-2 business days."
+          "q": "Do you provide post-launch support?",
+          "a": "Yes, we include 1 month of free technical support after launch. Monthly maintenance packages are also available."
         }
       ]
     }
@@ -381,32 +320,21 @@
     "subtitle": "حلول رقمية شاملة لنمو أعمالك — من تطوير المواقع إلى تحسين محركات البحث والتسويق الرقمي.",
     "process": {
       "title": "كيف نعمل",
-      "subtitle": "عملية مثبتة من 5 خطوات لتحقيق النتائج، من الفكرة إلى الإطلاق وما بعده.",
       "steps": [
         {
-          "title": "الاكتشاف",
-          "desc": "نتعرف على نشاطك التجاري وأهدافك وجمهورك المستهدف ومنافسيك. هذا يشكل الأساس لكل قرار نتخذه.",
-          "icon": "search"
+          "icon": "pen-tool",
+          "title": "استشارة وتخطيط",
+          "desc": "نفهم احتياجك ونحدد أهداف المشروع وميزانيته"
         },
         {
-          "title": "الاستراتيجية",
-          "desc": "نضع خارطة طريق مخصصة — من هيكل الموقع إلى خطة المحتوى والمواصفات التقنية — متوافقة مع أهدافك.",
-          "icon": "clipboard-list"
+          "icon": "code",
+          "title": "تنفيذ وتطوير",
+          "desc": "نبني الحل الرقمي باحترافية وفق أفضل الممارسات"
         },
         {
-          "title": "التصميم والتطوير",
-          "desc": "نبني حلك باستخدام تقنيات حديثة (SvelteKit, Tailwind, GSAP)، لضمان السرعة والأمان وتجربة مستخدم استثنائية.",
-          "icon": "code"
-        },
-        {
-          "title": "الإطلاق",
-          "desc": "ننشر الموقع، ونضبط أدوات التحليل، ونختبر على جميع الأجهزة، ونتأكد من أن كل شيء يعمل بشكل مثالي قبل الإطلاق.",
-          "icon": "globe"
-        },
-        {
-          "title": "النمو",
-          "desc": "دعم ما بعد الإطلاق، ومراقبة تحسين محركات البحث، وتحسين الأداء، وتحسينات مستمرة لإبقائك في المقدمة.",
-          "icon": "trending-up"
+          "icon": "rocket",
+          "title": "إطلاق ومتابعة",
+          "desc": "نطلق المشروع وندعمك بعد الإطلاق لضمان نجاحه"
         }
       ]
     },
@@ -415,340 +343,290 @@
         "slug": "web-development",
         "name": "تطوير المواقع",
         "icon": "code",
-        "description": "نبني مواقع وتطبيقات ويب سريعة وآمنة ومتوافقة مع محركات البحث باستخدام تقنيات حديثة مثل SvelteKit و Tailwind CSS. كل مشروع يُصمم ليعكس هوية علامتك التجارية، ويوفر تجربة مستخدم سلسة، ويحقق نتائج أعمال ملموسة. سواء كنت بحاجة إلى صفحة هبوط بسيطة أو منصة تجارة إلكترونية متكاملة، فريقنا يقدم حلولاً جاهزة للإنتاج في الوقت المحدد.",
-        "cta": "اكتشف المزيد عن تطوير المواقع",
+        "description": "نبني مواقع ووردبريس، متاجر شوبيفاي وسلة، وتطبيقات ويب مخصصة للشركات السعودية. نركز على النتيجة—سرعة، ظهور في محركات البحث، وتجربة مستخدم استثنائية.",
+        "cta": "اطلب استشارة مجانية لتطوير موقعك",
         "items": [
           {
-            "title": "مواقع مخصصة",
-            "desc": "مواقع سريعة وآمنة ومتوافقة مع محركات البحث.",
-            "details": "نبني مواقع مخصصة من الصفر باستخدام SvelteKit، الإطار البرمجي المتطور. كل موقع مُحسَّن للسرعة (نتائج مثالية في Lighthouse)، ومتوافق مع جميع الأجهزة، ومبني بأفضل ممارسات تحسين محركات البحث من اليوم الأول. سواء كان موقعاً للشركة أو محفظة أعمال أو صفحة هبوط، ستحصل على حل جاهز للإنتاج سريع التحميل ومرتفع الترتيب.",
+            "slug": "custom-websites",
+            "title": "تصميم مواقع شركات",
+            "desc": "مواقع احترافية تعكس هوية شركتك وتجذب عملاء جدد.",
+            "details": "نبني مواقع شركات متكاملة تناسب جميع القطاعات في السعودية. نركز على تجربة المستخدم وسرعة التحميل وتحسين الظهور في محركات البحث. نوفر لوحة تحكم لإدارة المحتوى بسهولة، مع دعم كامل للغة العربية والإنجليزية.",
             "features": [
               "تصميم متجاوب يعمل على جميع الأجهزة",
-              "نظام إدارة محتوى سهل (CMS)",
-              "تحسين محركات بحث متكامل",
-              "دعم كامل للغة العربية والإنجليزية",
-              "شهادة SSL مجانية وأمان متقدم",
-              "دعم فني لمدة شهر"
-            ],
-            "slug": "custom-websites"
+              "نظام إدارة محتوى سهل الاستخدام",
+              "تحسين متكامل لمحركات البحث (SEO)",
+              "دعم اللغتين العربية والإنجليزية",
+              "شهادة SSL مجانية وحماية متقدمة",
+              "شهر دعم فني مجاني بعد الإطلاق"
+            ]
           },
           {
-            "title": "متاجر إلكترونية",
-            "desc": "متاجر إلكترونية بدفع آمن وعملية شراء محسّنة.",
-            "details": "نطور متاجر إلكترونية قوية مع بوابات دفع آمنة، وأنظمة إدارة منتجات، وعمليات دفع محسّنة لزيادة التحويل. حلولنا قابلة للتوسع — من المتاجر الصغيرة إلى الكتالوجات الكبيرة — مع إدارة كاملة للمخزون وتتبع الطلبات وتكامل أدوات التحليل.",
+            "slug": "wordpress-development",
+            "title": "تطوير مواقع ووردبريس",
+            "desc": "مواقع ووردبريس مخصصة مع تصاميم احترافية وإضافات متطورة.",
+            "details": "نطور مواقع ووردبريس من الصفر — قوالب مخصصة، إضافات حسب الطلب، ومتاجر ووكومرس متكاملة. نوفر لك موقعاً يديره فريقك بسهولة مع مرونة لا محدودة في التوسع والتطوير.",
             "features": [
-              "نظام سلة شراء متكامل",
-              "بوابات دفع متعددة (مدى، فيزا، STC Pay)",
-              "نظام إدارة مخزون كامل",
-              "منتجات وتصنيفات غير محدودة",
-              "تتبع الطلبات وتكامل الشحن",
-              "تقارير مبيعات ولوحة تحليلات"
-            ],
-            "slug": "e-commerce-solutions"
+              "قالب ووردبريس مخصص حسب هويتك",
+              "متجر ووكومرس متكامل مع بوابات دفع سعودية",
+              "إضافات مخصصة حسب احتياج عملك",
+              "تحسين أداء وسرعة الموقع",
+              "آمن ومحدث باستمرار",
+              "دعم فني لمدة 30 يوماً"
+            ]
           },
           {
+            "slug": "online-stores",
+            "title": "متاجر إلكترونية (شوبيفاي - سلة - زد)",
+            "desc": "متاجر إلكترونية متكاملة على شوبيفاي، سلة، أو زد مع بوابات دفع سعودية.",
+            "details": "نبني متاجر إلكترونية على أقوى المنصات: شوبيفاي، سلة، أو زد — حسب احتياج عملك. نوفر تكاملاً مع بوابات الدفع السعودية (مدى، STC Pay، Apple Pay)، إدارة المخزون، تتبع الطلبات، وتحسين متكامل لمحركات البحث.",
+            "features": [
+              "متجر على شوبيفاي أو سلة أو زد حسب اختيارك",
+              "بوابات دفع سعودية (مدى، STC Pay، Apple Pay)",
+              "نظام إدارة مخزون وطلبات متكامل",
+              "تحسين متجرك لمحركات البحث (SEO)",
+              "تصميم متجاوب مع الجوال",
+              "لوحة تحكم باللغة العربية"
+            ]
+          },
+          {
+            "slug": "website-redesign",
             "title": "إعادة تصميم المواقع",
-            "desc": "تحويل المواقع القديمة إلى أصول رقمية حديثة.",
-            "details": "إذا كان موقعك الحالي بطيئاً أو قديماً أو لا يحقق تحويلات، يمكننا تحويله إلى أصل رقمي حديث. نحافظ على قيمة تحسين محركات البحث الحالية أثناء إعادة البناء بتقنيات حديثة، لتحسين الأداء وتجربة المستخدم ومعدلات التحويل. النتيجة: موقع يبدو رائعاً، ويعمل بكفاءة، ويحقق نتائج.",
+            "desc": "نطور موقعك الحالي ليكون أسرع وأحدث وأكثر توافقاً مع معايير 2026.",
+            "details": "نعيد تصميم موقعك الحالي ليكون أكثر حداثة وسرعة وتوافقاً مع الأجهزة الحديثة. نحافظ على ترتيبك في محركات البحث أثناء التطوير، ونحسن سرعة التحميل وتجربة المستخدم بشكل جذري.",
             "features": [
-              "الحفاظ على ترتيب SEO الحالي والزوار",
-              "تقنيات حديثة لسرعة فائقة",
-              "تصميم عصري متجاوب بالكامل",
-              "تحسين تجربة المستخدم ومعدلات التحويل",
-              "نقل المحتوى بدون فقدان أي بيانات",
-              "دعم فني لمدة شهر بعد الإطلاق"
-            ],
-            "slug": "website-redesign"
+              "تصميم حديث وعصري يتوافق هويتك",
+              "تحسين سرعة التحميل والأداء",
+              "الحفاظ على ترتيب SEO أثناء النقل",
+              "توافق كامل مع الجوال والأجهزة اللوحية",
+              "تحديث نظام الأمان والحماية",
+              "تدريب فريقك على إدارة الموقع الجديد"
+            ]
           },
           {
             "slug": "maintenance-and-support",
             "title": "الصيانة والدعم الفني",
             "desc": "حافظ على موقعك آمناً وسريعاً ومحدثاً مع صيانة دورية.",
-            "details": "نقدم باقات صيانة شاملة تشمل التحديثات الأمنية ومراقبة الأداء وتحديث المحتوى والنسخ الاحتياطية المنتظمة. موقعك يبقى بصحة جيدة وآمن وبأفضل أداء — لتتمكن من التركيز على تنمية أعمالك.",
+            "details": "نقدم باقات صيانة شاملة—تحديثات أمنية، مراقبة أداء، تحديث محتوى، ونسخ احتياطية منتظمة. موقعك يبقى في أفضل حال، وأنت مرتاح البال تركز على عملك.",
             "features": [
-              "تحديثات أمنية شهرية",
-              "مراقبة الأداء وتحسينه",
+              "تحديثات أمنية شهرية وحماية من الاختراق",
+              "مراقبة الأداء وتحسين السرعة",
               "تحديث المحتوى (نصوص، صور، صفحات)",
-              "نسخ احتياطية منتظمة مع استعادة سهلة",
-              "مراقبة وقت التشغيل والتنبيهات",
-              "دعم فني عبر البريد الإلكتروني"
-            ]
-          },
-          {
-            "slug": "mobile-app-development",
-            "title": "تطوير تطبيقات الجوال",
-            "desc": "تطبيقات جوال أصلية ومتعددة المنصات لنظامي iOS وAndroid.",
-            "details": "نطور تطبيقات جوال عالية الأداء باستخدام أحدث الأطر مثل React Native وFlutter. من المنتج الأولي إلى التطبيقات المتكاملة، نقدم تجارب مستخدم سلسة مع أداء ممتاز ودعم غير متصل وإشعارات فورية.",
-            "features": [
-              "تطوير متعدد المنصات iOS وAndroid",
-              "إشعارات فورية وتحديثات لحظية",
-              "دعم وضع عدم الاتصال",
-              "ربط آمن مع واجهات API",
-              "مساعدة في نشر المتجر",
-              "دعم وتحديثات بعد الإطلاق"
+              "نسخ احتياطية أسبوعية مع استعادة فورية",
+              "مراقبة وقت التشغيل 24/7",
+              "دعم فني عبر واتساب والبريد الإلكتروني"
             ]
           }
-        ],
-        "process": {
-          "title": "كيف نبني",
-          "steps": [
-            {
-              "title": "تخطيط وتصميم",
-              "desc": "نخطط هيكل موقعك، ونصمم واجهات الصفحات الرئيسية، ونبتكر واجهة مذهلة تعكس هوية علامتك التجارية.",
-              "icon": "pen-tool"
-            },
-            {
-              "title": "تطوير واختبار",
-              "desc": "نبني موقعك بكود نظيف وعالي الأداء، وندمج جميع الميزات، ونختبر على جميع الأجهزة والمتصفحات.",
-              "icon": "code"
-            },
-            {
-              "title": "إطلاق وتحسين",
-              "desc": "ننشر الموقع، ونضبط أدوات التحليل و SEO، ونراقب الأداء، ونقدم دعماً مستمراً لإبقاء موقعك يعمل بسلاسة.",
-              "icon": "rocket"
-            }
-          ]
-        }
+        ]
       },
       {
         "slug": "seo",
-        "name": "تحسين محركات البحث (SEO)",
+        "name": "تحسين محركات البحث",
         "icon": "search",
-        "description": "نساعد موقعك على الظهور في الصفحات الأولى من Google وجذب زوار مؤهلين من خلال استراتيجيات SEO مثبتة. يجمع نهجنا بين التدقيق التقني وتحسين المحتوى وبناء السلطة لتحقيق نمو عضوي مستدام. نركز على نتائج حقيقية — المزيد من الزوار والعملاء المحتملين والإيرادات.",
-        "cta": "اكتشف المزيد عن تحسين محركات البحث",
+        "description": "نحسن ظهور موقعك في جوجل—تقنياً، محلياً، وبالمحتوى. نستهدف كلمات مفتاحية تجلب عملاء حقيقيين لشركتك في السعودية.",
+        "cta": "احصل على تدقيق SEO مجاني لموقعك",
         "items": [
           {
-            "title": "SEO تقني",
-            "desc": "تحسين هيكل الموقع والسرعة وقابلية الزحف.",
-            "details": "نقوم بتدقيق وتحسين الأساس التقني لموقعك: هيكل الموقع، سرعة الصفحات، التوافق مع الجوال، خرائط XML، ملف robots.txt، العلامات الأساسية، وبيانات Schema. يضمن SEO التقني أن محركات البحث تستطيع الزحف إلى المحتوى الخاص بك وفهرسته وفهمه بكفاءة — شرط أساسي للظهور في المراتب الأولى.",
+            "slug": "technical-seo",
+            "title": "تحسين محركات البحث التقني",
+            "desc": "نحسن بنية موقعك التقنية ليزحف عليها جوجل بسهولة ويرتبها في أول الصفحات.",
+            "details": "نفحص موقعك تقنياً بالكامل—سرعة التحميل، بنية الروابط، فهرسة الصفحات، وتحسين Core Web Vitals. نصلح المشاكل التي تمنع موقعك من الظهور في نتائج البحث ونسرّع أداءه.",
             "features": [
-              "تدقيق فني شامل للموقع",
-              "تحسين سرعة الموقع (Core Web Vitals)",
-              "إصلاح مشاكل التوافق مع الجوال",
-              "إعداد Schema Markup والبيانات المنظمة",
-              "تحسين ملف robots.txt وميزانية الزحف",
-              "إنشاء خرائط XML وإرسالها"
-            ],
-            "slug": "technical-seo"
+              "تدقيق تقني شامل للموقع",
+              "تحسين سرعة التحميل (Core Web Vitals)",
+              "تحسين بنية الروابط الداخلية",
+              "إصلاح مشاكل الفهرسة والكراولينج",
+              "تحسين ملف robots.txt وخريطة الموقع",
+              "تقرير مفصل مع توصيات قابلة للتنفيذ"
+            ]
           },
           {
-            "title": "SEO محتوى",
-            "desc": "بحث كلمات مفتاحية وتحسين المحتوى واستراتيجية محتوى.",
-            "details": "نبحث عن الكلمات المفتاحية عالية القيمة التي يبحث عنها عملاؤك، ونحسن المحتوى الحالي، وننشئ استراتيجية محتوى تجذب الزوار. من العلامات الوصفية والعناوين إلى الروابط الداخلية وهياكل المحتوى، كل عنصر مُحسَّن لكل من المستخدمين ومحركات البحث.",
-            "features": [
-              "بحث كلمات مفتاحية عميق وتحليل الفجوات",
-              "تحسين الصفحات (وسوم، عناوين، محتوى)",
-              "استراتيجية محتوى وتقويم تحريري",
-              "تحسين هيكل الروابط الداخلية",
-              "كتابة محتوى متوافق مع SEO",
-              "تقارير أداء شهرية"
-            ],
-            "slug": "content-seo"
-          },
-          {
-            "title": "SEO محلي",
-            "desc": "الهيمنة على نتائج البحث المحلية في منطقتك.",
-            "details": "نحسن ظهورك في البحث المحلي عبر تحسين حساب Google Business Profile، وبناء الاستشهادات المحلية، وإدارة التقييمات، وإنشاء محتوى مخصص للموقع. مثالي للشركات التي تخدم عملاء في مدن محددة — مثل الرياض، جدة، أو في جميع أنحاء المملكة.",
+            "slug": "local-seo",
+            "title": "تحسين محركات البحث المحلي",
+            "desc": "اظهر في أول جوجل لما العملاء يبحثون عن خدماتك في الرياض وجدة والدمام.",
+            "details": "نحسّن ظهورك في البحث المحلي—تحسين حساب Google Business Profile، بناء Citations محلية، وإنشاء صفحات خدمات مخصصة لكل مدينة. نستهدف العملاء القريبين منك فعلياً.",
             "features": [
               "تحسين حساب Google Business Profile",
-              "بناء استشهادات محلية (دليل الأعمال، خرائط)",
-              "إدارة التقييمات والردود الآلية",
-              "صفحات هبوط مخصصة للموقع",
-              "تتبع ترتيب خرائط Google",
-              "تقارير SEO محلي شهرية"
-            ],
-            "slug": "local-seo"
+              "بناء Citations في أدلة الأعمال السعودية",
+              "صفحات هبوط مخصصة لكل مدينة",
+              "تحسين الظهور في Google Maps",
+              "إدارة تقييمات العملاء",
+              "تقرير شهري لترتيبك في البحث المحلي"
+            ]
+          },
+          {
+            "slug": "content-seo",
+            "title": "تحسين محركات البحث بالمحتوى",
+            "desc": "نكتب محتوى متوافق مع SEO يجذب زواراً حقيقيين ويحولهم إلى عملاء.",
+            "details": "نبني استراتيجية محتوى متكاملة—بحث كلمات مفتاحية، كتابة مقالات متوافقة مع SEO، وتحسين المحتوى الحالي. نصنع محتوى يجيب عن أسئلة عملائك ويساعدهم في اتخاذ قرار الشراء.",
+            "features": [
+              "بحث كلمات مفتاحية مخصص لسوقك",
+              "كتابة مقالات متوافقة مع SEO",
+              "تحسين المحتوى الحالي لموقعك",
+              "استراتيجية تدوين داخلي (Blog)",
+              "تحسين العناوين والوصف Meta",
+              "تحليل محتوى المنافسين"
+            ]
           },
           {
             "slug": "link-building",
-            "title": "بناء الروابط",
-            "desc": "روابط خلفية عالية الجودة من مواقع سعودية وإقليمية موثوقة.",
-            "details": "نبني سلطة موقعك من خلال اكتساب روابط استراتيجية من مواقع ذات صلة وعالية الموثوقية في السوق السعودي والخليجي. نستخدم نهج القبعة البيضاء يشمل التدوين الضيف والعلاقات العامة الرقمية وبناء الروابط المكسورة.",
+            "title": "بناء الروابط الخارجية",
+            "desc": "نبني روابط خلفية من مواقع سعودية وعربية موثوقة ترفع سلطة موقعك.",
+            "details": "نكتسب روابط خلفية عالية الجودة من مواقع ذات صلة في السوق السعودي والخليجي. نستخدم أساليب القبعة البيضاء فقط—تدوين ضيف، علاقات عامة رقمية، وبناء روابط عبر المحتوى القيّم.",
             "features": [
-              "بناء روابط القبعة البيضاء فقط",
-              "التركيز على الروابط السعودية والخليجية",
-              "تحليل روابط المنافسين",
-              "تدوين ضيف على مواقع ذات صلة",
+              "بناء روابط من مواقع سعودية موثوقة",
+              "تدوين ضيف في مواقع ذات صلة بنشاطك",
               "حملات علاقات عامة رقمية",
-              "تقارير شهرية لتقدم الروابط"
+              "تحليل روابط المنافسين",
+              "روابط عالية الجودة فقط — لا سبام",
+              "تقرير شهري لتقدم الروابط"
             ]
           },
           {
             "slug": "seo-audit",
             "title": "تدقيق وتحليل SEO",
-            "desc": "تدقيق فني ومحتوى شامل مع توصيات قابلة للتنفيذ.",
-            "details": "نجري تدقيقاً عميقاً للـ SEO يغطي الصحة الفنية وتحسين الصفحات وجودة المحتوى وملف الروابط الخلفية وقياس المنافسين. تحصل على خارطة طريق ذات أولويات مع إصلاحات محددة حسب التأثير.",
+            "desc": "تدقيق كامل لموقعك مع خارطة طريق محددة لتحسين ترتيبك في جوجل.",
+            "details": "نجري تدقيقاً شاملاً—فحص تقني، تحليل الصفحات، تقييم المحتوى، ومراجعة الروابط الخلفية. تحصل على تقرير مفصل مع أولويات محددة وإصلاحات مرتبة حسب التأثير على ترتيبك.",
             "features": [
-              "فحص فني شامل للـ SEO",
-              "تدقيق تحسين الصفحات",
-              "تحليل جودة المحتوى والفجوات",
+              "فحص تقني كامل للموقع",
+              "تحليل تحسين الصفحات الداخلية",
+              "تدقيق جودة المحتوى والفجوات",
               "تقييم ملف الروابط الخلفية",
-              "قياس أداء المنافسين",
-              "خارطة طريق ذات أولويات"
+              "مقارنة مع المنافسين",
+              "خارطة طريق ذات أولويات محددة"
+            ]
+          },
+          {
+            "slug": "ecommerce-seo",
+            "title": "تحسين متاجر إلكترونية لمحركات البحث",
+            "desc": "نحسن متجرك على شوبيفاي أو سلة أو زد ليظهر في أول صفحة جوجل.",
+            "details": "نخصص تحسين محركات البحث للمتاجر الإلكترونية—تحسين صفحات المنتجات، الأقسام، وسلة الشراء. نستخدم تقنيات خاصة بالمتاجر مثل Schema للمنتجات، تحسين سرعة المتجر، وبناء روابط للمنتجات.",
+            "features": [
+              "تحسين صفحات المنتجات والأقسام",
+              "إضافة Schema للمنتجات والتقييمات",
+              "تحسين سرعة تحميل المتجر",
+              "تحسين تجربة التسوق في الجوال",
+              "بناء روابط خلفية للمتجر",
+              "تحليل أداء المتجر في جوجل"
             ]
           }
-        ],
-        "process": {
-          "title": "كيف ننمي ترتيبك",
-          "steps": [
-            {
-              "title": "تدقيق",
-              "desc": "نحلل الصحة التقنية لموقعك، وفرص الكلمات المفتاحية، والمشهد التنافسي لتحديد مجالات النمو.",
-              "icon": "search"
-            },
-            {
-              "title": "تحسين",
-              "desc": "ننفذ الإصلاحات التقنية، ونحسن المحتوى، ونبني روابط خلفية عالية الجودة، ونعزز حضورك في البحث.",
-              "icon": "settings"
-            },
-            {
-              "title": "مراقبة وتوسيع",
-              "desc": "نتتبع الترتيب والزوار والتحويلات شهرياً — ونحسن الاستراتيجية ونوسع ما ينجح لإبقائك في المقدمة.",
-              "icon": "trending-up"
-            }
-          ]
-        }
+        ]
       },
       {
         "slug": "digital-marketing",
         "name": "التسويق الرقمي",
         "icon": "share",
-        "description": "ننشئ حملات تسويقية مبنية على البيانات تصل إلى الجمهور المناسب، في الوقت المناسب، برسالة مناسبة. من وسائل التواصل الاجتماعي إلى إعلانات البحث إلى التسويق بالمحتوى — كل حملة تُبنى حول أهدافك المحددة — سواء كان ذلك الوعي بالعلامة التجارية أو جذب العملاء المحتملين أو المبيعات المباشرة.",
-        "cta": "اكتشف المزيد عن التسويق الرقمي",
+        "description": "نساعدك في الوصول لعملائك عبر الإعلانات المدفوعة، التواصل الاجتماعي، والتسويق بالمحتوى—كل ما تحتاجه لنمو علامتك التجارية في السعودية.",
+        "cta": "احصل على استشارة تسويقية مجانية",
         "items": [
           {
-            "title": "التسويق عبر التواصل الاجتماعي",
-            "desc": "حملات مستهدفة على إنستغرام، تيك توك، لينكد إن وغيرها.",
-            "details": "ننشئ وندير حملات مستهدفة على إنستغرام، تيك توك، لينكد إن، تويتر، وسناب شات. من إنشاء المحتوى إلى إدارة الإعلانات إلى التفاعل مع المجتمع، نساعدك على بناء متابعين مخلصين وتحويل المتابعين إلى عملاء.",
+            "slug": "social-media-marketing",
+            "title": "إدارة وسائل التواصل الاجتماعي",
+            "desc": "ندير حساباتك على إنستغرام، تويتر، وسناب شات بمحتوى احترافي يجذب متابعين وعملاء.",
+            "details": "نبني استراتيجية تواصل اجتماعي متكاملة لعلامتك التجارية—تصميم محتوى بصري، كتابة منشورات، جدولة، تفاعل مع المتابعين، وتحليل الأداء. نركز على بناء مجتمع حول علامتك وليس مجرد زيادة متابعين.",
             "features": [
-              "إعداد وإدارة حسابات التواصل الاجتماعي",
-              "إنشاء محتوى بصري احترافي (تصميم، ريلز)",
-              "حملات إعلانية مستهدفة بدقة",
-              "تفاعل يومي مع المتابعين والردود",
-              "تقارير أداء أسبوعية مع تحليلات",
-              "تتبع نمو الجمهور والتحليلات"
-            ],
-            "slug": "social-media-marketing"
+              "استراتيجية محتوى مخصصة لعلامتك",
+              "تصميم منشورات وفيديوهات احترافية",
+              "إدارة وجدولة المحتوى يومياً",
+              "تفاعل مع المتابعين والرد على الاستفسارات",
+              "تقارير أداء شهرية مفصلة",
+              "إعلانات مستهدفة على المنصات"
+            ]
           },
           {
-            "title": "إعلانات Google",
-            "desc": "إعلانات بحث وعرض مدفوعة مع قياس دقيق للعائد.",
-            "details": "ندير إعلانات بحث Google، وإعلانات العرض، وإعلانات التسوق، وحملات YouTube باستهداف دقيق واختبار A/B وتقارير مفصلة عن العائد على الاستثمار. كل حملة مُحسَّنة لكفاءة التكلفة — لتعظيم التحويلات وتقليل تكلفة العميل المحتمل.",
+            "slug": "google-ads",
+            "title": "إعلانات جوجل المدفوعة",
+            "desc": "حملات إعلانية على جوجل تجيب عملاء يبحثون عن خدماتك الآن.",
+            "details": "ندير حملات إعلانات جوجل المدفوعة (Google Ads) للشركات السعودية. نستهدف كلمات مفتاحية يبحث عنها عملاؤك، ونحسن الإعلانات لتحصل على أعلى عائد استثمار.",
             "features": [
-              "إدارة حملات إعلانات بحث Google",
-              "حملات إعادة الاستهداف (Display, YouTube)",
-              "إعلانات Shopping للمتاجر الإلكترونية",
-              "اختبار A/B مستمر للإعلانات",
-              "تتبع التحويلات وإعداد الإسناد",
-              "تقارير مفصلة للعائد وتكلفة العميل"
-            ],
-            "slug": "google-ads"
-          },
-          {
-            "title": "التسويق بالمحتوى",
-            "desc": "مقالات وفيديوهات وإنفوجرافيك تجذب العملاء.",
-            "details": "ننتج محتوى عالي الجودة يبني سلطة، ويُثقف جمهورك، ويجذب العملاء المحتملين. من المقالات والتدوينات إلى الفيديوهات والإنفوجرافيك والمستندات التقنية — محتوانا مصمم ليكون قابلاً للمشاركة والربط، ومحبوباً من المستخدمين ومحركات البحث على حد سواء.",
-            "features": [
-              "مقالات تدوين محسّنة لمحركات البحث",
-              "إنتاج فيديوهات احترافية ومونتاج",
-              "إنفوجرافيك وأصول بصرية مخصصة",
-              "مستندات تقنية وتقارير صناعية",
-              "توزيع المحتوى عبر قنوات متعددة",
-              "تحليلات أداء المحتوى"
-            ],
-            "slug": "content-marketing"
+              "بحث كلمات مفتاحية إعلانية مخصص",
+              "كتابة إعلانات احترافية تجذب النقرات",
+              "إدارة الميزانية وتحسين العائد",
+              "استهداف جغرافي دقيق (مدينة، حي)",
+              "اختبار A/B للإعلانات والصفحات",
+              "تقارير أداء وتوصيات أسبوعية"
+            ]
           },
           {
             "slug": "snapchat-tiktok-ads",
             "title": "إعلانات سناب شات وتيك توك",
-            "desc": "حملات إعلانية عالية التفاعل على منصات السعودية المفضلة.",
-            "details": "ننشئ وندير حملات إعلانية على سناب شات وتيك توك مصممة خصيصاً للسوق السعودي. من إنتاج المحتوى الإبداعي إلى استهداف الجمهور وتحسين الأداء، نساعدك في الوصول للجمهور المناسب على المنصات التي يستخدمونها أكثر.",
+            "desc": "حملات إعلانية على سناب شات وتيك توك تستهدف الجمهور السعودي الشاب.",
+            "details": "نصمم وندير حملات إعلانية على سناب شات وتيك توك—منصة الشباب السعودي الأولى. ننتج محتوى إعلاني احترافي، نستهدف الجمهور بدقة، ونحسن الأداء لتحقيق أعلى عائد.",
             "features": [
-              "إنتاج إعلانات (فيديو وصور)",
-              "استهداف الجمهور وإعادة الاستهداف",
-              "إدارة الحملات وتحسينها",
-              "اختبار A/B للإعلانات والجماهير",
-              "تحليلات الأداء والتقارير",
-              "إدارة الميزانية وتتبع العائد"
+              "إنتاج فيديوهات إعلانية احترافية",
+              "استهداف دقيق للجمهور (عمر، موقع، اهتمامات)",
+              "إدارة الحملات وتحسين الأداء يومياً",
+              "اختبار إعلانات متعدد (A/B)",
+              "حملات إعادة استهداف",
+              "تقارير أداء مفصلة"
+            ]
+          },
+          {
+            "slug": "content-marketing",
+            "title": "التسويق بالمحتوى",
+            "desc": "نصنع محتوى قيّم يبني ثقة عملائك ويحولهم إلى علامة تجارية موثوقة.",
+            "details": "نبني استراتيجية تسويق بالمحتوى—مقالات، فيديوهات، إنفوغرافيك، وأدلة شاملة. ننشر محتوى يجيب عن أسئلة عملائك، يبني سلطتك في مجالك، ويجلب زواراً عضويين لموقعك.",
+            "features": [
+              "استراتيجية محتوى متكاملة",
+              "كتابة مقالات وأدلة احترافية",
+              "إنتاج فيديوهات تسويقية قصيرة",
+              "تصاميم إنفوغرافيك وجرافيك",
+              "توزيع المحتوى على القنوات المناسبة",
+              "قياس أداء المحتوى وتحسينه"
             ]
           },
           {
             "slug": "email-marketing",
             "title": "التسويق عبر البريد الإلكتروني",
-            "desc": "ابنِ علاقات وحقق مبيعات بحملات بريد إلكتروني مستهدفة.",
-            "details": "نصمم وننفذ حملات تسويق عبر البريد الإلكتروني ترعى العملاء المحتملين وتحافظ على العملاء وتزيد المبيعات المتكررة. من تسلسلات الترحيب إلى الحملات الترويجية واستعادة عربات التسوق المهجورة، نغطي الاستراتيجية والكتابة والتصميم والتحليلات.",
+            "desc": "حملات بريد إلكتروني تبني علاقات مع عملائك وتزيد مبيعاتك.",
+            "details": "نصمم وننفذ حملات بريد إلكتروني—تسلسلات ترحيبية، عروض ترويجية، واستعادة عربات التسوق المهجورة. نضمن وصول رسائلك لصندوق الوارد وليس سبام.",
             "features": [
-              "استراتيجية وتخطيط تسلسلات البريد",
               "تصميم قوالب بريد احترافية",
+              "تسلسلات بريدية آلية (Automation)",
               "تقسيم الجمهور وتخصيص الرسائل",
               "اختبار A/B لعناوين البريد",
-              "تتبع الفتح والنقر",
-              "الامتثال للوائح السعودية"
+              "تتبع الفتح والنقر والتحويل",
+              "امتثال للوائح البريد الإلكتروني السعودية"
             ]
           },
           {
             "slug": "brand-identity",
-            "title": "الهوية البصرية والعلامة التجارية",
-            "desc": "هوية علامة تجارية متكاملة من الشعار إلى النظام البصري الكامل.",
-            "details": "ننشئ هويات علامات تجارية متماسكة تعكس قيمك وتتواصل مع جمهورك المستهدف. من تصميم الشعار ولوحة الألوان والخطوط إلى بطاقات العمل وأدلة العلامة التجارية — كل ما تحتاجه لحضور علامة تجارية احترافي ومتسق.",
+            "title": "تصميم الهوية البصرية",
+            "desc": "هوية بصرية متكاملة تجعل علامتك التجارية لا تُنسى.",
+            "details": "نصمم هويات بصرية متكاملة—شعار، ألوان، خطوط، بطاقات عمل، وتصاميم تواصل اجتماعي. نبني هوية تعكس قيم شركتك وتترك انطباعاً لا يُنسى لدى عملائك.",
             "features": [
-              "تصميم الشعار (رئيسي وبديل)",
-              "نظام الألوان والخطوط",
-              "دليل الهوية البصرية",
+              "تصميم الشعار (رئيسي وثانوي)",
+              "اختيار الألوان والخطوط",
+              "دليل الهوية البصرية الشامل",
               "تصميم بطاقات العمل والقرطاسية",
-              "تصميم حسابات التواصل الاجتماعي",
-              "قوالب المواد التسويقية"
+              "تصاميم حسابات التواصل الاجتماعي",
+              "قوالب المواد التسويقية (عروض، بروشورات)"
             ]
           }
-        ],
-        "process": {
-          "title": "كيف نحقق النتائج",
-          "steps": [
-            {
-              "title": "استراتيجية",
-              "desc": "نحدد جمهورك المستهدف، ونختار القنوات المناسبة، ونضع الميزانيات، ونحدد مؤشرات أداء قابلة للقياس.",
-              "icon": "clipboard-list"
-            },
-            {
-              "title": "تنفيذ وإطلاق",
-              "desc": "نبتكر إعلانات جذابة، ونكتب نصوصاً مقنعة، ونجهز الحملات، ونطلقها عبر القنوات المختارة.",
-              "icon": "play"
-            },
-            {
-              "title": "تحليل وتوسيع",
-              "desc": "نراجع بيانات الأداء، ونختبر المتغيرات، ونحسن الميزانيات، ونوسع الحملات الناجحة لتحقيق أقصى عائد.",
-              "icon": "bar-chart"
-            }
-          ]
-        }
+        ]
       }
     ],
     "faq": {
       "title": "الأسئلة الشائعة",
       "items": [
         {
-          "q": "كم تكلفة تصميم موقع إلكتروني؟",
-          "a": "تختلف التكلفة حسب حجم المشروع واحتياجاتك. على سبيل المثال، تبدأ أسعارنا من 1,500 ريال للمواقع البسيطة، وتصل إلى 5,000 ريال للمواقع المتكاملة. نقدم استشارة مجانية لتحديد السعر الدقيق بناءً على متطلباتك — تواصل معنا للحصول على عرض سعر مخصص."
+          "q": "كم تكلفة تصميم موقع للشركات؟",
+          "a": "تختلف التكلفة حسب حجم المشروع. تبدأ أسعارنا من 1,000 ريال للمواقع البسيطة وتصل إلى 5,000 ريال للمتاجر الإلكترونية المتكاملة. يمكنك حجز استشارة مجانية للحصول على عرض سعر دقيق."
         },
         {
-          "q": "كم من الوقت يستغرق بناء موقع إلكتروني؟",
-          "a": "يستغرق الموقع النموذجي من 5 إلى 10 أيام عمل من البداية إلى الإطلاق، حسب التعقيد. المواقع التجارية وتطبيقات الويب قد تستغرق وقتاً أطول. سنقدم لك جدولاً زمنياً واضحاً خلال مرحلة الاكتشاف."
+          "q": "كم مدة تصميم الموقع؟",
+          "a": "المواقع البسيطة تستغرق من 7 إلى 10 أيام عمل. المتاجر الإلكترونية من أسبوعين إلى 3 أسابيع. المشاريع الأكبر حسب الاتفاق."
         },
         {
-          "q": "هل تقدمون دعماً مستمراً بعد الإطلاق؟",
-          "a": "نعم. نقدم باقات صيانة تشمل تحديثات الأمان ومراقبة الأداء وتحديثات المحتوى والدعم الفني. يمكنك اختيار الخطة التي تناسب احتياجاتك."
+          "q": "هل توفرون خدمات SEO بعد تصميم الموقع؟",
+          "a": "نعم، نقدم خدمات تحسين محركات البحث SEO للمواقع الجديدة والحالية. ننصح دائماً بتحسين SEO من البداية للحصول على أفضل نتائج."
         },
         {
-          "q": "ما الذي يميز خدمات تحسين محركات البحث لديكم؟",
-          "a": "نركز على استراتيجيات SEO بيضاء ومستدامة تحقق نتائج طويلة المدى. يجمع نهجنا بين التدقيق التقني وتحسين المحتوى وبناء السلطة — كلها مخصصة لنشاطك التجاري وسوقك المستهدف."
+          "q": "ما هي منصات المتاجر الإلكترونية التي تعملون عليها؟",
+          "a": "نعمل على شوبيفاي (Shopify)، سلة، زد، وووكومرس (WordPress). نساعدك في اختيار الأنسب لنشاطك التجاري."
         },
         {
-          "q": "هل تعملون مع عملاء خارج المملكة العربية السعودية؟",
-          "a": "بالتأكيد. بينما نحن موجودون في الرياض، نعمل مع عملاء في جميع أنحاء دول الخليج والعالم. جميع خدماتنا تُقدم عن بُعد مع مكالمات فيديو منتظمة وتقارير تقدم."
-        },
-        {
-          "q": "كيف أبدأ؟",
-          "a": "ببساطة تواصل معنا عبر نموذج الاتصال في صفحة اتصل بنا، أو عبر واتساب، أو الهاتف. سنحدد موعد استشارة مجانية لمناقشة مشروعك وأهدافك وميزانيتك، ثم نقدم عرضاً مخصصاً خلال 1-2 يوم عمل."
+          "q": "هل تقدمون دعم فني بعد تسليم الموقع؟",
+          "a": "نعم، نقدم شهر دعم فني مجاني بعد الإطلاق. كما نوفر باقات صيانة شهرية للمتابعة."
         }
       ]
     }
