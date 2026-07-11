@@ -1,18 +1,198 @@
 {
-	"en": [
-		{ "slug": "riyadh", "name": "Riyadh", "region": "Riyadh Province", "population": "8M+" },
-		{ "slug": "jeddah", "name": "Jeddah", "region": "Makkah Province", "population": "4.5M+" },
-		{ "slug": "dammam", "name": "Dammam", "region": "Eastern Province", "population": "1.5M+" },
-		{ "slug": "khobar", "name": "Al Khobar", "region": "Eastern Province", "population": "1M+" },
-		{ "slug": "mecca", "name": "Mecca", "region": "Makkah Province", "population": "2M+" },
-		{ "slug": "medina", "name": "Medina", "region": "Medina Province", "population": "1.5M+" }
-	],
-	"ar": [
-		{ "slug": "riyadh", "name": "الرياض", "region": "منطقة الرياض", "population": "8M+" },
-		{ "slug": "jeddah", "name": "جدة", "region": "منطقة مكة المكرمة", "population": "4.5M+" },
-		{ "slug": "dammam", "name": "الدمام", "region": "المنطقة الشرقية", "population": "1.5M+" },
-		{ "slug": "khobar", "name": "الخبر", "region": "المنطقة الشرقية", "population": "1M+" },
-		{ "slug": "mecca", "name": "مكة المكرمة", "region": "منطقة مكة المكرمة", "population": "2M+" },
-		{ "slug": "medina", "name": "المدينة المنورة", "region": "منطقة المدينة المنورة", "population": "1.5M+" }
-	]
+  "en": [
+    {
+      "slug": "riyadh",
+      "name": "Riyadh",
+      "region": "Riyadh Province",
+      "population": "8M+",
+      "metaTitle": "Web Design Company in Riyadh — BOSLA",
+      "metaDesc": "Professional web design and development company in Riyadh. WordPress, Shopify, Salla stores, SEO, and digital marketing services for Saudi businesses.",
+      "localContext": "As the capital of Saudi Arabia, Riyadh is home to corporate headquarters, government institutions, and a thriving SME sector. We are based in Al-Malaz district and serve clients across Al-Olaya, Diplomatic Quarter, and all Riyadh neighborhoods.",
+      "businessFocus": "Corporate companies, institutions, government sector, SMEs",
+      "districts": ["حي الملز (Al-Malaz)", "العليا (Al-Olaya)", "الحي الدبلوماسي (Diplomatic Quarter)", "الورود (Al-Wurud)", "النخيل (Al-Nakheel)"],
+      "serviceDescriptions": {
+        "web-development": "We build corporate websites, WordPress sites, and online stores for Riyadh businesses. Our clients range from small startups in Al-Malaz to large corporates in the Diplomatic Quarter.",
+        "seo": "Riyadh is a competitive market. We help local businesses rank on Google with technical SEO, local SEO for Riyadh-based searches, and content targeting Saudi audiences.",
+        "digital-marketing": "From Google Ads targeting Riyadh districts to Snapchat campaigns reaching the capital's youth, we help you reach customers where they are."
+      }
+    },
+    {
+      "slug": "jeddah",
+      "name": "Jeddah",
+      "region": "Makkah Province",
+      "population": "4.5M+",
+      "metaTitle": "Web Design Company in Jeddah — BOSLA",
+      "metaDesc": "Professional web design and e-commerce development in Jeddah. Shopify, Salla, WordPress stores and SEO services for Jeddah businesses.",
+      "localContext": "Jeddah is Saudi Arabia's commercial capital and main port city. Its unique mix of traditional commerce (Al-Balad) and modern business districts makes it a vibrant market for digital services. We help Jeddah businesses establish and grow their online presence.",
+      "businessFocus": "Trade, tourism, shipping, retail, hospitality",
+      "districts": ["البلد (Al-Balad)", "الشاطئ (Al-Shati)", "الحمراء (Al-Hamra)", "السلامة (Al-Salamah)", "الروضة (Al-Rawdah)"],
+      "serviceDescriptions": {
+        "web-development": "We create e-commerce stores and corporate websites for Jeddah's vibrant business community — from traditional businesses in Al-Balad going digital to modern startups on the Corniche.",
+        "seo": "Help your Jeddah business appear on Google when local customers search. We optimize for Jeddah-specific keywords and build local citations in Makkah Province directories.",
+        "digital-marketing": "Reach Jeddah's diverse population with targeted Google Ads, social media campaigns, and content marketing in Arabic."
+      }
+    },
+    {
+      "slug": "dammam",
+      "name": "Dammam",
+      "region": "Eastern Province",
+      "population": "1.5M+",
+      "metaTitle": "Web Design Company in Dammam — BOSLA",
+      "metaDesc": "Web development and SEO services in Dammam. Corporate websites, e-commerce stores, and digital marketing for Eastern Province businesses.",
+      "localContext": "Dammam is the capital of Saudi Arabia's Eastern Province and a hub for the oil, gas, and petrochemical industries. The city also has a growing services sector and startup ecosystem. We help businesses in Dammam build powerful digital platforms.",
+      "businessFocus": "Industry, oil & gas, logistics, services",
+      "districts": ["الخليج (Al-Khaleej)", "الشاطئ الغربي (Western Corniche)", "النزهة (Al-Nuzhah)", "العدامة (Al-Adamah)", "حي الضباط (Officers District)"],
+      "serviceDescriptions": {
+        "web-development": "From industrial company websites to e-commerce platforms, we build digital solutions for Dammam's diverse business landscape.",
+        "seo": "Dominate Google search in the Eastern Province with our SEO services. We target both Arabic and English keywords relevant to Dammam's industrial and commercial sectors.",
+        "digital-marketing": "Promote your Dammam business with targeted online advertising and social media management tailored to the Eastern Province market."
+      }
+    },
+    {
+      "slug": "khobar",
+      "name": "Al Khobar",
+      "region": "Eastern Province",
+      "population": "1M+",
+      "metaTitle": "Web Design Company in Al Khobar — BOSLA",
+      "metaDesc": "Web design and digital marketing in Al Khobar. WordPress development, e-commerce stores, and SEO for Khobar businesses.",
+      "localContext": "Al Khobar is a major business center in the Eastern Province, known for its modern districts along King Fahd Road and thriving real estate and services sectors. We help Khobar-based businesses build professional websites that attract local clients.",
+      "businessFocus": "Services, real estate, consulting, retail",
+      "districts": ["العقربية (Al-Aqrabiyah)", "طريق الملك فهد (King Fahd Road)", "الراكة (Al-Rakah)", "الثقبة (Al-Thuqbah)", "الهدا (Al-Hada)"],
+      "serviceDescriptions": {
+        "web-development": "We build modern websites and e-commerce stores for Khobar businesses — from real estate agencies in Al-Aqrabiyah to retail stores on King Fahd Road.",
+        "seo": "Improve your Khobar business visibility on Google with our local SEO services. We target customers searching for services in Al Khobar and the Eastern Province.",
+        "digital-marketing": "Reach Khobar's affluent customer base with targeted digital advertising and professional social media management."
+      }
+    },
+    {
+      "slug": "mecca",
+      "name": "Mecca",
+      "region": "Makkah Province",
+      "population": "2M+",
+      "metaTitle": "Web Design Company in Mecca — BOSLA",
+      "metaDesc": "Web development services in Mecca. Websites for hotels, hospitality businesses, and seasonal e-commerce stores serving pilgrims and visitors.",
+      "localContext": "Mecca is the holiest city in Islam and a unique business environment. The city's economy revolves around hospitality, services for pilgrims, and seasonal commerce. We help Mecca businesses reach customers online throughout the year.",
+      "businessFocus": "Hospitality, hotels, seasonal trade, services for pilgrims",
+      "districts": ["العزيزية (Al-Aziziyah)", "الششة (Al-Shisha)", "الرصيفة (Al-Rusayfah)", "الزاهر (Al-Zahir)", "الخالدية (Al-Khalidiyah)"],
+      "serviceDescriptions": {
+        "web-development": "We create websites for Mecca's hospitality sector — hotels, furnished apartments, and service providers. We also build seasonal e-commerce stores for Umrah and Hajj-related products.",
+        "seo": "Optimize your Mecca business for Google search with keywords related to hospitality, Umrah services, and local commerce in the holy city.",
+        "digital-marketing": "Reach pilgrims and visitors with targeted digital campaigns. We help Mecca businesses market their services throughout the Umrah and Hajj seasons."
+      }
+    },
+    {
+      "slug": "medina",
+      "name": "Medina",
+      "region": "Medina Province",
+      "population": "1.5M+",
+      "metaTitle": "Web Design Company in Medina — BOSLA",
+      "metaDesc": "Web development and digital marketing in Medina. Websites for hotels, hospitality, and religious tourism businesses serving visitors to the Prophet's Mosque.",
+      "localContext": "Medina, the second holiest city in Islam, attracts millions of visitors annually. The local economy centers on religious tourism, hospitality, and services for pilgrims. We help Medina businesses build digital platforms that serve this unique market.",
+      "businessFocus": "Religious tourism, hospitality, hotels, services for visitors",
+      "districts": ["السلام (Al-Salam)", "العنبرية (Al-Anbariyah)", "باب المجيدي (Bab Al-Majeedi)", "قربان (Qurban)", "العوالي (Al-Awali)"],
+      "serviceDescriptions": {
+        "web-development": "We build professional websites for Medina's hospitality and service businesses — hotels, travel agencies, and local service providers serving pilgrims.",
+        "seo": "Help your Medina business rank on Google for keywords related to religious tourism, hotels near the Prophet's Mosque, and local services.",
+        "digital-marketing": "Reach visitors planning their trip to Medina with targeted digital marketing campaigns across Google, social media, and content platforms."
+      }
+    }
+  ],
+  "ar": [
+    {
+      "slug": "riyadh",
+      "name": "الرياض",
+      "region": "منطقة الرياض",
+      "population": "8M+",
+      "metaTitle": "شركة تصميم مواقع في الرياض — BOSLA",
+      "metaDesc": "شركة تصميم وتطوير مواقع في الرياض. مواقع ووردبريس، متاجر شوبيفاي وسلة، خدمات SEO وتسويق رقمي للشركات السعودية.",
+      "localContext": "الرياض عاصمة المملكة العربية السعودية ومركز الأعمال الرئيسي. تضم مقرات الشركات الكبرى والمؤسسات الحكومية وقطاعاً مزدهراً من المنشآت الصغيرة والمتوسطة. مقرنا في حي الملز ونخدم عملاء في جميع أحياء الرياض.",
+      "businessFocus": "شركات، مؤسسات، قطاع حكومي، منشآت صغيرة ومتوسطة",
+      "districts": ["حي الملز", "العليا", "الحي الدبلوماسي", "الورود", "النخيل"],
+      "serviceDescriptions": {
+        "web-development": "نبني مواقع شركات ومتاجر إلكترونية للشركات في الرياض. عملاؤنا يشملون شركات ناشئة في الملز وشركات كبرى في الحي الدبلوماسي.",
+        "seo": "الرياض سوق تنافسي. نساعد الشركات المحلية على الظهور في أول جوجل من خلال تحسين SEO التقني والمحلي والمحتوى المستهدف للجمهور السعودي.",
+        "digital-marketing": "من إعلانات جوجل التي تستهدف أحياء الرياض إلى حملات سناب شات، نساعدك في الوصول لعملائك أينما كانوا."
+      }
+    },
+    {
+      "slug": "jeddah",
+      "name": "جدة",
+      "region": "منطقة مكة المكرمة",
+      "population": "4.5M+",
+      "metaTitle": "شركة تصميم مواقع في جدة — BOSLA",
+      "metaDesc": "تصميم وتطوير مواقع ومتاجر إلكترونية في جدة. شوبيفاي، سلة، ووردبريس، وتحسين محركات البحث للشركات في جدة.",
+      "localContext": "جدة هي العاصمة التجارية للمملكة وميناؤها الرئيسي. مزيجها الفريد من التجارة التقليدية في البلد والمناطق التجارية الحديثة يجعلها سوقاً حيوياً للخدمات الرقمية. نساعد شركات جدة على بناء وتنمية وجودها الرقمي.",
+      "businessFocus": "تجارة، سياحة، شحن، بيع بالتجزئة، ضيافة",
+      "districts": ["البلد", "الشاطئ", "الحمراء", "السلامة", "الروضة"],
+      "serviceDescriptions": {
+        "web-development": "ننشئ متاجر إلكترونية ومواقع شركات لمجتمع جدة التجاري الحيوي — من المحلات التقليدية في البلد إلى الشركات الناشئة الحديثة على الكورنيش.",
+        "seo": "ساعد نشاطك التجاري في جدة على الظهور في جوجل. نحسّن ظهورك لكلمات مفتاحية خاصة بجدة ونبني Citations محلية.",
+        "digital-marketing": "وصل لجمهور جدة المتنوع من خلال إعلانات جوجل المستهدفة وحملات التواصل الاجتماعي والتسويق بالمحتوى."
+      }
+    },
+    {
+      "slug": "dammam",
+      "name": "الدمام",
+      "region": "المنطقة الشرقية",
+      "population": "1.5M+",
+      "metaTitle": "شركة تصميم مواقع في الدمام — BOSLA",
+      "metaDesc": "تطوير مواقع وخدمات SEO في الدمام. مواقع شركات، متاجر إلكترونية، وتسويق رقمي للشركات في المنطقة الشرقية.",
+      "localContext": "الدمام عاصمة المنطقة الشرقية ومركز لصناعات النفط والغاز والبتروكيماويات. كما تشهد نمواً في قطاع الخدمات والشركات الناشئة. نساعد شركات الدمام على بناء منصات رقمية قوية.",
+      "businessFocus": "صناعة، نفط وغاز، لوجستيات، خدمات",
+      "districts": ["الخليج", "الشاطئ الغربي", "النزهة", "العدامة", "حي الضباط"],
+      "serviceDescriptions": {
+        "web-development": "من مواقع الشركات الصناعية إلى منصات التجارة الإلكترونية، نبني حلولاً رقمية لقطاع الأعمال المتنوع في الدمام.",
+        "seo": "تصدّر نتائج بحث جوجل في المنطقة الشرقية بخدمات SEO. نستهدف كلمات مفتاحية عربية وإنجليزية تناسب القطاعين الصناعي والتجاري في الدمام.",
+        "digital-marketing": "روّج لنشاطك التجاري في الدمام من خلال الإعلانات الرقمية المستهدفة وإدارة وسائل التواصل الاجتماعي."
+      }
+    },
+    {
+      "slug": "khobar",
+      "name": "الخبر",
+      "region": "المنطقة الشرقية",
+      "population": "1M+",
+      "metaTitle": "شركة تصميم مواقع في الخبر — BOSLA",
+      "metaDesc": "تصميم مواقع وتسويق رقمي في الخبر. تطوير ووردبريس، متاجر إلكترونية، وتحسين محركات البحث للشركات في الخبر.",
+      "localContext": "الخبر مركز أعمال رئيسي في المنطقة الشرقية، تشتهر بأحيائها الحديثة على طول طريق الملك فهد وقطاع العقارات والخدمات المزدهر. نساعد شركات الخبر على بناء مواقع احترافية تجذب العملاء المحليين.",
+      "businessFocus": "خدمات، عقارات، استشارات، بيع بالتجزئة",
+      "districts": ["العقربية", "طريق الملك فهد", "الراكة", "الثقبة", "الهدا"],
+      "serviceDescriptions": {
+        "web-development": "نبني مواقع حديثة ومتاجر إلكترونية لشركات الخبر — من مكاتب عقارات في العقربية إلى متاجر بيع بالتجزئة على طريق الملك فهد.",
+        "seo": "حسّن ظهور نشاطك التجاري في الخبر على جوجل مع خدمات SEO المحلي. نستهدف عملاء يبحثون عن خدمات في الخبر والمنطقة الشرقية.",
+        "digital-marketing": "وصل لشريحة العملاء المتميزة في الخبر من خلال الإعلانات الرقمية المستهدفة وإدارة احترافية لوسائل التواصل الاجتماعي."
+      }
+    },
+    {
+      "slug": "mecca",
+      "name": "مكة المكرمة",
+      "region": "منطقة مكة المكرمة",
+      "population": "2M+",
+      "metaTitle": "شركة تصميم مواقع في مكة — BOSLA",
+      "metaDesc": "خدمات تطوير مواقع في مكة المكرمة. مواقع للفنادق وقطاع الضيافة والمتاجر الموسمية لخدمة الحجاج والزوار.",
+      "localContext": "مكة المكرمة هي أقدس مدينة في الإسلام وبيئة أعمال فريدة. اقتصاد المدينة يتمحور حول الضيافة وخدمات الحجاج والتجارة الموسمية. نساعد شركات مكة على الوصول للعملاء عبر الإنترنت طوال العام.",
+      "businessFocus": "ضيافة، فنادق، تجارة موسمية، خدمات الحجاج",
+      "districts": ["العزيزية", "الششة", "الرصيفة", "الزاهر", "الخالدية"],
+      "serviceDescriptions": {
+        "web-development": "ننشئ مواقع لقطاع الضيافة في مكة — فنادق، شقق مفروشة، ومزودي خدمات. نبني متاجر موسمية للمنتجات المتعلقة بالعمرة والحج.",
+        "seo": "حسّن ظهور نشاطك التجاري في مكة على جوجل بكلمات مفتاحية متعلقة بالضيافة وخدمات العمرة والتجارة المحلية في المدينة المقدسة.",
+        "digital-marketing": "وصل للحجاج والزوار بحملات رقمية مستهدفة. نساعد شركات مكة على التسويق لخدماتها طوال مواسم العمرة والحج."
+      }
+    },
+    {
+      "slug": "medina",
+      "name": "المدينة المنورة",
+      "region": "منطقة المدينة المنورة",
+      "population": "1.5M+",
+      "metaTitle": "شركة تصميم مواقع في المدينة المنورة — BOSLA",
+      "metaDesc": "تطوير مواقع وتسويق رقمي في المدينة المنورة. مواقع للفنادق وقطاع الضيافة والسياحة الدينية لخدمة زوار المسجد النبوي.",
+      "localContext": "المدينة المنورة، ثاني أقدس المدن في الإسلام، تستقطب ملايين الزوار سنوياً. الاقتصاد المحلي يتمحور حول السياحة الدينية والضيافة وخدمات الزوار. نساعد شركات المدينة على بناء منصات رقمية تخدم هذا السوق الفريد.",
+      "businessFocus": "سياحة دينية، ضيافة، فنادق، خدمات الزوار",
+      "districts": ["السلام", "العنبرية", "باب المجيدي", "قربان", "العوالي"],
+      "serviceDescriptions": {
+        "web-development": "نبني مواقع احترافية لقطاع الضيافة والخدمات في المدينة — فنادق، وكالات سفر، ومزودي خدمات محليين لخدمة الزوار.",
+        "seo": "ساعد نشاطك التجاري في المدينة على الظهور في جوجل لكلمات مفتاحية متعلقة بالسياحة الدينية والفنادق القريبة من المسجد النبوي والخدمات المحلية.",
+        "digital-marketing": "وصل للزوار الذين يخططون لرحلتهم إلى المدينة من خلال حملات تسويق رقمي مستهدفة على جوجل ووسائل التواصل الاجتماعي."
+      }
+    }
+  ]
 }
