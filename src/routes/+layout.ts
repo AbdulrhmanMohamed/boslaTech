@@ -23,7 +23,7 @@ export const load: LayoutLoad = async ({ url, depends }) => {
 			// On server or during initial load, use the URL provided by SvelteKit
 			langParam = url?.searchParams?.get('lang');
 		}
-		
+
 		if (langParam === 'en' || langParam === 'ar') {
 			lang = langParam as 'en' | 'ar';
 		}
@@ -53,7 +53,10 @@ export const load: LayoutLoad = async ({ url, depends }) => {
 		langLabel: {
 			en: 'English',
 			ar: 'العربية'
-		}
+		},
+		registeredAs: 'مؤسسة حافة النجوم',
+		commercialRegistration: '7050568158',
+		registeredAddress: 'حي الملز، الرياض، المملكة العربية السعودية'
 	};
 
 	// Return as Record<string, unknown> to avoid type conflicts, include home data

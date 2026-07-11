@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions/inView';
 	import { ChevronDown, MessageCircle, Phone, Sparkles } from '@lucide/svelte';
 	import { slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
@@ -390,7 +391,7 @@
 	<!-- Unified Spotlight - Radial gradient replaces blur for better performance -->
 	<div class="pointer-events-none absolute inset-0 z-0 opacity-30">
 		<div
-			class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
+			class="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
 			style="background: radial-gradient(circle, {currentTheme === 'dark'
 				? 'var(--color-brand-blue-glow)'
 				: 'var(--color-brand-blue)'} 0%, {currentTheme === 'dark'
@@ -401,15 +402,15 @@
 		></div>
 	</div>
 
-	<div class="container relative z-10 mx-auto px-6">
+	<div class="relative z-10 container mx-auto px-6">
 		<!-- Section Header -->
 		<div class="mx-auto mb-24 flex max-w-4xl flex-col items-center space-y-8 text-center">
 			<div
 				bind:this={badgeElement}
 				class="cinematic-glass-badge cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 			>
-				<Sparkles class="text-brand-orange h-4 w-4" />
-				<span class="text-brand-blue text-xs font-bold uppercase tracking-widest">
+				<Sparkles class="h-4 w-4 text-brand-orange" />
+				<span class="text-xs font-bold tracking-widest text-brand-blue uppercase">
 					{sectionHeader.badge}
 				</span>
 			</div>
@@ -418,14 +419,14 @@
 				<div class="contents">
 					<h2
 						bind:this={titleElement}
-						class="section-title text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-5xl"
+						class="section-title text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-5xl"
 					>
 						{sectionHeader.title}
 					</h2>
 
 					<p
 						bind:this={descElement}
-						class="section-description max-w-2xl text-lg font-medium leading-relaxed text-[var(--color-text-muted)] md:text-xl"
+						class="section-description max-w-2xl text-lg leading-relaxed font-medium text-[var(--color-text-muted)] md:text-xl"
 					>
 						{sectionHeader.subtitle}
 					</p>
@@ -437,13 +438,14 @@
 		<div class="relative mx-auto max-w-4xl space-y-6">
 			<!-- Vertical Connection Line (Data Backbone) -->
 			<div
-				class="pointer-events-none absolute bottom-0 start-[23px] top-0 hidden w-[2px] bg-[var(--color-brand-blue)] opacity-10 md:block"
+				class="pointer-events-none absolute start-[23px] top-0 bottom-0 hidden w-[2px] bg-[var(--color-brand-blue)] opacity-10 md:block"
 			></div>
 
 			{#each faqs as faq, index (faq.id + '-' + data.lang)}
 				<div
 					bind:this={interactiveCards[index]}
-					class="interactive-card cinematic-glass group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] transition-all duration-500 hover:bg-[var(--glass-bg)] {openFAQ ===
+					use:inView
+					class="interactive-card cinematic-glass group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] transition-all duration-500 hover:bg-[var(--glass-bg)] [&.in-view]:bg-[var(--glass-bg)] {openFAQ ===
 					index
 						? 'border-brand-blue/30 bg-[var(--glass-bg)]'
 						: 'bg-[var(--color-surface)]'}"
@@ -469,9 +471,10 @@
 
 					<!-- Connection Node -->
 					<div
-						class="border-brand-blue/40 bg-brand-blue/20 group-hover:border-brand-orange group-hover:bg-brand-orange absolute start-[19px] top-8 z-20 hidden h-[10px] w-[10px] rounded-full border transition-all duration-500 group-hover:shadow-[0_0_15px_rgba(251,98,32,0.5)] md:block {openFAQ ===
+						use:inView
+						class="absolute start-[19px] top-8 z-20 hidden h-[10px] w-[10px] rounded-full border border-brand-blue/40 bg-brand-blue/20 transition-all duration-500 group-hover:border-brand-orange group-hover:bg-brand-orange group-hover:shadow-[0_0_15px_rgba(251,98,32,0.5)] group-[.in-view]:border-brand-orange group-[.in-view]:bg-brand-orange group-[.in-view]:shadow-[0_0_15px_rgba(251,98,32,0.5)] md:block {openFAQ ===
 						index
-							? 'border-brand-orange bg-brand-orange scale-125 shadow-[0_0_15px_rgba(251,98,32,0.5)]'
+							? 'scale-125 border-brand-orange bg-brand-orange shadow-[0_0_15px_rgba(251,98,32,0.5)]'
 							: ''}"
 					></div>
 
@@ -483,28 +486,30 @@
 							<div class="mb-4 flex items-center gap-3">
 								<span
 									bind:this={categoryElements[index]}
-									class="faq-category-tag text-brand-blue group-hover:bg-brand-blue/20 inline-block rounded-full bg-[var(--glass-bg)] px-4 py-1 text-[10px] font-black uppercase tracking-widest transition-colors"
+									class="faq-category-tag inline-block rounded-full bg-[var(--glass-bg)] px-4 py-1 text-[10px] font-black tracking-widest text-brand-blue uppercase transition-colors group-hover:bg-brand-blue/20 group-[.in-view]:bg-brand-blue/20"
 								>
 									{faq.category}
 								</span>
 								<div
-									class="group-hover:bg-brand-blue/20 h-[1px] flex-1 bg-[var(--glass-border)] transition-all duration-700"
+									use:inView
+									class="h-[1px] flex-1 bg-[var(--glass-border)] transition-all duration-700 group-hover:bg-brand-blue/20 group-[.in-view]:bg-brand-blue/20"
 								></div>
 							</div>
 
 							<h3
 								bind:this={questionElements[index]}
-								class="group-hover:text-brand-blue text-xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500 md:text-2xl"
+								class="text-xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-blue group-[.in-view]:text-brand-blue md:text-2xl"
 							>
 								{faq.question}
 							</h3>
 						</div>
 
 						<div
-							class="group-hover:bg-brand-orange/10 ms-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--glass-bg)] transition-all duration-500"
+							use:inView
+							class="ms-6 flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--glass-bg)] transition-all duration-500 group-hover:bg-brand-orange/10 group-[.in-view]:bg-brand-orange/10"
 						>
 							<ChevronDown
-								class="text-brand-orange h-6 w-6 transition-all duration-500 {openFAQ === index
+								class="h-6 w-6 text-brand-orange transition-all duration-500 {openFAQ === index
 									? 'rotate-180'
 									: ''}"
 							/>
@@ -519,7 +524,7 @@
 							<div class="border-t border-[var(--glass-border)] ps-12 pt-8 text-start">
 								<p
 									bind:this={answerElements[index]}
-									class="faq-answer-text text-lg font-medium leading-relaxed text-[var(--color-text-muted)]"
+									class="faq-answer-text text-lg leading-relaxed font-medium text-[var(--color-text-muted)]"
 								>
 									{faq.answer}
 								</p>
@@ -536,22 +541,22 @@
 				{contactCTA.title}
 			</h3>
 			<p
-				class="mb-12 text-lg font-medium leading-relaxed text-[var(--color-text-muted)] md:text-xl"
+				class="mb-12 text-lg leading-relaxed font-medium text-[var(--color-text-muted)] md:text-xl"
 			>
 				{contactCTA.subtitle}
 			</p>
 			<a
-				href="https://wa.me/201112419980?text=%D9%83%D9%86%D8%AA%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9"
+				href="https://wa.me/966576704683?text=%D9%83%D9%86%D8%AA%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="bg-brand-blue hover:bg-brand-orange hover:shadow-brand-orange/50 focus:ring-brand-blue/50 inline-flex items-center justify-center rounded-full px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 focus:outline-none focus:ring-4"
+				class="inline-flex items-center justify-center rounded-full bg-brand-blue px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:bg-brand-orange hover:shadow-brand-orange/50 focus:ring-4 focus:ring-brand-blue/50 focus:outline-none [&.in-view]:bg-brand-orange [&.in-view]:shadow-brand-orange/50"
 			>
 				<MessageCircle class="me-3 h-6 w-6" />
 				{contactCTA.button}
 			</a>
 			<div class="mt-12 flex flex-col justify-center gap-8 sm:flex-row">
 				<div class="flex items-center gap-4">
-					<div class="bg-brand-blue/10 text-brand-blue rounded-full p-3">
+					<div class="rounded-full bg-brand-blue/10 p-3 text-brand-blue">
 						<MessageCircle class="h-6 w-6" />
 					</div>
 					<div>
@@ -560,7 +565,7 @@
 					</div>
 				</div>
 				<div class="flex items-center gap-4">
-					<div class="bg-brand-blue/10 text-brand-blue rounded-full p-3">
+					<div class="rounded-full bg-brand-blue/10 p-3 text-brand-blue">
 						<Phone class="h-6 w-6" />
 					</div>
 					<div>

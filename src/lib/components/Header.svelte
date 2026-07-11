@@ -6,6 +6,7 @@
 	import { page } from '$app/stores';
 	import { clearLanguageCache } from '$lib/utils/language';
 	import { base } from '$app/paths';
+	import { inView } from '$lib/actions/inView';
 
 	const props = $props<{ site?: any; lang: 'en' | 'ar' }>();
 	const site = $derived(props.site);
@@ -47,6 +48,10 @@
 		if (typeof window !== 'undefined' && $page?.url) {
 			const q = new URLSearchParams($page.url.search);
 			const qs = q.toString();
+			if (path.includes('#')) {
+				const [basePath, hash] = path.split('#');
+				return qs ? `${basePath}?${qs}#${hash}` : path;
+			}
 			return qs ? `${path}?${qs}` : path;
 		}
 		return path;
@@ -63,7 +68,7 @@
 		return `relative inline-flex items-center gap-1 text-sm md:text-base px-6 py-2 rounded-full transition-all duration-500 group overflow-hidden whitespace-nowrap z-10 ${
 			active
 				? 'text-white font-black scale-105'
-				: 'text-[var(--color-text-muted)] hover:text-[var(--color-text-base)] font-bold hover:bg-[var(--glass-highlight)]'
+				: 'text-[var(--color-text-muted)] hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)] font-bold hover:bg-[var(--glass-highlight)] group-[.in-view]:bg-[var(--glass-highlight)]'
 		}`;
 	}
 
@@ -105,6 +110,10 @@
 		{
 			path: `${base}/contact`,
 			label: site?.nav?.contact || (lang === 'ar' ? 'تواصل معنا' : 'Contact')
+		},
+		{
+			path: `${base}/#pricing`,
+			label: site?.nav?.pricing || (lang === 'ar' ? 'الأسعار' : 'Pricing')
 		}
 	]);
 
@@ -115,18 +124,35 @@
 		}
 		return currentPath.startsWith(path);
 	};
+
+	let scrollY = $state(0);
 </script>
 
-<header class="pointer-events-none fixed top-6 right-0 left-0 z-50 flex justify-center px-6">
+<svelte:window bind:scrollY />
+
+<header
+	class="pointer-events-none fixed top-6 right-0 left-0 z-50 flex justify-center px-6 transition-all duration-500 {scrollY >
+	20
+		? '-translate-y-2'
+		: ''}"
+>
 	<nav
-		class="cinematic-glass pointer-events-auto container grid max-w-5xl grid-cols-2 items-center rounded-full px-4 py-4 md:grid-cols-3 md:px-8"
+		class="cinematic-glass pointer-events-auto container grid max-w-5xl grid-cols-2 items-center rounded-full px-4 transition-all duration-500 md:grid-cols-3 md:px-8 {scrollY >
+		20
+			? 'bg-[var(--glass-bg)]/90 py-3 shadow-xl backdrop-blur-xl'
+			: 'py-4'}"
 		dir={lang === 'ar' ? 'rtl' : 'ltr'}
 	>
 		<!-- Logo Section -->
 		<div class="flex items-center justify-start">
-			<a href={link(`${base}/`)} class="group relative flex items-center" aria-label="Orcado Home">
+			<a
+				use:inView
+				href={link(`${base}/`)}
+				class="group relative flex flex-col items-start"
+				aria-label="Orcado Home"
+			>
 				<div
-					class="logo-container relative w-[120px] transition-transform duration-500 group-hover:scale-105 md:w-[150px]"
+					class="logo-container relative w-[120px] transition-transform duration-500 group-hover:scale-105 group-[.in-view]:scale-105 md:w-[130px]"
 					style="height: {logoHeight}px"
 				>
 					<img
@@ -139,6 +165,12 @@
 						fetchpriority="high"
 					/>
 				</div>
+				<h1
+					class="mt-0.5 text-2xl font-bold leading-tight text-[var(--color-text-dim)]"
+					style="font-family: 'Caveat', cursive;"
+				>
+					By Hafat Alnjom
+				</h1>
 			</a>
 		</div>
 
@@ -153,11 +185,11 @@
 
 				{#each navItems as item}
 					<li bind:this={navRefs[item.path]}>
-						<a class={navLinkClass(item.path)} href={link(item.path)}>
+						<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
 							<span class="relative z-10">{item.label}</span>
 							{#if !isActive(item.path)}
 								<div
-									class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0"
+									class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"
 								></div>
 							{/if}
 						</a>
@@ -179,19 +211,21 @@
 			>
 				<button
 					onclick={() => handleLanguageSwitch('en')}
-					class="rounded-full px-4 py-1.5 text-xs font-black transition-all duration-500 hover:scale-105 active:scale-95 {lang ===
+					use:inView
+					class="rounded-full px-4 py-1.5 text-xs font-black transition-all duration-500 hover:scale-105 active:scale-95 [&.in-view]:scale-105 {lang ===
 					'en'
 						? 'bg-brand-blue text-white shadow-lg'
-						: 'bg-brand-orange/20 text-brand-orange hover:bg-brand-orange/30'}"
+						: 'bg-brand-orange/20 text-brand-orange hover:bg-brand-orange/30 [&.in-view]:bg-brand-orange/30'}"
 				>
 					EN
 				</button>
 				<button
 					onclick={() => handleLanguageSwitch('ar')}
-					class="rounded-full px-4 py-1.5 text-xs font-black transition-all duration-500 hover:scale-105 active:scale-95 {lang ===
+					use:inView
+					class="rounded-full px-4 py-1.5 text-xs font-black transition-all duration-500 hover:scale-105 active:scale-95 [&.in-view]:scale-105 {lang ===
 					'ar'
 						? 'bg-brand-blue text-white shadow-lg'
-						: 'bg-brand-orange/20 text-brand-orange hover:bg-brand-orange/30'}"
+						: 'bg-brand-orange/20 text-brand-orange hover:bg-brand-orange/30 [&.in-view]:bg-brand-orange/30'}"
 				>
 					AR
 				</button>

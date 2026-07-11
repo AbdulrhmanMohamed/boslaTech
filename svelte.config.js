@@ -37,7 +37,7 @@ const config = {
 			$static: 'static'
 		},
 		paths: {
-			base: '/bosla-new'
+			base: ''
 		}
 	}
 };

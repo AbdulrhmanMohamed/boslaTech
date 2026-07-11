@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions/inView';
 	import { TrendingUp, Smartphone, Search, Palette, Code, Headphones } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
@@ -153,7 +154,7 @@
 	<!-- Unified Spotlight - Radial gradient replaces blur -->
 	<div class="pointer-events-none absolute inset-0 z-0 opacity-30">
 		<div
-			class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
+			class="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
 			style="background: radial-gradient(circle, {currentTheme === 'dark'
 				? 'var(--color-brand-blue-glow)'
 				: 'var(--color-brand-blue)'} 0%, {currentTheme === 'dark'
@@ -164,14 +165,14 @@
 		></div>
 	</div>
 
-	<div class="container relative z-10 mx-auto px-6">
+	<div class="relative z-10 container mx-auto px-6">
 		<!-- Header -->
 		<div class="mx-auto mb-20 flex max-w-4xl flex-col items-center space-y-8 text-center">
 			<div
-				class="cinematic-glass text-brand-blue inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2 text-xs font-black uppercase tracking-widest"
+				class="cinematic-glass inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2 text-xs font-black tracking-widest text-brand-blue uppercase"
 			>
 				<span
-					class="bg-brand-blue h-2 w-2 rounded-full"
+					class="h-2 w-2 rounded-full bg-brand-blue"
 					style="box-shadow: {currentTheme === 'dark'
 						? '0 0 10px rgba(0,119,255,0.5)'
 						: '0 0 8px rgba(0,119,255,0.3)'};"
@@ -180,14 +181,14 @@
 			</div>
 
 			<h2
-				class="text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-6xl"
+				class="text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-6xl"
 			>
 				{additionalFeatures.title.split(' ').slice(0, -1).join(' ')}
 				<span class="text-brand-blue">{additionalFeatures.title.split(' ').slice(-1)}</span>
 			</h2>
 
 			<p
-				class="max-w-2xl text-lg font-medium leading-relaxed text-[var(--color-text-muted)] md:text-xl"
+				class="max-w-2xl text-lg leading-relaxed font-medium text-[var(--color-text-muted)] md:text-xl"
 			>
 				{additionalFeatures.subtitle}
 			</p>
@@ -198,9 +199,10 @@
 			{#each additionalFeatures.features as feature, index}
 				{@const Icon = feature.icon}
 				<button
+					use:inView
 					class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2rem] p-6 transition-all duration-500 {openAccordion ===
 					index
-						? 'border-brand-blue/40 ring-brand-blue/20 ring-1'
+						? 'border-brand-blue/40 ring-1 ring-brand-blue/20'
 						: 'border-[var(--glass-border)]'}"
 					class:text-right={data?.lang === 'ar'}
 					class:text-left={data?.lang !== 'ar'}
@@ -208,7 +210,7 @@
 				>
 					<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
 					<div
-						class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0"
+						class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 group-[.in-view]:opacity-100"
 						style="left: 0; top: 0; background: radial-gradient(circle, {currentTheme === 'dark'
 							? 'rgba(11, 157, 217, 0.15)'
 							: 'rgba(11, 157, 217, 0.08)'} 0%, {currentTheme === 'dark'
@@ -222,16 +224,16 @@
 					>
 						<!-- Icon Container -->
 						<div
-							class="group-hover:border-brand-blue/20 group-hover:bg-brand-blue/10 relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all duration-500 group-hover:scale-110"
+							class="relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all duration-500 group-hover:scale-110 group-hover:border-brand-blue/20 group-hover:bg-brand-blue/10 group-[.in-view]:scale-110 group-[.in-view]:border-brand-blue/20 group-[.in-view]:bg-brand-blue/10"
 						>
 							<Icon
-								class="group-hover:text-brand-blue h-8 w-8 text-[var(--color-text-muted)] transition-colors duration-500"
+								class="h-8 w-8 text-[var(--color-text-muted)] transition-colors duration-500 group-hover:text-brand-blue group-[.in-view]:text-brand-blue"
 							/>
 						</div>
 
 						<div class="flex-1">
 							<h3
-								class="group-hover:text-brand-blue text-xl font-black text-[var(--color-text-base)] transition-colors duration-500"
+								class="text-xl font-black text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-blue group-[.in-view]:text-brand-blue"
 							>
 								{feature.title}
 							</h3>
@@ -239,7 +241,7 @@
 
 						<!-- Bottom Accent Line -->
 						<div
-							class="bg-brand-blue/30 absolute bottom-0 left-0 h-[3px] w-0 transition-all duration-1000 group-hover:w-full"
+							class="absolute bottom-0 left-0 h-[3px] w-0 bg-brand-blue/30 transition-all duration-1000 group-hover:w-full group-[.in-view]:w-full"
 							style="box-shadow: {currentTheme === 'dark'
 								? '0 0 20px rgba(0,119,255,0.5)'
 								: '0 0 15px rgba(0,119,255,0.3)'};"
@@ -248,8 +250,8 @@
 						<div
 							class="cinematic-glass flex h-10 w-10 items-center justify-center rounded-full border border-[var(--glass-border)] text-[var(--color-text-dim)] transition-all duration-500 {openAccordion ===
 							index
-								? 'border-brand-blue/30 text-brand-blue rotate-180'
-								: 'group-hover:border-brand-blue/20 group-hover:text-[var(--color-text-base)]'}"
+								? 'rotate-180 border-brand-blue/30 text-brand-blue'
+								: 'group-hover:border-brand-blue/20 group-hover:text-[var(--color-text-base)] group-[.in-view]:border-brand-blue/20 group-[.in-view]:text-[var(--color-text-base)]'}"
 						>
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -271,7 +273,7 @@
 							class="animate-in fade-in slide-in-from-top-4 relative z-10 mt-8 border-t border-[var(--glass-border)] pt-8 duration-500"
 						>
 							<p
-								class="text-base font-medium leading-relaxed text-[var(--color-text-muted)] md:text-lg"
+								class="text-base leading-relaxed font-medium text-[var(--color-text-muted)] md:text-lg"
 							>
 								{feature.description}
 							</p>

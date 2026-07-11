@@ -395,6 +395,37 @@
 
 		return () => cleanupFns.forEach((fn) => fn());
 	});
+
+	// Mobile Scroll Interaction (Auto-active cards)
+	$effect(() => {
+		if (typeof window === 'undefined') return;
+
+		const observerOptions = {
+			root: null,
+			rootMargin: '-20% 0px -20% 0px', // Active when in the middle 60% of screen
+			threshold: 0.5
+		};
+
+		const observerCallback = (entries: IntersectionObserverEntry[]) => {
+			const isMobile = window.matchMedia('(max-width: 768px)').matches;
+			if (!isMobile) return;
+
+			entries.forEach((entry) => {
+				const cardButton = entry.target.querySelector('.cinematic-glass');
+				if (entry.isIntersecting) {
+					cardButton?.classList.add('active-card');
+				} else {
+					cardButton?.classList.remove('active-card');
+				}
+			});
+		};
+
+		const observer = new IntersectionObserver(observerCallback, observerOptions);
+		const cards = document.querySelectorAll('.feature-card');
+		cards.forEach((card) => observer.observe(card));
+
+		return () => observer.disconnect();
+	});
 </script>
 
 <section
@@ -402,28 +433,29 @@
 	class="relative z-20 overflow-visible py-32"
 	dir={props.data?.lang === 'ar' ? 'rtl' : 'ltr'}
 >
-	<div class="container relative z-10 mx-auto px-6">
+	<div class="relative z-10 container mx-auto px-6">
 		<!-- Header -->
 		<div class="mx-auto mb-32 flex max-w-4xl flex-col items-center text-center">
 			<div
 				class="cinematic-glass-badge cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 			>
-				<Sparkles class="text-brand-orange h-4 w-4" />
-				<span class="text-xs font-black uppercase tracking-widest text-[var(--color-text-muted)]"
+				<Sparkles class="h-4 w-4 text-brand-orange" />
+				<span
+					class="text-xs font-black tracking-widest text-[var(--color-text-muted)] uppercase [text-shadow:var(--glass-text-shadow)]"
 					>{sectionHeader.badge}</span
 				>
 			</div>
 
 			{#key props.data?.lang}
 				<h2
-					class="section-title mb-8 text-5xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-7xl"
+					class="section-title mb-8 text-5xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-7xl"
 				>
 					{sectionHeader.title.split(' ').slice(0, -1).join(' ')}
 					<span class="text-brand-orange">{sectionHeader.title.split(' ').slice(-1)}</span>
 				</h2>
 
 				<p
-					class="section-description mx-auto max-w-2xl text-xl font-medium leading-relaxed text-[var(--color-text-muted)] md:text-2xl"
+					class="section-description mx-auto max-w-2xl text-xl leading-relaxed font-medium text-[var(--color-text-muted)] md:text-2xl"
 				>
 					{sectionHeader.subtitle}
 				</p>
@@ -443,7 +475,7 @@
 						>
 							<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
 							<div
-								class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity duration-100 group-hover/card:opacity-100 group-focus/card:opacity-100 group-active/card:opacity-100"
+								class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity duration-500 group-hover/card:opacity-100 group-focus/card:opacity-100 group-active/card:opacity-100 group-[.active-card]/card:opacity-100"
 								style="left: 0; top: 0; background: radial-gradient(circle, {currentTheme === 'dark'
 									? 'var(--color-brand-blue-glow)'
 									: 'transparent'} 0%, {currentTheme === 'dark'
@@ -458,26 +490,26 @@
 								<!-- Icon Container -->
 								<div class="relative z-10 h-20 w-20 md:h-24 md:w-24">
 									<div
-										class="group-hover/card:border-brand-orange/40 group-focus/card:border-brand-orange/40 group-active/card:border-brand-orange/40 relative z-10 flex h-full w-full items-center justify-center rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] shadow-2xl transition-all duration-100 group-hover/card:rotate-3 group-hover/card:scale-110 group-focus/card:rotate-3 group-focus/card:scale-110 group-active/card:rotate-3 group-active/card:scale-110"
+										class="relative z-10 flex h-full w-full items-center justify-center rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] shadow-2xl transition-all duration-500 group-hover/card:scale-110 group-hover/card:rotate-3 group-hover/card:border-brand-orange/40 group-focus/card:scale-110 group-focus/card:rotate-3 group-focus/card:border-brand-orange/40 group-active/card:scale-110 group-active/card:rotate-3 group-active/card:border-brand-orange/40 group-[.active-card]/card:scale-110 group-[.active-card]/card:rotate-3 group-[.active-card]/card:border-brand-orange/40"
 									>
 										<Icon
-											class="text-brand-blue group-hover/card:text-brand-orange group-focus/card:text-brand-orange group-active/card:text-brand-orange h-10 w-10 transition-all duration-100 group-hover/card:scale-110 group-focus/card:scale-110 group-active/card:scale-110 md:h-12 md:w-12"
+											class="h-10 w-10 text-brand-blue transition-all duration-500 group-hover/card:scale-110 group-hover/card:text-brand-orange group-focus/card:scale-110 group-focus/card:text-brand-orange group-active/card:scale-110 group-active/card:text-brand-orange group-[.active-card]/card:scale-110 group-[.active-card]/card:text-brand-orange md:h-12 md:w-12"
 										/>
 									</div>
 
 									<!-- Dynamic Glow behind icon -->
 									<div
-										class="bg-brand-blue/10 absolute -inset-4 rounded-full opacity-40 blur-[30px] transition-all duration-100 group-hover/card:scale-150 group-hover/card:opacity-0 group-focus/card:scale-150 group-focus/card:opacity-0 group-active/card:scale-150 group-active/card:opacity-0"
+										class="absolute -inset-4 rounded-full bg-brand-blue/10 opacity-40 blur-[30px] transition-all duration-500 group-hover/card:scale-150 group-hover/card:opacity-0 group-focus/card:scale-150 group-focus/card:opacity-0 group-active/card:scale-150 group-active/card:opacity-0 group-[.active-card]/card:scale-150 group-[.active-card]/card:opacity-0"
 									></div>
 									<div
-										class="bg-brand-orange/10 absolute -inset-4 rounded-full opacity-0 blur-[30px] transition-all duration-100 group-hover/card:scale-150 group-hover/card:opacity-40 group-focus/card:scale-150 group-focus/card:opacity-40 group-active/card:scale-150 group-active/card:opacity-40"
+										class="absolute -inset-4 rounded-full bg-brand-orange/10 opacity-0 blur-[30px] transition-all duration-500 group-hover/card:scale-150 group-hover/card:opacity-40 group-focus/card:scale-150 group-focus/card:opacity-40 group-active/card:scale-150 group-active/card:opacity-40 group-[.active-card]/card:scale-150 group-[.active-card]/card:opacity-40"
 									></div>
 								</div>
 
 								<!-- Number -->
 								<div
-									class="pointer-events-none select-none text-8xl font-black tracking-tighter opacity-[0.03] transition-all duration-100 group-hover/card:scale-110 group-focus/card:scale-110 group-active/card:scale-110 dark:opacity-[0.05]"
-									style="color: var(--color-text-base); line-height: 1;"
+									class="pointer-events-none text-8xl font-black tracking-tighter opacity-[0.03] transition-all duration-500 select-none group-hover/card:scale-110 group-focus/card:scale-110 group-active/card:scale-110 group-[.active-card]/card:scale-110 dark:opacity-[0.05]"
+									style="color: var(--color-text-base); line-height: 1; text-shadow: var(--glass-text-shadow);"
 								>
 									0{i + 1}
 								</div>
@@ -487,23 +519,23 @@
 							<div class="relative z-10 flex flex-grow flex-col items-start space-y-8">
 								<div class="flex flex-col items-start space-y-4">
 									<div
-										class="border-brand-blue/10 bg-brand-blue/5 group-hover/card:border-brand-orange/20 group-hover/card:bg-brand-orange/10 group-focus/card:border-brand-orange/20 group-focus/card:bg-brand-orange/10 group-active/card:border-brand-orange/20 group-active/card:bg-brand-orange/10 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 transition-all duration-100"
+										class="inline-flex items-center gap-2 rounded-full border border-brand-blue/10 bg-brand-blue/5 px-5 py-2.5 transition-all duration-500 group-hover/card:border-brand-orange/20 group-hover/card:bg-brand-orange/10 group-focus/card:border-brand-orange/20 group-focus/card:bg-brand-orange/10 group-active/card:border-brand-orange/20 group-active/card:bg-brand-orange/10 group-[.active-card]/card:border-brand-orange/20 group-[.active-card]/card:bg-brand-orange/10"
 									>
 										<span
-											class="text-brand-blue group-hover/card:text-brand-orange group-focus/card:text-brand-orange group-active/card:text-brand-orange text-[10px] font-black uppercase tracking-[0.2em] transition-colors duration-100 md:text-xs"
+											class="text-sm font-black tracking-[0.15em] text-brand-blue uppercase transition-colors duration-500 [text-shadow:var(--glass-text-shadow)] group-hover/card:text-brand-orange group-focus/card:text-brand-orange group-active/card:text-brand-orange group-[.active-card]/card:text-brand-orange md:text-base"
 										>
 											{feature.subtitle}
 										</span>
 									</div>
 									<h3
-										class="group-hover/card:text-brand-orange group-focus/card:text-brand-orange group-active/card:text-brand-orange text-start text-3xl font-black leading-tight tracking-tighter text-[var(--color-text-base)] transition-colors duration-100 md:text-4xl lg:text-5xl"
+										class="text-start text-3xl leading-tight font-black tracking-tighter text-[var(--color-text-base)] transition-colors duration-500 [text-shadow:var(--glass-text-shadow)] group-hover/card:text-brand-orange group-focus/card:text-brand-orange group-active/card:text-brand-orange group-[.active-card]/card:text-brand-orange md:text-4xl lg:text-5xl"
 									>
 										{feature.title}
 									</h3>
 								</div>
 
 								<p
-									class="mt-4 max-w-sm text-start text-lg font-medium leading-relaxed text-[var(--color-text-dim)] transition-colors duration-100 group-hover/card:text-[var(--color-text-muted)] group-focus/card:text-[var(--color-text-muted)] group-active/card:text-[var(--color-text-muted)] md:text-xl"
+									class="mt-4 max-w-sm text-start text-lg leading-relaxed font-medium text-[var(--color-text-dim)] transition-colors duration-500 [text-shadow:var(--glass-text-shadow)] group-hover/card:text-[var(--color-text-muted)] group-focus/card:text-[var(--color-text-muted)] group-active/card:text-[var(--color-text-muted)] group-[.active-card]/card:text-[var(--color-text-muted)] md:text-xl"
 								>
 									{feature.description}
 								</p>
@@ -513,13 +545,13 @@
 
 								<!-- Bottom Accent Line -->
 								<div
-									class="bg-brand-orange/50 absolute bottom-[-10px] start-0 h-[3px] w-0 shadow-[0_0_15px_rgba(251,98,32,0.3)] transition-all duration-100 group-hover/card:w-full group-focus/card:w-full group-active/card:w-full"
+									class="absolute start-0 bottom-[-10px] h-[3px] w-0 bg-brand-orange/50 shadow-[0_0_15px_rgba(251,98,32,0.3)] transition-all duration-500 group-hover/card:w-full group-focus/card:w-full group-active/card:w-full group-[.active-card]/card:w-full"
 								></div>
 							</div>
 
 							<!-- Border Glow Micro-interaction -->
 							<div
-								class="border-brand-blue/0 group-hover/card:border-brand-orange/20 group-focus/card:border-brand-orange/20 group-active/card:border-brand-orange/20 pointer-events-none absolute inset-0 rounded-[3rem] border transition-all duration-700"
+								class="pointer-events-none absolute inset-0 rounded-[3rem] border border-brand-blue/0 transition-all duration-700 group-hover/card:border-brand-orange/20 group-focus/card:border-brand-orange/20 group-active/card:border-brand-orange/20 group-[.active-card]/card:border-brand-orange/20"
 							></div>
 						</button>
 					</div>

@@ -44,5 +44,3 @@
 		class="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 	></div>
 </button>
-
-

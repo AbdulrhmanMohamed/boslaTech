@@ -163,7 +163,7 @@ Instead of blur, we use radial gradients which create a similar glow effect but 
 ```svelte
 <!-- BEFORE -->
 <div
-	class="absolute top-1/4 -left-1/4 h-[60%] w-[60%] rounded-full blur-[180px]"   
+	class="absolute top-1/4 -left-1/4 h-[60%] w-[60%] rounded-full blur-[180px]"
 	style="background: var(--color-brand-blue-glow);"
 ></div>
 

@@ -5,12 +5,12 @@
 	let { lang }: { lang: 'en' | 'ar' } = $props();
 
 	// Phone Number
-	const phoneNumber = '201112419980';
-	
+	const phoneNumber = '966576704683';
+
 	// Message in Egyptian Arabic (Franco/Arabic script)
 	// "want to know details about ur website design" -> "كنت عايز استفسر عن تفاصيل تصميم الموقع"
 	const message = encodeURIComponent('كنت عايز استفسر عن تفاصيل تصميم الموقع');
-	
+
 	const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
 	let isHovered = $state(false);
@@ -21,7 +21,7 @@
 	href={whatsappUrl}
 	target="_blank"
 	rel="noopener noreferrer"
-	class="fixed z-50 flex items-center justify-center transition-all duration-300 group"
+	class="group fixed z-50 flex items-center justify-center transition-all duration-300"
 	class:left-6={lang === 'en'}
 	class:right-6={lang === 'ar'}
 	class:bottom-6={true}
@@ -31,7 +31,7 @@
 >
 	<!-- Tooltip/Message Bubble -->
 	<div
-		class="absolute bottom-full mb-4 whitespace-nowrap rounded-xl px-4 py-2 text-sm font-bold shadow-lg transition-all duration-300 opacity-0 transform translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0"
+		class="pointer-events-none absolute bottom-full mb-4 translate-y-2 transform rounded-xl px-4 py-2 text-sm font-bold whitespace-nowrap opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
 		class:left-0={lang === 'en'}
 		class:right-0={lang === 'ar'}
 		style="background-color: var(--color-surface); color: var(--color-text-base); border: 1px solid var(--glass-border);"
@@ -39,9 +39,9 @@
 		<span class="text-brand-orange">
 			{lang === 'ar' ? 'تواصل معنا' : 'Chat with us'}
 		</span>
-		
+
 		<!-- Arrow -->
-		<div 
+		<div
 			class="absolute top-full h-0 w-0 border-x-8 border-t-8 border-x-transparent"
 			class:left-6={lang === 'en'}
 			class:right-6={lang === 'ar'}
@@ -51,12 +51,12 @@
 
 	<!-- Button Circle -->
 	<div
-		class="relative flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:-translate-y-1"
+		class="relative flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-110"
 		style="background: {isHovered ? 'var(--color-brand-orange)' : 'var(--color-brand-blue)'};"
 	>
 		<!-- Pulse Effect -->
 		<div
-			class="absolute inset-0 -z-10 rounded-full opacity-75 animate-ping"
+			class="absolute inset-0 -z-10 animate-ping rounded-full opacity-75"
 			style="background: {isHovered ? 'var(--color-brand-orange)' : 'var(--color-brand-blue)'};"
 		></div>
 

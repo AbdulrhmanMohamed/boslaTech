@@ -19,16 +19,17 @@
 	--color-background: var(--color-brand-black);
 	--color-surface: var(--color-brand-deep);
 	--color-on-surface: #ffffff;
-	--color-on-surface-muted: rgba(255, 255, 255, 0.6);
+	--color-on-surface-muted: #ffffff;
 	--color-text-base: #ffffff;
-	--color-text-muted: rgba(255, 255, 255, 0.6);
-	--color-text-dim: rgba(255, 255, 255, 0.4);
+	--color-text-muted: #ffffff;
+	--color-text-dim: rgba(255, 255, 255, 0.9);
 
 	/* Glassmorphism Tokens */
-	--glass-bg: rgba(15, 15, 20, 0.6);
-	--glass-blur: 32px;
+	--glass-bg: rgba(15, 15, 20, 0.05);
+	--glass-blur: 4px;
 	--glass-border: rgba(255, 255, 255, 0.12);
 	--glass-highlight: rgba(255, 255, 255, 0.08);
+	--glass-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
 
 	/* Premium Shadow */
 	--premium-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -79,10 +80,11 @@
 	--color-text-dim: #94a3b8;
 
 	/* Reimagined Light Glass */
-	--glass-bg: rgba(255, 255, 255, 0.65);
-	--glass-blur: 32px;
+	--glass-bg: rgba(255, 255, 255, 0.05);
+	--glass-blur: 4px;
 	--glass-border: rgba(11, 157, 217, 0.2);
 	--glass-highlight: rgba(11, 157, 217, 0.1);
+	--glass-text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.7);
 
 	/* Specific Light Cards */
 	--obsidian-bg: rgba(255, 255, 255, 0.95);
@@ -141,7 +143,7 @@ section {
 /* Premium Utilities */
 @layer components {
 	.cinematic-glass {
-		@apply backdrop-blur-[24px] transition-all duration-700 ease-out;
+		@apply backdrop-blur-[var(--glass-blur)] transition-all duration-700 ease-out;
 		contain: layout paint;
 		transform: translateZ(0);
 		will-change: transform;
@@ -150,9 +152,11 @@ section {
 		box-shadow:
 			inset 0 0 0 1px var(--glass-highlight),
 			var(--premium-shadow);
+		text-shadow: var(--glass-text-shadow);
 	}
 
-	.cinematic-glass:hover {
+	.cinematic-glass:hover,
+	.cinematic-glass.in-view {
 		border-color: var(--color-primary);
 		box-shadow:
 			inset 0 0 0 1px var(--glass-highlight),
@@ -166,7 +170,8 @@ section {
 		border: 1px solid var(--glass-border);
 	}
 
-	.interactive-card:hover {
+	.interactive-card:hover,
+	.interactive-card.in-view {
 		will-change: transform;
 		@apply -translate-y-1;
 		border-color: var(--color-primary);
@@ -188,7 +193,8 @@ section {
 			0 0 0 0 rgba(11, 157, 217, 0);
 	}
 
-	.btn-primary:hover {
+	.btn-primary:hover,
+	.btn-primary.in-view {
 		@apply -translate-y-2 scale-[1.05];
 		background-color: color-mix(in srgb, var(--color-brand-blue), white 10%);
 		box-shadow:
@@ -201,13 +207,13 @@ section {
 		@apply absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-1000 ease-in-out;
 	}
 
-	.btn-primary:hover::before {
+	.btn-primary:hover::before,
+	.btn-primary.in-view::before {
 		@apply translate-x-full;
 	}
 
 	.btn-secondary {
-		@apply relative flex items-center justify-center overflow-hidden rounded-2xl px-10 py-5 text-lg font-black transition-all duration-700 ease-out;
-		@apply backdrop-blur-[24px];
+		@apply relative flex items-center justify-center overflow-hidden rounded-2xl px-10 py-5 text-lg font-black backdrop-blur-[var(--glass-blur)] transition-all duration-700 ease-out;
 		color: var(--color-text-base);
 		background: var(--glass-bg);
 		border: 1px solid var(--glass-border);
@@ -216,7 +222,8 @@ section {
 			var(--premium-shadow);
 	}
 
-	.btn-secondary:hover {
+	.btn-secondary:hover,
+	.btn-secondary.in-view {
 		@apply -translate-y-2;
 		border-color: var(--color-primary);
 		box-shadow:

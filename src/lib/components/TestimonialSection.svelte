@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions/inView';
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -218,7 +219,7 @@
 	<!-- Unified Spotlight Background - Radial gradient replaces blur -->
 	<div class="pointer-events-none absolute inset-0 z-0 opacity-30">
 		<div
-			class="absolute left-1/2 top-1/2 h-[1000px] w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
+			class="absolute top-1/2 left-1/2 h-[1000px] w-[1000px] -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
 			style="background: radial-gradient(circle, {currentTheme === 'dark'
 				? 'var(--color-brand-orange-glow)'
 				: 'var(--color-brand-orange)'} 0%, {currentTheme === 'dark'
@@ -229,30 +230,30 @@
 		></div>
 	</div>
 
-	<div class="container relative z-10 mx-auto mb-20 px-6">
+	<div class="relative z-10 container mx-auto mb-20 px-6">
 		<div
 			class="max-w-4xl {data?.lang === 'ar'
 				? 'mr-0 items-end text-right'
 				: 'ml-0 items-start text-left'} mx-auto flex flex-col items-center text-center"
 		>
 			<div
-				class="cinematic-glass text-brand-orange mb-8 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2 text-xs font-black uppercase tracking-widest"
+				class="cinematic-glass mb-8 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2 text-xs font-black tracking-widest text-brand-orange uppercase"
 			>
 				<span
-					class="bg-brand-orange h-2 w-2 animate-pulse rounded-full shadow-[0_0_10px_rgba(255,107,0,0.5)]"
+					class="h-2 w-2 animate-pulse rounded-full bg-brand-orange shadow-[0_0_10px_rgba(255,107,0,0.5)]"
 				></span>
 				{sectionHeader.badge}
 			</div>
 
 			<h2
-				class="section-title mb-8 text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-6xl"
+				class="section-title mb-8 text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-6xl"
 			>
 				{sectionHeader.title.split(' ').slice(0, -2).join(' ')}
 				<span class="text-brand-orange">{sectionHeader.title.split(' ').slice(-2).join(' ')}</span>
 			</h2>
 
 			<p
-				class="section-description max-w-2xl text-lg font-medium leading-relaxed text-[var(--color-text-muted)] md:text-xl"
+				class="section-description max-w-2xl text-lg leading-relaxed font-medium text-[var(--color-text-muted)] md:text-xl"
 			>
 				{sectionHeader.subtitle}
 			</p>
@@ -261,27 +262,28 @@
 
 	<!-- Infinite Marquee -->
 	<div class="relative overflow-hidden py-10">
-		<div bind:this={marqueeRef} class="flex gap-8 whitespace-nowrap px-4">
+		<div bind:this={marqueeRef} class="flex gap-8 px-4 whitespace-nowrap">
 			<!-- Double the items for seamless loop -->
 			{#each [...testimonials, ...testimonials] as t}
 				<div class="inline-block w-[400px] flex-shrink-0">
 					<div
-						class="testimonial-card cinematic-glass hover:border-brand-orange/30 group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] bg-[var(--color-surface)] p-8 transition-all duration-500"
+						use:inView
+						class="testimonial-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] bg-[var(--color-surface)] p-8 transition-all duration-500 hover:border-brand-orange/30 [&.in-view]:border-brand-orange/30"
 					>
 						<!-- Dynamic Spotlight Glow -->
 						<div
-							class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 blur-[80px]"
+							class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 blur-[80px] group-[.in-view]:opacity-100"
 							style="left: 0; top: 0; background: {currentTheme === 'dark'
 								? 'rgba(var(--color-brand-orange-rgb), 0.1)'
 								: 'transparent'};"
 						></div>
 
 						<Quote
-							class="group-hover:text-brand-orange/10 absolute right-8 top-6 h-10 w-10 text-[var(--color-text-base)] opacity-5 transition-colors duration-500"
+							class="absolute top-6 right-8 h-10 w-10 text-[var(--color-text-base)] opacity-5 transition-colors duration-500 group-hover:text-brand-orange/10 group-[.in-view]:text-brand-orange/10"
 						/>
 
 						<div class="relative z-10 mb-6 flex items-center gap-4">
-							<div class="border-brand-orange/20 h-14 w-14 overflow-hidden rounded-full border-2">
+							<div class="h-14 w-14 overflow-hidden rounded-full border-2 border-brand-orange/20">
 								<img src={t.image} alt={t.name} class="h-full w-full object-cover" />
 							</div>
 							<div>
@@ -292,19 +294,19 @@
 
 						<div class="relative z-10 mb-4 flex gap-1">
 							{#each Array(t.rating) as _}
-								<Star class="fill-brand-orange text-brand-orange h-4 w-4" />
+								<Star class="h-4 w-4 fill-brand-orange text-brand-orange" />
 							{/each}
 						</div>
 
 						<p
-							class="relative z-10 whitespace-normal text-lg italic leading-relaxed text-[var(--color-text-muted)]"
+							class="relative z-10 text-lg leading-relaxed whitespace-normal text-[var(--color-text-muted)] italic"
 						>
 							"{t.content}"
 						</p>
 
 						<!-- Bottom Accent Line -->
 						<div
-							class="bg-brand-orange/50 absolute bottom-0 left-0 h-[2px] w-0 shadow-[0_0_20px_rgba(255,107,0,0.3)] transition-all duration-700 group-hover:w-full"
+							class="absolute bottom-0 left-0 h-[2px] w-0 bg-brand-orange/50 shadow-[0_0_20px_rgba(255,107,0,0.3)] transition-all duration-700 group-hover:w-full group-[.in-view]:w-full"
 						></div>
 					</div>
 				</div>

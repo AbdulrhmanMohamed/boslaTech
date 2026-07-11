@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions/inView';
 	import { theme } from '$lib/stores/theme.svelte';
 	import {
 		Globe,
@@ -401,7 +402,7 @@
 	<!-- Unified Spotlight - Radial gradients replace blur for better performance -->
 	<div class="pointer-events-none absolute inset-0 z-0 opacity-40">
 		<div
-			class="absolute -left-1/4 top-1/4 h-[60%] w-[60%] rounded-full transition-colors duration-1000"
+			class="absolute top-1/4 -left-1/4 h-[60%] w-[60%] rounded-full transition-colors duration-1000"
 			style="background: radial-gradient(circle, {currentTheme === 'dark'
 				? 'var(--color-brand-blue-glow)'
 				: 'var(--color-brand-blue)'} 0%, {currentTheme === 'dark'
@@ -422,25 +423,25 @@
 		></div>
 	</div>
 
-	<div class="container relative z-10 mx-auto px-6">
+	<div class="relative z-10 container mx-auto px-6">
 		<div class="mx-auto mb-24 flex max-w-4xl flex-col items-center space-y-8 text-center">
 			<div
 				class="cinematic-glass-badge cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 			>
-				<Sparkles class="text-brand-orange h-4 w-4" />
-				<span class="text-brand-blue text-xs font-bold uppercase tracking-widest">
+				<Sparkles class="h-4 w-4 text-brand-orange" />
+				<span class="text-xs font-bold tracking-widest text-brand-blue uppercase">
 					{sectionHeader.badge}
 				</span>
 			</div>
 			{#key data?.lang}
 				<h2
-					class="section-title text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-5xl"
+					class="section-title text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-5xl"
 				>
 					{sectionHeader.title.split(' ').slice(0, -1).join(' ')}
 					<span class="text-brand-orange">{sectionHeader.title.split(' ').slice(-1)}</span>
 				</h2>
 				<p
-					class="section-description max-w-2xl text-lg font-medium leading-relaxed text-[var(--color-text-dim)] md:text-xl"
+					class="section-description max-w-2xl text-lg leading-relaxed font-medium text-[var(--color-text-dim)] md:text-xl"
 				>
 					{sectionHeader.subtitle}
 				</p>
@@ -453,8 +454,9 @@
 					{@const Icon = service.iconComponent}
 					<div class="service-card-container perspective-1000">
 						<button
+							use:inView
 							onclick={() => openService(service)}
-							class="interactive-card cinematic-glass hover:border-brand-blue/40 group relative flex h-full w-full flex-col items-center overflow-hidden rounded-[2.5rem] p-8 text-center transition-all duration-500 md:p-10"
+							class="interactive-card cinematic-glass group relative flex h-full w-full flex-col items-center overflow-hidden rounded-[2.5rem] p-8 text-center transition-all duration-500 hover:border-brand-blue/40 md:p-10 [&.in-view]:border-brand-blue/40"
 						>
 							<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
 							<div
@@ -481,44 +483,45 @@
 							<div class="relative z-10 flex w-full flex-grow flex-col items-center">
 								<!-- Icon Box - Premium Style - Centered -->
 								<div
-									class="border-brand-blue/20 group-hover:border-brand-blue/40 mb-10 flex h-20 w-20 items-center justify-center rounded-2xl border bg-[var(--glass-highlight)] shadow-2xl transition-all duration-500 group-hover:rotate-3 group-hover:scale-110"
+									class="mb-10 flex h-20 w-20 items-center justify-center rounded-2xl border border-brand-blue/20 bg-[var(--glass-highlight)] shadow-2xl transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:border-brand-blue/40 group-[.in-view]:scale-110 group-[.in-view]:rotate-3 group-[.in-view]:border-brand-orange/40"
 								>
 									<Icon
-										class="text-brand-blue group-hover:text-brand-blue-glow h-10 w-10 transition-all duration-500"
+										class="h-10 w-10 text-brand-blue transition-all duration-500 group-hover:text-brand-blue-glow group-[.in-view]:text-brand-orange"
 									/>
 								</div>
 
 								<h3
-									class="group-hover:text-brand-blue-glow mb-6 text-center text-2xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500 md:text-3xl"
+									class="mb-6 text-center text-2xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-blue-glow group-[.in-view]:text-brand-orange md:text-3xl"
 								>
 									{service.title}
 								</h3>
 								<p
-									class="mb-10 line-clamp-3 max-w-sm text-center text-lg font-medium leading-relaxed text-[var(--color-text-muted)] transition-colors duration-500 group-hover:text-[var(--color-text-base)]"
+									class="mb-10 line-clamp-3 max-w-sm text-center text-lg leading-relaxed font-medium text-[var(--color-text-muted)] transition-colors duration-500 group-hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)]"
 								>
 									{service.description}
 								</p>
 
 								<!-- Bottom Accent Line -->
 								<div
-									class="bg-brand-blue/30 absolute bottom-0 left-0 h-[3px] w-0 transition-all duration-1000 group-hover:w-full"
+									class="absolute bottom-0 left-0 h-[3px] w-0 bg-brand-blue/30 transition-all duration-1000 group-hover:w-full group-[.in-view]:w-full group-[.in-view]:bg-brand-orange/30"
 								></div>
 							</div>
 
 							<!-- Bottom Action - Centered -->
 							<div
-								class="text-brand-blue relative z-10 flex items-center justify-center gap-3 text-sm font-black uppercase tracking-widest transition-all duration-500 group-hover:gap-5"
+								class="relative z-10 flex items-center justify-center gap-3 text-sm font-black tracking-widest text-brand-blue uppercase transition-all duration-500 group-hover:gap-5 group-[.in-view]:gap-5 group-[.in-view]:text-brand-orange"
 								class:flex-row-reverse={data?.lang === 'ar'}
 							>
-								<span class="transition-colors group-hover:text-[var(--color-text-base)]"
+								<span
+									class="transition-colors group-hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)]"
 									>{sectionHeader.buttonText}</span
 								>
 								<div
-									class="border-brand-blue/20 group-hover:border-brand-blue/40 group-hover:bg-brand-blue/10 flex h-10 w-10 items-center justify-center rounded-full border transition-all"
+									class="flex h-10 w-10 items-center justify-center rounded-full border border-brand-blue/20 transition-all group-hover:border-brand-blue/40 group-hover:bg-brand-blue/10 group-[.in-view]:border-brand-orange/40 group-[.in-view]:bg-brand-orange/10"
 								>
 									<div
 										class:rotate-180={data?.lang === 'ar'}
-										class="transition-transform group-hover:translate-x-1"
+										class="transition-transform group-hover:translate-x-1 group-[.in-view]:translate-x-1"
 									>
 										<ArrowRight class="h-4 w-4" />
 									</div>
@@ -536,28 +539,28 @@
 {#if modalOpen && selectedService}
 	{@const ModalIcon = iconMap[selectedService.icon || 'code'] || Code}
 	<div
-		class="bg-[var(--color-background)]/80 fixed inset-0 z-[100] flex items-center justify-center p-6 backdrop-blur-2xl"
+		class="fixed inset-0 z-[100] flex items-center justify-center bg-[var(--color-background)]/80 p-6 backdrop-blur-2xl"
 		in:fade={{ duration: 300 }}
 	>
 		<div
-			class="cinematic-glass border-brand-blue/30 relative w-full max-w-2xl overflow-hidden rounded-[3rem] border p-12 shadow-[0_30px_60px_rgba(0,119,255,0.2)]"
+			class="cinematic-glass relative w-full max-w-2xl overflow-hidden rounded-[3rem] border border-brand-blue/30 p-12 shadow-[0_30px_60px_rgba(0,119,255,0.2)]"
 			in:fly={{ y: 50, duration: 600, easing: cubicOut }}
 			dir={data?.lang === 'ar' ? 'rtl' : 'ltr'}
 		>
 			<button
 				onclick={closeModal}
-				class="cinematic-glass border-brand-blue/20 hover:border-brand-blue/40 hover:bg-brand-blue/10 absolute right-8 top-8 flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300"
+				class="cinematic-glass absolute top-8 right-8 flex h-12 w-12 items-center justify-center rounded-full border border-brand-blue/20 transition-all duration-300 hover:border-brand-blue/40 hover:bg-brand-blue/10"
 				class:right-auto={data?.lang === 'ar'}
 				class:left-8={data?.lang === 'ar'}
 			>
-				<X class="text-brand-blue h-6 w-6" />
+				<X class="h-6 w-6 text-brand-blue" />
 			</button>
 
 			<div class="space-y-8">
 				<div
-					class="border-brand-blue/20 bg-brand-blue/10 flex h-24 w-24 items-center justify-center rounded-3xl border"
+					class="flex h-24 w-24 items-center justify-center rounded-3xl border border-brand-blue/20 bg-brand-blue/10"
 				>
-					<ModalIcon class="text-brand-blue h-12 w-12" />
+					<ModalIcon class="h-12 w-12 text-brand-blue" />
 				</div>
 
 				<div class="space-y-4">
@@ -566,16 +569,16 @@
 					>
 						{selectedService.title}
 					</h2>
-					<div class="bg-brand-blue h-1 w-20 rounded-full"></div>
+					<div class="h-1 w-20 rounded-full bg-brand-blue"></div>
 				</div>
 
-				<p class="text-xl font-medium leading-relaxed text-[var(--color-text-muted)]">
+				<p class="text-xl leading-relaxed font-medium text-[var(--color-text-muted)]">
 					{selectedService.description}
 				</p>
 
 				<button
 					onclick={closeModal}
-					class="bg-brand-blue shadow-brand-blue/20 hover:bg-brand-blue-glow w-full rounded-2xl py-6 text-lg font-black uppercase tracking-widest text-white shadow-xl transition-all duration-500 active:scale-95"
+					class="w-full rounded-2xl bg-brand-blue py-6 text-lg font-black tracking-widest text-white uppercase shadow-xl shadow-brand-blue/20 transition-all duration-500 hover:bg-brand-blue-glow active:scale-95"
 				>
 					{data?.lang === 'ar' ? 'إغلاق' : 'Close'}
 				</button>

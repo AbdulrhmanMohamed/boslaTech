@@ -8,8 +8,14 @@
 				"alt": "BOSLA team"
 			}
 		},
-		"addresses": [],
-		"phones": [{ "label": "Phone", "value": "+20 111 2419980" }],
+		"addresses": [
+			{
+				"label": "Saudi Arabia",
+				"value": "Al Malaz, Riyadh, Saudi Arabia",
+				"mapUrl": "https://maps.google.com/?q=Al+Malaz+Riyadh+Saudi+Arabia"
+			}
+		],
+		"phones": [{ "label": "Phone", "value": "+966 57 670 4683" }],
 		"emails": [],
 		"social": [
 			{ "platform": "LinkedIn", "url": "https://linkedin.com/company/bosla" },
@@ -25,7 +31,14 @@
 				"alt": "فريق عمل بوصلة"
 			}
 		},
-		"phones": [{ "label": "الهاتف", "value": "+20 111 2419980" }],
+		"addresses": [
+			{
+				"label": "المملكة العربية السعودية",
+				"value": "حي الملز، الرياض، المملكة العربية السعودية",
+				"mapUrl": "https://maps.google.com/?q=Al+Malaz+Riyadh+Saudi+Arabia"
+			}
+		],
+		"phones": [{ "label": "الهاتف", "value": "+966 57 670 4683" }],
 		"emails": [],
 		"social": [
 			{ "platform": "LinkedIn", "url": "https://linkedin.com/company/bosla" },

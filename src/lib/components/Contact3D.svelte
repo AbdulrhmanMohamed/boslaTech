@@ -22,9 +22,9 @@
 
 	// 1. Core Sphere (The Hub)
 	const coreGeometry = new THREE.IcosahedronGeometry(1.8, 1);
-	
+
 	// 2. Wireframe (The Network) - We'll use this with a wireframe material or EdgesGeometry
-	
+
 	// 3. Data Particles (Messages/Signals)
 	const particleCount = 8;
 	const particlePositions = Array.from({ length: particleCount }, (_, i) => {
@@ -85,7 +85,6 @@
 	>
 		<!-- THE CONNECTIVITY SPHERE -->
 		<T.Group onpointerenter={() => scale.set(1.1)} onpointerleave={() => scale.set(1)}>
-			
 			<!-- Inner Core (Solid, Glowing) -->
 			<T.Mesh geometry={coreGeometry}>
 				<T.MeshPhysicalMaterial
@@ -144,14 +143,9 @@
 			{#each Array(3) as _, i}
 				<T.Mesh rotation={[time * 0.1 * (i + 1), time * 0.05, 0]}>
 					<T.TorusGeometry args={[3.2 + i * 0.4, 0.02, 16, 100]} />
-					<T.MeshBasicMaterial
-						color={PURE_BLUE}
-						transparent
-						opacity={0.2 - i * 0.05}
-					/>
+					<T.MeshBasicMaterial color={PURE_BLUE} transparent opacity={0.2 - i * 0.05} />
 				</T.Mesh>
 			{/each}
-
 		</T.Group>
 	</T.Group>
 </Float>

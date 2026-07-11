@@ -5,11 +5,11 @@
 </script>
 
 <div
-	class="pointer-events-none absolute inset-0 z-0 select-none overflow-hidden bg-[var(--color-background)] transition-colors duration-1000"
+	class="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-[var(--color-background)] transition-colors duration-1000 select-none"
 >
 	<!-- Primary Blue Glow (Top-Left) - Radial gradient replaces blur for better performance -->
 	<div
-		class="animate-pulse-slow absolute -left-[10%] -top-[20%] h-[70vw] w-[70vw] rounded-full opacity-40 transition-all duration-1000"
+		class="animate-pulse-slow absolute -top-[20%] -left-[10%] h-[70vw] w-[70vw] rounded-full opacity-40 transition-all duration-1000"
 		style="
       background: radial-gradient(circle, var(--color-brand-blue) 0%, rgba(0, 119, 255, 0.3) 30%, rgba(0, 119, 255, 0.1) 60%, transparent 80%); 
       mix-blend-mode: {currentTheme === 'light' ? 'multiply' : 'screen'};
@@ -18,7 +18,7 @@
 
 	<!-- Secondary Orange Glow (Bottom-Right) - Radial gradient replaces blur for better performance -->
 	<div
-		class="animate-float-slow absolute -bottom-[20%] -right-[10%] h-[60vw] w-[60vw] rounded-full opacity-30 transition-all duration-1000"
+		class="animate-float-slow absolute -right-[10%] -bottom-[20%] h-[60vw] w-[60vw] rounded-full opacity-30 transition-all duration-1000"
 		style="
       background: radial-gradient(circle, var(--color-brand-orange) 0%, rgba(255, 107, 0, 0.3) 30%, rgba(255, 107, 0, 0.1) 60%, transparent 80%); 
       mix-blend-mode: {currentTheme === 'light' ? 'multiply' : 'screen'}; 
@@ -28,7 +28,7 @@
 
 	<!-- Accent Blue Glow (Center-Offset) - Radial gradient replaces blur for better performance -->
 	<div
-		class="animate-float-reverse absolute left-[30%] top-[30%] h-[40vw] w-[40vw] rounded-full opacity-20 transition-all duration-1000"
+		class="animate-float-reverse absolute top-[30%] left-[30%] h-[40vw] w-[40vw] rounded-full opacity-20 transition-all duration-1000"
 		style="
       background: radial-gradient(circle, var(--color-brand-blue-glow) 0%, rgba(0, 153, 255, 0.2) 40%, transparent 80%); 
       mix-blend-mode: {currentTheme === 'light' ? 'multiply' : 'screen'}; 

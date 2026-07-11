@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions/inView';
 	import { TrendingUp, Users, Award, Star, Sparkles } from '@lucide/svelte';
 	import { onMount } from 'svelte';
 	import { gsap } from 'gsap';
@@ -338,7 +339,7 @@
 	<!-- Unified Spotlight - Radial gradient replaces blur for better performance -->
 	<div class="pointer-events-none absolute inset-0 z-0 opacity-30">
 		<div
-			class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
+			class="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
 			style="background: radial-gradient(circle, {currentTheme === 'dark'
 				? 'var(--color-brand-blue-glow)'
 				: 'var(--color-brand-blue)'} 0%, {currentTheme === 'dark'
@@ -349,19 +350,19 @@
 		></div>
 	</div>
 
-	<div class="container relative z-10 mx-auto px-6">
+	<div class="relative z-10 container mx-auto px-6">
 		<div class="mx-auto mb-24 flex max-w-4xl flex-col items-center space-y-8 text-center">
 			<div
 				class="cinematic-glass-badge cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 			>
-				<Sparkles class="text-brand-orange h-4 w-4" />
-				<span class="text-brand-blue text-xs font-bold uppercase tracking-widest">
+				<Sparkles class="h-4 w-4 text-brand-orange" />
+				<span class="text-xs font-bold tracking-widest text-brand-blue uppercase">
 					{content.badge}
 				</span>
 			</div>
 			{#key data?.lang}
 				<h2
-					class="section-title text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-5xl"
+					class="section-title text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-5xl"
 				>
 					{content.title.split(' ').slice(0, -1).join(' ')}
 					<span class="text-brand-orange">{content.title.split(' ').slice(-1)}</span>
@@ -376,7 +377,8 @@
 			{#each stats as stat, i}
 				{@const Icon = stat.iconComponent}
 				<div
-					class="stat-card cinematic-glass interactive-card hover:border-brand-blue/30 group relative overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-12 text-center transition-colors duration-700"
+					use:inView
+					class="stat-card cinematic-glass interactive-card group relative overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-12 text-center transition-colors duration-700 hover:border-brand-blue/30 [&.in-view]:border-brand-blue/30"
 					data-value={stat.value}
 				>
 					<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
@@ -399,7 +401,8 @@
 
 					<!-- Dynamic Background Graph -->
 					<div
-						class="pointer-events-none absolute inset-0 z-0 opacity-10 transition-opacity duration-700 group-hover:opacity-20"
+						use:inView
+						class="pointer-events-none absolute inset-0 z-0 opacity-10 transition-opacity duration-700 group-hover:opacity-20 group-[.in-view]:opacity-20"
 					>
 						<svg class="h-full w-full" viewBox="0 0 200 100" preserveAspectRatio="none">
 							<path
@@ -414,49 +417,57 @@
 
 					<!-- Background Icon Watermark -->
 					<div
-						class="text-brand-blue/[0.02] group-hover:text-brand-blue/[0.05] pointer-events-none absolute -right-10 -top-10 rotate-12 transition-all duration-1000"
+						use:inView
+						class="pointer-events-none absolute -top-10 -right-10 rotate-12 text-brand-blue/[0.02] transition-all duration-1000 group-hover:text-brand-blue/[0.05] group-[.in-view]:text-brand-blue/[0.05]"
 					>
 						<Icon size={240} strokeWidth={1} />
 					</div>
 
 					<!-- Scanning Light Effect -->
 					<div
-						class="group-hover:animate-shimmer bg-brand-blue/5 pointer-events-none absolute inset-0 -translate-x-full"
+						use:inView
+						class="group-hover:animate-shimmer group-[.in-view]:animate-shimmer pointer-events-none absolute inset-0 -translate-x-full bg-brand-blue/5"
 					></div>
 
 					<!-- Icon Box - Premium Style -->
 					<div
-						class="border-brand-blue/10 group-hover:border-brand-blue/40 relative z-10 mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-3xl border bg-[var(--glass-highlight)] shadow-2xl transition-all duration-700 group-hover:rotate-6 group-hover:scale-110"
+						use:inView
+						class="relative z-10 mx-auto mb-10 flex h-24 w-24 items-center justify-center rounded-3xl border border-brand-blue/10 bg-[var(--glass-highlight)] shadow-2xl transition-all duration-700 group-hover:scale-110 group-hover:rotate-6 group-hover:border-brand-blue/40 group-[.in-view]:scale-110 group-[.in-view]:rotate-6 group-[.in-view]:border-brand-blue/40"
 					>
 						<Icon
-							class="text-brand-blue group-hover:text-brand-blue-glow h-12 w-12 transition-all duration-700"
+							class="h-12 w-12 text-brand-blue transition-all duration-700 group-hover:text-brand-blue-glow group-[.in-view]:text-brand-blue-glow"
 						/>
 						<!-- Internal Glow -->
 						<div
-							class="bg-brand-blue/20 absolute inset-0 opacity-0 blur-xl transition-opacity duration-700 group-hover:opacity-100"
+							use:inView
+							class="absolute inset-0 bg-brand-blue/20 opacity-0 blur-xl transition-opacity duration-700 group-hover:opacity-100 group-[.in-view]:opacity-100"
 						></div>
 					</div>
 
 					<div
-						class="group-hover:text-brand-blue relative z-10 mb-4 text-5xl font-black tracking-tighter text-[var(--color-text-base)] transition-colors duration-700 md:text-6xl"
+						use:inView
+						class="relative z-10 mb-4 text-5xl font-black tracking-tighter text-[var(--color-text-base)] transition-colors duration-700 group-hover:text-brand-blue group-[.in-view]:text-brand-blue md:text-6xl"
 					>
 						<span class="stat-value">0</span><span class="text-brand-orange">{stat.suffix}</span>
 					</div>
 
 					<div
-						class="stat-label relative z-10 mb-3 text-[10px] font-black uppercase tracking-[0.2em] text-[var(--color-text-muted)] transition-colors duration-700 group-hover:text-[var(--color-text-base)]"
+						use:inView
+						class="stat-label relative z-10 mb-3 text-[10px] font-black tracking-[0.2em] text-[var(--color-text-muted)] uppercase transition-colors duration-700 group-hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)]"
 					>
 						{stat.label}
 					</div>
 					<div
-						class="stat-description relative z-10 text-sm font-medium leading-relaxed text-[var(--color-text-muted)] opacity-60 transition-colors duration-700 group-hover:text-[var(--color-text-base)]"
+						use:inView
+						class="stat-description relative z-10 text-sm leading-relaxed font-medium text-[var(--color-text-muted)] opacity-60 transition-colors duration-700 group-hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)]"
 					>
 						{stat.description}
 					</div>
 
 					<!-- Bottom Accent Line -->
 					<div
-						class="bg-brand-blue/30 absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+						use:inView
+						class="absolute bottom-0 left-0 h-[2px] w-0 bg-brand-blue/30 transition-all duration-700 group-hover:w-full group-[.in-view]:w-full"
 					></div>
 				</div>
 			{/each}

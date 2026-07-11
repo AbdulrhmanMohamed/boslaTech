@@ -22,6 +22,10 @@
 		if (typeof window !== 'undefined' && $page?.url) {
 			const q = new URLSearchParams($page.url.search);
 			const qs = q.toString();
+			if (path.includes('#')) {
+				const [basePath, hash] = path.split('#');
+				return qs ? `${basePath}?${qs}#${hash}` : path;
+			}
 			return qs ? `${path}?${qs}` : path;
 		}
 		return path;
@@ -47,6 +51,10 @@
 		{
 			path: `${base}/contact`,
 			label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact')
+		},
+		{
+			path: `${base}/#pricing`,
+			label: props.site?.nav?.pricing || (props.lang === 'ar' ? 'الأسعار' : 'Pricing')
 		}
 	]);
 
@@ -108,30 +116,35 @@
 	>
 		<!-- Drawer Header -->
 		<div
-			class="flex flex-shrink-0 items-center justify-between border-b border-[var(--glass-border)] px-6 py-6 {props.lang ===
-			'ar'
-				? 'flex-row-reverse'
-				: ''}"
+			class="flex flex-shrink-0 flex-col gap-2 border-b border-[var(--glass-border)] px-6 py-6"
 		>
-			<a
-				href={link(`${base}/`)}
-				class="flex items-center gap-3 {props.lang === 'ar' ? 'flex-row-reverse' : ''}"
-				aria-label={props.lang === 'ar' ? 'الرئيسية' : 'Home'}
-				onclick={handleNavClick}
-			>
-				<div class="logo-container relative w-[110px]" style="height: {logoHeight}px">
-					<img src={logoSrc} alt="Bosla Logo" class="h-full w-full object-contain" />
-				</div>
-			</a>
-			<div class="flex items-center gap-2">
-				<ThemeToggle />
-				<button
-					onclick={closeDrawer}
-					class="cinematic-glass rounded-xl p-2 text-[var(--color-text-dim)] hover:text-[var(--color-text-base)]"
-					aria-label="Close menu"
+			<div class="flex items-center justify-between">
+				<a
+					href={link(`${base}/`)}
+					class="flex items-center gap-3"
+					aria-label={props.lang === 'ar' ? 'الرئيسية' : 'Home'}
+					onclick={handleNavClick}
 				>
-					<X class="h-5 w-5" />
-				</button>
+					<div class="logo-container relative w-[110px]" style="height: {logoHeight}px">
+						<img src={logoSrc} alt="Bosla Logo" class="h-full w-full object-contain" />
+					</div>
+				</a>
+				<div class="flex items-center gap-2">
+					<ThemeToggle />
+					<button
+						onclick={closeDrawer}
+						class="cinematic-glass rounded-xl p-2 text-[var(--color-text-dim)] hover:text-[var(--color-text-base)]"
+						aria-label="Close menu"
+					>
+						<X class="h-5 w-5" />
+					</button>
+				</div>
+			</div>
+			<div class="text-[10px] font-bold leading-tight text-[var(--color-text-dim)]">
+				<span class="opacity-70">
+					{props.lang === 'ar' ? 'بوصلة التقنية بالشراكة مع' : 'Bosla Tech in partnership with'}
+				</span>
+				<span class="opacity-50"> {props.site?.registeredAs}</span>
 			</div>
 		</div>
 
@@ -232,6 +245,11 @@
 					<MessageSquare class="h-5 w-5" />
 					{props.lang === 'ar' ? 'احجز استشارة مجانية' : 'Book Free Consultation'}
 				</a>
+
+				<!-- Commercial Registration -->
+				<div class="text-center text-[10px] leading-relaxed text-[var(--color-text-dim)] opacity-60">
+					{props.site?.registeredAs} | س.ت {props.site?.commercialRegistration}
+				</div>
 			</div>
 		</div>
 	</div>

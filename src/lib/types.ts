@@ -5,6 +5,9 @@ export interface Site {
 	ogImage: string;
 	nav: { home: string; about: string; services: string; portfolio: string; contact: string };
 	langLabel: { en: string; ar: string };
+	registeredAs: string;
+	commercialRegistration: string;
+	registeredAddress: string;
 }
 
 export interface Hero {

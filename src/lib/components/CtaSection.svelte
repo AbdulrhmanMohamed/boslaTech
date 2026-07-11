@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions/inView';
 	import { theme } from '$lib/stores/theme.svelte';
 	import { ArrowRight } from '@lucide/svelte';
 	import { page } from '$app/stores';
@@ -52,8 +53,9 @@
 		secondary_button_text:
 			data?.home?.cta?.secondary_button_text ||
 			(data?.lang === 'ar' ? 'شاهد أعمالنا' : 'View Our Work'),
-		secondary_button_link:
-			data?.home?.cta?.secondary_button_link || '/BOSLA-company-profile-Arabic.pdf'
+		secondary_button_link: '/portfolio'
+		// Temporarily disabled Company Profile fallback:
+		// data?.home?.cta?.secondary_button_link || '/BOSLA-company-profile-Arabic.pdf'
 	});
 
 	let sectionRef: HTMLElement;
@@ -290,13 +292,13 @@
 <section
 	bind:this={sectionRef}
 	id="cta-section"
-	class="perspective-[1000px] relative overflow-hidden bg-[var(--color-background)] py-32"
+	class="relative overflow-hidden bg-[var(--color-background)] py-32 perspective-[1000px]"
 	dir={data?.lang === 'ar' ? 'rtl' : 'ltr'}
 >
 	<!-- Unified Spotlight - Radial gradient replaces blur for better performance -->
 	<div class="pointer-events-none absolute inset-0 z-0 opacity-30">
 		<div
-			class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
+			class="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
 			style="background: radial-gradient(circle, {currentTheme === 'dark'
 				? 'var(--color-brand-blue-glow)'
 				: 'var(--color-brand-blue)'} 0%, {currentTheme === 'dark'
@@ -307,8 +309,9 @@
 		></div>
 	</div>
 
-	<div class="container relative z-10 mx-auto px-6">
+	<div class="relative z-10 container mx-auto px-6">
 		<div
+			use:inView
 			class="interactive-card cinematic-glass group relative overflow-hidden rounded-[3.5rem] border border-[var(--glass-border)] p-16 text-center md:p-24"
 		>
 			<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
@@ -331,16 +334,17 @@
 
 			<!-- Hover Glow -->
 			<div
-				class="bg-brand-blue/5 absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100"
+				use:inView
+				class="absolute inset-0 bg-brand-blue/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-[.in-view]:opacity-100"
 			></div>
 
 			<div class="relative z-10 flex flex-col items-center space-y-12">
 				<div class="flex flex-col items-center space-y-6">
 					<div
-						class="cinematic-glass-badge cinematic-glass border-brand-blue/20 text-brand-blue inline-flex items-center gap-3 rounded-full border px-6 py-2 text-xs font-black uppercase tracking-widest"
+						class="cinematic-glass-badge cinematic-glass inline-flex items-center gap-3 rounded-full border border-brand-blue/20 px-6 py-2 text-xs font-black tracking-widest text-brand-blue uppercase"
 					>
 						<span
-							class="bg-brand-blue h-2 w-2 rounded-full"
+							class="h-2 w-2 rounded-full bg-brand-blue"
 							style="box-shadow: {currentTheme === 'dark'
 								? '0 0 10px rgba(11, 157, 217, 0.5)'
 								: '0 0 8px rgba(11, 157, 217, 0.3)'};"
@@ -350,14 +354,14 @@
 
 					{#key data?.lang}
 						<h2
-							class="section-title max-w-4xl text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-5xl"
+							class="section-title max-w-4xl text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-5xl"
 						>
 							{cta.title.split(' ').slice(0, -1).join(' ')}
 							<span class="text-brand-orange">{cta.title.split(' ').slice(-1)}</span>
 						</h2>
 
 						<p
-							class="section-description max-w-2xl text-lg font-medium leading-relaxed text-[var(--color-text-muted)] md:text-xl"
+							class="section-description max-w-2xl text-lg leading-relaxed font-medium text-[var(--color-text-muted)] md:text-xl"
 						>
 							{cta.subtitle}
 						</p>
@@ -369,20 +373,21 @@
 				>
 					<a
 						href={link(cta.button_link)}
-						class="group/btn bg-brand-blue shadow-brand-blue/30 hover:shadow-brand-blue/50 relative inline-flex w-full items-center justify-center gap-4 overflow-hidden rounded-2xl px-12 py-6 font-black text-white shadow-2xl transition-all duration-500 hover:-translate-y-2 sm:w-auto"
+						use:inView
+						class="group/btn relative inline-flex w-full items-center justify-center gap-4 overflow-hidden rounded-2xl bg-brand-blue px-12 py-6 font-black text-white shadow-2xl shadow-brand-blue/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-brand-blue/50 sm:w-auto [&.in-view]:-translate-y-2 [&.in-view]:shadow-brand-blue/50"
 					>
 						<span
-							class="absolute inset-0 translate-y-full bg-white/20 transition-transform duration-500 group-hover/btn:translate-y-0"
+							class="absolute inset-0 translate-y-full bg-white/20 transition-transform duration-500 group-hover/btn:translate-y-0 group-[.in-view]/btn:translate-y-0"
 						></span>
 						<span class="relative z-10 flex items-center gap-4">
 							<span class="btn-primary-text">{cta.button_text}</span>
 							<ArrowRight
-								class="h-6 w-6 transition-transform duration-500 group-hover/btn:translate-x-2"
+								class="h-6 w-6 transition-transform duration-500 group-hover/btn:translate-x-2 group-[.in-view]/btn:translate-x-2"
 							/>
 						</span>
 						<!-- Pulse Ring -->
 						<span
-							class="animate-cta-pulse border-brand-blue/50 pointer-events-none absolute inset-0 rounded-2xl border-2"
+							class="animate-cta-pulse pointer-events-none absolute inset-0 rounded-2xl border-2 border-brand-blue/50"
 						></span>
 					</a>
 
@@ -390,7 +395,7 @@
 						href={cta.secondary_button_link}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="cinematic-glass hover:border-brand-blue/20 inline-flex w-full items-center justify-center gap-4 rounded-2xl border border-[var(--glass-border)] px-12 py-6 font-bold text-[var(--color-text-base)] shadow-none transition-all duration-500 hover:-translate-y-1 hover:bg-[var(--glass-highlight)] sm:w-auto"
+						class="cinematic-glass inline-flex w-full items-center justify-center gap-4 rounded-2xl border border-[var(--glass-border)] px-12 py-6 font-bold text-[var(--color-text-base)] shadow-none transition-all duration-500 hover:-translate-y-1 hover:border-brand-blue/20 hover:bg-[var(--glass-highlight)] sm:w-auto [&.in-view]:-translate-y-1 [&.in-view]:border-brand-blue/20 [&.in-view]:bg-[var(--glass-highlight)]"
 					>
 						<span class="btn-secondary-text">{cta.secondary_button_text}</span>
 					</a>
@@ -399,7 +404,8 @@
 
 			<!-- Bottom Accent Line -->
 			<div
-				class="bg-brand-blue/30 absolute bottom-0 left-0 h-[3px] w-0 shadow-[0_0_20px_rgba(0,119,255,0.3)] transition-all duration-1000 group-hover:w-full"
+				use:inView
+				class="absolute bottom-0 left-0 h-[3px] w-0 bg-brand-blue/30 shadow-[0_0_20px_rgba(0,119,255,0.3)] transition-all duration-1000 group-hover:w-full group-[.in-view]:w-full"
 			></div>
 		</div>
 	</div>

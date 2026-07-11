@@ -172,7 +172,7 @@
 		if (heroTitle && data) {
 			const isAr = (data as any).lang === 'ar';
 			const typedData = data as any;
-			
+
 			// 🔥 FORCE DIRECTION EXPLICITLY
 			heroTitle.setAttribute('dir', isAr ? 'rtl' : 'ltr');
 
@@ -409,7 +409,7 @@
 							<div class="space-y-1">
 								{#each (data as any).contact?.phones || [] as p}
 									<a
-										href="https://wa.me/201112419980?text=%D9%83%D9%86%D8%AA%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9"
+										href="https://wa.me/966576704683?text={encodeURIComponent((data as any).lang === 'ar' ? 'مرحباً، أود الاستفسار عن خدماتكم' : 'Hello, I would like to inquire about your services')}"
 										target="_blank"
 										rel="noopener noreferrer"
 										class="block font-bold text-[var(--color-text-muted)] transition-colors hover:text-brand-blue"
@@ -418,6 +418,51 @@
 									</a>
 								{/each}
 							</div>
+						</div>
+					</div>
+					<div
+						class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-brand-blue to-transparent transition-all duration-700 group-hover:w-full"
+					></div>
+				</div>
+
+				<!-- Address Card -->
+				<div
+					class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-8"
+				>
+					<div
+						class="card-glow pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 blur-[80px]"
+						style="background: {currentTheme === 'dark'
+							? 'rgba(59, 130, 246, 0.15)'
+							: 'rgba(59, 130, 246, 0.25)'}"
+					></div>
+					<div class="relative z-10 flex flex-col gap-6">
+						<div
+							class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue"
+						>
+							<MapPin class="h-8 w-8" />
+						</div>
+						<div class="space-y-2">
+							<h3 class="text-2xl font-black text-[var(--color-text-base)]">
+								{(data as any).lang === 'ar' ? 'العنوان' : 'Address'}
+							</h3>
+							<div class="space-y-1">
+								{#each (data as any).contact?.addresses || [] as addr}
+									<p class="font-bold text-[var(--color-text-muted)]">{addr.value}</p>
+								{/each}
+							</div>
+						</div>
+						<div class="overflow-hidden rounded-2xl">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.780681960655!2d46.718144!3d24.688002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQxJzE2LjgiTiA0NsKwNDMnMDUuMyJF!5e0!3m2!1sar!2ssa!4v1"
+								width="100%"
+								height="180"
+								style="border:0;"
+								allowfullscreen=""
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+								title={(data as any).lang === 'ar' ? 'موقع حافة النجوم' : 'Hafat Alnjoom Location'}
+								class="rounded-2xl opacity-80 transition-opacity hover:opacity-100"
+							></iframe>
 						</div>
 					</div>
 					<div
@@ -456,6 +501,15 @@
 						class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-brand-blue to-transparent transition-all duration-700 group-hover:w-full"
 					></div>
 				</div>
+
+				<!-- CR Reference -->
+				<div
+					class="cinematic-glass rounded-[2rem] border border-[var(--glass-border)] p-5 text-center text-[11px] leading-relaxed text-[var(--color-text-dim)]"
+				>
+					{(data as any).lang === 'ar'
+						? 'صادر عن مؤسسة حافة النجوم | س.ت 7050568158 | حي الملز، الرياض'
+						: 'Issued by Hafat Alnjoom | CR 7050568158 | Al Malaz, Riyadh'}
+				</div>
 			</div>
 
 			<!-- Main Contact Form -->
@@ -480,9 +534,7 @@
 
 						<div class="grid gap-6 md:grid-cols-2">
 							<div class="form-element space-y-2">
-								<label
-									for="name"
-									class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
+								<label for="name" class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
 									>{(data as any).lang === 'ar' ? 'الاسم الكامل' : 'Full Name'}</label
 								>
 								<input
@@ -490,15 +542,13 @@
 									name="name"
 									type="text"
 									required
-									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] outline-none transition-all placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
+									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
 									placeholder={(data as any).lang === 'ar' ? 'اسمك بالكامل' : 'John Doe'}
 								/>
 							</div>
 
 							<div class="form-element space-y-2">
-								<label
-									for="phone"
-									class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
+								<label for="phone" class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
 									>{(data as any).lang === 'ar' ? 'رقم الهاتف' : 'Phone Number'}</label
 								>
 								<input
@@ -506,30 +556,26 @@
 									name="phone"
 									type="tel"
 									required
-									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] outline-none transition-all placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
+									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
 									placeholder="+1 234 567 890"
 								/>
 							</div>
 
 							<div class="form-element space-y-2">
-								<label
-									for="company"
-									class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
+								<label for="company" class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
 									>{(data as any).lang === 'ar' ? 'الشركة' : 'Company'}</label
 								>
 								<input
 									id="company"
 									name="company"
 									type="text"
-									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] outline-none transition-all placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
+									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
 									placeholder={(data as any).lang === 'ar' ? 'اسم الشركة' : 'Company Name'}
 								/>
 							</div>
 
 							<div class="form-element space-y-2 md:col-span-2">
-								<label
-									for="subject"
-									class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
+								<label for="subject" class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
 									>{(data as any).lang === 'ar' ? 'الموضوع' : 'Subject'}</label
 								>
 								<div class="relative">
@@ -538,7 +584,7 @@
 										name="subject"
 										required
 										style="appearance: none; -webkit-appearance: none; -moz-appearance: none; background-image: none !important;"
-										class="w-full appearance-none bg-none rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] outline-none transition-all hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
+										class="w-full appearance-none rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 bg-none px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
 									>
 										<option value="" disabled selected class="bg-[var(--color-background)]"
 											>{(data as any).lang === 'ar' ? 'اختر موضوعًا' : 'Select a subject'}</option
@@ -567,9 +613,7 @@
 							</div>
 
 							<div class="form-element space-y-2 md:col-span-2">
-								<label
-									for="message"
-									class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
+								<label for="message" class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
 									>{(data as any).lang === 'ar' ? 'الرسالة' : 'Message'}</label
 								>
 								<textarea
@@ -577,7 +621,7 @@
 									name="message"
 									required
 									rows={5}
-									class="w-full resize-none rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] outline-none transition-all placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
+									class="w-full resize-none rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
 									placeholder={(data as any).lang === 'ar'
 										? 'أخبرنا عن مشروعك بالتفصيل...'
 										: 'Tell us about your project in detail...'}

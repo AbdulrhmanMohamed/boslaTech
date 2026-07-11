@@ -2,12 +2,6 @@
 import { base } from '$app/paths';
 
 export const clients = [
-	`${base}/images/logos/air cairo.jpg`,
-	`${base}/images/logos/dentex.svg`,
-	`${base}/images/logos/heroelab.svg`,
-	`${base}/images/logos/jarir.jpg`,
-	`${base}/images/logos/omega.jpg`,
-	`${base}/images/logos/pella.jpg`,
 	`${base}/images/logos/weasy.png`,
 	`${base}/images/logos/yalla vape.png`,
 	`${base}/images/logos/8-02.png`,

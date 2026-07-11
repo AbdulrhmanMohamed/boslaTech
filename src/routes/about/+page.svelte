@@ -16,8 +16,8 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import SplitType from 'split-type';
 	import CtaSection from '$lib/components/CtaSection.svelte';
-	import { Canvas } from '@threlte/core';
-	import About3D from '$lib/components/About3D.svelte';
+	import { Canvas, T } from '@threlte/core';
+	import About3D from '$lib/components/Hero3D.svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import ContactInfoCard from '$lib/components/ContactInfoCard.svelte';
 
@@ -25,6 +25,26 @@
 	const currentTheme = $derived(theme.current);
 	const typedData = data as any;
 	const homeHeroImage = typedData?.home?.hero?.image;
+
+	// Canvas delay loading
+	let showCanvas = $state(false);
+	let canvasKey = $state(0);
+
+	// Scroll-triggered 3D scene
+	let scrollProgress = $state(0);
+	let sceneRotation = $state(0);
+	let sceneRotationX = $state(0);
+	let sceneRotationZ = $state(0);
+	let scenePosition = $state<[number, number, number]>([0, 0, 0]);
+	let sceneScale = $state(1);
+	let ecosystemOpacity = $state(1);
+	let spotlightRef: HTMLElement | null = null;
+	let hero3DContainer: HTMLElement | null = null;
+	let pageContainer: HTMLElement | null = null;
+
+	// Camera settings
+	let cameraPosition = $state<[number, number, number]>([0, 0, 10]);
+	let cameraFov = $state(45);
 
 	// Setup mouse context for 3D
 	let mouseX = $state(0);
@@ -148,7 +168,6 @@
 	}
 
 	// Refs
-	let pageContainer = $state<HTMLDivElement | null>(null);
 	let heroGlassCard = $state<HTMLDivElement | null>(null);
 
 	// Split headline animation
@@ -255,6 +274,35 @@
 	});
 
 	onMount(() => {
+		const isMobile = window.innerWidth < 768;
+
+		if (isMobile) {
+			cameraPosition = [0, 0.5, 9];
+			cameraFov = 55;
+		} else {
+			cameraPosition = [0, 0, 10];
+			cameraFov = 45;
+		}
+
+		showCanvas = true;
+
+		// 3D Scene Micro-interactions: Transition from Hero to About content
+		ScrollTrigger.create({
+			trigger: pageContainer,
+			start: 'top top',
+			end: 'bottom bottom',
+			scrub: 1,
+			onUpdate: (self) => {
+				scrollProgress = self.progress;
+				sceneRotation = self.progress * Math.PI * 2;
+				sceneScale = 1.8 - self.progress * 0.6;
+				scenePosition = [0, 0, -self.progress * 2];
+				ecosystemOpacity = 1 - self.progress * 0.15;
+				sceneRotationX = self.progress * Math.PI * 0.15;
+				sceneRotationZ = -self.progress * Math.PI * 0.05;
+			}
+		});
+
 		// Particle Init
 		initParticles();
 		window.addEventListener('resize', resizeCanvas);
@@ -349,91 +397,105 @@
 
 <div
 	bind:this={pageContainer}
-	class="selection:bg-brand-blue/30 min-h-screen w-full overflow-hidden bg-[var(--color-background)] text-[var(--color-text-base)] transition-colors duration-1000"
+	class="min-h-screen w-full overflow-hidden bg-[var(--color-background)] text-[var(--color-text-base)] transition-colors duration-1000 selection:bg-brand-blue/30"
 >
-	<canvas bind:this={canvas} class="z-100 pointer-events-none fixed inset-0"></canvas>
+	<canvas bind:this={canvas} class="pointer-events-none fixed inset-0 z-100"></canvas>
 
-	<!-- Hero Section -->
-	<section
-		class="hero-section relative flex min-h-screen w-full items-center overflow-hidden pt-20"
-		dir={(data as any).lang === 'ar' ? 'rtl' : 'ltr'}
-	>
-		<!-- Background Elements -->
-		<div class="absolute inset-0 z-0">
-			<HeroBackground />
-
-			<!-- 3D Scene -->
-			<div
-				class="absolute inset-0 opacity-90"
-				style="filter: {currentTheme === 'light' ? 'brightness(1.2) contrast(0.9)' : 'none'}"
-			>
+	<!-- 3D Sticky Scope: Hero Section Only -->
+	<div class="relative">
+		<!-- 3D Background Layer - Fixed to viewport, centered -->
+		<div
+			bind:this={hero3DContainer}
+			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
+		>
+			{#if showCanvas}
 				<Canvas>
-					<About3D />
-				</Canvas>
-			</div>
-		</div>
-
-		<div class="container relative z-10 mx-auto px-6">
-			<div
-				bind:this={heroGlassCard}
-				class="group relative mx-auto max-w-4xl space-y-8 p-8 text-center md:p-16"
-			>
-				<div class="space-y-6">
-					<div
-						class="cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
-					>
-						<Sparkles class="text-brand-orange h-4 w-4" />
-						<span
-							class="text-xs font-black uppercase tracking-widest text-[var(--color-text-muted)]"
-						>
-							{data.lang === 'ar' ? 'وكالة حلول رقمية' : 'Digital Solutions Agency'}
-						</span>
-					</div>
-
-					{#key data.lang}
-						<div class="space-y-6">
-							<h1
-								class="hero-title text-5xl font-black leading-tight tracking-tighter text-[var(--color-text-base)] md:text-7xl"
-							>
-								<span class="text-brand-orange">{data.about?.title || ''}</span>
-							</h1>
-
-							<p
-								class="hero-subtitle mx-auto max-w-2xl text-xl font-medium leading-relaxed text-[var(--color-text-muted)] md:text-2xl"
-							>
-								{data.about?.intro?.[0]}
-							</p>
-						</div>
+					<T.PerspectiveCamera makeDefault position={cameraPosition} fov={cameraFov} />
+					{#key canvasKey}
+						<About3D
+							{sceneRotation}
+							{sceneRotationX}
+							{sceneRotationZ}
+							{scenePosition}
+							{sceneScale}
+							{ecosystemOpacity}
+							onContextRestored={() => {
+								canvasKey++;
+							}}
+						/>
 					{/key}
-
-					<div class="bg-brand-orange mx-auto h-1.5 w-24 rounded-full"></div>
-				</div>
-
-				<div class="flex flex-wrap items-center justify-center gap-6 pt-4">
-					<a href={link('/contact')} class="btn-primary group">
-						<span class="relative z-10 flex items-center gap-3">
-							{data.lang === 'ar' ? 'تواصل معنا' : 'Contact Us'}
-							<ArrowRight
-								class="h-6 w-6 transition-transform duration-500 group-hover:translate-x-2"
-							/>
-						</span>
-					</a>
-
-					{#if data.about?.images?.find((i: any) => i?.url?.endsWith('.pdf'))}
-						<a
-							href={data.about.images.find((i: any) => i?.url?.endsWith('.pdf'))?.url}
-							target="_blank"
-							rel="noopener"
-							class="cinematic-glass hover:bg-[var(--color-text-base)]/5 flex items-center gap-3 rounded-2xl border border-[var(--glass-border)] px-8 py-4 font-black text-[var(--color-text-base)] transition-all"
-						>
-							<FileText class="h-5 w-5" />
-							<span>{data.lang === 'ar' ? 'ملف الشركة' : 'Company Profile'}</span>
-						</a>
-					{/if}
-				</div>
-			</div>
+				</Canvas>
+			{:else}
+				<div
+					class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-blue)]/20 via-transparent to-[var(--color-brand-orange)]/10"
+				></div>
+				<div
+					class="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_50%,transparent_0%,var(--color-background)_70%)]"
+				></div>
+			{/if}
 		</div>
-	</section>
+
+		<!-- Foreground Content -->
+		<div class="relative z-10">
+			<!-- Hero Section -->
+			<section
+				class="hero-section relative flex min-h-[100svh] w-full items-center overflow-hidden pt-20"
+				dir={(data as any).lang === 'ar' ? 'rtl' : 'ltr'}
+			>
+				<div class="relative z-10 container mx-auto flex flex-col items-center px-6 md:px-12">
+					<div class="hero-content max-w-5xl text-center">
+						<div
+							bind:this={heroGlassCard}
+							class="cinematic-glass group/card relative space-y-10 overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-8 md:p-16"
+						>
+							<div
+								class="relative z-10 space-y-10"
+								dir={(data as any).lang === 'ar' ? 'rtl' : 'ltr'}
+							>
+								<div
+									class="hero-badge cinematic-glass relative z-10 mx-auto mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
+								>
+									<Sparkles class="h-4 w-4 text-brand-orange" />
+									<span
+										class="hero-badge-text text-xs font-black tracking-widest text-[var(--color-text-base)] uppercase opacity-80"
+									>
+										{data.lang === 'ar' ? 'وكالة حلول رقمية' : 'Digital Solutions Agency'}
+									</span>
+								</div>
+
+								{#key data.lang}
+									<div class="space-y-6">
+										<h1
+											class="hero-headline text-5xl leading-tight font-black tracking-tighter text-[var(--color-text-base)] md:text-7xl"
+										>
+											{data.about?.title || ''}
+										</h1>
+
+										<p
+											class="hero-subheadline mx-auto max-w-2xl text-xl leading-relaxed font-medium text-[var(--color-text-muted)] md:text-2xl"
+										>
+											{data.about?.intro?.[0]}
+										</p>
+									</div>
+								{/key}
+
+								<div class="hero-buttons flex flex-wrap items-center justify-center gap-6 pt-4">
+									<a href={link('/contact')} class="btn-primary group">
+										<span class="relative z-10 flex items-center gap-3">
+											{data.lang === 'ar' ? 'تواصل معنا' : 'Contact Us'}
+											<ArrowRight
+												class="h-6 w-6 transition-transform duration-500 group-hover:translate-x-2"
+											/>
+										</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
 
 	<!-- About Content Section -->
 	<section
@@ -455,29 +517,31 @@
 
 		<div class="relative z-10 grid items-start gap-16 lg:grid-cols-2">
 			<!-- About Text -->
-			<article class="space-y-12">
+			<article
+				class="cinematic-glass space-y-12 rounded-[3rem] border border-[var(--glass-border)] p-8 md:p-12"
+			>
 				<div class="space-y-6">
 					<div
 						class="cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 					>
-						<Sparkles class="text-brand-orange h-4 w-4" />
+						<Sparkles class="h-4 w-4 text-brand-orange" />
 						<span
-							class="text-xs font-black uppercase tracking-widest text-[var(--color-text-muted)]"
+							class="text-xs font-black tracking-widest text-[var(--color-text-muted)] uppercase"
 						>
 							{(data as any).lang === 'ar' ? 'من نحن' : 'About Us'}
 						</span>
 					</div>
-					<h2 class="text-4xl font-black leading-tight text-[var(--color-text-base)] md:text-5xl">
+					<h2 class="text-4xl leading-tight font-black text-[var(--color-text-base)] md:text-5xl">
 						{(data as any).lang === 'ar'
 							? 'نحن نساعد في نجاح الأعمال من خلال الحلول الرقمية'
 							: 'We increase business success through digital solutions'}
 					</h2>
-					<div class="bg-brand-orange h-1.5 w-20 rounded-full"></div>
+					<div class="h-1.5 w-20 rounded-full bg-brand-orange"></div>
 				</div>
 
 				<div class="space-y-6">
 					{#each (data as any)?.about?.intro?.slice(1, 4) || [] as para}
-						<p class="text-lg font-medium leading-relaxed text-[var(--color-text-muted)]">{para}</p>
+						<p class="text-lg leading-relaxed font-medium text-[var(--color-text-muted)]">{para}</p>
 					{/each}
 				</div>
 
@@ -487,11 +551,11 @@
 						class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-8"
 					>
 						<div
-							class="card-glow bg-brand-blue/15 pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 blur-[80px]"
+							class="card-glow pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue/15 opacity-0 blur-[80px]"
 						></div>
 						<div class="relative z-10 flex flex-col gap-4">
 							<div
-								class="bg-brand-blue/10 text-brand-blue flex h-14 w-14 items-center justify-center rounded-2xl"
+								class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue"
 							>
 								<Award class="h-8 w-8" />
 							</div>
@@ -508,7 +572,7 @@
 						</div>
 						<!-- Bottom Accent Line -->
 						<div
-							class="bg-brand-blue/30 absolute bottom-0 left-0 h-[3px] w-0 shadow-[0_0_15px_rgba(0,119,255,0.3)] transition-all duration-700 group-hover:w-full"
+							class="absolute bottom-0 left-0 h-[3px] w-0 bg-brand-blue/30 shadow-[0_0_15px_rgba(0,119,255,0.3)] transition-all duration-700 group-hover:w-full"
 						></div>
 					</div>
 
@@ -516,11 +580,11 @@
 						class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-8"
 					>
 						<div
-							class="card-glow bg-brand-orange/15 pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 blur-[80px]"
+							class="card-glow pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/15 opacity-0 blur-[80px]"
 						></div>
 						<div class="relative z-10 flex flex-col gap-4">
 							<div
-								class="bg-brand-orange/10 text-brand-orange flex h-14 w-14 items-center justify-center rounded-2xl"
+								class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange"
 							>
 								<Users class="h-8 w-8" />
 							</div>
@@ -536,7 +600,7 @@
 							</div>
 						</div>
 						<div
-							class="from-brand-orange absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r to-transparent transition-all duration-700 group-hover:w-full"
+							class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-brand-orange to-transparent transition-all duration-700 group-hover:w-full"
 						></div>
 					</div>
 				</div>
@@ -546,24 +610,26 @@
 			</article>
 
 			<!-- Services Cards -->
-			<div class="space-y-12">
+			<div
+				class="cinematic-glass space-y-12 rounded-[3rem] border border-[var(--glass-border)] p-8 md:p-12"
+			>
 				<div class="space-y-6">
 					<div
 						class="cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 					>
-						<Sparkles class="text-brand-orange h-4 w-4" />
+						<Sparkles class="h-4 w-4 text-brand-orange" />
 						<span
-							class="text-xs font-black uppercase tracking-widest text-[var(--color-text-muted)]"
+							class="text-xs font-black tracking-widest text-[var(--color-text-muted)] uppercase"
 						>
 							{(data as any).lang === 'ar' ? 'خدماتنا' : 'Our Services'}
 						</span>
 					</div>
-					<h2 class="text-4xl font-black leading-tight text-[var(--color-text-base)] md:text-5xl">
+					<h2 class="text-4xl leading-tight font-black text-[var(--color-text-base)] md:text-5xl">
 						{(data as any).lang === 'ar'
 							? 'نتعامل مع جوانب خدمات تكنولوجيا المعلومات'
 							: 'We handle all aspects of IT services'}
 					</h2>
-					<div class="bg-brand-blue h-1.5 w-20 rounded-full"></div>
+					<div class="h-1.5 w-20 rounded-full bg-brand-blue"></div>
 				</div>
 
 				<div class="grid gap-6">
@@ -572,27 +638,27 @@
 							class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-8"
 						>
 							<div
-								class="card-glow bg-brand-blue/10 pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 blur-[80px]"
+								class="card-glow pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue/10 opacity-0 blur-[80px]"
 							></div>
 							<div class="relative z-10 flex items-start gap-6">
 								<div
-									class="bg-brand-blue flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl text-white shadow-[0_10px_20px_rgba(0,119,255,0.3)] transition-transform group-hover:scale-110"
+									class="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-2xl bg-brand-blue text-white shadow-[0_10px_20px_rgba(0,119,255,0.3)] transition-transform group-hover:scale-110"
 								>
 									<span class="text-xl font-black">{i + 1}</span>
 								</div>
 								<div class="space-y-2">
 									<h3
-										class="group-hover:text-brand-blue text-xl font-black text-[var(--color-text-base)] transition-colors"
+										class="text-xl font-black text-[var(--color-text-base)] transition-colors group-hover:text-brand-blue"
 									>
 										{(data as any).lang === 'ar' ? `حل رقمي ${i + 1}` : `Digital Solution ${i + 1}`}
 									</h3>
-									<p class="text-lg font-medium leading-relaxed text-[var(--color-text-muted)]">
+									<p class="text-lg leading-relaxed font-medium text-[var(--color-text-muted)]">
 										{service}
 									</p>
 								</div>
 							</div>
 							<div
-								class="from-brand-blue via-brand-orange absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r to-transparent transition-all duration-1000 group-hover:w-full"
+								class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-brand-blue via-brand-orange to-transparent transition-all duration-1000 group-hover:w-full"
 							></div>
 						</div>
 					{/each}
@@ -609,7 +675,7 @@
 			>
 				<!-- Background Accents - Radial gradients replace blur -->
 				<div
-					class="absolute -right-24 -top-24 h-96 w-96 rounded-full transition-colors duration-1000 group-hover:opacity-80"
+					class="absolute -top-24 -right-24 h-96 w-96 rounded-full transition-colors duration-1000 group-hover:opacity-80"
 					style="background: radial-gradient(circle, rgba(0, 119, 255, 0.15) 0%, rgba(0, 119, 255, 0.05) 40%, transparent 70%);"
 				></div>
 				<div
@@ -619,7 +685,7 @@
 
 				<div class="relative z-10 mx-auto max-w-4xl space-y-10">
 					<div
-						class="bg-brand-orange mb-4 inline-flex h-24 w-24 items-center justify-center rounded-[2rem] text-white shadow-[0_20px_40px_rgba(255,107,0,0.3)]"
+						class="mb-4 inline-flex h-24 w-24 items-center justify-center rounded-[2rem] bg-brand-orange text-white shadow-[0_20px_40px_rgba(255,107,0,0.3)]"
 					>
 						<Target class="h-12 w-12" />
 					</div>
@@ -628,11 +694,11 @@
 						<h3 class="text-4xl font-black text-[var(--color-text-base)] md:text-6xl">
 							{(data as any).lang === 'ar' ? 'رسالتنا' : 'Our Mission'}
 						</h3>
-						<div class="bg-brand-orange mx-auto h-2 w-24 rounded-full"></div>
+						<div class="mx-auto h-2 w-24 rounded-full bg-brand-orange"></div>
 					</div>
 
 					<p
-						class="text-2xl font-bold italic leading-tight tracking-tight text-[var(--color-text-muted)] md:text-4xl"
+						class="text-2xl leading-tight font-bold tracking-tight text-[var(--color-text-muted)] italic md:text-4xl"
 					>
 						"{(data as any).about?.mission}"
 					</p>

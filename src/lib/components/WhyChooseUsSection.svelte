@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { inView } from '$lib/actions/inView';
 	import { theme } from '$lib/stores/theme.svelte';
 	import { ShieldCheck, Zap, Heart, Trophy, Sparkles } from '@lucide/svelte';
 	import { gsap } from 'gsap';
@@ -246,7 +247,7 @@
 	<!-- Unified Spotlight - Radial gradient replaces blur for better performance -->
 	<div class="pointer-events-none absolute inset-0 z-0 opacity-30">
 		<div
-			class="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
+			class="absolute top-1/2 left-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 rounded-full transition-colors duration-1000"
 			style="background: radial-gradient(circle, {currentTheme === 'dark'
 				? 'var(--color-brand-blue-glow)'
 				: 'var(--color-brand-blue)'} 0%, {currentTheme === 'dark'
@@ -257,20 +258,20 @@
 		></div>
 	</div>
 
-	<div class="container relative z-10 mx-auto px-6">
+	<div class="relative z-10 container mx-auto px-6">
 		<div class="mx-auto mb-24 flex max-w-4xl flex-col items-center space-y-8 text-center">
 			<div
 				class="cinematic-glass-badge cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 				bind:this={badgeElementRef}
 			>
-				<Sparkles class="text-brand-orange h-4 w-4" />
-				<span class="text-brand-blue text-xs font-bold uppercase tracking-widest">
+				<Sparkles class="h-4 w-4 text-brand-orange" />
+				<span class="text-xs font-bold tracking-widest text-brand-blue uppercase">
 					{content.badge}
 				</span>
 			</div>
 			{#key data?.lang}
 				<h2
-					class="section-title text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-5xl"
+					class="section-title text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-5xl"
 					bind:this={titleElementRef}
 				>
 					{content.title.split(' ').slice(0, -1).join(' ')}
@@ -283,11 +284,13 @@
 			{#each items as item}
 				{@const Icon = item.iconComponent}
 				<div
-					class="why-item cinematic-glass interactive-card hover:border-brand-blue/30 group relative flex flex-col items-center overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-10 text-center transition-all duration-700"
+					use:inView
+					class="why-item cinematic-glass interactive-card group relative flex flex-col items-center overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-10 text-center transition-all duration-700 hover:border-brand-blue/30 [&.in-view]:border-brand-blue/30"
 				>
 					<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
 					<div
-						class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+						use:inView
+						class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-[.in-view]:opacity-100"
 						style="left: 0; top: 0; background: radial-gradient(circle, {currentTheme === 'dark'
 							? 'rgba(var(--color-brand-blue-rgb), 0.15)'
 							: 'transparent'} 0%, {currentTheme === 'dark'
@@ -305,28 +308,30 @@
 
 					<div class="relative z-10 flex h-full flex-col items-center">
 						<div
-							class="group-hover:border-brand-blue/30 group-hover:bg-brand-blue/10 mb-10 inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] border border-[var(--glass-border)] bg-[var(--glass-highlight)] shadow-lg transition-all duration-700 group-hover:rotate-3 group-hover:scale-110"
+							use:inView
+							class="mb-10 inline-flex h-20 w-20 items-center justify-center rounded-[1.5rem] border border-[var(--glass-border)] bg-[var(--glass-highlight)] shadow-lg transition-all duration-700 group-hover:scale-110 group-hover:rotate-3 group-hover:border-brand-blue/30 group-hover:bg-brand-blue/10 group-[.in-view]:scale-110 group-[.in-view]:rotate-3 group-[.in-view]:border-brand-blue/30 group-[.in-view]:bg-brand-blue/10"
 						>
 							<Icon
-								class="group-hover:text-brand-blue h-10 w-10 text-[var(--color-text-base)] transition-colors duration-500"
+								class="h-10 w-10 text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-blue group-[.in-view]:text-brand-blue"
 							/>
 						</div>
 
 						<h3
-							class="group-hover:text-brand-blue mb-4 text-center text-2xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500"
+							class="mb-4 text-center text-2xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-blue group-[.in-view]:text-brand-blue"
 						>
 							{item.title}
 						</h3>
 
 						<p
-							class="max-w-sm text-center text-base font-medium leading-relaxed text-[var(--color-text-muted)] transition-colors duration-500 group-hover:text-[var(--color-text-base)]"
+							class="max-w-sm text-center text-base leading-relaxed font-medium text-[var(--color-text-muted)] transition-colors duration-500 group-hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)]"
 						>
 							{item.desc}
 						</p>
 
 						<!-- Bottom Accent Line -->
 						<div
-							class="bg-brand-blue/30 absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-700 group-hover:w-full"
+							use:inView
+							class="absolute bottom-0 left-0 h-[2px] w-0 bg-brand-blue/30 transition-all duration-700 group-hover:w-full group-[.in-view]:w-full"
 						></div>
 					</div>
 				</div>

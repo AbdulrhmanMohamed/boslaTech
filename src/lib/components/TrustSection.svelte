@@ -16,6 +16,7 @@
 	import { gsap } from 'gsap';
 	import { theme } from '$lib/stores/theme.svelte';
 	import { base } from '$app/paths';
+	import { inView } from '$lib/actions/inView';
 
 	let { data } = $props();
 	let container = $state<HTMLElement>();
@@ -266,7 +267,7 @@
 
 	<!-- Content with Reveal Mask -->
 	<div
-		class="container relative z-10 mx-auto px-6"
+		class="relative z-10 container mx-auto px-6"
 		style="
       mask-image: radial-gradient(circle 350px at ${mouseX}px ${mouseY}px, black 0%, black 70%, rgba(0,0,0,0.2) 100%);
       -webkit-mask-image: radial-gradient(circle 350px at ${mouseX}px ${mouseY}px, black 0%, black 70%, rgba(0,0,0,0.2) 100%);
@@ -281,16 +282,16 @@
 			<div
 				class="cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
 			>
-				<Sparkles class="text-brand-orange h-4 w-4" />
+				<Sparkles class="h-4 w-4 text-brand-orange" />
 				<span
-					class="text-xs font-black uppercase tracking-widest text-[var(--color-text-base)] opacity-80"
+					class="text-xs font-black tracking-widest text-[var(--color-text-base)] uppercase opacity-80"
 				>
 					{data?.lang === 'ar' ? 'الثقة والأمان' : 'Trust & Security'}
 				</span>
 			</div>
 
 			<h2
-				class="text-4xl font-black leading-[1.1] tracking-tighter text-[var(--color-text-base)] md:text-6xl"
+				class="text-4xl leading-[1.1] font-black tracking-tighter text-[var(--color-text-base)] md:text-6xl"
 			>
 				{data?.lang === 'ar' ? 'نحن نضمن' : 'We Guarantee'}
 				<span class="text-brand-blue"
@@ -299,7 +300,7 @@
 			</h2>
 
 			<p
-				class="max-w-3xl text-lg font-medium leading-relaxed text-[var(--color-text-muted)] md:text-xl"
+				class="max-w-3xl text-lg leading-relaxed font-medium text-[var(--color-text-muted)] md:text-xl"
 			>
 				{data?.lang === 'ar'
 					? 'نقدم ضمانات شاملة وخدمات موثوقة لضمان راحة بالك ونجاح مشروعك'
@@ -312,11 +313,12 @@
 			{#each guarantees as guarantee}
 				{@const Icon = guarantee.icon}
 				<div
-					class="interactive-card cinematic-glass hover:border-brand-blue/40 group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-10 text-center transition-all duration-500"
+					use:inView
+					class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-10 text-center transition-all duration-500 hover:border-brand-blue/40 [&.in-view]:border-brand-blue/40"
 				>
 					<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
 					<div
-						class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0"
+						class="card-glow pointer-events-none absolute h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 group-[.in-view]:opacity-100"
 						style="left: 0; top: 0; background: radial-gradient(circle, {currentTheme === 'dark'
 							? 'rgba(var(--color-brand-blue-rgb), 0.15)'
 							: 'rgba(var(--color-brand-blue-rgb), 0.1)'} 0%, {currentTheme === 'dark'
@@ -326,32 +328,32 @@
 
 					<div class="relative z-10">
 						<div
-							class="group-hover:border-brand-blue/20 group-hover:bg-brand-blue/10 mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[1.5rem] border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all duration-500 group-hover:rotate-3 group-hover:scale-110"
+							class="mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-[1.5rem] border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:border-brand-blue/20 group-hover:bg-brand-blue/10 group-[.in-view]:scale-110 group-[.in-view]:rotate-3 group-[.in-view]:border-brand-blue/20 group-[.in-view]:bg-brand-blue/10"
 						>
 							<Icon
-								class="group-hover:text-brand-blue h-10 w-10 text-[var(--color-text-base)] transition-colors duration-500"
+								class="h-10 w-10 text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-blue group-[.in-view]:text-brand-blue"
 							/>
 						</div>
 
 						<div
-							class="border-brand-blue/30 bg-brand-blue/20 text-brand-blue mb-6 inline-block rounded-full border px-4 py-1 text-xs font-black uppercase tracking-widest"
+							class="mb-6 inline-block rounded-full border border-brand-blue/30 bg-brand-blue/20 px-4 py-1 text-xs font-black tracking-widest text-brand-blue uppercase"
 						>
 							{guarantee.highlight}
 						</div>
 
 						<h3
-							class="group-hover:text-brand-blue mb-4 text-2xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500"
+							class="mb-4 text-2xl font-black tracking-tight text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-blue group-[.in-view]:text-brand-blue"
 						>
 							{guarantee.title}
 						</h3>
 
 						<!-- Bottom Accent Line -->
 						<div
-							class="bg-brand-blue/30 absolute bottom-0 left-0 h-[3px] w-0 shadow-[0_0_20px_rgba(0,119,255,0.3)] transition-all duration-1000 group-hover:w-full"
+							class="absolute bottom-0 left-0 h-[3px] w-0 bg-brand-blue/30 shadow-[0_0_20px_rgba(0,119,255,0.3)] transition-all duration-1000 group-hover:w-full group-[.in-view]:w-full"
 						></div>
 
 						<p
-							class="text-base font-medium leading-relaxed text-[var(--color-text-muted)] transition-colors duration-500 group-hover:text-[var(--color-text-base)]"
+							class="text-base leading-relaxed font-medium text-[var(--color-text-muted)] transition-colors duration-500 group-hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)]"
 						>
 							{guarantee.description}
 						</p>
@@ -361,16 +363,16 @@
 		</div>
 
 		<!-- Trust Statistics -->
-		<div class="group relative mb-32 overflow-hidden rounded-[3.5rem] p-16">
+		<div use:inView class="group relative mb-32 overflow-hidden rounded-[3.5rem] p-16">
 			<!-- Background with subtle movement -->
 			<div
-				class="group-hover:border-brand-blue/30 absolute inset-0 border border-[var(--glass-border)] backdrop-blur-3xl transition-all duration-700"
+				class="absolute inset-0 border border-[var(--glass-border)] backdrop-blur-3xl transition-all duration-700 group-hover:border-brand-blue/30 group-[.in-view]:border-brand-blue/30"
 				style="background: {currentTheme === 'dark'
 					? 'rgba(11, 157, 217, 0.1)'
 					: 'rgba(255, 255, 255, 0.4)'};"
 			></div>
 			<div
-				class="absolute -right-24 -top-24 h-96 w-96 rounded-full transition-all duration-700 group-hover:opacity-80"
+				class="absolute -top-24 -right-24 h-96 w-96 rounded-full transition-all duration-700 group-hover:opacity-80 group-[.in-view]:opacity-80"
 				style="background: radial-gradient(circle, rgba(0, 119, 255, 0.15) 0%, rgba(0, 119, 255, 0.05) 40%, transparent 70%);"
 			></div>
 
@@ -391,15 +393,15 @@
 				<div class="grid gap-12 md:grid-cols-4">
 					{#each trustIndicators as indicator}
 						{@const Icon = indicator.icon}
-						<div class="group/stat text-center">
+						<div use:inView class="group/stat text-center">
 							<div
-								class="group-hover/stat:bg-brand-blue/10 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all duration-500 group-hover/stat:scale-110"
+								class="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all duration-500 group-hover/stat:scale-110 group-hover/stat:bg-brand-blue/10 group-[.in-view]/stat:scale-110 group-[.in-view]/stat:bg-brand-blue/10"
 							>
 								<Icon
-									class="group-hover/stat:text-brand-blue h-10 w-10 text-[var(--color-text-base)] transition-colors duration-500"
+									class="h-10 w-10 text-[var(--color-text-base)] transition-colors duration-500 group-hover/stat:text-brand-blue group-[.in-view]/stat:text-brand-blue"
 								/>
 							</div>
-							<div class="text-brand-blue mb-3 text-5xl font-black tracking-tighter">
+							<div class="mb-3 text-5xl font-black tracking-tighter text-brand-blue">
 								{indicator.number}
 							</div>
 							<div class="mb-2 text-xl font-black text-[var(--color-text-base)]">
@@ -418,17 +420,18 @@
 		<div class="mb-32 grid gap-12 lg:grid-cols-2">
 			<!-- Certifications -->
 			<div
+				use:inView
 				class="cinematic-glass group relative overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-12"
 			>
 				<div
-					class="bg-brand-blue/5 absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					class="absolute inset-0 bg-brand-blue/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-[.in-view]:opacity-100"
 				></div>
 				<div class="relative z-10">
 					<div class="mb-10 flex items-center gap-4">
 						<div
-							class="border-brand-blue/20 bg-brand-blue/10 flex h-14 w-14 items-center justify-center rounded-2xl border"
+							class="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand-blue/20 bg-brand-blue/10"
 						>
-							<Award class="text-brand-blue h-7 w-7" />
+							<Award class="h-7 w-7 text-brand-blue" />
 						</div>
 						<h3 class="text-3xl font-black tracking-tight text-[var(--color-text-base)]">
 							{data?.lang === 'ar' ? 'شهادات واعتمادات' : 'Certifications & Accreditations'}
@@ -438,10 +441,11 @@
 					<div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
 						{#each certifications as cert}
 							<div
-								class="hover:border-brand-blue/30 flex items-center gap-5 rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-6 transition-all duration-500"
+								use:inView
+								class="flex items-center gap-5 rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-6 transition-all duration-500 hover:border-brand-blue/30 [&.in-view]:border-brand-blue/30"
 							>
 								<div
-									class="bg-brand-blue/10 flex h-14 w-14 items-center justify-center rounded-full text-2xl"
+									class="flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue/10 text-2xl"
 								>
 									{cert.badge}
 								</div>
@@ -459,17 +463,18 @@
 
 			<!-- Security Features -->
 			<div
+				use:inView
 				class="cinematic-glass group relative overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-12"
 			>
 				<div
-					class="bg-brand-blue/5 absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					class="absolute inset-0 bg-brand-blue/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-[.in-view]:opacity-100"
 				></div>
 				<div class="relative z-10">
 					<div class="mb-10 flex items-center gap-4">
 						<div
-							class="border-brand-blue/20 bg-brand-blue/10 flex h-14 w-14 items-center justify-center rounded-2xl border"
+							class="flex h-14 w-14 items-center justify-center rounded-2xl border border-brand-blue/20 bg-brand-blue/10"
 						>
-							<Lock class="text-brand-blue h-7 w-7" />
+							<Lock class="h-7 w-7 text-brand-blue" />
 						</div>
 						<h3 class="text-3xl font-black tracking-tight text-[var(--color-text-base)]">
 							{data?.lang === 'ar' ? 'الأمان والحماية' : 'Security & Protection'}
@@ -478,12 +483,12 @@
 
 					<div class="space-y-6">
 						{#each [{ title: data?.lang === 'ar' ? 'تشفير SSL مجاني' : 'Free SSL Encryption', desc: data?.lang === 'ar' ? 'حماية كاملة لبيانات موقعك وزوارك' : 'Complete protection for your website data and visitors' }, { title: data?.lang === 'ar' ? 'نسخ احتياطية يومية' : 'Daily Backups', desc: data?.lang === 'ar' ? 'حفظ تلقائي لجميع بيانات موقعك' : 'Automatic backup of all your website data' }, { title: data?.lang === 'ar' ? 'حماية من الهجمات' : 'Attack Protection', desc: data?.lang === 'ar' ? 'جدار حماية متقدم ضد التهديدات' : 'Advanced firewall against threats' }, { title: data?.lang === 'ar' ? 'مراقبة 24/7' : '24/7 Monitoring', desc: data?.lang === 'ar' ? 'مراقبة مستمرة لأداء وأمان الموقع' : 'Continuous monitoring of website performance and security' }] as feature}
-							<div class="group/item flex items-start gap-5">
+							<div use:inView class="group/item flex items-start gap-5">
 								<div
-									class="bg-brand-blue/20 group-hover/item:bg-brand-blue mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-colors"
+									class="mt-1 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand-blue/20 transition-colors group-hover/item:bg-brand-blue group-[.in-view]/item:bg-brand-blue"
 								>
 									<CheckCircle
-										class="text-brand-blue h-4 w-4 group-hover/item:text-[var(--color-background)]"
+										class="h-4 w-4 text-brand-blue group-hover/item:text-[var(--color-background)] group-[.in-view]/item:text-[var(--color-background)]"
 									/>
 								</div>
 								<div>
@@ -502,32 +507,32 @@
 		</div>
 
 		<!-- Money Back Guarantee CTA -->
-		<div class="group relative overflow-hidden rounded-[4rem] p-20 text-center">
+		<div use:inView class="group relative overflow-hidden rounded-[4rem] p-20 text-center">
 			<!-- High-end gradient background -->
 			<div
-				class="group-hover:border-brand-blue/40 absolute inset-0 border border-[var(--glass-border)] transition-all duration-700"
+				class="absolute inset-0 border border-[var(--glass-border)] transition-all duration-700 group-hover:border-brand-blue/40 group-[.in-view]:border-brand-blue/40"
 				style="background: {currentTheme === 'dark' ? '#0a0a0a' : '#ffffff'};"
 			></div>
 			<div
-				class="absolute left-1/2 top-0 h-[400px] w-[800px] -translate-x-1/2 rounded-full"
+				class="absolute top-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 rounded-full"
 				style="background: radial-gradient(ellipse at center, rgba(0, 119, 255, 0.15) 0%, rgba(0, 119, 255, 0.05) 40%, transparent 70%);"
 			></div>
 
 			<div class="relative z-10 mx-auto max-w-4xl">
 				<div
-					class="bg-brand-blue mx-auto mb-10 flex h-24 w-24 rotate-12 items-center justify-center rounded-3xl shadow-[0_0_50px_rgba(0,119,255,0.4)] transition-transform duration-700 group-hover:rotate-0"
+					class="mx-auto mb-10 flex h-24 w-24 rotate-12 items-center justify-center rounded-3xl bg-brand-blue shadow-[0_0_50px_rgba(0,119,255,0.4)] transition-transform duration-700 group-hover:rotate-0 group-[.in-view]:rotate-0"
 				>
 					<Shield class="h-12 w-12 text-white" />
 				</div>
 
 				<h3
-					class="mb-10 text-4xl font-black leading-tight tracking-tighter text-[var(--color-text-base)] md:text-6xl"
+					class="mb-10 text-4xl leading-tight font-black tracking-tighter text-[var(--color-text-base)] md:text-6xl"
 				>
 					{data?.lang === 'ar' ? 'ضمان استرداد المال 100%' : '100% Money Back Guarantee'}
 				</h3>
 
 				<p
-					class="mb-12 text-xl font-medium leading-relaxed text-[var(--color-text-muted)] md:text-2xl"
+					class="mb-12 text-xl leading-relaxed font-medium text-[var(--color-text-muted)] md:text-2xl"
 				>
 					{data?.lang === 'ar'
 						? 'نحن واثقون من جودة عملنا لدرجة أننا نقدم ضمان كامل لاسترداد المال خلال 30 يوم. إذا لم تكن راضياً تماماً عن موقعك، سنعيد لك أموالك بالكامل بدون أي أسئلة.'
@@ -539,9 +544,9 @@
 						<div
 							class="flex items-center justify-center gap-3 rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] px-8 py-4"
 						>
-							<CheckCircle class="text-brand-blue h-5 w-5" />
+							<CheckCircle class="h-5 w-5 text-brand-blue" />
 							<span
-								class="text-sm font-black uppercase tracking-widest text-[var(--color-text-base)]"
+								class="text-sm font-black tracking-widest text-[var(--color-text-base)] uppercase"
 								>{item.label}</span
 							>
 						</div>
@@ -551,13 +556,14 @@
 				<div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
 					<a
 						href="{base}/contact"
-						class="bg-brand-blue rounded-2xl px-10 py-5 text-lg font-black uppercase tracking-widest text-white transition-all duration-500 hover:scale-105 hover:bg-[#0066ee] hover:shadow-[0_20px_40px_rgba(0,119,255,0.3)]"
+						use:inView
+						class="rounded-2xl bg-brand-blue px-10 py-5 text-lg font-black tracking-widest text-white uppercase transition-all duration-500 hover:scale-105 hover:bg-[#0066ee] hover:shadow-[0_20px_40px_rgba(0,119,255,0.3)] [&.in-view]:scale-105 [&.in-view]:bg-[#0066ee] [&.in-view]:shadow-[0_20px_40px_rgba(0,119,255,0.3)]"
 					>
 						{data?.lang === 'ar' ? 'ابدأ مشروعك بثقة تامة' : 'Start Project Now'}
 					</a>
 					<a
 						href="{base}/about"
-						class="cinematic-glass hover:border-brand-blue/30 rounded-2xl border border-[var(--glass-border)] px-10 py-5 text-lg font-black uppercase tracking-widest text-[var(--color-text-base)] transition-all duration-500"
+						class="cinematic-glass rounded-2xl border border-[var(--glass-border)] px-10 py-5 text-lg font-black tracking-widest text-[var(--color-text-base)] uppercase transition-all duration-500 hover:border-brand-blue/30"
 					>
 						{data?.lang === 'ar' ? 'تعرف علينا أكثر' : 'Learn More'}
 					</a>

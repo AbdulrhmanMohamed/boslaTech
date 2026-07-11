@@ -17,7 +17,9 @@
 		sceneRotationZ = 0,
 		scenePosition = [0, 0, 0] as [number, number, number],
 		sceneScale = 1,
-		ecosystemOpacity = 1
+		ecosystemOpacity = 1,
+		scrollY = 0, // Received from parent for scroll interactivity
+		onContextRestored
 	} = $props();
 
 	const allClientLogos = [
@@ -97,7 +99,8 @@
 
 	// Mobile-specific orbit radii - tighter for portrait view, only 20 logos
 	const desktopOrbitRadii = [4.5, 6.0, 7.5, 9.0, 10.5, 12.0];
-	const mobileOrbitRadii = [2.2, 3.5]; // 2 rings for 20 logos
+	// Mobile: Single "Dynamic Orbital" - clean, elegant, limited logos
+	const mobileOrbitRadii = [2.2];
 
 	let isMobile = $state(false);
 	let currentLayer = $state(0);
@@ -111,18 +114,44 @@
 
 	// Mobile-specific 3D adjustments
 	const orbitRadii = $derived(isMobile ? mobileOrbitRadii : desktopOrbitRadii);
-	const logosPerOrbit = $derived(Math.ceil(clientLogos.length / orbitRadii.length));
-	// Mobile: sphere 1.5x logo size (logo=0.5, sphere=0.75), Desktop: standard
-	const logoSize = $derived(isMobile ? 0.5 : 0.32);
-	const sphereScale = $derived(isMobile ? 0.75 : 1.0); // 1.5x logo size
+	// Mobile: limit to 10 logos for a clean look
+	const logosPerOrbit = $derived(isMobile ? 10 : Math.ceil(clientLogos.length / orbitRadii.length));
+	// Mobile: standard logo size, but fewer of them
+	const logoSize = $derived(isMobile ? 0.35 : 0.32);
+
+	// Carousel logic for mobile (variables moved to loop scope or derived from frame loop)
+	// We will calculate batch indices inside the render loop since 'time' is available there.
+
+	const sphereScale = $derived(isMobile ? 0.8 : 1.0);
 	const ringOpacity = $derived(isMobile ? 0.6 : 0.4);
 
 	onMount(() => {
 		isMobile = window.innerWidth < 768;
 
-		const mobileMaxLogos = 20;
+		// WebGL Context Loss Recovery
+		const canvas = document.querySelector('canvas');
+		if (canvas) {
+			canvas.addEventListener('webglcontextlost', (event) => {
+				event.preventDefault();
+				console.warn('WebGL context lost. Attempting to recover...');
+			});
+
+			canvas.addEventListener('webglcontextrestored', () => {
+				console.log('WebGL context restored.');
+				// Force re-render by triggering a state update
+				time = 0;
+				// Notify parent to remount component
+				if (onContextRestored) {
+					onContextRestored();
+				}
+			});
+		}
+
+		// Reduced visible count for mobile (10 is enough for 2 clean rings)
+		const mobileMaxLogos = 10;
+		// Standard timing for both (Stable)
 		const layerTimings = isMobile
-			? { core: 0, wireframe: 200, grid: 400, rings: 500, logos: 600, threads: 700, maxLayer: 3 }
+			? { core: 0, wireframe: 300, grid: 500, rings: 700, logos: 900, threads: 1100, maxLayer: 3 }
 			: { core: 0, wireframe: 300, grid: 500, rings: 700, logos: 900, threads: 1100, maxLayer: 6 };
 
 		setTimeout(() => {
@@ -196,19 +225,35 @@
 	const scale = spring(1, { stiffness: 0.1, damping: 0.4 });
 
 	const segmentCount = $derived(isMobile ? 16 : 24);
-	const sphereRadius = $derived(isMobile ? 0.7 : 1.1);
+	const sphereRadius = $derived(isMobile ? 0.85 : 1.1);
 	const coreSphereGeometry = $derived(
 		new THREE.SphereGeometry(sphereRadius, segmentCount, segmentCount)
 	);
 	const clientPaneGeometry = $derived(new THREE.CircleGeometry(logoSize, isMobile ? 12 : 16));
 	const wireframeSphereGeometry = $derived(
-		new THREE.SphereGeometry(sphereRadius * 1.1, segmentCount, segmentCount)
+		new THREE.SphereGeometry(sphereRadius * (isMobile ? 1.2 : 1.1), segmentCount, segmentCount)
 	);
+
+	// Particle Field
+	const PARTICLE_COUNT = isMobile ? 50 : 150;
+	const particles = Array.from({ length: PARTICLE_COUNT }).map(() => ({
+		position: [
+			(Math.random() - 0.5) * 20,
+			(Math.random() - 0.5) * 20,
+			(Math.random() - 0.5) * 10 - 5
+		] as [number, number, number],
+		scale: Math.random() * 0.5 + 0.2,
+		speed: Math.random() * 0.2 + 0.1
+	}));
 
 	let lastMouseX = 0;
 	let lastMouseY = 0;
 	const MOUSE_THRESHOLD = 0.005;
 	let time = $state(0);
+
+	// Pulse for the core
+	const corePulse = $derived(1 + Math.sin(time * 1.5) * 0.05);
+	const atmospherePulse = $derived(1.1 + Math.sin(time * 1.0) * 0.08);
 
 	const FRAME_SKIP = $derived(isMobile ? 3 : 2);
 	let frameSkipCounter = 0;
@@ -253,17 +298,30 @@
 	<T.Group
 		position={scenePosition}
 		rotation.y={$rotationY + sceneRotation}
-		rotation.x={$rotationX + sceneRotationX}
+		rotation.x={isMobile ? $rotationX + sceneRotationX + 0.5 : $rotationX + sceneRotationX}
 		rotation.z={sceneRotationZ}
-		scale={$scale * sceneScale * sphereScale}
+		scale={$scale * sceneScale * sphereScale * (isMobile ? 1 + Math.sin(time * 0.8) * 0.03 : 1)}
 	>
-		<T.Mesh geometry={coreSphereGeometry}>
+		<T.Mesh geometry={coreSphereGeometry} scale={corePulse}>
 			<T.MeshStandardMaterial
 				color={PURE_BLUE}
 				emissive={CORE_GLOW}
-				emissiveIntensity={currentTheme === 'dark' ? 2.5 : 1.5}
+				emissiveIntensity={currentTheme === 'dark' ? 3.5 : 2.5}
 				roughness={0.1}
 				metalness={0.9}
+			/>
+		</T.Mesh>
+
+		<!-- Atmosphere Halo -->
+		<T.Mesh geometry={coreSphereGeometry} scale={atmospherePulse}>
+			<T.MeshStandardMaterial
+				color={PURE_BLUE}
+				emissive={PURE_BLUE}
+				emissiveIntensity={currentTheme === 'dark' ? 1.0 : 0.5}
+				transparent
+				opacity={0.3}
+				side={THREE.BackSide}
+				depthWrite={false}
 			/>
 		</T.Mesh>
 
@@ -298,7 +356,26 @@
 
 		{#if showRings}
 			{#each orbitRadii as radius, i}
-				{#if !isMobile || i < 2}
+				{#if isMobile}
+					<!-- Mobile Ring Logic: Fully aligned with Logos -->
+					<T.Group
+						rotation.x={0.5 + Math.sin(time * 0.5) * 0.2}
+						rotation.z={Math.cos(time * 0.3) * 0.1}
+						rotation.y={time * 0.15}
+					>
+						<!-- Rotate the torus by 90 degrees to lay flat in the tilted group -->
+						<T.Mesh rotation.x={Math.PI / 2}>
+							<T.TorusGeometry args={[radius, 0.025, 16, 100]} />
+							<T.MeshStandardMaterial
+								color={PURE_BLUE}
+								emissive={PURE_BLUE}
+								emissiveIntensity={currentTheme === 'dark' ? 1.5 : 1.0}
+								transparent
+								opacity={ringOpacity * ecosystemOpacity}
+							/>
+						</T.Mesh>
+					</T.Group>
+				{:else if i < 2}
 					<T.Mesh rotation.x={Math.PI / 2 + i * 0.15}>
 						<T.TorusGeometry args={[radius, 0.025, 16, 100]} />
 						<T.MeshStandardMaterial
@@ -314,38 +391,132 @@
 		{/if}
 
 		{#if showLogos}
-			{#each visibleLogos as logoUrl, i}
-				{@const orbitIndex = Math.floor(i / logosPerOrbit)}
-				{@const radius = orbitRadii[orbitIndex]}
-				{@const angleOffset = (i % logosPerOrbit) * ((Math.PI * 2) / logosPerOrbit)}
-				{@const angle = angleOffset + time * (0.05 + orbitIndex * 0.02)}
+			{#each orbitRadii as radius, i}
+				{@const logoCount = logosPerOrbit}
+				{@const startIndex = i * logoCount}
+				{@const orbitLogos = clientLogos.slice(startIndex, startIndex + logoCount)}
 
-				{@const xPos = Math.cos(angle) * radius}
-				{@const zPos = Math.sin(angle) * radius}
-				{@const yPos = Math.sin(time * 0.5 + i) * 0.15}
+				<T.Group
+					rotation.x={isMobile
+						? 0.5 + Math.sin(time * 0.5) * 0.2 // Dynamic "Wobble" - breathes up and down
+						: Math.sin(time * 0.1 + i) * 0.1}
+					rotation.z={isMobile ? Math.cos(time * 0.3) * 0.1 : Math.cos(time * 0.1 + i) * 0.05}
+					rotation.y={isMobile ? time * 0.15 : 0}
+				>
+					{#each Array(logosPerOrbit) as _, j}
+						<!-- Mobile Carousel Logic: Strict Batch Paging -->
+						<!-- Total logos: clientLogos.length -->
+						<!-- Logos per page: logosPerOrbit (10) -->
+						<!-- We want to cycle through batches: 0-9, 10-19, 20-29, etc. -->
+						<!-- Every 4 seconds, switch to the next batch. -->
 
-				{#if showDataThreads}
-					<T.Group>
-						<T.Mesh
-							position={[xPos / 2, yPos / 2, zPos / 2]}
-							rotation.y={-angle}
-							rotation.z={Math.PI / 2}
+						{@const carouselInterval = 4.0}
+						{@const totalBatches = Math.ceil(clientLogos.length / logosPerOrbit)}
+
+						<!-- Calculate which batch we are currently on -->
+						{@const currentBatch = isMobile
+							? Math.floor(time / carouselInterval) % totalBatches
+							: 0}
+
+						<!-- Transition progress within the 4s interval (0 to 1) -->
+						{@const progress = (time % carouselInterval) / carouselInterval}
+
+						<!-- Animation: 
+							 Coin Flip Effect: Rotate X-axis multiple times.
+							 No opacity fade (scale remains 1).
+						-->
+						{@const flipDuration = 2.0}
+						<!-- Very smooth, slow spin -->
+						{@const isFlipping = isMobile && progress < flipDuration / carouselInterval}
+
+						<!-- Cubic Ease-In-Out Function for "Slow Start - Fast Middle - Slow End" -->
+						{@const t = isFlipping ? progress / (flipDuration / carouselInterval) : 0}
+						{@const easedT = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2}
+
+						<!-- Rotation: 0 -> 2*PI (360 degrees) during flip -->
+						{@const flipAngle = isFlipping ? easedT * Math.PI * 2 : 0}
+
+						<!-- 
+							Mid-Flip Swap Logic:
+							We must calculate the batch based on the flip progress.
+							If we are in the FIRST HALF of the flip (easedT < 0.5), we show the OLD batch.
+							If we are in the SECOND HALF (easedT >= 0.5), we show the NEW batch.
+							This ensures the image changes exactly when the card is edge-on (90 or 270 deg).
+						-->
+						{@const effectiveBatch =
+							isFlipping && easedT < 0.5
+								? (currentBatch - 1 + totalBatches) % totalBatches // Show previous batch
+								: currentBatch} // Show new batch
+
+						{@const logoIndexRaw = j + effectiveBatch * logosPerOrbit}
+						{@const logoIndex = isMobile ? logoIndexRaw % clientLogos.length : j + startIndex}
+
+						{@const logoUrl = clientLogos[logoIndex]}
+
+						<!-- No Opacity Fade - Solid physical flip -->
+						{@const flipOpacity = 1}
+
+						{@const angle = (j / logosPerOrbit) * Math.PI * 2}
+						{@const xPos = Math.cos(angle) * radius}
+						{@const zPos = Math.sin(angle) * radius}
+
+						<!-- Y position is 0 to ensure logo center sits exactly on the orbit line -->
+						<T.Group
+							position={[xPos, 0, zPos]}
+							rotation.x={flipAngle}
+							scale={isMobile ? flipOpacity : 1}
 						>
-							<T.CylinderGeometry args={[0.008, 0.008, radius, 8]} />
-							<T.MeshStandardMaterial
-								color={PURE_BLUE}
-								emissive={PURE_BLUE}
-								emissiveIntensity={currentTheme === 'dark' ? 4.0 : 2.5}
-								transparent
-								opacity={(currentTheme === 'dark' ? 0.6 : 0.4) * ecosystemOpacity}
-							/>
-						</T.Mesh>
-					</T.Group>
-				{/if}
+							{#key logoUrl}
+								<Hero3DLogo url={logoUrl} position={[0, 0, 0]} {ecosystemOpacity} {logoSize} />
+							{/key}
+						</T.Group>
 
-				<Hero3DLogo url={logoUrl} position={[xPos, yPos, zPos]} {ecosystemOpacity} {logoSize} />
+						{#if showDataThreads && !isMobile}
+							<T.Group>
+								<T.Mesh
+									position={[xPos / 2, 0, zPos / 2]}
+									rotation.y={-angle}
+									rotation.z={Math.PI / 2}
+								>
+									<T.CylinderGeometry
+										args={[0.008, 0.008, Math.sqrt(xPos * xPos + zPos * zPos), 8]}
+									/>
+									<T.MeshStandardMaterial
+										color={PURE_BLUE}
+										emissive={PURE_BLUE}
+										emissiveIntensity={(currentTheme === 'dark' ? 5.0 : 3.0) +
+											Math.sin(time * 3 + j) * 2}
+										transparent
+										opacity={(currentTheme === 'dark' ? 0.7 : 0.5) * ecosystemOpacity}
+									/>
+								</T.Mesh>
+							</T.Group>
+						{/if}
+					{/each}
+				</T.Group>
 			{/each}
 		{/if}
+
+		<!-- Cinematic Particles -->
+		<T.Group>
+			{#each particles as p, i}
+				<T.Mesh
+					position={[
+						p.position[0],
+						p.position[1] + Math.sin(time * p.speed + i) * 0.5,
+						p.position[2]
+					]}
+					scale={p.scale}
+				>
+					<T.SphereGeometry args={[0.02, 4, 4]} />
+					<T.MeshBasicMaterial
+						color={PURE_BLUE}
+						transparent
+						opacity={(0.3 + Math.sin(time * 2 + i) * 0.2) * ecosystemOpacity}
+					/>
+				</T.Mesh>
+			{/each}
+		</T.Group>
 	</T.Group>
 </Float>
 

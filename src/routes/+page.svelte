@@ -2,13 +2,16 @@
 	// @ts-ignore - lucide types declared in src/app.d.ts for Svelte projects
 	import { ArrowRight, Sparkles } from '@lucide/svelte';
 	import { onMount, getContext } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
+	import { inView } from '$lib/actions/inView';
 	import ServicesSection from '$lib/components/ServicesSection.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
 	import FeaturesSection from '$lib/components/FeaturesSection.svelte';
 	import SocialProofSection from '$lib/components/SocialProofSection.svelte';
 	import FAQSection from '$lib/components/FAQSection.svelte';
 	import WhyChooseUsSection from '$lib/components/WhyChooseUsSection.svelte';
-	import Hero3D from '$lib/components/Hero3D.svelte';
+	import PricingSection from '$lib/components/PricingSection.svelte';
+	import Hero3D from '$lib/components/About3D.svelte';
 	import { Canvas, T } from '@threlte/core';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -55,6 +58,7 @@
 
 	// Delayed Canvas loading for faster FCP/LCP
 	let showCanvas = $state(false);
+	let canvasKey = $state(0); // Used to force re-render on WebGL context recovery
 
 	// Typewriter / Hero Animation (RTL + LTR Safe)
 	$effect(() => {
@@ -280,8 +284,8 @@
 		// Mobile-specific camera for better composition
 		if (isMobile) {
 			// Mobile: wider FOV, slightly above, closer
-			cameraPosition = [0, 1, 8];
-			cameraFov = 60;
+			cameraPosition = [0, 0.5, 9];
+			cameraFov = 55;
 		} else {
 			// Desktop: standard view
 			cameraPosition = [0, 0, 10];
@@ -399,38 +403,21 @@
 		});
 
 		// 3D Scene Micro-interactions: Transition from Hero to Features
-		const transitionTl = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.hero-section',
-				start: 'top top',
-				end: 'bottom top',
-				scrub: 1.5
-			}
-		});
-
-		transitionTl.to(
-			{},
-			{
-				onUpdate: function () {
-					const progress = this.progress();
-					scenePosition = [0, 0, -progress * 1.5];
-					sceneScale = 1.6 - progress * 0.3;
-					ecosystemOpacity = 1 - progress * 0.15;
-					sceneRotationX = progress * Math.PI * 0.15;
-					sceneRotationZ = -progress * Math.PI * 0.05;
-				}
-			}
-		);
-
-		// Slow cinematic rotation
 		ScrollTrigger.create({
 			trigger: pageContainer,
 			start: 'top top',
 			end: 'bottom bottom',
-			scrub: true,
+			scrub: 1,
 			onUpdate: (self) => {
 				scrollProgress = self.progress;
 				sceneRotation = self.progress * Math.PI * 2;
+				// Zoom in/out effect - scale from 1.8 to 1.2 as you scroll down
+				sceneScale = 1.8 - self.progress * 0.6;
+				// Move scene backward as you scroll to create depth effect
+				scenePosition = [0, 0, -self.progress * 2];
+				ecosystemOpacity = 1 - self.progress * 0.15;
+				sceneRotationX = self.progress * Math.PI * 0.15;
+				sceneRotationZ = -self.progress * Math.PI * 0.05;
 
 				if (spotlightRef) {
 					gsap.to(spotlightRef, {
@@ -441,20 +428,35 @@
 				}
 			}
 		});
+	});
 
-		// Fade out 3D scene when moving from Features to Services
-		if (hero3DContainer) {
-			gsap.to(hero3DContainer, {
-				scrollTrigger: {
-					trigger: '#services',
-					start: 'top bottom', // Start fading when services section starts entering
-					end: 'top center', // Fully faded by the time services is halfway up
-					scrub: true
-				},
-				autoAlpha: 0,
-				y: -100,
-				ease: 'none'
-			});
+	afterNavigate(() => {
+		if (window.location.hash) {
+			const id = window.location.hash.replace('#', '');
+
+			// Instant jump early
+			setTimeout(() => {
+				const el = document.getElementById(id);
+				if (el) {
+					el.scrollIntoView({ behavior: 'auto', block: 'start' });
+				}
+			}, 10);
+
+			// Fallback jump after canvas starts loading to skip scrolling transitions
+			setTimeout(() => {
+				const el = document.getElementById(id);
+				if (el) {
+					el.scrollIntoView({ behavior: 'auto', block: 'start' });
+				}
+			}, 300);
+
+			// Final strict instant jump
+			setTimeout(() => {
+				const el = document.getElementById(id);
+				if (el) {
+					el.scrollIntoView({ behavior: 'auto', block: 'start' });
+				}
+			}, 800);
 		}
 	});
 
@@ -482,23 +484,23 @@
 >
 	<!-- 3D Sticky Scope: Hero + Features -->
 	<div class="relative">
-		<!-- 3D Background Layer - Fixed to viewport -->
+		<!-- 3D Background Layer - Fixed to viewport, covering hero section -->
 		<!-- Canvas loads after delay for fast FCP -->
 		<div
 			bind:this={hero3DContainer}
-			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[100svh] w-full overflow-hidden"
+			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
 			{#if showCanvas}
 				<Canvas>
 					<T.PerspectiveCamera makeDefault position={cameraPosition} fov={cameraFov} />
-					<Hero3D
-						{sceneRotation}
-						{sceneRotationX}
-						{sceneRotationZ}
-						{scenePosition}
-						{sceneScale}
-						{ecosystemOpacity}
-					/>
+					{#key canvasKey}
+						<Hero3D
+							{sceneRotation}
+							onContextRestored={() => {
+								canvasKey++;
+							}}
+						/>
+					{/key}
 				</Canvas>
 			{:else}
 				<!-- CSS Gradient Placeholder - Shows immediately for fast FCP -->
@@ -556,28 +558,30 @@
 
 								<div class="hero-buttons flex flex-wrap items-center justify-center gap-6 pt-4">
 									<a
+										use:inView
 										href={link(data.home?.hero?.ctaPrimary?.href || '/contact')}
 										class="btn-primary group"
 									>
 										<span class="relative z-10 flex items-center gap-3">
 											{data.home?.hero?.ctaPrimary?.label}
 											<ArrowRight
-												class="h-6 w-6 transition-transform duration-500 group-hover:translate-x-2"
+												class="h-6 w-6 transition-transform duration-500 group-hover:translate-x-2 group-[.in-view]:translate-x-2"
 											/>
 										</span>
 									</a>
 
 									<a
+										use:inView
 										href="#services"
 										onclick={(e) => {
 											e.preventDefault();
 											document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
 										}}
-										class="cinematic-glass group flex items-center gap-3 rounded-2xl border border-[var(--glass-border)] px-8 py-4 font-black text-[var(--color-text-base)] transition-all hover:bg-[var(--color-text-base)]/5"
+										class="cinematic-glass group flex items-center gap-3 rounded-2xl border border-[var(--glass-border)] px-8 py-4 font-black text-[var(--color-text-base)] transition-all group-[.in-view]:bg-[var(--color-text-base)]/5 hover:bg-[var(--color-text-base)]/5"
 									>
 										<span>{data.home?.hero?.ctaSecondary?.label}</span>
 										<Sparkles
-											class="h-5 w-5 text-brand-orange transition-transform duration-500 group-hover:rotate-12"
+											class="h-5 w-5 text-brand-orange transition-transform duration-500 group-hover:rotate-12 group-[.in-view]:rotate-12"
 										/>
 									</a>
 								</div>
@@ -595,6 +599,7 @@
 	<div class="relative z-10 bg-[var(--color-background)] transition-colors duration-1000">
 		<ServicesSection {data} />
 		<WhyChooseUsSection {data} />
+		<PricingSection {data} />
 
 		<!-- <SocialProofSection {data} /> -->
 		<!-- <TestimonialSection {data} /> -->
