@@ -130,6 +130,22 @@
 			]
 		})}
 	</script>
+	{#if typedData?.servicesPage?.faq?.items?.length}
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": typedData.servicesPage.faq.items.map((item: any) => ({
+					"@type": "Question",
+					"name": item.q,
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": item.a
+					}
+				}))
+			})}
+		</script>
+	{/if}
 </svelte:head>
 
 <!-- Hero -->

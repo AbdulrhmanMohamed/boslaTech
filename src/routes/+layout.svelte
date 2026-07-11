@@ -167,6 +167,34 @@
 	<script type="application/ld+json">
 		{JSON.stringify({
 			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "مؤسسة حافة النجوم",
+			"alternateName": "BOSLA",
+			"url": "https://hafatalnjom.com",
+			"logo": "https://hafatalnjom.com/images/logos/bosla-logo.png",
+			"image": "https://hafatalnjom.com/images/logos/bosla-logo.png",
+			"description": "شركة تصميم وتطوير مواقع إلكترونية وحلول رقمية في الرياض",
+			"taxID": "7050568158",
+			"telephone": "+966576704683",
+			"email": "info@hafatalnjom.com",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Riyadh",
+				"addressRegion": "Al-Malaz",
+				"addressCountry": "SA"
+			},
+			"sameAs": [
+				"https://wa.me/966576704683",
+				"https://www.instagram.com/bosla.sa",
+				"https://x.com/bosla_sa"
+			],
+			"areaServed": ["SA"],
+			"priceRange": "SAR 1,500 - SAR 5,000"
+		})}
+	</script>
+	<script type="application/ld+json">
+		{JSON.stringify({
+			"@context": "https://schema.org",
 			"@type": "LocalBusiness",
 			"name": "مؤسسة حافة النجوم - Hafat Alnjom",
 			"description": "شركة تصميم وتطوير مواقع إلكترونية وحلول رقمية في الرياض",
@@ -174,7 +202,7 @@
 			"telephone": "+966576704683",
 			"taxID": "7050568158",
 			"areaServed": ["SA", "GCC"],
-			"priceRange": "SAR 1,500 - SAR 10,000",
+			"priceRange": "SAR 1,500 - SAR 5,000",
 			"address": {
 				"@type": "PostalAddress",
 				"addressLocality": "Riyadh",
