@@ -81,7 +81,7 @@
 					category: 'Guarantee',
 					question: "What if I'm not satisfied with the final result?",
 					answer:
-						'We offer a money-back guarantee within 30 days if you are not completely satisfied with the website. We also provide 3 free revision rounds during development to ensure you get a website that exactly meets your expectations. Your satisfaction is our top priority.'
+						'We work closely with you throughout the development process with free revision rounds to ensure you get a website that exactly meets your expectations. Your satisfaction is our top priority.'
 				},
 				{
 					category: 'Features',
@@ -151,7 +151,7 @@
 					category: 'الضمان',
 					question: 'ماذا لو لم أكن راضياً عن النتيجة النهائية؟',
 					answer:
-						'نقدم ضمان استرداد المال خلال 30 يوم إذا لم تكن راضياً تماماً عن الموقع. كما نقدم 3 جولات مراجعة مجانية أثناء التطوير لضمان حصولك على موقع يلبي توقعاتك بالضبط. رضاك هو أولويتنا الأولى.'
+						'نعمل معك عن كثب طوال مرحلة التطوير مع جولات مراجعة مجانية لضمان حصولك على موقع يلبي توقعاتك بالضبط. رضاك هو أولويتنا الأولى.'
 				},
 				{
 					category: 'المميزات',

@@ -85,9 +85,9 @@
 			? [
 					{
 						icon: Shield,
-						title: 'ضمان استرداد المال',
-						description: 'ضمان كامل لاسترداد المال خلال 30 يوم إذا لم تكن راضياً تماماً عن النتيجة',
-						highlight: '30 يوم'
+						title: 'رضاك هدفنا',
+						description: 'نعمل معك حتى تحصل على نتيجة ترضيك تماماً — مع مراجعات مجانية غير محدودة',
+						highlight: 'رضا مضمون'
 					},
 					{
 						icon: Clock,
@@ -111,10 +111,10 @@
 			: [
 					{
 						icon: Shield,
-						title: 'Money Back Guarantee',
+						title: 'Satisfaction Guaranteed',
 						description:
-							"Full money-back guarantee within 30 days if you're not completely satisfied with the result",
-						highlight: '30 days'
+							'We work with you until you are completely satisfied — with unlimited free revisions',
+						highlight: '100% effort'
 					},
 					{
 						icon: Clock,
@@ -145,54 +145,54 @@
 		data?.lang === 'ar'
 			? [
 					{
-						icon: Users,
-						number: 'موثوق',
-						label: 'عميل راضٍ',
-						description: 'عملاء حققوا نجاحاً مع مواقعنا'
-					},
-					{
 						icon: Star,
-						number: '4.9/5',
-						label: 'تقييم العملاء',
-						description: 'متوسط تقييمات عملائنا'
+						number: 'سعودي',
+						label: 'مقرنا الرياض',
+						description: 'نخدم الشركات في جميع المملكة'
 					},
 					{
 						icon: Award,
-						number: 'مثبت',
-						label: 'سنوات خبرة',
-						description: 'في تطوير المواقع الإلكترونية'
+						number: 'معتمد',
+						label: 'سجل تجاري',
+						description: '7050568158 — مؤسسة حافة النجوم'
+					},
+					{
+						icon: Users,
+						number: 'متخصص',
+						label: 'ووردبريس - شوبيفاي - سلة - زد',
+						description: 'منصات نعمل عليها'
 					},
 					{
 						icon: Zap,
-						number: '98%',
-						label: 'معدل النجاح',
-						description: 'نسبة المشاريع المكتملة بنجاح'
+						number: 'سريع',
+						label: 'تسليم خلال أيام',
+						description: 'مواقع بسيطة 7-10 أيام، متاجر 2-3 أسابيع'
 					}
 				]
 			: [
 					{
-						icon: Users,
-						number: 'Trusted',
-						label: 'Satisfied Clients',
-						description: 'Clients who achieved success with our websites'
-					},
-					{
 						icon: Star,
-						number: '4.9/5',
-						label: 'Client Rating',
-						description: 'Average rating from our clients'
+						number: 'Saudi',
+						label: 'Based in Riyadh',
+						description: 'Serving businesses across the Kingdom'
 					},
 					{
 						icon: Award,
-						number: 'Proven',
-						label: 'Years Experience',
-						description: 'In web development'
+						number: 'Licensed',
+						label: 'Commercial Registration',
+						description: '7050568158 — Hafat Alnjom Est.'
+					},
+					{
+						icon: Users,
+						number: 'Specialist',
+						label: 'Platforms We Use',
+						description: 'WordPress, Shopify, Salla, Zid'
 					},
 					{
 						icon: Zap,
-						number: '98%',
-						label: 'Success Rate',
-						description: 'Percentage of successfully completed projects'
+						number: 'Fast',
+						label: 'Delivery Timeline',
+						description: 'Simple sites 7-10 days, stores 2-3 weeks'
 					}
 				]
 	);
@@ -528,30 +528,16 @@
 				<h3
 					class="mb-10 text-4xl leading-tight font-black tracking-tighter text-[var(--color-text-base)] md:text-6xl"
 				>
-					{data?.lang === 'ar' ? 'ضمان استرداد المال 100%' : '100% Money Back Guarantee'}
+					{data?.lang === 'ar' ? 'جاهز لتطوير أعمالك الرقمية؟' : 'Ready to Grow Your Digital Presence?'}
 				</h3>
 
 				<p
 					class="mb-12 text-xl leading-relaxed font-medium text-[var(--color-text-muted)] md:text-2xl"
 				>
 					{data?.lang === 'ar'
-						? 'نحن واثقون من جودة عملنا لدرجة أننا نقدم ضمان كامل لاسترداد المال خلال 30 يوم. إذا لم تكن راضياً تماماً عن موقعك، سنعيد لك أموالك بالكامل بدون أي أسئلة.'
-						: "We are so confident in our work quality that we offer a full money-back guarantee within 30 days. If you're not completely satisfied with your website, we'll refund your money completely with no questions asked."}
+						? 'نحن نعمل معك خطوة بخطوة من التخطيط إلى الإطلاق. نقدم استشارة مجانية لفهم احتياجك وتقديم عرض سعر مناسب.'
+						: 'We work with you step by step — from planning to launch. Get a free consultation to discuss your project needs and receive a tailored quote.'}
 				</p>
-
-				<div class="mb-16 grid gap-8 md:grid-cols-3">
-					{#each [{ label: data?.lang === 'ar' ? 'بدون أسئلة' : 'No Questions' }, { label: data?.lang === 'ar' ? 'استرداد كامل' : 'Full Refund' }, { label: data?.lang === 'ar' ? 'خلال 30 يوم' : 'Within 30 Days' }] as item}
-						<div
-							class="flex items-center justify-center gap-3 rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] px-8 py-4"
-						>
-							<CheckCircle class="h-5 w-5 text-brand-blue" />
-							<span
-								class="text-sm font-black tracking-widest text-[var(--color-text-base)] uppercase"
-								>{item.label}</span
-							>
-						</div>
-					{/each}
-				</div>
 
 				<div class="flex flex-col items-center justify-center gap-6 sm:flex-row">
 					<a
@@ -559,7 +545,7 @@
 						use:inView
 						class="rounded-2xl bg-brand-blue px-10 py-5 text-lg font-black tracking-widest text-white uppercase transition-all duration-500 hover:scale-105 hover:bg-[#0066ee] hover:shadow-[0_20px_40px_rgba(0,119,255,0.3)] [&.in-view]:scale-105 [&.in-view]:bg-[#0066ee] [&.in-view]:shadow-[0_20px_40px_rgba(0,119,255,0.3)]"
 					>
-						{data?.lang === 'ar' ? 'ابدأ مشروعك بثقة تامة' : 'Start Project Now'}
+						{data?.lang === 'ar' ? 'احصل على استشارتك المجانية' : 'Get Free Consultation'}
 					</a>
 					<a
 						href="{base}/about"

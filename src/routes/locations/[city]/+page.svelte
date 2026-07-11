@@ -108,8 +108,8 @@
 				</h3>
 				<p class="mx-auto max-w-3xl text-base leading-relaxed font-medium text-[var(--color-text-muted)]">
 					{isAr
-						? `مؤسسة حافة النجوم تقدم خدماتها للشركات في ${city?.name || ''} وأكثر من 500 عميل في جميع أنحاء المملكة. فريقنا على دراية كاملة بسوق ${city?.name || ''} المحلي، مما يمكننا من تقديم حلول رقمية تناسب احتياجات شركتك بدقة.`
-						: `Hafat Alnjom serves businesses in ${city?.name || ''} with 500+ clients across the Kingdom. Our team has deep knowledge of the local ${city?.name || ''} market, enabling us to deliver digital solutions tailored to your business needs.`
+						? `مؤسسة حافة النجوم تقدم خدماتها للشركات في ${city?.name || ''} وفي جميع أنحاء المملكة. فريقنا على دراية كاملة بسوق ${city?.name || ''} المحلي، مما يمكننا من تقديم حلول رقمية تناسب احتياجات شركتك بدقة.`
+						: `Hafat Alnjom serves businesses in ${city?.name || ''} and across the Kingdom. Our team has deep knowledge of the local ${city?.name || ''} market, enabling us to deliver digital solutions tailored to your business needs.`
 					}
 				</p>
 			</div>

@@ -180,12 +180,10 @@
 			<div class="flex flex-wrap items-center justify-center gap-6 pt-2 text-xs font-medium text-[var(--color-text-muted)]">
 				<span class="inline-flex items-center gap-1.5">
 					<Star class="h-3.5 w-3.5 fill-yellow-500 text-yellow-500" />
-					<span>{isAr ? '4.9/5 تقييم العملاء' : '4.9/5 Client Rating'}</span>
+					<span>{isAr ? 'مقرنا الرياض، نخدم جميع المملكة' : 'Based in Riyadh, serving all KSA'}</span>
 				</span>
 				<span class="text-[var(--glass-border)] hidden sm:inline">|</span>
-				<span>{isAr ? 'أكثر من 500 عميل' : '500+ Happy Clients'}</span>
-				<span class="text-[var(--glass-border)] hidden sm:inline">|</span>
-				<span>{isAr ? 'ضمان استعادة الأموال' : 'Money-Back Guarantee'}</span>
+				<span>{isAr ? 'سجل تجاري 7050568158' : 'CR: 7050568158'}</span>
 			</div>
 		</div>
 	</div>
@@ -253,7 +251,7 @@
 						</a>
 					</div>
 					<p class="text-xs font-medium text-[var(--color-text-muted)]">
-						{isAr ? '✅ أكثر من 500 شركة وثقت في خدماتنا — احصل على استشارتك المجانية اليوم' : '✅ 500+ businesses trust us — Get your free consultation today'}
+						{isAr ? '✅ احصل على استشارتك المجانية اليوم' : '✅ Get your free consultation today'}
 					</p>
 				</div>
 			{/each}
@@ -340,7 +338,7 @@
 						<ArrowRight class="h-5 w-5" />
 					</a>
 					<p class="mt-4 text-sm font-medium text-[var(--color-text-muted)]">
-						{isAr ? '⭐ 4.9/5 تقييم · أكثر من 500 عميل · ضمان استعادة الأموال لمدة 30 يومًا' : '⭐ 4.9/5 rating · 500+ clients · 30-day money-back guarantee'}
+						{isAr ? 'نخدم شركات في الرياض وجدة والدمام والخبر' : 'Serving businesses across Riyadh, Jeddah, Dammam & Khobar'}
 					</p>
 				</div>
 			</div>

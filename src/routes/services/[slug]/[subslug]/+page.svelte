@@ -115,7 +115,7 @@
 						<ArrowLeft class="h-5 w-5 {isAr ? '' : 'rotate-180'}" />
 					</a>
 					<p class="mt-4 text-sm font-medium text-[var(--color-text-muted)]">
-						{isAr ? '⭐ 4.9/5 تقييم · أكثر من 500 عميل' : '⭐ 4.9/5 rating · 500+ clients'}
+						{isAr ? 'نخدم شركات في الرياض وجدة والدمام' : 'Serving businesses in Riyadh, Jeddah & Dammam'}
 					</p>
 
 					<div class="mt-8">
