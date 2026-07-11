@@ -31,12 +31,12 @@
 *Fix broken experiences that kill conversions.*
 
 - [ ] **11. Fix the contact form** — Connect to a real backend (email API, CMS, or `mailto:` fallback). Currently does `alert()` with no submission
-- [ ] **12. Add sticky "Get a Quote" button** — Persistent floating CTA once hero scrolls past, similar to WhatsApp button
-- [ ] **13. Add scroll progress indicator** — Thin bar at top of page that fills on scroll (especially for long homepage)
-- [ ] **14. Replace homepage service modals with direct links** — Make the 8 service cards link to `/services/[slug]` instead of opening modals (better for SEO + UX)
-- [ ] **15. Localize the WhatsApp message** — Change from Egyptian "كنت عايز استفسر" to Saudi dialect or formal Arabic
-- [ ] **16. Make WhatsApp CTA contextual** — Pre-fill message with the specific service name when clicked from a service page
-- [ ] **17. Change hero secondary CTA** — From `/contact` (same as primary) to `/services` so clients can evaluate first
+- [x] **12. Add sticky "Get a Quote" button** — Persistent floating CTA once hero scrolls past, similar to WhatsApp button
+- [x] **13. Add scroll progress indicator** — Thin bar at top of page that fills on scroll (especially for long homepage)
+- [x] **14. Replace homepage service modals with direct links** — Make the 8 service cards link to `/services/[slug]` instead of opening modals (better for SEO + UX)
+- [x] **15. Localize the WhatsApp message** — Change from Egyptian "كنت عايز استفسر" to Saudi dialect or formal Arabic
+- [x] **16. Make WhatsApp CTA contextual** — Pre-fill message with the specific service name when clicked from a service page
+- [x] **17. Change hero secondary CTA** — From `/contact` (same as primary) to `/services` so clients can evaluate first
 
 ---
 
