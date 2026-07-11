@@ -5,7 +5,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import {
-		ArrowRight, ArrowUpRight, Check, Sparkles, Star,
+		ArrowRight, ArrowUpRight, Check, Sparkles, Star, ChevronDown,
 		Code, Search, Share,
 		Pen, Rocket, Settings, TrendingUp, ClipboardList, Play, BarChart3
 	} from '@lucide/svelte';
@@ -20,6 +20,12 @@
 
 	const isAr = lang === 'ar';
 	const phoneNumber = '966576704683';
+
+	let openFaqIndex = $state<number | null>(null);
+
+	function toggleFaq(i: number) {
+		openFaqIndex = openFaqIndex === i ? null : i;
+	}
 
 	const categoryIcons: Record<string, any> = {
 		code: Code, search: Search, share: Share
@@ -50,6 +56,25 @@
 
 	function contactLink() {
 		return `${base}/contact?lang=${lang}`;
+	}
+
+	const deliveryTimes: Record<string, { ar: string, en: string }> = {
+		'web-development': {
+			ar: 'مدة التسليم: 7-10 أيام عمل',
+			en: 'Delivery: 7-10 business days'
+		},
+		'seo': {
+			ar: 'النتائج الأولى: 4-8 أسابيع',
+			en: 'First results: 4-8 weeks'
+		},
+		'digital-marketing': {
+			ar: 'تحسين مستمر — تقارير شهرية',
+			en: 'Ongoing — monthly reports'
+		}
+	};
+
+	function getDelivery(slug: string): string {
+		return deliveryTimes[slug] ? deliveryTimes[slug][isAr ? 'ar' : 'en'] : '';
 	}
 
 	function scrollTo(id: string) {
@@ -139,8 +164,15 @@
 				<div class="anim-up space-y-8">
 					<!-- Service Header -->
 					<div class="cinematic-glass rounded-[2.5rem] border border-[var(--glass-border)] p-8 md:p-12">
-						<div class="mb-2 inline-flex rounded-full bg-brand-blue/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-blue uppercase">
-							{isAr ? 'الخدمة' : 'Service'} 0{i + 1}
+						<div class="mb-3 flex flex-wrap items-center gap-3">
+							<div class="inline-flex rounded-full bg-brand-blue/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-blue uppercase">
+								{isAr ? 'الخدمة' : 'Service'} 0{i + 1}
+							</div>
+							{#if getDelivery(category?.slug)}
+								<div class="inline-flex rounded-full bg-brand-orange/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-orange uppercase">
+									{getDelivery(category?.slug)}
+								</div>
+							{/if}
 						</div>
 						<h2 class="mb-4 text-3xl font-black text-[var(--color-text-base)]">{item.title}</h2>
 						<p class="text-base leading-relaxed font-medium text-[var(--color-text-muted)]">{item.details}</p>
@@ -186,6 +218,45 @@
 		</div>
 	</div>
 </section>
+
+<!-- FAQ -->
+{#if data?.servicesPage?.faq?.items?.length}
+	<section class="relative w-full bg-[var(--color-background)] py-24 transition-colors duration-1000" dir={isAr ? 'rtl' : 'ltr'}>
+		<div class="container mx-auto px-6">
+			<div class="mx-auto max-w-3xl">
+				<div class="anim-up mb-12 text-center">
+					<h2 class="text-4xl font-black text-[var(--color-text-base)]">
+						{data?.servicesPage?.faq?.title || (isAr ? 'الأسئلة الشائعة' : 'FAQ')}
+					</h2>
+				</div>
+				<div class="space-y-4">
+					{#each data?.servicesPage?.faq?.items || [] as item, i}
+						<div
+							class="anim-up cinematic-glass cursor-pointer rounded-2xl border transition-all {openFaqIndex === i ? 'border-brand-blue/30' : 'border-[var(--glass-border)]'}"
+							onclick={() => toggleFaq(i)}
+							onkeydown={(e) => e.key === 'Enter' && toggleFaq(i)}
+							role="button"
+							tabindex="0"
+							aria-expanded={openFaqIndex === i}
+						>
+							<div class="flex items-center justify-between px-6 py-5">
+								<h3 class="text-base font-bold text-[var(--color-text-base)]">{item.q}</h3>
+								<ChevronDown
+									class="h-5 w-5 shrink-0 text-[var(--color-text-dim)] transition-transform duration-300 {openFaqIndex === i ? 'rotate-180' : ''}"
+								/>
+							</div>
+							{#if openFaqIndex === i}
+								<div class="border-t border-[var(--glass-border)] px-6 py-5">
+									<p class="text-sm leading-relaxed font-medium text-[var(--color-text-muted)]">{item.a}</p>
+								</div>
+							{/if}
+						</div>
+					{/each}
+				</div>
+			</div>
+		</div>
+	</section>
+{/if}
 
 <!-- Category-specific Process -->
 {#if category?.process?.steps?.length}

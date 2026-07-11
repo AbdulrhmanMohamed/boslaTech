@@ -8,11 +8,11 @@
 ## Phase 1: Trust & Social Proof
 *Highest impact, lowest effort. Build credibility immediately.*
 
-- [ ] **1. Activate SocialProofSection** — Uncomment it on the homepage (500+ clients, 98% satisfaction, 4.9 rating, 250% avg growth)
-- [ ] **2. Add trust line under every CTA** — "500+ businesses trust us" or "4.9/5 client rating" next to every "Get a Quote" button
+- [x] **1. Activate SocialProofSection** — Uncomment it on the homepage (500+ clients, 98% satisfaction, 4.9 rating, 250% avg growth)
+- [x] **2. Add trust line under every CTA** — "500+ businesses trust us" or "4.9/5 client rating" next to every "Get a Quote" button
 - [ ] **3. Add client logo bar** — Extract logos from the 3D scene and display as a static scrolling marquee on the homepage
-- [ ] **4. Fix /privacy and /terms 404s** — Either create the pages or remove the footer links
-- [ ] **5. Remove /portfolio from nav/CTA** — Remove the dead portfolio link until a real page exists
+- [x] **4. Fix /privacy and /terms 404s** — Either create the pages or remove the footer links
+- [x] **5. Remove /portfolio from nav/CTA** — Remove the dead portfolio link until a real page exists
 
 ---
 

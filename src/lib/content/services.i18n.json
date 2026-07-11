@@ -243,6 +243,10 @@
 			"title": "Frequently Asked Questions",
 			"items": [
 				{
+					"q": "How much does a website cost?",
+					"a": "It depends on the project scope and your needs. Our prices start from 1,500 SAR for simple sites and go up to 5,000 SAR for full-featured websites. We offer a free consultation to determine the exact price based on your requirements — contact us for a custom quote."
+				},
+				{
 					"q": "How long does it take to build a website?",
 					"a": "A typical website takes 5-10 business days from start to launch, depending on complexity. E-commerce sites and web applications may take longer. We'll give you a clear timeline during the discovery phase."
 				},
@@ -508,6 +512,10 @@
 		"faq": {
 			"title": "الأسئلة الشائعة",
 			"items": [
+				{
+					"q": "كم تكلفة تصميم موقع إلكتروني؟",
+					"a": "تختلف التكلفة حسب حجم المشروع واحتياجاتك. على سبيل المثال، تبدأ أسعارنا من 1,500 ريال للمواقع البسيطة، وتصل إلى 5,000 ريال للمواقع المتكاملة. نقدم استشارة مجانية لتحديد السعر الدقيق بناءً على متطلباتك — تواصل معنا للحصول على عرض سعر مخصص."
+				},
 				{
 					"q": "كم من الوقت يستغرق بناء موقع إلكتروني؟",
 					"a": "يستغرق الموقع النموذجي من 5 إلى 10 أيام عمل من البداية إلى الإطلاق، حسب التعقيد. المواقع التجارية وتطبيقات الويب قد تستغرق وقتاً أطول. سنقدم لك جدولاً زمنياً واضحاً خلال مرحلة الاكتشاف."
