@@ -77,7 +77,7 @@
 		<div class="container mx-auto px-6">
 			<div class="mx-auto max-w-4xl">
 				<div class="prose prose-lg mx-auto max-w-none text-[var(--color-text-base)]" style="line-height: 1.9;">
-					{service.details}
+					{@html service.details}
 				</div>
 
 				{#if service.features?.length}

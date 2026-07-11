@@ -34,7 +34,7 @@
             "slug": "custom-websites",
             "title": "Corporate Website Design",
             "desc": "Professional websites that reflect your brand and attract new clients.",
-            "details": "We build complete corporate websites for all business sectors in Saudi Arabia. We focus on user experience, fast loading, and SEO optimization from day one. You get an easy-to-use content management system with full Arabic and English support.",
+            "details": "We build complete corporate websites for all business sectors in Saudi Arabia. We focus on user experience, fast loading, and SEO optimization from day one. You get an easy-to-use content management system with full Arabic and English support. If you need a more flexible CMS, we recommend <a href='/services/web-development/wordpress-development?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>our WordPress development service</a>. We also offer <a href='/services/seo/local-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>local SEO services</a> to ensure your site ranks on Google.",
             "features": [
               "Responsive design that works on all devices",
               "Easy-to-use content management system",
@@ -48,7 +48,7 @@
             "slug": "wordpress-development",
             "title": "WordPress Website Development",
             "desc": "Custom WordPress sites with professional themes, plugins, and WooCommerce stores.",
-            "details": "We develop WordPress websites from scratch—custom themes, bespoke plugins, and full WooCommerce stores with Saudi payment gateways. Your team can easily manage content while you enjoy unlimited scalability.",
+            "details": "We develop WordPress websites from scratch—custom themes, bespoke plugins, and full WooCommerce stores with Saudi payment gateways. Your team can easily manage content while you enjoy unlimited scalability. Your WordPress site also needs <a href='/services/seo/technical-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>technical SEO optimization</a> to rank properly. We also recommend a <a href='/services/digital-marketing/brand-identity?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>complete brand identity</a> to make your site truly stand out.",
             "features": [
               "Custom WordPress theme matching your brand",
               "WooCommerce store with Saudi payment gateways",
@@ -62,7 +62,7 @@
             "slug": "online-stores",
             "title": "Online Stores (Shopify - Salla - Zid)",
             "desc": "Full-featured online stores on Shopify, Salla, or Zid with Saudi payment integration.",
-            "details": "We build online stores on the best platforms—Shopify, Salla, or Zid—based on your business needs. We integrate Saudi payment gateways (Mada, STC Pay, Apple Pay), inventory management, order tracking, and complete SEO optimization.",
+            "details": "We build online stores on the best platforms—Shopify, Salla, or Zid—based on your business needs. We integrate Saudi payment gateways (Mada, STC Pay, Apple Pay), inventory management, order tracking, and complete SEO optimization. Once your store is live, <a href='/services/seo/ecommerce-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>e-commerce SEO</a> is essential to appear on Google. We also integrate <a href='/contact?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>all Saudi payment gateways</a> for your customers.",
             "features": [
               "Store on Shopify, Salla, or Zid — your choice",
               "Saudi payment gateways (Mada, STC Pay, Apple Pay)",
@@ -76,7 +76,7 @@
             "slug": "website-redesign",
             "title": "Website Redesign & Migration",
             "desc": "Modernize your existing site to be faster, more secure, and conversion-optimized.",
-            "details": "We redesign your current website to be more modern, faster, and mobile-friendly. We preserve your SEO rankings during migration and dramatically improve loading speed and user experience.",
+            "details": "We redesign your current website to be more modern, faster, and mobile-friendly. We preserve your SEO rankings during migration and dramatically improve loading speed and user experience. A redesign is the perfect time to fix <a href='/services/seo/technical-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>technical SEO issues</a>. We also offer <a href='/services/web-development/maintenance-and-support?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>ongoing maintenance</a> to keep your site fast and secure.",
             "features": [
               "Modern design that aligns with your brand",
               "Speed & performance optimization",
@@ -90,7 +90,7 @@
             "slug": "maintenance-and-support",
             "title": "Website Maintenance & Support",
             "desc": "Keep your site secure, fast, and up-to-date with ongoing maintenance plans.",
-            "details": "We offer comprehensive maintenance packages—security updates, performance monitoring, content updates, and regular backups. Your site stays healthy while you focus on growing your business.",
+            "details": "We offer comprehensive maintenance packages—security updates, performance monitoring, content updates, and regular backups. Your site stays healthy while you focus on growing your business. We recommend periodic <a href='/services/seo/seo-audit?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>SEO audits</a> to catch issues early. Our <a href='/services/web-development/website-redesign?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>redesign service</a> can help if your site needs a major refresh.",
             "features": [
               "Monthly security patches & updates",
               "Performance monitoring & optimization",
@@ -113,7 +113,7 @@
             "slug": "technical-seo",
             "title": "Technical SEO",
             "desc": "Fix your site's technical foundation so Google can crawl, index, and rank it properly.",
-            "details": "We audit your site's technical health—loading speed, URL structure, page indexing, and Core Web Vitals. We fix issues that prevent your site from ranking and optimize overall performance.",
+            "details": "We audit your site's technical health—loading speed, URL structure, page indexing, and Core Web Vitals. We fix issues that prevent your site from ranking and optimize overall performance. If your site is slow or outdated, consider <a href='/services/web-development/website-redesign?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>a complete redesign</a>. We also recommend starting with <a href='/services/seo/seo-audit?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>a full SEO audit</a> to identify all issues.",
             "features": [
               "Full technical SEO audit",
               "Core Web Vitals optimization",
@@ -127,7 +127,7 @@
             "slug": "local-seo",
             "title": "Local SEO",
             "desc": "Show up on Google when local clients search for your services in Riyadh, Jeddah, or Dammam.",
-            "details": "We optimize your local visibility—Google Business Profile optimization, local citation building, and city-specific service pages. We target customers who are actually near your business.",
+            "details": "We optimize your local visibility—Google Business Profile optimization, local citation building, and city-specific service pages. We target customers who are actually near your business. We also <a href='/services/web-development/custom-websites?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>build SEO-compatible websites</a> that work perfectly with local search. Pair this with <a href='/services/digital-marketing/google-ads?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>local Google Ads campaigns</a> for maximum visibility.",
             "features": [
               "Google Business Profile optimization",
               "Local citation building (Saudi directories)",
@@ -141,7 +141,7 @@
             "slug": "content-seo",
             "title": "Content SEO",
             "desc": "SEO-optimized content that attracts real visitors and converts them into customers.",
-            "details": "We build a complete content strategy—keyword research, SEO-optimized article writing, and existing content optimization. We create content that answers your clients' questions and helps them make purchase decisions.",
+            "details": "We build a complete content strategy—keyword research, SEO-optimized article writing, and existing content optimization. We create content that answers your clients' questions and helps them make purchase decisions. Great content needs <a href='/services/seo/link-building?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>quality backlinks</a> to rank. We also offer <a href='/services/digital-marketing/content-marketing?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>full content marketing</a> to distribute your content across channels.",
             "features": [
               "Custom keyword research for your market",
               "SEO-optimized blog & article writing",
@@ -155,7 +155,7 @@
             "slug": "link-building",
             "title": "Link Building",
             "desc": "High-quality backlinks from authoritative Saudi and GCC websites to boost your domain authority.",
-            "details": "We acquire quality backlinks from relevant, high-authority websites in the Saudi and GCC market. White-hat only—guest posting, digital PR, and valuable content outreach.",
+            "details": "We acquire quality backlinks from relevant, high-authority websites in the Saudi and GCC market. White-hat only—guest posting, digital PR, and valuable content outreach. Link building works best with <a href='/services/seo/content-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>strong SEO content</a> that people want to link to. We recommend starting with <a href='/services/seo/seo-audit?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>an SEO audit</a> to identify link opportunities.",
             "features": [
               "Backlinks from trusted Saudi websites",
               "Guest posting on industry-relevant sites",
@@ -169,7 +169,7 @@
             "slug": "seo-audit",
             "title": "SEO Audit & Analysis",
             "desc": "Complete SEO audit with a prioritized roadmap to improve your Google rankings.",
-            "details": "We conduct a thorough audit—technical scan, on-page analysis, content quality review, and backlink assessment. You get a detailed report with prioritized fixes ranked by impact.",
+            "details": "We conduct a thorough audit—technical scan, on-page analysis, content quality review, and backlink assessment. You get a detailed report with prioritized fixes ranked by impact. After the audit, we implement <a href='/services/seo/technical-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>technical SEO fixes</a> and build a <a href='/services/seo/content-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>content SEO strategy</a> to address content gaps.",
             "features": [
               "Full technical site scan",
               "On-page SEO analysis",
@@ -183,7 +183,7 @@
             "slug": "ecommerce-seo",
             "title": "E-commerce SEO",
             "desc": "Optimize your Shopify, Salla, or Zid store to rank on the first page of Google.",
-            "details": "We specialize in e-commerce SEO—product page optimization, category structure, checkout optimization, and store speed. We use product schema, reviews markup, and link building specific to online stores.",
+            "details": "We specialize in e-commerce SEO—product page optimization, category structure, checkout optimization, and store speed. We use product schema, reviews markup, and link building specific to online stores. We <a href='/services/web-development/online-stores?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>build Shopify stores</a> with SEO built in, and we also <a href='/services/web-development/online-stores?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>create stores on Salla</a> optimized for the Saudi market.",
             "features": [
               "Product & category page optimization",
               "Product schema & review markup",
@@ -206,7 +206,7 @@
             "slug": "social-media-marketing",
             "title": "Social Media Management",
             "desc": "Manage your Instagram, Twitter (X), and Snapchat with professional content that attracts followers and customers.",
-            "details": "We build a complete social media strategy—visual content design, post writing, scheduling, audience engagement, and performance analysis. We focus on building a community around your brand, not just followers.",
+            "details": "We build a complete social media strategy—visual content design, post writing, scheduling, audience engagement, and performance analysis. We focus on building a community around your brand, not just followers. Strong social media presence works best with <a href='/services/digital-marketing/brand-identity?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>a cohesive brand identity</a>. We also run <a href='/services/digital-marketing/snapchat-tiktok-ads?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>targeted Snapchat & TikTok ads</a> to amplify your reach.",
             "features": [
               "Custom content strategy for your brand",
               "Professional post & video design",
@@ -220,7 +220,7 @@
             "slug": "google-ads",
             "title": "Google Ads Management",
             "desc": "Paid Google campaigns that reach customers searching for your services right now.",
-            "details": "We manage Google Ads campaigns for Saudi businesses. We target keywords your customers are searching for, optimize ads for maximum ROI, and provide transparent reporting.",
+            "details": "We manage Google Ads campaigns for Saudi businesses. We target keywords your customers are searching for, optimize ads for maximum ROI, and provide transparent reporting. Ads perform best when paired with <a href='/services/web-development/custom-websites?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>a professional landing page</a>. We combine ads with <a href='/services/seo/local-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>local SEO</a> for maximum Google visibility.",
             "features": [
               "Keyword research & ad targeting",
               "Professional ad copywriting",
@@ -234,7 +234,7 @@
             "slug": "snapchat-tiktok-ads",
             "title": "Snapchat & TikTok Ads",
             "desc": "Ad campaigns on Snapchat and TikTok targeting the young Saudi audience.",
-            "details": "We create and manage ad campaigns on Snapchat and TikTok—the most popular platforms among Saudi youth. We produce professional ad content, target audiences precisely, and optimize for maximum ROI.",
+            "details": "We create and manage ad campaigns on Snapchat and TikTok—the most popular platforms among Saudi youth. We produce professional ad content, target audiences precisely, and optimize for maximum ROI. Every campaign needs <a href='/services/web-development/custom-websites?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>a professional landing page</a> to convert visitors. We also <a href='/services/digital-marketing/google-ads?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>analyze ad performance</a> to continuously improve results.",
             "features": [
               "Professional video ad production",
               "Precise audience targeting (age, location, interests)",
@@ -248,7 +248,7 @@
             "slug": "content-marketing",
             "title": "Content Marketing",
             "desc": "Valuable content that builds trust with your audience and positions your brand as an authority.",
-            "details": "We build a content marketing strategy—articles, videos, infographics, and comprehensive guides. We publish content that answers your clients' questions, builds authority, and drives organic traffic.",
+            "details": "We build a content marketing strategy—articles, videos, infographics, and comprehensive guides. We publish content that answers your clients' questions, builds authority, and drives organic traffic. Content marketing pairs perfectly with <a href='/services/seo/content-seo?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>content SEO</a> to rank your articles on Google. We also distribute content through <a href='/services/digital-marketing/social-media-marketing?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>social media channels</a> for maximum reach.",
             "features": [
               "Complete content marketing strategy",
               "Professional article & guide writing",
@@ -262,7 +262,7 @@
             "slug": "email-marketing",
             "title": "Email Marketing",
             "desc": "Email campaigns that build customer relationships and drive repeat sales.",
-            "details": "We design and execute email marketing campaigns—welcome sequences, promotional offers, and abandoned cart recovery. We ensure your emails land in the inbox, not spam.",
+            "details": "We design and execute email marketing campaigns—welcome sequences, promotional offers, and abandoned cart recovery. We ensure your emails land in the inbox, not spam. Email marketing integrates seamlessly with <a href='/services/digital-marketing/social-media-marketing?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>social media campaigns</a> for multi-channel reach. We also pair it with <a href='/services/digital-marketing/content-marketing?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>content marketing</a> to nurture leads effectively.",
             "features": [
               "Professional email template design",
               "Automated email sequences",
@@ -276,7 +276,7 @@
             "slug": "brand-identity",
             "title": "Brand Identity Design",
             "desc": "Complete brand identity that makes your business unforgettable.",
-            "details": "We design comprehensive brand identities—logo, colors, typography, business cards, and social media graphics. We build an identity that reflects your company values and leaves a lasting impression.",
+            "details": "We design comprehensive brand identities—logo, colors, typography, business cards, and social media graphics. We build an identity that reflects your company values and leaves a lasting impression. Your brand identity needs <a href='/services/web-development/custom-websites?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>a website that reflects it</a> perfectly. We also promote your identity on <a href='/services/digital-marketing/snapchat-tiktok-ads?lang=en' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>Snapchat and TikTok ads</a> to reach the right audience.",
             "features": [
               "Logo design (primary & secondary)",
               "Color palette & typography system",
@@ -350,7 +350,7 @@
             "slug": "custom-websites",
             "title": "تصميم مواقع شركات",
             "desc": "مواقع احترافية تعكس هوية شركتك وتجذب عملاء جدد.",
-            "details": "نبني مواقع شركات متكاملة تناسب جميع القطاعات في السعودية. نركز على تجربة المستخدم وسرعة التحميل وتحسين الظهور في محركات البحث. نوفر لوحة تحكم لإدارة المحتوى بسهولة، مع دعم كامل للغة العربية والإنجليزية.",
+            "details": "نبني مواقع شركات متكاملة تناسب جميع القطاعات في السعودية. نركز على تجربة المستخدم وسرعة التحميل وتحسين الظهور في محركات البحث. نوفر لوحة تحكم لإدارة المحتوى بسهولة، مع دعم كامل للغة العربية والإنجليزية. إذا كنت بحاجة لنظام إدارة محتوى مرن، نوصي <a href='/services/web-development/wordpress-development' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>بخدمة تطوير ووردبريس</a>. كما نضمن <a href='/services/seo/local-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>ظهور موقعك في بحث جوجل</a> من خلال خدمات تحسين محركات البحث المحلي.",
             "features": [
               "تصميم متجاوب يعمل على جميع الأجهزة",
               "نظام إدارة محتوى سهل الاستخدام",
@@ -364,7 +364,7 @@
             "slug": "wordpress-development",
             "title": "تطوير مواقع ووردبريس",
             "desc": "مواقع ووردبريس مخصصة مع تصاميم احترافية وإضافات متطورة.",
-            "details": "نطور مواقع ووردبريس من الصفر — قوالب مخصصة، إضافات حسب الطلب، ومتاجر ووكومرس متكاملة. نوفر لك موقعاً يديره فريقك بسهولة مع مرونة لا محدودة في التوسع والتطوير.",
+            "details": "نطور مواقع ووردبريس من الصفر — قوالب مخصصة، إضافات حسب الطلب، ومتاجر ووكومرس متكاملة. نوفر لك موقعاً يديره فريقك بسهولة مع مرونة لا محدودة في التوسع والتطوير. موقع ووردبريس الخاص بك يحتاج أيضاً <a href='/services/seo/technical-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>لتحسين SEO التقني</a> ليظهر في نتائج البحث. نوصي أيضاً <a href='/services/digital-marketing/brand-identity' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>بهوية بصرية متكاملة</a> لجعل موقعك مميزاً.",
             "features": [
               "قالب ووردبريس مخصص حسب هويتك",
               "متجر ووكومرس متكامل مع بوابات دفع سعودية",
@@ -378,7 +378,7 @@
             "slug": "online-stores",
             "title": "متاجر إلكترونية (شوبيفاي - سلة - زد)",
             "desc": "متاجر إلكترونية متكاملة على شوبيفاي، سلة، أو زد مع بوابات دفع سعودية.",
-            "details": "نبني متاجر إلكترونية على أقوى المنصات: شوبيفاي، سلة، أو زد — حسب احتياج عملك. نوفر تكاملاً مع بوابات الدفع السعودية (مدى، STC Pay، Apple Pay)، إدارة المخزون، تتبع الطلبات، وتحسين متكامل لمحركات البحث.",
+            "details": "نبني متاجر إلكترونية على أقوى المنصات: شوبيفاي، سلة، أو زد — حسب احتياج عملك. نوفر تكاملاً مع بوابات الدفع السعودية (مدى، STC Pay، Apple Pay)، إدارة المخزون، تتبع الطلبات، وتحسين متكامل لمحركات البحث. بعد إطلاق متجرك، <a href='/services/seo/ecommerce-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>تحسين المتجر لمحركات البحث</a> ضروري للظهور في جوجل. كما نضيف <a href='/contact' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>جميع بوابات الدفع السعودية</a> لعملائك.",
             "features": [
               "متجر على شوبيفاي أو سلة أو زد حسب اختيارك",
               "بوابات دفع سعودية (مدى، STC Pay، Apple Pay)",
@@ -392,7 +392,7 @@
             "slug": "website-redesign",
             "title": "إعادة تصميم المواقع",
             "desc": "نطور موقعك الحالي ليكون أسرع وأحدث وأكثر توافقاً مع معايير 2026.",
-            "details": "نعيد تصميم موقعك الحالي ليكون أكثر حداثة وسرعة وتوافقاً مع الأجهزة الحديثة. نحافظ على ترتيبك في محركات البحث أثناء التطوير، ونحسن سرعة التحميل وتجربة المستخدم بشكل جذري.",
+            "details": "نعيد تصميم موقعك الحالي ليكون أكثر حداثة وسرعة وتوافقاً مع الأجهزة الحديثة. نحافظ على ترتيبك في محركات البحث أثناء التطوير، ونحسن سرعة التحميل وتجربة المستخدم بشكل جذري. إعادة التصميم فرصة مثالية لإصلاح <a href='/services/seo/technical-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>مشاكل SEO التقنية</a>. كما نقدم <a href='/services/web-development/maintenance-and-support' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>صيانة دورية</a> ليبقى موقعك سريعاً وآمناً.",
             "features": [
               "تصميم حديث وعصري يتوافق هويتك",
               "تحسين سرعة التحميل والأداء",
@@ -406,7 +406,7 @@
             "slug": "maintenance-and-support",
             "title": "الصيانة والدعم الفني",
             "desc": "حافظ على موقعك آمناً وسريعاً ومحدثاً مع صيانة دورية.",
-            "details": "نقدم باقات صيانة شاملة—تحديثات أمنية، مراقبة أداء، تحديث محتوى، ونسخ احتياطية منتظمة. موقعك يبقى في أفضل حال، وأنت مرتاح البال تركز على عملك.",
+            "details": "نقدم باقات صيانة شاملة—تحديثات أمنية، مراقبة أداء، تحديث محتوى، ونسخ احتياطية منتظمة. موقعك يبقى في أفضل حال، وأنت مرتاح البال تركز على عملك. ننصح بعمل <a href='/services/seo/seo-audit' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>تدقيق SEO</a> دوري لاكتشاف المشاكل مبكراً. <a href='/services/web-development/website-redesign' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>خدمة إعادة التصميم</a> مناسبة إذا كان موقعك يحتاج تحديثاً شاملاً.",
             "features": [
               "تحديثات أمنية شهرية وحماية من الاختراق",
               "مراقبة الأداء وتحسين السرعة",
@@ -429,7 +429,7 @@
             "slug": "technical-seo",
             "title": "تحسين محركات البحث التقني",
             "desc": "نحسن بنية موقعك التقنية ليزحف عليها جوجل بسهولة ويرتبها في أول الصفحات.",
-            "details": "نفحص موقعك تقنياً بالكامل—سرعة التحميل، بنية الروابط، فهرسة الصفحات، وتحسين Core Web Vitals. نصلح المشاكل التي تمنع موقعك من الظهور في نتائج البحث ونسرّع أداءه.",
+            "details": "نفحص موقعك تقنياً بالكامل—سرعة التحميل، بنية الروابط، فهرسة الصفحات، وتحسين Core Web Vitals. نصلح المشاكل التي تمنع موقعك من الظهور في نتائج البحث ونسرّع أداءه. إذا كان موقعك بطيئاً أو قديماً، ننصح <a href='/services/web-development/website-redesign' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>إعادة تصميم الموقع</a>. ننصح بالبدء <a href='/services/seo/seo-audit' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>بتدقيق SEO شامل</a> لتحديد جميع المشاكل.",
             "features": [
               "تدقيق تقني شامل للموقع",
               "تحسين سرعة التحميل (Core Web Vitals)",
@@ -443,7 +443,7 @@
             "slug": "local-seo",
             "title": "تحسين محركات البحث المحلي",
             "desc": "اظهر في أول جوجل لما العملاء يبحثون عن خدماتك في الرياض وجدة والدمام.",
-            "details": "نحسّن ظهورك في البحث المحلي—تحسين حساب Google Business Profile، بناء Citations محلية، وإنشاء صفحات خدمات مخصصة لكل مدينة. نستهدف العملاء القريبين منك فعلياً.",
+            "details": "نحسّن ظهورك في البحث المحلي—تحسين حساب Google Business Profile، بناء Citations محلية، وإنشاء صفحات خدمات مخصصة لكل مدينة. نستهدف العملاء القريبين منك فعلياً. نبني أيضاً <a href='/services/web-development/custom-websites' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>مواقع متوافقة مع SEO</a> تعمل بشكل مثالي مع البحث المحلي. ويمكنك دمجها مع <a href='/services/digital-marketing/google-ads' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>حملات إعلانات جوجل المحلية</a> لأقصى ظهور.",
             "features": [
               "تحسين حساب Google Business Profile",
               "بناء Citations في أدلة الأعمال السعودية",
@@ -457,7 +457,7 @@
             "slug": "content-seo",
             "title": "تحسين محركات البحث بالمحتوى",
             "desc": "نكتب محتوى متوافق مع SEO يجذب زواراً حقيقيين ويحولهم إلى عملاء.",
-            "details": "نبني استراتيجية محتوى متكاملة—بحث كلمات مفتاحية، كتابة مقالات متوافقة مع SEO، وتحسين المحتوى الحالي. نصنع محتوى يجيب عن أسئلة عملائك ويساعدهم في اتخاذ قرار الشراء.",
+            "details": "نبني استراتيجية محتوى متكاملة—بحث كلمات مفتاحية، كتابة مقالات متوافقة مع SEO، وتحسين المحتوى الحالي. نصنع محتوى يجيب عن أسئلة عملائك ويساعدهم في اتخاذ قرار الشراء. المحتوى الجيد يحتاج <a href='/services/seo/link-building' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>روابط خلفية عالية الجودة</a> ليترتب. نقدم أيضاً <a href='/services/digital-marketing/content-marketing' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>تسويقاً متكاملاً بالمحتوى</a> لتوزيعه على القنوات المناسبة.",
             "features": [
               "بحث كلمات مفتاحية مخصص لسوقك",
               "كتابة مقالات متوافقة مع SEO",
@@ -471,7 +471,7 @@
             "slug": "link-building",
             "title": "بناء الروابط الخارجية",
             "desc": "نبني روابط خلفية من مواقع سعودية وعربية موثوقة ترفع سلطة موقعك.",
-            "details": "نكتسب روابط خلفية عالية الجودة من مواقع ذات صلة في السوق السعودي والخليجي. نستخدم أساليب القبعة البيضاء فقط—تدوين ضيف، علاقات عامة رقمية، وبناء روابط عبر المحتوى القيّم.",
+            "details": "نكتسب روابط خلفية عالية الجودة من مواقع ذات صلة في السوق السعودي والخليجي. نستخدم أساليب القبعة البيضاء فقط—تدوين ضيف، علاقات عامة رقمية، وبناء روابط عبر المحتوى القيّم. بناء الروابط يعمل بكفاءة مع <a href='/services/seo/content-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>محتوى SEO قوي</a> يستحق الإشارة. ننصح بالبدء <a href='/services/seo/seo-audit' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>بتدقيق SEO</a> لتحديد فرص الروابط.",
             "features": [
               "بناء روابط من مواقع سعودية موثوقة",
               "تدوين ضيف في مواقع ذات صلة بنشاطك",
@@ -485,7 +485,7 @@
             "slug": "seo-audit",
             "title": "تدقيق وتحليل SEO",
             "desc": "تدقيق كامل لموقعك مع خارطة طريق محددة لتحسين ترتيبك في جوجل.",
-            "details": "نجري تدقيقاً شاملاً—فحص تقني، تحليل الصفحات، تقييم المحتوى، ومراجعة الروابط الخلفية. تحصل على تقرير مفصل مع أولويات محددة وإصلاحات مرتبة حسب التأثير على ترتيبك.",
+            "details": "نجري تدقيقاً شاملاً—فحص تقني، تحليل الصفحات، تقييم المحتوى، ومراجعة الروابط الخلفية. تحصل على تقرير مفصل مع أولويات محددة وإصلاحات مرتبة حسب التأثير على ترتيبك. بعد التدقيق، ننفذ <a href='/services/seo/technical-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>إصلاحات SEO التقنية</a> ونبني <a href='/services/seo/content-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>استراتيجية محتوى</a> لمعالجة فجوات المحتوى.",
             "features": [
               "فحص تقني كامل للموقع",
               "تحليل تحسين الصفحات الداخلية",
@@ -499,7 +499,7 @@
             "slug": "ecommerce-seo",
             "title": "تحسين متاجر إلكترونية لمحركات البحث",
             "desc": "نحسن متجرك على شوبيفاي أو سلة أو زد ليظهر في أول صفحة جوجل.",
-            "details": "نخصص تحسين محركات البحث للمتاجر الإلكترونية—تحسين صفحات المنتجات، الأقسام، وسلة الشراء. نستخدم تقنيات خاصة بالمتاجر مثل Schema للمنتجات، تحسين سرعة المتجر، وبناء روابط للمنتجات.",
+            "details": "نخصص تحسين محركات البحث للمتاجر الإلكترونية—تحسين صفحات المنتجات، الأقسام، وسلة الشراء. نستخدم تقنيات خاصة بالمتاجر مثل Schema للمنتجات، تحسين سرعة المتجر، وبناء روابط للمنتجات. <a href='/services/web-development/online-stores' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>نبني متجر شوبيفاي</a> مع تحسين SEO مدمج، <a href='/services/web-development/online-stores' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>وننشئ متجر على سلة</a> متكامل مع السوق السعودي.",
             "features": [
               "تحسين صفحات المنتجات والأقسام",
               "إضافة Schema للمنتجات والتقييمات",
@@ -522,7 +522,7 @@
             "slug": "social-media-marketing",
             "title": "إدارة وسائل التواصل الاجتماعي",
             "desc": "ندير حساباتك على إنستغرام، تويتر، وسناب شات بمحتوى احترافي يجذب متابعين وعملاء.",
-            "details": "نبني استراتيجية تواصل اجتماعي متكاملة لعلامتك التجارية—تصميم محتوى بصري، كتابة منشورات، جدولة، تفاعل مع المتابعين، وتحليل الأداء. نركز على بناء مجتمع حول علامتك وليس مجرد زيادة متابعين.",
+            "details": "نبني استراتيجية تواصل اجتماعي متكاملة لعلامتك التجارية—تصميم محتوى بصري، كتابة منشورات، جدولة، تفاعل مع المتابعين، وتحليل الأداء. نركز على بناء مجتمع حول علامتك وليس مجرد زيادة متابعين. التواصل الاجتماعي القوي يعمل بكفاءة مع <a href='/services/digital-marketing/brand-identity' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>هوية بصرية متماسكة</a>. ندير أيضاً <a href='/services/digital-marketing/snapchat-tiktok-ads' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>إعلانات سناب شات وتيك توك</a> لزيادة وصولك.",
             "features": [
               "استراتيجية محتوى مخصصة لعلامتك",
               "تصميم منشورات وفيديوهات احترافية",
@@ -536,7 +536,7 @@
             "slug": "google-ads",
             "title": "إعلانات جوجل المدفوعة",
             "desc": "حملات إعلانية على جوجل تجيب عملاء يبحثون عن خدماتك الآن.",
-            "details": "ندير حملات إعلانات جوجل المدفوعة (Google Ads) للشركات السعودية. نستهدف كلمات مفتاحية يبحث عنها عملاؤك، ونحسن الإعلانات لتحصل على أعلى عائد استثمار.",
+            "details": "ندير حملات إعلانات جوجل المدفوعة (Google Ads) للشركات السعودية. نستهدف كلمات مفتاحية يبحث عنها عملاؤك، ونحسن الإعلانات لتحصل على أعلى عائد استثمار. الإعلانات تحقق أفضل نتائج مع <a href='/services/web-development/custom-websites' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>صفحة هبوط احترافية</a>. نجمع الإعلانات مع <a href='/services/seo/local-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>تحسين SEO المحلي</a> لأقصى ظهور في جوجل.",
             "features": [
               "بحث كلمات مفتاحية إعلانية مخصص",
               "كتابة إعلانات احترافية تجذب النقرات",
@@ -550,7 +550,7 @@
             "slug": "snapchat-tiktok-ads",
             "title": "إعلانات سناب شات وتيك توك",
             "desc": "حملات إعلانية على سناب شات وتيك توك تستهدف الجمهور السعودي الشاب.",
-            "details": "نصمم وندير حملات إعلانية على سناب شات وتيك توك—منصة الشباب السعودي الأولى. ننتج محتوى إعلاني احترافي، نستهدف الجمهور بدقة، ونحسن الأداء لتحقيق أعلى عائد.",
+            "details": "نصمم وندير حملات إعلانية على سناب شات وتيك توك—منصة الشباب السعودي الأولى. ننتج محتوى إعلاني احترافي، نستهدف الجمهور بدقة، ونحسن الأداء لتحقيق أعلى عائد. كل حملة تحتاج <a href='/services/web-development/custom-websites' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>صفحة هبوط احترافية</a> لتحويل الزوار. نحلل أيضاً <a href='/services/digital-marketing/google-ads' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>أداء الإعلانات</a> لتحسين النتائج باستمرار.",
             "features": [
               "إنتاج فيديوهات إعلانية احترافية",
               "استهداف دقيق للجمهور (عمر، موقع، اهتمامات)",
@@ -564,7 +564,7 @@
             "slug": "content-marketing",
             "title": "التسويق بالمحتوى",
             "desc": "نصنع محتوى قيّم يبني ثقة عملائك ويحولهم إلى علامة تجارية موثوقة.",
-            "details": "نبني استراتيجية تسويق بالمحتوى—مقالات، فيديوهات، إنفوغرافيك، وأدلة شاملة. ننشر محتوى يجيب عن أسئلة عملائك، يبني سلطتك في مجالك، ويجلب زواراً عضويين لموقعك.",
+            "details": "نبني استراتيجية تسويق بالمحتوى—مقالات، فيديوهات، إنفوغرافيك، وأدلة شاملة. ننشر محتوى يجيب عن أسئلة عملائك، يبني سلطتك في مجالك، ويجلب زواراً عضويين لموقعك. التسويق بالمحتوى يعمل بكفاءة مع <a href='/services/seo/content-seo' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>تحسين المحتوى لمحركات البحث</a> ليترتب في جوجل. نوزع المحتوى عبر <a href='/services/digital-marketing/social-media-marketing' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>قنوات التواصل الاجتماعي</a> لأقصى وصول.",
             "features": [
               "استراتيجية محتوى متكاملة",
               "كتابة مقالات وأدلة احترافية",
@@ -578,7 +578,7 @@
             "slug": "email-marketing",
             "title": "التسويق عبر البريد الإلكتروني",
             "desc": "حملات بريد إلكتروني تبني علاقات مع عملائك وتزيد مبيعاتك.",
-            "details": "نصمم وننفذ حملات بريد إلكتروني—تسلسلات ترحيبية، عروض ترويجية، واستعادة عربات التسوق المهجورة. نضمن وصول رسائلك لصندوق الوارد وليس سبام.",
+            "details": "نصمم وننفذ حملات بريد إلكتروني—تسلسلات ترحيبية، عروض ترويجية، واستعادة عربات التسوق المهجورة. نضمن وصول رسائلك لصندوق الوارد وليس سبام. البريد الإلكتروني يتكامل بشكل ممتاز مع <a href='/services/digital-marketing/social-media-marketing' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>حملات التواصل الاجتماعي</a> للوصول متعدد القنوات. نجمعه مع <a href='/services/digital-marketing/content-marketing' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>التسويق بالمحتوى</a> لرعاية العملاء المحتملين بفعالية.",
             "features": [
               "تصميم قوالب بريد احترافية",
               "تسلسلات بريدية آلية (Automation)",
@@ -592,7 +592,7 @@
             "slug": "brand-identity",
             "title": "تصميم الهوية البصرية",
             "desc": "هوية بصرية متكاملة تجعل علامتك التجارية لا تُنسى.",
-            "details": "نصمم هويات بصرية متكاملة—شعار، ألوان، خطوط، بطاقات عمل، وتصاميم تواصل اجتماعي. نبني هوية تعكس قيم شركتك وتترك انطباعاً لا يُنسى لدى عملائك.",
+            "details": "نصمم هويات بصرية متكاملة—شعار، ألوان، خطوط، بطاقات عمل، وتصاميم تواصل اجتماعي. نبني هوية تعكس قيم شركتك وتترك انطباعاً لا يُنسى لدى عملائك. هويتك تحتاج <a href='/services/web-development/custom-websites' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>موقعاً يعكسها</a> بشكل احترافي. كما نروج لهويتك عبر <a href='/services/digital-marketing/snapchat-tiktok-ads' class='font-bold text-brand-blue underline decoration-from-font underline-offset-2 hover:text-brand-orange'>إعلانات سناب شات وتيك توك</a> للوصول للجمهور المناسب.",
             "features": [
               "تصميم الشعار (رئيسي وثانوي)",
               "اختيار الألوان والخطوط",
