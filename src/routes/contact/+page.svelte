@@ -20,6 +20,7 @@
 	import { Canvas } from '@threlte/core';
 	import Contact3D from '$lib/components/Contact3D.svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 
 	let { data } = $props();
 	const currentTheme = $derived(theme.current);
@@ -334,6 +335,14 @@
 	class="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden transition-colors duration-1000"
 	dir={(data as any).lang === 'ar' ? 'rtl' : 'ltr'}
 >
+	<div class="container mx-auto px-6 pt-28">
+		<Breadcrumbs
+			lang={(data as any).lang}
+			items={[
+				{ label: (data as any).lang === 'ar' ? 'اتصل بنا' : 'Contact Us' }
+			]}
+		/>
+	</div>
 	<!-- Background Image -->
 	<HeroBackground />
 

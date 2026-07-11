@@ -11,6 +11,7 @@
 	} from '@lucide/svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 
 	let { data } = $props();
 	const currentTheme = $derived(theme.current);
@@ -136,13 +137,15 @@
 	<HeroBackground />
 	<div class="relative z-10 container mx-auto px-6 py-24">
 		<div class="mx-auto max-w-4xl space-y-8 text-center">
-			<a
-				href={linkServices()}
-				class="cinematic-glass mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--glass-border)] px-5 py-1.5 text-[11px] font-bold text-[var(--color-text-muted)] transition-all hover:text-brand-blue"
-			>
-				<ArrowRight class="h-3 w-3 {isAr ? 'rotate-180' : ''}" />
-				{isAr ? 'العودة إلى الخدمات' : 'Back to Services'}
-			</a>
+			<div class="flex justify-center">
+				<Breadcrumbs
+					{lang}
+					items={[
+						{ label: isAr ? 'خدماتنا' : 'Services', href: linkServices() },
+						{ label: category?.name || '' }
+					]}
+				/>
+			</div>
 
 			<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
 				<svelte:component this={categoryIcons[category?.icon] || Code} class="h-8 w-8" />
@@ -336,6 +339,46 @@
 			</div>
 		</div>
 	</section>
+{/if}
+
+<!-- Related Services -->
+{#if typedData?.servicesPage?.categories}
+	{@const others = typedData.servicesPage.categories.filter((c: any) => c.slug !== category?.slug)}
+	{#if others.length > 0}
+		<section class="relative w-full bg-[var(--color-surface)] py-24 transition-colors duration-1000" dir={isAr ? 'rtl' : 'ltr'}>
+			<div class="container mx-auto px-6">
+				<div class="mb-16 text-center">
+					<div class="mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2">
+						<Sparkles class="h-4 w-4 text-brand-orange" />
+						<span class="text-xs font-black tracking-widest text-[var(--color-text-muted)] uppercase">
+							{isAr ? 'خدمات أخرى' : 'Other Services'}
+						</span>
+					</div>
+					<h2 class="text-4xl font-black text-[var(--color-text-base)]">
+						{isAr ? 'قد تهمك هذه الخدمات أيضًا' : 'You May Also Be Interested In'}
+					</h2>
+				</div>
+				<div class="grid gap-8 md:grid-cols-2">
+					{#each others as other}
+						<a
+							href={`${base}/services/${other.slug}?lang=${lang}`}
+							class="group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--color-background)] p-8 transition-all hover:-translate-y-1 hover:shadow-xl"
+						>
+							<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
+								<svelte:component this={categoryIcons[other.icon] || Code} class="h-7 w-7" />
+							</div>
+							<h3 class="mb-3 text-2xl font-black text-[var(--color-text-base)] group-hover:text-brand-blue">{other.name}</h3>
+							<p class="line-clamp-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{other.description}</p>
+							<div class="mt-6 flex items-center gap-2 text-sm font-bold text-brand-blue">
+								{isAr ? 'اكتشف المزيد' : 'Discover More'}
+								<ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1 {isAr ? 'rotate-180' : ''}" />
+							</div>
+						</a>
+					{/each}
+				</div>
+			</div>
+		</section>
+	{/if}
 {/if}
 
 <!-- CTA -->

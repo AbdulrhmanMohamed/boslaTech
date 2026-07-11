@@ -10,6 +10,7 @@
 	} from '@lucide/svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 
 	let { data } = $props();
 	const currentTheme = $derived(theme.current);
@@ -69,6 +70,14 @@
 <section class="relative flex min-h-[60vh] w-full items-center justify-center overflow-hidden transition-colors duration-1000" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
 	<HeroBackground />
 	<div class="relative z-10 container mx-auto px-6 py-24">
+		<div class="flex justify-center pb-4">
+			<Breadcrumbs
+				{lang}
+				items={[
+					{ label: lang === 'ar' ? 'خدماتنا' : 'Our Services' }
+				]}
+			/>
+		</div>
 		<div class="mx-auto max-w-4xl space-y-8 text-center">
 			<div class="cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2">
 				<Sparkles class="h-4 w-4 text-brand-orange" />

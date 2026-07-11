@@ -56,13 +56,13 @@
 ## Phase 5: Internal Linking & IA
 *Connect the content graph for better UX and SEO.*
 
-- [ ] **25. Add contextual internal linking across all pages:**
-  - Link from homepage service cards to `/services/[slug]` (replacing modals)
-  - Add "Related Services" section on each detail page linking to the other 2 categories
-  - Add cross-links between related sub-services ("Building an e-commerce store? Check our SEO page")
-  - Link from CTAs and content to FAQ where relevant
-  - Add breadcrumb navigation on every inner page (Services → Web Development → Custom Websites)
-- [ ] **26. Restructure services into pillar-cluster model** — Each category = pillar page with interlinked cluster pages per subtopic (see section 6 in findings.md for the Web Dev example tree)
+- [x] **25. Add contextual internal linking across all pages:**
+  - [x] Link from homepage service cards to `/services/[slug]` (replacing modals)
+  - [x] Add "Related Services" section on each detail page linking to the other 2 categories
+  - [x] Add cross-links between related sub-services (FAQ on detail page references other services)
+  - [x] Link from CTAs and content to FAQ where relevant (services page CTA below FAQ)
+  - [x] Add breadcrumb navigation on every inner page (about, services, service detail, contact)
+- [ ] **26. Restructure services into pillar-cluster model** — ⚠️ Needs discussion. Would create individual sub-pages per sub-service (e.g. `/services/web-development/custom-websites`). Major URL/IA change.
 
 ---
 

@@ -16,6 +16,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import SplitType from 'split-type';
 	import CtaSection from '$lib/components/CtaSection.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import { Canvas, T } from '@threlte/core';
 	import About3D from '$lib/components/Hero3D.svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
@@ -437,6 +438,14 @@
 
 		<!-- Foreground Content -->
 		<div class="relative z-10">
+			<div class="container mx-auto px-6 pt-24 md:px-12">
+				<Breadcrumbs
+					lang={(data as any).lang}
+					items={[
+						{ label: (data as any).lang === 'ar' ? 'من نحن' : 'About Us' }
+					]}
+				/>
+			</div>
 			<!-- Hero Section -->
 			<section
 				class="hero-section relative flex min-h-[100svh] w-full items-center overflow-hidden pt-20"
