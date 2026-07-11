@@ -2,67 +2,533 @@
 	"en": {
 		"title": "Our Services",
 		"subtitle": "Comprehensive digital solutions to grow your business — from web development to SEO and marketing.",
+		"process": {
+			"title": "How We Work",
+			"subtitle": "A proven 5-step process that delivers results, from idea to launch and beyond.",
+			"steps": [
+				{
+					"title": "Discovery",
+					"desc": "We learn about your business, goals, target audience, and competitors. This forms the foundation of every decision we make.",
+					"icon": "search"
+				},
+				{
+					"title": "Strategy",
+					"desc": "We create a tailored roadmap — from site structure to content plan and technical specifications — aligned with your objectives.",
+					"icon": "clipboard-list"
+				},
+				{
+					"title": "Design & Development",
+					"desc": "We build your solution using modern technology (SvelteKit, Tailwind, GSAP), ensuring speed, security, and an exceptional user experience.",
+					"icon": "code"
+				},
+				{
+					"title": "Launch",
+					"desc": "We deploy, configure analytics, test across devices, and make sure everything runs flawlessly before going live.",
+					"icon": "globe"
+				},
+				{
+					"title": "Grow",
+					"desc": "Post-launch support, SEO monitoring, performance optimization, and ongoing improvements to keep you ahead.",
+					"icon": "trending-up"
+				}
+			]
+		},
 		"categories": [
 			{
+				"slug": "web-development",
 				"name": "Web Development",
 				"icon": "code",
+				"description": "We build fast, secure, and SEO-friendly websites and web applications using modern technology like SvelteKit and Tailwind CSS. Every project is crafted to reflect your brand identity, deliver a seamless user experience, and drive measurable business results. Whether you need a simple landing page, a full e-commerce platform, or a complex web application, our team delivers production-ready solutions on time.",
+				"cta": "Learn more about Web Development",
 				"items": [
-					{ "title": "Custom Websites", "desc": "Fast, secure, SEO‑friendly websites built with modern technology." },
-					{ "title": "E-commerce Solutions", "desc": "Online stores with secure payments, product management, and optimized checkout." },
-					{ "title": "Website Redesign", "desc": "Transform outdated sites into modern, high‑performing digital assets." }
-				]
+					{
+						"title": "Custom Websites",
+						"desc": "Fast, secure, SEO-friendly websites built with modern technology.",
+						"details": "We build custom websites from scratch using SvelteKit, the cutting-edge JavaScript framework. Each site is optimized for speed (near-perfect Lighthouse scores), fully responsive, and built with SEO best practices from day one. Whether it's a corporate site, a portfolio, or a landing page, you get a production-ready solution that loads fast and ranks well.",
+						"features": [
+							"Responsive design that works on all devices",
+							"Easy Content Management System (CMS)",
+							"Complete SEO optimization out of the box",
+							"Full Arabic & English bilingual support",
+							"Free SSL certificate & advanced security",
+							"1 month technical support included"
+						]
+					},
+					{
+						"title": "E-commerce Solutions",
+						"desc": "Online stores with secure payments and optimized checkout.",
+						"details": "We develop powerful online stores with secure payment gateways, product management systems, and conversion-optimized checkout flows. Our e-commerce solutions are built to scale — from small shops to large catalogs — with full inventory management, order tracking, and analytics integration.",
+						"features": [
+							"Complete shopping cart system",
+							"Multiple payment gateways (Mada, Visa, STC Pay)",
+							"Full inventory management system",
+							"Unlimited product listings & categories",
+							"Order tracking & shipping integration",
+							"Sales reports & analytics dashboard"
+						]
+					},
+					{
+						"title": "Website Redesign",
+						"desc": "Transform outdated sites into modern, high-performing assets.",
+						"details": "If your current website is slow, outdated, or not converting, we can transform it into a modern digital asset. We preserve your SEO equity while rebuilding with modern technology, improving performance, user experience, and conversion rates. The result: a site that looks great, works great, and drives results.",
+						"features": [
+							"Preserve existing SEO rankings & traffic",
+							"Modern technology stack for blazing speed",
+							"Fresh responsive design refresh",
+							"User experience & conversion rate improvement",
+							"Content migration without data loss",
+							"1 month post-launch support"
+						]
+					}
+				],
+				"process": {
+					"title": "How We Build",
+					"steps": [
+						{
+							"title": "Plan & Design",
+							"desc": "We map out your site structure, wireframe key pages, and design a stunning interface that matches your brand identity.",
+							"icon": "pen-tool"
+						},
+						{
+							"title": "Develop & Test",
+							"desc": "We build your site with clean, performant code, integrating all features and testing across every device and browser.",
+							"icon": "code"
+						},
+						{
+							"title": "Launch & Optimize",
+							"desc": "We deploy to production, configure analytics and SEO, monitor performance, and provide ongoing support to keep your site running smoothly.",
+							"icon": "rocket"
+						}
+					]
+				}
 			},
 			{
+				"slug": "seo",
 				"name": "SEO",
 				"icon": "search",
+				"description": "We help your website rank higher on Google and attract more qualified visitors through proven SEO strategies. Our approach combines technical audits, content optimization, and authority building to deliver sustainable organic growth. We focus on real results — more traffic, better leads, and higher revenue — not vanity metrics.",
+				"cta": "Learn more about SEO",
 				"items": [
-					{ "title": "Technical SEO", "desc": "Optimize site structure, speed, and crawlability for better search rankings." },
-					{ "title": "Content SEO", "desc": "Keyword research, on‑page optimization, and content strategy that drives traffic." },
-					{ "title": "Local SEO", "desc": "Dominate local search results with Google Business Profile and local citations." }
-				]
+					{
+						"title": "Technical SEO",
+						"desc": "Optimize site structure, speed, and crawlability.",
+						"details": "We audit and optimize your website's technical foundation: site structure, page speed, mobile-friendliness, XML sitemaps, robots.txt, canonical tags, and schema markup. Technical SEO ensures search engines can crawl, index, and understand your content efficiently — a prerequisite for ranking well.",
+						"features": [
+							"Comprehensive technical site audit",
+							"Page speed optimization (Core Web Vitals)",
+							"Mobile-friendliness & usability fixes",
+							"Schema markup & structured data setup",
+							"Robots.txt & crawl budget optimization",
+							"XML sitemap creation & submission"
+						]
+					},
+					{
+						"title": "Content SEO",
+						"desc": "Keyword research, on-page optimization, and content strategy.",
+						"details": "We research high-value keywords your customers are searching for, optimize your existing content, and create a content strategy that drives traffic. From meta tags and headings to internal linking and content silos, every element is optimized for both users and search engines.",
+						"features": [
+							"In-depth keyword research & gap analysis",
+							"On-page optimization (meta tags, headings, content)",
+							"Content strategy & editorial calendar",
+							"Internal linking structure optimization",
+							"SEO-optimized content writing",
+							"Monthly performance reports"
+						]
+					},
+					{
+						"title": "Local SEO",
+						"desc": "Dominate local search results in your area.",
+						"details": "We optimize your Google Business Profile, build local citations, manage reviews, and create location-specific content to help you dominate local search results. Perfect for businesses that serve customers in specific cities or regions — like Riyadh, Jeddah, or across Saudi Arabia.",
+						"features": [
+							"Google Business Profile optimization",
+							"Local citation building (Yellow Pages, maps, directories)",
+							"Review management & response system",
+							"Location-specific landing pages",
+							"Google Maps rank tracking",
+							"Local SEO monthly reports"
+						]
+					}
+				],
+				"process": {
+					"title": "How We Grow Your Rankings",
+					"steps": [
+						{
+							"title": "Audit",
+							"desc": "We analyze your site's technical health, keyword opportunities, and competitive landscape to identify growth areas.",
+							"icon": "search"
+						},
+						{
+							"title": "Optimize",
+							"desc": "We implement technical fixes, optimize your content, build quality backlinks, and improve your overall search presence.",
+							"icon": "settings"
+						},
+						{
+							"title": "Monitor & Scale",
+							"desc": "We track rankings, traffic, and conversions monthly — refining the strategy and scaling what works to keep you ahead.",
+							"icon": "trending-up"
+						}
+					]
+				}
 			},
 			{
+				"slug": "digital-marketing",
 				"name": "Digital Marketing",
 				"icon": "share",
+				"description": "We create data-driven marketing campaigns that reach the right audience, at the right time, with the right message. From social media to search ads to content marketing, every campaign is built around your specific goals — whether that's brand awareness, lead generation, or direct sales.",
+				"cta": "Learn more about Digital Marketing",
 				"items": [
-					{ "title": "Social Media Marketing", "desc": "Targeted campaigns on Instagram, TikTok, LinkedIn, and more to reach your audience." },
-					{ "title": "Google Ads", "desc": "Paid search and display advertising with precise targeting and ROI tracking." },
-					{ "title": "Content Marketing", "desc": "Blog posts, videos, and infographics that build authority and attract customers." }
-				]
+					{
+						"title": "Social Media Marketing",
+						"desc": "Targeted campaigns on Instagram, TikTok, LinkedIn, and more.",
+						"details": "We create and manage targeted social media campaigns across Instagram, TikTok, LinkedIn, Twitter, and Snapchat. From content creation to ad management to community engagement, we help you build a loyal following and convert followers into customers.",
+						"features": [
+							"Social media account setup & management",
+							"Professional visual content creation (graphics, reels)",
+							"Targeted ad campaigns with precise audience targeting",
+							"Daily community engagement & responses",
+							"Weekly performance reports with insights",
+							"Audience growth & analytics tracking"
+						]
+					},
+					{
+						"title": "Google Ads",
+						"desc": "Paid search and display ads with precise ROI tracking.",
+						"details": "We manage Google Search Ads, Display Ads, Shopping Ads, and YouTube campaigns with precise targeting, A/B testing, and detailed ROI reporting. Every campaign is optimized for cost efficiency — maximizing conversions while minimizing cost per lead.",
+						"features": [
+							"Google Search Ads campaign management",
+							"Display & YouTube remarketing campaigns",
+							"Shopping Ads for e-commerce stores",
+							"Continuous A/B split testing",
+							"Conversion tracking & attribution setup",
+							"Detailed ROI & cost-per-lead reporting"
+						]
+					},
+					{
+						"title": "Content Marketing",
+						"desc": "Blog posts, videos, and infographics that attract customers.",
+						"details": "We produce high-quality content that builds authority, educates your audience, and attracts potential customers. From blog posts and articles to videos, infographics, and whitepapers — our content is designed to be shared, linked to, and loved by both users and search engines.",
+						"features": [
+							"SEO-optimized blog posts & articles",
+							"Professional video production & editing",
+							"Custom infographics & visual assets",
+							"In-depth whitepapers & industry reports",
+							"Multi-channel content distribution",
+							"Content performance analytics"
+						]
+					}
+				],
+				"process": {
+					"title": "How We Drive Results",
+					"steps": [
+						{
+							"title": "Strategy",
+							"desc": "We define your target audience, choose the right channels, set budgets, and establish measurable KPIs aligned with your goals.",
+							"icon": "clipboard-list"
+						},
+						{
+							"title": "Execute & Launch",
+							"desc": "We create compelling ad creative, write persuasive copy, set up campaigns, and launch across selected channels.",
+							"icon": "play"
+						},
+						{
+							"title": "Analyze & Scale",
+							"desc": "We review performance data, A/B test variations, optimize budgets, and scale winning campaigns for maximum ROI.",
+							"icon": "bar-chart"
+						}
+					]
+				}
 			}
-		]
+		],
+		"faq": {
+			"title": "Frequently Asked Questions",
+			"items": [
+				{
+					"q": "How long does it take to build a website?",
+					"a": "A typical website takes 5-10 business days from start to launch, depending on complexity. E-commerce sites and web applications may take longer. We'll give you a clear timeline during the discovery phase."
+				},
+				{
+					"q": "Do you provide ongoing support after launch?",
+					"a": "Yes. We offer maintenance packages that include security updates, performance monitoring, content updates, and technical support. You can choose a plan that fits your needs."
+				},
+				{
+					"q": "What makes your SEO services different?",
+					"a": "We focus on sustainable, white-hat SEO strategies that deliver long-term results. Our approach combines technical audits, content optimization, and authority building — all tailored to your business and target market."
+				},
+				{
+					"q": "Do you work with clients outside Saudi Arabia?",
+					"a": "Absolutely. While we are based in Riyadh, we work with clients across the GCC and internationally. All our services are delivered remotely with regular video calls and progress updates."
+				},
+				{
+					"q": "How do I get started?",
+					"a": "Simply contact us via the form on our contact page, WhatsApp, or phone. We'll schedule a free consultation to discuss your project, goals, and budget, then provide a tailored proposal within 1-2 business days."
+				}
+			]
+		}
 	},
 	"ar": {
 		"title": "خدماتنا",
 		"subtitle": "حلول رقمية شاملة لنمو أعمالك — من تطوير المواقع إلى تحسين محركات البحث والتسويق الرقمي.",
+		"process": {
+			"title": "كيف نعمل",
+			"subtitle": "عملية مثبتة من 5 خطوات لتحقيق النتائج، من الفكرة إلى الإطلاق وما بعده.",
+			"steps": [
+				{
+					"title": "الاكتشاف",
+					"desc": "نتعرف على نشاطك التجاري وأهدافك وجمهورك المستهدف ومنافسيك. هذا يشكل الأساس لكل قرار نتخذه.",
+					"icon": "search"
+				},
+				{
+					"title": "الاستراتيجية",
+					"desc": "نضع خارطة طريق مخصصة — من هيكل الموقع إلى خطة المحتوى والمواصفات التقنية — متوافقة مع أهدافك.",
+					"icon": "clipboard-list"
+				},
+				{
+					"title": "التصميم والتطوير",
+					"desc": "نبني حلك باستخدام تقنيات حديثة (SvelteKit, Tailwind, GSAP)، لضمان السرعة والأمان وتجربة مستخدم استثنائية.",
+					"icon": "code"
+				},
+				{
+					"title": "الإطلاق",
+					"desc": "ننشر الموقع، ونضبط أدوات التحليل، ونختبر على جميع الأجهزة، ونتأكد من أن كل شيء يعمل بشكل مثالي قبل الإطلاق.",
+					"icon": "globe"
+				},
+				{
+					"title": "النمو",
+					"desc": "دعم ما بعد الإطلاق، ومراقبة تحسين محركات البحث، وتحسين الأداء، وتحسينات مستمرة لإبقائك في المقدمة.",
+					"icon": "trending-up"
+				}
+			]
+		},
 		"categories": [
 			{
+				"slug": "web-development",
 				"name": "تطوير المواقع",
 				"icon": "code",
+				"description": "نبني مواقع وتطبيقات ويب سريعة وآمنة ومتوافقة مع محركات البحث باستخدام تقنيات حديثة مثل SvelteKit و Tailwind CSS. كل مشروع يُصمم ليعكس هوية علامتك التجارية، ويوفر تجربة مستخدم سلسة، ويحقق نتائج أعمال ملموسة. سواء كنت بحاجة إلى صفحة هبوط بسيطة أو منصة تجارة إلكترونية متكاملة، فريقنا يقدم حلولاً جاهزة للإنتاج في الوقت المحدد.",
+				"cta": "اكتشف المزيد عن تطوير المواقع",
 				"items": [
-					{ "title": "مواقع مخصصة", "desc": "مواقع سريعة وآمنة ومتوافقة مع محركات البحث مبنية بأحدث التقنيات." },
-					{ "title": "متاجر إلكترونية", "desc": "متاجر إلكترونية بدفع آمن وإدارة منتجات وعملية شراء محسّنة." },
-					{ "title": "إعادة تصميم المواقع", "desc": "تحويل المواقع القديمة إلى أصول رقمية حديثة وعالية الأداء." }
-				]
+					{
+						"title": "مواقع مخصصة",
+						"desc": "مواقع سريعة وآمنة ومتوافقة مع محركات البحث.",
+						"details": "نبني مواقع مخصصة من الصفر باستخدام SvelteKit، الإطار البرمجي المتطور. كل موقع مُحسَّن للسرعة (نتائج مثالية في Lighthouse)، ومتوافق مع جميع الأجهزة، ومبني بأفضل ممارسات تحسين محركات البحث من اليوم الأول. سواء كان موقعاً للشركة أو محفظة أعمال أو صفحة هبوط، ستحصل على حل جاهز للإنتاج سريع التحميل ومرتفع الترتيب.",
+						"features": [
+							"تصميم متجاوب يعمل على جميع الأجهزة",
+							"نظام إدارة محتوى سهل (CMS)",
+							"تحسين محركات بحث متكامل",
+							"دعم كامل للغة العربية والإنجليزية",
+							"شهادة SSL مجانية وأمان متقدم",
+							"دعم فني لمدة شهر"
+						]
+					},
+					{
+						"title": "متاجر إلكترونية",
+						"desc": "متاجر إلكترونية بدفع آمن وعملية شراء محسّنة.",
+						"details": "نطور متاجر إلكترونية قوية مع بوابات دفع آمنة، وأنظمة إدارة منتجات، وعمليات دفع محسّنة لزيادة التحويل. حلولنا قابلة للتوسع — من المتاجر الصغيرة إلى الكتالوجات الكبيرة — مع إدارة كاملة للمخزون وتتبع الطلبات وتكامل أدوات التحليل.",
+						"features": [
+							"نظام سلة شراء متكامل",
+							"بوابات دفع متعددة (مدى، فيزا، STC Pay)",
+							"نظام إدارة مخزون كامل",
+							"منتجات وتصنيفات غير محدودة",
+							"تتبع الطلبات وتكامل الشحن",
+							"تقارير مبيعات ولوحة تحليلات"
+						]
+					},
+					{
+						"title": "إعادة تصميم المواقع",
+						"desc": "تحويل المواقع القديمة إلى أصول رقمية حديثة.",
+						"details": "إذا كان موقعك الحالي بطيئاً أو قديماً أو لا يحقق تحويلات، يمكننا تحويله إلى أصل رقمي حديث. نحافظ على قيمة تحسين محركات البحث الحالية أثناء إعادة البناء بتقنيات حديثة، لتحسين الأداء وتجربة المستخدم ومعدلات التحويل. النتيجة: موقع يبدو رائعاً، ويعمل بكفاءة، ويحقق نتائج.",
+						"features": [
+							"الحفاظ على ترتيب SEO الحالي والزوار",
+							"تقنيات حديثة لسرعة فائقة",
+							"تصميم عصري متجاوب بالكامل",
+							"تحسين تجربة المستخدم ومعدلات التحويل",
+							"نقل المحتوى بدون فقدان أي بيانات",
+							"دعم فني لمدة شهر بعد الإطلاق"
+						]
+					}
+				],
+				"process": {
+					"title": "كيف نبني",
+					"steps": [
+						{
+							"title": "تخطيط وتصميم",
+							"desc": "نخطط هيكل موقعك، ونصمم واجهات الصفحات الرئيسية، ونبتكر واجهة مذهلة تعكس هوية علامتك التجارية.",
+							"icon": "pen-tool"
+						},
+						{
+							"title": "تطوير واختبار",
+							"desc": "نبني موقعك بكود نظيف وعالي الأداء، وندمج جميع الميزات، ونختبر على جميع الأجهزة والمتصفحات.",
+							"icon": "code"
+						},
+						{
+							"title": "إطلاق وتحسين",
+							"desc": "ننشر الموقع، ونضبط أدوات التحليل و SEO، ونراقب الأداء، ونقدم دعماً مستمراً لإبقاء موقعك يعمل بسلاسة.",
+							"icon": "rocket"
+						}
+					]
+				}
 			},
 			{
+				"slug": "seo",
 				"name": "تحسين محركات البحث (SEO)",
 				"icon": "search",
+				"description": "نساعد موقعك على الظهور في الصفحات الأولى من Google وجذب زوار مؤهلين من خلال استراتيجيات SEO مثبتة. يجمع نهجنا بين التدقيق التقني وتحسين المحتوى وبناء السلطة لتحقيق نمو عضوي مستدام. نركز على نتائج حقيقية — المزيد من الزوار والعملاء المحتملين والإيرادات.",
+				"cta": "اكتشف المزيد عن تحسين محركات البحث",
 				"items": [
-					{ "title": "SEO تقني", "desc": "تحسين هيكل الموقع والسرعة وقابلية الزحف لتحسين ترتيب البحث." },
-					{ "title": "SEO محتوى", "desc": "بحث كلمات مفتاحية وتحسين المحتوى واستراتيجية محتوى تجذب الزوار." },
-					{ "title": "SEO محلي", "desc": "الهيمنة على نتائج البحث المحلية عبر تحسين Google Business Profile." }
-				]
+					{
+						"title": "SEO تقني",
+						"desc": "تحسين هيكل الموقع والسرعة وقابلية الزحف.",
+						"details": "نقوم بتدقيق وتحسين الأساس التقني لموقعك: هيكل الموقع، سرعة الصفحات، التوافق مع الجوال، خرائط XML، ملف robots.txt، العلامات الأساسية، وبيانات Schema. يضمن SEO التقني أن محركات البحث تستطيع الزحف إلى المحتوى الخاص بك وفهرسته وفهمه بكفاءة — شرط أساسي للظهور في المراتب الأولى.",
+						"features": [
+							"تدقيق فني شامل للموقع",
+							"تحسين سرعة الموقع (Core Web Vitals)",
+							"إصلاح مشاكل التوافق مع الجوال",
+							"إعداد Schema Markup والبيانات المنظمة",
+							"تحسين ملف robots.txt وميزانية الزحف",
+							"إنشاء خرائط XML وإرسالها"
+						]
+					},
+					{
+						"title": "SEO محتوى",
+						"desc": "بحث كلمات مفتاحية وتحسين المحتوى واستراتيجية محتوى.",
+						"details": "نبحث عن الكلمات المفتاحية عالية القيمة التي يبحث عنها عملاؤك، ونحسن المحتوى الحالي، وننشئ استراتيجية محتوى تجذب الزوار. من العلامات الوصفية والعناوين إلى الروابط الداخلية وهياكل المحتوى، كل عنصر مُحسَّن لكل من المستخدمين ومحركات البحث.",
+						"features": [
+							"بحث كلمات مفتاحية عميق وتحليل الفجوات",
+							"تحسين الصفحات (وسوم، عناوين، محتوى)",
+							"استراتيجية محتوى وتقويم تحريري",
+							"تحسين هيكل الروابط الداخلية",
+							"كتابة محتوى متوافق مع SEO",
+							"تقارير أداء شهرية"
+						]
+					},
+					{
+						"title": "SEO محلي",
+						"desc": "الهيمنة على نتائج البحث المحلية في منطقتك.",
+						"details": "نحسن ظهورك في البحث المحلي عبر تحسين حساب Google Business Profile، وبناء الاستشهادات المحلية، وإدارة التقييمات، وإنشاء محتوى مخصص للموقع. مثالي للشركات التي تخدم عملاء في مدن محددة — مثل الرياض، جدة، أو في جميع أنحاء المملكة.",
+						"features": [
+							"تحسين حساب Google Business Profile",
+							"بناء استشهادات محلية (دليل الأعمال، خرائط)",
+							"إدارة التقييمات والردود الآلية",
+							"صفحات هبوط مخصصة للموقع",
+							"تتبع ترتيب خرائط Google",
+							"تقارير SEO محلي شهرية"
+						]
+					}
+				],
+				"process": {
+					"title": "كيف ننمي ترتيبك",
+					"steps": [
+						{
+							"title": "تدقيق",
+							"desc": "نحلل الصحة التقنية لموقعك، وفرص الكلمات المفتاحية، والمشهد التنافسي لتحديد مجالات النمو.",
+							"icon": "search"
+						},
+						{
+							"title": "تحسين",
+							"desc": "ننفذ الإصلاحات التقنية، ونحسن المحتوى، ونبني روابط خلفية عالية الجودة، ونعزز حضورك في البحث.",
+							"icon": "settings"
+						},
+						{
+							"title": "مراقبة وتوسيع",
+							"desc": "نتتبع الترتيب والزوار والتحويلات شهرياً — ونحسن الاستراتيجية ونوسع ما ينجح لإبقائك في المقدمة.",
+							"icon": "trending-up"
+						}
+					]
+				}
 			},
 			{
+				"slug": "digital-marketing",
 				"name": "التسويق الرقمي",
 				"icon": "share",
+				"description": "ننشئ حملات تسويقية مبنية على البيانات تصل إلى الجمهور المناسب، في الوقت المناسب، برسالة مناسبة. من وسائل التواصل الاجتماعي إلى إعلانات البحث إلى التسويق بالمحتوى — كل حملة تُبنى حول أهدافك المحددة — سواء كان ذلك الوعي بالعلامة التجارية أو جذب العملاء المحتملين أو المبيعات المباشرة.",
+				"cta": "اكتشف المزيد عن التسويق الرقمي",
 				"items": [
-					{ "title": "التسويق عبر التواصل الاجتماعي", "desc": "حملات مستهدفة على إنستغرام، تيك توك، لينكد إن وغيرها للوصول لجمهورك." },
-					{ "title": "إعلانات Google", "desc": "إعلانات بحث وعرض مدفوعة باستهداف دقيق وقياس العائد على الاستثمار." },
-					{ "title": "التسويق بالمحتوى", "desc": "مقالات وفيديوهات وإنفوجرافيك تبني سلطة وتجذب العملاء." }
-				]
+					{
+						"title": "التسويق عبر التواصل الاجتماعي",
+						"desc": "حملات مستهدفة على إنستغرام، تيك توك، لينكد إن وغيرها.",
+						"details": "ننشئ وندير حملات مستهدفة على إنستغرام، تيك توك، لينكد إن، تويتر، وسناب شات. من إنشاء المحتوى إلى إدارة الإعلانات إلى التفاعل مع المجتمع، نساعدك على بناء متابعين مخلصين وتحويل المتابعين إلى عملاء.",
+						"features": [
+							"إعداد وإدارة حسابات التواصل الاجتماعي",
+							"إنشاء محتوى بصري احترافي (تصميم، ريلز)",
+							"حملات إعلانية مستهدفة بدقة",
+							"تفاعل يومي مع المتابعين والردود",
+							"تقارير أداء أسبوعية مع تحليلات",
+							"تتبع نمو الجمهور والتحليلات"
+						]
+					},
+					{
+						"title": "إعلانات Google",
+						"desc": "إعلانات بحث وعرض مدفوعة مع قياس دقيق للعائد.",
+						"details": "ندير إعلانات بحث Google، وإعلانات العرض، وإعلانات التسوق، وحملات YouTube باستهداف دقيق واختبار A/B وتقارير مفصلة عن العائد على الاستثمار. كل حملة مُحسَّنة لكفاءة التكلفة — لتعظيم التحويلات وتقليل تكلفة العميل المحتمل.",
+						"features": [
+							"إدارة حملات إعلانات بحث Google",
+							"حملات إعادة الاستهداف (Display, YouTube)",
+							"إعلانات Shopping للمتاجر الإلكترونية",
+							"اختبار A/B مستمر للإعلانات",
+							"تتبع التحويلات وإعداد الإسناد",
+							"تقارير مفصلة للعائد وتكلفة العميل"
+						]
+					},
+					{
+						"title": "التسويق بالمحتوى",
+						"desc": "مقالات وفيديوهات وإنفوجرافيك تجذب العملاء.",
+						"details": "ننتج محتوى عالي الجودة يبني سلطة، ويُثقف جمهورك، ويجذب العملاء المحتملين. من المقالات والتدوينات إلى الفيديوهات والإنفوجرافيك والمستندات التقنية — محتوانا مصمم ليكون قابلاً للمشاركة والربط، ومحبوباً من المستخدمين ومحركات البحث على حد سواء.",
+						"features": [
+							"مقالات تدوين محسّنة لمحركات البحث",
+							"إنتاج فيديوهات احترافية ومونتاج",
+							"إنفوجرافيك وأصول بصرية مخصصة",
+							"مستندات تقنية وتقارير صناعية",
+							"توزيع المحتوى عبر قنوات متعددة",
+							"تحليلات أداء المحتوى"
+						]
+					}
+				],
+				"process": {
+					"title": "كيف نحقق النتائج",
+					"steps": [
+						{
+							"title": "استراتيجية",
+							"desc": "نحدد جمهورك المستهدف، ونختار القنوات المناسبة، ونضع الميزانيات، ونحدد مؤشرات أداء قابلة للقياس.",
+							"icon": "clipboard-list"
+						},
+						{
+							"title": "تنفيذ وإطلاق",
+							"desc": "نبتكر إعلانات جذابة، ونكتب نصوصاً مقنعة، ونجهز الحملات، ونطلقها عبر القنوات المختارة.",
+							"icon": "play"
+						},
+						{
+							"title": "تحليل وتوسيع",
+							"desc": "نراجع بيانات الأداء، ونختبر المتغيرات، ونحسن الميزانيات، ونوسع الحملات الناجحة لتحقيق أقصى عائد.",
+							"icon": "bar-chart"
+						}
+					]
+				}
 			}
-		]
+		],
+		"faq": {
+			"title": "الأسئلة الشائعة",
+			"items": [
+				{
+					"q": "كم من الوقت يستغرق بناء موقع إلكتروني؟",
+					"a": "يستغرق الموقع النموذجي من 5 إلى 10 أيام عمل من البداية إلى الإطلاق، حسب التعقيد. المواقع التجارية وتطبيقات الويب قد تستغرق وقتاً أطول. سنقدم لك جدولاً زمنياً واضحاً خلال مرحلة الاكتشاف."
+				},
+				{
+					"q": "هل تقدمون دعماً مستمراً بعد الإطلاق؟",
+					"a": "نعم. نقدم باقات صيانة تشمل تحديثات الأمان ومراقبة الأداء وتحديثات المحتوى والدعم الفني. يمكنك اختيار الخطة التي تناسب احتياجاتك."
+				},
+				{
+					"q": "ما الذي يميز خدمات تحسين محركات البحث لديكم؟",
+					"a": "نركز على استراتيجيات SEO بيضاء ومستدامة تحقق نتائج طويلة المدى. يجمع نهجنا بين التدقيق التقني وتحسين المحتوى وبناء السلطة — كلها مخصصة لنشاطك التجاري وسوقك المستهدف."
+				},
+				{
+					"q": "هل تعملون مع عملاء خارج المملكة العربية السعودية؟",
+					"a": "بالتأكيد. بينما نحن موجودون في الرياض، نعمل مع عملاء في جميع أنحاء دول الخليج والعالم. جميع خدماتنا تُقدم عن بُعد مع مكالمات فيديو منتظمة وتقارير تقدم."
+				},
+				{
+					"q": "كيف أبدأ؟",
+					"a": "ببساطة تواصل معنا عبر نموذج الاتصال في صفحة اتصل بنا، أو عبر واتساب، أو الهاتف. سنحدد موعد استشارة مجانية لمناقشة مشروعك وأهدافك وميزانيتك، ثم نقدم عرضاً مخصصاً خلال 1-2 يوم عمل."
+				}
+			]
+		}
 	}
 }
