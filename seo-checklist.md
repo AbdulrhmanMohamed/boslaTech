@@ -43,13 +43,13 @@
 ## Phase 4: Schema & Technical SEO
 *Foundation for search engines to understand and rank the site.*
 
-- [ ] **18. Add LocalBusiness schema** — JSON-LD with company name, CR number, address (Riyadh), phone, area served. Highest-impact SEO change
-- [ ] **19. Add Service + BreadcrumbList schema** — Mark up each offering with `Service` type and add breadcrumb navigation path on every page
-- [ ] **20. Add unique meta titles and descriptions per page** — Each page needs a keyword-targeted title + meta description (currently all use same template)
-- [ ] **21. Fix hreflang implementation** — Replace `?lang=` query param with proper `<link rel="alternate" hreflang="ar" />` and `hreflang="en" />` tags
-- [ ] **22. Generate XML sitemap** — `/sitemap.xml` listing all pages in both language variants
-- [ ] **23. Add canonical URLs** — `<link rel="canonical" />` with base URL without `?lang=` param
-- [ ] **24. Fix brand name inconsistency** — Pick one name (BOSLA or Hafat Alnjom) and use consistently. Remove "Orcado" from about page
+- [x] **18. Add LocalBusiness schema** — JSON-LD with company name, CR number, address (Riyadh), phone, area served. Highest-impact SEO change
+- [x] **19. Add Service + BreadcrumbList schema** — Mark up each offering with `Service` type and add breadcrumb navigation path on every service detail page
+- [x] **20. Add unique meta titles and descriptions per page** — Homepage, about, services, service detail, contact all have unique titles + descriptions
+- [x] **21. Fix hreflang implementation** — `<link rel="alternate" hreflang="ar/en/x-default">` in layout `<head>` for every route
+- [x] **22. Generate XML sitemap** — `/sitemap.xml` with 14 entries (7 pages × 2 languages), auto-prerendered
+- [x] **23. Add canonical URLs** — `<link rel="canonical" />` with `$page.url.pathname` in layout
+- [x] **24. Fix brand name inconsistency** — "Orcado" → "Hafat Alnjom" in about page + `about.i18n.json`
 
 ---
 

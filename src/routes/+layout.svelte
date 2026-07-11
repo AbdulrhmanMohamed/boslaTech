@@ -13,8 +13,10 @@
 	import { setContext } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { base } from '$app/paths';
+	import { page } from '$app/stores';
 	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 
+	const siteUrl = 'https://hafatalnjom.com';
 	const logoSrc = `${base}/images/boslalogo-web.png`;
 	const favSrc = `${base}/images/bosla-fav.png`;
 
@@ -144,10 +146,35 @@
 		<meta name="twitter:title" content={`${data.site.siteName} — ${data.site.tagline}`} />
 		<meta name="twitter:description" content={data.site.description} />
 	{/if}
+	<link rel="canonical" href="{siteUrl}{$page.url.pathname}" />
+	<link rel="alternate" hreflang="ar" href="{siteUrl}{$page.url.pathname}" />
+	<link rel="alternate" hreflang="en" href="{siteUrl}{$page.url.pathname}?lang=en" />
+	<link rel="alternate" hreflang="x-default" href="{siteUrl}{$page.url.pathname}" />
 	<link rel="icon" type="image/png" href={favSrc} />
+	<meta property="og:url" content="{siteUrl}{$page.url.pathname}" />
+	<meta property="og:locale" content={data?.lang === 'ar' ? 'ar_SA' : 'en_US'} />
 	<meta property="og:image" content={logoSrc} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content={logoSrc} />
+	<script type="application/ld+json">
+		{JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "مؤسسة حافة النجوم - Hafat Alnjom",
+			"description": "شركة تصميم وتطوير مواقع إلكترونية وحلول رقمية في الرياض",
+			"url": "https://hafatalnjom.com",
+			"telephone": "+966576704683",
+			"taxID": "7050568158",
+			"areaServed": ["SA", "GCC"],
+			"priceRange": "SAR 1,500 - SAR 10,000",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Riyadh",
+				"addressRegion": "Al-Malaz",
+				"addressCountry": "SA"
+			}
+		})}
+	</script>
 </svelte:head>
 
 <!-- Scroll Progress Bar -->

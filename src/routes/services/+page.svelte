@@ -50,7 +50,8 @@
 </script>
 
 <svelte:head>
-	<title>{pageData?.title || 'Services'} | BOSLA</title>
+	<title>{pageData?.title || 'Services'} — {typedData?.site?.siteName || 'BOSLA'}</title>
+	<meta name="description" content={pageData?.subtitle ? pageData.subtitle.slice(0, 155) : ''} />
 	<script type="application/ld+json">
 		{JSON.stringify({
 			"@context": "https://schema.org",

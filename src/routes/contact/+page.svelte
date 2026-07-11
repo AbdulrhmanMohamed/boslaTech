@@ -325,7 +325,8 @@
 <canvas bind:this={canvas} class="pointer-events-none fixed inset-0 z-[100]"></canvas>
 
 <svelte:head>
-	<title>{(data as any).contact?.title || 'Contact'} | BOSLA</title>
+	<title>{(data as any).contact?.title || 'Contact'} — {(data as any).site?.siteName || 'BOSLA'}</title>
+	<meta name="description" content={(data as any).contact?.subtitle?.slice(0, 155) || (data as any).site?.description || ''} />
 </svelte:head>
 
 <!-- Hero Section - Obsidian Design Alignment -->

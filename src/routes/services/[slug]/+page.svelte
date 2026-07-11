@@ -96,7 +96,39 @@
 </script>
 
 <svelte:head>
-	<title>{category?.name || 'Service'} | BOSLA</title>
+	<title>{category?.name || 'Service'} — {typedData?.site?.siteName || 'BOSLA'}</title>
+	<meta name="description" content={category?.description ? category.description.slice(0, 155) + '...' : ''} />
+	<script type="application/ld+json">
+		{JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": category?.name || '',
+			"description": category?.description || '',
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "مؤسسة حافة النجوم",
+				"telephone": "+966576704683"
+			},
+			"areaServed": "SA",
+			"offers": {
+				"@type": "Offer",
+				"price": "1500",
+				"priceCurrency": "SAR",
+				"priceRange": "SAR 1,500 - SAR 5,000"
+			}
+		})}
+	</script>
+	<script type="application/ld+json">
+		{JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement": [
+				{ "@type": "ListItem", "position": 1, "name": lang === 'ar' ? 'الرئيسية' : 'Home', "item": "https://hafatalnjom.com" },
+				{ "@type": "ListItem", "position": 2, "name": lang === 'ar' ? 'خدماتنا' : 'Our Services', "item": "https://hafatalnjom.com/services" },
+				{ "@type": "ListItem", "position": 3, "name": category?.name || '' }
+			]
+		})}
+	</script>
 </svelte:head>
 
 <!-- Hero -->

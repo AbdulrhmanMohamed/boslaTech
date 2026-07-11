@@ -226,7 +226,7 @@
 						data.about?.subtitle ||
 						(isAr
 							? 'بوصلة هي شريكك الاستراتيجي في صياغة المستقبل الرقمي. نحن نمزج بين الفن والتكنولوجيا لنبتكر تجارب استثنائية تتجاوز التوقعات، وترسخ مكانة علامتك التجارية في الصدارة.'
-							: 'Orcado is your strategic partner in crafting the digital future. We fuse artistry with advanced technology to engineer exceptional experiences that transcend expectations and position your brand at the global forefront.');
+							: 'Hafat Alnjom is your strategic partner in crafting the digital future. We fuse artistry with advanced technology to engineer exceptional experiences that transcend expectations and position your brand at the global forefront.');
 
 					if (isAr) {
 						gsap.set(subtitleElement, { opacity: 1, clipPath: 'inset(0 0 0 100%)' });
@@ -391,8 +391,8 @@
 </script>
 
 <svelte:head>
-	<title>{data.about?.title} | {data.site?.siteName}</title>
-	<meta name="description" content={data.site?.description} />
+	<title>{data.about?.title} — {data.site?.siteName}</title>
+	<meta name="description" content={data.about?.subtitle?.slice(0, 155) || data.site?.description} />
 </svelte:head>
 
 <div

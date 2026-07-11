@@ -475,7 +475,16 @@
 		}
 		return finalPath;
 	}
+
+	let pageData = $derived(data as any);
+	let metaTitle = $derived(pageData?.home?.hero?.headline ? `${pageData.site.siteName} — ${pageData.home.hero.headline}` : '');
+	let metaDesc = $derived(pageData?.home?.hero?.description || '');
 </script>
+
+<svelte:head>
+	<title>{metaTitle || `${pageData?.site?.siteName} — ${pageData?.site?.tagline}`}</title>
+	<meta name="description" content={metaDesc || pageData?.site?.description} />
+</svelte:head>
 
 <div
 	bind:this={pageContainer}
