@@ -49,12 +49,12 @@
 			label: props.site?.nav?.about || (props.lang === 'ar' ? 'من نحن' : 'About')
 		},
 		{
-			path: `${base}/contact`,
-			label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact')
+			path: `${base}/services`,
+			label: props.site?.nav?.services || (props.lang === 'ar' ? 'خدماتنا' : 'Services')
 		},
 		{
-			path: `${base}/#pricing`,
-			label: props.site?.nav?.pricing || (props.lang === 'ar' ? 'الأسعار' : 'Pricing')
+			path: `${base}/contact`,
+			label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact')
 		}
 	]);
 

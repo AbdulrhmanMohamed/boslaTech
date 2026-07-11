@@ -10,7 +10,6 @@
 	import SocialProofSection from '$lib/components/SocialProofSection.svelte';
 	import FAQSection from '$lib/components/FAQSection.svelte';
 	import WhyChooseUsSection from '$lib/components/WhyChooseUsSection.svelte';
-	import PricingSection from '$lib/components/PricingSection.svelte';
 	import Hero3D from '$lib/components/About3D.svelte';
 	import { Canvas, T } from '@threlte/core';
 	import { gsap } from 'gsap';
@@ -599,7 +598,6 @@
 	<div class="relative z-10 bg-[var(--color-background)] transition-colors duration-1000">
 		<ServicesSection {data} />
 		<WhyChooseUsSection {data} />
-		<PricingSection {data} />
 
 		<!-- <SocialProofSection {data} /> -->
 		<!-- <TestimonialSection {data} /> -->

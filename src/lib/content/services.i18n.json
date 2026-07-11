@@ -1,76 +1,66 @@
 {
 	"en": {
 		"title": "Our Services",
+		"subtitle": "Comprehensive digital solutions to grow your business — from web development to SEO and marketing.",
 		"categories": [
 			{
 				"name": "Web Development",
+				"icon": "code",
 				"items": [
-					{ "title": "SvelteKit Websites", "desc": "Fast, secure, SEO‑friendly websites" },
-					{
-						"title": "Web Applications",
-						"desc": "Interactive, scalable apps for business workflows"
-					},
-					{
-						"title": "Admin Dashboards",
-						"desc": "Clean interfaces and excellent UX for operations"
-					}
+					{ "title": "Custom Websites", "desc": "Fast, secure, SEO‑friendly websites built with modern technology." },
+					{ "title": "E-commerce Solutions", "desc": "Online stores with secure payments, product management, and optimized checkout." },
+					{ "title": "Website Redesign", "desc": "Transform outdated sites into modern, high‑performing digital assets." }
 				]
 			},
 			{
-				"name": "Mobile Development",
+				"name": "SEO",
+				"icon": "search",
 				"items": [
-					{
-						"title": "Android Apps",
-						"desc": "High‑quality applications aligned with platform guidelines"
-					},
-					{
-						"title": "iOS Apps",
-						"desc": "Polished experiences optimized for performance and accessibility"
-					},
-					{
-						"title": "Cross‑platform Apps",
-						"desc": "Shared codebases with modern tooling and secure integrations"
-					}
+					{ "title": "Technical SEO", "desc": "Optimize site structure, speed, and crawlability for better search rankings." },
+					{ "title": "Content SEO", "desc": "Keyword research, on‑page optimization, and content strategy that drives traffic." },
+					{ "title": "Local SEO", "desc": "Dominate local search results with Google Business Profile and local citations." }
 				]
 			},
 			{
-				"name": "E‑Commerce",
+				"name": "Digital Marketing",
+				"icon": "share",
 				"items": [
-					{ "title": "Online Stores", "desc": "Secure payments, product and inventory management" },
-					{ "title": "Payment Integration", "desc": "Gateways, subscriptions, invoicing" },
-					{
-						"title": "Conversion Optimization",
-						"desc": "Optimized checkout, analytics, and performance"
-					}
+					{ "title": "Social Media Marketing", "desc": "Targeted campaigns on Instagram, TikTok, LinkedIn, and more to reach your audience." },
+					{ "title": "Google Ads", "desc": "Paid search and display advertising with precise targeting and ROI tracking." },
+					{ "title": "Content Marketing", "desc": "Blog posts, videos, and infographics that build authority and attract customers." }
 				]
 			}
 		]
 	},
 	"ar": {
 		"title": "خدماتنا",
+		"subtitle": "حلول رقمية شاملة لنمو أعمالك — من تطوير المواقع إلى تحسين محركات البحث والتسويق الرقمي.",
 		"categories": [
 			{
-				"name": "تطوير الويب",
+				"name": "تطوير المواقع",
+				"icon": "code",
 				"items": [
-					{ "title": "مواقع SvelteKit", "desc": "مواقع سريعة وآمنة ومتوافقة مع محركات البحث" },
-					{ "title": "تطبيقات الويب", "desc": "تطبيقات تفاعلية قابلة للتوسع لعمليات الأعمال" },
-					{ "title": "لوحات تحكم إدارية", "desc": "واجهات نظيفة وتجربة استخدام ممتازة للعمليات" }
+					{ "title": "مواقع مخصصة", "desc": "مواقع سريعة وآمنة ومتوافقة مع محركات البحث مبنية بأحدث التقنيات." },
+					{ "title": "متاجر إلكترونية", "desc": "متاجر إلكترونية بدفع آمن وإدارة منتجات وعملية شراء محسّنة." },
+					{ "title": "إعادة تصميم المواقع", "desc": "تحويل المواقع القديمة إلى أصول رقمية حديثة وعالية الأداء." }
 				]
 			},
 			{
-				"name": "تطوير الجوال",
+				"name": "تحسين محركات البحث (SEO)",
+				"icon": "search",
 				"items": [
-					{ "title": "تطبيقات Android", "desc": "تطبيقات عالية الجودة متوافقة مع إرشادات المنصة" },
-					{ "title": "تطبيقات iOS", "desc": "تجارب مصقولة محسّنة للأداء وإمكانية الوصول" },
-					{ "title": "تطبيقات متعددة المنصات", "desc": "شفرة مشتركة بأدوات حديثة وتكاملات آمنة" }
+					{ "title": "SEO تقني", "desc": "تحسين هيكل الموقع والسرعة وقابلية الزحف لتحسين ترتيب البحث." },
+					{ "title": "SEO محتوى", "desc": "بحث كلمات مفتاحية وتحسين المحتوى واستراتيجية محتوى تجذب الزوار." },
+					{ "title": "SEO محلي", "desc": "الهيمنة على نتائج البحث المحلية عبر تحسين Google Business Profile." }
 				]
 			},
 			{
-				"name": "التجارة الإلكترونية",
+				"name": "التسويق الرقمي",
+				"icon": "share",
 				"items": [
-					{ "title": "متاجر إلكترونية", "desc": "دفع آمن وإدارة المنتجات والمخزون" },
-					{ "title": "تكامل الدفع", "desc": "بوابات دفع واشتراكات وفوترة" },
-					{ "title": "تحسين التحويل", "desc": "تحسين عملية الدفع والتحليلات والأداء" }
+					{ "title": "التسويق عبر التواصل الاجتماعي", "desc": "حملات مستهدفة على إنستغرام، تيك توك، لينكد إن وغيرها للوصول لجمهورك." },
+					{ "title": "إعلانات Google", "desc": "إعلانات بحث وعرض مدفوعة باستهداف دقيق وقياس العائد على الاستثمار." },
+					{ "title": "التسويق بالمحتوى", "desc": "مقالات وفيديوهات وإنفوجرافيك تبني سلطة وتجذب العملاء." }
 				]
 			}
 		]
