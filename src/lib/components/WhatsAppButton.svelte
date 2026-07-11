@@ -7,9 +7,7 @@
 	// Phone Number
 	const phoneNumber = '966576704683';
 
-	// Message in Egyptian Arabic (Franco/Arabic script)
-	// "want to know details about ur website design" -> "كنت عايز استفسر عن تفاصيل تصميم الموقع"
-	const message = encodeURIComponent('كنت عايز استفسر عن تفاصيل تصميم الموقع');
+	const message = encodeURIComponent('السلام عليكم، أود الاستفسار عن خدمات تصميم وتطوير المواقع');
 
 	const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

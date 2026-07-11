@@ -198,18 +198,8 @@
 				{data.site?.registeredAs} | س.ت {data.site?.commercialRegistration} | {data.site?.registeredAddress}
 			</div>
 			<div class="flex gap-8">
-				<a
-					href={`${base}/privacy`}
-					use:inView
-					class="transition-colors hover:text-[var(--color-text-base)] [&.in-view]:text-[var(--color-text-base)]"
-					>{data.lang === 'ar' ? 'الخصوصية' : 'Privacy Policy'}</a
-				>
-				<a
-					href={`${base}/terms`}
-					use:inView
-					class="transition-colors hover:text-[var(--color-text-base)] [&.in-view]:text-[var(--color-text-base)]"
-					>{data.lang === 'ar' ? 'الشروط' : 'Terms of Service'}</a
-				>
+				<span class="opacity-50">{data.lang === 'ar' ? 'الخصوصية' : 'Privacy Policy'}</span>
+				<span class="opacity-50">{data.lang === 'ar' ? 'الشروط' : 'Terms of Service'}</span>
 			</div>
 		</div>
 	</div>

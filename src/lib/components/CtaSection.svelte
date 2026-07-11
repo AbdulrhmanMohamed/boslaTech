@@ -53,7 +53,7 @@
 		secondary_button_text:
 			data?.home?.cta?.secondary_button_text ||
 			(data?.lang === 'ar' ? 'شاهد أعمالنا' : 'View Our Work'),
-		secondary_button_link: '/portfolio'
+		secondary_button_link: '/services'
 		// Temporarily disabled Company Profile fallback:
 		// data?.home?.cta?.secondary_button_link || '/BOSLA-company-profile-Arabic.pdf'
 	});

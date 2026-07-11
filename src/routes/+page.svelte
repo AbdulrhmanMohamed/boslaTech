@@ -599,8 +599,7 @@
 		<ServicesSection {data} />
 		<WhyChooseUsSection {data} />
 
-		<!-- <SocialProofSection {data} /> -->
-		<!-- <TestimonialSection {data} /> -->
+		<SocialProofSection {data} />
 		<CtaSection {data} />
 
 		{#key data.lang}

@@ -5,7 +5,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import {
-		ArrowRight, ArrowUpRight, Check, Sparkles,
+		ArrowRight, ArrowUpRight, Check, Sparkles, Star,
 		Code, Search, Share,
 		Pen, Rocket, Settings, TrendingUp, ClipboardList, Play, BarChart3
 	} from '@lucide/svelte';
@@ -117,6 +117,16 @@
 					<ArrowRight class="h-4 w-4" />
 				</button>
 			</div>
+			<div class="flex flex-wrap items-center justify-center gap-6 pt-2 text-xs font-medium text-[var(--color-text-muted)]">
+				<span class="inline-flex items-center gap-1.5">
+					<Star class="h-3.5 w-3.5 fill-yellow-500 text-yellow-500" />
+					<span>{isAr ? '4.9/5 تقييم العملاء' : '4.9/5 Client Rating'}</span>
+				</span>
+				<span class="text-[var(--glass-border)] hidden sm:inline">|</span>
+				<span>{isAr ? 'أكثر من 500 عميل' : '500+ Happy Clients'}</span>
+				<span class="text-[var(--glass-border)] hidden sm:inline">|</span>
+				<span>{isAr ? 'ضمان استعادة الأموال' : 'Money-Back Guarantee'}</span>
+			</div>
 		</div>
 	</div>
 </section>
@@ -168,6 +178,9 @@
 							{isAr ? 'تواصل معنا' : 'Contact Us'}
 						</a>
 					</div>
+					<p class="text-xs font-medium text-[var(--color-text-muted)]">
+						{isAr ? '✅ أكثر من 500 شركة وثقت في خدماتنا — احصل على استشارتك المجانية اليوم' : '✅ 500+ businesses trust us — Get your free consultation today'}
+					</p>
 				</div>
 			{/each}
 		</div>
@@ -213,6 +226,9 @@
 						{isAr ? 'ابدأ مشروعك الآن' : 'Start Your Project Now'}
 						<ArrowRight class="h-5 w-5" />
 					</a>
+					<p class="mt-4 text-sm font-medium text-[var(--color-text-muted)]">
+						{isAr ? '⭐ 4.9/5 تقييم · أكثر من 500 عميل · ضمان استعادة الأموال لمدة 30 يومًا' : '⭐ 4.9/5 rating · 500+ clients · 30-day money-back guarantee'}
+					</p>
 				</div>
 			</div>
 		</div>
