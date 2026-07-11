@@ -474,6 +474,16 @@
 								class="rounded-2xl opacity-80 transition-opacity hover:opacity-100"
 							></iframe>
 						</div>
+						<div class="mt-4 text-center">
+							<a
+								href="https://www.google.com/maps?q=Al+Malaz+Riyadh+Saudi+Arabia"
+								target="_blank"
+								rel="noopener noreferrer"
+								class="text-sm font-bold text-brand-blue underline decoration-from-font underline-offset-2 transition-colors hover:text-brand-orange"
+							>
+								{(data as any).lang === 'ar' ? 'عرض على Google Maps' : 'View on Google Maps'}
+							</a>
+						</div>
 					</div>
 					<div
 						class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-brand-blue to-transparent transition-all duration-700 group-hover:w-full"

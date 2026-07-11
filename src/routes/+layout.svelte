@@ -140,11 +140,11 @@
 <svelte:head>
 	{#if data?.site}
 		<title>{data.site.siteName} — {data.site.tagline}</title>
-		<meta name="description" content={data.site.description} />
+		<meta name="description" content={data.lang === 'ar' ? 'شركة تصميم وتطوير مواقع إلكترونية في الرياض — ووردبريس، شوبيفاي، سلة، زد — تحسين محركات البحث وتسويق رقمي للشركات السعودية' : 'Web design and development company in Riyadh — WordPress, Shopify, Salla, Zid — SEO and digital marketing for Saudi businesses'} />
 		<meta property="og:title" content={`${data.site.siteName} — ${data.site.tagline}`} />
-		<meta property="og:description" content={data.site.description} />
+		<meta property="og:description" content={data.lang === 'ar' ? 'شركة تصميم وتطوير مواقع إلكترونية في الرياض — ووردبريس، شوبيفاي، سلة، زد — تحسين محركات البحث وتسويق رقمي' : 'Web design and development company in Riyadh — WordPress, Shopify, Salla, Zid — SEO and digital marketing'} />
 		<meta name="twitter:title" content={`${data.site.siteName} — ${data.site.tagline}`} />
-		<meta name="twitter:description" content={data.site.description} />
+		<meta name="twitter:description" content={data.lang === 'ar' ? 'شركة تصميم وتطوير مواقع إلكترونية في الرياض — ووردبريس، شوبيفاي، سلة، زد — تحسين محركات البحث وتسويق رقمي' : 'Web design and development company in Riyadh — WordPress, Shopify, Salla, Zid — SEO and digital marketing'} />
 	{/if}
 	<!-- Google Tag Manager → Replace GTM-XXXXXXX with your container ID -->
 	<script>{`

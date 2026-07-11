@@ -477,8 +477,9 @@
 	}
 
 	let pageData = $derived(data as any);
-	let metaTitle = $derived(pageData?.home?.hero?.headline ? `${pageData.site.siteName} — ${pageData.home.hero.headline}` : '');
-	let metaDesc = $derived(pageData?.home?.hero?.description || '');
+	let isAr = $derived(pageData?.lang === 'ar');
+	let metaTitle = $derived(isAr ? 'شركة تصميم مواقع في الرياض — BOSLA' : 'Web Design Company Riyadh — BOSLA');
+	let metaDesc = $derived(isAr ? 'شركة تصميم وتطوير مواقع إلكترونية في الرياض. نبني مواقع ووردبريس، متاجر شوبيفاي وسلة، ونقدم خدمات تحسين محركات البحث للشركات السعودية.' : 'Web design and development company in Riyadh. We build WordPress websites, Shopify and Salla stores, and provide SEO services for Saudi businesses.');
 </script>
 
 <svelte:head>
