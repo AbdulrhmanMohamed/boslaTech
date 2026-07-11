@@ -169,7 +169,7 @@
 					class="mt-0.5 text-2xl font-bold leading-tight text-[var(--color-text-dim)]"
 					style="font-family: 'Caveat', cursive;"
 				>
-					By Hafat Alnjom
+					{lang === 'ar' ? 'حافة النجوم' : 'Hafat Alnjom'}
 				</h1>
 			</a>
 		</div>

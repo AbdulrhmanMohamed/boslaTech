@@ -507,8 +507,8 @@
 					class="cinematic-glass rounded-[2rem] border border-[var(--glass-border)] p-5 text-center text-[11px] leading-relaxed text-[var(--color-text-dim)]"
 				>
 					{(data as any).lang === 'ar'
-						? 'صادر عن مؤسسة حافة النجوم | س.ت 7050568158 | حي الملز، الرياض'
-						: 'Issued by Hafat Alnjoom | CR 7050568158 | Al Malaz, Riyadh'}
+						? 'مؤسسة حافة النجوم | س.ت 7050568158 | حي الملز، الرياض'
+						: 'Hafat Alnjom | CR 7050568158 | Al Malaz, Riyadh'}
 				</div>
 			</div>
 

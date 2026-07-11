@@ -37,7 +37,7 @@
 		style="background-color: var(--color-surface); color: var(--color-text-base); border: 1px solid var(--glass-border);"
 	>
 		<span class="text-brand-orange">
-			{lang === 'ar' ? 'تواصل معنا' : 'Chat with us'}
+			{lang === 'ar' ? 'تواصل مع حافة النجوم' : 'Chat with Hafat Alnjom'}
 		</span>
 
 		<!-- Arrow -->
