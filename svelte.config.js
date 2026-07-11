@@ -18,6 +18,32 @@ const config = {
 		}),
 		// Handle prerendering errors gracefully
 		prerender: {
+			entries: [
+				'/',
+				'/about',
+				'/services',
+				'/services/web-development',
+				'/services/seo',
+				'/services/digital-marketing',
+				'/contact',
+				'/sitemap.xml',
+				'/services/web-development/custom-websites',
+				'/services/web-development/e-commerce-solutions',
+				'/services/web-development/website-redesign',
+				'/services/web-development/maintenance-and-support',
+				'/services/web-development/mobile-app-development',
+				'/services/seo/technical-seo',
+				'/services/seo/content-seo',
+				'/services/seo/local-seo',
+				'/services/seo/link-building',
+				'/services/seo/seo-audit',
+				'/services/digital-marketing/social-media-marketing',
+				'/services/digital-marketing/google-ads',
+				'/services/digital-marketing/content-marketing',
+				'/services/digital-marketing/snapchat-tiktok-ads',
+				'/services/digital-marketing/email-marketing',
+				'/services/digital-marketing/brand-identity',
+			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore 404 errors during prerendering
 				if (message.includes('404')) {

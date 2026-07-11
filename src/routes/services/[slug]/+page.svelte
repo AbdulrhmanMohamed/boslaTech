@@ -196,22 +196,29 @@
 	<div class="container mx-auto px-6">
 		<div class="mx-auto max-w-5xl space-y-20">
 			{#each category?.items || [] as item, i}
+				{@const subHref = `${base}/services/${category?.slug}/${item.slug}?lang=${lang}`}
 				<div class="anim-up space-y-8">
 					<!-- Service Header -->
-					<div class="cinematic-glass rounded-[2.5rem] border border-[var(--glass-border)] p-8 md:p-12">
-						<div class="mb-3 flex flex-wrap items-center gap-3">
-							<div class="inline-flex rounded-full bg-brand-blue/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-blue uppercase">
-								{isAr ? 'الخدمة' : 'Service'} 0{i + 1}
-							</div>
-							{#if getDelivery(category?.slug)}
-								<div class="inline-flex rounded-full bg-brand-orange/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-orange uppercase">
-									{getDelivery(category?.slug)}
+					<a href={subHref} class="group block">
+						<div class="cinematic-glass rounded-[2.5rem] border border-[var(--glass-border)] p-8 transition-all duration-300 group-hover:border-brand-blue/20 group-hover:shadow-xl md:p-12">
+							<div class="mb-3 flex flex-wrap items-center gap-3">
+								<div class="inline-flex rounded-full bg-brand-blue/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-blue uppercase">
+									{isAr ? 'الخدمة' : 'Service'} 0{i + 1}
 								</div>
-							{/if}
+								{#if getDelivery(category?.slug)}
+									<div class="inline-flex rounded-full bg-brand-orange/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-orange uppercase">
+										{getDelivery(category?.slug)}
+									</div>
+								{/if}
+							</div>
+							<h2 class="mb-4 text-3xl font-black text-[var(--color-text-base)] transition-colors group-hover:text-brand-blue">{item.title}</h2>
+							<p class="text-base leading-relaxed font-medium text-[var(--color-text-muted)]">{item.details}</p>
+							<div class="mt-6 flex items-center gap-2 text-sm font-bold text-brand-blue opacity-0 transition-all group-hover:opacity-100">
+								{isAr ? 'اقرأ المزيد' : 'Read More'}
+								<ArrowRight class="h-4 w-4" />
+							</div>
 						</div>
-						<h2 class="mb-4 text-3xl font-black text-[var(--color-text-base)]">{item.title}</h2>
-						<p class="text-base leading-relaxed font-medium text-[var(--color-text-muted)]">{item.details}</p>
-					</div>
+					</a>
 
 					<!-- Features Grid -->
 					{#if item.features?.length}
