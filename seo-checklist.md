@@ -19,12 +19,10 @@
 ## Phase 2: Address Core Objections (CRO)
 *Answer the #1 question clients have — cost — and set expectations.*
 
-- [ ] **6. Add cost as FAQ question on service pages** — Give a range (1,500-5,000 SAR) anchored to a free consultation:
-  > AR: "تختلف التكلفة حسب حجم المشروع واحتياجاتك. على سبيل المثال، تبدأ أسعارنا من 1,500 ريال للمواقع البسيطة، وتصل إلى 5,000 ريال للمواقع المتكاملة. نقدم استشارة مجانية لتحديد السعر الدقيق بناءً على متطلباتك — تواصل معنا للحصول على عرض سعر مخصص."
-  > EN: "It depends on the project scope and your needs. Our prices start from 1,500 SAR for simple sites and go up to 5,000 SAR for full-featured websites. We offer a free consultation to determine the exact price based on your requirements — contact us for a custom quote."
+- [x] **6. Add cost as FAQ question on service pages** — Give a range (1,500-5,000 SAR) anchored to a free consultation
 - [ ] **7. Add service-specific pricing FAQ per category** — Tailored cost FAQ for SEO, e-commerce, redesign (e.g., "How much does SEO cost?")
-- [ ] **8. Add delivery time to every service card** — "مدة التسليم: X يوم عمل" / "Delivery: X business days" under each sub-service
-- [ ] **9. Add FAQ section to service detail pages** — Render `services.i18n.json` FAQ on `/services/[slug]` pages
+- [x] **8. Add delivery time to every service card** — "مدة التسليم: X يوم عمل" / "Delivery: X business days" under each sub-service
+- [x] **9. Add FAQ section to service detail pages** — Render `services.i18n.json` FAQ on `/services/[slug]` pages
 - [ ] **10. Surface the 3-step process on the homepage** — Consult → Build → Launch between hero and features
 
 ---

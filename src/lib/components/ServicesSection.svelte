@@ -25,6 +25,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import SplitType from 'split-type';
+	import { base } from '$app/paths';
 
 	if (typeof window !== 'undefined') {
 		gsap.registerPlugin(ScrollTrigger);
@@ -32,9 +33,6 @@
 
 	const props = $props<{ data: any }>();
 	const data = $derived(props.data);
-
-	let modalOpen = $state(false);
-	let selectedService = $state<{ title: string; description: string; icon?: string } | null>(null);
 
 	const currentTheme = $derived(theme.current);
 
@@ -55,14 +53,16 @@
 		smartphone: Smartphone
 	};
 
-	function openService(service: { title: string; description: string; icon?: string }) {
-		selectedService = service;
-		modalOpen = true;
+	function getServiceSlug(icon: string): string {
+		if (icon === 'search') return 'seo';
+		if (icon === 'share' || icon === 'lightbulb') return 'digital-marketing';
+		return 'web-development';
 	}
 
-	function closeModal() {
-		modalOpen = false;
-		selectedService = null;
+	function servicePath(icon: string): string {
+		const slug = getServiceSlug(icon);
+		const q = data?.lang ? `?lang=${data.lang}` : '';
+		return `${base}/services/${slug}${q}`;
 	}
 
 	// Make services reactive with fallbacks matching the language
@@ -453,9 +453,9 @@
 				{#each services as service}
 					{@const Icon = service.iconComponent}
 					<div class="service-card-container perspective-1000">
-						<button
+						<a
+							href={servicePath(service.icon)}
 							use:inView
-							onclick={() => openService(service)}
 							class="interactive-card cinematic-glass group relative flex h-full w-full flex-col items-center overflow-hidden rounded-[2.5rem] p-8 text-center transition-all duration-500 hover:border-brand-blue/40 md:p-10 [&.in-view]:border-brand-blue/40"
 						>
 							<!-- Dynamic Spotlight Glow - Radial gradient replaces blur -->
@@ -527,65 +527,13 @@
 									</div>
 								</div>
 							</div>
-						</button>
+						</a>
 					</div>
 				{/each}
 			</div>
 		{/key}
 	</div>
 </section>
-
-<!-- Modernized Modal for Service Details -->
-{#if modalOpen && selectedService}
-	{@const ModalIcon = iconMap[selectedService.icon || 'code'] || Code}
-	<div
-		class="fixed inset-0 z-[100] flex items-center justify-center bg-[var(--color-background)]/80 p-6 backdrop-blur-2xl"
-		in:fade={{ duration: 300 }}
-	>
-		<div
-			class="cinematic-glass relative w-full max-w-2xl overflow-hidden rounded-[3rem] border border-brand-blue/30 p-12 shadow-[0_30px_60px_rgba(0,119,255,0.2)]"
-			in:fly={{ y: 50, duration: 600, easing: cubicOut }}
-			dir={data?.lang === 'ar' ? 'rtl' : 'ltr'}
-		>
-			<button
-				onclick={closeModal}
-				class="cinematic-glass absolute top-8 right-8 flex h-12 w-12 items-center justify-center rounded-full border border-brand-blue/20 transition-all duration-300 hover:border-brand-blue/40 hover:bg-brand-blue/10"
-				class:right-auto={data?.lang === 'ar'}
-				class:left-8={data?.lang === 'ar'}
-			>
-				<X class="h-6 w-6 text-brand-blue" />
-			</button>
-
-			<div class="space-y-8">
-				<div
-					class="flex h-24 w-24 items-center justify-center rounded-3xl border border-brand-blue/20 bg-brand-blue/10"
-				>
-					<ModalIcon class="h-12 w-12 text-brand-blue" />
-				</div>
-
-				<div class="space-y-4">
-					<h2
-						class="text-4xl font-black tracking-tighter text-[var(--color-text-base)] md:text-5xl"
-					>
-						{selectedService.title}
-					</h2>
-					<div class="h-1 w-20 rounded-full bg-brand-blue"></div>
-				</div>
-
-				<p class="text-xl leading-relaxed font-medium text-[var(--color-text-muted)]">
-					{selectedService.description}
-				</p>
-
-				<button
-					onclick={closeModal}
-					class="w-full rounded-2xl bg-brand-blue py-6 text-lg font-black tracking-widest text-white uppercase shadow-xl shadow-brand-blue/20 transition-all duration-500 hover:bg-brand-blue-glow active:scale-95"
-				>
-					{data?.lang === 'ar' ? 'إغلاق' : 'Close'}
-				</button>
-			</div>
-		</div>
-	</div>
-{/if}
 
 <style>
 	.perspective-1000 {

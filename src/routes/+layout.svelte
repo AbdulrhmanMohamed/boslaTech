@@ -13,6 +13,7 @@
 	import { setContext } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { base } from '$app/paths';
+	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 
 	const logoSrc = `${base}/images/boslalogo-web.png`;
 	const favSrc = `${base}/images/bosla-fav.png`;
@@ -29,6 +30,13 @@
 	let mouse = $state({ x: 0, y: 0, scrollY: 0 });
 	setContext('mouse', mouse);
 
+	let scrollProgress = $state(0);
+	function onScroll() {
+		const scrollTop = window.scrollY;
+		const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+		scrollProgress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+	}
+
 	$effect(() => {
 		if (!data) return; // Guard against undefined data
 		document.documentElement.setAttribute('lang', data.lang);
@@ -43,6 +51,7 @@
 		};
 
 		window.addEventListener('mousemove', handleMouseMove);
+		window.addEventListener('scroll', onScroll);
 
 		// Register GSAP plugins
 		gsap.registerPlugin(ScrollTrigger);
@@ -140,6 +149,33 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content={logoSrc} />
 </svelte:head>
+
+<!-- Scroll Progress Bar -->
+<div
+	class="fixed top-0 left-0 z-[9999] h-[3px] bg-gradient-to-r from-brand-blue to-brand-orange transition-all duration-150"
+	style="width: {scrollProgress * 100}%"
+></div>
+
+<!-- Sticky Get a Quote -->
+<a
+	href={`${base}/contact?lang=${data?.lang || 'ar'}`}
+	class="group fixed z-50 flex items-center justify-center transition-all duration-300"
+	class:left-6={data?.lang === 'en'}
+	class:right-6={data?.lang === 'ar'}
+	style="bottom: 5.5rem;"
+	aria-label={data?.lang === 'ar' ? 'احصل على عرض سعر' : 'Get a Quote'}
+>
+	<div
+		class="relative flex h-12 w-12 items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+		style="background: var(--color-brand-orange);"
+	>
+		<div
+			class="absolute inset-0 -z-10 animate-ping rounded-full opacity-50"
+			style="background: var(--color-brand-orange);"
+		></div>
+		<ArrowUpRight class="h-6 w-6 text-white" />
+	</div>
+</a>
 
 {#if data?.site}
 	<Header site={data.site} lang={data.lang} />
