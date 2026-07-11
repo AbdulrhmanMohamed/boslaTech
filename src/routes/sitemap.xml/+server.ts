@@ -1,5 +1,6 @@
 import type { RequestHandler } from './$types';
 import services_i18n from '$lib/content/services.i18n.json';
+import blog_i18n from '$lib/content/blog.i18n.json';
 
 export const prerender = true;
 
@@ -15,6 +16,7 @@ const basePages = [
 	{ path: 'services/seo', priority: '0.8', changefreq: 'monthly' },
 	{ path: 'services/digital-marketing', priority: '0.8', changefreq: 'monthly' },
 	{ path: 'contact', priority: '0.6', changefreq: 'monthly' },
+	{ path: 'blog', priority: '0.8', changefreq: 'weekly' },
 	...cities.map((c) => ({ path: `locations/${c}`, priority: '0.6', changefreq: 'monthly' })),
 ];
 
@@ -29,8 +31,12 @@ function subServicePages() {
 	return sub;
 }
 
+function blogPages() {
+	return (blog_i18n.en.posts || []).map((p) => ({ path: `blog/${p.slug}`, priority: '0.7', changefreq: 'monthly' }));
+}
+
 export const GET: RequestHandler = async () => {
-	const pages = [...basePages, ...subServicePages()];
+	const pages = [...basePages, ...subServicePages(), ...blogPages()];
 	const urls = pages.flatMap((p) => [
 		`<url><loc>${siteUrl}/${p.path}</loc><priority>${p.priority}</priority><changefreq>${p.changefreq}</changefreq></url>`,
 		`<url><loc>${siteUrl}/${p.path}?lang=en</loc><priority>${p.priority}</priority><changefreq>${p.changefreq}</changefreq></url>`,
