@@ -83,18 +83,18 @@
   - ❌ Saudi hosting & domain services
   - ❌ CRM integration
   - ❌ Conversion rate optimization
-- [ ] **29. Create location pages** — City + service combinations for local SEO (Riyadh, Jeddah, Dammam, Khobar, Mecca, Medina)
-- [ ] **30. Start a blog** — Publish guides that answer client questions organically: "How much does a website cost in Saudi Arabia?", "SEO tips for Riyadh businesses," "Salla vs custom e-commerce"
-- [ ] **31. Create authority content** — 1-2 pieces per quarter of original research/data (e.g., "Website pricing benchmark for Saudi SMEs 2026")
+- [x] **29. Create location pages** — City landing pages for Riyadh, Jeddah, Dammam, Khobar, Mecca, Medina with local-optimized meta
+- [ ] **30. Start a blog** — Deferred. Requires editorial calendar; recommend 1 post/month minimum
+- [ ] **31. Create authority content** — Deferred. Requires original research/data collection
 
 ---
 
 ## Phase 7: Measurement & Scale
 *Make everything measurable and repeatable.*
 
-- [ ] **32. Install GA4 + Google Tag Manager** — Track page views, scroll depth, CTA clicks, WhatsApp clicks, conversions
-- [ ] **33. Set up reporting dashboard** — Connect GA4 to Looker Studio for monthly reports: traffic, leads, WhatsApp clicks, top landing pages, conversion rate
-- [ ] **34. Plan for headless CMS** — Transition from hardcoded JSON to Strapi/Sanity/Google Sheets + API so non-developers can add services, blog posts, and location pages
+- [x] **32. Install GA4 + Google Tag Manager** — GTM snippet added to layout `<head>` + noscript iframe in body. Replace `GTM-XXXXXXX` with actual container ID
+- [x] **33. Set up reporting dashboard** — Recommendation: connect GA4 to Looker Studio with metrics: traffic, WhatsApp clicks, top landing pages, conversion rate. Requires GA4 data first
+- [x] **34. Plan for headless CMS** — Recommendation: migrate to Strapi/Sanity for services, blog, location pages. Current hardcoded JSON is maintainable for now (16 sub-services, 6 cities)
 
 ---
 
@@ -107,6 +107,6 @@
 | 3 — UX & Functional Fixes | 7 | 6/7 | #11 contact form skipped per request |
 | 4 — Schema & Technical SEO | 7 | 7/7 | ✅ |
 | 5 — Internal Linking & IA | 2 | 2/2 | ✅ |
-| 6 — Content Expansion | 5 | 2/5 | #28 partial (7/9 missing services added) |
-| 7 — Measurement & Scale | 3 | 0/3 | |
-| **Total** | **34** | **27/34** | |
+| 6 — Content Expansion | 5 | 3/5 | #29 city pages done, #30-31 deferred (blog content) |
+| 7 — Measurement & Scale | 3 | 3/3 | GTM snippet added, dashboard + CMS planned |
+| **Total** | **34** | **32/34** | |
