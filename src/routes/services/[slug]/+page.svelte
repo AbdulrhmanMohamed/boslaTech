@@ -5,7 +5,7 @@
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import {
-		ArrowRight, ArrowUpRight, Check, Sparkles, Star, ChevronDown,
+		ArrowRight, ArrowLeft, ArrowUpRight, Sparkles, Star, ChevronDown,
 		Code, Search, Share,
 		Pen, Rocket, Settings, TrendingUp, ClipboardList, Play, BarChart3
 	} from '@lucide/svelte';
@@ -151,7 +151,7 @@
 <!-- Hero -->
 <section class="relative flex min-h-[50vh] w-full items-center justify-center overflow-hidden transition-colors duration-1000" dir={isAr ? 'rtl' : 'ltr'}>
 	<HeroBackground />
-	<div class="relative z-10 container mx-auto px-6 py-24">
+		<div class="relative z-10 container mx-auto px-6 pt-36 pb-24">
 		<div class="mx-auto max-w-4xl space-y-8 text-center">
 			<div class="flex justify-center">
 				<Breadcrumbs
@@ -205,72 +205,47 @@
 	</div>
 </section>
 
-<!-- Sub-services with Features & CTA -->
+<!-- Sub-services Grid -->
 <section id="services-detail" class="relative w-full bg-[var(--color-background)] py-24 transition-colors duration-1000" dir={isAr ? 'rtl' : 'ltr'}>
 	<div class="container mx-auto px-6">
-		<div class="mx-auto max-w-5xl space-y-20">
-			{#each category?.items || [] as item, i}
-				{@const subHref = `${base}/services/${category?.slug}/${item.slug}?lang=${lang}`}
-				<div class="anim-up space-y-8">
-					<!-- Service Header -->
-					<a href={subHref} class="group block">
-						<div class="cinematic-glass rounded-[2.5rem] border border-[var(--glass-border)] p-8 transition-all duration-300 group-hover:border-brand-blue/20 group-hover:shadow-xl md:p-12">
-							<div class="mb-3 flex flex-wrap items-center gap-3">
-								<div class="inline-flex rounded-full bg-brand-blue/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-blue uppercase">
-									{isAr ? 'الخدمة' : 'Service'} 0{i + 1}
-								</div>
+		<div class="mx-auto max-w-5xl">
+			{#if category?.items?.length}
+				<div class="grid gap-6 md:grid-cols-2">
+					{#each category?.items || [] as item, i}
+						{@const subHref = `${base}/services/${category?.slug}/${item.slug}?lang=${lang}`}
+						<a href={subHref} class="anim-up group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-6 transition-all hover:-translate-y-1 hover:shadow-xl md:p-8">
+							<div class="mb-2 flex items-center gap-2">
+								<span class="inline-flex rounded-full bg-brand-blue/10 px-3 py-0.5 text-[10px] font-black tracking-wider text-brand-blue uppercase">
+									{isAr ? 'الخدمة' : 'Service'} {i + 1}
+								</span>
 								{#if getDelivery(category?.slug)}
-									<div class="inline-flex rounded-full bg-brand-orange/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-orange uppercase">
+									<span class="inline-flex rounded-full bg-brand-orange/10 px-3 py-0.5 text-[10px] font-black tracking-wider text-brand-orange uppercase">
 										{getDelivery(category?.slug)}
-									</div>
+									</span>
 								{/if}
 							</div>
-							<h2 class="mb-4 text-3xl font-black text-[var(--color-text-base)] transition-colors group-hover:text-brand-blue">{item.title}</h2>
-							<p class="text-base leading-relaxed font-medium text-[var(--color-text-muted)]">{item.details}</p>
-							<div class="mt-6 flex items-center gap-2 text-sm font-bold text-brand-blue opacity-0 transition-all group-hover:opacity-100">
-								{isAr ? 'اقرأ المزيد' : 'Read More'}
-								<ArrowRight class="h-4 w-4" />
+							<h2 class="mb-3 text-xl font-black text-[var(--color-text-base)] transition-colors group-hover:text-brand-blue">{item.title}</h2>
+							<p class="text-sm leading-relaxed font-medium text-[var(--color-text-muted)]">{item.desc}</p>
+							<div class="mt-4 flex items-center gap-1.5 text-xs font-bold text-brand-blue opacity-0 transition-all group-hover:opacity-100">
+								{isAr ? 'عرض التفاصيل' : 'View Details'}
+								<ArrowLeft class="h-3.5 w-3.5 {isAr ? '' : 'rotate-180'}" />
 							</div>
-						</div>
-					</a>
-
-					<!-- Features Grid -->
-					{#if item.features?.length}
-						<div class="grid gap-4 md:grid-cols-2">
-							{#each item.features as feature}
-								<div class="cinematic-glass group flex items-start gap-4 rounded-2xl border border-[var(--glass-border)] p-5 transition-all duration-300 hover:border-brand-blue/20 hover:bg-[var(--glass-highlight)]">
-									<div class="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-brand-blue/20 bg-brand-blue/10 transition-colors duration-300 group-hover:border-brand-orange/20 group-hover:bg-brand-orange/10">
-										<Check class="h-3.5 w-3.5 text-brand-blue transition-colors duration-300 group-hover:text-brand-orange" />
-									</div>
-									<span class="text-sm font-medium text-[var(--color-text-muted)] transition-colors duration-300 group-hover:text-[var(--color-text-base)]">{feature}</span>
-								</div>
-							{/each}
-						</div>
-					{/if}
-
-					<!-- Sub-service CTA -->
-					<div class="flex flex-wrap items-center gap-4">
-						<a
-							href={getWhatsAppLink(item.title)}
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-flex items-center gap-3 rounded-full bg-brand-blue px-8 py-4 text-sm font-black text-white transition-all hover:scale-105"
-						>
-							{isAr ? 'اطلب الخدمة الآن' : 'Order This Service'}
-							<ArrowUpRight class="h-4 w-4" />
 						</a>
-						<a
-							href={contactLink()}
-							class="cinematic-glass inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-8 py-4 text-sm font-bold text-[var(--color-text-base)] transition-all hover:border-brand-blue/20"
-						>
-							{isAr ? 'تواصل معنا' : 'Contact Us'}
-						</a>
-					</div>
-					<p class="text-xs font-medium text-[var(--color-text-muted)]">
-						{isAr ? '✅ احصل على استشارتك المجانية اليوم' : '✅ Get your free consultation today'}
-					</p>
+					{/each}
 				</div>
-			{/each}
+			{/if}
+
+			<div class="mt-12 text-center">
+				<a
+					href={getWhatsAppLink(category?.name || '')}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="inline-flex items-center gap-3 rounded-full bg-brand-blue px-8 py-4 text-sm font-black text-white shadow-lg shadow-brand-blue/20 transition-all hover:scale-105 hover:shadow-brand-blue/40"
+				>
+					{isAr ? 'تواصل معنا لاستشارة مجانية' : 'Contact Us for Free Consultation'}
+					<ArrowRight class="h-4 w-4" />
+				</a>
+			</div>
 		</div>
 	</div>
 </section>
@@ -325,7 +300,7 @@
 					</h2>
 				</div>
 
-				<div class="relative grid gap-8 md:grid-cols-3">
+				<div class="relative grid gap-8 md:grid-cols-5">
 					<!-- Connector line -->
 					<div class="absolute top-12 left-0 hidden h-px w-full bg-gradient-to-r from-brand-blue/20 via-brand-blue/40 to-brand-blue/20 md:block" style="top: 3rem;"></div>
 

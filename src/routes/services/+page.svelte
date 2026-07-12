@@ -6,7 +6,8 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import {
 		ArrowRight, Sparkles, Code, Search, Share,
-		ClipboardList, Globe, TrendingUp, ChevronDown
+		ClipboardList, Globe, TrendingUp, ChevronDown,
+		Pen, Settings, Rocket
 	} from '@lucide/svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
@@ -24,7 +25,8 @@
 
 	const processIcons: Record<string, any> = {
 		search: Search, 'clipboard-list': ClipboardList,
-		code: Code, globe: Globe, 'trending-up': TrendingUp
+		code: Code, globe: Globe, 'trending-up': TrendingUp,
+		'pen-tool': Pen, settings: Settings, rocket: Rocket
 	};
 
 	let openFaqIndex = $state<number | null>(null);
@@ -69,7 +71,7 @@
 <!-- Hero -->
 <section class="relative flex min-h-[60vh] w-full items-center justify-center overflow-hidden transition-colors duration-1000" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
 	<HeroBackground />
-	<div class="relative z-10 container mx-auto px-6 py-24">
+		<div class="relative z-10 container mx-auto px-6 pt-36 pb-24">
 		<div class="flex justify-center pb-4">
 			<Breadcrumbs
 				{lang}
@@ -130,37 +132,30 @@
 <!-- Service Categories -->
 <section class="relative w-full bg-[var(--color-background)] py-24 transition-colors duration-1000" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
 	<div class="container mx-auto px-6">
-		<div class="space-y-24">
-			{#each pageData?.categories || [] as category, ci}
-				<div class="anim-up grid items-start gap-12 md:grid-cols-2">
-					<div>
-						<div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
-							<svelte:component this={categoryIcons[category.icon] || Code} class="h-8 w-8" />
-						</div>
-						<h2 class="mb-4 text-3xl font-black text-[var(--color-text-base)] md:text-4xl">
-							{category.name}
-						</h2>
-						<p class="mb-6 text-base leading-relaxed font-medium text-[var(--color-text-muted)]">
-							{category.description}
-						</p>
-						<a
-							href={catPath(category.slug)}
-							class="inline-flex items-center gap-2 rounded-full bg-brand-blue px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105"
-						>
-							{category.cta || (lang === 'ar' ? 'اكتشف المزيد' : 'Learn More')}
-							<ArrowRight class="h-4 w-4" />
-						</a>
+		<div class="grid gap-8 md:grid-cols-3">
+			{#each pageData?.categories || [] as category}
+				<a href={catPath(category.slug)} class="anim-up group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-8 transition-all hover:-translate-y-1 hover:shadow-xl">
+					<div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white">
+						<svelte:component this={categoryIcons[category.icon] || Code} class="h-7 w-7" />
 					</div>
-
-					<div class="space-y-4">
-						{#each category.items || [] as item}
-							<div class="rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-6 transition-all hover:border-brand-blue/30">
-								<h3 class="mb-2 text-xl font-bold text-[var(--color-text-base)]">{item.title}</h3>
-								<p class="text-sm leading-relaxed font-medium text-[var(--color-text-muted)]">{item.details}</p>
-							</div>
+					<h2 class="mb-3 text-2xl font-black text-[var(--color-text-base)] group-hover:text-brand-blue">{category.name}</h2>
+					<p class="mb-6 text-sm leading-relaxed font-medium text-[var(--color-text-muted)] line-clamp-3">{category.description}</p>
+					<ul class="mb-6 space-y-2">
+						{#each category.items?.slice(0, 4) || [] as item}
+							<li class="flex items-start gap-2 text-sm text-[var(--color-text-muted)]">
+								<span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-blue"></span>
+								{item.title}
+							</li>
 						{/each}
+						{#if (category.items?.length || 0) > 4}
+							<li class="text-xs font-bold text-brand-blue">+{(category.items?.length || 0) - 4} {lang === 'ar' ? 'المزيد' : 'more'}</li>
+						{/if}
+					</ul>
+					<div class="flex items-center gap-2 text-sm font-bold text-brand-blue transition-colors group-hover:text-brand-orange">
+						{category.cta || (lang === 'ar' ? 'اكتشف المزيد' : 'Learn More')}
+						<ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1 {lang === 'ar' ? 'rotate-180' : ''}" />
 					</div>
-				</div>
+				</a>
 			{/each}
 		</div>
 	</div>

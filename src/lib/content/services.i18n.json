@@ -8,17 +8,27 @@
         {
           "icon": "pen-tool",
           "title": "Consult & Plan",
-          "desc": "We understand your needs, define project goals and budget"
+          "desc": "We understand your needs, define goals, budget, and timeline"
+        },
+        {
+          "icon": "search",
+          "title": "Research & Strategy",
+          "desc": "We analyze your market, competitors, and audience to build a solid plan"
         },
         {
           "icon": "code",
           "title": "Build & Develop",
-          "desc": "We build your digital solution professionally"
+          "desc": "We build your solution with precision, speed, and SEO in mind"
+        },
+        {
+          "icon": "settings",
+          "title": "Test & Optimize",
+          "desc": "We test across all devices, optimize performance, and polish every detail"
         },
         {
           "icon": "rocket",
           "title": "Launch & Support",
-          "desc": "We launch your project and support you post-launch"
+          "desc": "We launch your project and provide ongoing support to keep it running"
         }
       ]
     },
@@ -324,17 +334,27 @@
         {
           "icon": "pen-tool",
           "title": "استشارة وتخطيط",
-          "desc": "نفهم احتياجك ونحدد أهداف المشروع وميزانيته"
+          "desc": "نفهم احتياجك ونحدد الأهداف والميزانية والجدول الزمني"
+        },
+        {
+          "icon": "search",
+          "title": "بحث واستراتيجية",
+          "desc": "نحلل السوق والمنافسين والجمهور المستهدف لبناء خطة قوية"
         },
         {
           "icon": "code",
           "title": "تنفيذ وتطوير",
-          "desc": "نبني الحل الرقمي باحترافية وفق أفضل الممارسات"
+          "desc": "نبني الحل باحترافية ودقة مع مراعاة SEO من البداية"
+        },
+        {
+          "icon": "settings",
+          "title": "اختبار وتحسين",
+          "desc": "نختبر على جميع الأجهزة ونحسّن الأداء ونلمّع كل التفاصيل"
         },
         {
           "icon": "rocket",
           "title": "إطلاق ومتابعة",
-          "desc": "نطلق المشروع وندعمك بعد الإطلاق لضمان نجاحه"
+          "desc": "نطلق المشروع وندعمك باستمرار لضمان استمرار نجاحه"
         }
       ]
     },

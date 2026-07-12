@@ -7,44 +7,35 @@
 	import { clearLanguageCache } from '$lib/utils/language';
 	import { base } from '$app/paths';
 	import { inView } from '$lib/actions/inView';
+	import { ChevronDown } from '@lucide/svelte';
 
 	const props = $props<{ site?: any; lang: 'en' | 'ar' }>();
 	const site = $derived(props.site);
 	const lang = $derived(props.lang);
 
 	const logoSrc = `${base}/images/blue-logo.webp`;
-
-	// Aspect ratio for the new logo (900x310)
 	const logoWidth = 150;
-	const logoHeight = (logoWidth * 310) / 900; // ~51.6px
+	const logoHeight = (logoWidth * 310) / 900;
 
 	async function handleLanguageSwitch(next: 'en' | 'ar') {
 		const url = new URL(window.location.href);
 		url.searchParams.set('lang', next);
-
 		clearLanguageCache();
-		await goto(url.pathname + url.search, {
-			replaceState: true,
-			noScroll: true,
-			keepFocus: true
-		});
+		await goto(url.pathname + url.search, { replaceState: true, noScroll: true, keepFocus: true });
 		await invalidate('app:language');
 	}
 
 	function hrefWithLang(next: 'en' | 'ar') {
-		// Only access URL in browser environment
 		if (typeof window !== 'undefined' && $page?.url) {
 			const p = $page.url.pathname;
 			const q = new URLSearchParams($page.url.search);
 			q.set('lang', next);
 			return `${p}?${q.toString()}`;
 		}
-		// Fallback for prerendering
 		return `/?lang=${next}`;
 	}
 
 	function link(path: string) {
-		// Only access URL in browser environment
 		if (typeof window !== 'undefined' && $page?.url) {
 			const q = new URLSearchParams($page.url.search);
 			const qs = q.toString();
@@ -62,6 +53,8 @@
 
 	let navRefs = $state<Record<string, HTMLElement>>({});
 	let pillStyles = $state({ left: 0, width: 0, height: 0, opacity: 0 });
+	let serviceMenuOpen = $state(false);
+	let serviceMenuTimeout = $state<ReturnType<typeof setTimeout> | null>(null);
 
 	function navLinkClass(path: string) {
 		const active = isActive(path);
@@ -77,12 +70,10 @@
 		const items = navItems;
 		const refs = navRefs;
 
-		// First try exact match, then longest prefix match
 		let activePath = '';
 		for (const item of items) {
 			const isExactMatch = path === item.path;
 			const isPrefixMatch = path.startsWith(item.path) && item.path !== `${base}/`;
-
 			if (isExactMatch || isPrefixMatch) {
 				if (item.path.length > activePath.length) {
 					activePath = item.path;
@@ -103,23 +94,107 @@
 		}
 	});
 
-	// Make navItems reactive by using $derived
 	const navItems = $derived([
 		{ path: `${base}/`, label: site?.nav?.home || (lang === 'ar' ? 'الرئيسية' : 'Home') },
 		{ path: `${base}/about`, label: site?.nav?.about || (lang === 'ar' ? 'من نحن' : 'About') },
-		{ path: `${base}/services`, label: site?.nav?.services || (lang === 'ar' ? 'خدماتنا' : 'Services') },
+		{ path: `${base}/services`, label: site?.nav?.services || (lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
 		{ path: `${base}/blog`, label: site?.nav?.blog || (lang === 'ar' ? 'المدونة' : 'Blog') },
+		{ path: `${base}/contact`, label: site?.nav?.contact || (lang === 'ar' ? 'تواصل معنا' : 'Contact') }
+	]);
+
+	const serviceCategories = $derived([
 		{
-			path: `${base}/contact`,
-			label: site?.nav?.contact || (lang === 'ar' ? 'تواصل معنا' : 'Contact')
+			slug: 'web-development',
+			name: lang === 'ar' ? 'تطوير المواقع' : 'Web Development',
+			desc: lang === 'ar' ? 'مواقع متوافقة مع SEO وبوابات دفع سعودية' : 'SEO-ready sites with Saudi payment gateways',
+			groups: [
+				{
+					label: lang === 'ar' ? 'جديد' : 'Build',
+					items: [
+						{ slug: 'custom-websites', name: lang === 'ar' ? 'تصميم مواقع شركات' : 'Custom Websites', popular: true },
+						{ slug: 'wordpress-development', name: lang === 'ar' ? 'تطوير ووردبريس' : 'WordPress Development' },
+						{ slug: 'online-stores', name: lang === 'ar' ? 'متاجر إلكترونية' : 'Online Stores', popular: true }
+					]
+				},
+				{
+					label: lang === 'ar' ? 'تحسين' : 'Improve',
+					items: [
+						{ slug: 'website-redesign', name: lang === 'ar' ? 'إعادة تصميم المواقع' : 'Redesign & Migration' },
+						{ slug: 'maintenance-and-support', name: lang === 'ar' ? 'الصيانة والدعم' : 'Maintenance & Support' }
+					]
+				}
+			]
+		},
+		{
+			slug: 'seo',
+			name: lang === 'ar' ? 'تحسين محركات البحث' : 'SEO',
+			desc: lang === 'ar' ? 'نضمن ظهورك في أول صفحة جوجل' : 'First page Google rankings',
+			groups: [
+				{
+					label: lang === 'ar' ? 'التأسيس' : 'Foundation',
+					items: [
+						{ slug: 'seo-audit', name: lang === 'ar' ? 'تدقيق SEO' : 'SEO Audit', popular: true },
+						{ slug: 'technical-seo', name: lang === 'ar' ? 'SEO التقني' : 'Technical SEO' }
+					]
+				},
+				{
+					label: lang === 'ar' ? 'المحتوى والروابط' : 'Content & Links',
+					items: [
+						{ slug: 'content-seo', name: lang === 'ar' ? 'SEO بالمحتوى' : 'Content SEO' },
+						{ slug: 'link-building', name: lang === 'ar' ? 'بناء الروابط' : 'Link Building' }
+					]
+				},
+				{
+					label: lang === 'ar' ? 'مخصص' : 'Specialized',
+					items: [
+						{ slug: 'local-seo', name: lang === 'ar' ? 'SEO المحلي' : 'Local SEO', popular: true },
+						{ slug: 'ecommerce-seo', name: lang === 'ar' ? 'SEO المتاجر' : 'E-commerce SEO' }
+					]
+				}
+			]
+		},
+		{
+			slug: 'digital-marketing',
+			name: lang === 'ar' ? 'التسويق الرقمي' : 'Digital Marketing',
+			desc: lang === 'ar' ? 'حملات إعلانية على سناب وتيك توك وجوجل' : 'Snapchat, TikTok & Google ad campaigns',
+			groups: [
+				{
+					label: lang === 'ar' ? 'إعلانات' : 'Ads',
+					items: [
+						{ slug: 'google-ads', name: lang === 'ar' ? 'إعلانات جوجل' : 'Google Ads', popular: true },
+						{ slug: 'snapchat-tiktok-ads', name: lang === 'ar' ? 'سناب وتيك توك' : 'Snapchat & TikTok' }
+					]
+				},
+				{
+					label: lang === 'ar' ? 'محتوى وتفاعل' : 'Engage',
+					items: [
+						{ slug: 'social-media-marketing', name: lang === 'ar' ? 'وسائل التواصل' : 'Social Media' },
+						{ slug: 'content-marketing', name: lang === 'ar' ? 'التسويق بالمحتوى' : 'Content Marketing' },
+						{ slug: 'email-marketing', name: lang === 'ar' ? 'البريد الإلكتروني' : 'Email Marketing' }
+					]
+				},
+				{
+					label: lang === 'ar' ? 'هوية' : 'Identity',
+					items: [
+						{ slug: 'brand-identity', name: lang === 'ar' ? 'الهوية البصرية' : 'Brand Identity' }
+					]
+				}
+			]
 		}
 	]);
 
+	function handleServiceEnter() {
+		if (serviceMenuTimeout) clearTimeout(serviceMenuTimeout);
+		serviceMenuOpen = true;
+	}
+
+	function handleServiceLeave() {
+		serviceMenuTimeout = setTimeout(() => { serviceMenuOpen = false; }, 150);
+	}
+
 	const isActive = (path: string) => {
 		const currentPath = $page?.url?.pathname || '/';
-		if (path === `${base}/`) {
-			return currentPath === `${base}/`;
-		}
+		if (path === `${base}/`) return currentPath === `${base}/`;
 		return currentPath.startsWith(path);
 	};
 
@@ -182,19 +257,95 @@
 				></div>
 
 				{#each navItems as item}
-					<li bind:this={navRefs[item.path]}>
-						<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
-							<span class="relative z-10">{item.label}</span>
-							{#if !isActive(item.path)}
-								<div
-									class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"
-								></div>
-							{/if}
-						</a>
-					</li>
+					{#if item.hasDropdown}
+						<li
+							bind:this={navRefs[item.path]}
+							class="relative"
+							onmouseenter={handleServiceEnter}
+							onmouseleave={handleServiceLeave}
+						>
+							<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
+								<span class="relative z-10">{item.label}</span>
+								<ChevronDown class="relative z-10 h-3 w-3 transition-transform duration-300 {serviceMenuOpen ? 'rotate-180' : ''}" />
+								{#if !isActive(item.path)}
+									<div class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"></div>
+								{/if}
+							</a>
+						</li>
+					{:else}
+						<li bind:this={navRefs[item.path]}>
+							<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
+								<span class="relative z-10">{item.label}</span>
+								{#if !isActive(item.path)}
+									<div class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"></div>
+								{/if}
+							</a>
+						</li>
+					{/if}
 				{/each}
 			</ul>
 		</div>
+
+		<!-- Services Mega Menu Dropdown -->
+		{#if serviceMenuOpen}
+			<div
+				class="absolute left-1/2 top-full z-40 -translate-x-1/2 pt-3"
+				onmouseenter={handleServiceEnter}
+				onmouseleave={handleServiceLeave}
+				role="navigation"
+				aria-label={lang === 'ar' ? 'قائمة الخدمات' : 'Services menu'}
+			>
+				<div class="cinematic-glass w-[780px] max-w-[90vw] rounded-2xl border border-[var(--glass-border)] p-6 shadow-2xl backdrop-blur-xl">
+					<div class="grid grid-cols-3 gap-6">
+						{#each serviceCategories as cat}
+							<div>
+								<a
+									href={link(`${base}/services/${cat.slug}`)}
+									class="mb-1 block text-sm font-black text-[var(--color-text-base)] transition-colors hover:text-brand-blue"
+								>
+									{cat.name}
+								</a>
+								<p class="mb-3 text-[10px] leading-tight text-[var(--color-text-muted)]/70">{cat.desc}</p>
+								{#each cat.groups as group}
+									<div class="mb-2">
+										<p class="mb-1 text-[9px] font-bold uppercase tracking-wider text-[var(--color-text-muted)]/50">{group.label}</p>
+										<ul class="space-y-0.5">
+											{#each group.items as sub}
+												<li>
+													<a
+														href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
+														class="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-brand-blue"
+													>
+														{sub.name}
+														{#if sub.popular}
+															<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[8px] font-bold text-brand-blue">
+																{lang === 'ar' ? 'شائع' : 'Popular'}
+															</span>
+														{/if}
+													</a>
+												</li>
+											{/each}
+										</ul>
+									</div>
+								{/each}
+							</div>
+						{/each}
+					</div>
+					<!-- CTA Footer -->
+					<div class="mt-4 border-t border-[var(--glass-border)] pt-4">
+						<div class="flex items-center justify-between">
+							<p class="text-xs text-[var(--color-text-muted)]">{lang === 'ar' ? '17 خدمة متخصصة في 3 فئات' : '17 specialized services in 3 categories'}</p>
+							<a
+								href={link(`${base}/services`)}
+								class="rounded-full bg-brand-blue px-4 py-1.5 text-xs font-bold text-white transition-all hover:bg-brand-blue/80 hover:shadow-lg"
+							>
+								{lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services'}
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{/if}
 
 		<!-- Right Section: Theme Toggle, Language Toggle & Mobile Menu -->
 		<div class="flex items-center justify-end gap-3">

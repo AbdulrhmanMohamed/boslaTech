@@ -22,7 +22,7 @@
 
 <section class="relative flex min-h-[55vh] w-full items-center justify-center overflow-hidden transition-colors duration-1000" dir={isAr ? 'rtl' : 'ltr'}>
 	<HeroBackground />
-	<div class="relative z-10 container mx-auto px-6 py-24">
+	<div class="relative z-10 container mx-auto px-6 pt-36 pb-24">
 		<div class="mx-auto max-w-4xl space-y-8 text-center">
 			<div class="flex justify-center">
 				<Breadcrumbs

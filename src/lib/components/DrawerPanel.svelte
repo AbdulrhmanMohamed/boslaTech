@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto, invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { X, Globe, MessageSquare, ArrowRight } from '@lucide/svelte';
+	import { X, Globe, MessageSquare, ArrowRight, ChevronDown } from '@lucide/svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import ThemeToggle from './ThemeToggle.svelte';
@@ -33,30 +33,99 @@
 
 	const isActive = (path: string) => {
 		const currentPath = $page?.url?.pathname || '/';
-		if (path === `${base}/`) {
-			return currentPath === `${base}/`;
-		}
+		if (path === `${base}/`) return currentPath === `${base}/`;
 		return currentPath.startsWith(path);
 	};
 
 	const navItems = $derived([
+		{ path: `${base}/`, label: props.site?.nav?.home || (props.lang === 'ar' ? 'الرئيسية' : 'Home') },
+		{ path: `${base}/about`, label: props.site?.nav?.about || (props.lang === 'ar' ? 'من نحن' : 'About') },
+		{ path: `${base}/services`, label: props.site?.nav?.services || (props.lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
+		{ path: `${base}/contact`, label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact') }
+	]);
+
+	const serviceCategories = $derived([
 		{
-			path: `${base}/`,
-			label: props.site?.nav?.home || (props.lang === 'ar' ? 'الرئيسية' : 'Home')
+			slug: 'web-development',
+			name: props.lang === 'ar' ? 'تطوير المواقع' : 'Web Development',
+			desc: props.lang === 'ar' ? 'مواقع متوافقة مع SEO وبوابات دفع سعودية' : 'SEO-ready sites with Saudi payment gateways',
+			groups: [
+				{
+					label: props.lang === 'ar' ? 'جديد' : 'Build',
+					items: [
+						{ slug: 'custom-websites', name: props.lang === 'ar' ? 'تصميم مواقع شركات' : 'Custom Websites', popular: true },
+						{ slug: 'wordpress-development', name: props.lang === 'ar' ? 'تطوير ووردبريس' : 'WordPress Development' },
+						{ slug: 'online-stores', name: props.lang === 'ar' ? 'متاجر إلكترونية' : 'Online Stores', popular: true }
+					]
+				},
+				{
+					label: props.lang === 'ar' ? 'تحسين' : 'Improve',
+					items: [
+						{ slug: 'website-redesign', name: props.lang === 'ar' ? 'إعادة تصميم المواقع' : 'Redesign & Migration' },
+						{ slug: 'maintenance-and-support', name: props.lang === 'ar' ? 'الصيانة والدعم' : 'Maintenance & Support' }
+					]
+				}
+			]
 		},
 		{
-			path: `${base}/about`,
-			label: props.site?.nav?.about || (props.lang === 'ar' ? 'من نحن' : 'About')
+			slug: 'seo',
+			name: props.lang === 'ar' ? 'تحسين محركات البحث' : 'SEO',
+			desc: props.lang === 'ar' ? 'نضمن ظهورك في أول صفحة جوجل' : 'First page Google rankings',
+			groups: [
+				{
+					label: props.lang === 'ar' ? 'التأسيس' : 'Foundation',
+					items: [
+						{ slug: 'seo-audit', name: props.lang === 'ar' ? 'تدقيق SEO' : 'SEO Audit', popular: true },
+						{ slug: 'technical-seo', name: props.lang === 'ar' ? 'SEO التقني' : 'Technical SEO' }
+					]
+				},
+				{
+					label: props.lang === 'ar' ? 'المحتوى والروابط' : 'Content & Links',
+					items: [
+						{ slug: 'content-seo', name: props.lang === 'ar' ? 'SEO بالمحتوى' : 'Content SEO' },
+						{ slug: 'link-building', name: props.lang === 'ar' ? 'بناء الروابط' : 'Link Building' }
+					]
+				},
+				{
+					label: props.lang === 'ar' ? 'مخصص' : 'Specialized',
+					items: [
+						{ slug: 'local-seo', name: props.lang === 'ar' ? 'SEO المحلي' : 'Local SEO', popular: true },
+						{ slug: 'ecommerce-seo', name: props.lang === 'ar' ? 'SEO المتاجر' : 'E-commerce SEO' }
+					]
+				}
+			]
 		},
 		{
-			path: `${base}/services`,
-			label: props.site?.nav?.services || (props.lang === 'ar' ? 'خدماتنا' : 'Services')
-		},
-		{
-			path: `${base}/contact`,
-			label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact')
+			slug: 'digital-marketing',
+			name: props.lang === 'ar' ? 'التسويق الرقمي' : 'Digital Marketing',
+			desc: props.lang === 'ar' ? 'حملات إعلانية على سناب وتيك توك وجوجل' : 'Snapchat, TikTok & Google ad campaigns',
+			groups: [
+				{
+					label: props.lang === 'ar' ? 'إعلانات' : 'Ads',
+					items: [
+						{ slug: 'google-ads', name: props.lang === 'ar' ? 'إعلانات جوجل' : 'Google Ads', popular: true },
+						{ slug: 'snapchat-tiktok-ads', name: props.lang === 'ar' ? 'سناب وتيك توك' : 'Snapchat & TikTok' }
+					]
+				},
+				{
+					label: props.lang === 'ar' ? 'محتوى وتفاعل' : 'Engage',
+					items: [
+						{ slug: 'social-media-marketing', name: props.lang === 'ar' ? 'وسائل التواصل' : 'Social Media' },
+						{ slug: 'content-marketing', name: props.lang === 'ar' ? 'التسويق بالمحتوى' : 'Content Marketing' },
+						{ slug: 'email-marketing', name: props.lang === 'ar' ? 'البريد الإلكتروني' : 'Email Marketing' }
+					]
+				},
+				{
+					label: props.lang === 'ar' ? 'هوية' : 'Identity',
+					items: [
+						{ slug: 'brand-identity', name: props.lang === 'ar' ? 'الهوية البصرية' : 'Brand Identity' }
+					]
+				}
+			]
 		}
 	]);
+
+	let servicesExpanded = $state(false);
 
 	const currentLangCode = $derived(props.lang);
 
@@ -64,13 +133,8 @@
 		const next = (e.target as HTMLSelectElement).value as 'en' | 'ar';
 		const url = new URL(window.location.href);
 		url.searchParams.set('lang', next);
-
 		clearLanguageCache();
-		await goto(url.pathname + url.search, {
-			replaceState: true,
-			noScroll: true,
-			keepFocus: true
-		});
+		await goto(url.pathname + url.search, { replaceState: true, noScroll: true, keepFocus: true });
 		await invalidate('app:language');
 	}
 
@@ -79,15 +143,11 @@
 	}
 
 	function handleBackdropClick(e: MouseEvent) {
-		if (e.target === e.currentTarget) {
-			closeDrawer();
-		}
+		if (e.target === e.currentTarget) closeDrawer();
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
-		if (e.key === 'Escape') {
-			closeDrawer();
-		}
+		if (e.key === 'Escape') closeDrawer();
 	}
 
 	const drawerPositionClass = $derived(props.lang === 'ar' ? 'right-0' : 'left-0');
@@ -157,35 +217,105 @@
 			<!-- Navigation Links -->
 			<nav class="space-y-2 px-4 py-8">
 				{#each navItems as item, i}
-					<div transition:fly={{ y: 20, duration: 400, delay: 200 + i * 100, easing: cubicOut }}>
-						<a
-							href={link(item.path)}
-							onclick={handleNavClick}
-							class="group relative flex items-center justify-between rounded-2xl px-6 py-4 transition-all duration-300 {isActive(
-								item.path
-							)
-								? 'bg-brand-blue text-white shadow-[0_10px_30px_rgba(0,119,255,0.3)]'
-								: 'text-[var(--color-text-muted)] hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]'} {props.lang ===
-							'ar'
-								? 'flex-row-reverse'
-								: ''}"
-						>
-							<span class="text-lg font-black tracking-tight">{item.label}</span>
-							<ArrowRight
-								class="h-5 w-5 transition-transform duration-300 {props.lang === 'ar'
-									? 'rotate-180 group-hover:-translate-x-1'
-									: 'group-hover:translate-x-1'} {isActive(item.path)
-									? 'opacity-100'
-									: 'opacity-0 group-hover:opacity-100'}"
-							/>
+					{#if item.hasDropdown}
+						<div transition:fly={{ y: 20, duration: 400, delay: 200 + i * 100, easing: cubicOut }}>
+							<button
+								onclick={() => servicesExpanded = !servicesExpanded}
+								class="group relative flex w-full items-center justify-between rounded-2xl px-6 py-4 transition-all duration-300 {isActive(item.path)
+									? 'bg-brand-blue text-white shadow-[0_10px_30px_rgba(0,119,255,0.3)]'
+									: 'text-[var(--color-text-muted)] hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]'} {props.lang === 'ar' ? 'flex-row-reverse' : ''}"
+							>
+								<span class="text-lg font-black tracking-tight">{item.label}</span>
+								<div class="flex items-center gap-2">
+									<a
+										href={link(item.path)}
+										onclick={handleNavClick}
+										class="rounded-lg px-2 py-1 text-xs font-bold transition-colors {isActive(item.path) ? 'text-white/70 hover:text-white' : 'text-brand-blue hover:bg-brand-blue/10'}"
+									>
+										{props.lang === 'ar' ? 'الكل' : 'All'}
+									</a>
+									<ChevronDown class="h-5 w-5 transition-transform duration-300 {servicesExpanded ? 'rotate-180' : ''} {isActive(item.path) ? 'text-white' : 'text-[var(--color-text-dim)]'}" />
+								</div>
+								{#if isActive(item.path)}
+									<div class="animate-shimmer absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-white/0 via-white/10 to-white/0"></div>
+								{/if}
+							</button>
 
-							{#if isActive(item.path)}
-								<div
-									class="animate-shimmer absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-white/0 via-white/10 to-white/0"
-								></div>
+							{#if servicesExpanded}
+								<div class="mt-2 space-y-3 overflow-hidden {props.lang === 'ar' ? 'mr-4' : 'ml-4'}">
+									{#each serviceCategories as cat}
+										<div>
+											<a
+												href={link(`${base}/services/${cat.slug}`)}
+												onclick={handleNavClick}
+												class="mb-0.5 block text-xs font-black tracking-wider text-brand-blue uppercase"
+											>
+												{cat.name}
+											</a>
+											<p class="mb-1 text-[10px] text-[var(--color-text-muted)]/60">{cat.desc}</p>
+											{#each cat.groups as group}
+												<div class="mb-1.5">
+													<p class="mb-0.5 pl-3 text-[9px] font-bold uppercase tracking-wider text-[var(--color-text-muted)]/40">{group.label}</p>
+													<div class="space-y-0.5">
+														{#each group.items as sub}
+															<a
+																href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
+																onclick={handleNavClick}
+																class="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]"
+															>
+																{sub.name}
+																{#if sub.popular}
+																	<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[9px] font-bold text-brand-blue">
+																		{props.lang === 'ar' ? 'شائع' : 'Popular'}
+																	</span>
+																{/if}
+															</a>
+														{/each}
+													</div>
+												</div>
+											{/each}
+										</div>
+									{/each}
+									<div class="border-t border-[var(--glass-border)] pt-2">
+										<a
+											href={link(`${base}/services`)}
+											onclick={handleNavClick}
+											class="flex items-center justify-center rounded-xl bg-brand-blue/10 px-4 py-2.5 text-xs font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
+										>
+											{props.lang === 'ar' ? 'عرض كل الخدمات' : 'View All 17 Services'}
+										</a>
+									</div>
+								</div>
 							{/if}
-						</a>
-					</div>
+						</div>
+					{:else}
+						<div transition:fly={{ y: 20, duration: 400, delay: 200 + i * 100, easing: cubicOut }}>
+							<a
+								href={link(item.path)}
+								onclick={handleNavClick}
+								class="group relative flex items-center justify-between rounded-2xl px-6 py-4 transition-all duration-300 {isActive(
+									item.path
+								)
+									? 'bg-brand-blue text-white shadow-[0_10px_30px_rgba(0,119,255,0.3)]'
+									: 'text-[var(--color-text-muted)] hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]'} {props.lang ===
+								'ar'
+									? 'flex-row-reverse'
+									: ''}"
+							>
+								<span class="text-lg font-black tracking-tight">{item.label}</span>
+								<ArrowRight
+									class="h-5 w-5 transition-transform duration-300 {props.lang === 'ar'
+										? 'rotate-180 group-hover:-translate-x-1'
+										: 'group-hover:translate-x-1'} {isActive(item.path)
+										? 'opacity-100'
+										: 'opacity-0 group-hover:opacity-100'}"
+								/>
+								{#if isActive(item.path)}
+									<div class="animate-shimmer absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-white/0 via-white/10 to-white/0"></div>
+								{/if}
+							</a>
+						</div>
+					{/if}
 				{/each}
 			</nav>
 
