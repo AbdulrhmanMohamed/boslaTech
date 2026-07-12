@@ -54,6 +54,9 @@ const config = {
 				'/locations/khobar',
 				'/locations/mecca',
 				'/locations/medina',
+				'/guides/web-development',
+				'/guides/seo',
+				'/guides/digital-marketing',
 			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore 404 errors during prerendering

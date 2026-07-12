@@ -1,0 +1,342 @@
+{
+  "en": {
+    "web-development": {
+      "title": "Web Development Services in Saudi Arabia",
+      "desc": "Complete guide to web development services for Saudi businesses — from corporate websites and WordPress to Shopify, Salla, and Zid e-commerce stores.",
+      "sections": [
+        {
+          "heading": "Why Your Business Needs a Professional Website",
+          "body": "<p>In today's Saudi market, your website is your most important business asset. It's the first place potential clients look when researching your services. A professionally built website builds trust, showcases your expertise, and converts visitors into customers.</p><p>At BOSLA, we build websites specifically for the Saudi market — with full Arabic support, local payment gateways like Mada and STC Pay, and SEO optimized for Google Saudi Arabia. Whether you need a simple corporate site or a full e-commerce store on Shopify, Salla, or Zid, we have the expertise to deliver.</p>"
+        },
+        {
+          "heading": "Corporate Website Design",
+          "body": "<p>Your corporate website is your digital headquarters. It should clearly communicate who you are, what you offer, and why clients should choose you. We design corporate websites that are fast, secure, and easy to manage.</p><p>Every corporate site we build includes responsive design (works perfectly on mobile, tablet, and desktop), SEO optimization from day one, a user-friendly content management system, and full bilingual support (Arabic and English). We also integrate Google Analytics, live chat, and contact forms to help you track and convert leads.</p><p>Learn more about our <a href='/services/web-development/custom-websites' class='font-bold text-brand-blue underline'>corporate website design service</a>.</p>"
+        },
+        {
+          "heading": "WordPress Development",
+          "body": "<p>WordPress powers over 40% of all websites globally. It's the most flexible content management system available, making it ideal for businesses that want full control over their content. We develop custom WordPress themes, plugins, and WooCommerce stores for Saudi businesses.</p><p>Our WordPress development includes custom theme development (unique design that matches your brand), WooCommerce stores with Mada/STC Pay integration, custom plugins for your specific business needs, and performance optimization for fast loading. We also handle ongoing maintenance and security updates.</p><p>Explore our <a href='/services/web-development/wordpress-development' class='font-bold text-brand-blue underline'>WordPress development service</a>.</p>"
+        },
+        {
+          "heading": "E-commerce Stores: Shopify, Salla, and Zid",
+          "body": "<p>Saudi Arabia's e-commerce market is growing rapidly. Whether you choose Shopify, Salla, or Zid, we help you build a professional online store that converts visitors into customers. Each platform has its strengths, and we help you choose the right one for your business.</p><p><strong>Shopify</strong> is ideal for businesses planning to scale globally. We build custom Shopify stores with Saudi payment gateways, custom themes, and app integrations. <strong>Salla</strong> is a Saudi-built platform perfect for local businesses — we handle setup, theme customization, and SEO. <strong>Zid</strong> offers a balance of local features and flexibility — we configure inventory management, payment integration, and design.</p><p>See our <a href='/services/web-development/online-stores' class='font-bold text-brand-blue underline'>online stores service</a> for details on all three platforms.</p>"
+        },
+        {
+          "heading": "Website Redesign and Migration",
+          "body": "<p>Is your current website slow, outdated, or not generating leads? A website redesign can transform your online presence. We specialize in redesigning existing websites and migrating between platforms — whether you're moving from WordPress to Shopify, or from an old custom site to a modern CMS.</p><p>Our redesign process includes performance audit, SEO-preserving migration (no lost rankings), modern UI/UX redesign, and speed optimization targeting Core Web Vitals. We ensure your new site performs better than the old one in every metric.</p><p>Check our <a href='/services/web-development/website-redesign' class='font-bold text-brand-blue underline'>redesign and migration service</a>.</p>"
+        },
+        {
+          "heading": "Maintenance and Support",
+          "body": "<p>A website requires ongoing maintenance to stay secure, fast, and up-to-date. We offer comprehensive maintenance packages for all platforms — WordPress, Shopify, Salla, Zid, and custom-built sites.</p><p>Our maintenance includes security updates and vulnerability patching, performance monitoring and optimization, content updates and backups, and 24/7 uptime monitoring. We also provide emergency support for critical issues.</p><p>Learn more about <a href='/services/web-development/maintenance-and-support' class='font-bold text-brand-blue underline'>website maintenance and support</a>.</p>"
+        },
+        {
+          "heading": "Technical SEO and Performance",
+          "body": "<p>A beautiful website is useless if nobody can find it. Technical SEO ensures your site is crawlable, indexable, and optimized for Google. We integrate technical SEO into every website we build — from proper schema markup to Core Web Vitals optimization.</p><p>Key technical SEO elements we implement include proper URL structure, meta tags and headings, XML sitemaps, schema markup (LocalBusiness, Service, FAQ), page speed optimization, mobile optimization, and Core Web Vitals compliance (LCP, INP, CLS).</p><p>Explore our <a href='/services/seo/technical-seo' class='font-bold text-brand-blue underline'>technical SEO services</a> for a full breakdown.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "How much does a professional website cost in Saudi Arabia?",
+          "a": "Website costs vary based on complexity. A simple corporate website starts from around 1,000 SAR, while a full e-commerce store on Shopify or Salla ranges from 2,000 to 5,000 SAR. Custom web applications and large portals require a custom quote."
+        },
+        {
+          "q": "How long does it take to build a website?",
+          "a": "A standard corporate website takes 1-2 weeks. An e-commerce store on Shopify, Salla, or Zid typically takes 2-4 weeks depending on complexity. Custom web applications can take 4-8 weeks or more."
+        },
+        {
+          "q": "Which platform is better for my business: Shopify, Salla, or Zid?",
+          "a": "Shopify is best for businesses planning international expansion. Salla is ideal for Saudi-local businesses that want a simple, all-in-one solution with local payment gateways. Zid offers more flexibility for growing businesses that need custom features. We recommend the platform based on your specific needs."
+        },
+        {
+          "q": "Do you provide SEO with your websites?",
+          "a": "Yes, every website we build includes basic SEO optimization — proper meta tags, schema markup, page speed optimization, and mobile responsiveness. For advanced SEO services like keyword research, link building, and content strategy, we offer dedicated SEO packages."
+        },
+        {
+          "q": "Do you offer ongoing maintenance after launch?",
+          "a": "Yes, we offer monthly and annual maintenance packages that include security updates, performance monitoring, content updates, backups, and 24/7 uptime monitoring. We recommend at least basic maintenance for all websites."
+        }
+      ]
+    },
+    "seo": {
+      "title": "SEO Services in Saudi Arabia",
+      "desc": "Complete guide to search engine optimization for Saudi businesses — from technical SEO and local SEO to content strategy and link building.",
+      "sections": [
+        {
+          "heading": "Why SEO Matters for Saudi Businesses",
+          "body": "<p>Search engine optimization (SEO) is the most cost-effective way to attract qualified leads to your website. In Saudi Arabia, Google dominates the search market with over 95% market share. Ranking on the first page of Google Saudi Arabia can transform your business by bringing a steady stream of potential clients who are actively searching for your services.</p><p>At BOSLA, we specialize in SEO for the Saudi market. We optimize for Arabic and English keywords, target Saudi-specific search intent, and build local citations that matter in the Kingdom. Whether you need technical SEO, local SEO, content SEO, or link building, we have the expertise to deliver measurable results.</p>"
+        },
+        {
+          "heading": "Technical SEO",
+          "body": "<p>Technical SEO is the foundation of any successful SEO strategy. It ensures that Google can properly crawl, index, and understand your website. Without solid technical SEO, your content — no matter how good — won't rank.</p><p>Our technical SEO services include Core Web Vitals optimization (LCP, INP, CLS), schema markup implementation (LocalBusiness, Service, FAQ, Article), XML sitemap creation and submission, robots.txt optimization, canonical URL configuration, hreflang tags for bilingual sites, page speed optimization, mobile optimization, and structured data testing.</p><p>Learn more about our <a href='/services/seo/technical-seo' class='font-bold text-brand-blue underline'>technical SEO services</a>.</p>"
+        },
+        {
+          "heading": "Local SEO for Saudi Cities",
+          "body": "<p>Local SEO is essential for service businesses that operate in specific Saudi cities. When someone searches for \"شركة تصميم مواقع في الرياض\" or \"SEO agency Jeddah,\" Google shows local results. We optimize your Google Business Profile, build local citations, and create city-specific pages to capture this traffic.</p><p>We serve businesses in Riyadh, Jeddah, Dammam, Khobar, Mecca, and Medina — with dedicated city pages and local SEO strategies for each market. Learn more about <a href='/services/seo/local-seo' class='font-bold text-brand-blue underline'>local SEO services</a>.</p>"
+        },
+        {
+          "heading": "Content SEO and Blog Strategy",
+          "body": "<p>Content SEO involves creating and optimizing content that matches what your potential clients are searching for. This includes blog posts, service pages, FAQ sections, and guides. We research keywords that your target audience uses and create content that answers their questions and solves their problems.</p><p>Our content SEO services include keyword research (Arabic and English), blog content strategy, on-page optimization (headings, meta descriptions, internal links), content gap analysis, and topical authority building. We also create detailed content briefs for every piece of content.</p><p>Explore our <a href='/services/seo/content-seo' class='font-bold text-brand-blue underline'>content SEO services</a>.</p>"
+        },
+        {
+          "heading": "E-commerce SEO",
+          "body": "<p>E-commerce SEO is different from standard SEO. Online stores need optimized product pages, category pages, and review schema to rank. We optimize Shopify, Salla, and Zid stores for search engines, focusing on product title optimization, category structure, internal linking, review schema markup, and shopping feed optimization.</p><p>Learn more about <a href='/services/seo/ecommerce-seo' class='font-bold text-brand-blue underline'>e-commerce SEO services</a>.</p>"
+        },
+        {
+          "heading": "Link Building",
+          "body": "<p>Link building is one of the most important ranking factors. We build high-quality backlinks from Saudi and GCC websites to improve your domain authority. Our link building strategies include guest posting on Saudi business blogs, digital PR for local media coverage, local business directory submissions, and strategic partnerships.</p><p>See our <a href='/services/seo/link-building' class='font-bold text-brand-blue underline'>link building services</a>.</p>"
+        },
+        {
+          "heading": "SEO Audit",
+          "body": "<p>Not sure where to start with SEO? We offer comprehensive SEO audits that analyze your website's technical health, on-page optimization, content quality, backlink profile, and competitor performance. You get a clear roadmap of what needs to be fixed and prioritized.</p><p>Start with a <a href='/services/seo/seo-audit' class='font-bold text-brand-blue underline'>free SEO audit</a> to identify opportunities for improvement.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "How long does it take to see SEO results?",
+          "a": "SEO is a long-term investment. Most clients start seeing improvements in 3-6 months. Significant ranking improvements typically take 6-12 months. The timeline depends on your current website health, competition level, and the scope of work."
+        },
+        {
+          "q": "How much does SEO cost in Saudi Arabia?",
+          "a": "Our SEO packages start from 1,500 SAR per month for basic optimization and go up to 4,000 SAR per month for comprehensive SEO including technical optimization, content creation, and link building. One-time SEO audits start from 500 SAR."
+        },
+        {
+          "q": "Do you offer local SEO for specific Saudi cities?",
+          "a": "Yes, we offer local SEO services for Riyadh, Jeddah, Dammam, Khobar, Mecca, and Medina. Our local SEO includes Google Business Profile optimization, local citation building, and city-specific content creation."
+        },
+        {
+          "q": "Can you SEO my existing Shopify or Salla store?",
+          "a": "Absolutely. We specialize in e-commerce SEO for Shopify, Salla, and Zid stores. We optimize product pages, category structure, meta data, and implement review schema to help your store rank higher."
+        },
+        {
+          "q": "Do you guarantee first-page rankings?",
+          "a": "No ethical SEO agency can guarantee first-page rankings, as Google's algorithm is constantly changing. However, we guarantee to follow best practices, provide transparent reporting, and deliver measurable improvements in rankings and traffic."
+        }
+      ]
+    },
+    "digital-marketing": {
+      "title": "Digital Marketing Services in Saudi Arabia",
+      "desc": "Complete guide to digital marketing for Saudi businesses — from Google Ads and social media to content marketing and brand identity.",
+      "sections": [
+        {
+          "heading": "Why Digital Marketing Matters in Saudi Arabia",
+          "body": "<p>Saudi Arabia has one of the highest social media penetration rates in the world, with over 30 million active users. Saudi consumers spend an average of 3+ hours daily on social media. Combined with Google's dominant search market share, digital marketing is the most effective way to reach your target audience in the Kingdom.</p><p>At BOSLA, we offer comprehensive digital marketing services tailored to the Saudi market — from Google Ads and social media advertising to content marketing and brand identity. Our campaigns are optimized for Saudi consumer behavior, cultural nuances, and platform preferences (Snapchat, TikTok, Instagram, Twitter/X).</p>"
+        },
+        {
+          "heading": "Google Ads (Search, Display, Shopping)",
+          "body": "<p>Google Ads delivers immediate visibility on Google search results. When someone searches for your service, your ad appears at the top of the page — above organic results. We manage Search Ads (text ads that appear in Google search results), Display Ads (visual ads on websites across Google's network), and Shopping Ads (product listings for e-commerce stores).</p><p>Our Google Ads management includes keyword research and targeting, ad copy creation in Arabic and English, landing page optimization, conversion tracking setup, A/B testing, and monthly performance reporting with recommendations.</p><p>Learn more about <a href='/services/digital-marketing/google-ads' class='font-bold text-brand-blue underline'>Google Ads management</a>.</p>"
+        },
+        {
+          "heading": "Snapchat and TikTok Advertising",
+          "body": "<p>Snapchat and TikTok are the most popular social platforms among Saudi youth. Snapchat has over 20 million monthly active users in Saudi Arabia, and TikTok is growing rapidly. We create engaging video ads specifically designed for these platforms, targeting Saudi audiences by location, interests, and behavior.</p><p>Our services include video ad production (filmed or animated), audience targeting and retargeting, campaign management and optimization, and performance tracking with ROI analysis. We specialize in creating content that resonates with Saudi consumers.</p><p>Explore our <a href='/services/digital-marketing/snapchat-tiktok-ads' class='font-bold text-brand-blue underline'>Snapchat and TikTok ad services</a>.</p>"
+        },
+        {
+          "heading": "Social Media Management",
+          "body": "<p>Consistent social media presence builds brand awareness and engagement. We manage your social media accounts on Instagram, Twitter/X, Snapchat, and TikTok — creating content, engaging with followers, and growing your audience.</p><p>Our social media management includes content creation (graphics, videos, copywriting), monthly content calendars, community management (responding to comments and messages), performance analytics, and growth strategy. All content is created in Arabic for the Saudi market.</p><p>See our <a href='/services/digital-marketing/social-media-marketing' class='font-bold text-brand-blue underline'>social media management services</a>.</p>"
+        },
+        {
+          "heading": "Content Marketing",
+          "body": "<p>Content marketing involves creating valuable content that attracts and engages your target audience. This includes blog posts, videos, infographics, and guides. Great content builds trust, positions you as an expert, and drives organic traffic to your website.</p><p>Our content marketing services include blog writing and strategy, video content production, infographic design, content distribution and promotion, and performance tracking. We focus on creating content that solves real problems for Saudi businesses and consumers.</p><p>Check our <a href='/services/digital-marketing/content-marketing' class='font-bold text-brand-blue underline'>content marketing services</a>.</p>"
+        },
+        {
+          "heading": "Email Marketing",
+          "body": "<p>Email marketing delivers one of the highest ROIs of any marketing channel. We build email sequences that nurture leads, promote offers, and retain customers. Our campaigns are designed for the Saudi market with appropriate cultural considerations and timing.</p><p>We offer welcome sequences for new subscribers, promotional campaigns for offers and launches, newsletter creation and management, and detailed analytics and reporting. All emails are designed in both Arabic and English.</p><p>Explore our <a href='/services/digital-marketing/email-marketing' class='font-bold text-brand-blue underline'>email marketing services</a>.</p>"
+        },
+        {
+          "heading": "Brand Identity Design",
+          "body": "<p>Your brand identity is how your business looks and feels to the world. A strong brand identity builds recognition and trust. We design complete brand identity systems including logos, color palettes, typography, and brand guidelines.</p><p>Our brand identity services include logo design (multiple concepts with revisions), color system development, typography selection, brand guidelines documentation, and application to business cards, stationery, and social media profiles.</p><p>Learn more about <a href='/services/digital-marketing/brand-identity' class='font-bold text-brand-blue underline'>brand identity design</a>.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "Which social media platform is best for my business?",
+          "a": "It depends on your target audience. Snapchat and TikTok are best for reaching younger audiences (18-34). Instagram is great for visual brands like fashion, food, and real estate. Twitter/X is ideal for B2B and news-oriented businesses. We help you choose the right platforms based on your goals."
+        },
+        {
+          "q": "How much should I budget for digital marketing?",
+          "a": "For Google Ads, we recommend a minimum budget of 3,000 SAR per month (including ad spend and management fees). Social media advertising starts from 2,000 SAR per month. Content marketing packages start from 1,500 SAR per month."
+        },
+        {
+          "q": "How long until I see results from digital ads?",
+          "a": "Google Ads can deliver immediate results — you can start getting clicks and leads within hours of launching a campaign. Social media ads typically take 1-2 weeks to optimize. Content marketing and SEO-driven strategies take longer (3-6 months) but provide compounding returns."
+        },
+        {
+          "q": "Do you create content in Arabic?",
+          "a": "Yes, all our content is created in professional Saudi Arabic. We understand the local dialect, cultural nuances, and consumer behavior. We also offer bilingual campaigns (Arabic + English) for businesses targeting both local and international audiences."
+        },
+        {
+          "q": "Can you manage my existing ad accounts?",
+          "a": "Yes, we can take over management of your existing Google Ads, Snapchat, TikTok, and social media accounts. We start with a full audit of your current campaigns, identify optimization opportunities, and implement improvements in the first month."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "web-development": {
+      "title": "خدمات تطوير المواقع في السعودية",
+      "desc": "دليل شامل لخدمات تطوير المواقع للشركات السعودية — من المواقع المؤسسية ووردبريس إلى متاجر شوبيفاي وسلة وزّد.",
+      "sections": [
+        {
+          "heading": "لماذا يحتاج نشاطك التجاري إلى موقع احترافي",
+          "body": "<p>في السوق السعودي اليوم، موقعك الإلكتروني هو أهم أصولك التجارية. إنه أول مكان يبحث فيه العملاء المحتملون عند الاستفسار عن خدماتك. الموقع المبني بشكل احترافي يبني الثقة، ويعرض خبراتك، ويحول الزوار إلى عملاء.</p><p>في BOSLA، نبني مواقع مخصصة للسوق السعودي — مع دعم كامل للغة العربية، وبوابات دفع محلية مثل مدى وSTC Pay، وتحسين لمحركات البحث مخصص لجوجل السعودية. سواء كنت تحتاج موقعاً مؤسسياً بسيطاً أو متجراً إلكترونياً متكاملاً على شوبيفاي أو سلة أو زد، لدينا الخبرة لتقديم الأفضل.</p>"
+        },
+        {
+          "heading": "تصميم مواقع الشركات",
+          "body": "<p>موقع شركتك هو مقرك الرقمي. يجب أن يعبر بوضوح عن هويتك، وما تقدمه، ولماذا يجب أن يختارك العملاء. نصمم مواقع مؤسسية سريعة وآمنة وسهلة الإدارة.</p><p>كل موقع مؤسسي نبنيه يشمل تصميم متجاوب (يعمل بشكل مثالي على الجوال والتابلت والحاسب)، تحسين لمحركات البحث من اليوم الأول، نظام إدارة محتوى سهل الاستخدام، ودعم كامل للغتين العربية والإنجليزية. ندمج أيضاً Google Analytics والدردشة المباشرة ونماذج الاتصال لمساعدتك في تتبع وتحويل العملاء المحتملين.</p><p>اعرف المزيد عن <a href='/services/web-development/custom-websites?lang=ar' class='font-bold text-brand-blue underline'>خدمة تصميم مواقع الشركات</a>.</p>"
+        },
+        {
+          "heading": "تطوير ووردبريس",
+          "body": "<p>ووردبريس يدير أكثر من 40% من جميع المواقع في العالم. إنه أكثر أنظمة إدارة المحتوى مرونة، مما يجعله مثالياً للشركات التي تريد تحكماً كاملاً في محتواها. نطور قوالب ووردبريس مخصصة وإضافات ومتاجر WooCommerce للشركات السعودية.</p><p>تطوير ووردبريس لدينا يشمل تطوير قوالب مخصصة (تصميم فريد يعكس علامتك التجارية)، متاجر WooCommerce مع دمج مدى وSTC Pay، إضافات مخصصة لاحتياجات نشاطك التجاري، وتحسين الأداء للتحميل السريع. كما نقدم الصيانة المستمرة وتحديثات الأمان.</p><p>اكتشف <a href='/services/web-development/wordpress-development?lang=ar' class='font-bold text-brand-blue underline'>خدمة تطوير ووردبريس</a>.</p>"
+        },
+        {
+          "heading": "المتاجر الإلكترونية: شوبيفاي وسلة وزّد",
+          "body": "<p>سوق التجارة الإلكترونية في السعودية ينمو بسرعة. سواء اخترت شوبيفاي أو سلة أو زد، نساعدك في بناء متجر إلكتروني احترافي يحول الزوار إلى عملاء. لكل منصة نقاط قوتها، ونحن نساعدك في اختيار المنصة المناسبة لنشاطك.</p><p><strong>شوبيفاي</strong> مثالية للشركات التي تخطط للتوسع عالمياً. نبني متاجر شوبيفاي مخصصة مع بوابات دفع سعودية وقوالب مخصصة وتكامل تطبيقات. <strong>سلة</strong> منصة سعودية مثالية للأنشطة المحلية — نتعامل مع الإعداد وتخصيص القالب وتحسين محركات البحث. <strong>زد</strong> توفر توازناً بين الميزات المحلية والمرونة — نضبط إدارة المخزون وتكامل الدفع والتصميم.</p><p>اطلع على <a href='/services/web-development/online-stores?lang=ar' class='font-bold text-brand-blue underline'>خدمة المتاجر الإلكترونية</a> للتفاصيل عن المنصات الثلاث.</p>"
+        },
+        {
+          "heading": "إعادة تصميم المواقع والترحيل",
+          "body": "<p>هل موقعك الحالي بطيء أو قديم أو لا يحقق مبيعات؟ إعادة التصميم يمكن أن تحول تواجدك الرقمي. نتخصص في إعادة تصميم المواقع الحالية والترحيل بين المنصات — سواء كنت تنتقل من ووردبريس إلى شوبيفاي، أو من موقع مخصص قديم إلى نظام إدارة محتوى حديث.</p><p>عملية إعادة التصميم لدينا تشمل تدقيق الأداء، ترحيل يحافظ على تحسين محركات البحث (بدون فقدان الترتيب)، إعادة تصميم واجهة المستخدم/تجربة المستخدم الحديثة، وتحسين السرعة لاستهداف Core Web Vitals. نضمن أن موقعك الجديد يؤدي أفضل من القديم في كل المقاييس.</p><p>اطلع على <a href='/services/web-development/website-redesign?lang=ar' class='font-bold text-brand-blue underline'>خدمة إعادة التصميم والترحيل</a>.</p>"
+        },
+        {
+          "heading": "الصيانة والدعم",
+          "body": "<p>الموقع الإلكتروني يحتاج صيانة مستمرة ليبقى آمناً وسريعاً ومحدثاً. نقدم باقات صيانة شاملة لجميع المنصات — ووردبريس وشوبيفاي وسلة وزّد والمواقع المخصصة.</p><p>صيانتنا تشمل تحديثات الأمان وتصحيح الثغرات، مراقبة الأداء والتحسين، تحديثات المحتوى والنسخ الاحتياطي، ومراقبة وقت التشغيل على مدار الساعة. كما نقدم دعماً طارئاً للمشكلات الحرجة.</p><p>اعرف المزيد عن <a href='/services/web-development/maintenance-and-support?lang=ar' class='font-bold text-brand-blue underline'>صيانة المواقع والدعم الفني</a>.</p>"
+        },
+        {
+          "heading": "تحسين محركات البحث التقني والأداء",
+          "body": "<p>الموقع الجميل لا فائدة منه إذا لم يجده أحد. تحسين محركات البحث التقني يضمن أن موقعك قابل للزحف والفهرسة ومحسن لجوجل. ندمج تحسين محركات البحث التقني في كل موقع نبنيه — من ترميز البيانات المنظمة إلى تحسين Core Web Vitals.</p><p>عناصر تحسين محركات البحث التقني الرئيسية التي نطبقها تشمل هيكل URL مناسب، الوسوم والعلامات الوصفية، خرائط XML، ترميز البيانات المنظمة (LocalBusiness وService وFAQ)، تحسين سرعة الصفحة، تحسين الجوال، والامتثال لـ Core Web Vitals (LCP وINP وCLS).</p><p>اكتشف <a href='/services/seo/technical-seo?lang=ar' class='font-bold text-brand-blue underline'>خدمات تحسين محركات البحث التقني</a>.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "كم تكلفة تصميم موقع احترافي في السعودية؟",
+          "a": "تختلف تكلفة الموقع حسب التعقيد. الموقع المؤسسي البسيط يبدأ من 1,000 ريال، بينما المتجر الإلكتروني المتكامل على شوبيفاي أو سلة يتراوح من 2,000 إلى 5,000 ريال. التطبيقات المخصصة والبوابات الكبيرة تتطلب عرض سعر مخصص."
+        },
+        {
+          "q": "كم يستغرق بناء موقع إلكتروني؟",
+          "a": "الموقع المؤسسي العادي يستغرق 1-2 أسبوع. المتجر الإلكتروني على شوبيفاي أو سلة أو زد يستغرق عادة 2-4 أسابيع حسب التعقيد. التطبيقات المخصصة قد تستغرق 4-8 أسابيع أو أكثر."
+        },
+        {
+          "q": "أي منصة أفضل لنشاطي التجاري: شوبيفاي أم سلة أم زد؟",
+          "a": "شوبيفاي أفضل للشركات التي تخطط للتوسع الدولي. سلة مثالية للأنشطة المحلية السعودية التي تريد حلاً متكاملاً بسيطاً مع بوابات دفع محلية. زد توفر مرونة أكثر للشركات المتنامية التي تحتاج ميزات مخصصة. نوصي بالمنصة بناءً على احتياجاتك المحددة."
+        },
+        {
+          "q": "هل تقدمون تحسين محركات البحث مع المواقع؟",
+          "a": "نعم، كل موقع نبنيه يشمل تحسين أساسي لمحركات البحث — الوسوم الوصفية المناسبة، ترميز البيانات المنظمة، تحسين سرعة الصفحة، والتجاوب مع الجوال. للخدمات المتقدمة مثل بحث الكلمات المفتاحية وبناء الروابط واستراتيجية المحتوى، نقدم باقات مخصصة."
+        },
+        {
+          "q": "هل تقدمون صيانة مستمرة بعد الإطلاق؟",
+          "a": "نعم، نقدم باقات صيانة شهرية وسنوية تشمل تحديثات الأمان، مراقبة الأداء، تحديثات المحتوى، النسخ الاحتياطي، ومراقبة وقت التشغيل على مدار الساعة. نوصي بصيانة أساسية على الأقل لجميع المواقع."
+        }
+      ]
+    },
+    "seo": {
+      "title": "خدمات تحسين محركات البحث في السعودية",
+      "desc": "دليل شامل لتحسين محركات البحث للشركات السعودية — من السيو التقني والتحسين المحلي إلى استراتيجية المحتوى وبناء الروابط.",
+      "sections": [
+        {
+          "heading": "لماذا تحسين محركات البحث مهم للشركات السعودية",
+          "body": "<p>تحسين محركات البحث (SEO) هو الطريقة الأكثر فعالية من حيث التكلفة لجذب عملاء محتملين مؤهلين إلى موقعك. في السعودية، جوجل يهيمن على سوق البحث بأكثر من 95% من حصة السوق. الظهور في الصفحة الأولى لجوجل السعودية يمكن أن يحول نشاطك التجاري من خلال جلب تدفق مستمر من العملاء المحتملين الذين يبحثون بنشاط عن خدماتك.</p><p>في BOSLA، نتخصص في تحسين محركات البحث للسوق السعودي. نحسن للكلمات المفتاحية العربية والإنجليزية، نستهدف نية البحث السعودية، ونبني Citations محلية مهمة في المملكة. سواء كنت تحتاج سيواً تقنياً أو محلياً أو سيو المحتوى أو بناء روابط، لدينا الخبرة لتقديم نتائج قابلة للقياس.</p>"
+        },
+        {
+          "heading": "SEO التقني",
+          "body": "<p>SEO التقني هو أساس أي استراتيجية SEO ناجحة. يضمن أن جوجل يمكنها الزحف والفهرسة وفهم موقعك بشكل صحيح. بدون SEO تقني متين، محتواك — مهما كان جيداً — لن يظهر في النتائج.</p><p>خدمات SEO التقني لدينا تشمل تحسين Core Web Vitals (LCP وINP وCLS)، تنفيذ ترميز البيانات المنظمة (LocalBusiness وService وFAQ وArticle)، إنشاء وتقديم خريطة XML، تحسين ملف robots.txt، إعداد الروابط الأساسية (canonical)، وسوم hreflang للمواقع ثنائية اللغة، تحسين سرعة الصفحة، تحسين الجوال، واختبار البيانات المنظمة.</p><p>اعرف المزيد عن <a href='/services/seo/technical-seo?lang=ar' class='font-bold text-brand-blue underline'>خدمات SEO التقني</a>.</p>"
+        },
+        {
+          "heading": "SEO المحلي للمدن السعودية",
+          "body": "<p>SEO المحلي ضروري للأنشطة التجارية الخدمية التي تعمل في مدن سعودية محددة. عندما يبحث شخص عن \"شركة تصميم مواقع في الرياض\" أو \"مكتب SEO جدة\"، جوجل يعرض النتائج المحلية. نحسن حسابك في Google Business Profile، نبني Citations محلية، وننشئ صفحات مخصصة للمدن لاستهداف هذا الجمهور.</p><p>نخدم الشركات في الرياض وجدة والدمام والخبر ومكة والمدينة — مع صفحات مخصصة لكل مدينة واستراتيجيات SEO محلية لكل سوق. اعرف المزيد عن <a href='/services/seo/local-seo?lang=ar' class='font-bold text-brand-blue underline'>خدمات SEO المحلي</a>.</p>"
+        },
+        {
+          "heading": "SEO المحتوى واستراتيجية المدونة",
+          "body": "<p>SEO المحتوى يشمل إنشاء وتحسين محتوى يطابق ما يبحث عنه عملاؤك المحتملون. هذا يشمل مقالات المدونة، صفحات الخدمات، الأسئلة الشائعة، والأدلة. نبحث عن الكلمات المفتاحية التي يستخدمها جمهورك المستهدف وننشئ محتوى يجيب على أسئلتهم ويحل مشكلاتهم.</p><p>خدمات SEO المحتوى لدينا تشمل بحث الكلمات المفتاحية (عربية وإنجليزية)، استراتيجية محتوى المدونة، تحسين الصفحات (العناوين والوصف والروابط الداخلية)، تحليل فجوات المحتوى، وبناء السلطة الموضوعية. كما ننشئ ملخصات محتوى مفصلة لكل قطعة محتوى.</p><p>اكتشف <a href='/services/seo/content-seo?lang=ar' class='font-bold text-brand-blue underline'>خدمات SEO المحتوى</a>.</p>"
+        },
+        {
+          "heading": "SEO المتاجر الإلكترونية",
+          "body": "<p>SEO المتاجر الإلكترونية يختلف عن SEO العادي. المتاجر الإلكترونية تحتاج صفحات منتجات محسنة، هيكل أقسام مناسب، وترميز مراجعات لترتيب أفضل. نحسن متاجر شوبيفاي وسلة وزّد لمحركات البحث، مع التركيز على تحسين عناوين المنتجات، هيكل الأقسام، الروابط الداخلية، ترميز المراجعات، وتحسين خلاصات التسوق.</p><p>اعرف المزيد عن <a href='/services/seo/ecommerce-seo?lang=ar' class='font-bold text-brand-blue underline'>خدمات SEO المتاجر الإلكترونية</a>.</p>"
+        },
+        {
+          "heading": "بناء الروابط",
+          "body": "<p>بناء الروابط من أهم عوامل الترتيب. نبني روابط خلفية عالية الجودة من مواقع سعودية وخليجية لتحسين سلطة نطاقك. استراتيجيات بناء الروابط لدينا تشمل التدوين الضيف في المدونات التجارية السعودية، العلاقات العامة الرقمية للتغطية الإعلامية المحلية، التسجيل في أدلة الأعمال المحلية، والشراكات الاستراتيجية.</p><p>اطلع على <a href='/services/seo/link-building?lang=ar' class='font-bold text-brand-blue underline'>خدمات بناء الروابط</a>.</p>"
+        },
+        {
+          "heading": "تدقيق SEO",
+          "body": "<p>لست متأكداً من أين تبدأ مع SEO؟ نقدم تدقيق SEO شامل يحلل الصحة التقنية لموقعك، تحسين الصفحات، جودة المحتوى، ملف الروابط الخلفية، وأداء المنافسين. تحصل على خارطة طريق واضحة لما يجب إصلاحه وترتيب الأولويات.</p><p>ابدأ <a href='/services/seo/seo-audit?lang=ar' class='font-bold text-brand-blue underline'>بتدقيق SEO مجاني</a> لتحديد فرص التحسين.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "كم يستغرق ظهور نتائج SEO؟",
+          "a": "SEO استثمار طويل الأجل. معظم العملاء يبدأون في رؤية تحسن خلال 3-6 أشهر. التحسن الكبير في الترتيب يستغرق عادة 6-12 شهراً. المدة تعتمد على الوضع الحالي لموقعك ومستوى المنافسة ونطاق العمل."
+        },
+        {
+          "q": "كم تكلفة خدمات SEO في السعودية؟",
+          "a": "باقات SEO لدينا تبدأ من 1,500 ريال شهرياً للتحسين الأساسي وتصل إلى 4,000 ريال شهرياً للسيو الشامل شامل التحسين التقني وإنشاء المحتوى وبناء الروابط. تدقيق SEO لمرة واحدة يبدأ من 500 ريال."
+        },
+        {
+          "q": "هل تقدمون SEO محلي لمدن سعودية محددة؟",
+          "a": "نعم، نقدم خدمات SEO محلي للرياض وجدة والدمام والخبر ومكة والمدينة. SEO المحلي لدينا يشمل تحسين Google Business Profile، بناء Citations محلية، وإنشاء محتوى مخصص لكل مدينة."
+        },
+        {
+          "q": "هل يمكنكم تحسين متجري الحالي على شوبيفاي أو سلة؟",
+          "a": "بالتأكيد. نتخصص في SEO المتاجر الإلكترونية لشوبيفاي وسلة وزّد. نحسن صفحات المنتجات وهيكل الأقسام والبيانات الوصفية وننفذ ترميز المراجعات لمساعدة متجرك في الترتيب الأعلى."
+        },
+        {
+          "q": "هل تضمنون ظهوري في الصفحة الأولى؟",
+          "a": "لا يمكن لأي وكالة SEO أخلاقية ضمان ظهور في الصفحة الأولى، لأن خوارزمية جوجل تتغير باستمرار. لكننا نضمن اتباع أفضل الممارسات وتقديم تقارير شفافة وتحسينات قابلة للقياس في الترتيب والزيارات."
+        }
+      ]
+    },
+    "digital-marketing": {
+      "title": "خدمات التسويق الرقمي في السعودية",
+      "desc": "دليل شامل للتسويق الرقمي للشركات السعودية — من إعلانات جوجل ووسائل التواصل إلى التسويق بالمحتوى والهوية البصرية.",
+      "sections": [
+        {
+          "heading": "لماذا التسويق الرقمي مهم في السعودية",
+          "body": "<p>السعودية لديها واحدة من أعلى نسب انتشار وسائل التواصل الاجتماعي في العالم، مع أكثر من 30 مليون مستخدم نشط. المستهلك السعودي يقضي متوسط 3+ ساعات يومياً على وسائل التواصل. مع هيمنة جوجل على سوق البحث، التسويق الرقمي هو الطريقة الأكثر فعالية للوصول إلى جمهورك المستهدف في المملكة.</p><p>في BOSLA، نقدم خدمات تسويق رقمي شاملة مصممة للسوق السعودي — من إعلانات جوجل وإعلانات وسائل التواصل إلى التسويق بالمحتوى والهوية البصرية. حملاتنا محسنة للسلوك الاستهلاكي السعودي والفروق الثقافية وتفضيلات المنصات (سناب شات وتيك توك وإنستغرام وتويتر).</p>"
+        },
+        {
+          "heading": "إعلانات جوجل (بحث وعرض وتسوق)",
+          "body": "<p>إعلانات جوجل توفر ظهوراً فورياً في نتائج بحث جوجل. عندما يبحث شخص عن خدمتك، يظهر إعلانك في أعلى الصفحة — فوق النتائج العضوية. ندير إعلانات البحث (إعلانات نصية تظهر في نتائج بحث جوجل)، إعلانات العرض (إعلانات بصرية على مواقع عبر شبكة جوجل)، وإعلانات التسوق (قوائم المنتجات للمتاجر الإلكترونية).</p><p>إدارة إعلانات جوجل لدينا تشمل بحث الكلمات المفتاحية والاستهداف، كتابة الإعلانات بالعربية والإنجليزية، تحسين صفحة الهبوط، إعداد تتبع التحويل، اختبار A/B، وتقارير أداء شهرية مع التوصيات.</p><p>اعرف المزيد عن <a href='/services/digital-marketing/google-ads?lang=ar' class='font-bold text-brand-blue underline'>إدارة إعلانات جوجل</a>.</p>"
+        },
+        {
+          "heading": "إعلانات سناب شات وتيك توك",
+          "body": "<p>سناب شات وتيك توك هما أكثر منصات التواصل شعبية بين الشباب السعودي. سناب شات لديه أكثر من 20 مليون مستخدم نشط شهرياً في السعودية، وتيك توك ينمو بسرعة. ننشئ إعلانات فيديو جذابة مصممة خصيصاً لهذه المنصات، مستهدفة الجمهور السعودي حسب الموقع والاهتمامات والسلوك.</p><p>خدماتنا تشمل إنتاج إعلانات الفيديو (تصوير أو رسوم متحركة)، استهداف الجمهور وإعادة الاستهداف، إدارة الحملات والتحسين، وتتبع الأداء مع تحليل العائد على الاستثمار. نتخصص في إنشاء محتوى يناسب المستهلك السعودي.</p><p>اكتشف <a href='/services/digital-marketing/snapchat-tiktok-ads?lang=ar' class='font-bold text-brand-blue underline'>خدمات إعلانات سناب شات وتيك توك</a>.</p>"
+        },
+        {
+          "heading": "إدارة وسائل التواصل الاجتماعي",
+          "body": "<p>التواجد المستمر على وسائل التواصل يبني الوعي بالعلامة التجارية والتفاعل. ندير حساباتك على إنستغرام وتويتر وسناب شات وتيك توك — ننشئ محتوى ونتفاعل مع المتابعين وننمي جمهورك.</p><p>إدارة وسائل التواصل لدينا تشمل إنشاء المحتوى (تصاميم وفيديو وكتابة إعلانية)، تقويم محتوى شهري، إدارة المجتمع (الرد على التعليقات والرسائل)، تحليلات الأداء، واستراتيجية النمو. كل المحتوى بالعربية للسوق السعودي.</p><p>اطلع على <a href='/services/digital-marketing/social-media-marketing?lang=ar' class='font-bold text-brand-blue underline'>خدمات إدارة وسائل التواصل الاجتماعي</a>.</p>"
+        },
+        {
+          "heading": "التسويق بالمحتوى",
+          "body": "<p>التسويق بالمحتوى يشمل إنشاء محتوى قيم يجذب جمهورك المستهدف ويشركه. هذا يشمل مقالات المدونة والفيديو والإنفوجرافيك والأدلة. المحتوى الجيد يبني الثقة ويضعك كخبير ويجلب زيارات عضوية لموقعك.</p><p>خدمات التسويق بالمحتوى لدينا تشمل كتابة المدونات واستراتيجية المحتوى، إنتاج محتوى الفيديو، تصميم الإنفوجرافيك، توزيع المحتوى والترويج، وتتبع الأداء. نركز على إنشاء محتوى يحل مشكلات حقيقية للشركات والمستهلكين السعوديين.</p><p>اطلع على <a href='/services/digital-marketing/content-marketing?lang=ar' class='font-bold text-brand-blue underline'>خدمات التسويق بالمحتوى</a>.</p>"
+        },
+        {
+          "heading": "التسويق عبر البريد الإلكتروني",
+          "body": "<p>التسويق عبر البريد الإلكتروني يحقق واحداً من أعلى عوائد الاستثمار بين قنوات التسويق. نبني تسلسلات بريدية ترعى العملاء المحتملين وتقدم العروض وتحتفظ بالعملاء. حملاتنا مصممة للسوق السعودي مع اعتبارات ثقافية وتوقيت مناسب.</p><p>نقدم تسلسلات ترحيبية للمشتركين الجدد، حملات ترويجية للعروض والإطلاقات، إنشاء وإدارة النشرات البريدية، وتحليلات وتقارير مفصلة. كل الرسائل مصممة بالعربية والإنجليزية.</p><p>اكتشف <a href='/services/digital-marketing/email-marketing?lang=ar' class='font-bold text-brand-blue underline'>خدمات التسويق عبر البريد الإلكتروني</a>.</p>"
+        },
+        {
+          "heading": "تصميم الهوية البصرية",
+          "body": "<p>هويتك البصرية هي كيف يبدو نشاطك التجاري للعالم. الهوية البصرية القوية تبني التمييز والثقة. نصمم أنظمة هوية بصرية كاملة تشمل الشعارات ولوحات الألوان والخطوط وأدلة العلامة التجارية.</p><p>خدمات الهوية البصرية لدينا تشمل تصميم الشعار (مفاهيم متعددة مع مراجعات)، تطوير نظام الألوان، اختيار الخطوط، توثيق دليل العلامة التجارية، والتطبيق على بطاقات العمل والقرطاسية وملفات تعريف وسائل التواصل.</p><p>اعرف المزيد عن <a href='/services/digital-marketing/brand-identity?lang=ar' class='font-bold text-brand-blue underline'>تصميم الهوية البصرية</a>.</p>"
+        }
+      ],
+      "faq": [
+        {
+          "q": "أي منصة تواصل اجتماعي أفضل لنشاطي التجاري؟",
+          "a": "يعتمد على جمهورك المستهدف. سناب شات وتيك توك الأفضل للوصول للفئات العمرية الأصغر (18-34). إنستغرام رائع للعلامات التجارية البصرية مثل الأزياء والطعام والعقارات. تويتر مثالي للأعمال B2B والأخبار. نساعدك في اختيار المنصات المناسبة بناءً على أهدافك."
+        },
+        {
+          "q": "كم يجب أن تكون ميزانية التسويق الرقمي؟",
+          "a": "لإعلانات جوجل، نوصي بميزانية لا تقل عن 3,000 ريال شهرياً (شامل تكلفة الإعلانات ورسوم الإدارة). إعلانات وسائل التواصل تبدأ من 2,000 ريال شهرياً. باقات التسويق بالمحتوى تبدأ من 1,500 ريال شهرياً."
+        },
+        {
+          "q": "متى أرى نتائج من الإعلانات الرقمية؟",
+          "a": "إعلانات جوجل تعطي نتائج فورية — يمكنك الحصول على نقرات وعملاء محتملين خلال ساعات من إطلاق الحملة. إعلانات وسائل التواصل تحتاج عادة 1-2 أسبوع للتحسين. التسويق بالمحتوى واستراتيجيات SEO تستغرق وقتاً أطول (3-6 أشهر) لكنها توفر عوائد متراكمة."
+        },
+        {
+          "q": "هل تنشئون محتوى بالعربية؟",
+          "a": "نعم، كل محتوانا ينشأ بالعربية السعودية الاحترافية. نفهم اللهجة المحلية والفروق الثقافية والسلوك الاستهلاكي. نقدم أيضاً حملات ثنائية اللغة (عربية + إنجليزية) للشركات التي تستهدف الجمهور المحلي والدولي."
+        },
+        {
+          "q": "هل يمكنكم إدارة حساباتي الإعلانية الحالية؟",
+          "a": "نعم، يمكننا تولي إدارة حساباتك الحالية في جوجل أدز وسناب شات وتيك توك ووسائل التواصل. نبدأ بتقييم كامل لحملاتك الحالية، نحدد فرص التحسين، وننفذ التحسينات في الشهر الأول."
+        }
+      ]
+    }
+  }
+}
