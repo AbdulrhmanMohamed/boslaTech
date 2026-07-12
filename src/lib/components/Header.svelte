@@ -7,7 +7,7 @@
 	import { clearLanguageCache } from '$lib/utils/language';
 	import { base } from '$app/paths';
 	import { inView } from '$lib/actions/inView';
-	import { ChevronDown } from '@lucide/svelte';
+	import { ChevronDown, ChevronRight, Search, Calculator, MessageSquare } from '@lucide/svelte';
 
 	const props = $props<{ site?: any; lang: 'en' | 'ar' }>();
 	const site = $derived(props.site);
@@ -107,78 +107,38 @@
 			slug: 'web-development',
 			name: lang === 'ar' ? 'تطوير المواقع' : 'Web Development',
 			desc: lang === 'ar' ? 'مواقع متوافقة مع SEO وبوابات دفع سعودية' : 'SEO-ready sites with Saudi payment gateways',
-			groups: [
-				{
-					label: lang === 'ar' ? 'جديد' : 'Build',
-					items: [
-						{ slug: 'custom-websites', name: lang === 'ar' ? 'تصميم مواقع شركات' : 'Custom Websites', popular: true },
-						{ slug: 'wordpress-development', name: lang === 'ar' ? 'تطوير ووردبريس' : 'WordPress Development' },
-						{ slug: 'online-stores', name: lang === 'ar' ? 'متاجر إلكترونية' : 'Online Stores', popular: true }
-					]
-				},
-				{
-					label: lang === 'ar' ? 'تحسين' : 'Improve',
-					items: [
-						{ slug: 'website-redesign', name: lang === 'ar' ? 'إعادة تصميم المواقع' : 'Redesign & Migration' },
-						{ slug: 'maintenance-and-support', name: lang === 'ar' ? 'الصيانة والدعم' : 'Maintenance & Support' }
-					]
-				}
+			children: [
+				{ slug: 'custom-websites', name: lang === 'ar' ? 'تصميم مواقع شركات' : 'Custom Websites', popular: true, topics: lang === 'ar' ? ['صفحات هبوط', 'مواقع شركات', 'مواقع معرض أعمال'] : ['Landing Pages', 'Corporate Sites', 'Portfolio Sites'] },
+				{ slug: 'wordpress-development', name: lang === 'ar' ? 'تطوير ووردبريس' : 'WordPress', topics: lang === 'ar' ? ['WooCommerce', 'قوالب مخصصة', 'إضافات'] : ['WooCommerce', 'Custom Themes', 'Plugins'] },
+				{ slug: 'online-stores', name: lang === 'ar' ? 'متاجر إلكترونية' : 'Online Stores', popular: true, topics: lang === 'ar' ? ['شوبيفاي', 'سلة', 'زد'] : ['Shopify', 'Salla', 'Zid'] },
+				{ slug: 'website-redesign', name: lang === 'ar' ? 'إعادة تصميم المواقع' : 'Redesign & Migration', topics: lang === 'ar' ? ['ترحيل المنصة', 'تحسين الأداء'] : ['Platform Migration', 'Performance'] },
+				{ slug: 'maintenance-and-support', name: lang === 'ar' ? 'الصيانة والدعم' : 'Maintenance & Support', topics: lang === 'ar' ? ['تحديثات الأمان', 'مراقبةوقت التشغيل'] : ['Security Updates', 'Uptime Monitoring'] }
 			]
 		},
 		{
 			slug: 'seo',
 			name: lang === 'ar' ? 'تحسين محركات البحث' : 'SEO',
 			desc: lang === 'ar' ? 'نضمن ظهورك في أول صفحة جوجل' : 'First page Google rankings',
-			groups: [
-				{
-					label: lang === 'ar' ? 'التأسيس' : 'Foundation',
-					items: [
-						{ slug: 'seo-audit', name: lang === 'ar' ? 'تدقيق SEO' : 'SEO Audit', popular: true },
-						{ slug: 'technical-seo', name: lang === 'ar' ? 'SEO التقني' : 'Technical SEO' }
-					]
-				},
-				{
-					label: lang === 'ar' ? 'المحتوى والروابط' : 'Content & Links',
-					items: [
-						{ slug: 'content-seo', name: lang === 'ar' ? 'SEO بالمحتوى' : 'Content SEO' },
-						{ slug: 'link-building', name: lang === 'ar' ? 'بناء الروابط' : 'Link Building' }
-					]
-				},
-				{
-					label: lang === 'ar' ? 'مخصص' : 'Specialized',
-					items: [
-						{ slug: 'local-seo', name: lang === 'ar' ? 'SEO المحلي' : 'Local SEO', popular: true },
-						{ slug: 'ecommerce-seo', name: lang === 'ar' ? 'SEO المتاجر' : 'E-commerce SEO' }
-					]
-				}
+			children: [
+				{ slug: 'seo-audit', name: lang === 'ar' ? 'تدقيق SEO' : 'SEO Audit', popular: true, topics: lang === 'ar' ? ['تدقيق تقني', 'تحليل المنافسين'] : ['Technical Audit', 'Competitor Analysis'] },
+				{ slug: 'technical-seo', name: lang === 'ar' ? 'SEO التقني' : 'Technical SEO', topics: lang === 'ar' ? ['Core Web Vitals', 'بيانات Schema', 'السرعة'] : ['Core Web Vitals', 'Schema', 'Site Speed'] },
+				{ slug: 'content-seo', name: lang === 'ar' ? 'SEO بالمحتوى' : 'Content SEO', topics: lang === 'ar' ? ['بحث الكلمات', 'استراتيجية المدونة'] : ['Keywords', 'Blog Strategy'] },
+				{ slug: 'link-building', name: lang === 'ar' ? 'بناء الروابط' : 'Link Building', topics: lang === 'ar' ? ['التدوين الضيف', 'العلاقات العامة'] : ['Guest Posting', 'Digital PR'] },
+				{ slug: 'local-seo', name: lang === 'ar' ? 'SEO المحلي' : 'Local SEO', popular: true, topics: lang === 'ar' ? ['Google Business Profile', 'الاقتباسات', 'صفحات المدن'] : ['GBP', 'Citations', 'City Pages'] },
+				{ slug: 'ecommerce-seo', name: lang === 'ar' ? 'SEO المتاجر' : 'E-commerce SEO', topics: lang === 'ar' ? ['تحسين المنتجات', 'بيانات المراجعات'] : ['Product Pages', 'Review Schema'] }
 			]
 		},
 		{
 			slug: 'digital-marketing',
 			name: lang === 'ar' ? 'التسويق الرقمي' : 'Digital Marketing',
 			desc: lang === 'ar' ? 'حملات إعلانية على سناب وتيك توك وجوجل' : 'Snapchat, TikTok & Google ad campaigns',
-			groups: [
-				{
-					label: lang === 'ar' ? 'إعلانات' : 'Ads',
-					items: [
-						{ slug: 'google-ads', name: lang === 'ar' ? 'إعلانات جوجل' : 'Google Ads', popular: true },
-						{ slug: 'snapchat-tiktok-ads', name: lang === 'ar' ? 'سناب وتيك توك' : 'Snapchat & TikTok' }
-					]
-				},
-				{
-					label: lang === 'ar' ? 'محتوى وتفاعل' : 'Engage',
-					items: [
-						{ slug: 'social-media-marketing', name: lang === 'ar' ? 'وسائل التواصل' : 'Social Media' },
-						{ slug: 'content-marketing', name: lang === 'ar' ? 'التسويق بالمحتوى' : 'Content Marketing' },
-						{ slug: 'email-marketing', name: lang === 'ar' ? 'البريد الإلكتروني' : 'Email Marketing' }
-					]
-				},
-				{
-					label: lang === 'ar' ? 'هوية' : 'Identity',
-					items: [
-						{ slug: 'brand-identity', name: lang === 'ar' ? 'الهوية البصرية' : 'Brand Identity' }
-					]
-				}
+			children: [
+				{ slug: 'google-ads', name: lang === 'ar' ? 'إعلانات جوجل' : 'Google Ads', popular: true, topics: lang === 'ar' ? ['إعلانات البحث', 'إعلانات العرض', 'إعلانات التسوق'] : ['Search Ads', 'Display Ads', 'Shopping Ads'] },
+				{ slug: 'snapchat-tiktok-ads', name: lang === 'ar' ? 'سناب وتيك توك' : 'Snapchat & TikTok', topics: lang === 'ar' ? ['إنتاج الفيديو', 'استهداف الجمهور'] : ['Video Production', 'Audience Targeting'] },
+				{ slug: 'social-media-marketing', name: lang === 'ar' ? 'وسائل التواصل' : 'Social Media', topics: lang === 'ar' ? ['إنستغرام', 'تويتر', 'سناب شات'] : ['Instagram', 'Twitter/X', 'Snapchat'] },
+				{ slug: 'content-marketing', name: lang === 'ar' ? 'التسويق بالمحتوى' : 'Content Marketing', topics: lang === 'ar' ? ['كتابة المدونات', 'فيديوهات', 'إنفوجرافيك'] : ['Blog Writing', 'Video', 'Infographics'] },
+				{ slug: 'email-marketing', name: lang === 'ar' ? 'البريد الإلكتروني' : 'Email Marketing', topics: lang === 'ar' ? ['تسلسلات الترحيب', 'الحملات الترويجية'] : ['Welcome Sequences', 'Promotions'] },
+				{ slug: 'brand-identity', name: lang === 'ar' ? 'الهوية البصرية' : 'Brand Identity', topics: lang === 'ar' ? ['تصميم الشعار', 'نظام الألوان', 'الخطوط'] : ['Logo Design', 'Color System', 'Typography'] }
 			]
 		}
 	]);
@@ -295,7 +255,7 @@
 				role="navigation"
 				aria-label={lang === 'ar' ? 'قائمة الخدمات' : 'Services menu'}
 			>
-				<div class="cinematic-glass w-[780px] max-w-[90vw] rounded-2xl border border-[var(--glass-border)] p-6 shadow-2xl backdrop-blur-xl">
+				<div class="cinematic-glass w-[860px] max-w-[95vw] rounded-2xl border border-[var(--glass-border)] p-6 shadow-2xl backdrop-blur-xl">
 					<div class="grid grid-cols-3 gap-6">
 						{#each serviceCategories as cat}
 							<div>
@@ -306,35 +266,63 @@
 									{cat.name}
 								</a>
 								<p class="mb-3 text-[10px] leading-tight text-[var(--color-text-muted)]/70">{cat.desc}</p>
-								{#each cat.groups as group}
-									<div class="mb-2">
-										<p class="mb-1 text-[9px] font-bold uppercase tracking-wider text-[var(--color-text-muted)]/50">{group.label}</p>
-										<ul class="space-y-0.5">
-											{#each group.items as sub}
-												<li>
-													<a
-														href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
-														class="flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-brand-blue"
-													>
-														{sub.name}
-														{#if sub.popular}
-															<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[8px] font-bold text-brand-blue">
-																{lang === 'ar' ? 'شائع' : 'Popular'}
-															</span>
+								<ul class="space-y-1.5">
+									{#each cat.children as sub}
+										<li>
+											<a
+												href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
+												class="group flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-brand-blue"
+											>
+												<ChevronRight class="h-3 w-3 shrink-0 text-[var(--color-text-muted)]/30 transition-transform group-hover:text-brand-blue {lang === 'ar' ? 'rotate-180' : ''}" />
+												{sub.name}
+												{#if sub.popular}
+													<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[8px] font-bold text-brand-blue">
+														{lang === 'ar' ? 'شائع' : 'Popular'}
+													</span>
+												{/if}
+											</a>
+											{#if sub.topics?.length}
+												<div class="ml-6 mt-0.5 flex flex-wrap gap-1">
+													{#each sub.topics as topic}
+														<span class="text-[9px] text-[var(--color-text-muted)]/50">{topic}</span>
+														{#if topic !== sub.topics[sub.topics.length - 1]}
+															<span class="text-[9px] text-[var(--color-text-muted)]/30">·</span>
 														{/if}
-													</a>
-												</li>
-											{/each}
-										</ul>
-									</div>
-								{/each}
+													{/each}
+												</div>
+											{/if}
+										</li>
+									{/each}
+								</ul>
 							</div>
 						{/each}
 					</div>
-					<!-- CTA Footer -->
+					<!-- Entry Hooks Footer -->
 					<div class="mt-4 border-t border-[var(--glass-border)] pt-4">
 						<div class="flex items-center justify-between">
-							<p class="text-xs text-[var(--color-text-muted)]">{lang === 'ar' ? '17 خدمة متخصصة في 3 فئات' : '17 specialized services in 3 categories'}</p>
+							<div class="flex items-center gap-2">
+								<a
+									href={link(`${base}/services/seo/seo-audit`)}
+									class="flex items-center gap-1.5 rounded-full bg-brand-orange/10 px-3 py-1.5 text-[10px] font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
+								>
+									<Search class="h-3 w-3" />
+									{lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
+								</a>
+								<a
+									href={link(`${base}/contact`)}
+									class="flex items-center gap-1.5 rounded-full bg-brand-blue/10 px-3 py-1.5 text-[10px] font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
+								>
+									<Calculator class="h-3 w-3" />
+									{lang === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}
+								</a>
+								<a
+									href={link(`${base}/contact`)}
+									class="flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1.5 text-[10px] font-bold text-green-600 transition-all hover:bg-green-500/20"
+								>
+									<MessageSquare class="h-3 w-3" />
+									{lang === 'ar' ? 'استشارة مجانية' : 'Free Consultation'}
+								</a>
+							</div>
 							<a
 								href={link(`${base}/services`)}
 								class="rounded-full bg-brand-blue px-4 py-1.5 text-xs font-bold text-white transition-all hover:bg-brand-blue/80 hover:shadow-lg"
