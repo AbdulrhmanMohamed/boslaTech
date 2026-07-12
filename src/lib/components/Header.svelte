@@ -2,8 +2,7 @@
 	import { theme } from '$lib/stores/theme.svelte';
 	import DrawerNavigation from './DrawerNavigation.svelte';
 	import ThemeToggle from './ThemeToggle.svelte';
-	import { goto, invalidate, invalidateAll } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { goto, invalidate, afterNavigate } from '$app/navigation';	import { page } from '$app/stores';
 	import { clearLanguageCache } from '$lib/utils/language';
 	import { base } from '$app/paths';
 	import { inView } from '$lib/actions/inView';
@@ -54,7 +53,28 @@
 	let navRefs = $state<Record<string, HTMLElement>>({});
 	let pillStyles = $state({ left: 0, width: 0, height: 0, opacity: 0 });
 	let serviceMenuOpen = $state(false);
-	let serviceMenuTimeout = $state<ReturnType<typeof setTimeout> | null>(null);
+	let serviceMenuRef = $state<HTMLElement | null>(null);
+
+	function toggleServiceMenu(e: Event) {
+		e.preventDefault();
+		serviceMenuOpen = !serviceMenuOpen;
+	}
+
+	afterNavigate(() => {
+		serviceMenuOpen = false;
+	});
+
+	$effect(() => {
+		if (!serviceMenuOpen) return;
+		function handleClickOutside(e: MouseEvent) {
+			const target = e.target as HTMLElement;
+			if (serviceMenuRef && !serviceMenuRef.contains(target)) {
+				serviceMenuOpen = false;
+			}
+		}
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => document.removeEventListener('mousedown', handleClickOutside);
+	});
 
 	function navLinkClass(path: string) {
 		const active = isActive(path);
@@ -83,12 +103,17 @@
 
 		if (activePath && refs[activePath]) {
 			const el = refs[activePath];
-			pillStyles = {
-				left: el.offsetLeft,
-				width: el.offsetWidth,
-				height: el.offsetHeight,
-				opacity: 1
-			};
+			const ul = el.closest('ul');
+			if (ul && el) {
+				const elRect = el.getBoundingClientRect();
+				const ulRect = ul.getBoundingClientRect();
+				pillStyles = {
+					left: elRect.left - ulRect.left,
+					width: elRect.width,
+					height: elRect.height,
+					opacity: 1
+				};
+			}
 		} else {
 			pillStyles = { left: 0, width: 0, height: 0, opacity: 0 };
 		}
@@ -143,15 +168,6 @@
 		}
 	]);
 
-	function handleServiceEnter() {
-		if (serviceMenuTimeout) clearTimeout(serviceMenuTimeout);
-		serviceMenuOpen = true;
-	}
-
-	function handleServiceLeave() {
-		serviceMenuTimeout = setTimeout(() => { serviceMenuOpen = false; }, 150);
-	}
-
 	const isActive = (path: string) => {
 		const currentPath = $page?.url?.pathname || '/';
 		if (path === `${base}/`) return currentPath === `${base}/`;
@@ -164,7 +180,7 @@
 <svelte:window bind:scrollY />
 
 <header
-	class="pointer-events-none fixed top-6 right-0 left-0 z-50 flex justify-center px-6 transition-all duration-500 {scrollY >
+	class="pointer-events-none fixed top-6 right-0 left-0 z-[100] flex justify-center px-6 transition-all duration-500 {scrollY >
 	20
 		? '-translate-y-2'
 		: ''}"
@@ -175,6 +191,7 @@
 			? 'bg-[var(--glass-bg)]/90 py-3 shadow-xl backdrop-blur-xl'
 			: 'py-4'}"
 		dir={lang === 'ar' ? 'rtl' : 'ltr'}
+		style="contain: layout style;"
 	>
 		<!-- Logo Section -->
 		<div class="flex items-center justify-start">
@@ -218,20 +235,109 @@
 
 				{#each navItems as item}
 					{#if item.hasDropdown}
-						<li
-							bind:this={navRefs[item.path]}
-							class="relative"
-							onmouseenter={handleServiceEnter}
-							onmouseleave={handleServiceLeave}
-						>
-							<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
-								<span class="relative z-10">{item.label}</span>
-								<ChevronDown class="relative z-10 h-3 w-3 transition-transform duration-300 {serviceMenuOpen ? 'rotate-180' : ''}" />
-								{#if !isActive(item.path)}
-									<div class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"></div>
-								{/if}
-							</a>
-						</li>
+						<div class="relative" bind:this={serviceMenuRef}>
+							<li
+								bind:this={navRefs[item.path]}
+							>
+								<a
+									use:inView
+									class={navLinkClass(item.path)}
+									href={link(item.path)}
+									onclick={toggleServiceMenu}
+								>
+									<span class="relative z-10">{item.label}</span>
+									<ChevronDown class="relative z-10 h-3 w-3 transition-transform duration-300 {serviceMenuOpen ? 'rotate-180' : ''}" />
+									{#if !isActive(item.path)}
+										<div class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"></div>
+									{/if}
+								</a>
+							</li>
+							{#if serviceMenuOpen}
+								<div
+									class="absolute left-1/2 top-full z-[60] -translate-x-1/2 pt-3"
+									role="navigation"
+									aria-label={lang === 'ar' ? 'قائمة الخدمات' : 'Services menu'}
+								>
+									<div class="mega-menu-panel w-[860px] max-w-[95vw] rounded-2xl p-6 shadow-2xl backdrop-blur-xl">
+										<div class="grid grid-cols-3 gap-6">
+											{#each serviceCategories as cat}
+												<div>
+													<a
+														href={link(`${base}/services/${cat.slug}`)}
+														class="mb-1 block text-sm font-black text-[var(--color-text-base)] transition-colors hover:text-brand-blue"
+													>
+														{cat.name}
+													</a>
+													<p class="mb-3 text-[10px] leading-tight text-[var(--color-text-muted)]/70">{cat.desc}</p>
+													<ul class="space-y-1.5">
+														{#each cat.children as sub}
+															<li>
+																<a
+																	href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
+																	class="group flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-brand-blue"
+																>
+																	<ChevronRight class="h-3 w-3 shrink-0 text-[var(--color-text-muted)]/30 transition-transform group-hover:text-brand-blue {lang === 'ar' ? 'rotate-180' : ''}" />
+																	{sub.name}
+																	{#if sub.popular}
+																		<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[8px] font-bold text-brand-blue">
+																			{lang === 'ar' ? 'شائع' : 'Popular'}
+																		</span>
+																	{/if}
+																</a>
+																{#if sub.topics?.length}
+																	<div class="ml-6 mt-0.5 flex flex-wrap gap-1">
+																		{#each sub.topics as topic}
+																			<span class="text-[9px] text-[var(--color-text-muted)]/50">{topic}</span>
+																			{#if topic !== sub.topics[sub.topics.length - 1]}
+																				<span class="text-[9px] text-[var(--color-text-muted)]/30">·</span>
+																			{/if}
+																		{/each}
+																	</div>
+																{/if}
+															</li>
+														{/each}
+													</ul>
+												</div>
+											{/each}
+										</div>
+										<!-- Entry Hooks Footer -->
+										<div class="mt-4 border-t border-[var(--glass-border)] pt-4">
+											<div class="flex items-center justify-between">
+												<div class="flex items-center gap-2">
+													<a
+														href={link(`${base}/services/seo/seo-audit`)}
+														class="flex items-center gap-1.5 rounded-full bg-brand-orange/10 px-3 py-1.5 text-[10px] font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
+													>
+														<Search class="h-3 w-3" />
+														{lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
+													</a>
+													<a
+														href={link(`${base}/contact`)}
+														class="flex items-center gap-1.5 rounded-full bg-brand-blue/10 px-3 py-1.5 text-[10px] font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
+													>
+														<Calculator class="h-3 w-3" />
+														{lang === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}
+													</a>
+													<a
+														href={link(`${base}/contact`)}
+														class="flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1.5 text-[10px] font-bold text-green-600 transition-all hover:bg-green-500/20"
+													>
+														<MessageSquare class="h-3 w-3" />
+														{lang === 'ar' ? 'استشارة مجانية' : 'Free Consultation'}
+													</a>
+												</div>
+												<a
+													href={link(`${base}/services`)}
+													class="rounded-full bg-brand-blue px-4 py-1.5 text-xs font-bold text-white transition-all hover:bg-brand-blue/80 hover:shadow-lg"
+												>
+													{lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services'}
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							{/if}
+						</div>
 					{:else}
 						<li bind:this={navRefs[item.path]}>
 							<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
@@ -245,95 +351,6 @@
 				{/each}
 			</ul>
 		</div>
-
-		<!-- Services Mega Menu Dropdown -->
-		{#if serviceMenuOpen}
-			<div
-				class="absolute left-1/2 top-full z-40 -translate-x-1/2 pt-3"
-				onmouseenter={handleServiceEnter}
-				onmouseleave={handleServiceLeave}
-				role="navigation"
-				aria-label={lang === 'ar' ? 'قائمة الخدمات' : 'Services menu'}
-			>
-				<div class="cinematic-glass w-[860px] max-w-[95vw] rounded-2xl border border-[var(--glass-border)] p-6 shadow-2xl backdrop-blur-xl">
-					<div class="grid grid-cols-3 gap-6">
-						{#each serviceCategories as cat}
-							<div>
-								<a
-									href={link(`${base}/services/${cat.slug}`)}
-									class="mb-1 block text-sm font-black text-[var(--color-text-base)] transition-colors hover:text-brand-blue"
-								>
-									{cat.name}
-								</a>
-								<p class="mb-3 text-[10px] leading-tight text-[var(--color-text-muted)]/70">{cat.desc}</p>
-								<ul class="space-y-1.5">
-									{#each cat.children as sub}
-										<li>
-											<a
-												href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
-												class="group flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-brand-blue"
-											>
-												<ChevronRight class="h-3 w-3 shrink-0 text-[var(--color-text-muted)]/30 transition-transform group-hover:text-brand-blue {lang === 'ar' ? 'rotate-180' : ''}" />
-												{sub.name}
-												{#if sub.popular}
-													<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[8px] font-bold text-brand-blue">
-														{lang === 'ar' ? 'شائع' : 'Popular'}
-													</span>
-												{/if}
-											</a>
-											{#if sub.topics?.length}
-												<div class="ml-6 mt-0.5 flex flex-wrap gap-1">
-													{#each sub.topics as topic}
-														<span class="text-[9px] text-[var(--color-text-muted)]/50">{topic}</span>
-														{#if topic !== sub.topics[sub.topics.length - 1]}
-															<span class="text-[9px] text-[var(--color-text-muted)]/30">·</span>
-														{/if}
-													{/each}
-												</div>
-											{/if}
-										</li>
-									{/each}
-								</ul>
-							</div>
-						{/each}
-					</div>
-					<!-- Entry Hooks Footer -->
-					<div class="mt-4 border-t border-[var(--glass-border)] pt-4">
-						<div class="flex items-center justify-between">
-							<div class="flex items-center gap-2">
-								<a
-									href={link(`${base}/services/seo/seo-audit`)}
-									class="flex items-center gap-1.5 rounded-full bg-brand-orange/10 px-3 py-1.5 text-[10px] font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
-								>
-									<Search class="h-3 w-3" />
-									{lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
-								</a>
-								<a
-									href={link(`${base}/contact`)}
-									class="flex items-center gap-1.5 rounded-full bg-brand-blue/10 px-3 py-1.5 text-[10px] font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
-								>
-									<Calculator class="h-3 w-3" />
-									{lang === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}
-								</a>
-								<a
-									href={link(`${base}/contact`)}
-									class="flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1.5 text-[10px] font-bold text-green-600 transition-all hover:bg-green-500/20"
-								>
-									<MessageSquare class="h-3 w-3" />
-									{lang === 'ar' ? 'استشارة مجانية' : 'Free Consultation'}
-								</a>
-							</div>
-							<a
-								href={link(`${base}/services`)}
-								class="rounded-full bg-brand-blue px-4 py-1.5 text-xs font-bold text-white transition-all hover:bg-brand-blue/80 hover:shadow-lg"
-							>
-								{lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services'}
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		{/if}
 
 		<!-- Right Section: Theme Toggle, Language Toggle & Mobile Menu -->
 		<div class="flex items-center justify-end gap-3">
@@ -377,4 +394,17 @@
 </header>
 
 <style>
+	:global(.mega-menu-panel) {
+		background: color-mix(in srgb, var(--color-background) 92%, transparent);
+		border: 1px solid var(--glass-border);
+		box-shadow:
+			inset 0 0 0 1px var(--glass-highlight),
+			0 25px 50px -12px rgba(0, 0, 0, 0.4);
+	}
+	:global([data-theme='light'] .mega-menu-panel) {
+		background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+		box-shadow:
+			inset 0 0 0 1px var(--glass-highlight),
+			0 20px 40px -10px rgba(11, 157, 217, 0.12), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
+	}
 </style>

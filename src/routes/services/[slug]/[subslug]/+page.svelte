@@ -6,11 +6,11 @@
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 
 	let { data } = $props();
-	const typed = data as any;
-	const service = typed?.service;
-	const category = typed?.category;
-	const lang = typed?.lang || 'ar';
-	const isAr = lang === 'ar';
+	const typed = $derived(data);
+	const service = $derived(typed?.service);
+	const category = $derived(typed?.category);
+	const lang = $derived(typed?.lang || 'ar');
+	const isAr = $derived(lang === 'ar');
 
 	const phoneNumber = '966576704683';
 

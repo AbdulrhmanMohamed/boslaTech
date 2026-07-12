@@ -15,11 +15,11 @@
 
 	let { data } = $props();
 	const currentTheme = $derived(theme.current);
-	const typedData = data as any;
-	const category = typedData?.category;
-	const lang = typedData?.lang || 'ar';
+	const typedData = $derived(data);
+	const category = $derived(typedData?.category);
+	const lang = $derived(typedData?.lang || 'ar');
 
-	const isAr = lang === 'ar';
+	const isAr = $derived(lang === 'ar');
 	const phoneNumber = '966576704683';
 
 	let openFaqIndex = $state<number | null>(null);

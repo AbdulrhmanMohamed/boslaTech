@@ -6,11 +6,11 @@
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 
 	let { data } = $props();
-	const typed = data as any;
-	const post = typed?.post;
-	const blogPage = typed?.blogPage;
-	const lang = typed?.lang || 'ar';
-	const isAr = lang === 'ar';
+	const typed = $derived(data);
+	const post = $derived(typed?.post);
+
+	const lang = $derived(typed?.lang || 'ar');
+	const isAr = $derived(lang === 'ar');
 </script>
 
 <svelte:head>
