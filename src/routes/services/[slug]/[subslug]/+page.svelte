@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { Check, ArrowLeft, Sparkles } from '@lucide/svelte';
+	import { Check, ArrowLeft, Sparkles, Tag } from '@lucide/svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
@@ -92,6 +92,22 @@
 										<Check class="h-4 w-4 text-brand-blue" />
 									</div>
 									<span class="text-base font-medium text-[var(--color-text-base)]">{feat}</span>
+								</div>
+							{/each}
+						</div>
+					</div>
+				{/if}
+
+				{#if service.topics?.length}
+					<div class="mt-16">
+						<h2 class="mb-10 text-center text-3xl font-black text-[var(--color-text-base)]">
+							{isAr ? 'مواضيع نغطيها أيضاً' : 'Topics We Also Cover'}
+						</h2>
+						<div class="flex flex-wrap justify-center gap-3">
+							{#each service.topics as topic}
+								<div class="flex items-center gap-2 rounded-full border border-[var(--glass-border)] bg-[var(--glass-highlight)] px-5 py-2.5">
+									<Tag class="h-3.5 w-3.5 text-brand-blue" />
+									<span class="text-sm font-medium text-[var(--color-text-muted)]">{topic.label}</span>
 								</div>
 							{/each}
 						</div>

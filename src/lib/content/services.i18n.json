@@ -52,6 +52,24 @@
               "Full Arabic & English bilingual support",
               "Free SSL certificate & advanced security",
               "1 month free technical support"
+            ],
+            "topics": [
+              {
+                "label": "Landing Page Design",
+                "slug": "custom-websites"
+              },
+              {
+                "label": "Multi-page Corporate Sites",
+                "slug": "custom-websites"
+              },
+              {
+                "label": "Portfolio Websites",
+                "slug": "custom-websites"
+              },
+              {
+                "label": "Single-page Applications",
+                "slug": "custom-websites"
+              }
             ]
           },
           {
@@ -66,6 +84,24 @@
               "Performance & speed optimization",
               "Secure with regular updates",
               "30-day post-launch support"
+            ],
+            "topics": [
+              {
+                "label": "WooCommerce Store Setup",
+                "slug": "wordpress-development"
+              },
+              {
+                "label": "Custom Theme Development",
+                "slug": "wordpress-development"
+              },
+              {
+                "label": "Plugin Integration",
+                "slug": "wordpress-development"
+              },
+              {
+                "label": "WordPress Migration",
+                "slug": "wordpress-development"
+              }
             ]
           },
           {
@@ -80,6 +116,24 @@
               "Complete e-commerce SEO optimization",
               "Mobile-responsive design",
               "Arabic-language admin dashboard"
+            ],
+            "topics": [
+              {
+                "label": "Shopify Store Setup",
+                "slug": "online-stores"
+              },
+              {
+                "label": "Salla Store Setup",
+                "slug": "online-stores"
+              },
+              {
+                "label": "Zid Store Setup",
+                "slug": "online-stores"
+              },
+              {
+                "label": "Custom E-commerce",
+                "slug": "online-stores"
+              }
             ]
           },
           {
@@ -94,6 +148,24 @@
               "Full mobile & tablet compatibility",
               "Security upgrade & hardening",
               "Team training on the new system"
+            ],
+            "topics": [
+              {
+                "label": "Platform Migration",
+                "slug": "website-redesign"
+              },
+              {
+                "label": "Performance Optimization",
+                "slug": "website-redesign"
+              },
+              {
+                "label": "Mobile-First Redesign",
+                "slug": "website-redesign"
+              },
+              {
+                "label": "UX Audit",
+                "slug": "website-redesign"
+              }
             ]
           },
           {
@@ -108,6 +180,24 @@
               "Weekly backups with instant restore",
               "24/7 uptime monitoring",
               "WhatsApp & email support"
+            ],
+            "topics": [
+              {
+                "label": "Security Updates",
+                "slug": "maintenance-and-support"
+              },
+              {
+                "label": "Content Updates",
+                "slug": "maintenance-and-support"
+              },
+              {
+                "label": "Uptime Monitoring",
+                "slug": "maintenance-and-support"
+              },
+              {
+                "label": "Backup Management",
+                "slug": "maintenance-and-support"
+              }
             ]
           }
         ]
@@ -131,6 +221,24 @@
               "Crawl & index issue fixes",
               "Robots.txt & sitemap optimization",
               "Detailed report with actionable recommendations"
+            ],
+            "topics": [
+              {
+                "label": "Core Web Vitals",
+                "slug": "technical-seo"
+              },
+              {
+                "label": "Site Speed Optimization",
+                "slug": "technical-seo"
+              },
+              {
+                "label": "Schema Markup",
+                "slug": "technical-seo"
+              },
+              {
+                "label": "Crawl & Index",
+                "slug": "technical-seo"
+              }
             ]
           },
           {
@@ -145,6 +253,24 @@
               "Google Maps visibility improvement",
               "Review management & optimization",
               "Monthly local ranking reports"
+            ],
+            "topics": [
+              {
+                "label": "Google Business Profile",
+                "slug": "local-seo"
+              },
+              {
+                "label": "Local Citations",
+                "slug": "local-seo"
+              },
+              {
+                "label": "City Pages",
+                "slug": "local-seo"
+              },
+              {
+                "label": "Map Pack Rankings",
+                "slug": "local-seo"
+              }
             ]
           },
           {
@@ -159,6 +285,24 @@
               "Blog content strategy & calendar",
               "Meta title & description optimization",
               "Competitor content analysis"
+            ],
+            "topics": [
+              {
+                "label": "Keyword Research",
+                "slug": "content-seo"
+              },
+              {
+                "label": "Blog Strategy",
+                "slug": "content-seo"
+              },
+              {
+                "label": "On-Page Optimization",
+                "slug": "content-seo"
+              },
+              {
+                "label": "Content Audits",
+                "slug": "content-seo"
+              }
             ]
           },
           {
@@ -173,6 +317,24 @@
               "Competitor backlink analysis",
               "Quality links only — no spam",
               "Monthly link progress reports"
+            ],
+            "topics": [
+              {
+                "label": "Guest Posting",
+                "slug": "link-building"
+              },
+              {
+                "label": "Digital PR",
+                "slug": "link-building"
+              },
+              {
+                "label": "Niche Edits",
+                "slug": "link-building"
+              },
+              {
+                "label": "Competitor Backlinks",
+                "slug": "link-building"
+              }
             ]
           },
           {
@@ -187,6 +349,24 @@
               "Backlink profile evaluation",
               "Competitor benchmarking",
               "Prioritized action roadmap"
+            ],
+            "topics": [
+              {
+                "label": "Technical Audit",
+                "slug": "seo-audit"
+              },
+              {
+                "label": "On-Page Audit",
+                "slug": "seo-audit"
+              },
+              {
+                "label": "Content Audit",
+                "slug": "seo-audit"
+              },
+              {
+                "label": "Competitor Analysis",
+                "slug": "seo-audit"
+              }
             ]
           },
           {
@@ -201,6 +381,24 @@
               "Mobile shopping experience optimization",
               "E-commerce backlink building",
               "Google Shopping & search performance analysis"
+            ],
+            "topics": [
+              {
+                "label": "Product Page SEO",
+                "slug": "ecommerce-seo"
+              },
+              {
+                "label": "Category Optimization",
+                "slug": "ecommerce-seo"
+              },
+              {
+                "label": "Shopping Feed Setup",
+                "slug": "ecommerce-seo"
+              },
+              {
+                "label": "Review Schema",
+                "slug": "ecommerce-seo"
+              }
             ]
           }
         ]
@@ -224,6 +422,24 @@
               "Audience engagement & response",
               "Monthly performance reports",
               "Targeted social media ads"
+            ],
+            "topics": [
+              {
+                "label": "Instagram Management",
+                "slug": "social-media-marketing"
+              },
+              {
+                "label": "Twitter/X Strategy",
+                "slug": "social-media-marketing"
+              },
+              {
+                "label": "Snapchat Content",
+                "slug": "social-media-marketing"
+              },
+              {
+                "label": "LinkedIn Marketing",
+                "slug": "social-media-marketing"
+              }
             ]
           },
           {
@@ -238,6 +454,24 @@
               "Precise geographic targeting (city, district)",
               "A/B testing for ads & landing pages",
               "Weekly performance reports & recommendations"
+            ],
+            "topics": [
+              {
+                "label": "Search Ads",
+                "slug": "google-ads"
+              },
+              {
+                "label": "Display Ads",
+                "slug": "google-ads"
+              },
+              {
+                "label": "Shopping Ads",
+                "slug": "google-ads"
+              },
+              {
+                "label": "Remarketing",
+                "slug": "google-ads"
+              }
             ]
           },
           {
@@ -252,6 +486,24 @@
               "Multi-variant A/B testing",
               "Retargeting campaign setup",
               "Detailed performance reporting"
+            ],
+            "topics": [
+              {
+                "label": "Snapchat Ads Management",
+                "slug": "snapchat-tiktok-ads"
+              },
+              {
+                "label": "TikTok Ads Management",
+                "slug": "snapchat-tiktok-ads"
+              },
+              {
+                "label": "Video Production",
+                "slug": "snapchat-tiktok-ads"
+              },
+              {
+                "label": "Audience Targeting",
+                "slug": "snapchat-tiktok-ads"
+              }
             ]
           },
           {
@@ -266,6 +518,24 @@
               "Infographic & graphic design",
               "Multi-channel content distribution",
               "Content performance tracking & optimization"
+            ],
+            "topics": [
+              {
+                "label": "Blog Writing",
+                "slug": "content-marketing"
+              },
+              {
+                "label": "Video Content",
+                "slug": "content-marketing"
+              },
+              {
+                "label": "Infographics",
+                "slug": "content-marketing"
+              },
+              {
+                "label": "Whitepapers",
+                "slug": "content-marketing"
+              }
             ]
           },
           {
@@ -280,6 +550,24 @@
               "A/B subject line testing",
               "Open, click & conversion tracking",
               "Saudi email regulation compliance"
+            ],
+            "topics": [
+              {
+                "label": "Welcome Sequences",
+                "slug": "email-marketing"
+              },
+              {
+                "label": "Promotional Campaigns",
+                "slug": "email-marketing"
+              },
+              {
+                "label": "Cart Recovery",
+                "slug": "email-marketing"
+              },
+              {
+                "label": "Newsletter Design",
+                "slug": "email-marketing"
+              }
             ]
           },
           {
@@ -294,6 +582,24 @@
               "Business card & stationery design",
               "Social media profile designs",
               "Marketing material templates (brochures, proposals)"
+            ],
+            "topics": [
+              {
+                "label": "Logo Design",
+                "slug": "brand-identity"
+              },
+              {
+                "label": "Color System",
+                "slug": "brand-identity"
+              },
+              {
+                "label": "Typography",
+                "slug": "brand-identity"
+              },
+              {
+                "label": "Brand Guidelines",
+                "slug": "brand-identity"
+              }
             ]
           }
         ]
@@ -378,6 +684,24 @@
               "دعم اللغتين العربية والإنجليزية",
               "شهادة SSL مجانية وحماية متقدمة",
               "شهر دعم فني مجاني بعد الإطلاق"
+            ],
+            "topics": [
+              {
+                "label": "تصميم صفحات الهبوط",
+                "slug": "custom-websites"
+              },
+              {
+                "label": "مواقع شركات متعددة الصفحات",
+                "slug": "custom-websites"
+              },
+              {
+                "label": "مواقع معرض أعمال",
+                "slug": "custom-websites"
+              },
+              {
+                "label": "تطبيقات صفحة واحدة",
+                "slug": "custom-websites"
+              }
             ]
           },
           {
@@ -392,6 +716,24 @@
               "تحسين أداء وسرعة الموقع",
               "آمن ومحدث باستمرار",
               "دعم فني لمدة 30 يوماً"
+            ],
+            "topics": [
+              {
+                "label": "إعداد متجر WooCommerce",
+                "slug": "wordpress-development"
+              },
+              {
+                "label": "تطوير قالب مخصص",
+                "slug": "wordpress-development"
+              },
+              {
+                "label": "تكامل الإضافات",
+                "slug": "wordpress-development"
+              },
+              {
+                "label": "ترحيل ووردبريس",
+                "slug": "wordpress-development"
+              }
             ]
           },
           {
@@ -406,6 +748,24 @@
               "تحسين متجرك لمحركات البحث (SEO)",
               "تصميم متجاوب مع الجوال",
               "لوحة تحكم باللغة العربية"
+            ],
+            "topics": [
+              {
+                "label": "إعداد متجر شوبيفاي",
+                "slug": "online-stores"
+              },
+              {
+                "label": "إعداد متجر سلة",
+                "slug": "online-stores"
+              },
+              {
+                "label": "إعداد متجر زد",
+                "slug": "online-stores"
+              },
+              {
+                "label": "تجارة إلكترونية مخصصة",
+                "slug": "online-stores"
+              }
             ]
           },
           {
@@ -420,6 +780,24 @@
               "توافق كامل مع الجوال والأجهزة اللوحية",
               "تحديث نظام الأمان والحماية",
               "تدريب فريقك على إدارة الموقع الجديد"
+            ],
+            "topics": [
+              {
+                "label": "ترحيل المنصة",
+                "slug": "website-redesign"
+              },
+              {
+                "label": "تحسين الأداء",
+                "slug": "website-redesign"
+              },
+              {
+                "label": "إعادة تصميم للجوال أولاً",
+                "slug": "website-redesign"
+              },
+              {
+                "label": "تدقيق تجربة المستخدم",
+                "slug": "website-redesign"
+              }
             ]
           },
           {
@@ -434,6 +812,24 @@
               "نسخ احتياطية أسبوعية مع استعادة فورية",
               "مراقبة وقت التشغيل 24/7",
               "دعم فني عبر واتساب والبريد الإلكتروني"
+            ],
+            "topics": [
+              {
+                "label": "تحديثات الأمان",
+                "slug": "maintenance-and-support"
+              },
+              {
+                "label": "تحديثات المحتوى",
+                "slug": "maintenance-and-support"
+              },
+              {
+                "label": "مراقبةوقت التشغيل",
+                "slug": "maintenance-and-support"
+              },
+              {
+                "label": "إدارة النسخ الاحتياطي",
+                "slug": "maintenance-and-support"
+              }
             ]
           }
         ]
@@ -457,6 +853,24 @@
               "إصلاح مشاكل الفهرسة والكراولينج",
               "تحسين ملف robots.txt وخريطة الموقع",
               "تقرير مفصل مع توصيات قابلة للتنفيذ"
+            ],
+            "topics": [
+              {
+                "label": "Core Web Vitals",
+                "slug": "technical-seo"
+              },
+              {
+                "label": "تحسين سرعة الموقع",
+                "slug": "technical-seo"
+              },
+              {
+                "label": "بيانات Schema",
+                "slug": "technical-seo"
+              },
+              {
+                "label": "الفهرسة والزحف",
+                "slug": "technical-seo"
+              }
             ]
           },
           {
@@ -471,6 +885,24 @@
               "تحسين الظهور في Google Maps",
               "إدارة تقييمات العملاء",
               "تقرير شهري لترتيبك في البحث المحلي"
+            ],
+            "topics": [
+              {
+                "label": "Google Business Profile",
+                "slug": "local-seo"
+              },
+              {
+                "label": "الاقتباسات المحلية",
+                "slug": "local-seo"
+              },
+              {
+                "label": "صفحات المدن",
+                "slug": "local-seo"
+              },
+              {
+                "label": "ترتيب قائمة الخرائط",
+                "slug": "local-seo"
+              }
             ]
           },
           {
@@ -485,6 +917,24 @@
               "استراتيجية تدوين داخلي (Blog)",
               "تحسين العناوين والوصف Meta",
               "تحليل محتوى المنافسين"
+            ],
+            "topics": [
+              {
+                "label": "بحث الكلمات الرئيسية",
+                "slug": "content-seo"
+              },
+              {
+                "label": "استراتيجية المدونة",
+                "slug": "content-seo"
+              },
+              {
+                "label": "تحسين داخل الصفحة",
+                "slug": "content-seo"
+              },
+              {
+                "label": "تدقيق المحتوى",
+                "slug": "content-seo"
+              }
             ]
           },
           {
@@ -499,6 +949,24 @@
               "تحليل روابط المنافسين",
               "روابط عالية الجودة فقط — لا سبام",
               "تقرير شهري لتقدم الروابط"
+            ],
+            "topics": [
+              {
+                "label": "التدوين الضيف",
+                "slug": "link-building"
+              },
+              {
+                "label": "العلاقات العامة الرقمية",
+                "slug": "link-building"
+              },
+              {
+                "label": "التعديلات الضيقة",
+                "slug": "link-building"
+              },
+              {
+                "label": "روابط المنافسين",
+                "slug": "link-building"
+              }
             ]
           },
           {
@@ -513,6 +981,24 @@
               "تقييم ملف الروابط الخلفية",
               "مقارنة مع المنافسين",
               "خارطة طريق ذات أولويات محددة"
+            ],
+            "topics": [
+              {
+                "label": "تدقيق تقني",
+                "slug": "seo-audit"
+              },
+              {
+                "label": "تدقيق داخل الصفحة",
+                "slug": "seo-audit"
+              },
+              {
+                "label": "تدقيق المحتوى",
+                "slug": "seo-audit"
+              },
+              {
+                "label": "تحليل المنافسين",
+                "slug": "seo-audit"
+              }
             ]
           },
           {
@@ -527,6 +1013,24 @@
               "تحسين تجربة التسوق في الجوال",
               "بناء روابط خلفية للمتجر",
               "تحليل أداء المتجر في جوجل"
+            ],
+            "topics": [
+              {
+                "label": "تحسين صفحة المنتج",
+                "slug": "ecommerce-seo"
+              },
+              {
+                "label": "تحسين الأقسام",
+                "slug": "ecommerce-seo"
+              },
+              {
+                "label": "إعداد feed التسوق",
+                "slug": "ecommerce-seo"
+              },
+              {
+                "label": "بيانات المراجعات",
+                "slug": "ecommerce-seo"
+              }
             ]
           }
         ]
@@ -550,6 +1054,24 @@
               "تفاعل مع المتابعين والرد على الاستفسارات",
               "تقارير أداء شهرية مفصلة",
               "إعلانات مستهدفة على المنصات"
+            ],
+            "topics": [
+              {
+                "label": "إدارة إنستغرام",
+                "slug": "social-media-marketing"
+              },
+              {
+                "label": "استراتيجية تويتر",
+                "slug": "social-media-marketing"
+              },
+              {
+                "label": "محتوى سناب شات",
+                "slug": "social-media-marketing"
+              },
+              {
+                "label": "تسويق لينكدإن",
+                "slug": "social-media-marketing"
+              }
             ]
           },
           {
@@ -564,6 +1086,24 @@
               "استهداف جغرافي دقيق (مدينة، حي)",
               "اختبار A/B للإعلانات والصفحات",
               "تقارير أداء وتوصيات أسبوعية"
+            ],
+            "topics": [
+              {
+                "label": "إعلانات البحث",
+                "slug": "google-ads"
+              },
+              {
+                "label": "إعلانات العرض",
+                "slug": "google-ads"
+              },
+              {
+                "label": "إعلانات التسوق",
+                "slug": "google-ads"
+              },
+              {
+                "label": "إعادة الاستهداف",
+                "slug": "google-ads"
+              }
             ]
           },
           {
@@ -578,6 +1118,24 @@
               "اختبار إعلانات متعدد (A/B)",
               "حملات إعادة استهداف",
               "تقارير أداء مفصلة"
+            ],
+            "topics": [
+              {
+                "label": "إدارة إعلانات سناب شات",
+                "slug": "snapchat-tiktok-ads"
+              },
+              {
+                "label": "إدارة إعلانات تيك توك",
+                "slug": "snapchat-tiktok-ads"
+              },
+              {
+                "label": "إنتاج الفيديو",
+                "slug": "snapchat-tiktok-ads"
+              },
+              {
+                "label": "استهداف الجمهور",
+                "slug": "snapchat-tiktok-ads"
+              }
             ]
           },
           {
@@ -592,6 +1150,24 @@
               "تصاميم إنفوغرافيك وجرافيك",
               "توزيع المحتوى على القنوات المناسبة",
               "قياس أداء المحتوى وتحسينه"
+            ],
+            "topics": [
+              {
+                "label": "كتابة المدونات",
+                "slug": "content-marketing"
+              },
+              {
+                "label": "محتوى فيديو",
+                "slug": "content-marketing"
+              },
+              {
+                "label": "إنفوجرافيك",
+                "slug": "content-marketing"
+              },
+              {
+                "label": "أوراق بيضاء",
+                "slug": "content-marketing"
+              }
             ]
           },
           {
@@ -606,6 +1182,24 @@
               "اختبار A/B لعناوين البريد",
               "تتبع الفتح والنقر والتحويل",
               "امتثال للوائح البريد الإلكتروني السعودية"
+            ],
+            "topics": [
+              {
+                "label": "تسلسلات الترحيب",
+                "slug": "email-marketing"
+              },
+              {
+                "label": "حملات ترويجية",
+                "slug": "email-marketing"
+              },
+              {
+                "label": "استرداد السلة المتروكة",
+                "slug": "email-marketing"
+              },
+              {
+                "label": "تصميم النشرة الإخبارية",
+                "slug": "email-marketing"
+              }
             ]
           },
           {
@@ -620,6 +1214,24 @@
               "تصميم بطاقات العمل والقرطاسية",
               "تصاميم حسابات التواصل الاجتماعي",
               "قوالب المواد التسويقية (عروض، بروشورات)"
+            ],
+            "topics": [
+              {
+                "label": "تصميم الشعار",
+                "slug": "brand-identity"
+              },
+              {
+                "label": "نظام الألوان",
+                "slug": "brand-identity"
+              },
+              {
+                "label": "الخطوط",
+                "slug": "brand-identity"
+              },
+              {
+                "label": "إرشادات العلامة التجارية",
+                "slug": "brand-identity"
+              }
             ]
           }
         ]
