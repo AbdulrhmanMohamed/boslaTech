@@ -24,48 +24,48 @@
 
 	const content = $derived(
 		data?.home?.socialProof || {
-			badge: data?.lang === 'ar' ? 'تأثيرنا الرقمي' : 'Our Digital Impact',
+			badge: data?.lang === 'ar' ? 'خدماتنا' : 'Our Coverage',
 			title:
 				data?.lang === 'ar'
-					? 'أرقام تعكس التزام بوصلة بالتميز'
-					: "Numbers that Reflect Bosla's Commitment to Excellence",
+					? 'ماذا نقدم للشركات السعودية'
+					: 'What We Offer Saudi Businesses',
 			description:
 				data?.lang === 'ar'
-					? 'نحن لا نصمم مواقع فقط، بل نبني أدوات نمو حقيقية تساعد الشركات على التفوق في السوق الرقمي'
-					: "We don't just design websites; we build real growth tools that help companies excel in the digital market",
+					? 'نبني حلولاً رقمية متكاملة للشركات في جميع أنحاء المملكة'
+					: 'We build complete digital solutions for businesses across the Kingdom',
 			stats: [
 				{
 					icon: 'users',
-					value: 500,
-					suffix: '+',
-					label: data?.lang === 'ar' ? 'عميل راضٍ' : 'Satisfied Clients',
+					value: 17,
+					suffix: '',
+					label: data?.lang === 'ar' ? 'خدمة رقمية' : 'Digital Services',
 					description:
 						data?.lang === 'ar'
-							? 'شركات وأفراد يثقون بخدماتنا'
-							: 'Companies and individuals who trust us'
+							? 'تشمل تطوير المواقع والسيو والتسويق'
+							: 'Across web development, SEO, and marketing'
 				},
 				{
 					icon: 'trending-up',
-					value: 250,
-					suffix: '%',
-					label: data?.lang === 'ar' ? 'متوسط زيادة المبيعات' : 'Average Sales Growth',
-					description: data?.lang === 'ar' ? 'للعملاء خلال 6 أشهر' : 'For clients within 6 months'
+					value: 6,
+					suffix: '',
+					label: data?.lang === 'ar' ? 'مدن سعودية' : 'Saudi Cities',
+					description: data?.lang === 'ar' ? 'نخدمها بخدمات محلية مخصصة' : 'We serve with dedicated local services'
 				},
 				{
 					icon: 'award',
-					value: 98,
-					suffix: '%',
-					label: data?.lang === 'ar' ? 'معدل الرضا' : 'Satisfaction Rate',
+					value: 3,
+					suffix: '',
+					label: data?.lang === 'ar' ? 'منصات متاجر' : 'E-commerce Platforms',
 					description:
-						data?.lang === 'ar' ? 'من عملائنا يوصون بخدماتنا' : 'Of our clients recommend us'
+						data?.lang === 'ar' ? 'شوبيفاي، سلة، زد — خبرة معتمدة' : 'Shopify, Salla, Zid — certified expertise'
 				},
 				{
 					icon: 'star',
-					value: 4.9,
-					suffix: '/5',
-					label: data?.lang === 'ar' ? 'تقييم العملاء' : 'Client Rating',
+					value: 2016,
+					suffix: '',
+					label: data?.lang === 'ar' ? 'سجل تجاري' : 'Est. 2016',
 					description:
-						data?.lang === 'ar' ? 'على جميع منصات التقييم' : 'Across all rating platforms'
+						data?.lang === 'ar' ? 'مؤسسة حافة النجوم — سجل رقم 7050568158' : 'Hafat Alnjom — CR 7050568158'
 				}
 			]
 		}

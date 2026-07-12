@@ -124,6 +124,7 @@
 		{ path: `${base}/about`, label: site?.nav?.about || (lang === 'ar' ? 'من نحن' : 'About') },
 		{ path: `${base}/services`, label: site?.nav?.services || (lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
 		{ path: `${base}/blog`, label: site?.nav?.blog || (lang === 'ar' ? 'المدونة' : 'Blog') },
+		{ path: `${base}/comparisons/shopify-vs-salla-vs-zid`, label: lang === 'ar' ? 'مقارنات' : 'Comparisons' },
 		{ path: `${base}/contact`, label: site?.nav?.contact || (lang === 'ar' ? 'تواصل معنا' : 'Contact') }
 	]);
 
@@ -132,6 +133,7 @@
 			slug: 'web-development',
 			name: lang === 'ar' ? 'تطوير المواقع' : 'Web Development',
 			desc: lang === 'ar' ? 'مواقع متوافقة مع SEO وبوابات دفع سعودية' : 'SEO-ready sites with Saudi payment gateways',
+			guide: `${base}/guides/web-development`,
 			children: [
 				{ slug: 'custom-websites', name: lang === 'ar' ? 'تصميم مواقع شركات' : 'Custom Websites', popular: true, topics: lang === 'ar' ? ['صفحات هبوط', 'مواقع شركات', 'مواقع معرض أعمال'] : ['Landing Pages', 'Corporate Sites', 'Portfolio Sites'] },
 				{ slug: 'wordpress-development', name: lang === 'ar' ? 'تطوير ووردبريس' : 'WordPress', topics: lang === 'ar' ? ['WooCommerce', 'قوالب مخصصة', 'إضافات'] : ['WooCommerce', 'Custom Themes', 'Plugins'] },
@@ -144,6 +146,7 @@
 			slug: 'seo',
 			name: lang === 'ar' ? 'تحسين محركات البحث' : 'SEO',
 			desc: lang === 'ar' ? 'نضمن ظهورك في أول صفحة جوجل' : 'First page Google rankings',
+			guide: `${base}/guides/seo`,
 			children: [
 				{ slug: 'seo-audit', name: lang === 'ar' ? 'تدقيق SEO' : 'SEO Audit', popular: true, topics: lang === 'ar' ? ['تدقيق تقني', 'تحليل المنافسين'] : ['Technical Audit', 'Competitor Analysis'] },
 				{ slug: 'technical-seo', name: lang === 'ar' ? 'SEO التقني' : 'Technical SEO', topics: lang === 'ar' ? ['Core Web Vitals', 'بيانات Schema', 'السرعة'] : ['Core Web Vitals', 'Schema', 'Site Speed'] },
@@ -157,6 +160,7 @@
 			slug: 'digital-marketing',
 			name: lang === 'ar' ? 'التسويق الرقمي' : 'Digital Marketing',
 			desc: lang === 'ar' ? 'حملات إعلانية على سناب وتيك توك وجوجل' : 'Snapchat, TikTok & Google ad campaigns',
+			guide: `${base}/guides/digital-marketing`,
 			children: [
 				{ slug: 'google-ads', name: lang === 'ar' ? 'إعلانات جوجل' : 'Google Ads', popular: true, topics: lang === 'ar' ? ['إعلانات البحث', 'إعلانات العرض', 'إعلانات التسوق'] : ['Search Ads', 'Display Ads', 'Shopping Ads'] },
 				{ slug: 'snapchat-tiktok-ads', name: lang === 'ar' ? 'سناب وتيك توك' : 'Snapchat & TikTok', topics: lang === 'ar' ? ['إنتاج الفيديو', 'استهداف الجمهور'] : ['Video Production', 'Audience Targeting'] },
@@ -262,12 +266,22 @@
 										<div class="grid grid-cols-3 gap-6">
 											{#each serviceCategories as cat}
 												<div>
-													<a
-														href={link(`${base}/services/${cat.slug}`)}
-														class="mb-1 block text-sm font-black text-[var(--color-text-base)] transition-colors hover:text-brand-blue"
-													>
-														{cat.name}
-													</a>
+													<div class="mb-1 flex items-center gap-2">
+														<a
+															href={link(`${base}/services/${cat.slug}`)}
+															class="text-sm font-black text-[var(--color-text-base)] transition-colors hover:text-brand-blue"
+														>
+															{cat.name}
+														</a>
+														{#if cat.guide}
+															<a
+																href={link(cat.guide)}
+																class="rounded-full bg-brand-blue/10 px-2 py-0.5 text-[9px] font-bold text-brand-blue transition-colors hover:bg-brand-blue/20"
+															>
+																{lang === 'ar' ? 'الدليل' : 'Guide'}
+															</a>
+														{/if}
+													</div>
 													<p class="mb-3 text-[10px] leading-tight text-[var(--color-text-muted)]/70">{cat.desc}</p>
 													<ul class="space-y-1.5">
 														{#each cat.children as sub}
@@ -305,26 +319,26 @@
 											<div class="flex items-center justify-between">
 												<div class="flex items-center gap-2">
 													<a
-														href={link(`${base}/services/seo/seo-audit`)}
-														class="flex items-center gap-1.5 rounded-full bg-brand-orange/10 px-3 py-1.5 text-[10px] font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
-													>
-														<Search class="h-3 w-3" />
-														{lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
+													href={link(`${base}/free-seo-audit`)}
+													class="flex items-center gap-1.5 rounded-full bg-brand-orange/10 px-3 py-1.5 text-[10px] font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
+												>
+													<Search class="h-3 w-3" />
+													{lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
+												</a>
+												<a
+													href={link(`${base}/cost-calculator`)}
+													class="flex items-center gap-1.5 rounded-full bg-brand-blue/10 px-3 py-1.5 text-[10px] font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
+												>
+													<Calculator class="h-3 w-3" />
+													{lang === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}
 													</a>
-													<a
-														href={link(`${base}/contact`)}
-														class="flex items-center gap-1.5 rounded-full bg-brand-blue/10 px-3 py-1.5 text-[10px] font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
-													>
-														<Calculator class="h-3 w-3" />
-														{lang === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}
-													</a>
-													<a
-														href={link(`${base}/contact`)}
-														class="flex items-center gap-1.5 rounded-full bg-green-500/10 px-3 py-1.5 text-[10px] font-bold text-green-600 transition-all hover:bg-green-500/20"
-													>
-														<MessageSquare class="h-3 w-3" />
-														{lang === 'ar' ? 'استشارة مجانية' : 'Free Consultation'}
-													</a>
+												<a
+													href={link(`${base}/case-studies/salla-store-riyadh`)}
+													class="flex items-center gap-1.5 rounded-full bg-purple-500/10 px-3 py-1.5 text-[10px] font-bold text-purple-600 transition-all hover:bg-purple-500/20"
+												>
+													<MessageSquare class="h-3 w-3" />
+													{lang === 'ar' ? 'دراسات حالة' : 'Case Studies'}
+												</a>
 												</div>
 												<a
 													href={link(`${base}/services`)}

@@ -48,7 +48,7 @@ export const load: LayoutLoad = async ({ url, depends }) => {
 			about: siteData.nav.about,
 			services: lang === 'ar' ? 'خدماتنا' : 'Services',
 			blog: lang === 'ar' ? 'المدونة' : 'Blog',
-			portfolio: siteData.nav.portfolio || (lang === 'ar' ? 'أعمالنا' : 'Portfolio'),
+			portfolio: '',
 			contact: siteData.nav.contact
 		},
 		langLabel: {

@@ -41,6 +41,7 @@
 		{ path: `${base}/`, label: props.site?.nav?.home || (props.lang === 'ar' ? 'الرئيسية' : 'Home') },
 		{ path: `${base}/about`, label: props.site?.nav?.about || (props.lang === 'ar' ? 'من نحن' : 'About') },
 		{ path: `${base}/services`, label: props.site?.nav?.services || (props.lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
+		{ path: `${base}/comparisons/shopify-vs-salla-vs-zid`, label: props.lang === 'ar' ? 'مقارنات' : 'Comparisons' },
 		{ path: `${base}/contact`, label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact') }
 	]);
 
@@ -49,6 +50,7 @@
 			slug: 'web-development',
 			name: props.lang === 'ar' ? 'تطوير المواقع' : 'Web Development',
 			desc: props.lang === 'ar' ? 'مواقع متوافقة مع SEO وبوابات دفع سعودية' : 'SEO-ready sites with Saudi payment gateways',
+			guide: `${base}/guides/web-development`,
 			children: [
 				{ slug: 'custom-websites', name: props.lang === 'ar' ? 'تصميم مواقع شركات' : 'Custom Websites', popular: true, topics: props.lang === 'ar' ? ['صفحات هبوط', 'مواقع شركات', 'مواقع معرض أعمال'] : ['Landing Pages', 'Corporate Sites', 'Portfolio Sites'] },
 				{ slug: 'wordpress-development', name: props.lang === 'ar' ? 'تطوير ووردبريس' : 'WordPress', topics: props.lang === 'ar' ? ['WooCommerce', 'قوالب مخصصة', 'إضافات'] : ['WooCommerce', 'Custom Themes', 'Plugins'] },
@@ -61,6 +63,7 @@
 			slug: 'seo',
 			name: props.lang === 'ar' ? 'تحسين محركات البحث' : 'SEO',
 			desc: props.lang === 'ar' ? 'نضمن ظهورك في أول صفحة جوجل' : 'First page Google rankings',
+			guide: `${base}/guides/seo`,
 			children: [
 				{ slug: 'seo-audit', name: props.lang === 'ar' ? 'تدقيق SEO' : 'SEO Audit', popular: true, topics: props.lang === 'ar' ? ['تدقيق تقني', 'تحليل المنافسين'] : ['Technical Audit', 'Competitor Analysis'] },
 				{ slug: 'technical-seo', name: props.lang === 'ar' ? 'SEO التقني' : 'Technical SEO', topics: props.lang === 'ar' ? ['Core Web Vitals', 'بيانات Schema', 'السرعة'] : ['Core Web Vitals', 'Schema', 'Site Speed'] },
@@ -74,6 +77,7 @@
 			slug: 'digital-marketing',
 			name: props.lang === 'ar' ? 'التسويق الرقمي' : 'Digital Marketing',
 			desc: props.lang === 'ar' ? 'حملات إعلانية على سناب وتيك توك وجوجل' : 'Snapchat, TikTok & Google ad campaigns',
+			guide: `${base}/guides/digital-marketing`,
 			children: [
 				{ slug: 'google-ads', name: props.lang === 'ar' ? 'إعلانات جوجل' : 'Google Ads', popular: true, topics: props.lang === 'ar' ? ['إعلانات البحث', 'إعلانات العرض', 'إعلانات التسوق'] : ['Search Ads', 'Display Ads', 'Shopping Ads'] },
 				{ slug: 'snapchat-tiktok-ads', name: props.lang === 'ar' ? 'سناب وتيك توك' : 'Snapchat & TikTok', topics: props.lang === 'ar' ? ['إنتاج الفيديو', 'استهداف الجمهور'] : ['Video Production', 'Audience Targeting'] },
@@ -205,13 +209,24 @@
 								<div class="mt-2 space-y-3 overflow-hidden {props.lang === 'ar' ? 'mr-4' : 'ml-4'}">
 									{#each serviceCategories as cat}
 										<div>
-											<a
-												href={link(`${base}/services/${cat.slug}`)}
-												onclick={handleNavClick}
-												class="mb-0.5 block text-xs font-black tracking-wider text-brand-blue uppercase"
-											>
-												{cat.name}
-											</a>
+											<div class="mb-0.5 flex items-center gap-2">
+												<a
+													href={link(`${base}/services/${cat.slug}`)}
+													onclick={handleNavClick}
+													class="text-xs font-black tracking-wider text-brand-blue uppercase"
+												>
+													{cat.name}
+												</a>
+												{#if cat.guide}
+													<a
+														href={link(cat.guide)}
+														onclick={handleNavClick}
+														class="rounded-full bg-brand-blue/10 px-2 py-0.5 text-[9px] font-bold text-brand-blue"
+													>
+														{props.lang === 'ar' ? 'الدليل' : 'Guide'}
+													</a>
+												{/if}
+											</div>
 											<p class="mb-1 text-[10px] text-[var(--color-text-muted)]/60">{cat.desc}</p>
 											<div class="space-y-0.5">
 												{#each cat.children as sub}
@@ -247,7 +262,7 @@
 									<!-- Entry Hooks -->
 									<div class="space-y-1.5 pt-2">
 										<a
-											href={link(`${base}/services/seo/seo-audit`)}
+											href={link(`${base}/free-seo-audit`)}
 											onclick={handleNavClick}
 											class="flex items-center gap-2 rounded-xl bg-brand-orange/10 px-4 py-2.5 text-xs font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
 										>
@@ -255,7 +270,7 @@
 											{props.lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
 										</a>
 										<a
-											href={link(`${base}/contact`)}
+											href={link(`${base}/cost-calculator`)}
 											onclick={handleNavClick}
 											class="flex items-center gap-2 rounded-xl bg-brand-blue/10 px-4 py-2.5 text-xs font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
 										>

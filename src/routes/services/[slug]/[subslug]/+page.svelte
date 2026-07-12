@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { Check, ArrowLeft, Sparkles, Tag } from '@lucide/svelte';
+	import { Check, ArrowLeft, ChevronDown, Sparkles, Tag } from '@lucide/svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
@@ -36,6 +36,22 @@
 			}
 		})}
 	</script>
+	{#if service?.faq?.length}
+		<script type="application/ld+json">
+			{JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "FAQPage",
+				"mainEntity": service.faq.map((f: any) => ({
+					"@type": "Question",
+					"name": f.q,
+					"acceptedAnswer": {
+						"@type": "Answer",
+						"text": f.a
+					}
+				}))
+			})}
+		</script>
+	{/if}
 	<script type="application/ld+json">
 		{JSON.stringify({
 			"@context": "https://schema.org",
@@ -109,6 +125,27 @@
 									<Tag class="h-3.5 w-3.5 text-brand-blue" />
 									<span class="text-sm font-medium text-[var(--color-text-muted)]">{topic.label}</span>
 								</div>
+							{/each}
+						</div>
+					</div>
+				{/if}
+
+				{#if service.faq?.length}
+					<div class="mt-16">
+						<h2 class="mb-10 text-center text-3xl font-black text-[var(--color-text-base)]">
+							{isAr ? 'الأسئلة الشائعة' : 'Frequently Asked Questions'}
+						</h2>
+						<div class="space-y-4">
+							{#each service.faq as faq}
+								<details class="group rounded-xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all">
+									<summary class="flex cursor-pointer items-center justify-between px-6 py-5 text-base font-bold text-[var(--color-text-base)]">
+										<span>{faq.q}</span>
+										<ChevronDown class="h-5 w-5 shrink-0 text-[var(--color-text-muted)] transition-transform duration-300 group-open:rotate-180" />
+									</summary>
+									<div class="border-t border-[var(--glass-border)] px-6 py-5">
+										<p class="text-base leading-relaxed text-[var(--color-text-muted)]">{faq.a}</p>
+									</div>
+								</details>
 							{/each}
 						</div>
 					</div>

@@ -1,0 +1,132 @@
+{
+  "en": {
+    "salla-store-riyadh": {
+      "title": "How a Riyadh Fashion Boutique Increased Sales 3x with a Salla Store",
+      "desc": "A family-run fashion boutique in Riyadh transformed their business by moving from Instagram sales to a professional Salla e-commerce store with SEO optimization and social media advertising.",
+      "client": "Noora Fashion Boutique",
+      "industry": "Fashion & Retail",
+      "location": "Riyadh, Saudi Arabia",
+      "services": ["Salla Store Setup", "E-commerce SEO", "Snapchat Ads"],
+      "challenge": "The boutique was selling exclusively through Instagram DMs and WhatsApp. They had 15,000+ followers but were losing sales because there was no proper product catalog, checkout process, or payment gateway. Customers would message, wait for a response, and often abandon the purchase.",
+      "solution": "We built a complete Salla store with integrated Mada and STC Pay, migrated their product catalog (200+ items), optimized all product pages for SEO, set up Snapchat ads targeting Riyadh-based fashion shoppers, and integrated inventory management.",
+      "results": [
+        "300% increase in monthly sales within 3 months",
+        "Zero abandoned carts due to streamlined checkout",
+        "40% reduction in customer service time via automated order tracking",
+        "Ranking on first page for 'ملابس نسائية الرياض' within 8 weeks"
+      ],
+      "testimonial": {
+        "text": "BOSLA transformed our business. We went from manually managing orders on Instagram to a fully automated store. Our customers love the seamless checkout experience.",
+        "name": "Nora Al-Saud",
+        "role": "Founder, Noora Fashion Boutique"
+      }
+    },
+    "wordpress-clinic-jeddah": {
+      "title": "A Jeddah Medical Clinic Tripled Patient Inquiries with Local SEO",
+      "desc": "A multi-specialty clinic in Jeddah needed more local patients. After our SEO overhaul, they became the top-ranked clinic in their area on Google Maps and search.",
+      "client": "Al-Salam Medical Complex",
+      "industry": "Healthcare",
+      "location": "Jeddah, Saudi Arabia",
+      "services": ["Corporate Website Design", "Local SEO", "Google Ads"],
+      "challenge": "The clinic had a basic WordPress site that was slow, not mobile-friendly, and barely visible on Google. They were losing patients to competitors who ranked higher for local searches like 'عيادة جلدية في جدة' and 'دكتور أسنان جنوب جدة'. Their Google Business Profile was unclaimed and had no reviews.",
+      "solution": "We redesigned their WordPress site with a mobile-first approach, implemented local SEO strategy with city-specific landing pages for each specialty, optimized and claimed their GBP, built local citations across Saudi directories, and launched targeted Google Ads campaigns for high-intent medical keywords.",
+      "results": [
+        "450% increase in organic traffic within 4 months",
+        "Top 3 Google Maps ranking for 12 medical keywords",
+        "3x increase in phone call inquiries month-over-month",
+        "Google Ads achieving 8%+ conversion rate on appointment bookings"
+      ],
+      "testimonial": {
+        "text": "The difference is night and day. We used to rely on walk-ins. Now most of our new patients find us through Google. Our phone hasn't stopped ringing since BOSLA optimized our online presence.",
+        "name": "Dr. Abdulaziz Al-Harbi",
+        "role": "Director, Al-Salam Medical Complex"
+      }
+    },
+    "shopify-food-dammam": {
+      "title": "From Home Kitchen to Dammam's Most Popular Online Gourmet Store",
+      "desc": "A home-based gourmet food business scaled to a full e-commerce operation using Shopify, with delivery across Dammam and Khobar.",
+      "client": "Gourmet House",
+      "industry": "Food & Beverage",
+      "location": "Dammam, Saudi Arabia",
+      "services": ["Shopify Store Setup", "Brand Identity", "Content Marketing"],
+      "challenge": "Gourmet House started as a home kitchen selling premium sauces and spice blends through WhatsApp. Demand grew beyond what manual order management could handle. They needed a professional online store with proper product catalog, delivery zone management, and a brand identity that reflected their premium quality.",
+      "solution": "We built a Shopify store with a premium design that reflected their brand, designed a full brand identity (logo, packaging design, color system), set up delivery zones for Dammam and Khobar with automated shipping calculations, integrated Mada and STC Pay, and created content marketing strategy with recipe blog posts and food photography.",
+      "results": [
+        "200+ monthly orders within first 2 months of launch",
+        "Average order value increased 45% with product bundling",
+        "Instagram following grew from 2,000 to 12,000 in 3 months",
+        "Featured in 3 Saudi food blogs and local media coverage"
+      ],
+      "testimonial": {
+        "text": "BOSLA didn't just build our website — they built our brand. Our customers constantly compliment the packaging and the seamless shopping experience. We've gone from a side hustle to a real business.",
+        "name": "Lama Al-Qahtani",
+        "role": "Founder, Gourmet House"
+      }
+    }
+  },
+  "ar": {
+    "salla-store-riyadh": {
+      "title": "كيف ضاعفت محل أزياء في الرياض مبيعاته 3 أضعاف بمتجر سلة",
+      "desc": "محل أزياء عائلي في الرياض حول نشاطه بالكامل من البيع عبر إنستغرام إلى متجر احترافي على سلة مع تحسين محركات البحث وإعلانات سناب شات.",
+      "client": "متجر نورا للأزياء",
+      "industry": "الأزياء والتجزئة",
+      "location": "الرياض، السعودية",
+      "services": ["تصميم متجر سلة", "تحسين محركات البحث للمتاجر", "إعلانات سناب شات"],
+      "challenge": "المتجر كان يبيع فقط عبر رسائل إنستغرام وواتساب. كان لديهم 15,000+ متابع لكنهم كانوا يخسرون المبيعات لعدم وجود كتالوج منتجات منظم أو عملية دفع سلسة. العملاء كانوا يرسلون رسائل وينتظرون رداً، وكثيراً ما كانوا يتخلون عن الشراء.",
+      "solution": "بنينا متجر سلة كامل مع دمج مدى وSTC Pay، رحلنا كتالوج المنتجات (200+ منتج)، حسّنا جميع صفحات المنتجات لمحركات البحث، أطلقنا إعلانات سناب شات تستهدف متسوقي الأزياء في الرياض، ودمجنا إدارة المخزون.",
+      "results": [
+        "زيادة 300% في المبيعات الشهرية خلال 3 أشهر",
+        "صفر عربيات مهجورة بفضل عملية دفع سلسة",
+        "تخفيض 40% في وقت خدمة العملاء عبر التتبع الآلي",
+        "ظهور في الصفحة الأولى لكلمة 'ملابس نسائية الرياض' خلال 8 أسابيع"
+      ],
+      "testimonial": {
+        "text": "BOSLA غيرت نشاطنا بالكامل. انتقلنا من إدارة الطلبات يدوياً على إنستغرام إلى متجر آلي بالكامل. عملاؤنا يحبون تجربة الدفع السلسة.",
+        "name": "نورة آل سعود",
+        "role": "مؤسسة متجر نورا للأزياء"
+      }
+    },
+    "wordpress-clinic-jeddah": {
+      "title": "عيادة في جدة ضاعفت استفسارات المرضى 3 مرات بتحسين SEO المحلي",
+      "desc": "مجمع طبي متعدد التخصصات في جدة احتاج المزيد من المرضى المحليين. بعد التحسين الشامل، أصبحوا العيادة الأولى في منطقتهم على Google Maps والبحث.",
+      "client": "مجمع السلام الطبي",
+      "industry": "الرعاية الصحية",
+      "location": "جدة، السعودية",
+      "services": ["تصميم موقع مؤسسي", "SEO محلي", "إعلانات جوجل"],
+      "challenge": "المجمع كان لديه موقع ووردبريس أساسي بطيء وغير متوافق مع الجوال وبالكاد يظهر في جوجل. كانوا يخسرون المرضى لصالح منافسين يظهرون في نتائج البحث المحلي مثل 'عيادة جلدية في جدة' و'دكتور أسنان جنوب جدة'. حساب Google Business Profile الخاص بهم لم يكن مُداراً.",
+      "solution": "أعدنا تصميم موقعهم على ووردبريس بنظام mobile-first، طبقنا استراتيجية SEO محلي مع صفحات مخصصة لكل تخصص، حسّنا وأدرنا حساب GBP، بنينا Citations محلية عبر أدلة الأعمال السعودية، وأطلقنا حملات إعلانات جوجل مستهدفة للكلمات المفتاحية الطبية.",
+      "results": [
+        "زيادة 450% في الزيارات العضوية خلال 4 أشهر",
+        "أول 3 نتائج في Google Maps لـ 12 كلمة مفتاحية طبية",
+        "3 أضعاف استفسارات الهاتف شهرياً",
+        "حملات جوجل أدز تحقق 8%+ نسبة تحويل لحجوزات المواعيد"
+      ],
+      "testimonial": {
+        "text": "الفرق كبير جداً. كنا نعتمد على الزيارات العشوائية. الآن معظم مرضانا الجدد يجدوننا عبر جوجل. هاتفنا لم يتوقف عن الرنين منذ أن حسّنت BOSLA تواجدنا الرقمي.",
+        "name": "د. عبدالعزيز الحربي",
+        "role": "مدير مجمع السلام الطبي"
+      }
+    },
+    "shopify-food-dammam": {
+      "title": "من مطبخ منزلي إلى أشهر متجر للمواد الغذائية الفاخرة في الدمام",
+      "desc": "نشاط تجاري منزلي للمواد الغذائية الفاخرة توسع إلى متجر إلكتروني متكامل على شوبيفاي مع توصيل في الدمام والخبر.",
+      "client": "Gourmet House",
+      "industry": "المواد الغذائية",
+      "location": "الدمام، السعودية",
+      "services": ["تصميم متجر شوبيفاي", "هوية بصرية", "تسويق بالمحتوى"],
+      "challenge": "Gourmet House بدأت كمطبخ منزلي يبيع الصلصات الفاخرة وخلطات البهارات عبر واتساب. الطلب نما beyond ما يمكن إدارته يدوياً. كانوا بحاجة متجر إلكتروني احترافي مع كتالوج منتجات منظم وإدارة مناطق التوصيل وهوية بصرية تعكس جودة منتجاتهم.",
+      "solution": "بنينا متجر شوبيفاي بتصميم فاخر يعكس علامتهم التجارية، صممنا هوية بصرية كاملة (شعار، تغليف، نظام ألوان)، أعددنا مناطق توصيل للدمام والخبر مع حسابات شحن آلية، دمجنا مدى وSTC Pay، وأنشأنا استراتيجية تسويق بالمحتوى مع مدونة وصفات وتصوير غذائي احترافي.",
+      "results": [
+        "200+ طلب شهري خلال أول شهرين من الإطلاق",
+        "متوسط قيمة الطلب ارتفع 45% بفضل تجميع المنتجات",
+        "متابعو إنستغرام نما من 2,000 إلى 12,000 في 3 أشهر",
+        "ظهروا في 3 مدونات طعام سعودية وتغطية إعلامية محلية"
+      ],
+      "testimonial": {
+        "text": "BOSLA لم تبنِ موقعنا فقط — لقد بنت علامتنا التجارية. عملاؤنا يمدحون التغليف وتجربة التسوق السلسة. انتقلنا من عمل جانبي إلى نشاط تجاري حقيقي.",
+        "name": "لمى القحطاني",
+        "role": "مؤسسة Gourmet House"
+      }
+    }
+  }
+}

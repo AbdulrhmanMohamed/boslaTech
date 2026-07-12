@@ -1,0 +1,142 @@
+{
+  "en": {
+    "shopify-vs-salla-vs-zid": {
+      "title": "Shopify vs Salla vs Zid: Which E-commerce Platform is Best for Your Saudi Business?",
+      "desc": "A detailed comparison of Shopify, Salla, and Zid — the three leading e-commerce platforms for Saudi businesses. We compare pricing, features, payment gateways, SEO, and scalability.",
+      "sections": [
+        {
+          "heading": "Overview",
+          "body": "<p>When building an online store in Saudi Arabia, you have three main options: Shopify (global leader), Salla (Saudi-built), and Zid (Saudi-grown with flexibility). Each platform has distinct advantages depending on your business size, technical needs, and growth plans.</p><p>At BOSLA, we build on all three platforms. This comparison is based on our real experience working with Saudi merchants — not spec sheets. We know what actually works in the Saudi market.</p>"
+        },
+        {
+          "heading": "Payment Gateways",
+          "body": "<p><strong>Shopify</strong> supports Mada, STC Pay, Apple Pay, and credit cards through Shopify Payments or third-party providers like Tap and Moyasar. Setup requires a bit of configuration for Saudi-specific gateways.</p><p><strong>Salla</strong> comes with built-in Mada, STC Pay, and credit card processing — no extra setup needed. This is Salla's strongest advantage for local merchants who want a plug-and-play payment experience.</p><p><strong>Zid</strong> supports Mada, STC Pay, and credit cards through integrated gateways. Zid's payment setup is smoother than Shopify but slightly less turnkey than Salla.</p>"
+        },
+        {
+          "heading": "Ease of Use",
+          "body": "<p><strong>Salla</strong> is the easiest to use for Arabic-speaking business owners. The dashboard is fully in Arabic, and the platform is designed specifically for the Saudi market. You can launch a store in hours.</p><p><strong>Shopify</strong> has a steeper learning curve, especially for Arabic speakers. The admin is English-first, though Arabic support exists. However, Shopify's app ecosystem is unmatched — thousands of apps for any feature you need.</p><p><strong>Zid</strong> strikes a balance: Arabic-first dashboard with solid English support. It's more flexible than Salla but requires more setup time.</p>"
+        },
+        {
+          "heading": "SEO Capabilities",
+          "body": "<p><strong>Shopify</strong> has the strongest SEO foundation — clean URL structure, fast CDN, built-in blogging, full control over meta tags, and excellent schema markup support. Shopify stores consistently rank well with proper optimization.</p><p><strong>Salla</strong> has good basic SEO features but limited control over advanced settings. URL structures are less flexible, and schema customization is restricted. For basic e-commerce SEO, it works. For advanced strategies, you'll hit limitations.</p><p><strong>Zid</strong> offers better SEO control than Salla but less than Shopify. Custom meta tags, URL structures, and schema injection are possible with some work. Check our <a href='/services/seo/ecommerce-seo' class='font-bold text-brand-blue underline'>e-commerce SEO services</a> for platform-specific optimization.</p>"
+        },
+        {
+          "heading": "Pricing",
+          "body": "<p><strong>Shopify</strong> starts at $39/month (Basic) with transaction fees unless you use Shopify Payments. Annual plans offer discounts. App costs can add $20-100/month.</p><p><strong>Salla</strong> starts at 149 SAR/month (Basic) with no transaction fees on most payment gateways. This makes it the most affordable option for Saudi startups.</p><p><strong>Zid</strong> starts at 249 SAR/month (Starter) and scales up based on features. No transaction fees on integrated gateways.</p><p>For a full breakdown, see our <a href='/services/web-development/online-stores' class='font-bold text-brand-blue underline'>online stores service page</a>.</p>"
+        },
+        {
+          "heading": "Which Platform Should You Choose?",
+          "body": "<p><strong>Choose Shopify if:</strong> You plan to scale internationally, need advanced apps and integrations, or want the best SEO foundation. Shopify is ideal for ambitious e-commerce brands.</p><p><strong>Choose Salla if:</strong> You're a Saudi startup or small business that wants the fastest path to launch. Salla's Arabic-first experience and built-in local features make it the most beginner-friendly option.</p><p><strong>Choose Zid if:</strong> You need more flexibility than Salla offers but want a Saudi-focused platform. Zid is great for growing businesses that need custom features without leaving the local ecosystem.</p><p>Not sure? <a href='/#contact' class='font-bold text-brand-blue underline'>Contact us</a> for a free consultation. We'll recommend the right platform based on your specific needs.</p>"
+        }
+      ],
+      "faq": [
+        { "q": "Can I switch from Salla to Shopify later?", "a": "Yes, but migration requires careful planning. Product data, customer accounts, and order history can be exported from Salla and imported to Shopify. SEO impact is the biggest concern — URL structures change, which can affect rankings. We handle SEO-preserving migrations as part of our service." },
+        { "q": "Which platform has the lowest total cost?", "a": "Salla has the lowest entry cost at 149 SAR/month with no transaction fees. However, if you need advanced features or apps, Shopify's ecosystem may provide better value despite higher base pricing." },
+        { "q": "Do all three platforms support Mada and STC Pay?", "a": "Yes, all three platforms support Mada and STC Pay. The setup complexity varies — Salla has the easiest integration, while Shopify requires configuring third-party gateways." },
+        { "q": "Which platform is best for SEO?", "a": "Shopify offers the most advanced SEO capabilities. Salla and Zid have improved significantly but still lack some advanced features like full schema customization and URL structure control." }
+      ]
+    },
+    "wordpress-vs-custom-build": {
+      "title": "WordPress vs Custom Website Development: Which is Right for Your Business?",
+      "desc": "Compare WordPress websites vs custom-built websites for Saudi businesses. Learn which approach works best for your budget, timeline, and feature requirements.",
+      "sections": [
+        {
+          "heading": "Overview",
+          "body": "<p>One of the most common questions we hear is: should I use WordPress or build a custom website? The answer depends on your budget, timeline, feature needs, and long-term goals. Both approaches have clear advantages and trade-offs.</p><p>At BOSLA, we build both WordPress sites and custom web applications. We recommend based on what actually serves your business best — not what's technically flashier. Here's our honest comparison based on real projects in the Saudi market.</p>"
+        },
+        {
+          "heading": "Time to Launch",
+          "body": "<p><strong>WordPress:</strong> A standard WordPress site can be launched in 1-3 weeks. With thousands of themes and plugins available, we can rapidly build a professional site without writing everything from scratch. For businesses that need to launch quickly, WordPress is almost always the faster option.</p><p><strong>Custom Build:</strong> A custom-built website typically takes 4-12 weeks. Every feature is built from the ground up, which takes more development time. However, you get exactly what you want — no compromises.</p><p>For most Saudi SMEs, WordPress offers the best balance of speed and quality. Custom builds make sense when you have unique requirements that WordPress can't handle.</p>"
+        },
+        {
+          "heading": "Cost Comparison",
+          "body": "<p><strong>WordPress:</strong> A professional WordPress site starts from 1,000 SAR for a simple corporate site. WooCommerce stores range from 2,000-4,000 SAR. Ongoing costs include hosting (200-500 SAR/year), premium plugins (500-2,000 SAR/year), and optional maintenance packages.</p><p><strong>Custom Build:</strong> Custom websites start from 5,000 SAR and can go up to 20,000+ SAR for complex applications. There are no recurring license fees, but development costs are significantly higher upfront.</p><p>See our <a href='/services/web-development/wordpress-development' class='font-bold text-brand-blue underline'>WordPress development service</a> or <a href='/services/web-development/custom-websites' class='font-bold text-brand-blue underline'>corporate website design service</a> for specific pricing.</p>"
+        },
+        {
+          "heading": "Flexibility and Customization",
+          "body": "<p><strong>WordPress:</strong> With 60,000+ plugins and thousands of themes, WordPress can handle almost any standard website requirement. However, complex custom features may require plugin conflicts management and performance compromises. For 90% of business websites, WordPress offers all the flexibility you need.</p><p><strong>Custom Build:</strong> Unlimited flexibility. You can build any feature, any design, any integration. Custom builds are ideal for businesses with unique workflows, complex data models, or specific performance requirements that WordPress can't meet.</p>"
+        },
+        {
+          "heading": "SEO and Performance",
+          "body": "<p><strong>WordPress:</strong> With proper optimization (caching, CDN, image optimization, clean code), WordPress sites can achieve excellent performance and Core Web Vitals scores. SEO plugins like Yoast or Rank Math provide granular control. The key is using quality hosting and avoiding bloated plugins.</p><p><strong>Custom Build:</strong> Custom sites can be optimized to the absolute maximum — no unnecessary code, no plugin overhead. However, this requires skilled developers who understand SEO. A poorly built custom site can perform worse than a well-optimized WordPress site.</p><p>Our <a href='/services/seo/technical-seo' class='font-bold text-brand-blue underline'>technical SEO services</a> apply to both platforms equally.</p>"
+        }
+      ],
+      "faq": [
+        { "q": "Is WordPress secure?", "a": "Yes, WordPress is secure when properly maintained. Security issues usually come from outdated plugins, weak passwords, or poor hosting. We include security hardening and regular updates in our maintenance packages." },
+        { "q": "Can I migrate from WordPress to a custom build later?", "a": "Yes, content can be exported from WordPress and imported into a custom system. However, design and functionality will need to be rebuilt. This is a significant project, so it's better to choose the right platform initially." },
+        { "q": "Which option is better for e-commerce?", "a": "For most e-commerce stores, WordPress with WooCommerce is an excellent choice. For very large catalogues or complex multi-vendor marketplaces, a custom solution or dedicated platform like Shopify may be better." },
+        { "q": "Do custom-built websites rank better on Google?", "a": "Not inherently. Google ranks content and user experience, not the technology behind the site. A well-optimized WordPress site can outperform a poorly built custom site. Focus on SEO fundamentals regardless of platform choice." }
+      ]
+    }
+  },
+  "ar": {
+    "shopify-vs-salla-vs-zid": {
+      "title": "مقارنة شاملة: شوبيفاي ضد سلة ضد زد — أي منصة أفضل لمتجرك في السعودية؟",
+      "desc": "مقارنة مفصلة بين شوبيفاي وسلة وزّد — المنصات الثلاث الرائدة للتجارة الإلكترونية للشركات السعودية. نقارن الأسعار والميزات وبوابات الدفع وتحسين محركات البحث وقابلية التوسع.",
+      "sections": [
+        {
+          "heading": "نظرة عامة",
+          "body": "<p>عند بناء متجر إلكتروني في السعودية، لديك ثلاثة خيارات رئيسية: شوبيفاي (الرائدة عالمياً)، سلة (سعودية الصنع)، وزّد (سعودية النشأة مع مرونة عالية). لكل منصة مزايا واضحة تعتمد على حجم نشاطك التجاري واحتياجاتك التقنية وخطط النمو.</p><p>في BOSLA، نبني على المنصات الثلاث. هذه المقارنة مبنية على خبرتنا الفعلية في العمل مع التجار السعوديين — وليس على أوراق المواصفات. نحن نعرف ما يعمل فعلياً في السوق السعودي.</p>"
+        },
+        {
+          "heading": "بوابات الدفع",
+          "body": "<p><strong>شوبيفاي</strong> تدعم مدى، STC Pay، Apple Pay، والبطاقات الائتمانية من خلال Shopify Payments أو مزودين خارجيين مثل تاب وميصر. الإعداد يتطلب بعض التهيئة لبوابات الدفع السعودية.</p><p><strong>سلة</strong> تأتي مع دعم مدمج لمدى وSTC Pay والبطاقات الائتمانية — بدون إعداد إضافي. هذه أقوى ميزة لسلة للتجار المحليين الذين يريدون تجربة دفع جاهزة فوراً.</p><p><strong>زد</strong> تدعم مدى وSTC Pay والبطاقات الائتمانية من خلال بوابات دفع مدمجة. إعداد الدفع في زد أسهل من شوبيفاي لكنه أقل جاهزية من سلة.</p>"
+        },
+        {
+          "heading": "سهولة الاستخدام",
+          "body": "<p><strong>سلة</strong> الأسهل استخداماً لأصحاب المتاجر الناطقين بالعربية. لوحة التحكم بالعربية بالكامل، والمنصة مصممة خصيصاً للسوق السعودي. يمكنك إطلاق متجر في ساعات.</p><p><strong>شوبيفاي</strong> تحتاج وقتاً أطول للتعلم، خاصة للناطقين بالعربية. لوحة الإدارة بالإنجليزية أولاً، رغم وجود دعم عربي. لكن نظام التطبيقات في شوبيفاي لا يُضاهى — آلاف التطبيقات لأي ميزة تحتاجها.</p><p><strong>زد</strong> توازن بين الاثنين: لوحة تحكم بالعربية مع دعم إنجليزي جيد. أكثر مرونة من سلة لكنها تحتاج وقت إعداد أطول.</p>"
+        },
+        {
+          "heading": "إمكانيات تحسين محركات البحث",
+          "body": "<p><strong>شوبيفاي</strong> تمتلك أقوى أساسيات SEO — هيكل URL نظيف، CDN سريع، تدوين مدمج، تحكم كامل في الوسوم الوصفية، ودعم ممتاز لترميز البيانات المنظمة. متاجر شوبيفاي تظهر في نتائج البحث بشكل جيد مع التحسين المناسب.</p><p><strong>سلة</strong> لديها ميزات SEO أساسية جيدة لكن تحكم محدود في الإعدادات المتقدمة. هياكل URL أقل مرونة، وتخصيص الترميز محدود. لـSEO الأساسي، تعمل بشكل جيد. للاستراتيجيات المتقدمة، ستواجه قيوداً.</p><p><strong>زد</strong> تقدم تحكماً أفضل في SEO من سلة ولكن أقل من شوبيفاي. يمكن تخصيص الوسوم الوصفية وهياكل URL والترميز مع بعض العمل. اطلع على <a href='/services/seo/ecommerce-seo?lang=ar' class='font-bold text-brand-blue underline'>خدمات SEO المتاجر الإلكترونية</a> للتحسين المخصص لكل منصة.</p>"
+        },
+        {
+          "heading": "الأسعار",
+          "body": "<p><strong>شوبيفاي</strong> تبدأ من $39 شهرياً (Basic) مع رسوم معاملات ما لم تستخدم Shopify Payments. الخطط السنوية تقدم خصومات. تكاليف التطبيقات يمكن أن تضيف 20-100$ شهرياً.</p><p><strong>سلة</strong> تبدأ من 149 ريال شهرياً (Basic) بدون رسوم معاملات على معظم بوابات الدفع. هذا يجعلها الخيار الأكثر توفيراً للشركات الناشئة السعودية.</p><p><strong>زد</strong> تبدأ من 249 ريال شهرياً (Starter) وتتصاعد حسب الميزات. بدون رسوم معاملات على البوابات المدمجة.</p><p>للتفاصيل الكاملة، اطلع على <a href='/services/web-development/online-stores?lang=ar' class='font-bold text-brand-blue underline'>صفحة خدمة المتاجر الإلكترونية</a>.</p>"
+        },
+        {
+          "heading": "أي منصة تختار؟",
+          "body": "<p><strong>اختر شوبيفاي إذا:</strong> تخطط للتوسع دولياً، تحتاج تطبيقات وتكاملات متقدمة، أو تريد أفضل أساسيات SEO. شوبيفاي مثالية للعلامات التجارية الطموحة.</p><p><strong>اختر سلة إذا:</strong> أنت شركة ناشئة أو صغيرة تريد أسرع طريق للإطلاق. تجربة سلة العربية والميزات المحلية المدمجة تجعلها الخيار الأسهل للمبتدئين.</p><p><strong>اختر زد إذا:</strong> تحتاج مرونة أكثر مما تقدمه سلة ولكنك تريد منصة سعودية. زد رائعة للشركات المتنامية التي تحتاج ميزات مخصصة دون مغادرة النظام المحلي.</p><p>لست متأكداً؟ <a href='/contact?lang=ar' class='font-bold text-brand-blue underline'>تواصل معنا</a> لاستشارة مجانية. سنوصي بالمنصة المناسبة بناءً على احتياجاتك.</p>"
+        }
+      ],
+      "faq": [
+        { "q": "هل يمكنني الانتقال من سلة إلى شوبيفاي لاحقاً؟", "a": "نعم، لكن الترحيل يتطلب تخطيطاً دقيقاً. يمكن تصدير بيانات المنتجات والعملاء والطلبات من سلة واستيرادها إلى شوبيفاي. تأثير SEO هو أكبر concern — تتغير هياكل URL مما قد يؤثر على الترتيب. نتعامل مع الترحيل المحافظ على SEO كجزء من خدمتنا." },
+        { "q": "أي منصة لها أقل تكلفة إجمالية؟", "a": "سلة أقلها تكلفة ابتداءً من 149 ريال شهرياً بدون رسوم معاملات. لكن إذا كنت تحتاج ميزات متقدمة، نظام شوبيفاي البيئي قد يوفر قيمة أفضل رغم ارتفاع السعر الأساسي." },
+        { "q": "هل تدعم المنصات الثلاث مدى وSTC Pay؟", "a": "نعم، جميع المنصات الثلاث تدعم مدى وSTC Pay. تختلف سهولة الإعداد — سلة الأسهل تكاملاً، بينما شوبيفاي تحتاج تهيئة مزودي دفع خارجيين." },
+        { "q": "أي منصة أفضل لتحسين محركات البحث؟", "a": "شوبيفاي تقدم أقوى إمكانيات SEO. سلة وزّد تحسنتا كثيراً لكن ما زالت بعض الميزات المتقدمة مثل تخصيص الترميز الكامل والتحكم بهيكل URL محدودة." }
+      ]
+    },
+    "wordpress-vs-custom-build": {
+      "title": "ووردبريس ضد تطوير موقع مخصص: أيهما مناسب لنشاطك التجاري؟",
+      "desc": "مقارنة بين مواقع ووردبريس والمواقع المطورة خصيصاً للشركات السعودية. تعرف على النهج الأنسب لميزانيتك وجدولك الزمني ومتطلباتك.",
+      "sections": [
+        {
+          "heading": "نظرة عامة",
+          "body": "<p>من أكثر الأسئلة التي نسمعها: هل يجب استخدام ووردبريس أم بناء موقع مخصص؟ الإجابة تعتمد على ميزانيتك وجدولك الزمني واحتياجاتك وأهدافك طويلة المدى. كلا النهجين لهما مزايا واضحة ومقايضات.</p><p>في BOSLA، نبني مواقع ووردبريس وتطبيقات مخصصة. نوصي بناءً على ما يخدم نشاطك التجاري فعلياً — وليس ما هو تقنياً أفضل. هذه مقارنتنا الصادقة المبنية على مشاريع حقيقية في السوق السعودي.</p>"
+        },
+        {
+          "heading": "وقت الإطلاق",
+          "body": "<p><strong>ووردبريس:</strong> موقع ووردبريس عادي يمكن إطلاقه في 1-3 أسابيع. مع آلاف القوالب والإضافات المتاحة، يمكننا بناء موقع احترافي بسرعة دون كتابة كل شيء من الصفر. للشركات التي تحتاج إطلاقاً سريعاً، ووردبريس دائماً تقريباً الخيار الأسرع.</p><p><strong>بناء مخصص:</strong> الموقع المخصص يستغرق عادة 4-12 أسبوعاً. كل ميزة تُبنى من الصفر، مما يستغرق وقت تطوير أطول. لكنك تحصل بالضبط على ما تريد — بدون تنازلات.</p><p>معظم الشركات الصغيرة والمتوسطة السعودية، ووردبريس يقدم أفضل توازن بين السرعة والجودة. البناء المخصص منطقي عندما يكون لديك متطلبات فريدة لا يستطيع ووردبريس التعامل معها.</p>"
+        },
+        {
+          "heading": "مقارنة التكاليف",
+          "body": "<p><strong>ووردبريس:</strong> موقع ووردبريس احترافي يبدأ من 1,000 ريال للموقع المؤسسي البسيط. متاجر WooCommerce تتراوح من 2,000-4,000 ريال. التكاليف المستمرة تشمل الاستضافة (200-500 ريال/سنة) والإضافات المميزة (500-2,000 ريال/سنة) وباقات الصيانة الاختيارية.</p><p><strong>بناء مخصص:</strong> المواقع المخصصة تبدأ من 5,000 ريال وقد تصل إلى 20,000+ ريال للتطبيقات المعقدة. لا توجد رسوم ترخيص متكررة، لكن تكاليف التطوير أعلى بشكل ملحوظ مبدئياً.</p><p>اطلع على <a href='/services/web-development/wordpress-development?lang=ar' class='font-bold text-brand-blue underline'>خدمة تطوير ووردبريس</a> أو <a href='/services/web-development/custom-websites?lang=ar' class='font-bold text-brand-blue underline'>خدمة تصميم المواقع المؤسسية</a> للأسعار المحددة.</p>"
+        },
+        {
+          "heading": "المرونة والتخصيص",
+          "body": "<p><strong>ووردبريس:</strong> مع 60,000+ إضافة وآلاف القوالب، ووردبريس يمكنه التعامل مع أي متطلبات موقع تقريباً. لكن الميزات المخصصة المعقدة قد تتطلب إدارة تعارض الإضافات وحلول أداء. لـ90% من المواقع التجارية، ووردبريس يوفر كل المرونة التي تحتاجها.</p><p><strong>بناء مخصص:</strong> مرونة غير محدودة. يمكنك بناء أي ميزة وأي تصميم وأي تكامل. البناء المخصص مثالي للشركات ذات سير العمل الفريدة أو نماذج البيانات المعقدة أو متطلبات الأداء المحددة التي لا يستطيع ووردبريس تلبيتها.</p>"
+        },
+        {
+          "heading": "SEO والأداء",
+          "body": "<p><strong>ووردبريس:</strong> مع التحسين المناسب (التخزين المؤقت، CDN، تحسين الصور، كود نظيف)، مواقع ووردبريس يمكنها تحقيق أداء ممتاز ونتائج Core Web Vitals جيدة. إضافات SEO مثل Yoast أو Rank Math توفر تحكماً دقيقاً. المفتاح هو استخدام استضافة جيدة وتجنب الإضافات المنتفخة.</p><p><strong>بناء مخصص:</strong> المواقع المخصصة يمكن تحسينها إلى أقصى حد — لا كود غير ضروري، لا overhead إضافات. لكن هذا يتطلب مطورين مهرة يفهمون SEO. موقع مخصص مبني بشكل سيء قد يؤدي أسوأ من موقع ووردبريس محسن جيداً.</p><p>خدمات <a href='/services/seo/technical-seo?lang=ar' class='font-bold text-brand-blue underline'>SEO التقني</a> تنطبق على كلا المنصتين بالتساوي.</p>"
+        }
+      ],
+      "faq": [
+        { "q": "هل ووردبريس آمن؟", "a": "نعم، ووردبريس آمن عند الصيانة المناسبة. مشاكل الأمان تأتي عادة من الإضافات القديمة أو كلمات المرور الضعيفة أو الاستضافة الرديئة. نضمن تعزيز الأمان والتحديثات المنتظمة في باقات الصيانة لدينا." },
+        { "q": "هل يمكنني الترحيل من ووردبريس إلى بناء مخصص لاحقاً؟", "a": "نعم، يمكن تصدير المحتوى من ووردبريس واستيراده إلى نظام مخصص. لكن التصميم والوظائف ستحتاج إعادة بناء. هذا مشروع كبير، لذا من الأفضل اختيار المنصة المناسبة مبدئياً." },
+        { "q": "أي خيار أفضل للتجارة الإلكترونية؟", "a": "معظم المتاجر الإلكترونية، ووردبريس مع WooCommerce خيار ممتاز. للكتالوجات الكبيرة جداً أو الأسواق متعددة البائعين، الحل المخصص أو منصة مخصصة مثل شوبيفاي قد تكون أفضل." },
+        { "q": "هل المواقع المخصصة ترتيبها أفضل في جوجل؟", "a": "ليس بالضرورة. جوجل ترتب المحتوى وتجربة المستخدم، ليس التقنية وراء الموقع. موقع ووردبريس محسن جيداً يمكن أن يتفوق على موقع مخصص مبني بشكل سيء. ركز على أساسيات SEO بغض النظر عن اختيار المنصة." }
+      ]
+    }
+  }
+}

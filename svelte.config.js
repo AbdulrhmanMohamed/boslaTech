@@ -57,6 +57,13 @@ const config = {
 				'/guides/web-development',
 				'/guides/seo',
 				'/guides/digital-marketing',
+				'/comparisons/shopify-vs-salla-vs-zid',
+				'/comparisons/wordpress-vs-custom-build',
+				'/case-studies/salla-store-riyadh',
+				'/case-studies/wordpress-clinic-jeddah',
+				'/case-studies/shopify-food-dammam',
+				'/free-seo-audit',
+				'/cost-calculator',
 			],
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore 404 errors during prerendering

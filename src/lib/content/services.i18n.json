@@ -70,6 +70,20 @@
                 "label": "Single-page Applications",
                 "slug": "custom-websites"
               }
+            ],
+            "faq": [
+              {
+                "q": "How long does it take to build a corporate website?",
+                "a": "A standard corporate website with 5-10 pages takes 1-2 weeks to design and develop. Complex sites with custom features can take 3-4 weeks. We provide a clear timeline during the consultation phase."
+              },
+              {
+                "q": "Can I update the website myself after it's built?",
+                "a": "Yes. We build your site on an easy-to-use content management system that lets you update text, images, and pages without any technical knowledge. We also provide a training session to get you started."
+              },
+              {
+                "q": "How much does a corporate website cost in Saudi Arabia?",
+                "a": "Our corporate website packages start from 1,000 SAR for a simple 5-page site and go up to 3,000 SAR for a fully featured site with custom functionality. We provide a detailed quote after understanding your needs."
+              }
             ]
           },
           {
@@ -101,6 +115,24 @@
               {
                 "label": "WordPress Migration",
                 "slug": "wordpress-development"
+              }
+            ],
+            "faq": [
+              {
+                "q": "Why choose WordPress over a custom-built website?",
+                "a": "WordPress offers flexibility, scalability, and a vast library of plugins. You can add features like e-commerce, booking systems, and membership areas without starting from scratch. It is ideal for businesses that want to grow their site over time."
+              },
+              {
+                "q": "Can you migrate my existing site to WordPress?",
+                "a": "Yes, we handle full migrations from any platform to WordPress. We preserve your SEO rankings and content structure during the move. The process typically takes 3-7 days depending on the size of your site."
+              },
+              {
+                "q": "How much does a custom WordPress site cost?",
+                "a": "Our WordPress projects start from 1,500 SAR for a basic site and range up to 4,000 SAR for a full WooCommerce store with custom features. The exact price depends on your specific requirements."
+              },
+              {
+                "q": "Do you build WooCommerce stores with Saudi payment gateways?",
+                "a": "Absolutely. We build full WooCommerce stores integrated with Mada, STC Pay, and Apple Pay. We also configure tax calculations, shipping zones, and inventory management for the Saudi market."
               }
             ]
           },
@@ -134,6 +166,24 @@
                 "label": "Custom E-commerce",
                 "slug": "online-stores"
               }
+            ],
+            "faq": [
+              {
+                "q": "Which platform should I choose: Shopify, Salla, or Zid?",
+                "a": "It depends on your budget, technical needs, and growth plans. Shopify is best for international scalability, Salla is ideal for the Saudi market with built-in local features, and Zid works well for mid-sized local businesses. We help you choose during the free consultation."
+              },
+              {
+                "q": "Can you migrate my existing store from one platform to another?",
+                "a": "Yes, we handle migrations between all platforms including products, customers, order history, and SEO settings. We minimize downtime and ensure no data loss during the transition."
+              },
+              {
+                "q": "How long does it take to set up an online store?",
+                "a": "A standard online store takes 2-3 weeks to set up including design, product uploads, payment gateway integration, and testing. A store with 50 or more products or custom features may take 4-5 weeks."
+              },
+              {
+                "q": "How much does an online store cost?",
+                "a": "Online store setup starts from 2,000 SAR for a basic store on Salla or Zid, and from 3,000 SAR for a Shopify store. Full custom e-commerce solutions range from 4,000 to 5,000 SAR."
+              }
             ]
           },
           {
@@ -166,6 +216,24 @@
                 "label": "UX Audit",
                 "slug": "website-redesign"
               }
+            ],
+            "faq": [
+              {
+                "q": "Will redesigning my site affect my SEO rankings?",
+                "a": "We use an SEO-preserving migration process that maintains your existing rankings. We map all old URLs to new ones, preserve meta data, and monitor rankings during and after the transition."
+              },
+              {
+                "q": "How long does a redesign project take?",
+                "a": "A typical redesign takes 2-4 weeks depending on the size and complexity of your site. Simple sites with 10-20 pages can be done in 2 weeks, while larger sites may take longer."
+              },
+              {
+                "q": "Do I need a redesign or just a refresh?",
+                "a": "If your site is over 3 years old, loads slowly, or is not mobile-friendly, a full redesign is recommended. If it is just the design that feels dated, a visual refresh may be sufficient. We assess your site during the consultation."
+              },
+              {
+                "q": "How much does a website redesign cost?",
+                "a": "Redesign costs range from 1,000 SAR for small sites to 3,000 SAR for larger, more complex websites. The price depends on the number of pages, features, and whether you are changing platforms."
+              }
             ]
           },
           {
@@ -197,6 +265,24 @@
               {
                 "label": "Backup Management",
                 "slug": "maintenance-and-support"
+              }
+            ],
+            "faq": [
+              {
+                "q": "What does your maintenance plan include?",
+                "a": "Our plans include security updates, performance monitoring, weekly backups, content updates, and uptime monitoring. We also provide priority WhatsApp and email support for any issues."
+              },
+              {
+                "q": "How often do you update my website?",
+                "a": "We apply security patches monthly and update plugins and themes as needed. Critical updates are applied immediately. Content updates can be requested anytime and are typically done within 24 hours."
+              },
+              {
+                "q": "How much does website maintenance cost?",
+                "a": "Our maintenance plans start from 300 SAR per month for basic security and backups, up to 800 SAR per month for comprehensive support including content updates and priority response."
+              },
+              {
+                "q": "Can you help if my site gets hacked?",
+                "a": "Yes, all our maintenance plans include security monitoring and malware removal. We also harden your site against future attacks. Emergency recovery is part of our comprehensive plan."
               }
             ]
           }
@@ -239,6 +325,24 @@
                 "label": "Crawl & Index",
                 "slug": "technical-seo"
               }
+            ],
+            "faq": [
+              {
+                "q": "What are Core Web Vitals and why do they matter?",
+                "a": "Core Web Vitals are Google metrics for measuring user experience including loading speed (LCP), interactivity (INP), and visual stability (CLS). They are a ranking factor, so poor scores can hurt your Google visibility."
+              },
+              {
+                "q": "How long does it take to see results from technical SEO?",
+                "a": "Some fixes like meta tags and sitemap improvements can show results in 2-4 weeks. More complex issues like site speed optimization may take 4-8 weeks to fully implement and reflect in rankings."
+              },
+              {
+                "q": "How much does technical SEO cost?",
+                "a": "Technical SEO services start from 1,500 SAR per month for ongoing optimization. A one-time technical audit with fixes ranges from 1,000 to 2,500 SAR depending on the size of your site."
+              },
+              {
+                "q": "Can you fix my site page speed issues?",
+                "a": "Yes, we analyze your site speed using Google PageSpeed Insights and real user data. We optimize images, leverage browser caching, minify code, and implement CDN solutions to improve loading times."
+              }
             ]
           },
           {
@@ -270,6 +374,24 @@
               {
                 "label": "Map Pack Rankings",
                 "slug": "local-seo"
+              }
+            ],
+            "faq": [
+              {
+                "q": "How do I show up on Google Maps for my business?",
+                "a": "We optimize your Google Business Profile with accurate information, categories, photos, and regular posts. We also build local citations on Saudi directories and get reviews from your customers to improve your map pack ranking."
+              },
+              {
+                "q": "How long does local SEO take to work?",
+                "a": "Local SEO improvements typically show results in 4-8 weeks. Google Business Profile optimizations can improve visibility within 2-3 weeks, while citation building and review generation take longer."
+              },
+              {
+                "q": "What is a local citation and why do I need it?",
+                "a": "A local citation is any online mention of your business name, address, and phone number on directories and websites. Consistent citations across Saudi business directories help Google trust your business information and improve local rankings."
+              },
+              {
+                "q": "How much does local SEO cost?",
+                "a": "Local SEO services start from 1,500 SAR per month and include GBP optimization, citation building, review management, and monthly reporting. A one-time local SEO setup starts from 1,000 SAR."
               }
             ]
           },
@@ -303,6 +425,24 @@
                 "label": "Content Audits",
                 "slug": "content-seo"
               }
+            ],
+            "faq": [
+              {
+                "q": "How do you choose keywords for my content?",
+                "a": "We research keywords based on search volume, competition, and user intent. We focus on what your potential clients actually type into Google, including long-tail keywords that have lower competition but higher conversion rates."
+              },
+              {
+                "q": "Can you optimize my existing blog posts?",
+                "a": "Yes, we audit your existing content and optimize titles, meta descriptions, headings, internal links, and keyword usage. We also identify content gaps and suggest new topics to target."
+              },
+              {
+                "q": "How much does content SEO cost?",
+                "a": "Content SEO starts from 1,500 SAR per month including keyword research, content optimization, and 2-4 new articles. Individual article writing and optimization starts from 300 SAR per article."
+              },
+              {
+                "q": "How many articles do I need to rank?",
+                "a": "There is no fixed number, but we recommend publishing 4-8 quality articles per month for the first 3-6 months to build topical authority. Consistency and relevance matter more than quantity."
+              }
             ]
           },
           {
@@ -334,6 +474,24 @@
               {
                 "label": "Competitor Backlinks",
                 "slug": "link-building"
+              }
+            ],
+            "faq": [
+              {
+                "q": "What types of backlinks do you build?",
+                "a": "We build white-hat backlinks only. This includes guest posts on relevant Saudi websites, digital PR mentions, niche edits on established content, and broken link replacements. We never use spammy tactics like PBNs or paid links."
+              },
+              {
+                "q": "How many backlinks do I need to rank?",
+                "a": "Quality matters more than quantity. 5-10 high-quality backlinks from authoritative Saudi websites can have more impact than 50 low-quality links. We focus on relevance and authority."
+              },
+              {
+                "q": "How much does link building cost?",
+                "a": "Link building starts from 2,000 SAR per month for a package of 3-5 quality backlinks. Individual guest posts range from 500 to 1,000 SAR depending on the target website authority."
+              },
+              {
+                "q": "Can you get backlinks from Saudi government websites?",
+                "a": "We focus on relevant, editorial backlinks from legitimate Saudi businesses and publications. Government and educational backlinks are difficult to acquire through standard outreach, but we explore natural opportunities."
               }
             ]
           },
@@ -367,6 +525,24 @@
                 "label": "Competitor Analysis",
                 "slug": "seo-audit"
               }
+            ],
+            "faq": [
+              {
+                "q": "What does your SEO audit cover?",
+                "a": "Our audit covers technical SEO (crawl errors, site speed, mobile-friendliness), on-page SEO (meta tags, headings, content quality), off-page SEO (backlink profile), and competitor benchmarking. You get a prioritized action plan."
+              },
+              {
+                "q": "How long does an SEO audit take?",
+                "a": "A standard audit for a site with up to 50 pages takes 3-5 business days. Larger sites with hundreds of pages can take 7-10 days. We deliver a comprehensive report with screenshots and recommendations."
+              },
+              {
+                "q": "How much does an SEO audit cost?",
+                "a": "A standard SEO audit starts from 1,000 SAR for sites up to 20 pages. For larger sites or more detailed audits including competitor analysis, prices range from 1,500 to 3,000 SAR."
+              },
+              {
+                "q": "Will you implement the fixes after the audit?",
+                "a": "Yes, we offer implementation services after the audit. We can fix technical issues, optimize content, and build a link building strategy based on the audit findings. Implementation is billed separately."
+              }
             ]
           },
           {
@@ -398,6 +574,24 @@
               {
                 "label": "Review Schema",
                 "slug": "ecommerce-seo"
+              }
+            ],
+            "faq": [
+              {
+                "q": "How is e-commerce SEO different from regular SEO?",
+                "a": "E-commerce SEO focuses on product page optimization, category structure, review markup, shopping feed optimization, and site speed for online stores. It also involves optimizing for commercial and transactional search intent."
+              },
+              {
+                "q": "Can you optimize my Shopify, Salla, or Zid store?",
+                "a": "Yes, we work with all major e-commerce platforms. We optimize product titles, descriptions, images alt text, URLs, and schema markup. We also improve site architecture and internal linking specific to each platform."
+              },
+              {
+                "q": "How long does it take to see results from e-commerce SEO?",
+                "a": "Product page optimizations can show improvements in 4-6 weeks. Category page and structural changes may take 8-12 weeks to fully rank. Shopping feed optimization can improve Google Shopping visibility within 2-4 weeks."
+              },
+              {
+                "q": "How much does e-commerce SEO cost?",
+                "a": "E-commerce SEO starts from 2,000 SAR per month for stores with up to 50 products. Larger stores with 100 or more products or multiple platforms range from 3,000 to 5,000 SAR per month."
               }
             ]
           }
@@ -440,6 +634,24 @@
                 "label": "LinkedIn Marketing",
                 "slug": "social-media-marketing"
               }
+            ],
+            "faq": [
+              {
+                "q": "Which social media platforms should my business be on?",
+                "a": "It depends on your target audience. Instagram and Snapchat work well for B2C businesses in Saudi Arabia, while Twitter and LinkedIn are better for B2B. We recommend the platforms that match your audience."
+              },
+              {
+                "q": "How many posts do you create per week?",
+                "a": "Our standard package includes 15-20 posts per month across your chosen platforms, including static posts, stories, and short videos. We also manage daily engagement and community interaction."
+              },
+              {
+                "q": "How much does social media management cost?",
+                "a": "Social media management starts from 2,000 SAR per month for 2 platforms, including content creation, scheduling, and engagement. Adding a third platform or video production increases the price."
+              },
+              {
+                "q": "Do you create video content for social media?",
+                "a": "Yes, we produce short-form videos optimized for each platform format and audience. This includes product showcases, behind-the-scenes content, and promotional videos."
+              }
             ]
           },
           {
@@ -471,6 +683,24 @@
               {
                 "label": "Remarketing",
                 "slug": "google-ads"
+              }
+            ],
+            "faq": [
+              {
+                "q": "What is the minimum budget needed for Google Ads?",
+                "a": "We recommend a minimum monthly budget of 2,000 to 3,000 SAR for meaningful results in most Saudi markets. Smaller budgets work for highly specific local campaigns. We optimize your budget to maximize ROI."
+              },
+              {
+                "q": "How long until I see results from Google Ads?",
+                "a": "You can see impressions and clicks within hours of launching. However, it takes 2-4 weeks for the Google algorithm to optimize your campaigns and improve conversion rates. We monitor and adjust daily."
+              },
+              {
+                "q": "Do you create the ad copy and landing pages?",
+                "a": "We write professional ad copy and recommend landing page improvements to maximize conversions. If you need a dedicated landing page, we can design and build one as part of the campaign setup."
+              },
+              {
+                "q": "How much does Google Ads management cost?",
+                "a": "Our management fee is 1,500 SAR per month for campaigns up to 10,000 SAR ad spend. For larger budgets, the fee is 15 percent of monthly ad spend. This includes full campaign management, optimization, and reporting."
               }
             ]
           },
@@ -504,6 +734,24 @@
                 "label": "Audience Targeting",
                 "slug": "snapchat-tiktok-ads"
               }
+            ],
+            "faq": [
+              {
+                "q": "Which platform performs better: Snapchat or TikTok?",
+                "a": "Both work well in Saudi Arabia but serve different purposes. Snapchat is excellent for local targeting and older audiences (25 and above), while TikTok reaches the younger demographic (16-24) with viral-style content. We recommend based on your target audience."
+              },
+              {
+                "q": "Do you produce the video ads?",
+                "a": "Yes, we produce professional short-form videos tailored to each platform specifications and audience preferences. We handle scripting, filming, and editing."
+              },
+              {
+                "q": "How much should I budget for Snapchat or TikTok ads?",
+                "a": "We recommend a minimum budget of 3,000 SAR per month per platform for meaningful reach and data collection. Smaller budgets can work for highly targeted campaigns with narrow audiences."
+              },
+              {
+                "q": "How much does ad management cost?",
+                "a": "Our management fee is 1,500 SAR per month per platform, which includes campaign setup, creative production, daily optimization, and performance reporting. Video production is included in the fee."
+              }
             ]
           },
           {
@@ -535,6 +783,24 @@
               {
                 "label": "Whitepapers",
                 "slug": "content-marketing"
+              }
+            ],
+            "faq": [
+              {
+                "q": "What types of content do you produce?",
+                "a": "We produce blog articles, long-form guides, short-form videos, infographics, case studies, and whitepapers. The format depends on your audience and where they consume content."
+              },
+              {
+                "q": "How do you measure content marketing success?",
+                "a": "We track organic traffic, engagement rates, time on page, social shares, backlinks earned, and conversion rates from content. We provide monthly reports showing what is working and what needs adjustment."
+              },
+              {
+                "q": "How much does content marketing cost?",
+                "a": "Content marketing packages start from 2,000 SAR per month and include 4-6 pieces of content (articles, videos, graphics), strategy development, and performance tracking. Custom packages are available."
+              },
+              {
+                "q": "How long until content marketing drives results?",
+                "a": "Content marketing is a long-term strategy. You can expect initial traffic increases in 2-3 months, but significant ROI typically appears after 6-12 months of consistent content publishing."
               }
             ]
           },
@@ -568,6 +834,24 @@
                 "label": "Newsletter Design",
                 "slug": "email-marketing"
               }
+            ],
+            "faq": [
+              {
+                "q": "How do you build an email list?",
+                "a": "We set up signup forms on your website and social media, create lead magnets (guides, discounts) to encourage signups, and segment subscribers based on their interests and behavior for targeted campaigns."
+              },
+              {
+                "q": "How often should I send marketing emails?",
+                "a": "We recommend 1-2 newsletters per week for most businesses. Too few and subscribers forget you, too many and they unsubscribe. We find the right frequency through A/B testing and engagement analysis."
+              },
+              {
+                "q": "How much does email marketing cost?",
+                "a": "Email marketing management starts from 1,500 SAR per month including campaign strategy, template design, copywriting, automation setup, and performance reporting. Email platform costs are separate."
+              },
+              {
+                "q": "Can you recover abandoned cart sales?",
+                "a": "Yes, we set up automated abandoned cart email sequences that remind customers about their items and encourage them to complete the purchase. These typically recover 10-15% of abandoned carts."
+              }
             ]
           },
           {
@@ -599,6 +883,24 @@
               {
                 "label": "Brand Guidelines",
                 "slug": "brand-identity"
+              }
+            ],
+            "faq": [
+              {
+                "q": "What is included in a full brand identity package?",
+                "a": "Our full package includes primary and secondary logo designs, color palette, typography system, business cards, social media profile templates, and a comprehensive brand guidelines document. Everything you need for a consistent brand."
+              },
+              {
+                "q": "How long does it take to design a brand identity?",
+                "a": "A complete brand identity project takes 2-4 weeks. This includes research, concept development, design iterations, revisions, and final delivery of all assets. We provide 2-3 initial concepts for you to choose from."
+              },
+              {
+                "q": "How much does brand identity design cost?",
+                "a": "Brand identity packages start from 1,500 SAR for a basic package (logo and color palette) to 4,000 SAR for a full identity system including guidelines and all collateral. Custom quotes for complex projects."
+              },
+              {
+                "q": "Can you redesign my existing brand identity?",
+                "a": "Yes, we handle brand refreshes and complete rebrands. We assess your current identity, understand what needs to change, and create a new look while maintaining brand recognition where appropriate."
               }
             ]
           }
@@ -702,6 +1004,20 @@
                 "label": "تطبيقات صفحة واحدة",
                 "slug": "custom-websites"
               }
+            ],
+            "faq": [
+              {
+                "q": "كم يستغرق تصميم موقع شركة؟",
+                "a": "موقع الشركة القياسي من 5 إلى 10 صفحات يستغرق من أسبوع إلى أسبوعين للتصميم والتطوير. المواقع المعقدة ذات الميزات المخصصة قد تستغرق 3 إلى 4 أسابيع. نقدم جدولاً زمنياً واضحاً خلال مرحلة الاستشارة."
+              },
+              {
+                "q": "هل يمكنني تحديث الموقع بنفسي بعد تصميمه؟",
+                "a": "نعم. نبني موقعك على نظام إدارة محتوى سهل يتيح لك تحديث النصوص والصور والصفحات دون أي خبرة تقنية. كما نقدم جلسة تدريبية لمساعدتك على البدء."
+              },
+              {
+                "q": "كم تكلفة تصميم موقع شركة في السعودية؟",
+                "a": "باقات تصميم مواقع الشركات تبدأ من 1,000 ريال لموقع بسيط من 5 صفحات وتصل إلى 3,000 ريال لموقع متكامل بميزات مخصصة. نقدم عرض سعر دقيق بعد فهم احتياجك."
+              }
             ]
           },
           {
@@ -733,6 +1049,24 @@
               {
                 "label": "ترحيل ووردبريس",
                 "slug": "wordpress-development"
+              }
+            ],
+            "faq": [
+              {
+                "q": "لماذا أختار ووردبريس بدلاً من موقع مخصص؟",
+                "a": "ووردبريس يوفر مرونة وقابلية للتوسع مع مكتبة ضخمة من الإضافات. يمكنك إضافة ميزات مثل المتجر الإلكتروني وأنظمة الحجوزات دون برمجة من الصفر. مثالي للشركات التي ترغب في تطوير موقعها مع الوقت."
+              },
+              {
+                "q": "هل يمكنكم ترحيل موقعي الحالي إلى ووردبريس؟",
+                "a": "نعم، نتعامل مع الترحيل الكامل من أي منصة إلى ووردبريس. نحافظ على ترتيبك في SEO وبنية المحتوى أثناء النقل. تستغرق العملية من 3 إلى 7 أيام حسب حجم موقعك."
+              },
+              {
+                "q": "كم تكلفة موقع ووردبريس مخصص؟",
+                "a": "مشاريع ووردبريس تبدأ من 1,500 ريال للموقع الأساسي وتصل إلى 4,000 ريال لمتجر ووكومرس كامل بميزات مخصصة. السعر يعتمد على متطلباتك المحددة."
+              },
+              {
+                "q": "هل تبني متاجر ووكومرس مع بوابات دفع سعودية؟",
+                "a": "بالتأكيد. نبني متاجر ووكومرس متكاملة مع مدى، STC Pay، وأبل باي. نضبط أيضاً حسابات الضرائب ومناطق الشحن وإدارة المخزون المتوافقة مع السوق السعودي."
               }
             ]
           },
@@ -766,6 +1100,24 @@
                 "label": "تجارة إلكترونية مخصصة",
                 "slug": "online-stores"
               }
+            ],
+            "faq": [
+              {
+                "q": "أي منصة أختار: شوبيفاي، سلة، أم زد؟",
+                "a": "يعتمد على ميزانيتك واحتياجاتك التقنية وخطط النمو. شوبيفاي مناسب للتوسع الدولي، سلة مثالية للسوق السعودي بميزاتها المحلية المدمجة، وزيد مناسب للشركات المحلية المتوسطة. نساعدك في الاختيار خلال الاستشارة المجانية."
+              },
+              {
+                "q": "هل يمكنكم ترحيل متجري الحالي من منصة لأخرى؟",
+                "a": "نعم، نتعامل مع الترحيل بين جميع المنصات بما في ذلك المنتجات والعملاء وسجل الطلبات وإعدادات SEO. نقلل وقت التوقف ونضمن عدم فقدان أي بيانات."
+              },
+              {
+                "q": "كم يستغرق إعداد متجر إلكتروني؟",
+                "a": "المتجر الإلكتروني القياسي يستغرق من 2 إلى 3 أسابيع يشمل التصميم ورفع المنتجات وتكامل بوابات الدفع والاختبار. المتجر الذي يحتوي على 50 منتجاً أو أكثر قد يستغرق 4 إلى 5 أسابيع."
+              },
+              {
+                "q": "كم تكلفة إنشاء متجر إلكتروني؟",
+                "a": "إعداد المتجر الإلكتروني يبدأ من 2,000 ريال للمتجر الأساسي على سلة أو زد، ومن 3,000 ريال لمتجر شوبيفاي. حلول التجارة الإلكترونية المخصصة تتراوح من 4,000 إلى 5,000 ريال."
+              }
             ]
           },
           {
@@ -798,6 +1150,24 @@
                 "label": "تدقيق تجربة المستخدم",
                 "slug": "website-redesign"
               }
+            ],
+            "faq": [
+              {
+                "q": "هل إعادة تصميم موقعي تؤثر على ترتيبي في SEO؟",
+                "a": "نستخدم عملية ترحيل تحافظ على ترتيبك الحالي في محركات البحث. نربط جميع الروابط القديمة بالجديدة، ونحافظ على بيانات الميتا، ونراقب الترتيب أثناء الانتقال وبعده."
+              },
+              {
+                "q": "كم يستغرق مشروع إعادة التصميم؟",
+                "a": "إعادة التصميم النموذجية تستغرق من 2 إلى 4 أسابيع حسب حجم موقعك وتعقيده. المواقع البسيطة من 10 إلى 20 صفحة يمكن إنجازها في أسبوعين."
+              },
+              {
+                "q": "هل أحتاج إعادة تصميم كاملة أم مجرد تحديث؟",
+                "a": "إذا كان عمر موقعك أكثر من 3 سنوات، أو بطيء التحميل، أو غير متوافق مع الجوال، نوصي بإعادة تصميم كاملة. إذا كان التصميم فقط قديماً، تحديث بصري قد يكون كافياً. نقيم موقعك خلال الاستشارة."
+              },
+              {
+                "q": "كم تكلفة إعادة تصميم موقع؟",
+                "a": "تتراوح تكاليف إعادة التصميم من 1,000 ريال للمواقع الصغيرة إلى 3,000 ريال للمواقع الأكبر والأكثر تعقيداً. السعر يعتمد على عدد الصفحات والميزات وما إذا كنت تغير المنصة."
+              }
             ]
           },
           {
@@ -829,6 +1199,24 @@
               {
                 "label": "إدارة النسخ الاحتياطي",
                 "slug": "maintenance-and-support"
+              }
+            ],
+            "faq": [
+              {
+                "q": "ماذا تشمل باقة الصيانة؟",
+                "a": "باقاتنا تشمل التحديثات الأمنية، مراقبة الأداء، نسخ احتياطية أسبوعية، تحديث المحتوى، ومراقبة وقت التشغيل. نوفر أيضاً دعماً فورياً عبر واتساب والبريد الإلكتروني."
+              },
+              {
+                "q": "كم مرة تحدثون موقعي؟",
+                "a": "نطبق التحديثات الأمنية شهرياً ونحدث الإضافات والقوالب حسب الحاجة. التحديثات الحرجة تُطبق فوراً. تحديثات المحتوى يمكن طلبها في أي وقت وتُنفذ عادة خلال 24 ساعة."
+              },
+              {
+                "q": "كم تكلفة صيانة الموقع؟",
+                "a": "باقات الصيانة تبدأ من 300 ريال شهرياً للصيانة الأساسية والأمان، وتصل إلى 800 ريال شهرياً للدعم الشامل بما في ذلك تحديث المحتوى والاستجابة الفورية."
+              },
+              {
+                "q": "هل يمكنكم المساعدة إذا تم اختراق موقعي؟",
+                "a": "نعم، جميع باقات الصيانة تشمل مراقبة أمنية وإزالة البرمجيات الضارة. كما نعزز حماية موقعك ضد الاختراقات المستقبلية. الاسترداد الطارئ جزء من الباقة الشاملة."
               }
             ]
           }
@@ -871,6 +1259,24 @@
                 "label": "الفهرسة والزحف",
                 "slug": "technical-seo"
               }
+            ],
+            "faq": [
+              {
+                "q": "ما هي Core Web Vitals ولماذا هي مهمة؟",
+                "a": "Core Web Vitals هي مقاييس جوجل لقياس تجربة المستخدم تشمل سرعة التحميل (LCP) والتفاعلية (INP) والثبات البصري (CLS). هي عامل ترتيب، لذا الدرجات الضعيفة قد تضر بظهورك في جوجل."
+              },
+              {
+                "q": "كم يستغرق ظهور نتائج تحسين SEO التقني؟",
+                "a": "بعض الإصلاحات مثل تحسين الميتا تاغ وخريطة الموقع تظهر نتائجها في 2 إلى 4 أسابيع. المشاكل الأكثر تعقيداً مثل تحسين سرعة الموقع قد تستغرق 4 إلى 8 أسابيع للتطبيق الكامل."
+              },
+              {
+                "q": "كم تكلفة تحسين SEO التقني؟",
+                "a": "خدمات SEO التقني تبدأ من 1,500 ريال شهرياً للتحسين المستمر. التدقيق التقني لمرة واحدة مع الإصلاحات يتراوح من 1,000 إلى 2,500 ريال حسب حجم موقعك."
+              },
+              {
+                "q": "هل يمكنكم حل مشاكل سرعة موقعي؟",
+                "a": "نعم، نحلل سرعة موقعك باستخدام PageSpeed Insights من جوجل وبيانات المستخدمين الحقيقية. نحسن الصور، نستفيد من التخزين المؤقت، ونضغط الكود، ونطبق حلول CDN لتحسين أوقات التحميل."
+              }
             ]
           },
           {
@@ -902,6 +1308,24 @@
               {
                 "label": "ترتيب قائمة الخرائط",
                 "slug": "local-seo"
+              }
+            ],
+            "faq": [
+              {
+                "q": "كيف أظهر في Google Maps لنشاطي التجاري؟",
+                "a": "نحسّن حساب Google Business Profile بمعلومات دقيقة، تصنيفات، صور، ومنشورات منتظمة. نبني Citations محلية في أدلة الأعمال السعودية ونجلب تقييمات من عملائك لتحسين ترتيبك في قائمة الخرائط."
+              },
+              {
+                "q": "كم يستغرق تحسين SEO المحلي؟",
+                "a": "تحسينات SEO المحلي تظهر نتائجها عادة في 4 إلى 8 أسابيع. تحسين حساب Google Business Profile يمكن أن يحسن الظهور في 2 إلى 3 أسابيع."
+              },
+              {
+                "q": "ما هو الـ Citation المحلي ولماذا أحتاجه؟",
+                "a": "هو أي ذكر لاسم نشاطك التجاري وعنوانك ورقم هاتفك في الأدلة والمواقع الإلكترونية. Citations المتسقة تساعد جوجل على الثقة بمعلومات نشاطك وتحسين ترتيبك المحلي."
+              },
+              {
+                "q": "كم تكلفة تحسين SEO المحلي؟",
+                "a": "خدمات SEO المحلي تبدأ من 1,500 ريال شهرياً وتشمل تحسين GBP وبناء Citations وإدارة التقييمات. الإعداد الأولي لمرة واحدة يبدأ من 1,000 ريال."
               }
             ]
           },
@@ -935,6 +1359,24 @@
                 "label": "تدقيق المحتوى",
                 "slug": "content-seo"
               }
+            ],
+            "faq": [
+              {
+                "q": "كيف تختارون الكلمات المفتاحية لمحتواي؟",
+                "a": "نبحث عن الكلمات المفتاحية بناءً على حجم البحث والمنافسة ونية المستخدم. نركز على ما يكتبه عملاؤك المحتملون في جوجل، بما في ذلك الكلمات الطويلة ذات المنافسة الأقل."
+              },
+              {
+                "q": "هل يمكنكم تحسين مقالاتي الحالية؟",
+                "a": "نعم، نراجع محتواك الحالي ونحسّن العناوين والوصف والروابط الداخلية واستخدام الكلمات المفتاحية. نحدد أيضاً فجوات المحتوى ونقترح مواضيع جديدة."
+              },
+              {
+                "q": "كم تكلفة تحسين المحتوى لمحركات البحث؟",
+                "a": "تحسين المحتوى يبدأ من 1,500 ريال شهرياً يشمل بحث الكلمات المفتاحية وتحسين المحتوى وكتابة 2 إلى 4 مقالات جديدة. كتابة مقال فردي تبدأ من 300 ريال."
+              },
+              {
+                "q": "كم مقالاً أحتاج لأظهر في النتائج الأولى؟",
+                "a": "لا يوجد رقم محدد، لكننا نوصي بنشر 4 إلى 8 مقالات شهرياً لأول 3 إلى 6 أشهر لبناء سلطة موضوعية. الاستمرارية والملاءمة أهم من الكمية."
+              }
             ]
           },
           {
@@ -966,6 +1408,24 @@
               {
                 "label": "روابط المنافسين",
                 "slug": "link-building"
+              }
+            ],
+            "faq": [
+              {
+                "q": "ما أنواع الروابط الخلفية التي تبنيونها؟",
+                "a": "نبني روابط القبعة البيضاء فقط — تدوين ضيف في مواقع سعودية ذات صلة، إشارات علاقات عامة رقمية، وتحرير الروابط في المحتوى الحالي. لا نستخدم أبداً أساليب غير أخلاقية مثل شبكات المواقع أو الروابط المدفوعة."
+              },
+              {
+                "q": "كم رابطاً خلفياً أحتاج للظهور في النتائج الأولى؟",
+                "a": "الجودة أهم من الكمية. 5 إلى 10 روابط عالية الجودة من مواقع سعودية موثوقة قد تكون أكثر تأثيراً من 50 رابطاً منخفض الجودة. نركز على الملاءمة والسلطة."
+              },
+              {
+                "q": "كم تكلفة بناء الروابط الخلفية؟",
+                "a": "بناء الروابط يبدأ من 2,000 ريال شهرياً لباقة من 3 إلى 5 روابط خلفية عالية الجودة. التدوين الضيف الفردي يتراوح من 500 إلى 1,000 ريال حسب سلطة الموقع المستهدف."
+              },
+              {
+                "q": "هل يمكنكم الحصول على روابط من مواقع حكومية سعودية؟",
+                "a": "نركز على الروابط التحريرية ذات الصلة من الشركات والمنشورات السعودية. الروابط من المواقع الحكومية والتعليمية صعبة التحصيل لكننا نستكشف الفرص الطبيعية."
               }
             ]
           },
@@ -999,6 +1459,24 @@
                 "label": "تحليل المنافسين",
                 "slug": "seo-audit"
               }
+            ],
+            "faq": [
+              {
+                "q": "ماذا يغطي تدقيق SEO؟",
+                "a": "التدقيق يغطي SEO التقني (أخطاء الزحف، سرعة الموقع، التوافق مع الجوال)، SEO داخل الصفحة (الميتا تاغ، العناوين، جودة المحتوى)، الروابط الخلفية، ومقارنة المنافسين. تحصل على خطة عمل ذات أولويات."
+              },
+              {
+                "q": "كم يستغرق تدقيق SEO؟",
+                "a": "التدقيق القياسي لموقع يصل إلى 50 صفحة يستغرق من 3 إلى 5 أيام عمل. المواقع الأكبر بمئات الصفحات قد تستغرق من 7 إلى 10 أيام."
+              },
+              {
+                "q": "كم تكلفة تدقيق SEO؟",
+                "a": "التدقيق القياسي يبدأ من 1,000 ريال للمواقع حتى 20 صفحة. للمواقع الأكبر أو التدقيق المفصل يشمل تحليل المنافسين، الأسعار تتراوح من 1,500 إلى 3,000 ريال."
+              },
+              {
+                "q": "هل تنفذون الإصلاحات بعد التدقيق؟",
+                "a": "نعم، نقدم خدمات التنفيذ بعد التدقيق. يمكننا إصلاح المشاكل التقنية، تحسين المحتوى، وبناء استراتيجية روابط خلفية بناءً على نتائج التدقيق. التنفيذ يحسب بشكل منفصل."
+              }
             ]
           },
           {
@@ -1030,6 +1508,24 @@
               {
                 "label": "بيانات المراجعات",
                 "slug": "ecommerce-seo"
+              }
+            ],
+            "faq": [
+              {
+                "q": "كيف يختلف تحسين المتاجر الإلكترونية عن تحسين محركات البحث العادي؟",
+                "a": "تحسين المتاجر يركز على صفحات المنتجات، هيكل الأقسام، بيانات المراجعة (Review Schema)، وتحسين feed التسوق. يتضمن أيضاً تحسين سرعة المتجر واستهداف نية الشراء."
+              },
+              {
+                "q": "هل يمكنكم تحسين متجري على شوبيفاي أو سلة أو زد؟",
+                "a": "نعم، نعمل مع جميع منصات التجارة الإلكترونية الرئيسية. نحسّن عناوين المنتجات، الوصف، النص البديل للصور، والروابط. كما نحسن بنية الموقع والروابط الداخلية."
+              },
+              {
+                "q": "كم يستغرق ظهور نتائج تحسين المتجر؟",
+                "a": "تحسينات صفحات المنتجات تظهر نتائجها في 4 إلى 6 أسابيع. تحسينات الأقسام والهيكل قد تستغرق 8 إلى 12 أسبوعاً للترتيب الكامل."
+              },
+              {
+                "q": "كم تكلفة تحسين المتجر الإلكتروني لمحركات البحث؟",
+                "a": "تحسين المتاجر الإلكترونية يبدأ من 2,000 ريال شهرياً للمتاجر حتى 50 منتجاً. المتاجر الأكبر بـ 100+ منتج تتراوح من 3,000 إلى 5,000 ريال شهرياً."
               }
             ]
           }
@@ -1072,6 +1568,24 @@
                 "label": "تسويق لينكدإن",
                 "slug": "social-media-marketing"
               }
+            ],
+            "faq": [
+              {
+                "q": "ما هي منصات التواصل الاجتماعي التي تناسب نشاطي التجاري؟",
+                "a": "حسب جمهورك المستهدف. إنستغرام وسناب شات مناسبان للأعمال التي تستهدف المستهلك (B2C) في السعودية، بينما تويتر ولينكدإن أفضل للأعمال التجارية (B2B). نوصي بالمنصات التي تناسب جمهورك."
+              },
+              {
+                "q": "كم منشوراً تنشئون أسبوعياً؟",
+                "a": "باقتنا القياسية تشمل 15 إلى 20 منشوراً شهرياً عبر منصاتك المختارة، تشمل منشورات ثابتة، قصص، وفيديوهات قصيرة. ندير أيضاً التفاعل اليومي مع المتابعين."
+              },
+              {
+                "q": "كم تكلفة إدارة وسائل التواصل الاجتماعي؟",
+                "a": "إدارة التواصل الاجتماعي تبدأ من 2,000 ريال شهرياً لمنصتين، تشمل إنشاء المحتوى والجدولة والتفاعل. إضافة منصة ثالثة أو إنتاج فيديو يزيد السعر."
+              },
+              {
+                "q": "هل تنتجون محتوى فيديو لوسائل التواصل؟",
+                "a": "نعم، ننتج فيديوهات قصيرة محسّنة لتناسب كل منصة وجمهورها. تشمل عروض المنتجات، محتوى خلف الكواليس، وفيديوهات ترويجية."
+              }
             ]
           },
           {
@@ -1103,6 +1617,24 @@
               {
                 "label": "إعادة الاستهداف",
                 "slug": "google-ads"
+              }
+            ],
+            "faq": [
+              {
+                "q": "ما هو أقل ميزانية لإعلانات جوجل؟",
+                "a": "نوصي بميزانية شهرية لا تقل عن 2,000 إلى 3,000 ريال لنتائج جيدة في معظم الأسواق السعودية. الميزانيات الأقل تناسب الحملات المحلية شديدة التحديد. نحسن ميزانيتك لتعظيم العائد."
+              },
+              {
+                "q": "كم يستغرق ظهور نتائج إعلانات جوجل؟",
+                "a": "تظهر مرات الظهور والنقرات خلال ساعات من الإطلاق. لكن يستغرق خوارزم جوجل 2 إلى 4 أسابيع لتحسين حملاتك ورفع معدلات التحويل. نراقب ونعدل يومياً."
+              },
+              {
+                "q": "هل تكتبون الإعلانات وتصممون صفحات الهبوط؟",
+                "a": "نكتب نصوصاً إعلانية احترافية ونوصي بتحسينات لصفحات الهبوط لزيادة التحويل. إذا كنت بحاجة لصفحة هبوط مخصصة، نصممها ونبنيها ضمن إعداد الحملة."
+              },
+              {
+                "q": "كم تكلفة إدارة إعلانات جوجل؟",
+                "a": "رسوم الإدارة 1,500 ريال شهرياً للحملات حتى 10,000 ريال إنفاق إعلاني. للميزانيات الأكبر، الرسوم 15% من الإنفاق الشهري. يشمل إدارة كاملة وتحسين وتقارير."
               }
             ]
           },
@@ -1136,6 +1668,24 @@
                 "label": "استهداف الجمهور",
                 "slug": "snapchat-tiktok-ads"
               }
+            ],
+            "faq": [
+              {
+                "q": "أي منصة أفضل: سناب شات أم تيك توك؟",
+                "a": "كلاهما ناجح في السعودية لكن لأغراض مختلفة. سناب شات ممتاز للاستهداف المحلي والجمهور الأكبر (25+ سنة)، بينما تيك توك يصل للشريحة الأصغر (16-24 سنة) بمحتوى فيروسي. نوصي بناءً على جمهورك."
+              },
+              {
+                "q": "هل تنتجون الإعلانات المصورة؟",
+                "a": "نعم، ننتج فيديوهات قصيرة احترافية مخصصة لمتطلبات كل منصة وجمهورها. نتولى كتابة السيناريو والتصوير والمونتاج."
+              },
+              {
+                "q": "كم ميزانية إعلانات سناب شات أو تيك توك؟",
+                "a": "نوصي بميزانية لا تقل عن 3,000 ريال شهرياً لكل منصة للوصول الفعال وجمع البيانات. الميزانيات الأقل تناسب الحملات شديدة الاستهداف."
+              },
+              {
+                "q": "كم تكلفة إدارة الإعلانات؟",
+                "a": "رسوم الإدارة 1,500 ريال شهرياً لكل منصة، تشمل إعداد الحملة وإنتاج المحتوى الإبداعي والتحسين اليومي وتقارير الأداء. إنتاج الفيديو ضمن الرسوم."
+              }
             ]
           },
           {
@@ -1167,6 +1717,24 @@
               {
                 "label": "أوراق بيضاء",
                 "slug": "content-marketing"
+              }
+            ],
+            "faq": [
+              {
+                "q": "ما أنواع المحتوى التي تنتجونها؟",
+                "a": "ننتج مقالات، أدلة شاملة، فيديوهات قصيرة، إنفوغرافيك، دراسات حالة، وأوراق بيضاء. نختار التنسيق المناسب بناءً على جمهورك وأين يستهلكون المحتوى."
+              },
+              {
+                "q": "كيف تقيسون نجاح التسويق بالمحتوى؟",
+                "a": "نتتبع الزوار العضويين، معدلات التفاعل، وقت البقاء في الصفحة، المشاركات، الروابط الخلفية المكتسبة، ومعدلات التحويل. نقدم تقارير شهرية توضح ما يعمل وما يحتاج تعديلاً."
+              },
+              {
+                "q": "كم تكلفة التسويق بالمحتوى؟",
+                "a": "باقات التسويق بالمحتوى تبدأ من 2,000 ريال شهرياً تشمل 4 إلى 6 قطع محتوى (مقالات، فيديوهات، تصاميم)، تطوير استراتيجية، ومتابعة الأداء. باقات مخصصة متاحة."
+              },
+              {
+                "q": "كم يستغرق التسويق بالمحتوى لتحقيق نتائج؟",
+                "a": "التسويق بالمحتوى استراتيجية طويلة المدى. يمكن توقع زيادة في الزوار خلال 2 إلى 3 أشهر، لكن العائد الحقيقي يظهر بعد 6 إلى 12 شهراً من النشر المنتظم."
               }
             ]
           },
@@ -1200,6 +1768,24 @@
                 "label": "تصميم النشرة الإخبارية",
                 "slug": "email-marketing"
               }
+            ],
+            "faq": [
+              {
+                "q": "كيف تبني قائمة بريدية؟",
+                "a": "نضيف نماذج تسجيل في موقعك ووسائل التواصل، ننشئ محتوى حصرياً (أدلة، خصومات) لتشجيع التسجيل، ونقسّم المشتركين حسب اهتماماتهم لحملات مستهدفة."
+              },
+              {
+                "q": "كم مرة يجب إرسال رسائل تسويقية؟",
+                "a": "نوصي بإرسال 1 إلى 2 نشرة بريدية أسبوعياً لمعظم الأنشطة. القليل جداً يجعلك منسياً، والكثير يدفعهم لإلغاء الاشتراك. نحدد التكرار الأمثل عبر الاختبار."
+              },
+              {
+                "q": "كم تكلفة التسويق عبر البريد الإلكتروني؟",
+                "a": "إدارة البريد الإلكتروني تبدأ من 1,500 ريال شهرياً تشمل استراتيجية الحملات، تصميم القوالب، كتابة المحتوى، إعداد الأتمتة، وتقارير الأداء. تكاليف منصة البريد منفصلة."
+              },
+              {
+                "q": "هل يمكنكم استرداد مبيعات عربات التسوق المهجورة؟",
+                "a": "نعم، نضبط تسلسلات بريدية آلية لاسترداد العربات المهجورة تذكّر العملاء بمنتجاتهم وتشجعهم على إكمال الشراء. تسترد هذه التسلسلات عادة 10-15% من العربات المهجورة."
+              }
             ]
           },
           {
@@ -1231,6 +1817,24 @@
               {
                 "label": "إرشادات العلامة التجارية",
                 "slug": "brand-identity"
+              }
+            ],
+            "faq": [
+              {
+                "q": "ماذا تشمل باقة الهوية البصرية الكاملة؟",
+                "a": "الباقة الكاملة تشمل تصميم الشعار الرئيسي والثانوي، نظام الألوان والخطوط، بطاقات العمل، قوالب التواصل الاجتماعي، ودليل الهوية البصرية الشامل. كل ما تحتاجه لهوية متسقة."
+              },
+              {
+                "q": "كم يستغرق تصميم الهوية البصرية؟",
+                "a": "مشروع الهوية البصرية الكامل يستغرق من 2 إلى 4 أسابيع. يشمل البحث، تطوير المفاهيم، تكرارات التصميم، المراجعات، والتسليم النهائي. نقدم 2 إلى 3 مفاهيم أولية للاختيار."
+              },
+              {
+                "q": "كم تكلفة تصميم الهوية البصرية؟",
+                "a": "باقات الهوية البصرية تبدأ من 1,500 ريال للباقة الأساسية (شعار + ألوان) وتصل إلى 4,000 ريال للهوية المتكاملة مع الدليل وجميع المشتقات. عروض أسعار خاصة للمشاريع المعقدة."
+              },
+              {
+                "q": "هل يمكنكم إعادة تصميم هويتي البصرية الحالية؟",
+                "a": "نعم، نتعامل مع تحديث الهوية وإعادة العلامة التجارية بالكامل. نقيم هويتك الحالية ونفهم ما يحتاج تغييراً ونصمم مظهراً جديداً مع الحفاظ على التعرف على العلامة التجارية."
               }
             ]
           }
