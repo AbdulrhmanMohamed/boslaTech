@@ -6,7 +6,7 @@
 	import { clearLanguageCache } from '$lib/utils/language';
 	import { base } from '$app/paths';
 	import { inView } from '$lib/actions/inView';
-	import { ChevronDown, ChevronRight, Search, Calculator, MessageSquare } from '@lucide/svelte';
+	import { ChevronDown, ChevronRight } from '@lucide/svelte';
 
 	const props = $props<{ site?: any; lang: 'en' | 'ar' }>();
 	const site = $derived(props.site);
@@ -124,7 +124,6 @@
 		{ path: `${base}/about`, label: site?.nav?.about || (lang === 'ar' ? 'من نحن' : 'About') },
 		{ path: `${base}/services`, label: site?.nav?.services || (lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
 		{ path: `${base}/blog`, label: site?.nav?.blog || (lang === 'ar' ? 'المدونة' : 'Blog') },
-		{ path: `${base}/comparisons/shopify-vs-salla-vs-zid`, label: lang === 'ar' ? 'مقارنات' : 'Comparisons' },
 		{ path: `${base}/contact`, label: site?.nav?.contact || (lang === 'ar' ? 'تواصل معنا' : 'Contact') }
 	]);
 
@@ -314,35 +313,11 @@
 												</div>
 											{/each}
 										</div>
-										<!-- Entry Hooks Footer -->
 										<div class="mt-4 border-t border-[var(--glass-border)] pt-4">
-											<div class="flex items-center justify-between">
-												<div class="flex items-center gap-2">
-													<a
-													href={link(`${base}/free-seo-audit`)}
-													class="flex items-center gap-1.5 rounded-full bg-brand-orange/10 px-3 py-1.5 text-[10px] font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
-												>
-													<Search class="h-3 w-3" />
-													{lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
-												</a>
-												<a
-													href={link(`${base}/cost-calculator`)}
-													class="flex items-center gap-1.5 rounded-full bg-brand-blue/10 px-3 py-1.5 text-[10px] font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
-												>
-													<Calculator class="h-3 w-3" />
-													{lang === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}
-													</a>
-												<a
-													href={link(`${base}/case-studies/salla-store-riyadh`)}
-													class="flex items-center gap-1.5 rounded-full bg-purple-500/10 px-3 py-1.5 text-[10px] font-bold text-purple-600 transition-all hover:bg-purple-500/20"
-												>
-													<MessageSquare class="h-3 w-3" />
-													{lang === 'ar' ? 'دراسات حالة' : 'Case Studies'}
-												</a>
-												</div>
+											<div class="flex justify-center">
 												<a
 													href={link(`${base}/services`)}
-													class="rounded-full bg-brand-blue px-4 py-1.5 text-xs font-bold text-white transition-all hover:bg-brand-blue/80 hover:shadow-lg"
+													class="rounded-full bg-brand-blue px-6 py-2 text-xs font-bold text-white transition-all hover:bg-brand-blue/80 hover:shadow-lg"
 												>
 													{lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services'}
 												</a>

@@ -323,7 +323,7 @@
 	});
 </script>
 
-<canvas bind:this={canvas} class="pointer-events-none fixed inset-0 z-[100]"></canvas>
+<canvas bind:this={canvas} class="pointer-events-none fixed inset-0 z-0"></canvas>
 
 <svelte:head>
 	<title>{(data as any).contact?.title || 'Contact'} — {(data as any).site?.siteName || 'BOSLA'}</title>
@@ -335,14 +335,6 @@
 	class="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden transition-colors duration-1000"
 	dir={(data as any).lang === 'ar' ? 'rtl' : 'ltr'}
 >
-	<div class="container mx-auto px-6 pt-28">
-		<Breadcrumbs
-			lang={(data as any).lang}
-			items={[
-				{ label: (data as any).lang === 'ar' ? 'اتصل بنا' : 'Contact Us' }
-			]}
-		/>
-	</div>
 	<!-- Background Image -->
 	<HeroBackground />
 
@@ -358,6 +350,14 @@
 
 	<!-- Background Accents Removed to use HeroBackground -->
 	<div class="relative z-10 container mx-auto px-6 py-24">
+		<div class="flex justify-center pb-4">
+			<Breadcrumbs
+				lang={(data as any).lang}
+				items={[
+					{ label: (data as any).lang === 'ar' ? 'اتصل بنا' : 'Contact Us' }
+				]}
+			/>
+		</div>
 		<div class="mx-auto max-w-4xl space-y-8 text-center">
 			<div
 				class="cinematic-glass mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"

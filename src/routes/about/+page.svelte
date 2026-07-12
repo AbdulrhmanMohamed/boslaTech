@@ -438,13 +438,15 @@
 
 		<!-- Foreground Content -->
 		<div class="relative z-10">
-			<div class="container mx-auto px-6 pt-24 md:px-12">
-				<Breadcrumbs
-					lang={(data as any).lang}
-					items={[
-						{ label: (data as any).lang === 'ar' ? 'من نحن' : 'About Us' }
-					]}
-				/>
+			<div class="container mx-auto px-6 pt-36 md:px-12">
+				<div class="flex justify-center">
+					<Breadcrumbs
+						lang={(data as any).lang}
+						items={[
+							{ label: (data as any).lang === 'ar' ? 'من نحن' : 'About Us' }
+						]}
+					/>
+				</div>
 			</div>
 			<!-- Hero Section -->
 			<section

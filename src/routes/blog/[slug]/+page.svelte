@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
-	import { ArrowLeft, Calendar, Clock, Sparkles, User } from '@lucide/svelte';
+	import { ArrowLeft, Calendar, Clock, Sparkles, User, BookOpen, BarChart, ShoppingBag, Search, Megaphone, Palette } from '@lucide/svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import CtaSection from '$lib/components/CtaSection.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
@@ -11,6 +11,43 @@
 
 	const lang = $derived(typed?.lang || 'ar');
 	const isAr = $derived(lang === 'ar');
+
+	const badgeColors: Record<string, string> = {
+		guide: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+		comparison: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+		'case-study': 'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20'
+	};
+
+	const badgeLabels: Record<string, string> = {
+		guide: isAr ? 'دليل' : 'Guide',
+		comparison: isAr ? 'مقارنة' : 'Comparison',
+		'case-study': isAr ? 'دراسة حالة' : 'Case Study'
+	};
+
+	const relatedServices: Record<string, Array<{ href: string; icon: any; label: string; arLabel: string }>> = {
+		guide: [
+			{ href: '/services/web-development/custom-websites', icon: BookOpen, label: 'Custom Website Development', arLabel: 'خدمة تصميم مواقع مخصصة' },
+			{ href: '/services/seo/technical-seo', icon: Search, label: 'Technical SEO Services', arLabel: 'خدمات تحسين محركات البحث التقني' },
+			{ href: '/services/seo/local-seo', icon: BarChart, label: 'Local SEO', arLabel: 'تحسين محركات البحث المحلي' },
+			{ href: '/services/digital-marketing/google-ads', icon: Megaphone, label: 'Google Ads Management', arLabel: 'إدارة إعلانات جوجل' },
+			{ href: '/services/web-development/online-stores', icon: ShoppingBag, label: 'Online Stores', arLabel: 'تصميم المتاجر الإلكترونية' }
+		],
+		comparison: [
+			{ href: '/services/web-development/online-stores', icon: ShoppingBag, label: 'E-commerce Store Setup', arLabel: 'خدمة تصميم متجر إلكتروني' },
+			{ href: '/services/web-development/custom-websites', icon: BookOpen, label: 'Custom Website Development', arLabel: 'خدمة تصميم مواقع مخصصة' },
+			{ href: '/services/web-development/wordpress-development', icon: BookOpen, label: 'WordPress Development', arLabel: 'خدمة تطوير ووردبريس' },
+			{ href: '/services/seo/ecommerce-seo', icon: Search, label: 'E-commerce SEO', arLabel: 'تحسين المتاجر الإلكترونية' }
+		],
+		'case-study': [
+			{ href: '/services/seo/local-seo', icon: BarChart, label: 'Local SEO Services', arLabel: 'خدمات تحسين محركات البحث المحلي' },
+			{ href: '/services/web-development/online-stores', icon: ShoppingBag, label: 'Online Store Development', arLabel: 'خدمة تصميم المتاجر الإلكترونية' },
+			{ href: '/services/digital-marketing/content-marketing', icon: Megaphone, label: 'Content Marketing', arLabel: 'خدمة التسويق بالمحتوى' },
+			{ href: '/services/web-development/custom-websites', icon: BookOpen, label: 'Custom Websites', arLabel: 'خدمة تصميم مواقع مخصصة' },
+			{ href: '/services/digital-marketing/brand-identity', icon: Palette, label: 'Brand Identity', arLabel: 'خدمة تصميم هوية بصرية' }
+		]
+	};
+
+	const currentServices = $derived(relatedServices[post?.category] || relatedServices.guide);
 </script>
 
 <svelte:head>
@@ -61,6 +98,13 @@
 					/>
 				</div>
 				<div class="space-y-6">
+					{#if post.category}
+						<div class="flex justify-center">
+							<span class="inline-flex items-center rounded-full border px-4 py-1.5 text-xs font-black uppercase tracking-wider {badgeColors[post.category] || ''}">
+								{badgeLabels[post.category] || post.category}
+							</span>
+						</div>
+					{/if}
 					<h1 class="text-4xl leading-tight font-black text-[var(--color-text-base)] md:text-5xl">{post.title}</h1>
 					<div class="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-[var(--color-text-muted)]">
 						<span class="inline-flex items-center gap-1.5">
@@ -89,6 +133,34 @@
 					{@html post.content}
 				</div>
 
+				<!-- Related Services -->
+				<div class="my-16 rounded-3xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-8">
+					<div class="mb-6 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2">
+						<Sparkles class="h-4 w-4 text-brand-orange" />
+						<span class="text-xs font-black tracking-widest text-[var(--color-text-muted)] uppercase">
+							{isAr ? 'خدمات ذات صلة' : 'Related Services'}
+						</span>
+					</div>
+					<div class="grid gap-4 sm:grid-cols-2">
+						{#each currentServices as svc}
+							<a
+								href={`${base}${svc.href}?lang=${lang}`}
+								class="group flex items-center gap-3 rounded-2xl border border-[var(--glass-border)] bg-[var(--color-background)] p-4 transition-all hover:border-brand-blue/30 hover:shadow-md"
+							>
+								<div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
+									<svc.icon class="h-5 w-5" />
+								</div>
+								<div>
+									<span class="text-sm font-bold text-[var(--color-text-base)] transition-colors group-hover:text-brand-blue">
+										{isAr ? svc.arLabel : svc.label}
+									</span>
+								</div>
+								<ArrowLeft class="mr-auto h-4 w-4 shrink-0 text-[var(--color-text-muted)] transition-colors group-hover:text-brand-blue {isAr ? '' : 'rotate-180'}" />
+							</a>
+						{/each}
+					</div>
+				</div>
+
 				<hr class="my-16 border-[var(--glass-border)]" />
 
 				<div class="text-center">
@@ -114,3 +186,23 @@
 <div class="bg-[var(--color-background)] transition-colors duration-1000">
 	<CtaSection {data} />
 </div>
+
+<style>
+	:global(.prose p) {
+		margin-bottom: 1.5rem;
+	}
+	:global(.prose h2) {
+		margin-top: 2.5rem;
+		margin-bottom: 1rem;
+		font-size: 1.5rem;
+		font-weight: 800;
+		color: var(--color-text-base);
+	}
+	:global(.prose h3) {
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--color-text-base);
+	}
+</style>

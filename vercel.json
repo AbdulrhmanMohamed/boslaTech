@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "svelte.config.js",
+      "use": "@sveltejs/adapter-static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/dist/$1"
+    }
+  ]
+}

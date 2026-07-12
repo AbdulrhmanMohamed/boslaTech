@@ -756,3 +756,19 @@ LocalBusiness (مؤسسة حافة النجوم)
 Example: `Phase A: Layer 1,2,5 — Rewrite services data with real platforms, remove tech names and fake stats`
 
 **Rollback:** `git revert <commit>` for any single phase. `git reset abf3807 --hard` for full revert.
+
+## Current State (Jul 12 2026)
+
+### Completed This Session
+- Comparisons + case-studies standalone routes deleted (moved into blog as categorized posts)
+- Header.svelte and DrawerPanel.svelte nav updated
+- comparisons.i18n.json and case-studies.i18n.json deleted
+- Blog `categories` field added (guide, comparison, case-study)
+- **13 blog posts** (3 original + 10 new) all 800+ words in both EN and AR
+  - 3 original posts rewritten as problem-solving content (1550-1943 words)
+  - 2 comparison posts (Shopify vs Salla vs Zid, WordPress vs Custom)
+  - 3 case study posts (Salla fashion boutique, clinic local SEO, Shopify food brand)
+  - 5 new guide posts (start online store, SEO guide, 5 signs site drives away, marketing budget, payment gateways)
+- `add-blog-posts.cjs` — script to build full 13-post file from 3 original + 10 content-defined posts
+- `expand-posts.cjs` — script to expand short posts to 800+ words  
+- Build passes cleanly

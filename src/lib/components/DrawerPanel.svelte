@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto, invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { X, Globe, MessageSquare, ArrowRight, ChevronDown, ChevronRight, Search, Calculator } from '@lucide/svelte';
+	import { X, Globe, MessageSquare, ArrowRight, ChevronDown, ChevronRight } from '@lucide/svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import ThemeToggle from './ThemeToggle.svelte';
@@ -41,7 +41,6 @@
 		{ path: `${base}/`, label: props.site?.nav?.home || (props.lang === 'ar' ? 'الرئيسية' : 'Home') },
 		{ path: `${base}/about`, label: props.site?.nav?.about || (props.lang === 'ar' ? 'من نحن' : 'About') },
 		{ path: `${base}/services`, label: props.site?.nav?.services || (props.lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
-		{ path: `${base}/comparisons/shopify-vs-salla-vs-zid`, label: props.lang === 'ar' ? 'مقارنات' : 'Comparisons' },
 		{ path: `${base}/contact`, label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact') }
 	]);
 
@@ -259,25 +258,6 @@
 											</div>
 										</div>
 									{/each}
-									<!-- Entry Hooks -->
-									<div class="space-y-1.5 pt-2">
-										<a
-											href={link(`${base}/free-seo-audit`)}
-											onclick={handleNavClick}
-											class="flex items-center gap-2 rounded-xl bg-brand-orange/10 px-4 py-2.5 text-xs font-bold text-brand-orange transition-all hover:bg-brand-orange/20"
-										>
-											<Search class="h-3.5 w-3.5" />
-											{props.lang === 'ar' ? 'تدقيق SEO مجاني' : 'Free SEO Audit'}
-										</a>
-										<a
-											href={link(`${base}/cost-calculator`)}
-											onclick={handleNavClick}
-											class="flex items-center gap-2 rounded-xl bg-brand-blue/10 px-4 py-2.5 text-xs font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
-										>
-											<Calculator class="h-3.5 w-3.5" />
-											{props.lang === 'ar' ? 'حاسبة التكلفة' : 'Cost Calculator'}
-										</a>
-									</div>
 									<div class="border-t border-[var(--glass-border)] pt-2">
 										<a
 											href={link(`${base}/services`)}
