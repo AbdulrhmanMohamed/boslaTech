@@ -1,4 +1,5 @@
 import type { PageLoad } from './$types';
+import services_i18n from '$lib/content/services.i18n.json';
 import { error } from '@sveltejs/kit';
 
 export const prerender = true;
@@ -6,7 +7,6 @@ export const prerender = true;
 export const load: PageLoad = async ({ parent, params }) => {
 	const parentData = await parent();
 	const lang = (parentData as { lang: 'en' | 'ar' }).lang;
-	const { default: services_i18n } = await import('$lib/content/services.i18n.json');
 	const pageData = services_i18n[lang as 'en' | 'ar'];
 
 	const category = (pageData as any).categories?.find(
