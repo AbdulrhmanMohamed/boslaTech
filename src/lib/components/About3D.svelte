@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { T, useTask } from '@threlte/core';
 	import { ContactShadows, Float } from '@threlte/extras';
-	import { getContext } from 'svelte';
+	import { getContext, onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
 	import * as THREE from 'three';
 	import { theme } from '$lib/stores/theme.svelte';
@@ -34,8 +34,24 @@
 	const shadowOpacity = $derived(currentTheme === 'light' ? 0.2 : 0.3);
 	const particleOpacity = $derived(currentTheme === 'light' ? 0.2 : 0.4);
 
+	let isVisible = $state(true);
+
+	onMount(() => {
+		const canvas = document.querySelector('canvas');
+		if (!canvas) return;
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				isVisible = entry.isIntersecting;
+			},
+			{ threshold: 0 }
+		);
+		observer.observe(canvas);
+		return () => observer.disconnect();
+	});
+
 	let time = $state(0);
 	useTask((delta) => {
+		if (!isVisible) return;
 		time += delta;
 		// Follow mouse subtly
 		const targetX =

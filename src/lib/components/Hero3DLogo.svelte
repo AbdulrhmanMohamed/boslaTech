@@ -4,7 +4,7 @@
 	import * as THREE from 'three';
 	import { theme } from '$lib/stores/theme.svelte';
 
-	let { url, position, ecosystemOpacity, logoSize = 0.32 } = $props();
+	let { url, position, ecosystemOpacity, logoSize = 0.32, isVisible = true } = $props();
 	const currentTheme = $derived(theme.current);
 
 	const logoWidth = 1.0;
@@ -28,6 +28,7 @@
 
 	let time = 0;
 	useTask((delta) => {
+		if (!isVisible) return;
 		time += delta;
 	});
 </script>

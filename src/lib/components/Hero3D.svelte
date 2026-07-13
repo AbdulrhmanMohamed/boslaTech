@@ -112,6 +112,9 @@
 	let showDataThreads = $state(false);
 	let isFullyLoaded = $state(false);
 
+	// Off-screen pause for performance (GTmetrix Lighthouse CPU idle)
+	let isVisible = $state(true);
+
 	// Mobile-specific 3D adjustments
 	const orbitRadii = $derived(isMobile ? mobileOrbitRadii : desktopOrbitRadii);
 	// Mobile: limit to 10 logos for a clean look
@@ -130,6 +133,7 @@
 
 		// WebGL Context Loss Recovery
 		const canvas = document.querySelector('canvas');
+		let observer: IntersectionObserver | undefined;
 		if (canvas) {
 			canvas.addEventListener('webglcontextlost', (event) => {
 				event.preventDefault();
@@ -145,7 +149,19 @@
 					onContextRestored();
 				}
 			});
+
+			observer = new IntersectionObserver(
+				([entry]) => {
+					isVisible = entry.isIntersecting;
+				},
+				{ threshold: 0 }
+			);
+			observer.observe(canvas);
 		}
+
+		return () => {
+			observer?.disconnect();
+		};
 
 		// Reduced visible count for mobile (10 is enough for 2 clean rings)
 		const mobileMaxLogos = 10;
@@ -259,6 +275,7 @@
 	let frameSkipCounter = 0;
 
 	useTask((delta) => {
+		if (!isVisible) return;
 		frameSkipCounter++;
 		if (frameSkipCounter % FRAME_SKIP !== 0) return;
 
@@ -467,7 +484,7 @@
 							scale={isMobile ? flipOpacity : 1}
 						>
 							{#key logoUrl}
-								<Hero3DLogo url={logoUrl} position={[0, 0, 0]} {ecosystemOpacity} {logoSize} />
+								<Hero3DLogo url={logoUrl} position={[0, 0, 0]} {ecosystemOpacity} {logoSize} {isVisible} />
 							{/key}
 						</T.Group>
 
