@@ -116,28 +116,26 @@
 			subheadlineSplit = cleanup(subheadlineElement, subheadlineSplit);
 
 			const badgeWrapper = document.querySelector('.hero-badge') as HTMLElement;
-			if (badgeWrapper) gsap.set(badgeWrapper, { opacity: 0 });
-			if (buttonsElement) gsap.set(buttonsElement, { opacity: 0 });
+			if (badgeWrapper) gsap.set(badgeWrapper, { y: -10 });
+			if (buttonsElement) gsap.set(buttonsElement, { y: 20 });
 
 			if (badgeWrapper) {
 				gsap.to(badgeWrapper, {
-					opacity: 1,
 					y: 0,
 					duration: 0.6,
-					ease: 'power2.out',
-					startAt: { y: -10 }
+					ease: 'power2.out'
 				});
 			}
 
 			if (isAr) {
-				gsap.set(headlineElement, { opacity: 1, clipPath: 'inset(0 0 0 100%)' });
+				gsap.set(headlineElement, { clipPath: 'inset(0 0 0 100%)' });
 				gsap.to(headlineElement, {
 					clipPath: 'inset(0 0 0 0%)',
 					duration: 1.4,
 					ease: 'power2.inOut'
 				});
 
-				gsap.set(subheadlineElement, { opacity: 1, clipPath: 'inset(0 0 0 100%)' });
+				gsap.set(subheadlineElement, { clipPath: 'inset(0 0 0 100%)' });
 				gsap.to(subheadlineElement, {
 					clipPath: 'inset(0 0 0 0%)',
 					duration: 1.2,
@@ -145,20 +143,17 @@
 					delay: 0.4
 				});
 			} else {
-				gsap.set([headlineElement, subheadlineElement], { opacity: 1 });
-
 				if (headlineText?.includes('<')) {
 					gsap.fromTo(
 						headlineElement,
-						{ opacity: 0, y: 20 },
-						{ opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
+						{ y: 20 },
+						{ y: 0, duration: 0.8, ease: 'power2.out' }
 					);
 				} else {
 					headlineSplit = new SplitType(headlineElement, { types: 'chars' });
-					gsap.set(headlineSplit.chars, { opacity: 0, y: 12 });
+					gsap.set(headlineSplit.chars, { y: 12 });
 
 					gsap.to(headlineSplit.chars, {
-						opacity: 1,
 						y: 0,
 						stagger: 0.03,
 						duration: 0.4,
@@ -167,10 +162,9 @@
 				}
 
 				subheadlineSplit = new SplitType(subheadlineElement, { types: 'chars' });
-				gsap.set(subheadlineSplit.chars, { opacity: 0, y: 6 });
+				gsap.set(subheadlineSplit.chars, { y: 6 });
 
 				gsap.to(subheadlineSplit.chars, {
-					opacity: 1,
 					y: 0,
 					stagger: 0.015,
 					duration: 0.3,
@@ -181,12 +175,10 @@
 
 			if (buttonsElement) {
 				gsap.to(buttonsElement, {
-					opacity: 1,
 					y: 0,
 					duration: 0.8,
 					ease: 'power2.out',
-					delay: 0.8,
-					startAt: { y: 20 }
+					delay: 0.8
 				});
 			}
 
@@ -649,11 +641,11 @@
 		display: inline-block !important;
 	}
 
-	/* Initial hidden state to prevent flash during language switch */
+	/* Hero content visible on first paint for fast LCP; GSAP still animates entry */
 	.hero-headline,
 	.hero-subheadline,
 	.hero-badge,
 	.hero-buttons {
-		opacity: 0;
+		opacity: 1;
 	}
 </style>

@@ -206,7 +206,7 @@
 					} else {
 						// English: Character-based typing
 						const charSplit = new SplitType(titleElement as HTMLElement, { types: 'chars' });
-						gsap.set(charSplit.chars, { opacity: 0, y: 10 });
+						gsap.set(charSplit.chars, { y: 10 });
 						gsap.to(charSplit.chars, {
 							opacity: 1,
 							y: 0,
@@ -237,7 +237,7 @@
 						});
 					} else {
 						const subSplit = new SplitType(subtitleElement as HTMLElement, { types: 'chars' });
-						gsap.set(subSplit.chars, { opacity: 0, y: 5 });
+						gsap.set(subSplit.chars, { y: 5 });
 						gsap.to(subSplit.chars, {
 							opacity: 1,
 							y: 0,
