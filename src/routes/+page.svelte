@@ -10,8 +10,6 @@
 	import SocialProofSection from '$lib/components/SocialProofSection.svelte';
 	import FAQSection from '$lib/components/FAQSection.svelte';
 	import WhyChooseUsSection from '$lib/components/WhyChooseUsSection.svelte';
-	import Hero3D from '$lib/components/About3D.svelte';
-	import { Canvas, T } from '@threlte/core';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import SplitType from 'split-type';
@@ -58,6 +56,7 @@
 	// Delayed Canvas loading for faster FCP/LCP
 	let showCanvas = $state(false);
 	let canvasKey = $state(0); // Used to force re-render on WebGL context recovery
+	let Scene3D = $state<typeof import('$lib/components/HomeScene3D.svelte').default | null>(null);
 
 	// Typewriter / Hero Animation (RTL + LTR Safe)
 	$effect(() => {
@@ -294,7 +293,9 @@
 		// Three.js loads after delay - gradient shows during load time
 		const canvasDelay = isMobile ? 800 : 1500;
 
-		setTimeout(() => {
+		setTimeout(async () => {
+			const mod = await import('$lib/components/HomeScene3D.svelte');
+			Scene3D = mod.default;
 			showCanvas = true;
 		}, canvasDelay);
 
@@ -499,18 +500,10 @@
 			bind:this={hero3DContainer}
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
-			{#if showCanvas}
-				<Canvas>
-					<T.PerspectiveCamera makeDefault position={cameraPosition} fov={cameraFov} />
-					{#key canvasKey}
-						<Hero3D
-							{sceneRotation}
-							onContextRestored={() => {
-								canvasKey++;
-							}}
-						/>
-					{/key}
-				</Canvas>
+			{#if showCanvas && Scene3D}
+				{#key canvasKey}
+					<Scene3D {sceneRotation} {cameraPosition} {cameraFov} {canvasKey} onContextRestored={() => { canvasKey++; }} />
+				{/key}
 			{:else}
 				<!-- CSS Gradient Placeholder - Shows immediately for fast FCP -->
 				<div
