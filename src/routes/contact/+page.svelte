@@ -39,6 +39,8 @@
 		}
 	});
 
+	let showCanvas = $state(false);
+
 	function handleMouseMove(e: MouseEvent) {
 		mouseX = e.clientX;
 		mouseY = e.clientY;
@@ -231,6 +233,8 @@
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
 		initParticles();
+
+		setTimeout(() => { showCanvas = true; }, 600);
 		window.addEventListener('resize', resizeCanvas);
 		window.addEventListener('mousemove', handleMouseMove);
 
@@ -343,9 +347,13 @@
 		class="absolute inset-0 z-0 opacity-60"
 		style="filter: {currentTheme === 'light' ? 'brightness(1.2) contrast(0.9)' : 'none'}"
 	>
-		<Canvas>
-			<Contact3D />
-		</Canvas>
+		{#if showCanvas}
+			<Canvas>
+				<Contact3D />
+			</Canvas>
+		{:else}
+			<div class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-blue)]/20 via-transparent to-[var(--color-brand-orange)]/10"></div>
+		{/if}
 	</div>
 
 	<!-- Background Accents Removed to use HeroBackground -->
