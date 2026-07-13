@@ -1,22 +1,13 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://svelte.dev/docs/kit/integrations
-	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 	kit: {
-		// adapter-static for static site deployment
 		adapter: adapter({
-			// Generate static HTML files for each route
-			pages: 'dist',
-			assets: 'dist',
-			fallback: 'index.html', // SPA fallback for client-side routing
-			precompress: false,
-			strict: true
+			runtime: 'nodejs22.x'
 		}),
-		// Handle prerendering errors gracefully
 		prerender: {
 			entries: [
 				'/',
@@ -27,9 +18,6 @@ const config = {
 				'/services/digital-marketing',
 				'/contact',
 				'/blog',
-				'/blog/website-cost-saudi-arabia',
-				'/blog/shopify-vs-salla',
-				'/blog/salla-seo-guide',
 				'/sitemap.xml',
 				'/services/web-development/custom-websites',
 				'/services/web-development/wordpress-development',
@@ -57,23 +45,50 @@ const config = {
 				'/guides/web-development',
 				'/guides/seo',
 				'/guides/digital-marketing',
-				'/comparisons/shopify-vs-salla-vs-zid',
-				'/comparisons/wordpress-vs-custom-build',
-				'/case-studies/salla-store-riyadh',
-				'/case-studies/wordpress-clinic-jeddah',
-				'/case-studies/shopify-food-dammam',
-				'/free-seo-audit',
-				'/cost-calculator',
+				'/blog/website-cost-saudi-arabia?lang=en',
+				'/blog/website-cost-saudi-arabia?lang=ar',
+				'/blog/shopify-vs-salla?lang=en',
+				'/blog/shopify-vs-salla?lang=ar',
+				'/blog/salla-seo-guide?lang=en',
+				'/blog/salla-seo-guide?lang=ar',
+				'/blog/shopify-vs-salla-vs-zid?lang=en',
+				'/blog/shopify-vs-salla-vs-zid?lang=ar',
+				'/blog/wordpress-vs-custom-build?lang=en',
+				'/blog/wordpress-vs-custom-build?lang=ar',
+				'/blog/salla-store-riyadh?lang=en',
+				'/blog/salla-store-riyadh?lang=ar',
+				'/blog/wordpress-clinic-jeddah?lang=en',
+				'/blog/wordpress-clinic-jeddah?lang=ar',
+				'/blog/shopify-food-dammam?lang=en',
+				'/blog/shopify-food-dammam?lang=ar',
+				'/blog/start-online-store-saudi-arabia?lang=en',
+				'/blog/start-online-store-saudi-arabia?lang=ar',
+				'/blog/seo-guide-saudi-businesses?lang=en',
+				'/blog/seo-guide-saudi-businesses?lang=ar',
+				'/blog/website-driving-customers-away?lang=en',
+				'/blog/website-driving-customers-away?lang=ar',
+				'/blog/digital-marketing-budget-saudi-arabia?lang=en',
+				'/blog/digital-marketing-budget-saudi-arabia?lang=ar',
+				'/blog/payment-gateways-guide-saudi-arabia?lang=en',
+				'/blog/payment-gateways-guide-saudi-arabia?lang=ar',
+				'/blog/corporate-website-lead-generation?lang=en',
+				'/blog/corporate-website-lead-generation?lang=ar',
+				'/blog/when-to-redesign-website-saudi-arabia?lang=en',
+				'/blog/when-to-redesign-website-saudi-arabia?lang=ar',
+				'/blog/core-web-vitals-saudi-arabia?lang=en',
+				'/blog/core-web-vitals-saudi-arabia?lang=ar',
+				'/blog/google-maps-riyadh-local-seo?lang=en',
+				'/blog/google-maps-riyadh-local-seo?lang=ar',
+				'/blog/free-vs-paid-seo-audit?lang=en',
+				'/blog/free-vs-paid-seo-audit?lang=ar',
+				'/blog/ecommerce-seo-shopify-salla-process?lang=en',
+				'/blog/ecommerce-seo-shopify-salla-process?lang=ar',
+				'/blog/saudi-google-ads-cost-guide?lang=en',
+				'/blog/saudi-google-ads-cost-guide?lang=ar',
+				'/blog/brand-identity-losing-clients-saudi-arabia?lang=en',
+				'/blog/brand-identity-losing-clients-saudi-arabia?lang=ar',
 			],
-			handleHttpError: ({ path, referrer, message }) => {
-				// Ignore 404 errors during prerendering
-				if (message.includes('404')) {
-					console.warn(`Ignoring 404 error for ${path}`);
-					return;
-				}
-				// For other errors, throw as normal
-				throw new Error(message);
-			}
+			handleHttpError: 'warn'
 		},
 		alias: {
 			$components: 'src/lib/components',
