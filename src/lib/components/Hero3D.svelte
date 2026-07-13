@@ -159,10 +159,6 @@
 			observer.observe(canvas);
 		}
 
-		return () => {
-			observer?.disconnect();
-		};
-
 		// Reduced visible count for mobile (10 is enough for 2 clean rings)
 		const mobileMaxLogos = 10;
 		// Standard timing for both (Stable)
@@ -226,6 +222,10 @@
 
 			setTimeout(loadNextBatch, layerTimings.logos + 500);
 		}
+
+		return () => {
+			observer?.disconnect();
+		};
 	});
 
 	const visibleLogos = $derived(
