@@ -17,8 +17,6 @@
 	import SplitType from 'split-type';
 	import CtaSection from '$lib/components/CtaSection.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
-	import { Canvas, T } from '@threlte/core';
-	import About3D from '$lib/components/Hero3D.svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import ContactInfoCard from '$lib/components/ContactInfoCard.svelte';
 
@@ -27,8 +25,8 @@
 	const typedData = data as any;
 	const homeHeroImage = typedData?.home?.hero?.image;
 
-	// Canvas delay loading
-	let showCanvas = $state(false);
+	// Dynamic Three.js loading
+	let SceneComponent: any = $state(null);
 	let canvasKey = $state(0);
 
 	// Scroll-triggered 3D scene
@@ -285,7 +283,10 @@
 			cameraFov = 45;
 		}
 
-		showCanvas = true;
+		// Load Three.js chunk immediately (dynamic import avoids blocking initial parse)
+		import('$lib/components/scenes/AboutScene.svelte').then((m) => {
+			SceneComponent = m.default;
+		});
 
 		// 3D Scene Micro-interactions: Transition from Hero to About content
 		ScrollTrigger.create({
@@ -409,23 +410,20 @@
 			bind:this={hero3DContainer}
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
-			{#if showCanvas}
-				<Canvas>
-					<T.PerspectiveCamera makeDefault position={cameraPosition} fov={cameraFov} />
-					{#key canvasKey}
-						<About3D
-							{sceneRotation}
-							{sceneRotationX}
-							{sceneRotationZ}
-							{scenePosition}
-							{sceneScale}
-							{ecosystemOpacity}
-							onContextRestored={() => {
-								canvasKey++;
-							}}
-						/>
-					{/key}
-				</Canvas>
+			{#if SceneComponent}
+				<svelte:component
+					this={SceneComponent}
+					{sceneRotation}
+					{sceneRotationX}
+					{sceneRotationZ}
+					{scenePosition}
+					{sceneScale}
+					{ecosystemOpacity}
+					{canvasKey}
+					{cameraPosition}
+					{cameraFov}
+					onContextRestored={() => { canvasKey++; }}
+				/>
 			{:else}
 				<div
 					class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-blue)]/20 via-transparent to-[var(--color-brand-orange)]/10"

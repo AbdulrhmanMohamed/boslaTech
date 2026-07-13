@@ -10,8 +10,6 @@
 	import SocialProofSection from '$lib/components/SocialProofSection.svelte';
 	import FAQSection from '$lib/components/FAQSection.svelte';
 	import WhyChooseUsSection from '$lib/components/WhyChooseUsSection.svelte';
-	import Hero3D from '$lib/components/About3D.svelte';
-	import { Canvas, T } from '@threlte/core';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import SplitType from 'split-type';
@@ -55,8 +53,8 @@
 	let cameraPosition = $state<[number, number, number]>([0, 0, 10]);
 	let cameraFov = $state(45);
 
-	// Delayed Canvas loading for faster FCP/LCP
-	let showCanvas = $state(false);
+	// Delayed Three.js loading for faster FCP/LCP — dynamically imported
+	let SceneComponent: any = $state(null);
 	let canvasKey = $state(0); // Used to force re-render on WebGL context recovery
 
 	// Typewriter / Hero Animation (RTL + LTR Safe)
@@ -292,10 +290,12 @@
 		}
 
 		// Three.js loads after delay - gradient shows during load time
+		// Start downloading Three.js chunk immediately, show after delay
+		const scenePromise = import('$lib/components/scenes/HomeScene.svelte');
 		const canvasDelay = isMobile ? 800 : 1500;
 
-		setTimeout(() => {
-			showCanvas = true;
+		setTimeout(async () => {
+			SceneComponent = (await scenePromise).default;
 		}, canvasDelay);
 
 		// GSAP animations work on both mobile and desktop
@@ -499,18 +499,15 @@
 			bind:this={hero3DContainer}
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
-			{#if showCanvas}
-				<Canvas>
-					<T.PerspectiveCamera makeDefault position={cameraPosition} fov={cameraFov} />
-					{#key canvasKey}
-						<Hero3D
-							{sceneRotation}
-							onContextRestored={() => {
-								canvasKey++;
-							}}
-						/>
-					{/key}
-				</Canvas>
+			{#if SceneComponent}
+				<svelte:component
+					this={SceneComponent}
+					{sceneRotation}
+					{canvasKey}
+					{cameraPosition}
+					{cameraFov}
+					onContextRestored={() => { canvasKey++; }}
+				/>
 			{:else}
 				<!-- CSS Gradient Placeholder - Shows immediately for fast FCP -->
 				<div

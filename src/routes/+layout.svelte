@@ -8,8 +8,6 @@
 	import { onMount } from 'svelte';
 	import type { Site } from '$lib/types';
 	import Lenis from 'lenis';
-	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import { setContext } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { base } from '$app/paths';
@@ -55,85 +53,77 @@
 		window.addEventListener('mousemove', handleMouseMove);
 		window.addEventListener('scroll', onScroll);
 
-		// Register GSAP plugins
-		gsap.registerPlugin(ScrollTrigger);
+		// Track lenis for cleanup
+		let lenisCleanup: (() => void) | null = null;
 
-		// Check if mobile - disable Lenis on mobile for better performance
-		const isMobile = window.innerWidth < 768;
+		// Dynamically import GSAP to avoid blocking initial render
+		Promise.all([
+			import('gsap'),
+			import('gsap/dist/ScrollTrigger')
+		]).then(([{ gsap }, { ScrollTrigger }]) => {
+			gsap.registerPlugin(ScrollTrigger);
 
-		// Initialize Lenis Smooth Scroll (desktop only)
-		let lenis: Lenis | null = null;
+			const isMobile = window.innerWidth < 768;
+			let lenis: Lenis | null = null;
 
-		if (!isMobile) {
-			lenis = new Lenis({
-				duration: 1.2,
-				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-				orientation: 'vertical',
-				gestureOrientation: 'vertical',
-				smoothWheel: true,
-				wheelMultiplier: 1,
-				touchMultiplier: 2
-			});
+			if (!isMobile) {
+				lenis = new Lenis({
+					duration: 1.2,
+					easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+					orientation: 'vertical',
+					gestureOrientation: 'vertical',
+					smoothWheel: true,
+					wheelMultiplier: 1,
+					touchMultiplier: 2
+				});
+				(window as any).lenis = lenis;
+			}
 
-			// Expose for inspection and other scripts
-			(window as any).lenis = lenis;
-		}
+			(window as any).gsap = gsap;
+			(window as any).ScrollTrigger = ScrollTrigger;
 
-		(window as any).gsap = gsap;
-		(window as any).ScrollTrigger = ScrollTrigger;
+			if (lenis) {
+				lenis.on('scroll', ScrollTrigger.update);
+				ScrollTrigger.scrollerProxy(window, {
+					scrollTop: (value?: number) => {
+						if (value !== undefined) {
+							lenis!.scrollTo(value, { immediate: true });
+						}
+						return lenis!.scroll;
+					},
+					getBoundingClientRect() {
+						return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+					},
+					pinType: 'transform'
+				});
 
-		// Proper Lenis + ScrollTrigger sync (desktop only)
-		if (lenis) {
-			lenis.on('scroll', ScrollTrigger.update);
+				gsap.ticker.add((time) => {
+					lenis!.raf(time * 1000);
+				});
+				gsap.ticker.lagSmoothing(0);
 
-			// Tell ScrollTrigger to use Lenis's scroll position
-			ScrollTrigger.scrollerProxy(window, {
-				scrollTop: (value?: number) => {
-					if (value !== undefined) {
-						lenis!.scrollTo(value, { immediate: true });
-					}
-					return lenis!.scroll;
-				},
-				getBoundingClientRect() {
-					return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-				},
-				pinType: 'transform'
-			});
+				lenis.on('scroll', (e: any) => {
+					mouse.scrollY = e.scroll;
+					document.documentElement.classList.toggle('is-scrolling', e.velocity !== 0);
+				});
 
-			// Sync Lenis with GSAP ticker
-			gsap.ticker.add((time) => {
-				lenis!.raf(time * 1000);
-			});
+				requestAnimationFrame(() => ScrollTrigger.refresh());
+			} else {
+				gsap.ticker.lagSmoothing(0);
+				requestAnimationFrame(() => ScrollTrigger.refresh());
+			}
 
-			gsap.ticker.lagSmoothing(0);
-
-			// Update ScrollTrigger when Lenis scrolls
-			lenis.on('scroll', (e: any) => {
-				mouse.scrollY = e.scroll;
-				document.documentElement.classList.toggle('is-scrolling', e.velocity !== 0);
-			});
-
-			// Initial ScrollTrigger refresh after everything is loaded
-			requestAnimationFrame(() => {
-				ScrollTrigger.refresh();
-			});
-
-			return () => {
-				lenis?.destroy();
-				ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+			// Store cleanup — lenis and ScrollTrigger are available inside closure
+			const curLenis = lenis;
+			lenisCleanup = () => {
+				curLenis?.destroy();
+				ScrollTrigger.getAll().forEach((t) => t.kill());
 			};
-		} else {
-			// Mobile: basic ScrollTrigger without Lenis
-			gsap.ticker.lagSmoothing(0);
+		});
 
-			requestAnimationFrame(() => {
-				ScrollTrigger.refresh();
-			});
-
-			return () => {
-				ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-			};
-		}
+		return () => {
+			lenisCleanup?.();
+		};
 	});
 </script>
 
