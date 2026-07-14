@@ -119,6 +119,8 @@
 				curLenis?.destroy();
 				ScrollTrigger.getAll().forEach((t) => t.kill());
 			};
+		}).catch((err) => {
+			console.warn('GSAP dynamic import failed:', err);
 		});
 
 		return () => {

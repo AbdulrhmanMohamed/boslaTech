@@ -286,6 +286,8 @@
 		// Load Three.js chunk immediately (dynamic import avoids blocking initial parse)
 		import('$lib/components/scenes/AboutScene.svelte').then((m) => {
 			SceneComponent = m.default;
+		}).catch((err) => {
+			console.warn('AboutScene dynamic import failed:', err);
 		});
 
 		// 3D Scene Micro-interactions: Transition from Hero to About content

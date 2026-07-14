@@ -4,7 +4,7 @@
 	import { slide } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
 	gsap.registerPlugin(ScrollTrigger);
 

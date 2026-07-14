@@ -233,9 +233,13 @@
 		initParticles();
 
 		// Start Three.js download immediately, show after 600ms delay
-		const scenePromise = import('$lib/components/scenes/ContactScene.svelte');
+		const scenePromise = import('$lib/components/scenes/ContactScene.svelte').catch((err) => {
+			console.warn('ContactScene dynamic import failed:', err);
+			return null;
+		});
 		setTimeout(async () => {
-			SceneComponent = (await scenePromise).default;
+			const m = await scenePromise;
+			if (m) SceneComponent = m.default;
 		}, 600);
 		window.addEventListener('resize', resizeCanvas);
 		window.addEventListener('mousemove', handleMouseMove);

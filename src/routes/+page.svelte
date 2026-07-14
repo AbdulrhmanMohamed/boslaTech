@@ -11,7 +11,7 @@
 	import FAQSection from '$lib/components/FAQSection.svelte';
 	import WhyChooseUsSection from '$lib/components/WhyChooseUsSection.svelte';
 	import { gsap } from 'gsap';
-	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import SplitType from 'split-type';
 	import { theme } from '$lib/stores/theme.svelte';
 	import { base } from '$app/paths';
@@ -283,11 +283,15 @@
 
 		// Three.js loads after delay - gradient shows during load time
 		// Start downloading Three.js chunk immediately, show after delay
-		const scenePromise = import('$lib/components/scenes/HomeScene.svelte');
+		const scenePromise = import('$lib/components/scenes/HomeScene.svelte').catch((err) => {
+			console.warn('HomeScene dynamic import failed:', err);
+			return null;
+		});
 		const canvasDelay = isMobile ? 800 : 1500;
 
 		setTimeout(async () => {
-			SceneComponent = (await scenePromise).default;
+			const m = await scenePromise;
+			if (m) SceneComponent = m.default;
 		}, canvasDelay);
 
 		// GSAP animations work on both mobile and desktop
