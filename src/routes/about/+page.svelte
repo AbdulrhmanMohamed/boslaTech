@@ -19,6 +19,7 @@
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
 	import ContactInfoCard from '$lib/components/ContactInfoCard.svelte';
+	import AboutScene from '$lib/components/scenes/AboutScene.svelte';
 
 	let { data } = $props();
 	const currentTheme = $derived(theme.current);
@@ -26,7 +27,6 @@
 	const homeHeroImage = typedData?.home?.hero?.image;
 
 	// Dynamic Three.js loading
-	let SceneComponent: any = $state(null);
 	let canvasKey = $state(0);
 
 	// Scroll-triggered 3D scene
@@ -283,13 +283,6 @@
 			cameraFov = 45;
 		}
 
-		// Load Three.js chunk immediately (dynamic import avoids blocking initial parse)
-		import('$lib/components/scenes/AboutScene.svelte').then((m) => {
-			SceneComponent = m.default;
-		}).catch((err) => {
-			console.warn('AboutScene dynamic import failed:', err);
-		});
-
 		// 3D Scene Micro-interactions: Transition from Hero to About content
 		ScrollTrigger.create({
 			trigger: pageContainer,
@@ -412,27 +405,18 @@
 			bind:this={hero3DContainer}
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
-			{#if SceneComponent}
-				<SceneComponent
-					{sceneRotation}
-					{sceneRotationX}
-					{sceneRotationZ}
-					{scenePosition}
-					{sceneScale}
-					{ecosystemOpacity}
-					{canvasKey}
-					{cameraPosition}
-					{cameraFov}
-					onContextRestored={() => { canvasKey++; }}
-				/>
-			{:else}
-				<div
-					class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-blue)]/20 via-transparent to-[var(--color-brand-orange)]/10"
-				></div>
-				<div
-					class="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_50%,transparent_0%,var(--color-background)_70%)]"
-				></div>
-			{/if}
+			<AboutScene
+				{sceneRotation}
+				{sceneRotationX}
+				{sceneRotationZ}
+				{scenePosition}
+				{sceneScale}
+				{ecosystemOpacity}
+				{canvasKey}
+				{cameraPosition}
+				{cameraFov}
+				onContextRestored={() => { canvasKey++; }}
+			/>
 		</div>
 
 		<!-- Foreground Content -->

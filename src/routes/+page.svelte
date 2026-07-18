@@ -15,6 +15,7 @@
 	// SplitType removed — using simple GSAP animations instead for performance
 	import { theme } from '$lib/stores/theme.svelte';
 	import { base } from '$app/paths';
+	import HomeScene from '$lib/components/scenes/HomeScene.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -49,8 +50,6 @@
 	let cameraPosition = $state<[number, number, number]>([0, 0, 10]);
 	let cameraFov = $state(45);
 
-	// Delayed Three.js loading for faster FCP/LCP — dynamically imported
-	let SceneComponent: any = $state(null);
 	let canvasKey = $state(0); // Used to force re-render on WebGL context recovery
 
 	// Typewriter / Hero Animation (RTL + LTR Safe)
@@ -229,19 +228,6 @@
 			cameraPosition = [0, 0, 10];
 			cameraFov = 45;
 		}
-
-		// Three.js loads after delay - gradient shows during load time
-		// Start downloading Three.js chunk immediately, show after delay
-		const scenePromise = import('$lib/components/scenes/HomeScene.svelte').catch((err) => {
-			console.warn('HomeScene dynamic import failed:', err);
-			return null;
-		});
-		const canvasDelay = isMobile ? 800 : 1500;
-
-		setTimeout(async () => {
-			const m = await scenePromise;
-			if (m) SceneComponent = m.default;
-		}, canvasDelay);
 
 		// GSAP animations work on both mobile and desktop
 		const sections = gsap.utils.toArray('section:not(.hero-section)');
@@ -444,23 +430,13 @@
 			bind:this={hero3DContainer}
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
-			{#if SceneComponent}
-				<SceneComponent
-					{sceneRotation}
-					{canvasKey}
-					{cameraPosition}
-					{cameraFov}
-					onContextRestored={() => { canvasKey++; }}
-				/>
-			{:else}
-				<!-- CSS Gradient Placeholder - Shows immediately for fast FCP -->
-				<div
-					class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-blue)]/20 via-transparent to-[var(--color-brand-orange)]/10"
-				></div>
-				<div
-					class="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_50%,transparent_0%,var(--color-background)_70%)]"
-				></div>
-			{/if}
+			<HomeScene
+				{sceneRotation}
+				{canvasKey}
+				{cameraPosition}
+				{cameraFov}
+				onContextRestored={() => { canvasKey++; }}
+			/>
 		</div>
 
 		<!-- Foreground Content -->

@@ -18,6 +18,7 @@
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 	import SplitType from 'split-type';
 	import HeroBackground from '$lib/components/HeroBackground.svelte';
+	import ContactScene from '$lib/components/scenes/ContactScene.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 
 	let { data } = $props();
@@ -37,7 +38,7 @@
 		}
 	});
 
-	let SceneComponent: any = $state(null);
+	let canvasKey = $state(0);
 
 	function handleMouseMove(e: MouseEvent) {
 		mouseX = e.clientX;
@@ -232,15 +233,6 @@
 		gsap.registerPlugin(ScrollTrigger);
 		initParticles();
 
-		// Start Three.js download immediately, show after 600ms delay
-		const scenePromise = import('$lib/components/scenes/ContactScene.svelte').catch((err) => {
-			console.warn('ContactScene dynamic import failed:', err);
-			return null;
-		});
-		setTimeout(async () => {
-			const m = await scenePromise;
-			if (m) SceneComponent = m.default;
-		}, 600);
 		window.addEventListener('resize', resizeCanvas);
 		window.addEventListener('mousemove', handleMouseMove);
 
@@ -353,11 +345,12 @@
 		class="absolute inset-0 z-0 opacity-60"
 		style="filter: {currentTheme === 'light' ? 'brightness(1.2) contrast(0.9)' : 'none'}"
 	>
-		{#if SceneComponent}
-			<SceneComponent />
-		{:else}
-			<div class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-blue)]/20 via-transparent to-[var(--color-brand-orange)]/10"></div>
-		{/if}
+		<ContactScene
+			{canvasKey}
+			cameraPosition={[0, 0, 7]}
+			cameraFov={45}
+			onContextRestored={() => { canvasKey++; }}
+		/>
 	</div>
 
 	<!-- Background Accents Removed to use HeroBackground -->
