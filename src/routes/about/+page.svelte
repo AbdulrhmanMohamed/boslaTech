@@ -225,7 +225,7 @@
 						data.about?.subtitle ||
 						(isAr
 							? 'بوصلة هي شريكك الاستراتيجي في صياغة المستقبل الرقمي. نحن نمزج بين الفن والتكنولوجيا لنبتكر تجارب استثنائية تتجاوز التوقعات، وترسخ مكانة علامتك التجارية في الصدارة.'
-							: 'Hafat Alnjom is your strategic partner in crafting the digital future. We fuse artistry with advanced technology to engineer exceptional experiences that transcend expectations and position your brand at the global forefront.');
+							: 'BOSLA is your strategic partner in crafting the digital future. We fuse artistry with advanced technology to engineer exceptional experiences that transcend expectations and position your brand at the global forefront.');
 
 					if (isAr) {
 						gsap.set(subtitleElement, { opacity: 1, clipPath: 'inset(0 0 0 100%)' });
@@ -413,8 +413,7 @@
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
 			{#if SceneComponent}
-				<svelte:component
-					this={SceneComponent}
+				<SceneComponent
 					{sceneRotation}
 					{sceneRotationX}
 					{sceneRotationZ}
@@ -725,20 +724,6 @@
 <style>
 	:global(section) {
 		perspective: 1000px;
-	}
-
-	.hero-title::after {
-		content: '_';
-		display: inline-block;
-		color: var(--color-brand-orange, #fb6220);
-		animation: blink 1s step-end infinite;
-		margin-left: 0.1em;
-		font-weight: 100;
-	}
-
-	:global([dir='rtl']) .hero-title::after {
-		margin-left: 0;
-		margin-right: 0.1em;
 	}
 
 	@keyframes blink {

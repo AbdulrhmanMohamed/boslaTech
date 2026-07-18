@@ -26,11 +26,12 @@
 
 	const PURE_BLUE = '#0b9dd9';
 
-	let time = 0;
+	let time = $state(0);
+
 	useTask((delta) => {
 		if (!isVisible) return;
 		time += delta;
-	});
+	}, { autoInvalidate: false });
 </script>
 
 <Billboard {position}>

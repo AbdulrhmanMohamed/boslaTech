@@ -12,7 +12,7 @@
 	import WhyChooseUsSection from '$lib/components/WhyChooseUsSection.svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	import SplitType from 'split-type';
+	// SplitType removed — using simple GSAP animations instead for performance
 	import { theme } from '$lib/stores/theme.svelte';
 	import { base } from '$app/paths';
 
@@ -26,10 +26,6 @@
 
 	let { data } = $props();
 	const currentTheme = $derived(theme.current);
-
-	// Split headline into characters for animation
-	// These are removed to allow the full headline to be animated as a single unit by GSAP/SplitType
-	// instead of hardcoded <span> splits that cause character splitting issues in Arabic.
 
 	// Magnetic Context
 	const mouse = getContext<{ x: number; y: number; scrollY: number }>('mouse');
@@ -70,8 +66,7 @@
 
 		if (!headlineText) return;
 
-		let headlineSplit: any = null;
-		let subheadlineSplit: any = null;
+		
 
 		const ctx = gsap.context(() => {
 			const isAr = lang === 'ar';
@@ -94,26 +89,7 @@
 			if (cta1Element) cta1Element.textContent = cta1Text;
 			if (cta2Element) cta2Element.textContent = cta2Text;
 
-			const cleanup = (el: HTMLElement | null, split: any) => {
-				if (!el) return null;
-				gsap.killTweensOf(el);
-				gsap.killTweensOf(el.querySelectorAll('*'));
-				if (split) {
-					try {
-						split.revert();
-					} catch {}
-				}
-				gsap.set(el, {
-					clearProps: 'all',
-					opacity: 0,
-					display: 'block',
-					visibility: 'visible'
-				});
-				return null;
-			};
-
-			headlineSplit = cleanup(headlineElement, headlineSplit);
-			subheadlineSplit = cleanup(subheadlineElement, subheadlineSplit);
+			
 
 			const badgeWrapper = document.querySelector('.hero-badge') as HTMLElement;
 			if (badgeWrapper) gsap.set(badgeWrapper, { y: -10 });
@@ -143,34 +119,17 @@
 					delay: 0.4
 				});
 			} else {
-				if (headlineText?.includes('<')) {
-					gsap.fromTo(
-						headlineElement,
-						{ y: 20 },
-						{ y: 0, duration: 0.8, ease: 'power2.out' }
-					);
-				} else {
-					headlineSplit = new SplitType(headlineElement, { types: 'chars' });
-					gsap.set(headlineSplit.chars, { y: 12 });
+				gsap.fromTo(
+					headlineElement,
+					{ y: 20, opacity: 0 },
+					{ y: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }
+				);
 
-					gsap.to(headlineSplit.chars, {
-						y: 0,
-						stagger: 0.03,
-						duration: 0.4,
-						ease: 'power2.out'
-					});
-				}
-
-				subheadlineSplit = new SplitType(subheadlineElement, { types: 'chars' });
-				gsap.set(subheadlineSplit.chars, { y: 6 });
-
-				gsap.to(subheadlineSplit.chars, {
-					y: 0,
-					stagger: 0.015,
-					duration: 0.3,
-					ease: 'power2.out',
-					delay: 0.3
-				});
+				gsap.fromTo(
+					subheadlineElement,
+					{ y: 15, opacity: 0 },
+					{ y: 0, opacity: 1, duration: 0.6, ease: 'power2.out', delay: 0.3 }
+				);
 			}
 
 			if (buttonsElement) {
@@ -187,16 +146,6 @@
 
 		return () => {
 			ctx.revert();
-			if (headlineSplit) {
-				try {
-					headlineSplit.revert();
-				} catch {}
-			}
-			if (subheadlineSplit) {
-				try {
-					subheadlineSplit.revert();
-				} catch {}
-			}
 		};
 	});
 
@@ -496,8 +445,7 @@
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
 		>
 			{#if SceneComponent}
-				<svelte:component
-					this={SceneComponent}
+				<SceneComponent
 					{sceneRotation}
 					{canvasKey}
 					{cameraPosition}

@@ -99,8 +99,8 @@
 					</p>
 					<p class="text-sm font-medium text-[var(--color-text-muted)]">
 						{isAr
-							? `مؤسسة حافة النجوم — سجل تجاري 7050568158`
-							: `Hafat Alnjom Est. — CR: 7050568158`}
+							? `بوصلة`
+							: `BOSLA`}
 					</p>
 				</div>
 			</div>
@@ -121,9 +121,12 @@
 			<div class="grid gap-8 md:grid-cols-3">
 				{#each services?.categories || [] as cat}
 					{@const cityServiceDesc = city?.serviceDescriptions?.[cat.slug] || cat.description}
-					<a
-						href={`${base}/services/${cat.slug}?lang=${lang}`}
-						class="group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-8 transition-all hover:-translate-y-1 hover:shadow-xl"
+					<div
+						class="group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-8 transition-[transform,box-shadow] hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+						role="link"
+						tabindex="0"
+						onclick={() => window.location.href = `${base}/services/${cat.slug}?lang=${lang}`}
+						onkeydown={(e) => e.key === 'Enter' && (window.location.href = `${base}/services/${cat.slug}?lang=${lang}`)}
 					>
 						<h3 class="mb-4 text-2xl font-black text-[var(--color-text-base)] group-hover:text-brand-blue">{cat.name}</h3>
 						<p class="mb-6 text-sm leading-relaxed text-[var(--color-text-muted)]">{cityServiceDesc}</p>
@@ -139,7 +142,7 @@
 							{isAr ? 'اكتشف المزيد' : 'Learn More'}
 							<ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1" />
 						</div>
-					</a>
+					</div>
 				{/each}
 			</div>
 		</div>

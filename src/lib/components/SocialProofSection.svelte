@@ -65,7 +65,7 @@
 					suffix: '',
 					label: data?.lang === 'ar' ? 'سجل تجاري' : 'Est. 2016',
 					description:
-						data?.lang === 'ar' ? 'مؤسسة حافة النجوم — سجل رقم 7050568158' : 'Hafat Alnjom — CR 7050568158'
+						data?.lang === 'ar' ? 'بوصلة — خبرة وجودة' : 'BOSLA — Experience & Quality'
 				}
 			]
 		}

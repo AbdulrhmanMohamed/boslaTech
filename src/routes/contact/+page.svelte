@@ -354,7 +354,7 @@
 		style="filter: {currentTheme === 'light' ? 'brightness(1.2) contrast(0.9)' : 'none'}"
 	>
 		{#if SceneComponent}
-			<svelte:component this={SceneComponent} />
+			<SceneComponent />
 		{:else}
 			<div class="absolute inset-0 bg-gradient-to-br from-[var(--color-brand-blue)]/20 via-transparent to-[var(--color-brand-orange)]/10"></div>
 		{/if}
@@ -482,7 +482,7 @@
 								allowfullscreen=""
 								loading="lazy"
 								referrerpolicy="no-referrer-when-downgrade"
-								title={(data as any).lang === 'ar' ? 'موقع حافة النجوم' : 'Hafat Alnjoom Location'}
+								title={(data as any).lang === 'ar' ? 'موقع بوصلة' : 'BOSLA Location'}
 								class="rounded-2xl opacity-80 transition-opacity hover:opacity-100"
 							></iframe>
 						</div>
@@ -539,8 +539,8 @@
 					class="cinematic-glass rounded-[2rem] border border-[var(--glass-border)] p-5 text-center text-[11px] leading-relaxed text-[var(--color-text-dim)]"
 				>
 					{(data as any).lang === 'ar'
-						? 'مؤسسة حافة النجوم | س.ت 7050568158 | حي الملز، الرياض'
-						: 'Hafat Alnjom | CR 7050568158 | Al Malaz, Riyadh'}
+? 'بوصلة | حي الملز، الرياض'
+					: 'BOSLA | Al Malaz, Riyadh'}
 				</div>
 			</div>
 

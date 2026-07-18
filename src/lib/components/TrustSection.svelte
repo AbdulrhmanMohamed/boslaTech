@@ -154,7 +154,7 @@
 						icon: Award,
 						number: 'معتمد',
 						label: 'سجل تجاري',
-						description: '7050568158 — مؤسسة حافة النجوم'
+						description: 'مسجلة في الرياض'
 					},
 					{
 						icon: Users,
@@ -180,7 +180,7 @@
 						icon: Award,
 						number: 'Licensed',
 						label: 'Commercial Registration',
-						description: '7050568158 — Hafat Alnjom Est.'
+						description: 'Registered in Riyadh'
 					},
 					{
 						icon: Users,

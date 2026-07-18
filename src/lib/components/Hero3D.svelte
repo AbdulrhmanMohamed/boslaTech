@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { T, useTask } from '@threlte/core';
+	import { T, useTask, useScheduler } from '@threlte/core';
 	import { ContactShadows, Float } from '@threlte/extras';
 	import { getContext, onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
@@ -240,6 +240,36 @@
 	const rotationY = spring(0, { stiffness: 0.05, damping: 0.3 });
 	const scale = spring(1, { stiffness: 0.1, damping: 0.4 });
 
+	const scheduler = useScheduler();
+	let renderBudget = 0;
+	const BUDGET_MS = 4000;
+	const EXTEND_MS = 2000;
+
+	function extendRenderBudget(extraMs: number) {
+		const now = performance.now();
+		const newBudget = now + extraMs;
+		if (newBudget > renderBudget) {
+			renderBudget = newBudget;
+			scheduler.advance();
+		}
+	}
+
+	$effect(() => {
+		if (isVisible) {
+			extendRenderBudget(BUDGET_MS);
+		}
+	});
+
+	function onMouseMoveForInvalidate() {
+		if (!isVisible) return;
+		extendRenderBudget(EXTEND_MS);
+	}
+	$effect(() => {
+		if (typeof window === 'undefined') return;
+		window.addEventListener('mousemove', onMouseMoveForInvalidate, { passive: true });
+		return () => window.removeEventListener('mousemove', onMouseMoveForInvalidate);
+	});
+
 	const segmentCount = $derived(isMobile ? 16 : 24);
 	const sphereRadius = $derived(isMobile ? 0.85 : 1.1);
 	const coreSphereGeometry = $derived(
@@ -276,6 +306,10 @@
 
 	useTask((delta) => {
 		if (!isVisible) return;
+		if (performance.now() > renderBudget) return;
+
+		scheduler.advance();
+
 		frameSkipCounter++;
 		if (frameSkipCounter % FRAME_SKIP !== 0) return;
 
@@ -292,7 +326,7 @@
 			rotationX.set(targetX);
 			rotationY.set(targetY);
 		}
-	});
+	}, { autoInvalidate: false });
 </script>
 
 <T.AmbientLight intensity={currentTheme === 'dark' ? 0.6 : 1.0} />

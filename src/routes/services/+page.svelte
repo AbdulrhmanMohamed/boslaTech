@@ -113,7 +113,9 @@
 			{#each pageData?.process?.steps || [] as step, i}
 				<div class="anim-up cinematic-glass group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] p-6 text-center">
 					<div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
-						<svelte:component this={processIcons[step.icon] || Code} class="h-6 w-6" />
+						{#each [processIcons[step.icon] || Code] as Icon}
+							<Icon class="h-6 w-6" />
+						{/each}
 					</div>
 					<div class="absolute top-3 right-3 text-[10px] font-black text-[var(--color-text-dim)] opacity-30">
 						0{i + 1}
@@ -136,7 +138,9 @@
 			{#each pageData?.categories || [] as category}
 				<a href={catPath(category.slug)} class="anim-up group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-8 transition-all hover:-translate-y-1 hover:shadow-xl">
 					<div class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white">
-						<svelte:component this={categoryIcons[category.icon] || Code} class="h-7 w-7" />
+						{#each [categoryIcons[category.icon] || Code] as Icon}
+							<Icon class="h-7 w-7" />
+						{/each}
 					</div>
 					<h2 class="mb-3 text-2xl font-black text-[var(--color-text-base)] group-hover:text-brand-blue">{category.name}</h2>
 					<p class="mb-6 text-sm leading-relaxed font-medium text-[var(--color-text-muted)] line-clamp-3">{category.description}</p>

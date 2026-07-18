@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { T, useTask } from '@threlte/core';
+	import { T, useTask, useScheduler } from '@threlte/core';
 	import { ContactShadows, Float } from '@threlte/extras';
 	import { getContext, onMount } from 'svelte';
 	import { spring } from 'svelte/motion';
@@ -50,8 +50,37 @@
 	});
 
 	let time = $state(0);
+	const scheduler = useScheduler();
+	let renderBudget = 0;
+	const BUDGET_MS = 4000;
+	const EXTEND_MS = 2000;
+
+	function extendRenderBudget(extraMs: number) {
+		const now = performance.now();
+		const newBudget = now + extraMs;
+		if (newBudget > renderBudget) {
+			renderBudget = newBudget;
+			scheduler.advance();
+		}
+	}
+
+	$effect(() => {
+		if (isVisible) extendRenderBudget(BUDGET_MS);
+	});
+
+	function onMouseMoveForInvalidate() {
+		if (!isVisible) return;
+		extendRenderBudget(EXTEND_MS);
+	}
+	$effect(() => {
+		if (typeof window === 'undefined') return;
+		window.addEventListener('mousemove', onMouseMoveForInvalidate, { passive: true });
+		return () => window.removeEventListener('mousemove', onMouseMoveForInvalidate);
+	});
+
 	useTask((delta) => {
 		if (!isVisible) return;
+		if (performance.now() > renderBudget) return;
 		time += delta;
 		// Follow mouse subtly
 		const targetX =
@@ -59,7 +88,8 @@
 		const targetY = (mouse.x / (typeof window !== 'undefined' ? window.innerWidth : 1) - 0.5) * 0.4;
 		rotationX.set(targetX);
 		rotationY.set(targetY);
-	});
+		scheduler.advance();
+	}, { autoInvalidate: false });
 </script>
 
 <!-- High-End Lighting -->

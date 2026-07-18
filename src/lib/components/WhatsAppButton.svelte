@@ -19,7 +19,7 @@
 	href={whatsappUrl}
 	target="_blank"
 	rel="noopener noreferrer"
-	class="group fixed z-50 flex items-center justify-center transition-all duration-300"
+	class="group fixed z-50 flex items-center justify-center transition-[left,right,bottom] duration-300"
 	class:left-6={lang === 'en'}
 	class:right-6={lang === 'ar'}
 	class:bottom-6={true}
@@ -29,13 +29,13 @@
 >
 	<!-- Tooltip/Message Bubble -->
 	<div
-		class="pointer-events-none absolute bottom-full mb-4 translate-y-2 transform rounded-xl px-4 py-2 text-sm font-bold whitespace-nowrap opacity-0 shadow-lg transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+		class="pointer-events-none absolute bottom-full mb-4 translate-y-2 transform rounded-xl px-4 py-2 text-sm font-bold whitespace-nowrap opacity-0 shadow-lg transition-[transform,opacity] duration-300 group-hover:translate-y-0 group-hover:opacity-100"
 		class:left-0={lang === 'en'}
 		class:right-0={lang === 'ar'}
 		style="background-color: var(--color-surface); color: var(--color-text-base); border: 1px solid var(--glass-border);"
 	>
 		<span class="text-brand-orange">
-			{lang === 'ar' ? 'تواصل مع حافة النجوم' : 'Chat with Hafat Alnjom'}
+			{lang === 'ar' ? 'تواصل مع بوصلة' : 'Chat with BOSLA'}
 		</span>
 
 		<!-- Arrow -->
@@ -49,7 +49,7 @@
 
 	<!-- Button Circle -->
 	<div
-		class="relative flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-all duration-300 group-hover:-translate-y-1 group-hover:scale-110"
+		class="relative flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-110"
 		style="background: {isHovered ? 'var(--color-brand-orange)' : 'var(--color-brand-blue)'};"
 	>
 		<!-- Pulse Effect -->

@@ -11,10 +11,10 @@
 	import { closeDrawer, getDrawerState } from '$lib/stores/drawer.svelte';
 
 	const props = $props<{ site?: any; lang: 'en' | 'ar' }>();
-	const logoSrc = `${base}/images/blue-logo.png`;
+	const logoSrc = `${base}/images/blue-logo.webp`;
 
 	const logoWidth = 120;
-	const logoHeight = (logoWidth * 310) / 900;
+	const logoHeight = (logoWidth * 334) / 1139;
 
 	const isOpen = $derived(getDrawerState());
 

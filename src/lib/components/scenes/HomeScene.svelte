@@ -11,7 +11,7 @@
 	} = $props();
 </script>
 
-<Canvas>
+<Canvas renderMode="manual">
 	<T.PerspectiveCamera makeDefault position={cameraPosition} fov={cameraFov} />
 	{#key canvasKey}
 		<Hero3D {sceneRotation} {onContextRestored} />

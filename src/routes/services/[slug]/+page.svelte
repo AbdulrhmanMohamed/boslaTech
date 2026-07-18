@@ -164,7 +164,9 @@
 			</div>
 
 			<div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
-				<svelte:component this={categoryIcons[category?.icon] || Code} class="h-8 w-8" />
+				{#each [categoryIcons[category?.icon] || Code] as Icon}
+				<Icon class="h-8 w-8" />
+			{/each}
 			</div>
 
 			<h1 class="text-5xl leading-tight font-black text-[var(--color-text-base)] md:text-6xl">
@@ -198,8 +200,6 @@
 					<Star class="h-3.5 w-3.5 fill-yellow-500 text-yellow-500" />
 					<span>{isAr ? 'مقرنا الرياض، نخدم جميع المملكة' : 'Based in Riyadh, serving all KSA'}</span>
 				</span>
-				<span class="text-[var(--glass-border)] hidden sm:inline">|</span>
-				<span>{isAr ? 'سجل تجاري 7050568158' : 'CR: 7050568158'}</span>
 			</div>
 		</div>
 	</div>
@@ -307,7 +307,9 @@
 					{#each category.process.steps as step, si}
 						<div class="anim-up relative flex flex-col items-center text-center">
 							<div class="relative z-10 mb-6 flex h-24 w-24 items-center justify-center rounded-full border-2 border-brand-blue/20 bg-[var(--color-background)] text-brand-blue shadow-lg">
-								<svelte:component this={iconMap[step.icon] || Code} class="h-10 w-10" />
+								{#each [iconMap[step.icon] || Code] as Icon}
+									<Icon class="h-10 w-10" />
+								{/each}
 							</div>
 							<div class="mb-2 inline-flex rounded-full bg-brand-blue/10 px-4 py-1 text-[11px] font-black tracking-wider text-brand-blue uppercase">
 								{isAr ? 'خطوة' : 'Step'} 0{si + 1}
@@ -361,7 +363,9 @@
 							class="group relative overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--color-background)] p-8 transition-all hover:-translate-y-1 hover:shadow-xl"
 						>
 							<div class="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-blue/10 text-brand-blue">
-								<svelte:component this={categoryIcons[other.icon] || Code} class="h-7 w-7" />
+								{#each [categoryIcons[other.icon] || Code] as Icon}
+									<Icon class="h-7 w-7" />
+								{/each}
 							</div>
 							<h3 class="mb-3 text-2xl font-black text-[var(--color-text-base)] group-hover:text-brand-blue">{other.name}</h3>
 							<p class="line-clamp-3 text-sm leading-relaxed text-[var(--color-text-muted)]">{other.description}</p>

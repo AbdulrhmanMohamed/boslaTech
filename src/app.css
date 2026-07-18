@@ -110,6 +110,10 @@
 }
 
 /* Base Styles */
+html {
+	font-size: 18px;
+}
+
 html,
 body {
 	overflow-x: hidden;
@@ -120,6 +124,7 @@ body {
 	background-color: var(--color-background);
 	color: var(--color-text-base);
 	font-family: var(--font-sans);
+	line-height: 1.7;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	transition:

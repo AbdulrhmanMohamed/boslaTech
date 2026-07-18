@@ -13,8 +13,8 @@
 	const lang = $derived(props.lang);
 
 	const logoSrc = `${base}/images/blue-logo.webp`;
-	const logoWidth = 150;
-	const logoHeight = (logoWidth * 310) / 900;
+	const logoWidth = 180;
+	const logoHeight = (logoWidth * 334) / 1139;
 
 	async function handleLanguageSwitch(next: 'en' | 'ar') {
 		const url = new URL(window.location.href);
@@ -78,7 +78,7 @@
 
 	function navLinkClass(path: string) {
 		const active = isActive(path);
-		return `relative inline-flex items-center gap-1 text-sm md:text-base px-6 py-2 rounded-full transition-all duration-500 group overflow-hidden whitespace-nowrap z-10 ${
+		return `relative inline-flex items-center gap-1 text-sm md:text-base px-6 py-2 rounded-full transition-colors duration-500 group overflow-hidden whitespace-nowrap z-10 ${
 			active
 				? 'text-white font-black scale-105'
 				: 'text-[var(--color-text-muted)] hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)] font-bold hover:bg-[var(--glass-highlight)] group-[.in-view]:bg-[var(--glass-highlight)]'
@@ -183,13 +183,13 @@
 <svelte:window bind:scrollY />
 
 <header
-	class="pointer-events-none fixed top-6 right-0 left-0 z-[100] flex justify-center px-6 transition-all duration-500 {scrollY >
+	class="pointer-events-none fixed top-6 right-0 left-0 z-[100] flex justify-center px-6 transition-transform duration-500 {scrollY >
 	20
 		? '-translate-y-2'
 		: ''}"
 >
 	<nav
-		class="cinematic-glass pointer-events-auto container grid max-w-5xl grid-cols-2 items-center rounded-full px-4 transition-all duration-500 md:grid-cols-3 md:px-8 {scrollY >
+		class="cinematic-glass pointer-events-auto container grid max-w-5xl grid-cols-2 items-center rounded-full px-4 transition-[background-color,box-shadow,backdrop-filter] duration-500 md:grid-cols-3 md:px-8 {scrollY >
 		20
 			? 'bg-[var(--glass-bg)]/90 py-3 shadow-xl backdrop-blur-xl'
 			: 'py-4'}"
@@ -205,7 +205,7 @@
 				aria-label="Orcado Home"
 			>
 				<div
-					class="logo-container relative w-[120px] transition-transform duration-500 group-hover:scale-105 group-[.in-view]:scale-105 md:w-[130px]"
+					class="logo-container relative w-[150px] transition-transform duration-500 group-hover:scale-105 group-[.in-view]:scale-105 md:w-[180px]"
 					style="height: {logoHeight}px"
 				>
 					<img
@@ -218,12 +218,6 @@
 						fetchpriority="high"
 					/>
 				</div>
-				<h1
-					class="mt-0.5 text-2xl font-bold leading-tight text-[var(--color-text-dim)]"
-					style="font-family: 'Caveat', cursive;"
-				>
-					{lang === 'ar' ? 'حافة النجوم' : 'Hafat Alnjom'}
-				</h1>
 			</a>
 		</div>
 
@@ -232,8 +226,8 @@
 			<ul class="relative flex items-center gap-1">
 				<!-- Moving Highlight Pill -->
 				<div
-					class="pointer-events-none absolute rounded-full bg-brand-blue shadow-[0_10px_20px_rgba(0,119,255,0.3)] transition-all duration-500 ease-out"
-					style="left: {pillStyles.left}px; width: {pillStyles.width}px; height: {pillStyles.height}px; opacity: {pillStyles.opacity}; top: 50%; transform: translateY(-50%);"
+					class="pointer-events-none absolute left-0 top-1/2 rounded-full bg-brand-blue shadow-[0_10px_20px_rgba(0,119,255,0.3)] transition-[transform,opacity] duration-500 ease-out"
+					style="width: {pillStyles.width}px; height: {pillStyles.height}px; opacity: {pillStyles.opacity}; transform: translateX({pillStyles.left}px) translateY(-50%);"
 				></div>
 
 				{#each navItems as item}
@@ -355,7 +349,7 @@
 				<button
 					onclick={() => handleLanguageSwitch('en')}
 					use:inView
-					class="rounded-full px-4 py-1.5 text-xs font-black transition-all duration-500 hover:scale-105 active:scale-95 [&.in-view]:scale-105 {lang ===
+					class="rounded-full px-4 py-1.5 text-xs font-black transition-[color,background-color,box-shadow,transform] duration-500 hover:scale-105 active:scale-95 [&.in-view]:scale-105 {lang ===
 					'en'
 						? 'bg-brand-blue text-white shadow-lg'
 						: 'bg-brand-orange/20 text-brand-orange hover:bg-brand-orange/30 [&.in-view]:bg-brand-orange/30'}"
@@ -365,7 +359,7 @@
 				<button
 					onclick={() => handleLanguageSwitch('ar')}
 					use:inView
-					class="rounded-full px-4 py-1.5 text-xs font-black transition-all duration-500 hover:scale-105 active:scale-95 [&.in-view]:scale-105 {lang ===
+					class="rounded-full px-4 py-1.5 text-xs font-black transition-[color,background-color,box-shadow,transform] duration-500 hover:scale-105 active:scale-95 [&.in-view]:scale-105 {lang ===
 					'ar'
 						? 'bg-brand-blue text-white shadow-lg'
 						: 'bg-brand-orange/20 text-brand-orange hover:bg-brand-orange/30 [&.in-view]:bg-brand-orange/30'}"

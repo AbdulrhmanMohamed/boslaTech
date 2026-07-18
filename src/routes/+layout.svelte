@@ -15,12 +15,11 @@
 	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 
 	const siteUrl = 'https://hafatalnjom.com';
-	const logoSrc = `${base}/images/boslalogo-web.png`;
-	const favSrc = `${base}/images/bosla-fav.png`;
+	const logoSrc = `${base}/images/boslalogo-web.webp`;
+	const favSrc = `${base}/images/bosla-fav.webp`;
 
-	// Aspect ratio for the new logo (900x310)
 	const logoWidth = 150;
-	const logoHeight = (logoWidth * 310) / 900; // ~51.6px
+	const logoHeight = (logoWidth * 334) / 1139; // ~44px
 
 	let props = $props<{ children: any; data?: { site: Site; lang: 'en' | 'ar' } }>();
 	const data = $derived(props.data);
@@ -56,8 +55,8 @@
 		// Track lenis for cleanup
 		let lenisCleanup: (() => void) | null = null;
 
-		// Dynamically import GSAP to avoid blocking initial render
-		Promise.all([
+		// Dynamically import GSAP via requestIdleCallback to avoid long tasks
+		const loadGsap = () => Promise.all([
 			import('gsap'),
 			import('gsap/dist/ScrollTrigger')
 		]).then(([{ gsap }, { ScrollTrigger }]) => {
@@ -74,7 +73,8 @@
 					gestureOrientation: 'vertical',
 					smoothWheel: true,
 					wheelMultiplier: 1,
-					touchMultiplier: 2
+					touchMultiplier: 2,
+					autoRaf: false
 				});
 				(window as any).lenis = lenis;
 			}
@@ -82,14 +82,51 @@
 			(window as any).gsap = gsap;
 			(window as any).ScrollTrigger = ScrollTrigger;
 
-			if (lenis) {
+			// Self-stopping RAF for lenis — allows CPU idle when not scrolling
+			let lenisRafId: number | null = null;
+			let idleFrames = 0;
+			const IDLE_THRESHOLD = 10;
+
+			function stopLenisRaf() {
+				if (lenisRafId !== null) {
+					cancelAnimationFrame(lenisRafId);
+					lenisRafId = null;
+				}
+				idleFrames = 0;
+			}
+
+			const curLenis = lenis;
+
+			function lenisTick(now: number) {
+				if (!curLenis) return;
+				curLenis.raf(now);
+				if (Math.abs(curLenis.velocity) > 0.5) {
+					idleFrames = 0;
+					lenisRafId = requestAnimationFrame(lenisTick);
+				} else {
+					idleFrames++;
+					if (idleFrames < IDLE_THRESHOLD) {
+						lenisRafId = requestAnimationFrame(lenisTick);
+					} else {
+						lenisRafId = null;
+					}
+				}
+			}
+
+			function startLenisRaf() {
+				if (lenisRafId !== null) return;
+				idleFrames = 0;
+				lenisRafId = requestAnimationFrame(lenisTick);
+			}
+
+			if (curLenis) {
 				lenis.on('scroll', ScrollTrigger.update);
 				ScrollTrigger.scrollerProxy(window, {
 					scrollTop: (value?: number) => {
 						if (value !== undefined) {
-							lenis!.scrollTo(value, { immediate: true });
+							curLenis.scrollTo(value, { immediate: true });
 						}
-						return lenis!.scroll;
+						return curLenis.scroll;
 					},
 					getBoundingClientRect() {
 						return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
@@ -97,9 +134,6 @@
 					pinType: 'transform'
 				});
 
-				gsap.ticker.add((time) => {
-					lenis!.raf(time * 1000);
-				});
 				gsap.ticker.lagSmoothing(0);
 
 				lenis.on('scroll', (e: any) => {
@@ -107,21 +141,35 @@
 					document.documentElement.classList.toggle('is-scrolling', e.velocity !== 0);
 				});
 
+				// Start RAF on user scroll — stops automatically when scroll ends
+				window.addEventListener('wheel', startLenisRaf, { passive: true });
+				window.addEventListener('touchmove', startLenisRaf, { passive: true });
+
+				// Render initial frame
+				startLenisRaf();
+
 				requestAnimationFrame(() => ScrollTrigger.refresh());
 			} else {
 				gsap.ticker.lagSmoothing(0);
 				requestAnimationFrame(() => ScrollTrigger.refresh());
 			}
 
-			// Store cleanup — lenis and ScrollTrigger are available inside closure
-			const curLenis = lenis;
 			lenisCleanup = () => {
+				stopLenisRaf();
 				curLenis?.destroy();
 				ScrollTrigger.getAll().forEach((t) => t.kill());
+				window.removeEventListener('wheel', startLenisRaf);
+				window.removeEventListener('touchmove', startLenisRaf);
 			};
 		}).catch((err) => {
 			console.warn('GSAP dynamic import failed:', err);
 		});
+
+		if ('requestIdleCallback' in window) {
+			(window as any).requestIdleCallback(loadGsap, { timeout: 2000 });
+		} else {
+			setTimeout(loadGsap, 2000);
+		}
 
 		return () => {
 			lenisCleanup?.();
@@ -150,7 +198,7 @@
 	<link rel="alternate" hreflang="ar" href="{siteUrl}{$page.url.pathname}" />
 	<link rel="alternate" hreflang="en" href="{siteUrl}{$page.url.pathname}?lang=en" />
 	<link rel="alternate" hreflang="x-default" href="{siteUrl}{$page.url.pathname}" />
-	<link rel="icon" type="image/png" href={favSrc} />
+	<link rel="icon" type="image/webp" href={favSrc} />
 	<meta property="og:url" content="{siteUrl}{$page.url.pathname}" />
 	<meta property="og:locale" content={data?.lang === 'ar' ? 'ar_SA' : 'en_US'} />
 	<meta property="og:image" content={logoSrc} />
@@ -207,24 +255,24 @@
 
 <!-- Scroll Progress Bar -->
 <div
-	class="fixed top-0 left-0 z-[9999] h-[3px] bg-gradient-to-r from-brand-blue to-brand-orange transition-all duration-150"
+	class="fixed top-0 left-0 z-[9999] h-[3px] bg-gradient-to-r from-brand-blue to-brand-orange transition-[width] duration-150"
 	style="width: {scrollProgress * 100}%"
 ></div>
 
 <!-- Google Tag Manager (noscript) — Replace GTM-XXXXXXX -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
 
 <!-- Sticky Get a Quote -->
 <a
 	href={`${base}/contact?lang=${data?.lang || 'ar'}`}
-	class="group fixed z-50 flex items-center justify-center transition-all duration-300"
+	class="group fixed z-50 flex items-center justify-center transition-[left,right] duration-300"
 	class:left-6={data?.lang === 'en'}
 	class:right-6={data?.lang === 'ar'}
 	style="bottom: 5.5rem;"
 	aria-label={data?.lang === 'ar' ? 'احصل على عرض سعر' : 'Get a Quote'}
 >
 	<div
-		class="relative flex h-12 w-12 items-center justify-center rounded-full shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:scale-110"
+		class="relative flex h-12 w-12 items-center justify-center rounded-full shadow-2xl transition-transform duration-300 hover:-translate-y-1 hover:scale-110"
 		style="background: var(--color-brand-orange);"
 	>
 		<div
@@ -248,7 +296,7 @@
 <div class="atmospheric-noise"></div>
 
 <main class="mx-auto min-h-screen">
-	<div class="transition-all duration-700 ease-in-out">
+	<div class="transition-opacity duration-700 ease-in-out">
 		{@render props.children?.()}
 	</div>
 </main>

@@ -7,12 +7,12 @@
 
 	let { data }: { data: { site: Site; lang: 'en' | 'ar' } } = $props();
 
-	const logoSrc = `${base}/images/blue-logo.png`;
+	const logoSrc = `${base}/images/blue-logo.webp`;
 	const year = new Date().getFullYear();
 	const currentTheme = $derived(theme.current);
 
 	const logoWidth = 150;
-	const logoHeight = (logoWidth * 310) / 900; // ~51.6px
+	const logoHeight = (logoWidth * 334) / 1139; // ~44px
 </script>
 
 <footer
@@ -99,7 +99,7 @@
 									<div
 										class:rotate-180={data.lang === 'ar'}
 										use:inView
-										class="translate-x-1 -translate-y-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.in-view]:translate-x-0 group-[.in-view]:translate-y-0 group-[.in-view]:opacity-100"
+										class="translate-x-1 -translate-y-1 opacity-0 transition-[transform,opacity] group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 group-[.in-view]:translate-x-0 group-[.in-view]:translate-y-0 group-[.in-view]:opacity-100"
 									>
 										<ArrowUpRight class="h-5 w-5" />
 									</div>
@@ -119,20 +119,20 @@
 							{#each [{ label: data.lang === 'ar' ? 'تطوير المواقع' : 'Web Dev', icon: Globe }, { label: data.lang === 'ar' ? 'تطبيقات الجوال' : 'Mobile Apps', icon: Smartphone }, { label: data.lang === 'ar' ? 'التجارة الإلكترونية' : 'E-commerce', icon: ShoppingBag }] as service}
 								<div
 									use:inView
-									class="obsidian-card group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-[var(--glass-border)] p-4 transition-all hover:border-brand-blue/30 [&.in-view]:border-brand-blue/30"
+									class="obsidian-card group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-[var(--glass-border)] p-4 transition-[border-color] hover:border-brand-blue/30 [&.in-view]:border-brand-blue/30"
 								>
 									<!-- Bottom Accent Line -->
 									<div
 										use:inView
-										class="absolute bottom-0 left-0 h-[2px] w-0 bg-brand-blue/30 shadow-[0_0_15px_rgba(0,119,255,0.2)] transition-all duration-700 group-hover:w-full group-[.in-view]:w-full"
+										class="absolute bottom-0 left-0 h-[2px] w-0 bg-brand-blue/30 shadow-[0_0_15px_rgba(0,119,255,0.2)] transition-[width] duration-700 group-hover:w-full group-[.in-view]:w-full"
 									></div>
 
 									<div
 										use:inView
-										class="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-all group-hover:border-brand-blue/20 group-[.in-view]:border-brand-blue/20"
+										class="flex h-10 w-10 items-center justify-center rounded-xl border border-[var(--glass-border)] bg-[var(--glass-highlight)] transition-[border-color] group-hover:border-brand-blue/20 group-[.in-view]:border-brand-blue/20"
 									>
 										<service.icon
-											class="h-5 w-5 text-brand-blue transition-all group-hover:scale-110 group-hover:text-brand-blue-glow group-[.in-view]:scale-110 group-[.in-view]:text-brand-blue-glow"
+											class="h-5 w-5 text-brand-blue transition-[transform,color] group-hover:scale-110 group-hover:text-brand-blue-glow group-[.in-view]:scale-110 group-[.in-view]:text-brand-blue-glow"
 										/>
 									</div>
 									<span
@@ -180,7 +180,7 @@
 						<a
 							href={`${base}/contact`}
 							use:inView
-							class="w-full rounded-2xl bg-brand-blue px-12 py-6 text-center text-sm font-black tracking-widest text-white uppercase shadow-[0_20px_50px_rgba(0,119,255,0.3)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,119,255,0.5)] md:w-auto [&.in-view]:-translate-y-2 [&.in-view]:shadow-[0_25px_60px_rgba(0,119,255,0.5)]"
+							class="w-full rounded-2xl bg-brand-blue px-12 py-6 text-center text-sm font-black tracking-widest text-white uppercase shadow-[0_20px_50px_rgba(0,119,255,0.3)] transition-[transform,box-shadow] duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,119,255,0.5)] md:w-auto [&.in-view]:-translate-y-2 [&.in-view]:shadow-[0_25px_60px_rgba(0,119,255,0.5)]"
 						>
 							{data.lang === 'ar' ? 'ابدأ مشروعك' : 'Start Project'}
 						</a>

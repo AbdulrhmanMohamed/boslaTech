@@ -3,6 +3,6 @@
 	import Contact3D from '$lib/components/Contact3D.svelte';
 </script>
 
-<Canvas>
+<Canvas renderMode="manual">
 	<Contact3D />
 </Canvas>

@@ -18,11 +18,11 @@
 		'case-study': 'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20'
 	};
 
-	const badgeLabels: Record<string, string> = {
+	const badgeLabels = $derived<Record<string, string>>({
 		guide: isAr ? 'دليل' : 'Guide',
 		comparison: isAr ? 'مقارنة' : 'Comparison',
 		'case-study': isAr ? 'دراسة حالة' : 'Case Study'
-	};
+	});
 
 	const relatedServices: Record<string, Array<{ href: string; icon: any; label: string; arLabel: string }>> = {
 		guide: [
