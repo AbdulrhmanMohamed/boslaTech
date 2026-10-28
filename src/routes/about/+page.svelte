@@ -169,6 +169,20 @@
 	// Refs
 	let heroGlassCard = $state<HTMLDivElement | null>(null);
 
+	const deliverables = $derived(
+		(data as any).lang === 'ar'
+			? [
+					{ head: 'مواقع تعريفية', text: 'موقع احترافي في صفحة واحدة يعرض نشاطك ويصل عملاءك، جاهز خلال 48 ساعة.' },
+					{ head: 'مواقع شركات', text: 'موقع متكامل يعرض خدماتك ومعرض أعمالك، مع لوحة تحكم متقدمة.' },
+					{ head: 'متاجر إلكترونية', text: 'متجر كامل مع الدفع والسلة، مبني من الصفر وملكك بالكامل.' }
+				]
+			: [
+					{ head: 'One-Page Websites', text: 'A professional one-page website presenting your business, ready in 48 hours.' },
+					{ head: 'Corporate Websites', text: 'A complete website showcasing your services and portfolio, with an advanced control panel.' },
+					{ head: 'Online Stores', text: 'A full store with payment and cart, built from scratch and fully yours.' }
+				]
+	);
+
 	// Split headline animation
 	$effect(() => {
 		const title = data.about?.title;
@@ -186,7 +200,7 @@
 					titleElement.setAttribute('dir', isAr ? 'rtl' : 'ltr');
 					// 🔥 Reset content safely
 					titleElement.textContent =
-						data.about?.title || (isAr ? 'قصتنا مع الإبداع الرقمي' : 'Our Digital Creative Story');
+						data.about?.title || (isAr ? 'من نحن' : 'About Bosla');
 
 					// Split into words first to handle the last word orange color
 					const words = titleElement.textContent?.split(' ') || [];
@@ -527,76 +541,16 @@
 					</div>
 					<h2 class="text-4xl leading-tight font-black text-[var(--color-text-base)] md:text-5xl">
 						{(data as any).lang === 'ar'
-							? 'نحن نساعد في نجاح الأعمال من خلال الحلول الرقمية'
-							: 'We increase business success through digital solutions'}
+							? 'نوجّه مشروعك في الاتجاه الصحيح على الإنترنت'
+							: 'We point your business in the right direction online'}
 					</h2>
 					<div class="h-1.5 w-20 rounded-full bg-brand-orange"></div>
 				</div>
 
 				<div class="space-y-6">
-					{#each (data as any)?.about?.intro?.slice(1, 4) || [] as para}
+					{#each (data as any)?.about?.intro || [] as para}
 						<p class="text-lg leading-relaxed font-medium text-[var(--color-text-muted)]">{para}</p>
 					{/each}
-				</div>
-
-				<!-- Certification Badges -->
-				<div class="grid gap-6 sm:grid-cols-2">
-					<div
-						class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-8"
-					>
-						<div
-							class="card-glow pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-blue/15 opacity-0 blur-[80px]"
-						></div>
-						<div class="relative z-10 flex flex-col gap-4">
-							<div
-								class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue"
-							>
-								<Award class="h-8 w-8" />
-							</div>
-							<div>
-								<h4 class="text-xl font-black text-[var(--color-text-base)]">
-									{(data as any).lang === 'ar' ? 'شركة معتمدة' : 'Certified Company'}
-								</h4>
-								<p class="mt-1 text-sm font-medium text-[var(--color-text-muted)]">
-									{(data as any).lang === 'ar'
-										? 'خبرة مثبتة في المجال الرقمي'
-										: 'Proven expertise in the digital field'}
-								</p>
-							</div>
-						</div>
-						<!-- Bottom Accent Line -->
-						<div
-							class="absolute bottom-0 left-0 h-[3px] w-0 bg-brand-blue/30 shadow-[0_0_15px_rgba(0,119,255,0.3)] transition-all duration-700 group-hover:w-full"
-						></div>
-					</div>
-
-					<div
-						class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-8"
-					>
-						<div
-							class="card-glow pointer-events-none absolute h-48 w-48 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/15 opacity-0 blur-[80px]"
-						></div>
-						<div class="relative z-10 flex flex-col gap-4">
-							<div
-								class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-orange/10 text-brand-orange"
-							>
-								<Users class="h-8 w-8" />
-							</div>
-							<div>
-								<h4 class="text-xl font-black text-[var(--color-text-base)]">
-									{(data as any).lang === 'ar' ? 'فريق خبير' : 'Expert Team'}
-								</h4>
-								<p class="mt-1 text-sm font-medium text-[var(--color-text-muted)]">
-									{(data as any).lang === 'ar'
-										? 'متخصصون في التحول الرقمي'
-										: 'Specialized in digital transformation'}
-								</p>
-							</div>
-						</div>
-						<div
-							class="absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-brand-orange to-transparent transition-all duration-700 group-hover:w-full"
-						></div>
-					</div>
 				</div>
 
 				<!-- Contact Information -->
@@ -620,14 +574,14 @@
 					</div>
 					<h2 class="text-4xl leading-tight font-black text-[var(--color-text-base)] md:text-5xl">
 						{(data as any).lang === 'ar'
-							? 'نتعامل مع جوانب خدمات تكنولوجيا المعلومات'
-							: 'We handle all aspects of IT services'}
+							? 'ماذا نقدم؟'
+							: 'What We Deliver'}
 					</h2>
 					<div class="h-1.5 w-20 rounded-full bg-brand-blue"></div>
 				</div>
 
 				<div class="grid gap-6">
-					{#each (data as any)?.about?.services || [] as service, i}
+					{#each deliverables as item, i}
 						<div
 							class="interactive-card cinematic-glass group relative overflow-hidden rounded-[2.5rem] border border-[var(--glass-border)] p-8"
 						>
@@ -644,10 +598,10 @@
 									<h3
 										class="text-xl font-black text-[var(--color-text-base)] transition-colors group-hover:text-brand-blue"
 									>
-										{(data as any).lang === 'ar' ? `حل رقمي ${i + 1}` : `Digital Solution ${i + 1}`}
+										{item.head}
 									</h3>
 									<p class="text-lg leading-relaxed font-medium text-[var(--color-text-muted)]">
-										{service}
+										{item.text}
 									</p>
 								</div>
 							</div>

@@ -385,8 +385,8 @@
 			>
 				{(data as any).contact?.subtitle ||
 					(data.lang === 'ar'
-						? 'نحن هنا لتحويل أفكارك إلى واقع رقمي ملموس'
-						: 'We are here to transform your ideas into tangible digital reality')}
+						? 'أخبرنا عن نشاطك، ونتواصل معك بسرعة'
+						: 'Tell us about your business — we get back to you fast')}
 			</p>
 		</div>
 	</div>
@@ -424,7 +424,7 @@
 							<div class="space-y-1">
 								{#each (data as any).contact?.phones || [] as p}
 									<a
-										href="https://wa.me/966576704683?text={encodeURIComponent((data as any).lang === 'ar' ? 'مرحباً، أود الاستفسار عن خدماتكم' : 'Hello, I would like to inquire about your services')}"
+										href="https://wa.me/966576944605?text={encodeURIComponent((data as any).lang === 'ar' ? 'مرحباً، أود الاستفسار عن خدماتكم' : 'Hello, I would like to inquire about your services')}"
 										target="_blank"
 										rel="noopener noreferrer"
 										class="block font-bold text-[var(--color-text-muted)] transition-colors hover:text-brand-blue"
@@ -513,12 +513,12 @@
 						</div>
 						<div class="space-y-2">
 							<h3 class="text-2xl font-black text-[var(--color-text-base)]">
-								{(data as any).lang === 'ar' ? 'دعم عالمي' : 'Global Support'}
+								{(data as any).lang === 'ar' ? 'دعم العملاء' : 'Customer Support'}
 							</h3>
 							<p class="font-medium text-[var(--color-text-muted)]">
 								{(data as any).lang === 'ar'
-									? 'نحن نخدم عملائنا في جميع أنحاء العالم'
-									: 'We serve our clients all over the world'}
+									? 'نرد على استفساراتك خلال ساعات العمل، وواتساب أسرع للرد عليك.'
+									: 'We respond within working hours — WhatsApp is the fastest way to reach us.'}
 							</p>
 						</div>
 					</div>
@@ -532,8 +532,8 @@
 					class="cinematic-glass rounded-[2rem] border border-[var(--glass-border)] p-5 text-center text-[11px] leading-relaxed text-[var(--color-text-dim)]"
 				>
 					{(data as any).lang === 'ar'
-? 'بوصلة | حي الملز، الرياض'
-					: 'BOSLA | Al Malaz, Riyadh'}
+? 'بوصلة تك — إحدى خدمات مؤسسة حافة النجوم | السجل التجاري 7050568158'
+					: 'Bosla Tech — a service of Hafat Al-Nujoom Est. | CR 7050568158'}
 				</div>
 			</div>
 
@@ -581,21 +581,22 @@
 									name="phone"
 									type="tel"
 									required
+									dir="ltr"
 									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
-									placeholder="+1 234 567 890"
+									placeholder="05xxxxxxxx"
 								/>
 							</div>
 
 							<div class="form-element space-y-2">
 								<label for="company" class="px-4 text-sm font-bold text-[var(--color-text-muted)]"
-									>{(data as any).lang === 'ar' ? 'الشركة' : 'Company'}</label
+									>{(data as any).lang === 'ar' ? 'النشاط (اختياري)' : 'Business (optional)'}</label
 								>
 								<input
 									id="company"
 									name="company"
 									type="text"
 									class="w-full rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
-									placeholder={(data as any).lang === 'ar' ? 'اسم الشركة' : 'Company Name'}
+									placeholder={(data as any).lang === 'ar' ? 'اسم النشاط أو المتجر' : 'Business or store name'}
 								/>
 							</div>
 
@@ -614,17 +615,20 @@
 										<option value="" disabled selected class="bg-[var(--color-background)]"
 											>{(data as any).lang === 'ar' ? 'اختر موضوعًا' : 'Select a subject'}</option
 										>
-										<option value="project" class="bg-[var(--color-background)]"
-											>{(data as any).lang === 'ar' ? 'مشروع جديد' : 'New Project'}</option
+										<option value="one-page" class="bg-[var(--color-background)]"
+											>{(data as any).lang === 'ar' ? 'موقع صفحة واحدة' : 'One-page website'}</option
 										>
-										<option value="support" class="bg-[var(--color-background)]"
-											>{(data as any).lang === 'ar' ? 'دعم فني' : 'Technical Support'}</option
+										<option value="corporate" class="bg-[var(--color-background)]"
+											>{(data as any).lang === 'ar' ? 'موقع شركة' : 'Corporate website'}</option
 										>
-										<option value="partnership" class="bg-[var(--color-background)]"
-											>{(data as any).lang === 'ar' ? 'شراكة عمل' : 'Business Partnership'}</option
+										<option value="interactive" class="bg-[var(--color-background)]"
+											>{(data as any).lang === 'ar' ? 'موقع تفاعلي' : 'Interactive website'}</option
+										>
+										<option value="store" class="bg-[var(--color-background)]"
+											>{(data as any).lang === 'ar' ? 'متجر إلكتروني' : 'Online store'}</option
 										>
 										<option value="other" class="bg-[var(--color-background)]"
-											>{(data as any).lang === 'ar' ? 'أخرى' : 'Other'}</option
+											>{(data as any).lang === 'ar' ? 'استفسار آخر' : 'Other inquiry'}</option
 										>
 									</select>
 									<div
@@ -648,8 +652,8 @@
 									rows={5}
 									class="w-full resize-none rounded-2xl border border-[var(--glass-border)] bg-[var(--color-text-base)]/5 px-6 py-4 font-medium text-[var(--color-text-base)] transition-all outline-none placeholder:text-[var(--color-text-muted)]/30 hover:border-brand-blue/30 focus:border-brand-blue focus:bg-[var(--color-text-base)]/10 focus:ring-4 focus:ring-brand-blue/10"
 									placeholder={(data as any).lang === 'ar'
-										? 'أخبرنا عن مشروعك بالتفصيل...'
-										: 'Tell us about your project in detail...'}
+										? 'اكتب نبذة عن نشاطك وما تحتاجه'
+										: 'Tell us about your business and what you need'}
 								></textarea>
 							</div>
 						</div>
@@ -662,7 +666,7 @@
 								class="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-white/0 via-white/20 to-white/0 transition-transform duration-1000 group-hover:translate-x-[100%]"
 							></div>
 							<span class="relative z-10 flex items-center gap-3">
-								{(data as any).lang === 'ar' ? 'إرسال الرسالة' : 'Send Message'}
+								{(data as any).lang === 'ar' ? 'إرسال' : 'Send'}
 								<Send
 									class="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
 								/>

@@ -204,8 +204,7 @@
 	<meta property="og:image" content={logoSrc} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:image" content={logoSrc} />
-	<script type="application/ld+json">
-		{JSON.stringify({
+	{@html `<script type="application/ld+json">${JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "Organization",
 			"name": "مؤسسة حافة النجوم",
@@ -215,7 +214,7 @@
 			"image": "https://hafatalnjom.com/images/logos/bosla-logo.png",
 			"description": "شركة تصميم وتطوير مواقع إلكترونية وحلول رقمية في الرياض",
 			"taxID": "7050568158",
-			"telephone": "+966576704683",
+			"telephone": "+966576944605",
 			"email": "info@hafatalnjom.com",
 			"address": {
 				"@type": "PostalAddress",
@@ -224,22 +223,20 @@
 				"addressCountry": "SA"
 			},
 			"sameAs": [
-				"https://wa.me/966576704683",
+				"https://wa.me/966576944605",
 				"https://www.instagram.com/bosla.sa",
 				"https://x.com/bosla_sa"
 			],
 			"areaServed": ["SA"],
 			"priceRange": "SAR 1,500 - SAR 5,000"
-		})}
-	</script>
-	<script type="application/ld+json">
-		{JSON.stringify({
+		}).replaceAll('<', '\\u003c')}</script>`}
+	{@html `<script type="application/ld+json">${JSON.stringify({
 			"@context": "https://schema.org",
 			"@type": "LocalBusiness",
 			"name": "مؤسسة حافة النجوم - Hafat Alnjom",
 			"description": "شركة تصميم وتطوير مواقع إلكترونية وحلول رقمية في الرياض",
 			"url": "https://hafatalnjom.com",
-			"telephone": "+966576704683",
+			"telephone": "+966576944605",
 			"taxID": "7050568158",
 			"areaServed": ["SA", "GCC"],
 			"priceRange": "SAR 1,500 - SAR 5,000",
@@ -249,8 +246,7 @@
 				"addressRegion": "Al-Malaz",
 				"addressCountry": "SA"
 			}
-		})}
-	</script>
+		}).replaceAll('<', '\\u003c')}</script>`}
 </svelte:head>
 
 <!-- Scroll Progress Bar -->

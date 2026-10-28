@@ -1,0 +1,136 @@
+- generic [ref=f25e2]:
+  - generic [ref=f25e3]: شحن مجاني للطلبات فوق 200 ر.س • كوبون ASL10 يخصم 10%
+  - banner [ref=f25e4]:
+    - generic [ref=f25e5]:
+      - link "أصل ASL · عطور واحاجيات" [ref=f25e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f25e7]: أصل
+        - generic [ref=f25e8]: ASL · عطور واحاجيات
+      - navigation [ref=f25e9]:
+        - link "الرئيسية" [ref=f25e10] [cursor=pointer]:
+          - /url: /
+        - link "المتجر" [ref=f25e11] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f25e12] [cursor=pointer]:
+          - /url: /wishlist
+      - button "السلة" [ref=f25e14]
+  - main [ref=f25e18]:
+    - generic [ref=f25e19]:
+      - generic [ref=f25e20]:
+        - link "الرئيسية" [ref=f25e21] [cursor=pointer]:
+          - /url: /
+        - text: /
+        - link "المتجر" [ref=f25e22] [cursor=pointer]:
+          - /url: /shop
+        - text: /
+        - link "عطور" [ref=f25e23] [cursor=pointer]:
+          - /url: /shop?cat=perfume
+        - text: /
+        - generic [ref=f25e24]: عطر العنبر الفاخر
+      - generic [ref=f25e25]:
+        - generic [ref=f25e26]:
+          - generic [ref=f25e27]:
+            - img "عطر العنبر الفاخر"
+            - generic [ref=f25e28]: خصم 24%
+          - generic [ref=f25e29]:
+            - button [ref=f25e30] [cursor=pointer]
+            - button [ref=f25e31] [cursor=pointer]
+            - button [ref=f25e32] [cursor=pointer]
+            - generic [ref=f25e33]: اسحب الصور ←
+        - generic [ref=f25e34]:
+          - generic [ref=f25e35]:
+            - generic [ref=f25e36]: ✦ عطور
+            - generic [ref=f25e37]: ★ 4.8 (214 تقييم)
+          - heading "عطر العنبر الفاخر" [level=1] [ref=f25e38]
+          - paragraph [ref=f25e39]: عود وعنبر مع لمسة فانيليا دافئة
+          - generic [ref=f25e40]:
+            - generic [ref=f25e41]: ٢٤٩
+            - generic [ref=f25e42]: ر.س
+            - generic [ref=f25e43]: ٣٢٩
+          - generic [ref=f25e44]: "اللون: اختر اللي يشبه مزاجك"
+          - generic [ref=f25e45]:
+            - button "لون 1" [ref=f25e46] [cursor=pointer]
+            - button "لون 2" [ref=f25e47] [cursor=pointer]
+            - button "لون 3" [ref=f25e48] [cursor=pointer]
+          - generic [ref=f25e49]: الحجم
+          - generic [ref=f25e50]:
+            - button "50 مل" [ref=f25e51] [cursor=pointer]
+            - button "100 مل" [ref=f25e52] [cursor=pointer]
+          - generic [ref=f25e53]:
+            - generic [ref=f25e54]:
+              - button "＋" [ref=f25e55] [cursor=pointer]
+              - generic [ref=f25e56]: "1"
+              - button "－" [ref=f25e57] [cursor=pointer]
+            - button "أضف للسلة — ٢٤٩ ر.س" [ref=f25e58] [cursor=pointer]
+            - button "♥" [ref=f25e59] [cursor=pointer]
+          - generic [ref=f25e60]:
+            - generic [ref=f25e61]: 🚚 توصيل 48 ساعة — مجانًا فوق 200 ر.س
+            - generic [ref=f25e62]: ↩️ استبدال 14 يوم
+            - generic [ref=f25e63]: 🔒 دفع مدى · Apple Pay
+          - generic [ref=f25e64]:
+            - generic [ref=f25e65]:
+              - button "الوصف" [ref=f25e66] [cursor=pointer]
+              - button "التفاصيل" [ref=f25e68] [cursor=pointer]
+              - button "التقييمات (214)" [ref=f25e69] [cursor=pointer]
+            - paragraph [ref=f25e71]: توقيع شرقي دافئ يفتح على العنبر والعود، ثم يستقر على فانيليا ناعمة ولبان. ثبات يصل إلى 10 ساعات وأثر يبقى معك طول اليوم.
+      - generic [ref=f25e72]:
+        - generic [ref=f25e73]:
+          - heading "قد يعجبك هذي كذلك" [level=2] [ref=f25e74]
+          - link "شوف الكل ←" [ref=f25e75] [cursor=pointer]:
+            - /url: /shop?cat=perfume
+        - generic [ref=f25e76]:
+          - article [ref=f25e77]:
+            - link [ref=f25e78] [cursor=pointer]:
+              - /url: /product/2
+              - img "عطر الورد والعود" [ref=f25e80]
+            - button "المفضلة" [active] [ref=f25e81]:
+              - generic [ref=f25e125]: ♥
+            - generic [ref=f25e83]:
+              - generic [ref=f25e84]:
+                - generic [ref=f25e85]: عطور
+                - generic [ref=f25e86]: ★ 4.6
+              - link "عطر الورد والعود" [ref=f25e87] [cursor=pointer]:
+                - /url: /product/2
+              - paragraph [ref=f25e88]: وردة دمشقية مع مسك أبيض وعود خفيف
+              - generic [ref=f25e89]:
+                - generic [ref=f25e90]: ١٩٩
+                - generic [ref=f25e91]: ر.س
+              - button "أضف للسلة" [ref=f25e92] [cursor=pointer]
+          - article [ref=f25e93]:
+            - link "طقم عطور رجالية 3 قطع خصم 17%" [ref=f25e94] [cursor=pointer]:
+              - /url: /product/8
+              - generic [ref=f25e95]:
+                - img "طقم عطور رجالية 3 قطع" [ref=f25e96]
+                - generic [ref=f25e97]: خصم 17%
+            - button "المفضلة" [ref=f25e98]:
+              - generic [ref=f25e99]: ♡
+            - generic [ref=f25e100]:
+              - generic [ref=f25e101]:
+                - generic [ref=f25e102]: عطور
+                - generic [ref=f25e103]: ★ 4.6
+              - link "طقم عطور رجالية 3 قطع" [ref=f25e104] [cursor=pointer]:
+                - /url: /product/8
+              - paragraph [ref=f25e105]: ثلاث روائح خشبية معقّدة — للسفر واليوم
+              - generic [ref=f25e106]:
+                - generic [ref=f25e107]: ٣٨٩
+                - generic [ref=f25e108]: ر.س
+                - generic [ref=f25e109]: ٤٦٩
+              - button "أضف للسلة" [ref=f25e110] [cursor=pointer]
+  - contentinfo [ref=f25e111]:
+    - generic [ref=f25e113]:
+      - generic [ref=f25e114]: أصل
+      - paragraph [ref=f25e115]: عطور وبخور وهدايا فاخرة — المنتقاة بعناية، متجر تجريبي لأغراض العرض لا تتم فيه عمليات دفع حقيقية.
+      - generic [ref=f25e116]:
+        - link "المتجر" [ref=f25e117] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f25e118] [cursor=pointer]:
+          - /url: /wishlist
+        - link "تواصل معنا" [ref=f25e119] [cursor=pointer]:
+          - /url: https://wa.me/966576944605
+      - generic [ref=f25e120]:
+        - paragraph [ref=f25e121]:
+          - text: برمجة وتطوير
+          - link "بوصلة تك · BOSLA TECH" [ref=f25e122] [cursor=pointer]:
+            - /url: https://hafatalnjom.com
+        - paragraph [ref=f25e123]: شحن مجاني فوق 200 ر.س • كوبون ASL10
+  - generic: «عطر الورد والعود» دخلت المفضلة ♥

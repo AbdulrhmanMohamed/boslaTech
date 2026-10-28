@@ -10,6 +10,7 @@ const cities = ['riyadh', 'jeddah', 'dammam', 'khobar', 'mecca', 'medina'];
 
 const basePages = [
 	{ path: '', priority: '1.0', changefreq: 'weekly' },
+	{ path: 'stores', priority: '0.9', changefreq: 'weekly' },
 	{ path: 'about', priority: '0.7', changefreq: 'monthly' },
 	{ path: 'services', priority: '0.9', changefreq: 'weekly' },
 	{ path: 'services/web-development', priority: '0.8', changefreq: 'monthly' },

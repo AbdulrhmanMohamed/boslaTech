@@ -1,0 +1,281 @@
+- generic [ref=f21e2]:
+  - generic [ref=f21e3]: شحن مجاني للطلبات فوق 200 ر.س • كوبون ASL10 يخصم 10%
+  - banner [ref=f21e4]:
+    - generic [ref=f21e5]:
+      - link "أصل ASL · عطور واحاجيات" [ref=f21e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f21e7]: أصل
+        - generic [ref=f21e8]: ASL · عطور واحاجيات
+      - navigation [ref=f21e9]:
+        - link "الرئيسية" [ref=f21e10] [cursor=pointer]:
+          - /url: /
+        - link "المتجر" [ref=f21e12] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f21e13] [cursor=pointer]:
+          - /url: /wishlist
+      - button "السلة" [ref=f21e15]
+  - main [ref=f21e19]:
+    - generic [ref=f21e20]:
+      - generic [ref=f21e21]:
+        - generic [ref=f21e26]:
+          - generic [ref=f21e27]: ✦ تخفيضات نهاية الموسم حتى 25% + كوبون ASL10
+          - heading "رائحة تُروى، تفاصيل تُحفظ في متجر واحد" [level=1] [ref=f21e28]:
+            - generic [ref=f21e29]: رائحة تُروى،
+            - generic [ref=f21e31]: تفاصيل تُحفظ
+            - generic [ref=f21e33]: في متجر واحد
+          - paragraph [ref=f21e35]: عطور شرقية وغربية، بخور وشموع فاخرة، وهدايا جاهزة للإهداء — منتقاة بعناية.
+          - generic [ref=f21e36]:
+            - button [ref=f21e37] [cursor=pointer]:
+              - link "تسوّق المجموعة ←" [ref=f21e38]:
+                - /url: /shop
+            - button [ref=f21e39] [cursor=pointer]:
+              - link "تواصل معنا" [ref=f21e40]:
+                - /url: https://wa.me/966576944605
+        - figure [ref=f21e41]:
+          - generic [ref=f21e42]:
+            - img "عطر العنبر" [ref=f21e43]
+            - generic [ref=f21e44]: العنبر الفاخر · 249 ر.س
+        - figure [ref=f21e45]:
+          - img "بخور العود" [ref=f21e46]
+        - generic [ref=f21e47]: اسحب
+      - generic [ref=f21e51]:
+        - generic [ref=f21e52]:
+          - generic [ref=f21e53]:
+            - text: شحن مجاني فوق 200 ر.س
+            - generic [ref=f21e54]: ✦
+          - generic [ref=f21e55]:
+            - text: كوبون ASL10 يخصم 10%
+            - generic [ref=f21e56]: ✦
+          - generic [ref=f21e57]:
+            - text: أصالة 100% — وكلاء معتمدون
+            - generic [ref=f21e58]: ✦
+          - generic [ref=f21e59]:
+            - text: توصيل 48 ساعة لكل المملكة
+            - generic [ref=f21e60]: ✦
+          - generic [ref=f21e61]:
+            - text: استبدال خلال 14 يوم
+            - generic [ref=f21e62]: ✦
+          - generic [ref=f21e63]:
+            - text: تغليف هدايا مجاني
+            - generic [ref=f21e64]: ✦
+        - generic [ref=f21e65]:
+          - generic [ref=f21e66]:
+            - text: شحن مجاني فوق 200 ر.س
+            - generic [ref=f21e67]: ✦
+          - generic [ref=f21e68]:
+            - text: كوبون ASL10 يخصم 10%
+            - generic [ref=f21e69]: ✦
+          - generic [ref=f21e70]:
+            - text: أصالة 100% — وكلاء معتمدون
+            - generic [ref=f21e71]: ✦
+          - generic [ref=f21e72]:
+            - text: توصيل 48 ساعة لكل المملكة
+            - generic [ref=f21e73]: ✦
+          - generic [ref=f21e74]:
+            - text: استبدال خلال 14 يوم
+            - generic [ref=f21e75]: ✦
+          - generic [ref=f21e76]:
+            - text: تغليف هدايا مجاني
+            - generic [ref=f21e77]: ✦
+      - generic [ref=f21e78]:
+        - generic [ref=f21e80]:
+          - paragraph [ref=f21e81]: تصفّح الأقسام
+          - heading "ثلاثة عوالم، بنفس اللمسة" [level=2] [ref=f21e82]
+        - generic [ref=f21e83]:
+          - link "عطور 🌸 عطور 3 منتجات ←" [ref=f21e85] [cursor=pointer]:
+            - /url: /shop?cat=perfume
+            - img "عطور" [ref=f21e86]
+            - generic [ref=f21e88]:
+              - generic [ref=f21e89]:
+                - generic [ref=f21e90]: 🌸 عطور
+                - generic [ref=f21e91]: 3 منتجات
+              - generic [ref=f21e92]: ←
+          - link "بخور وشموع 🕯️ بخور وشموع 2 منتجات ←" [ref=f21e94] [cursor=pointer]:
+            - /url: /shop?cat=oud
+            - img "بخور وشموع" [ref=f21e95]
+            - generic [ref=f21e97]:
+              - generic [ref=f21e98]:
+                - generic [ref=f21e99]: 🕯️ بخور وشموع
+                - generic [ref=f21e100]: 2 منتجات
+              - generic [ref=f21e101]: ←
+          - link "هدايا 🎁 هدايا 3 منتجات ←" [ref=f21e103] [cursor=pointer]:
+            - /url: /shop?cat=gift
+            - img "هدايا" [ref=f21e104]
+            - generic [ref=f21e106]:
+              - generic [ref=f21e107]:
+                - generic [ref=f21e108]: 🎁 هدايا
+                - generic [ref=f21e109]: 3 منتجات
+              - generic [ref=f21e110]: ←
+      - generic [ref=f21e111]:
+        - generic [ref=f21e112]:
+          - paragraph [ref=f21e113]: المفضّلة عند عيالب الحارة
+          - heading "الأكثر طلبًا هذا الشهر" [level=2] [ref=f21e114]
+        - generic [ref=f21e115]:
+          - article [ref=f21e116]:
+            - link "عطر العنبر الفاخر خصم 24%" [ref=f21e117] [cursor=pointer]:
+              - /url: /product/1
+              - generic [ref=f21e118]:
+                - img "عطر العنبر الفاخر" [ref=f21e119]
+                - generic [ref=f21e120]: خصم 24%
+            - button "المفضلة" [ref=f21e121]:
+              - generic [ref=f21e122]: ♡
+            - generic [ref=f21e123]:
+              - generic [ref=f21e124]:
+                - generic [ref=f21e125]: عطور
+                - generic [ref=f21e126]: ★ 4.8
+              - link "عطر العنبر الفاخر" [ref=f21e127] [cursor=pointer]:
+                - /url: /product/1
+              - paragraph [ref=f21e128]: عود وعنبر مع لمسة فانيليا دافئة
+              - generic [ref=f21e129]:
+                - generic [ref=f21e130]: ٢٤٩
+                - generic [ref=f21e131]: ر.س
+                - generic [ref=f21e132]: ٣٢٩
+              - button "أضف للسلة" [ref=f21e133] [cursor=pointer]
+          - article [ref=f21e134]:
+            - link "بخور العود الفيصلي 50 غم خصم 25% بقي 8 فقط" [ref=f21e135] [cursor=pointer]:
+              - /url: /product/3
+              - generic [ref=f21e136]:
+                - img "بخور العود الفيصلي 50 غم" [ref=f21e137]
+                - generic [ref=f21e138]: خصم 25%
+                - generic [ref=f21e139]: بقي 8 فقط
+            - button "المفضلة" [ref=f21e140]:
+              - generic [ref=f21e141]: ♡
+            - generic [ref=f21e142]:
+              - generic [ref=f21e143]:
+                - generic [ref=f21e144]: بخور وشموع
+                - generic [ref=f21e145]: ★ 4.9
+              - link "بخور العود الفيصلي 50 غم" [ref=f21e146] [cursor=pointer]:
+                - /url: /product/3
+              - paragraph [ref=f21e147]: عود كمبودي طبيعي يعمق الجلسة
+              - generic [ref=f21e148]:
+                - generic [ref=f21e149]: ١٤٩
+                - generic [ref=f21e150]: ر.س
+                - generic [ref=f21e151]: ١٩٩
+              - button "أضف للسلة" [ref=f21e152] [cursor=pointer]
+          - article [ref=f21e153]:
+            - link "صينية هدايا العروس خصم 20% بقي 5 فقط" [ref=f21e154] [cursor=pointer]:
+              - /url: /product/5
+              - generic [ref=f21e155]:
+                - img "صينية هدايا العروس" [ref=f21e156]
+                - generic [ref=f21e157]: خصم 20%
+                - generic [ref=f21e158]: بقي 5 فقط
+            - button "المفضلة" [ref=f21e159]:
+              - generic [ref=f21e160]: ♡
+            - generic [ref=f21e161]:
+              - generic [ref=f21e162]:
+                - generic [ref=f21e163]: هدايا
+                - generic [ref=f21e164]: ★ 5
+              - link "صينية هدايا العروس" [ref=f21e165] [cursor=pointer]:
+                - /url: /product/5
+              - paragraph [ref=f21e166]: عطر صغير + بخور + شُمعة — جاهزة للإهداء
+              - generic [ref=f21e167]:
+                - generic [ref=f21e168]: ٤٧٩
+                - generic [ref=f21e169]: ر.س
+                - generic [ref=f21e170]: ٥٩٩
+              - button "أضف للسلة" [ref=f21e171] [cursor=pointer]
+          - article [ref=f21e172]:
+            - link "طقم كوبين زجاجي خصم 20%" [ref=f21e173] [cursor=pointer]:
+              - /url: /product/7
+              - generic [ref=f21e174]:
+                - img "طقم كوبين زجاجي" [ref=f21e175]
+                - generic [ref=f21e176]: خصم 20%
+            - button "المفضلة" [ref=f21e177]:
+              - generic [ref=f21e178]: ♡
+            - generic [ref=f21e179]:
+              - generic [ref=f21e180]:
+                - generic [ref=f21e181]: هدايا
+                - generic [ref=f21e182]: ★ 4.5
+              - link "طقم كوبين زجاجي" [ref=f21e183] [cursor=pointer]:
+                - /url: /product/7
+              - paragraph [ref=f21e184]: كوبان زجاجيان رقيّقان للقهوة العربية
+              - generic [ref=f21e185]:
+                - generic [ref=f21e186]: ١٥٩
+                - generic [ref=f21e187]: ر.س
+                - generic [ref=f21e188]: ١٩٩
+              - button "أضف للسلة" [ref=f21e189] [cursor=pointer]
+        - button [ref=f21e191] [cursor=pointer]:
+          - link "شوف المجموعة كاملة ←" [ref=f21e192]:
+            - /url: /shop
+      - generic [ref=f21e196]:
+        - generic [ref=f21e197]:
+          - paragraph [ref=f21e198]: لماذا أصل؟
+          - heading "نختار بغرابة، ونبيع ببخل الدمج" [level=2] [ref=f21e199]
+          - paragraph [ref=f21e200]: من عين على العطور لصلها في المكان، مع باكّات رآل للبوكيه — أصلة رابح بالريف. اجمع المطلب مع لفائف البخور المشميلة علب هدية للبراءة الباكرة، والنتيجة؟
+          - list [ref=f21e201]:
+            - listitem [ref=f21e202]:
+              - generic [ref=f21e203]: ✓
+              - text: أصل من وكلاء معتمدين 100%
+            - listitem [ref=f21e204]:
+              - generic [ref=f21e205]: ✓
+              - text: تغليف هدايا مجاني بأي طلب
+            - listitem [ref=f21e206]:
+              - generic [ref=f21e207]: ✓
+              - text: استبدال خلال 14 يوم بدون أسئلة
+            - listitem [ref=f21e208]:
+              - generic [ref=f21e209]: ✓
+              - text: "دفع آمن: مدى · Apple Pay · Visa"
+        - generic [ref=f21e210]:
+          - link "صينية هدايا العروس":
+            - /url: /product/5
+            - img "صينية هدايا العروس"
+          - generic [ref=f21e211]: صينية هدايا العروس — 479 ر.س
+      - generic [ref=f21e212]:
+        - heading "وش يقولون علينا؟" [level=2] [ref=f21e213]
+        - generic [ref=f21e214]:
+          - generic [ref=f21e215]:
+            - blockquote [ref=f21e216]:
+              - generic [ref=f21e217]: ★★★★★
+              - paragraph [ref=f21e218]: أفضل عطر طلبته أونلاين بالسعودية، وصل بتغليف فخم خلال يومين.
+              - generic [ref=f21e219]: نورة. م · الرياض
+            - blockquote [ref=f21e220]:
+              - generic [ref=f21e221]: ★★★★★
+              - paragraph [ref=f21e222]: البخور ريحته سكت الدار كامل، قريبة من اللي نشريه من المستورد.
+              - generic [ref=f21e223]: أبو فيصل · جدة
+            - blockquote [ref=f21e224]:
+              - generic [ref=f21e225]: ★★★★★
+              - paragraph [ref=f21e226]: صينية الهدايا كانت سكّة عرس بنتي، الجميع سأل من وين.
+              - generic [ref=f21e227]: أم عبدالله · الدمام
+            - blockquote [ref=f21e228]:
+              - generic [ref=f21e229]: ★★★★★
+              - paragraph [ref=f21e230]: دعم سريع واستبدال بلا وجع راس، تسلمون عليه.
+              - generic [ref=f21e231]: سارة · الخبر
+          - generic [ref=f21e232]:
+            - blockquote [ref=f21e233]:
+              - generic [ref=f21e234]: ★★★★★
+              - paragraph [ref=f21e235]: أفضل عطر طلبته أونلاين بالسعودية، وصل بتغليف فخم خلال يومين.
+              - generic [ref=f21e236]: نورة. م · الرياض
+            - blockquote [ref=f21e237]:
+              - generic [ref=f21e238]: ★★★★★
+              - paragraph [ref=f21e239]: البخور ريحته سكت الدار كامل، قريبة من اللي نشريه من المستورد.
+              - generic [ref=f21e240]: أبو فيصل · جدة
+            - blockquote [ref=f21e241]:
+              - generic [ref=f21e242]: ★★★★★
+              - paragraph [ref=f21e243]: صينية الهدايا كانت سكّة عرس بنتي، الجميع سأل من وين.
+              - generic [ref=f21e244]: أم عبدالله · الدمام
+            - blockquote [ref=f21e245]:
+              - generic [ref=f21e246]: ★★★★★
+              - paragraph [ref=f21e247]: دعم سريع واستبدال بلا وجع راس، تسلمون عليه.
+              - generic [ref=f21e248]: سارة · الخبر
+      - generic [ref=f21e250]:
+        - heading "جاهز تشمّ الفرق؟" [level=2] [ref=f21e251]
+        - paragraph [ref=f21e252]: اطلب اليوم وتوصيلك يكون عندك خلال 48 ساعة — والدفع كما تشاء.
+        - button [ref=f21e253] [cursor=pointer]:
+          - link "ابدأ التسوق ←" [ref=f21e254]:
+            - /url: /shop
+  - contentinfo [ref=f21e255]:
+    - generic [ref=f21e257]:
+      - generic [ref=f21e258]: أصل
+      - paragraph [ref=f21e259]: عطور وبخور وهدايا فاخرة — المنتقاة بعناية، متجر تجريبي لأغراض العرض لا تتم فيه عمليات دفع حقيقية.
+      - generic [ref=f21e260]:
+        - link "المتجر" [ref=f21e261] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f21e262] [cursor=pointer]:
+          - /url: /wishlist
+        - link "تواصل معنا" [ref=f21e263] [cursor=pointer]:
+          - /url: https://wa.me/966576944605
+      - generic [ref=f21e264]:
+        - paragraph [ref=f21e265]:
+          - text: برمجة وتطوير
+          - link "بوصلة تك · BOSLA TECH" [ref=f21e266] [cursor=pointer]:
+            - /url: https://hafatalnjom.com
+        - paragraph [ref=f21e267]: شحن مجاني فوق 200 ر.س • كوبون ASL10

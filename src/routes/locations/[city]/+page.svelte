@@ -12,7 +12,7 @@
 	const isAr = $derived(lang === 'ar');
 	const services = $derived(typed?.serviceData);
 
-	const phoneNumber = '966576704683';
+	const phoneNumber = '966576944605';
 </script>
 
 <svelte:head>

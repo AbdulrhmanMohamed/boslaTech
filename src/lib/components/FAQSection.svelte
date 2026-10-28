@@ -28,8 +28,8 @@
 	const translations = {
 		en: {
 			header: {
-				badge: 'Frequently Asked Questions',
-				title: 'Bosla answers to all your questions',
+				badge: 'FAQ',
+				title: 'Frequently Asked Questions',
 				subtitle:
 					'Here are the most important questions our clients ask about website development and our services'
 			},
@@ -48,60 +48,42 @@
 			},
 			faqs: [
 				{
+					category: 'Ownership',
+					question: 'Do I fully own my website?',
+					answer: 'Yes. The design, code and content are yours, with no monthly subscription.'
+				},
+				{
+					category: 'What is included',
+					question: 'What does the price include?',
+					answer: 'The price covers the full design and code of your website with its control panel. Domain and hosting are included for the first year, then a small yearly renewal. (To be confirmed before publishing)'
+				},
+				{
 					category: 'Timeline',
-					question: 'How long does website development take?',
-					answer:
-						'Development time depends on the type and complexity of the website. Basic website takes 7-10 days, commercial website 10-14 days, and advanced website 21-30 days. We commit to deadlines and provide daily progress updates.'
+					question: 'When does the delivery time start?',
+					answer: 'As soon as we receive all your content and images.'
 				},
 				{
-					category: 'Management',
-					question: 'Can I modify the website content myself?',
-					answer:
-						'Yes, we provide you with an easy-to-use content management system that allows you to modify text, images, and pages easily without requiring technical expertise. We also provide free training for your team on using the system.'
+					category: 'Payment',
+					question: 'How do I pay?',
+					answer: '50% upfront and 50% after you review and approve the website.'
 				},
 				{
-					category: 'Technology',
-					question: 'Will the website work well on smartphones?',
-					answer:
-						'Of course! All our websites are designed with Responsive Design technology to work perfectly on all devices - smartphones, tablets, and computers. We test the website on more than 20 different devices.'
+					category: 'Content',
+					question: "I don't have content ready. What now?",
+					answer: 'Send us the basic information and our writers will prepare your website copy.'
 				},
 				{
-					category: 'Cost',
-					question: 'What are hosting and maintenance costs?',
-					answer:
-						'We provide free hosting for a full year with all our packages. After the first year, hosting costs 500 SAR annually including hosting, backups, security updates, and technical support. Basic maintenance is free for 6 months.'
-				},
-				{
-					category: 'Marketing',
-					question: 'Do you provide Search Engine Optimization (SEO) services?',
-					answer:
-						'Yes, all our websites come with basic SEO optimization including: website speed improvement, titles and descriptions, keywords, and site map. We also provide advanced SEO services as an additional service to ensure your website appears in the first search results.'
-				},
-				{
-					category: 'Guarantee',
-					question: "What if I'm not satisfied with the final result?",
-					answer:
-						'We work closely with you throughout the development process with free revision rounds to ensure you get a website that exactly meets your expectations. Your satisfaction is our top priority.'
-				},
-				{
-					category: 'Features',
-					question: 'Can I add an online store to the website?',
-					answer:
-						'Of course! We develop professional online stores with all features: product display, shopping cart, multiple payment systems, inventory management, and order tracking. The online store is included in the commercial and advanced packages.'
-				},
-				{
-					category: 'Communication',
-					question: 'How do I communicate with you during website development?',
-					answer:
-						"We provide a direct communication channel via WhatsApp and a dedicated project manager to follow up on your project. You'll receive daily updates, design previews, and the ability to communicate directly at any time. Transparency and continuous communication are part of our service."
+					category: 'Editing',
+					question: 'Can I edit the website myself?',
+					answer: 'Yes, from the control panel — no developer needed.'
 				}
 			]
 		},
 		ar: {
 			header: {
-				badge: 'الأسئلة الشائعة',
-				title: 'أجوبة بوصلة على أسئلتك',
-				subtitle: 'إليك أهم الأسئلة التي يطرحها عملاؤنا حول تطوير المواقع الإلكترونية وخدماتنا'
+				badge: 'أسئلة شائعة',
+				title: 'أسئلة شائعة',
+				subtitle: 'إليك أهم الأسئلة التي يطرحها عملاؤنا قبل البدء'
 			},
 			contact: {
 				title: 'لديك سؤال آخر؟',
@@ -118,52 +100,34 @@
 			},
 			faqs: [
 				{
+					category: 'الملكية',
+					question: 'هل الموقع ملكي بالكامل؟',
+					answer: 'نعم. التصميم والكود والمحتوى ملكك، بدون أي اشتراك شهري.'
+				},
+				{
+					category: 'ماذا يشمل',
+					question: 'ماذا يشمل السعر؟',
+					answer: 'يشمل السعر كامل تصميم وبرمجة موقعك مع لوحة التحكم. الدومين والاستضافة مشمولان لأول سنة، ثم تجديد سنوي رمزي. (قيد التأكيد قبل النشر)'
+				},
+				{
 					category: 'التوقيت',
-					question: 'كم يستغرق تطوير الموقع الإلكتروني؟',
-					answer:
-						'يعتمد وقت التطوير على نوع الموقع وتعقيده. الموقع الأساسي يستغرق 7-10 أيام، الموقع التجاري 10-14 يوم، والموقع المتقدم 21-30 يوم. نلتزم بالمواعيد المحددة ونقدم تحديثات يومية عن التقدم.'
+					question: 'متى تبدأ مدة التسليم؟',
+					answer: 'من لحظة استلام المحتوى والصور كاملة.'
 				},
 				{
-					category: 'الإدارة',
-					question: 'هل يمكنني تعديل محتوى الموقع بنفسي؟',
-					answer:
-						'نعم، نوفر لك نظام إدارة محتوى سهل الاستخدام يمكنك من تعديل النصوص والصور والصفحات بسهولة دون الحاجة لخبرة تقنية. كما نقدم تدريب مجاني لفريقك على استخدام النظام.'
+					category: 'الدفع',
+					question: 'كيف يتم الدفع؟',
+					answer: '50% مقدمًا و50% بعد مراجعة الموقع والموافقة عليه.'
 				},
 				{
-					category: 'التقنية',
-					question: 'هل الموقع سيعمل بشكل جيد على الهواتف الذكية؟',
-					answer:
-						'بالطبع! جميع مواقعنا مصممة بتقنية التصميم المتجاوب (Responsive Design) لتعمل بشكل مثالي على جميع الأجهزة - الهواتف الذكية، الأجهزة اللوحية، وأجهزة الكمبيوتر. نختبر الموقع على أكثر من 20 جهاز مختلف.'
+					category: 'المحتوى',
+					question: 'ليس لدي محتوى جاهز، ماذا أفعل؟',
+					answer: 'أرسل لنا المعلومات الأساسية، ونتولى كتابة نصوص موقعك باحترافية.'
 				},
 				{
-					category: 'التكلفة',
-					question: 'ما هي تكلفة الاستضافة والصيانة؟',
-					answer:
-						'نقدم استضافة مجانية لسنة كاملة مع جميع باقاتنا. بعد السنة الأولى، تكلفة الاستضافة 500 ريال سنوياً تشمل الاستضافة، النسخ الاحتياطية، التحديثات الأمنية، والدعم الفني. الصيانة الأساسية مجانية لمدة 6 أشهر.'
-				},
-				{
-					category: 'التسويق',
-					question: 'هل تقدمون خدمة تحسين محركات البحث (SEO)؟',
-					answer:
-						'نعم، جميع مواقعنا تأتي مع تحسين أساسي لمحركات البحث يشمل: تحسين سرعة الموقع، العناوين والوصف، الكلمات المفتاحية، وخريطة الموقع. كما نقدم خدمات SEO متقدمة كخدمة إضافية لضمان ظهور موقعك في النتائج الأولى.'
-				},
-				{
-					category: 'الضمان',
-					question: 'ماذا لو لم أكن راضياً عن النتيجة النهائية؟',
-					answer:
-						'نعمل معك عن كثب طوال مرحلة التطوير مع جولات مراجعة مجانية لضمان حصولك على موقع يلبي توقعاتك بالضبط. رضاك هو أولويتنا الأولى.'
-				},
-				{
-					category: 'المميزات',
-					question: 'هل يمكن إضافة متجر إلكتروني للموقع؟',
-					answer:
-						'بالطبع! نطور متاجر إلكترونية احترافية مع جميع المميزات: عرض المنتجات، سلة التسوق، أنظمة الدفع المتعددة، إدارة المخزون، وتتبع الطلبات. المتجر الإلكتروني متضمن في الباقة التجارية والمتقدمة.'
-				},
-				{
-					category: 'التواصل',
-					question: 'كيف أتواصل معكم أثناء تطوير الموقع؟',
-					answer:
-						'نوفر قناة تواصل مباشرة عبر واتساب ومدير مشروع مخصص لمتابعة مشروعك. ستحصل على تحديثات يومية، معاينات للتصميم، وإمكانية التواصل المباشر في أي وقت. الشفافية والتواصل المستمر جزء من خدمتنا.'
+					category: 'التعديل',
+					question: 'هل أستطيع تعديل الموقع بنفسي؟',
+					answer: 'نعم، من لوحة التحكم وبدون الحاجة إلى مبرمج.'
 				}
 			]
 		}
@@ -546,7 +510,7 @@
 				{contactCTA.subtitle}
 			</p>
 			<a
-				href="https://wa.me/966576704683?text=%D9%83%D9%86%D8%AA%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9"
+				href="https://wa.me/966576944605?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="inline-flex items-center justify-center rounded-full bg-brand-blue px-8 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:bg-brand-orange hover:shadow-brand-orange/50 focus:ring-4 focus:ring-brand-blue/50 focus:outline-none [&.in-view]:bg-brand-orange [&.in-view]:shadow-brand-orange/50"

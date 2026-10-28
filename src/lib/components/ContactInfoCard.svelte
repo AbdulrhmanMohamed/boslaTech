@@ -7,7 +7,7 @@
 	let { data } = $props();
 
 	const phoneLabel = data?.about?.phone?.label || (data?.lang === 'ar' ? 'الهاتف' : 'Phone');
-	const phoneValue = data?.about?.phone?.value || '+20 111 2419980';
+	const phoneValue = data?.about?.phone?.value || '+966 57 694 4605';
 
 	let card: HTMLElement;
 
@@ -104,7 +104,7 @@
 						{phoneLabel}
 					</div>
 					<a
-						href="https://wa.me/966576704683?text=%D9%83%D9%86%D8%AA%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9"
+						href="https://wa.me/966576944605?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="text-xl font-black text-[var(--color-text-base)] transition-colors hover:text-brand-blue"

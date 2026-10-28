@@ -1,0 +1,320 @@
+{
+	"en": {
+		"title": "Your Own Online Store, No Monthly Fees | Bosla Tech",
+		"metaDesc": "We build your online store from scratch and deliver it ready in one week. Fully yours, with no monthly subscription and no commission on your sales.",
+		"hero": {
+			"badge": "Launch offer: 50% off all store packages",
+			"headline": "An Online Store That's 100% Yours",
+			"sub": "No monthly subscription. No commission on your sales. Built from scratch and delivered ready in one week.",
+			"ctaPrimary": "Order Your Store on WhatsApp",
+			"ctaSecondary": "Try the Demo Store",
+			"waMsg": "Hi, I would like to ask about the online store offer"
+		},
+		"compare": {
+			"title": "Why Your Own Store?",
+			"subtitle": "The difference between owning your store and renting one.",
+			"col1": "Your store with Bosla",
+			"col2": "Monthly-subscription platforms",
+			"rows": [
+				{
+					"label": "Ownership",
+					"with": "Fully yours: design, code and data",
+					"without": "An account on a platform you don't own"
+				},
+				{
+					"label": "Cost",
+					"with": "One-time payment + yearly hosting renewal",
+					"without": "Ongoing monthly subscription"
+				},
+				{
+					"label": "Commissions",
+					"with": "Zero commission on your sales",
+					"without": "Fees or commissions may apply by plan"
+				},
+				{
+					"label": "Design",
+					"with": "Custom-made for your brand",
+					"without": "Templates others use too"
+				},
+				{
+					"label": "Features",
+					"with": "We build what you need",
+					"without": "Limited to what the platform allows"
+				}
+			]
+		},
+		"features": {
+			"title": "Everything Your Store Needs",
+			"note": "Payment gateways and shipping integrations are confirmed with you based on your market.",
+			"items": [
+				{
+					"title": "Full control panel",
+					"text": "Manage your products, orders and customers yourself."
+				},
+				{
+					"title": "Products with options",
+					"text": "Colors, sizes and bundles with automatic pricing."
+				},
+				{
+					"title": "Offers and discount coupons",
+					"text": "Launch a promotion anytime in one click."
+				},
+				{
+					"title": "Secure payments",
+					"text": "mada, Apple Pay, Visa and Mastercard."
+				},
+				{
+					"title": "Shipping & delivery",
+					"text": "Integration with shipping companies to deliver to your customers."
+				},
+				{
+					"title": "Mobile & policies",
+					"text": "Mobile-friendly, with a wishlist and ready policy pages (shipping, returns, privacy)."
+				}
+			]
+		},
+		"demo": {
+			"title": "Try Before You Decide",
+			"text": "We built a complete live demo store you can browse right now: products, options, a working cart, coupons and the full checkout flow.",
+			"button": "Open the Demo Store",
+			"url": "https://demo.boslatech.com",
+			"small": "A demo store for display purposes only. No real payments are processed."
+		},
+		"steps": {
+			"title": "Your Store in 4 Steps",
+			"items": [
+				"Contact us and tell us what your store needs.",
+				"Send your products, images and prices.",
+				"We build your store within one week.",
+				"Review it, learn the control panel, and go live."
+			]
+		},
+		"packages": {
+			"title": "Online Store Packages",
+			"offerText": "Launch offer: 50% off until",
+			"deliveryLabel": "Delivery",
+			"cta": "Order Your Store on WhatsApp",
+			"waMsg": "Hi, I want to order the online store package:",
+			"customHint": "Need a store with special features? Talk to us about a fully custom build."
+		},
+		"guarantees": {
+			"title": "Work With Confidence",
+			"items": [
+				{
+					"title": "Pay in two stages",
+					"text": "50% upfront, 50% after you see your store live and approve it."
+				},
+				{
+					"title": "On-time delivery",
+					"text": "We commit to the delivery date before we start."
+				},
+				{
+					"title": "Control panel training",
+					"text": "A full walkthrough of the control panel before handover."
+				},
+				{
+					"title": "Post-launch support",
+					"text": "Technical support after launch, as per your package."
+				}
+			]
+		},
+		"faq": {
+			"title": "Frequently Asked Questions",
+			"items": [
+				{
+					"q": "Do I really own the store?",
+					"a": "Yes. The design, code, and your customer and product data are fully yours."
+				},
+				{
+					"q": "Is there a monthly fee or commission on sales?",
+					"a": "No. You pay once, and we take no share of your sales."
+				},
+				{
+					"q": "What about domain and hosting?",
+					"a": "Domain and hosting coverage details and the yearly renewal price are to be confirmed with the Bosla team. (to confirm)"
+				},
+				{
+					"q": "How long does delivery take?",
+					"a": "One week from receiving all your products and images."
+				},
+				{
+					"q": "Do I need a developer to run the store?",
+					"a": "No. You add products and track orders yourself from the control panel."
+				},
+				{
+					"q": "Can you move my products from my current store?",
+					"a": "Product migration from an existing store is available in some packages — contact us for details. (to confirm)"
+				},
+				{
+					"q": "Does the store support tax e-invoicing?",
+					"a": "E-invoicing integration details are to be confirmed with the Bosla team. (to confirm)"
+				}
+			]
+		},
+		"finalCta": {
+			"title": "Ready to Launch Your Store?",
+			"pre": "The offer is valid until",
+			"text": ". Contact us now for your quote.",
+			"button": "Order Your Store on WhatsApp"
+		}
+	},
+	"ar": {
+		"title": "متجر إلكتروني ملكك بالكامل بدون اشتراك شهري | بوصلة تك",
+		"metaDesc": "نبني متجرك الإلكتروني من الصفر ونسلّمه جاهزًا خلال أسبوع. ملكك بالكامل، بدون اشتراك شهري ولا عمولات على مبيعاتك.",
+		"hero": {
+			"badge": "عرض الإطلاق: خصم 50% على جميع باقات المتاجر",
+			"headline": "متجرك الإلكتروني ملكك بالكامل",
+			"sub": "بدون اشتراك شهري ولا عمولات على مبيعاتك. نبنيه لك من الصفر ونسلّمه جاهزًا خلال أسبوع.",
+			"ctaPrimary": "اطلب متجرك عبر واتساب",
+			"ctaSecondary": "جرّب المتجر التجريبي",
+			"waMsg": "مرحبًا، أبغى أستفسر عن عرض المتاجر الإلكترونية"
+		},
+		"compare": {
+			"title": "ليش متجر خاص بك؟",
+			"subtitle": "الفرق بين أن تملك متجرك، وأن تستأجره.",
+			"col1": "متجرك مع بوصلة",
+			"col2": "منصات الاشتراك الشهري",
+			"rows": [
+				{
+					"label": "الملكية",
+					"with": "ملكك بالكامل: التصميم والكود والبيانات",
+					"without": "حساب على منصة لا تملكها"
+				},
+				{
+					"label": "التكلفة",
+					"with": "دفعة واحدة + تجديد سنوي للاستضافة",
+					"without": "اشتراك شهري مستمر"
+				},
+				{
+					"label": "العمولات",
+					"with": "بدون أي عمولة على مبيعاتك",
+					"without": "قد تُفرض رسوم أو عمولات حسب الباقة"
+				},
+				{
+					"label": "التصميم",
+					"with": "مصمم خصيصًا لهويتك",
+					"without": "قوالب يستخدمها غيرك"
+				},
+				{
+					"label": "المميزات",
+					"with": "نبرمج لك ما تحتاجه",
+					"without": "محدودة بما تتيحه المنصة"
+				}
+			]
+		},
+		"features": {
+			"title": "كل ما يحتاجه متجرك",
+			"note": "تفاصيل بوابات الدفع وربط شركات الشحن (قيد التأكيد مع العميل).",
+			"items": [
+				{
+					"title": "لوحة تحكم كاملة",
+					"text": "أدِر منتجاتك وطلباتك وعملاءك بنفسك."
+				},
+				{
+					"title": "منتجات بخيارات متعددة",
+					"text": "ألوان ومقاسات وأطقم بأسعار تلقائية."
+				},
+				{
+					"title": "عروض وكوبونات خصم",
+					"text": "أطلق عروضك في أي وقت بضغطة زر."
+				},
+				{
+					"title": "دفع آمن",
+					"text": "مدى، Apple Pay، Visa، Mastercard."
+				},
+				{
+					"title": "الشحن والتوصيل",
+					"text": "ربط بشركات الشحن لتوصيل طلبات عملائك."
+				},
+				{
+					"title": "متجاوب مع الجوال",
+					"text": "قائمة مفضلة وصفحات سياسات جاهزة (الشحن، الاسترجاع، الخصوصية)."
+				}
+			]
+		},
+		"demo": {
+			"title": "جرّب قبل أن تقرر",
+			"text": "نبنا متجرًا تجريبيًا كاملًا لتتصفحه بنفسك وتجرِب تجربة الطلب كاملة: منتجات، خيارات، سلة شراء، كوبونات خصم، وصفحات الدفع.",
+			"button": "افتح المتجر التجريبي",
+			"url": "https://demo.boslatech.com",
+			"small": "متجر تجريبي لأغراض العرض، ولا تتم فيه عمليات دفع حقيقية."
+		},
+		"steps": {
+			"title": "متجرك في 4 خطوات",
+			"items": [
+				"تواصل معنا وحدد احتياجات متجرك.",
+				"أرسل منتجاتك وصورها وأسعارها.",
+				"نبني متجرك خلال أسبوع.",
+				"تراجعه، نعلّمك لوحة التحكم، وتطلقه."
+			]
+		},
+		"packages": {
+			"title": "باقات المتاجر الإلكترونية",
+			"offerText": "عرض الإطلاق: خصم 50% حتى",
+			"deliveryLabel": "مدة التسليم",
+			"cta": "اطلب متجرك عبر واتساب",
+			"waMsg": "مرحبًا، أبغى أطلب متجر إلكتروني — باقة",
+			"customHint": "محتاج متجر بميزات خاصة؟ تواصل معنا لتصميم متجرك بالكامل من الصفر."
+		},
+		"guarantees": {
+			"title": "نشتغل بثقة",
+			"items": [
+				{
+					"title": "تدفع على مرحلتين",
+					"text": "50% مقدمًا و50% بعد ما تشوف متجرك شغال وتوافق عليه. (قيد التأكيد)"
+				},
+				{
+					"title": "التسليم في الموعد",
+					"text": "نتعهد بموعد التسليم قبل ما نبدأ الشغل. (قيد التأكيد)"
+				},
+				{
+					"title": "تدريب على لوحة التحكم",
+					"text": "شرح كامل للوحة التحكم قبل تسليم المتجر."
+				},
+				{
+					"title": "دعم بعد الإطلاق",
+					"text": "دعم فني بعد الإطلاق حسب الباقة."
+				}
+			]
+		},
+		"faq": {
+			"title": "أسئلة شائعة",
+			"items": [
+				{
+					"q": "هل المتجر ملكي فعلًا؟",
+					"a": "نعم، التصميم والكود وبيانات عملائك ومنتجاتك ملكك بالكامل."
+				},
+				{
+					"q": "هل يوجد اشتراك شهري أو عمولة على المبيعات؟",
+					"a": "لا. تدفع مرة واحدة، ولا نأخذ أي نسبة من مبيعاتك."
+				},
+				{
+					"q": "ماذا عن الدومين والاستضافة؟",
+					"a": "مدة الشمول وسعر التجديد السنوي يُحدد ويُتفق عليه مع فريق بوصلة. (قيد التأكيد)"
+				},
+				{
+					"q": "كم مدة التسليم؟",
+					"a": "أسبوع من استلام المنتجات والصور كاملة."
+				},
+				{
+					"q": "هل أحتاج مبرمج لإدارة المتجر؟",
+					"a": "لا، تضيف منتجاتك وتتابع طلباتك بنفسك من لوحة التحكم."
+				},
+				{
+					"q": "هل تساعدونني في نقل منتجاتي من متجر حالي؟",
+					"a": "نقل المنتجات من متجر حالي متاح في بعض الباقات — تواصل معنا للتفاصيل. (قيد التأكيد)"
+				},
+				{
+					"q": "هل يدعم المتجر الفاتورة الإلكترونية الضريبية؟",
+					"a": "تفاصيل ربط الفاتورة الإلكترونية تُحدد مع فريق بوصلة. (قيد التأكيد)"
+				}
+			]
+		},
+		"finalCta": {
+			"title": "جاهز تطلق متجرك؟",
+			"pre": "العرض ساري حتى",
+			"text": ". تواصل معنا الآن واحصل على عرض السعر.",
+			"button": "اطلب متجرك عبر واتساب"
+		}
+	}
+}

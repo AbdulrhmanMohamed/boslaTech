@@ -20,7 +20,7 @@
 	const lang = $derived(typedData?.lang || 'ar');
 
 	const isAr = $derived(lang === 'ar');
-	const phoneNumber = '966576704683';
+	const phoneNumber = '966576944605';
 
 	let openFaqIndex = $state<number | null>(null);
 
@@ -108,7 +108,7 @@
 			"provider": {
 				"@type": "LocalBusiness",
 				"name": "مؤسسة حافة النجوم",
-				"telephone": "+966576704683"
+				"telephone": "+966576944605"
 			},
 			"areaServed": "SA",
 			"offers": {

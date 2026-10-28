@@ -1,0 +1,108 @@
+- generic [ref=f40e2]:
+  - generic [ref=f40e3]: شحن مجاني للطلبات فوق 200 ر.س • كوبون ASL10 يخصم 10%
+  - banner [ref=f40e4]:
+    - generic [ref=f40e5]:
+      - link "أصل ASL — الرئيسية" [ref=f40e6] [cursor=pointer]:
+        - /url: /
+        - img "أصل ASL — الشعار" [ref=f40e7]:
+          - generic [ref=f40e10]: أصل
+          - generic [ref=f40e12]: ASL
+      - navigation [ref=f40e13]:
+        - link "الرئيسية" [ref=f40e14] [cursor=pointer]:
+          - /url: /
+        - link "المتجر" [ref=f40e15] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f40e17] [cursor=pointer]:
+          - /url: /wishlist
+      - generic [ref=f40e18]:
+        - button "السلة" [ref=f40e19]
+        - button "حسابي" [ref=f40e24]:
+          - generic [ref=f40e25]: ع
+  - main [ref=f40e26]:
+    - generic [ref=f40e359]:
+      - generic [ref=f40e360]:
+        - generic [ref=f40e361]:
+          - paragraph [ref=f40e362]: ✦ حسابي
+          - heading "يا هلا عبدالله الشمري 👋" [level=1] [ref=f40e363]
+        - button "تسجيل خروج" [ref=f40e364] [cursor=pointer]
+      - generic [ref=f40e365]:
+        - generic [ref=f40e366]:
+          - heading "بيانات التوصيل" [level=2] [ref=f40e367]
+          - generic [ref=f40e368]:
+            - generic [ref=f40e369]:
+              - text: الاسم
+              - textbox "الاسم" [ref=f40e370]: عبدالله الشمري
+            - generic [ref=f40e371]:
+              - text: الجوال
+              - textbox "الجوال" [ref=f40e372]: "0551234567"
+            - generic [ref=f40e373]:
+              - generic [ref=f40e374]:
+                - text: المدينة
+                - textbox "المدينة" [ref=f40e375]
+              - generic [ref=f40e376]:
+                - text: الحي
+                - textbox "الحي" [ref=f40e377]
+            - generic [ref=f40e378]:
+              - text: الشارع
+              - textbox "الشارع" [ref=f40e379]
+          - button "حفظ التعديلات" [ref=f40e380] [cursor=pointer]
+        - generic [ref=f40e381]:
+          - generic [ref=f40e382]:
+            - heading "طلباتك" [level=2] [ref=f40e383]
+            - generic [ref=f40e384]: 1 طلب
+          - generic [ref=f40e386]:
+            - generic [ref=f40e387]:
+              - generic [ref=f40e388]: ASL-158762
+              - generic [ref=f40e389]: قيد التجهيز
+            - paragraph [ref=f40e390]: عطر العنبر الفاخر ×1
+            - generic [ref=f40e391]:
+              - generic [ref=f40e392]: ٢٥ أكتوبر
+              - generic [ref=f40e393]: ٢٤٩ ر.س
+  - contentinfo [ref=f40e189]:
+    - generic [ref=f40e191]:
+      - img "أصل ASL — الشعار" [ref=f40e193]:
+        - generic [ref=f40e196]: أصل
+        - generic [ref=f40e198]: ASL
+      - paragraph [ref=f40e199]: عطور وبخور وهدايا فاخرة — المنتقاة بعناية، متجر تجريبي لأغراض العرض لا تتم فيه عمليات دفع حقيقية.
+      - generic [ref=f40e200]:
+        - link "المتجر" [ref=f40e201] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f40e202] [cursor=pointer]:
+          - /url: /wishlist
+        - link "تواصل معنا" [ref=f40e203] [cursor=pointer]:
+          - /url: https://wa.me/966576944605
+      - generic [ref=f40e204]:
+        - paragraph [ref=f40e205]:
+          - text: برمجة وتطوير
+          - link "بوصلة تك · BOSLA TECH" [ref=f40e206] [cursor=pointer]:
+            - /url: https://hafatalnjom.com
+        - paragraph [ref=f40e207]: شحن مجاني فوق 200 ر.س • كوبون ASL10
+  - dialog "سلة المشتريات" [ref=f40e212]:
+    - generic [ref=f40e213]:
+      - heading "سلتك (0)" [level=3] [ref=f40e337]:
+        - text: سلتك
+        - generic [ref=f40e215]: (0)
+      - button "✕" [ref=f40e216]
+    - generic [ref=f40e338]:
+      - generic [ref=f40e339]: 🛒
+      - paragraph [ref=f40e340]: سلتك فاضية
+      - link "تسوّق الآن" [ref=f40e341] [cursor=pointer]:
+        - /url: /shop
+  - generic [ref=f40e259]:
+    - generic [ref=f40e342]: 🎉
+    - heading "وصل طلبك! ✦" [level=3] [ref=f40e343]
+    - paragraph [ref=f40e344]: رقم الطلب ASL-158762 — الأوردر مأخوذ، وبنرسلك تأكيد التوصيل (48 ساعة داخل المملكة).
+    - generic [ref=f40e345]:
+      - generic [ref=f40e346]:
+        - generic [ref=f40e347]: الإجمالي
+        - generic [ref=f40e348]: ٢٤٩ ر.س
+      - generic [ref=f40e349]:
+        - generic [ref=f40e350]: الدفع
+        - generic [ref=f40e351]: مدى / Visa / Apple Pay
+      - generic [ref=f40e352]:
+        - generic [ref=f40e353]: الحالة
+        - generic [ref=f40e354]: قيد التجهيز
+    - generic [ref=f40e356]:
+      - link "طلباتي" [active] [ref=f40e357] [cursor=pointer]:
+        - /url: /account
+      - button "كمّل تسوّق" [ref=f40e358] [cursor=pointer]

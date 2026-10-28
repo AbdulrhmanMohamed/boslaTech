@@ -121,9 +121,12 @@
 
 	const navItems = $derived([
 		{ path: `${base}/`, label: site?.nav?.home || (lang === 'ar' ? 'الرئيسية' : 'Home') },
+		{
+			path: `${base}/stores`,
+			label: site?.nav?.stores || (lang === 'ar' ? 'المتاجر الإلكترونية' : 'Online Stores')
+		},
+		{ path: `${base}/#pricing`, label: site?.nav?.pricing || (lang === 'ar' ? 'الأسعار' : 'Pricing') },
 		{ path: `${base}/about`, label: site?.nav?.about || (lang === 'ar' ? 'من نحن' : 'About') },
-		{ path: `${base}/services`, label: site?.nav?.services || (lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
-		{ path: `${base}/blog`, label: site?.nav?.blog || (lang === 'ar' ? 'المدونة' : 'Blog') },
 		{ path: `${base}/contact`, label: site?.nav?.contact || (lang === 'ar' ? 'تواصل معنا' : 'Contact') }
 	]);
 
@@ -231,106 +234,14 @@
 				></div>
 
 				{#each navItems as item}
-					{#if item.hasDropdown}
-						<div class="relative" bind:this={serviceMenuRef}>
-							<li
-								bind:this={navRefs[item.path]}
-							>
-								<a
-									use:inView
-									class={navLinkClass(item.path)}
-									href={link(item.path)}
-									onclick={toggleServiceMenu}
-								>
-									<span class="relative z-10">{item.label}</span>
-									<ChevronDown class="relative z-10 h-3 w-3 transition-transform duration-300 {serviceMenuOpen ? 'rotate-180' : ''}" />
-									{#if !isActive(item.path)}
-										<div class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"></div>
-									{/if}
-								</a>
-							</li>
-							{#if serviceMenuOpen}
-								<div
-									class="absolute left-1/2 top-full z-[60] -translate-x-1/2 pt-3"
-									role="navigation"
-									aria-label={lang === 'ar' ? 'قائمة الخدمات' : 'Services menu'}
-								>
-									<div class="mega-menu-panel w-[860px] max-w-[95vw] rounded-2xl p-6 shadow-2xl backdrop-blur-xl">
-										<div class="grid grid-cols-3 gap-6">
-											{#each serviceCategories as cat}
-												<div>
-													<div class="mb-1 flex items-center gap-2">
-														<a
-															href={link(`${base}/services/${cat.slug}`)}
-															class="text-sm font-black text-[var(--color-text-base)] transition-colors hover:text-brand-blue"
-														>
-															{cat.name}
-														</a>
-														{#if cat.guide}
-															<a
-																href={link(cat.guide)}
-																class="rounded-full bg-brand-blue/10 px-2 py-0.5 text-[9px] font-bold text-brand-blue transition-colors hover:bg-brand-blue/20"
-															>
-																{lang === 'ar' ? 'الدليل' : 'Guide'}
-															</a>
-														{/if}
-													</div>
-													<p class="mb-3 text-[10px] leading-tight text-[var(--color-text-muted)]/70">{cat.desc}</p>
-													<ul class="space-y-1.5">
-														{#each cat.children as sub}
-															<li>
-																<a
-																	href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
-																	class="group flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-brand-blue"
-																>
-																	<ChevronRight class="h-3 w-3 shrink-0 text-[var(--color-text-muted)]/30 transition-transform group-hover:text-brand-blue {lang === 'ar' ? 'rotate-180' : ''}" />
-																	{sub.name}
-																	{#if sub.popular}
-																		<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[8px] font-bold text-brand-blue">
-																			{lang === 'ar' ? 'شائع' : 'Popular'}
-																		</span>
-																	{/if}
-																</a>
-																{#if sub.topics?.length}
-																	<div class="ml-6 mt-0.5 flex flex-wrap gap-1">
-																		{#each sub.topics as topic}
-																			<span class="text-[9px] text-[var(--color-text-muted)]/50">{topic}</span>
-																			{#if topic !== sub.topics[sub.topics.length - 1]}
-																				<span class="text-[9px] text-[var(--color-text-muted)]/30">·</span>
-																			{/if}
-																		{/each}
-																	</div>
-																{/if}
-															</li>
-														{/each}
-													</ul>
-												</div>
-											{/each}
-										</div>
-										<div class="mt-4 border-t border-[var(--glass-border)] pt-4">
-											<div class="flex justify-center">
-												<a
-													href={link(`${base}/services`)}
-													class="rounded-full bg-brand-blue px-6 py-2 text-xs font-bold text-white transition-all hover:bg-brand-blue/80 hover:shadow-lg"
-												>
-													{lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services'}
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
+					<li bind:this={navRefs[item.path]}>
+						<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
+							<span class="relative z-10">{item.label}</span>
+							{#if !isActive(item.path)}
+								<div class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"></div>
 							{/if}
-						</div>
-					{:else}
-						<li bind:this={navRefs[item.path]}>
-							<a use:inView class={navLinkClass(item.path)} href={link(item.path)}>
-								<span class="relative z-10">{item.label}</span>
-								{#if !isActive(item.path)}
-									<div class="absolute inset-0 translate-y-full bg-brand-blue/10 transition-transform duration-500 group-hover:translate-y-0 group-[.in-view]:translate-y-0"></div>
-								{/if}
-							</a>
-						</li>
-					{/if}
+						</a>
+					</li>
 				{/each}
 			</ul>
 		</div>

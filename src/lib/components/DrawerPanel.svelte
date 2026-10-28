@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto, invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { X, Globe, MessageSquare, ArrowRight, ChevronDown, ChevronRight } from '@lucide/svelte';
+	import { X, Globe, MessageSquare, ArrowRight, ChevronDown } from '@lucide/svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import ThemeToggle from './ThemeToggle.svelte';
@@ -39,8 +39,12 @@
 
 	const navItems = $derived([
 		{ path: `${base}/`, label: props.site?.nav?.home || (props.lang === 'ar' ? 'الرئيسية' : 'Home') },
+		{
+			path: `${base}/stores`,
+			label: props.site?.nav?.stores || (props.lang === 'ar' ? 'المتاجر الإلكترونية' : 'Online Stores')
+		},
+		{ path: `${base}/#pricing`, label: props.site?.nav?.pricing || (props.lang === 'ar' ? 'الأسعار' : 'Pricing') },
 		{ path: `${base}/about`, label: props.site?.nav?.about || (props.lang === 'ar' ? 'من نحن' : 'About') },
-		{ path: `${base}/services`, label: props.site?.nav?.services || (props.lang === 'ar' ? 'خدماتنا' : 'Services'), hasDropdown: true },
 		{ path: `${base}/contact`, label: props.site?.nav?.contact || (props.lang === 'ar' ? 'تواصل معنا' : 'Contact') }
 	]);
 
@@ -88,7 +92,21 @@
 		}
 	]);
 
-	let servicesExpanded = $state(false);
+	type View = 'main' | 'categories' | string;
+	let currentView = $state<View>('main');
+
+	function navigateTo(view: View) {
+		currentView = view;
+	}
+
+	function goBack() {
+		if (currentView === 'categories') navigateTo('main');
+		else navigateTo('categories');
+	}
+
+	$effect(() => {
+		if (!isOpen && currentView !== 'main') currentView = 'main';
+	});
 
 	const currentLangCode = $derived(props.lang);
 
@@ -178,127 +196,129 @@
 				: 'text-left'}"
 		>
 			<!-- Navigation Links -->
-			<nav class="space-y-2 px-4 py-8">
-				{#each navItems as item, i}
-					{#if item.hasDropdown}
-						<div transition:fly={{ y: 20, duration: 400, delay: 200 + i * 100, easing: cubicOut }}>
-							<button
-								onclick={() => servicesExpanded = !servicesExpanded}
-								class="group relative flex w-full items-center justify-between rounded-2xl px-6 py-4 transition-all duration-300 {isActive(item.path)
-									? 'bg-brand-blue text-white shadow-[0_10px_30px_rgba(0,119,255,0.3)]'
-									: 'text-[var(--color-text-muted)] hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]'} {props.lang === 'ar' ? 'flex-row-reverse' : ''}"
-							>
-								<span class="text-lg font-black tracking-tight">{item.label}</span>
-								<div class="flex items-center gap-2">
+			<nav class="px-4 py-8">
+				{#key currentView}
+					<div
+						in:fly={{
+							x: (currentView === 'main' ? -1 : 1) * (props.lang === 'ar' ? 320 : -320),
+							duration: 300,
+							easing: cubicOut
+						}}
+						out:fly={{
+							x: (currentView === 'main' ? 1 : -1) * (props.lang === 'ar' ? 320 : -320),
+							duration: 200,
+							easing: cubicOut
+						}}
+					>
+						{#if currentView === 'main'}
+							<div class="space-y-2">
+								{#each navItems as item, i}
 									<a
 										href={link(item.path)}
 										onclick={handleNavClick}
-										class="rounded-lg px-2 py-1 text-xs font-bold transition-colors {isActive(item.path) ? 'text-white/70 hover:text-white' : 'text-brand-blue hover:bg-brand-blue/10'}"
+										class="group relative flex items-center justify-between rounded-2xl px-6 py-4 transition-all duration-300 {isActive(
+											item.path
+										)
+											? 'bg-brand-blue text-white shadow-[0_10px_30px_rgba(0,119,255,0.3)]'
+											: 'text-[var(--color-text-muted)] hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]'} {props.lang ===
+										'ar'
+											? 'flex-row-reverse'
+											: ''}"
 									>
-										{props.lang === 'ar' ? 'الكل' : 'All'}
+										<span class="text-lg font-black tracking-tight">{item.label}</span>
+										<ArrowRight
+											class="h-5 w-5 transition-transform duration-300 {props.lang === 'ar'
+												? 'rotate-180 group-hover:-translate-x-1'
+												: 'group-hover:translate-x-1'} {isActive(item.path)
+												? 'opacity-100'
+												: 'opacity-0 group-hover:opacity-100'}"
+										/>
+										{#if isActive(item.path)}
+											<div class="animate-shimmer absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-white/0 via-white/10 to-white/0"></div>
+										{/if}
 									</a>
-									<ChevronDown class="h-5 w-5 transition-transform duration-300 {servicesExpanded ? 'rotate-180' : ''} {isActive(item.path) ? 'text-white' : 'text-[var(--color-text-dim)]'}" />
+								{/each}
+							</div>
+						{:else if currentView === 'categories'}
+							<div class="space-y-3">
+								<button
+									onclick={goBack}
+									class="flex items-center gap-2 px-1 py-2 text-sm font-bold text-brand-blue transition-colors hover:opacity-80 {props.lang === 'ar' ? 'flex-row-reverse' : ''}"
+								>
+									<ArrowRight class="h-4 w-4 {props.lang === 'ar' ? 'rotate-180' : 'rotate-180'}" />
+									{props.lang === 'ar' ? 'رجوع' : 'Back'}
+								</button>
+								<div class="space-y-1 text-sm font-bold text-[var(--color-text-dim)] px-1">
+									{props.lang === 'ar' ? 'اختر التصنيف' : 'Choose a category'}
 								</div>
-								{#if isActive(item.path)}
-									<div class="animate-shimmer absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-white/0 via-white/10 to-white/0"></div>
-								{/if}
-							</button>
-
-							{#if servicesExpanded}
-								<div class="mt-2 space-y-3 overflow-hidden {props.lang === 'ar' ? 'mr-4' : 'ml-4'}">
-									{#each serviceCategories as cat}
-										<div>
-											<div class="mb-0.5 flex items-center gap-2">
-												<a
-													href={link(`${base}/services/${cat.slug}`)}
-													onclick={handleNavClick}
-													class="text-xs font-black tracking-wider text-brand-blue uppercase"
-												>
-													{cat.name}
-												</a>
+								{#each serviceCategories as cat}
+									<button
+										onclick={() => navigateTo(cat.slug)}
+										class="flex w-full items-center gap-3 rounded-2xl border border-[var(--glass-border)] px-4 py-3.5 text-start transition-all hover:bg-[var(--glass-highlight)] {props.lang === 'ar' ? 'flex-row-reverse' : ''}"
+									>
+										<div class="flex-1 min-w-0">
+											<div class="flex items-center gap-2">
+												<span class="text-sm font-bold text-[var(--color-text-base)]">{cat.name}</span>
 												{#if cat.guide}
 													<a
 														href={link(cat.guide)}
-														onclick={handleNavClick}
-														class="rounded-full bg-brand-blue/10 px-2 py-0.5 text-[9px] font-bold text-brand-blue"
+														onclick={(e) => { e.stopPropagation(); handleNavClick(); }}
+														class="rounded-full bg-brand-blue/10 px-2 py-0.5 text-[8px] font-bold text-brand-blue hover:bg-brand-blue/20"
 													>
 														{props.lang === 'ar' ? 'الدليل' : 'Guide'}
 													</a>
 												{/if}
 											</div>
-											<p class="mb-1 text-[10px] text-[var(--color-text-muted)]/60">{cat.desc}</p>
-											<div class="space-y-0.5">
-												{#each cat.children as sub}
-													<div>
-														<a
-															href={link(`${base}/services/${cat.slug}/${sub.slug}`)}
-															onclick={handleNavClick}
-															class="flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]"
-														>
-															<ChevronRight class="h-3 w-3 shrink-0 text-[var(--color-text-muted)]/30 {props.lang === 'ar' ? 'rotate-180' : ''}" />
-															{sub.name}
-															{#if sub.popular}
-																<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[9px] font-bold text-brand-blue">
-																	{props.lang === 'ar' ? 'شائع' : 'Popular'}
-																</span>
-															{/if}
-														</a>
-														{#if sub.topics?.length}
-															<div class="ml-8 mt-0.5 flex flex-wrap gap-1">
-																{#each sub.topics as topic}
-																	<span class="text-[9px] text-[var(--color-text-muted)]/50">{topic}</span>
-																	{#if topic !== sub.topics[sub.topics.length - 1]}
-																		<span class="text-[9px] text-[var(--color-text-muted)]/30">·</span>
-																	{/if}
-																{/each}
-															</div>
-														{/if}
-													</div>
-												{/each}
-											</div>
+											<p class="mt-0.5 truncate text-[11px] leading-tight text-[var(--color-text-muted)]/60">{cat.desc}</p>
 										</div>
-									{/each}
-									<div class="border-t border-[var(--glass-border)] pt-2">
-										<a
-											href={link(`${base}/services`)}
-											onclick={handleNavClick}
-											class="flex items-center justify-center rounded-xl bg-brand-blue/10 px-4 py-2.5 text-xs font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
-										>
-											{props.lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services'}
-										</a>
-									</div>
+										<ChevronDown class="h-4 w-4 -rotate-90 shrink-0 text-[var(--color-text-dim)]" />
+									</button>
+								{/each}
+								<div class="pt-1">
+									<a
+										href={link(`${base}/services`)}
+										onclick={handleNavClick}
+										class="flex items-center justify-center gap-2 rounded-2xl bg-brand-blue/10 px-4 py-3 text-xs font-bold text-brand-blue transition-all hover:bg-brand-blue/20"
+									>
+										{props.lang === 'ar' ? 'عرض كل الخدمات' : 'View All Services'}
+										<ArrowRight class="h-3.5 w-3.5" />
+									</a>
 								</div>
-							{/if}
-						</div>
-					{:else}
-						<div transition:fly={{ y: 20, duration: 400, delay: 200 + i * 100, easing: cubicOut }}>
-							<a
-								href={link(item.path)}
-								onclick={handleNavClick}
-								class="group relative flex items-center justify-between rounded-2xl px-6 py-4 transition-all duration-300 {isActive(
-									item.path
-								)
-									? 'bg-brand-blue text-white shadow-[0_10px_30px_rgba(0,119,255,0.3)]'
-									: 'text-[var(--color-text-muted)] hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)]'} {props.lang ===
-								'ar'
-									? 'flex-row-reverse'
-									: ''}"
-							>
-								<span class="text-lg font-black tracking-tight">{item.label}</span>
-								<ArrowRight
-									class="h-5 w-5 transition-transform duration-300 {props.lang === 'ar'
-										? 'rotate-180 group-hover:-translate-x-1'
-										: 'group-hover:translate-x-1'} {isActive(item.path)
-										? 'opacity-100'
-										: 'opacity-0 group-hover:opacity-100'}"
-								/>
-								{#if isActive(item.path)}
-									<div class="animate-shimmer absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-white/0 via-white/10 to-white/0"></div>
-								{/if}
-							</a>
-						</div>
-					{/if}
-				{/each}
+							</div>
+						{:else}
+							{@const cat = serviceCategories.find(c => c.slug === currentView)}
+							<div class="space-y-3">
+								<button
+									onclick={goBack}
+									class="flex items-center gap-2 px-1 py-2 text-sm font-bold text-brand-blue transition-colors hover:opacity-80 {props.lang === 'ar' ? 'flex-row-reverse' : ''}"
+								>
+									<ArrowRight class="h-4 w-4 {props.lang === 'ar' ? 'rotate-180' : 'rotate-180'}" />
+									{props.lang === 'ar' ? 'رجوع' : 'Back'}
+								</button>
+								<div class="space-y-1 text-sm font-bold text-[var(--color-text-dim)] px-1">
+									{cat?.name}
+								</div>
+								<div class="space-y-0.5">
+									{#each cat?.children ?? [] as sub}
+										<a
+											href={link(`${base}/services/${cat?.slug}/${sub.slug}`)}
+											onclick={handleNavClick}
+											class="flex items-center gap-2 rounded-2xl px-4 py-3.5 text-sm font-medium text-[var(--color-text-muted)] transition-all hover:bg-[var(--glass-highlight)] hover:text-[var(--color-text-base)] {props.lang === 'ar' ? 'flex-row-reverse' : ''}"
+										>
+											<span class="flex-1">{sub.name}</span>
+											{#if sub.popular}
+												<span class="rounded-full bg-brand-blue/10 px-1.5 py-0.5 text-[8px] font-bold text-brand-blue leading-none">
+													{props.lang === 'ar' ? 'شائع' : 'Popular'}
+												</span>
+											{/if}
+											<ArrowRight class="h-3.5 w-3.5 shrink-0 text-[var(--color-text-dim)]" />
+										</a>
+									{/each}
+								</div>
+							</div>
+						{/if}
+					</div>
+				{/key}
 			</nav>
 
 			<!-- Language Switcher & CTA -->
@@ -358,10 +378,7 @@
 					{props.lang === 'ar' ? 'احجز استشارة مجانية' : 'Book Free Consultation'}
 				</a>
 
-				<!-- Commercial Registration -->
-				<div class="text-center text-[10px] leading-relaxed text-[var(--color-text-dim)] opacity-60">
-					{props.site?.registeredAs} | س.ت {props.site?.commercialRegistration}
-				</div>
+	
 			</div>
 		</div>
 	</div>

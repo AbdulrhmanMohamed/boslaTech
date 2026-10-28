@@ -1,7 +1,7 @@
 {
 	"en": {
 		"title": "Contact Us",
-		"subtitle": "Let’s discuss your goals — clear answers within one business day.",
+		"subtitle": "Tell us about your business and what you need — we review your request and get back to you fast.",
 		"hero": {
 			"image": {
 				"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
@@ -15,16 +15,27 @@
 				"mapUrl": "https://maps.google.com/?q=Al+Malaz+Riyadh+Saudi+Arabia"
 			}
 		],
-		"phones": [{ "label": "Phone", "value": "+966 57 670 4683" }],
+		"phones": [
+			{
+				"label": "Phone",
+				"value": "+966 57 694 4605"
+			}
+		],
 		"emails": [],
 		"social": [
-			{ "platform": "LinkedIn", "url": "https://linkedin.com/company/bosla" },
-			{ "platform": "Twitter", "url": "https://x.com/bosla" }
+			{
+				"platform": "LinkedIn",
+				"url": "https://linkedin.com/company/bosla"
+			},
+			{
+				"platform": "Twitter",
+				"url": "https://x.com/bosla"
+			}
 		]
 	},
 	"ar": {
 		"title": "تواصل معنا",
-		"subtitle": "لنتحدث عن أهدافك — نرد خلال يوم عمل واحد.",
+		"subtitle": "أخبرنا عن نشاطك وما تحتاجه، ونراجع طلبك ونتواصل معك بسرعة.",
 		"hero": {
 			"image": {
 				"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
@@ -38,11 +49,22 @@
 				"mapUrl": "https://maps.google.com/?q=Al+Malaz+Riyadh+Saudi+Arabia"
 			}
 		],
-		"phones": [{ "label": "الهاتف", "value": "+966 57 670 4683" }],
+		"phones": [
+			{
+				"label": "الهاتف",
+				"value": "+966 57 694 4605"
+			}
+		],
 		"emails": [],
 		"social": [
-			{ "platform": "LinkedIn", "url": "https://linkedin.com/company/bosla" },
-			{ "platform": "Twitter", "url": "https://x.com/bosla" }
+			{
+				"platform": "LinkedIn",
+				"url": "https://linkedin.com/company/bosla"
+			},
+			{
+				"platform": "Twitter",
+				"url": "https://x.com/bosla"
+			}
 		]
 	}
 }

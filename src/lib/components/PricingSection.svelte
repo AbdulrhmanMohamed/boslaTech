@@ -7,7 +7,15 @@
 	import SplitType from 'split-type';
 	import { theme } from '$lib/stores/theme.svelte';
 	import { pricing } from '$lib/stores/pricing.svelte';
-	import { PACKAGES, ADDONS, formatPrice, type CurrencyCode } from '$lib/data/pricing';
+	import {
+		PACKAGES,
+		STORE_PACKAGES,
+		ADDONS,
+		formatPrice,
+		type CurrencyCode,
+		type PricingPackage,
+		type StorePackage
+	} from '$lib/data/pricing';
 	import { base } from '$app/paths';
 
 	if (typeof window !== 'undefined') {
@@ -256,13 +264,16 @@
 
 	let selectedPackage = $state<string | null>(null);
 	let selectedAddons = $state<string[]>([]);
+	// Toggle: websites | online stores
+	let mode = $state<'websites' | 'stores'>('websites');
+
+	const activePackages = $derived(mode === 'websites' ? PACKAGES : STORE_PACKAGES);
 
 	const packages = $derived(
-		PACKAGES.map((pkg) => {
+		activePackages.map((pkg: PricingPackage | StorePackage) => {
 			const salePrice = pkg.originalPrice * (1 - pkg.salePercent / 100);
-			const currency = pricing.currency;
 			const isSelected = selectedPackage === pkg.id;
-			const isPopular = pkg.id === 'corporate' || pkg.id === 'animated';
+			const isPopular = !!pkg.popular;
 
 			return {
 				id: pkg.id,
@@ -271,23 +282,38 @@
 				price: pricing.display(salePrice),
 				originalPrice: pricing.display(pkg.originalPrice),
 				duration: pricing.currencyConfig.symbol,
-				popular: isSelected && isPopular,
+				popular: isPopular,
 				isSelected: isSelected,
-				badge: `${pkg.salePercent}% OFF`,
 				description: pkg.description[lang],
 				features: pkg.features[lang],
 				notIncluded: [],
 				deliveryTime:
-					pkg.id === 'one-page' ? '5-7 Days' : pkg.id === 'corporate' ? '10-14 Days' : '14-21 Days',
-				cta: isAr ? 'اطلب الآن' : 'Order Now',
-				allowAddons: pkg.allowAddons,
+					pkg.id === 'one-page'
+						? isAr ? '48 ساعة' : '48 hours'
+						: pkg.id === 'corporate'
+							? isAr ? '4 أيام' : '4 days'
+							: pkg.id === 'animated'
+								? isAr ? 'أسبوع' : '1 week'
+								: pkg.id === 'store-standard'
+									? isAr ? 'أسبوع' : '1 week'
+									: pkg.id === 'store-pro'
+										? isAr ? '10 أيام' : '10 days'
+										: isAr ? '2-3 أسابيع' : '2-3 weeks',
+				cta: isAr ? 'اطلب الباقة عبر واتساب' : 'Order on WhatsApp',
+				allowAddons: pkg.allowAddons ?? false,
 				salePriceRaw: pricing.convert(salePrice)
 			};
 		})
 	);
 
+	function switchMode(next: 'websites' | 'stores') {
+		mode = next;
+		selectedPackage = null;
+		selectedAddons = [];
+	}
+
 	function togglePackage(packageId: string) {
-		const pkg = PACKAGES.find((p) => p.id === packageId);
+		const pkg = activePackages.find((p) => p.id === packageId);
 		if (!pkg?.allowAddons) {
 			selectedPackage = selectedPackage === packageId ? null : packageId;
 			selectedAddons = [];
@@ -324,7 +350,7 @@
 	function calculateTotal(): number {
 		if (!selectedPackage) return 0;
 
-		const pkg = PACKAGES.find((p) => p.id === selectedPackage);
+		const pkg = activePackages.find((p) => p.id === selectedPackage);
 		if (!pkg) return 0;
 
 		const pkgPrice = pkg.originalPrice * (1 - pkg.salePercent / 100);
@@ -341,12 +367,12 @@
 		return pricing.display(price);
 	}
 
-	const WHATSAPP_NUMBER = '966576704683';
+	const WHATSAPP_NUMBER = '966576944605';
 
 	function generateWhatsAppMessage(): string {
 		if (!selectedPackage) return '';
 
-		const pkg = PACKAGES.find((p) => p.id === selectedPackage);
+		const pkg = activePackages.find((p) => p.id === selectedPackage);
 		if (!pkg) return '';
 
 		const pkgSalePrice = pkg.originalPrice * (1 - pkg.salePercent / 100);
@@ -389,8 +415,13 @@
 		return `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
 	}
 
+	function linkStores(): string {
+		const q = data?.lang ? `?lang=${data.lang}` : '';
+		return `${base}/services/web-development/online-stores${q}`;
+	}
+
 	function generatePackageWhatsAppMessage(pkgId: string): string {
-		const pkg = PACKAGES.find((p) => p.id === pkgId);
+		const pkg = activePackages.find((p) => p.id === pkgId);
 		if (!pkg) return '';
 
 		const pkgSalePrice = pkg.originalPrice * (1 - pkg.salePercent / 100);
@@ -412,8 +443,8 @@
 
 		if (pkg.allowAddons) {
 			message += isAr
-				? `\n➕ يمكن إضافة: متجر إلكتروني، نظام حجوزات، كتالوج منتجات`
-				: `\n➕ Can add: E-commerce, Reservation System, Product Catalog`;
+				? `\n➕ يمكن إضافة: نظام حجوزات، كتالوج منتجات`
+				: `\n➕ Can add: Reservation System, Product Catalog`;
 		}
 
 		message += isAr ? `\n\n🌐 اللغة: العربية` : `\n\n🌐 Language: English`;
@@ -467,9 +498,6 @@
 				>
 					<Sparkles class="h-4 w-4" />
 					<span>{isAr ? 'باقات حصرية' : 'Exclusive Packages'}</span>
-					<span class="text-[10px] opacity-60">
-						({pricing.currency === 'sar' ? 'SAR' : 'USD'})
-					</span>
 				</div>
 
 				{#key data?.lang}
@@ -493,20 +521,62 @@
 						dir={isAr ? 'rtl' : 'ltr'}
 					>
 						{isAr
-							? `باقات مصممة خصيصاً لتلبية احتياجات شركتك. احصل على خصم 50% الآن!`
-							: `Packages specially designed for your business. Get 50% OFF now!`}
+							? `أسعار واضحة بالريال السعودي، تدفعها مرة واحدة. خصم 50% خلال عرض الإطلاق!`
+							: `Clear prices in Saudi Riyals, paid once. 50% off during the launch offer!`}
 					</p>
 				{/key}
 			</div>
 
 			<!-- Hint for Add-ons -->
-			<div class="mb-8 text-center">
-				<p class="text-sm text-[var(--color-text-muted)]">
-					{isAr
-						? '💡 اختر الباقة الثانية أو الثالثة لإضافة الإضافات (متجر إلكتروني - نظام حجوزات - كتالوج منتجات)'
-						: '💡 Select Package 2 or 3 to add extras (E-commerce - Reservation System - Product Catalog)'}
-				</p>
+			<!-- Toggle: Websites | Online Stores -->
+			<div class="mb-10 flex justify-center">
+				<div
+					class="inline-flex items-center gap-2 rounded-full border border-[var(--glass-border)] bg-[var(--glass-bg)] p-1.5"
+				>
+					<button
+						type="button"
+						class="rounded-full px-6 py-2.5 text-sm font-black transition-all duration-300 {mode === 'websites'
+							? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/25'
+							: 'text-[var(--color-text-muted)] hover:text-[var(--color-text-base)]'}"
+						onclick={() => switchMode('websites')}
+					>
+						{isAr ? 'مواقع' : 'Websites'}
+					</button>
+					<button
+						type="button"
+						class="rounded-full px-6 py-2.5 text-sm font-black transition-all duration-300 {mode === 'stores'
+							? 'bg-brand-orange text-white shadow-lg shadow-brand-orange/25'
+							: 'text-[var(--color-text-muted)] hover:text-[var(--color-text-base)]'}"
+						onclick={() => switchMode('stores')}
+					>
+						{isAr ? 'متاجر إلكترونية' : 'Online Stores'}
+					</button>
+				</div>
 			</div>
+
+			{#if mode === 'stores'}
+				<div class="mb-8 text-center">
+					<a
+						href={linkStores()}
+						class="inline-flex items-center gap-2 text-sm font-black text-brand-blue underline-offset-4 hover:text-brand-orange hover:underline"
+					>
+						{isAr ? 'تفاصيل المتاجر' : 'Store details'}
+						<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+						</svg>
+					</a>
+				</div>
+			{/if}
+
+			{#if mode === 'websites'}
+				<div class="mb-8 text-center">
+					<p class="text-sm text-[var(--color-text-muted)]">
+						{isAr
+							? '💡 اختر الباقة الثانية أو الثالثة لإضافة الإضافات (نظام حجوزات - كتالوج منتجات)'
+							: '💡 Select Package 2 or 3 to add extras (Reservation System - Product Catalog)'}
+					</p>
+				</div>
+			{/if}
 
 			<!-- Pricing Cards -->
 			<div class="mx-auto grid max-w-6xl items-start gap-8 md:grid-cols-3">
@@ -572,22 +642,13 @@
 									: 'transparent'} 50%, transparent 80%);"
 							></div>
 
-							{#if pkg.isSelected && pkg.allowAddons}
+							{#if pkg.popular}
 								<div class="absolute top-6 right-6 z-20">
 									<div
 										class="inline-flex animate-pulse items-center gap-2 rounded-full bg-brand-orange px-4 py-1.5 text-[10px] font-black tracking-widest text-white uppercase shadow-xl shadow-brand-orange/20"
 									>
 										<Star class="h-3 w-3" />
 										{isAr ? 'الأكثر طلباً' : 'Most Popular'}
-									</div>
-								</div>
-							{:else if pkg.badge}
-								<div class="absolute top-6 right-6 z-20">
-									<div
-										class="inline-flex items-center gap-2 rounded-full bg-brand-blue px-4 py-1.5 text-[10px] font-black tracking-widest text-white uppercase shadow-xl shadow-brand-blue/20 transition-colors duration-500 group-hover:bg-brand-orange group-hover:shadow-brand-orange/20 group-[.active-card]:bg-brand-orange group-[.active-card]:shadow-brand-orange/20"
-									>
-										<Star class="h-3 w-3" />
-										{pkg.badge}
 									</div>
 								</div>
 							{/if}

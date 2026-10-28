@@ -50,6 +50,8 @@ interface NavData {
 	about: string;
 	contact: string;
 	services: string;
+	stores?: string;
+	pricing?: string;
 	portfolio?: string;
 }
 

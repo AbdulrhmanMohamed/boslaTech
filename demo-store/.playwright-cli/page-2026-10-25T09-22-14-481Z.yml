@@ -1,0 +1,283 @@
+- generic [ref=f40e2]:
+  - generic [ref=f40e3]: شحن مجاني للطلبات فوق 200 ر.س • كوبون ASL10 يخصم 10%
+  - banner [ref=f40e4]:
+    - generic [ref=f40e5]:
+      - link "أصل ASL — الرئيسية" [ref=f40e6] [cursor=pointer]:
+        - /url: /
+        - img "أصل ASL — الشعار" [ref=f40e7]:
+          - generic [ref=f40e10]: أصل
+          - generic [ref=f40e12]: ASL
+      - navigation [ref=f40e13]:
+        - link "الرئيسية" [ref=f40e14] [cursor=pointer]:
+          - /url: /
+        - link "المتجر" [ref=f40e15] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f40e17] [cursor=pointer]:
+          - /url: /wishlist
+      - generic [ref=f40e18]:
+        - button "السلة" [ref=f40e19]:
+          - generic [ref=f40e209]: "1"
+        - button "حسابي" [ref=f40e24]:
+          - generic [ref=f40e25]: ع
+  - main [ref=f40e26]:
+    - generic [ref=f40e27]:
+      - generic [ref=f40e28]:
+        - paragraph [ref=f40e29]: المتجر
+        - heading "كل المجموعة في مكان واحد" [level=1] [ref=f40e30]
+      - generic [ref=f40e31]:
+        - button "✦ الكل" [ref=f40e32] [cursor=pointer]
+        - button "🌸 عطور" [ref=f40e35] [cursor=pointer]
+        - button "🕯️ بخور وشموع" [ref=f40e37] [cursor=pointer]
+        - button "🎁 هدايا" [ref=f40e39] [cursor=pointer]
+        - textbox "دوّر على منتج…" [ref=f40e42]
+        - combobox [ref=f40e43] [cursor=pointer]:
+          - option "المميزة" [selected]
+          - option "الأرخص أول"
+          - option "الأغلى أول"
+          - option "الأعلى تقييمًا"
+      - paragraph [ref=f40e44]: 8 منتجات
+      - generic [ref=f40e45]:
+        - article [ref=f40e46]:
+          - link "عطر العنبر الفاخر خصم 24%" [ref=f40e47] [cursor=pointer]:
+            - /url: /product/1
+            - generic [ref=f40e48]:
+              - img "عطر العنبر الفاخر" [ref=f40e49]
+              - generic [ref=f40e50]: خصم 24%
+          - button "المفضلة" [ref=f40e51]:
+            - generic [ref=f40e52]: ♡
+          - generic [ref=f40e53]:
+            - generic [ref=f40e54]:
+              - generic [ref=f40e55]: عطور
+              - generic [ref=f40e56]: ★ 4.8
+            - link "عطر العنبر الفاخر" [ref=f40e57] [cursor=pointer]:
+              - /url: /product/1
+            - paragraph [ref=f40e58]: عود وعنبر مع لمسة فانيليا دافئة
+            - generic [ref=f40e59]:
+              - generic [ref=f40e60]: ٢٤٩
+              - generic [ref=f40e61]: ر.س
+              - generic [ref=f40e62]: ٣٢٩
+            - button "أضف للسلة" [ref=f40e63] [cursor=pointer]
+        - article [ref=f40e64]:
+          - link [ref=f40e65] [cursor=pointer]:
+            - /url: /product/2
+            - img "عطر الورد والعود" [ref=f40e67]
+          - button "المفضلة" [ref=f40e68]:
+            - generic [ref=f40e69]: ♡
+          - generic [ref=f40e70]:
+            - generic [ref=f40e71]:
+              - generic [ref=f40e72]: عطور
+              - generic [ref=f40e73]: ★ 4.6
+            - link "عطر الورد والعود" [ref=f40e74] [cursor=pointer]:
+              - /url: /product/2
+            - paragraph [ref=f40e75]: وردة دمشقية مع مسك أبيض وعود خفيف
+            - generic [ref=f40e76]:
+              - generic [ref=f40e77]: ١٩٩
+              - generic [ref=f40e78]: ر.س
+            - button "أضف للسلة" [ref=f40e79] [cursor=pointer]
+        - article [ref=f40e80]:
+          - link "بخور العود الفيصلي 50 غم خصم 25% بقي 8 فقط" [ref=f40e81] [cursor=pointer]:
+            - /url: /product/3
+            - generic [ref=f40e82]:
+              - img "بخور العود الفيصلي 50 غم" [ref=f40e83]
+              - generic [ref=f40e84]: خصم 25%
+              - generic [ref=f40e85]: بقي 8 فقط
+          - button "المفضلة" [ref=f40e86]:
+            - generic [ref=f40e87]: ♡
+          - generic [ref=f40e88]:
+            - generic [ref=f40e89]:
+              - generic [ref=f40e90]: بخور وشموع
+              - generic [ref=f40e91]: ★ 4.9
+            - link "بخور العود الفيصلي 50 غم" [ref=f40e92] [cursor=pointer]:
+              - /url: /product/3
+            - paragraph [ref=f40e93]: عود كمبودي طبيعي يعمق الجلسة
+            - generic [ref=f40e94]:
+              - generic [ref=f40e95]: ١٤٩
+              - generic [ref=f40e96]: ر.س
+              - generic [ref=f40e97]: ١٩٩
+            - button "أضف للسلة" [ref=f40e98] [cursor=pointer]
+        - article [ref=f40e99]:
+          - link [ref=f40e100] [cursor=pointer]:
+            - /url: /product/4
+            - img "شمعة عود الليل 200 غم" [ref=f40e102]
+          - button "المفضلة" [ref=f40e103]:
+            - generic [ref=f40e104]: ♡
+          - generic [ref=f40e105]:
+            - generic [ref=f40e106]:
+              - generic [ref=f40e107]: بخور وشموع
+              - generic [ref=f40e108]: ★ 4.7
+            - link "شمعة عود الليل 200 غم" [ref=f40e109] [cursor=pointer]:
+              - /url: /product/4
+            - paragraph [ref=f40e110]: شُمعة صوية يدوية برائحة البخور
+            - generic [ref=f40e111]:
+              - generic [ref=f40e112]: ٨٩
+              - generic [ref=f40e113]: ر.س
+            - button "أضف للسلة" [ref=f40e114] [cursor=pointer]
+        - article [ref=f40e115]:
+          - link "صينية هدايا العروس خصم 20% بقي 5 فقط" [ref=f40e116] [cursor=pointer]:
+            - /url: /product/5
+            - generic [ref=f40e117]:
+              - img "صينية هدايا العروس" [ref=f40e118]
+              - generic [ref=f40e119]: خصم 20%
+              - generic [ref=f40e120]: بقي 5 فقط
+          - button "المفضلة" [ref=f40e121]:
+            - generic [ref=f40e122]: ♡
+          - generic [ref=f40e123]:
+            - generic [ref=f40e124]:
+              - generic [ref=f40e125]: هدايا
+              - generic [ref=f40e126]: ★ 5
+            - link "صينية هدايا العروس" [ref=f40e127] [cursor=pointer]:
+              - /url: /product/5
+            - paragraph [ref=f40e128]: عطر صغير + بخور + شُمعة — جاهزة للإهداء
+            - generic [ref=f40e129]:
+              - generic [ref=f40e130]: ٤٧٩
+              - generic [ref=f40e131]: ر.س
+              - generic [ref=f40e132]: ٥٩٩
+            - button "أضف للسلة" [ref=f40e133] [cursor=pointer]
+        - article [ref=f40e134]:
+          - link [ref=f40e135] [cursor=pointer]:
+            - /url: /product/6
+            - img "مزهرية زجاج مطفي" [ref=f40e137]
+          - button "المفضلة" [ref=f40e138]:
+            - generic [ref=f40e139]: ♡
+          - generic [ref=f40e140]:
+            - generic [ref=f40e141]:
+              - generic [ref=f40e142]: هدايا
+              - generic [ref=f40e143]: ★ 4.4
+            - link "مزهرية زجاج مطفي" [ref=f40e144] [cursor=pointer]:
+              - /url: /product/6
+            - paragraph [ref=f40e145]: لمسة عصرية للزهور المجففة والطبيعية
+            - generic [ref=f40e146]:
+              - generic [ref=f40e147]: ١٢٩
+              - generic [ref=f40e148]: ر.س
+            - button "أضف للسلة" [ref=f40e149] [cursor=pointer]
+        - article [ref=f40e150]:
+          - link "طقم كوبين زجاجي خصم 20%" [ref=f40e151] [cursor=pointer]:
+            - /url: /product/7
+            - generic [ref=f40e152]:
+              - img "طقم كوبين زجاجي" [ref=f40e153]
+              - generic [ref=f40e154]: خصم 20%
+          - button "المفضلة" [ref=f40e155]:
+            - generic [ref=f40e156]: ♡
+          - generic [ref=f40e157]:
+            - generic [ref=f40e158]:
+              - generic [ref=f40e159]: هدايا
+              - generic [ref=f40e160]: ★ 4.5
+            - link "طقم كوبين زجاجي" [ref=f40e161] [cursor=pointer]:
+              - /url: /product/7
+            - paragraph [ref=f40e162]: كوبان زجاجيان رقيّقان للقهوة العربية
+            - generic [ref=f40e163]:
+              - generic [ref=f40e164]: ١٥٩
+              - generic [ref=f40e165]: ر.س
+              - generic [ref=f40e166]: ١٩٩
+            - button "أضف للسلة" [ref=f40e167] [cursor=pointer]
+        - article [ref=f40e168]:
+          - link "طقم عطور رجالية 3 قطع خصم 17%" [ref=f40e169] [cursor=pointer]:
+            - /url: /product/8
+            - generic [ref=f40e170]:
+              - img "طقم عطور رجالية 3 قطع" [ref=f40e171]
+              - generic [ref=f40e172]: خصم 17%
+          - button "المفضلة" [ref=f40e173]:
+            - generic [ref=f40e174]: ♡
+          - generic [ref=f40e175]:
+            - generic [ref=f40e176]:
+              - generic [ref=f40e177]: عطور
+              - generic [ref=f40e178]: ★ 4.6
+            - link "طقم عطور رجالية 3 قطع" [ref=f40e179] [cursor=pointer]:
+              - /url: /product/8
+            - paragraph [ref=f40e180]: ثلاث روائح خشبية معقّدة — للسفر واليوم
+            - generic [ref=f40e181]:
+              - generic [ref=f40e182]: ٣٨٩
+              - generic [ref=f40e183]: ر.س
+              - generic [ref=f40e184]: ٤٦٩
+            - button "أضف للسلة" [ref=f40e185] [cursor=pointer]
+      - generic [ref=f40e186]:
+        - paragraph [ref=f40e187]: شدّ نفسك — كوبون ASL10 يخصم 10%
+        - paragraph [ref=f40e188]: أول طلب فوق ٢٠٠ ر.س يوصلك مع شحن مجاني
+  - contentinfo [ref=f40e189]:
+    - generic [ref=f40e191]:
+      - img "أصل ASL — الشعار" [ref=f40e193]:
+        - generic [ref=f40e196]: أصل
+        - generic [ref=f40e198]: ASL
+      - paragraph [ref=f40e199]: عطور وبخور وهدايا فاخرة — المنتقاة بعناية، متجر تجريبي لأغراض العرض لا تتم فيه عمليات دفع حقيقية.
+      - generic [ref=f40e200]:
+        - link "المتجر" [ref=f40e201] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f40e202] [cursor=pointer]:
+          - /url: /wishlist
+        - link "تواصل معنا" [ref=f40e203] [cursor=pointer]:
+          - /url: https://wa.me/966576944605
+      - generic [ref=f40e204]:
+        - paragraph [ref=f40e205]:
+          - text: برمجة وتطوير
+          - link "بوصلة تك · BOSLA TECH" [ref=f40e206] [cursor=pointer]:
+            - /url: https://hafatalnjom.com
+        - paragraph [ref=f40e207]: شحن مجاني فوق 200 ر.س • كوبون ASL10
+  - dialog "سلة المشتريات" [ref=f40e212]:
+    - generic [ref=f40e213]:
+      - heading "سلتك (1)" [level=3] [ref=f40e214]:
+        - text: سلتك
+        - generic [ref=f40e215]: (1)
+      - button "✕" [ref=f40e216]
+    - generic [ref=f40e217]: 🎉 مبروك — التوصيل على حسابنا
+    - generic [ref=f40e220]:
+      - link [ref=f40e221] [cursor=pointer]:
+        - /url: /product/1
+        - img "عطر العنبر الفاخر" [ref=f40e222]
+      - generic [ref=f40e223]:
+        - generic [ref=f40e224]:
+          - generic [ref=f40e225]:
+            - heading "عطر العنبر الفاخر" [level=4] [ref=f40e226]
+            - generic [ref=f40e227]: 50 مل 0
+          - button "✕" [ref=f40e228]
+        - generic [ref=f40e229]:
+          - generic [ref=f40e230]:
+            - button "＋" [ref=f40e231] [cursor=pointer]
+            - generic [ref=f40e232]: "1"
+            - button "－" [ref=f40e233] [cursor=pointer]
+          - generic [ref=f40e234]: ٢٤٩
+    - generic [ref=f40e235]:
+      - generic [ref=f40e236]:
+        - textbox "كود الخصم (ASL10)" [ref=f40e237]
+        - button "تطبيق" [ref=f40e238]
+      - generic [ref=f40e239]:
+        - generic [ref=f40e240]:
+          - term [ref=f40e241]: المجموع
+          - definition [ref=f40e242]: ٢٤٩ ر.س
+        - generic [ref=f40e243]:
+          - term [ref=f40e244]: التوصيل
+          - definition [ref=f40e245]: مجانًا
+      - generic [ref=f40e246]:
+        - term [ref=f40e247]: الإجمالي
+        - definition [ref=f40e248]: ٢٤٩ ر.س
+      - generic [ref=f40e249]:
+        - generic [ref=f40e250]: mada
+        - generic [ref=f40e251]: Apple Pay
+        - generic [ref=f40e252]: Visa
+        - generic [ref=f40e253]: Mastercard
+      - button "إتمام الطلب" [ref=f40e254] [cursor=pointer]
+      - paragraph [ref=f40e255]: متجر تجريبي — الدفع غير مفعّل
+  - generic [ref=f40e259]:
+    - generic [ref=f40e260]:
+      - button "↩ رجوع" [ref=f40e281] [cursor=pointer]
+      - generic [ref=f40e262]: طريقة الدفع
+      - generic [ref=f40e263]: خطوة 2/3
+    - generic [ref=f40e283]:
+      - generic [ref=f40e285] [cursor=pointer]:
+        - radio "🏪 الدفع عند الاستلام تدفع للمندوب فبّه الطلب" [checked] [ref=f40e286]
+        - generic [ref=f40e287]: 🏪
+        - generic [ref=f40e288]:
+          - generic [ref=f40e289]: الدفع عند الاستلام
+          - text: تدفع للمندوب فبّه الطلب
+      - generic [ref=f40e291] [cursor=pointer]:
+        - radio "💳 مدى / Visa / Apple Pay وضع العرض — بدون خصم حقيقي" [ref=f40e292]
+        - generic [ref=f40e293]: 💳
+        - generic [ref=f40e294]:
+          - generic [ref=f40e295]: مدى / Visa / Apple Pay
+          - text: وضع العرض — بدون خصم حقيقي
+      - generic [ref=f40e297] [cursor=pointer]:
+        - radio "🏦 تحويل بنكي تفاصيل التحويل تطلع بعد التأكيد" [ref=f40e298]
+        - generic [ref=f40e299]: 🏦
+        - generic [ref=f40e300]:
+          - generic [ref=f40e301]: تحويل بنكي
+          - text: تفاصيل التحويل تطلع بعد التأكيد
+    - button "التالي ←" [active] [ref=f40e280] [cursor=pointer]

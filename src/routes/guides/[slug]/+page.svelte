@@ -11,7 +11,7 @@
 	const lang = $derived(typed?.lang || 'ar');
 	const isAr = $derived(lang === 'ar');
 
-	const phoneNumber = '966576704683';
+	const phoneNumber = '966576944605';
 
 	function getWhatsAppLink(st: string): string {
 		const msg = isAr ? `مرحباً، أود الاستفسار عن خدمة: ${st}` : `Hello, I'm interested in: ${st}`;

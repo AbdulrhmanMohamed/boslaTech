@@ -5,9 +5,13 @@
 	let { lang }: { lang: 'en' | 'ar' } = $props();
 
 	// Phone Number
-	const phoneNumber = '966576704683';
+	const phoneNumber = '966576944605';
 
-	const message = encodeURIComponent('السلام عليكم، أود الاستفسار عن خدمات تصميم وتطوير المواقع');
+	const message = encodeURIComponent(
+		lang === 'ar'
+			? 'مرحبًا، أبغى أستفسر عن عرض الإطلاق'
+			: 'Hi, I would like to ask about the launch offer'
+	);
 
 	const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 

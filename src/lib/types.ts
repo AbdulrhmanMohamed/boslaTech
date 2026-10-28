@@ -3,7 +3,16 @@ export interface Site {
 	tagline: string;
 	description: string;
 	ogImage: string;
-	nav: { home: string; about: string; services: string; portfolio: string; contact: string };
+	nav: {
+		home: string;
+		about: string;
+		stores?: string;
+		pricing?: string;
+		blog?: string;
+		services: string;
+		portfolio: string;
+		contact: string;
+	};
 	langLabel: { en: string; ar: string };
 	registeredAs: string;
 	commercialRegistration: string;
@@ -11,6 +20,7 @@ export interface Site {
 }
 
 export interface Hero {
+	launchBadge?: string;
 	headline: string;
 	subheadline: string;
 	ctaPrimary: { label: string; href: string };
@@ -89,6 +99,9 @@ export interface Home {
 	services: Service[];
 	section4: Section4;
 	clients: Client;
+	benefits?: { title: string; cards: { head: string; text: string; small?: string }[] };
+	ourWork?: { title: string; subtitle: string };
+	howWeWork?: { title: string; steps: { head: string; text: string }[] };
 	portfolio: any;
 	servicesPage: any;
 	testimonials: any;

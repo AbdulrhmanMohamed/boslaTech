@@ -92,10 +92,17 @@
 		]
 	},
 	"hero": {
-		"headline": "<span class='text-brand-orange'>Break</span> Through the Market Confidently <span class='text-brand-orange'>Online</span>",
-		"subheadline": "We build you a professional website that enhances your presence, increases your competitiveness, and highlights the value of your brand.",
-		"ctaPrimary": { "label": "Start Now", "href": "/contact" },
-		"ctaSecondary": { "label": "Explore Our Services", "href": "/contact" },
+		"launchBadge": "Launch offer: 50% off all website builds until the end of November",
+		"headline": "Your website live in <span class='text-brand-orange'>48 hours</span>. Your store in <span class='text-brand-orange'>one week</span>",
+		"subheadline": "Coded from scratch, fully yours, no monthly subscription. Starting from SAR 349 instead of SAR 699.",
+		"ctaPrimary": {
+			"label": "Claim the Offer on WhatsApp",
+			"href": "WA"
+		},
+		"ctaSecondary": {
+			"label": "View Our Work",
+			"href": "#our-work"
+		},
 		"image": {
 			"url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
 			"alt": "BOSLA team"
@@ -112,14 +119,32 @@
 		"urgencyText": "Join our clients list at Bosla"
 	},
 	"highlights": [
-		{ "value": "Proven", "label": "Excellence" },
-		{ "value": "Trusted", "label": "Results" },
-		{ "value": "Quality", "label": "Delivery" }
+		{
+			"value": "Proven",
+			"label": "Excellence"
+		},
+		{
+			"value": "Trusted",
+			"label": "Results"
+		},
+		{
+			"value": "Quality",
+			"label": "Delivery"
+		}
 	],
 	"metrics": [
-		{ "value": "Proven", "label": "Excellence" },
-		{ "value": "Trusted", "label": "Results" },
-		{ "value": "Quality", "label": "Delivery" }
+		{
+			"value": "Proven",
+			"label": "Excellence"
+		},
+		{
+			"value": "Trusted",
+			"label": "Results"
+		},
+		{
+			"value": "Quality",
+			"label": "Delivery"
+		}
 	],
 	"vision": {
 		"title": "Our Vision",
@@ -324,9 +349,15 @@
 		"testimonials": {
 			"title": "Results & Testimonials",
 			"kpis": [
-				{ "label": "Performance-driven traffic" },
-				{ "label": "Improved engagement" },
-				{ "label": "Quality conversions" }
+				{
+					"label": "Performance-driven traffic"
+				},
+				{
+					"label": "Improved engagement"
+				},
+				{
+					"label": "Quality conversions"
+				}
 			],
 			"quotes": [
 				{
@@ -341,13 +372,56 @@
 		}
 	},
 	"cta": {
-		"title": "Ready to Build Your High-Converting Website?",
-		"subtitle": "Let's create a powerful online presence that drives results. Schedule a free consultation today.",
-		"buttonText": "Get Your Free Consultation"
+		"title": "Ready to Launch Your Website?",
+		"subtitle": "Contact us now for a quote and a free consultation.",
+		"buttonText": "Chat on WhatsApp"
 	},
 	"nav": {
 		"home": "Home",
+		"stores": "Online Stores",
+		"pricing": "Pricing",
 		"about": "About",
 		"contact": "Contact"
+	},
+	"benefits": {
+		"title": "Why Bosla?",
+		"cards": [
+			{
+				"head": "Record-Time Delivery",
+				"text": "Business website in 48 hours, website with products in 4 days, online store in one week.",
+				"small": "Timeline starts once we receive all content and images."
+			},
+			{
+				"head": "100% Yours",
+				"text": "No monthly subscriptions, no commissions. Custom code that you own.",
+				"small": ""
+			},
+			{
+				"head": "Easy Control Panel",
+				"text": "Update your content and add products yourself — no developer needed.",
+				"small": ""
+			}
+		]
+	},
+	"ourWork": {
+		"title": "Our Work",
+		"subtitle": "A selection of websites and online stores we have built for our clients."
+	},
+	"howWeWork": {
+		"title": "Your Website in 3 Steps",
+		"steps": [
+			{
+				"head": "Talk to us",
+				"text": "Message us on WhatsApp and get your quote."
+			},
+			{
+				"head": "Send your content",
+				"text": "Send your content and images — or let us help you write them."
+			},
+			{
+				"head": "Receive your website",
+				"text": "Receive your ready website with its control panel."
+			}
+		]
 	}
 }

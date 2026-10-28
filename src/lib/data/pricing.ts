@@ -1,5 +1,3 @@
-export const SAR_TO_USD_RATE = 3.75;
-
 export const CURRENCIES = {
 	sar: {
 		code: 'SAR',
@@ -7,19 +5,10 @@ export const CURRENCIES = {
 		symbolAlign: 'right',
 		exchangeRate: 1,
 		name: 'Saudi Riyal'
-	},
-	usd: {
-		code: 'USD',
-		symbol: '$',
-		symbolAlign: 'left',
-		exchangeRate: SAR_TO_USD_RATE,
-		name: 'US Dollar'
 	}
 };
 
-export const GCC_COUNTRIES = ['SA', 'AE', 'OM', 'QA', 'KW', 'BH'];
-
-export type CurrencyCode = 'sar' | 'usd';
+export type CurrencyCode = 'sar';
 
 export interface PricingPackage {
 	id: string;
@@ -39,6 +28,7 @@ export interface PricingPackage {
 	salePercent: number;
 	showOriginalPrice: boolean;
 	allowAddons: boolean;
+	popular?: boolean;
 }
 
 export interface PricingAddon {
@@ -59,6 +49,10 @@ export interface PricingAddon {
 	allowedPackages: string[];
 }
 
+// Launch offer deadline (fixed — countdown does not reset between visits)
+export const OFFER_DEADLINE = '2026-11-30T23:59:59+03:00';
+export const OFFER_DISCOUNT_PERCENT = 50;
+
 export const PACKAGES: PricingPackage[] = [
 	{
 		id: 'one-page',
@@ -67,31 +61,32 @@ export const PACKAGES: PricingPackage[] = [
 			en: 'One Page'
 		},
 		description: {
-			ar: 'موقع احترافي في صفحة واحدة مع نظام إدارة محتوى سهل',
-			en: 'Professional one-page website with easy CMS'
+			ar: 'موقع احترافي في صفحة واحدة، جاهز خلال 48 ساعة.',
+			en: 'A professional one-page website, ready in 48 hours.'
 		},
 		features: {
 			ar: [
-				'تصميم احترافي متجاوب',
-				'نظام إدارة محتوى (CMS)',
-				'تحسين محركات البحث (SEO)',
+				'تصميم احترافي متجاوب مع الجوال',
+				'لوحة تحكم لإدارة المحتوى',
+				'تهيئة لمحركات البحث (SEO)',
 				'دعم العربية والإنجليزية',
-				'شهادة SSL مجانية',
+				'شهادة أمان SSL مجانية',
 				'دعم فني لمدة شهر'
 			],
 			en: [
-				'Professional responsive design',
-				'Content Management System (CMS)',
-				'Search Engine Optimization (SEO)',
+				'Professional, mobile-responsive design',
+				'Content management control panel',
+				'Search engine optimization (SEO)',
 				'Arabic & English support',
 				'Free SSL certificate',
 				'1 month technical support'
 			]
 		},
-		originalPrice: 1298,
+		originalPrice: 699,
 		salePercent: 50,
 		showOriginalPrice: true,
-		allowAddons: false
+		allowAddons: false,
+		popular: false
 	},
 	{
 		id: 'corporate',
@@ -100,33 +95,34 @@ export const PACKAGES: PricingPackage[] = [
 			en: 'Corporate / Portfolio'
 		},
 		description: {
-			ar: 'موقع متكامل لأعمالك مع معرض أعمال تفاعلي',
-			en: 'Complete business website with interactive portfolio'
+			ar: 'موقع متكامل لشركتك مع عرض خدماتك، جاهز خلال 4 أيام.',
+			en: 'A complete company website showcasing your services, ready in 4 days.'
 		},
 		features: {
 			ar: [
 				'حتى 7 صفحات',
-				'معرض أعمال تفاعلي',
-				'نظام إدارة محتوى متقدم',
-				'نموذج اتصال متعدد',
-				'تكامل مع وسائل التواصل',
-				'تحسين محركات البحث المتقدم',
+				'معرض أعمال أو منتجات تفاعلي',
+				'لوحة تحكم متقدمة',
+				'نماذج تواصل متعددة وربط بواتساب',
+				'ربط بحسابات التواصل الاجتماعي',
+				'تهيئة متقدمة لمحركات البحث',
 				'دعم فني لمدة 3 أشهر'
 			],
 			en: [
 				'Up to 7 pages',
-				'Interactive portfolio',
-				'Advanced CMS',
-				'Multiple contact forms',
+				'Interactive portfolio or product gallery',
+				'Advanced control panel',
+				'Multiple contact forms + WhatsApp integration',
 				'Social media integration',
 				'Advanced SEO',
 				'3 months technical support'
 			]
 		},
-		originalPrice: 1698,
+		originalPrice: 1499,
 		salePercent: 50,
 		showOriginalPrice: true,
-		allowAddons: true
+		allowAddons: true,
+		popular: true
 	},
 	{
 		id: 'animated',
@@ -135,31 +131,157 @@ export const PACKAGES: PricingPackage[] = [
 			en: 'Animated Interactive'
 		},
 		description: {
-			ar: 'موقع فريد مع مؤثرات ثلاثية الأبعاد وتفاعلات متعددة',
-			en: 'Unique website with 3D effects and multiple interactions'
+			ar: 'موقع بتصميم مخصص بالكامل وتأثيرات متحركة تميز علامتك.',
+			en: 'A fully custom website with motion effects that set your brand apart.'
 		},
 		features: {
 			ar: [
-				'تأثيرات ثلاثية الأبعاد',
-				'تفاعلات متحركة احترافية',
-				'تصميم مخصص بالكامل',
+				'تصميم مخصص بالكامل لهويتك',
+				'تأثيرات حركية وتفاعلات احترافية',
 				'معرض أعمال متقدم',
-				'تكامل مع الأنظمة',
+				'ربط مع الأنظمة التي تستخدمها',
 				'دعم فني لمدة 6 أشهر'
 			],
 			en: [
-				'3D effects',
-				'Professional animated interactions',
-				'Fully custom design',
+				'Fully custom design for your brand',
+				'Professional motion effects and interactions',
 				'Advanced portfolio',
-				'System integration',
+				'Integration with the systems you use',
 				'6 months technical support'
 			]
 		},
-		originalPrice: 2200,
+		originalPrice: 2299,
 		salePercent: 50,
 		showOriginalPrice: true,
-		allowAddons: true
+		allowAddons: true,
+		popular: false
+	}
+];
+
+export interface StorePackage {
+	id: string;
+	name: {
+		ar: string;
+		en: string;
+	};
+	description: {
+		ar: string;
+		en: string;
+	};
+	features: {
+		ar: string[];
+		en: string[];
+	};
+	originalPrice: number;
+	salePercent: number;
+	showOriginalPrice: boolean;
+	allowAddons?: boolean;
+	popular?: boolean;
+}
+
+// NOTE: store package prices are suggested — client will confirm final numbers.
+export const STORE_PACKAGES: StorePackage[] = [
+	{
+		id: 'store-standard',
+		name: {
+			ar: 'متجر أساسي',
+			en: 'Starter Store'
+		},
+		description: {
+			ar: 'متجر إلكتروني متكامل يعرض منتجاتك ويستقبل طلباتك، جاهز خلال أسبوع.',
+			en: 'A complete online store to showcase products and receive orders, ready in one week.'
+		},
+		features: {
+			ar: [
+				'منتجات غير محدودة مع تصنيفات',
+				'سلة شراء ونظام طلبات كامل',
+				'ربط بوابات الدفع (مدى، STC Pay، Apple Pay)',
+				'لوحة تحكم لإدارة المنتجات والطلبات',
+				'تهيئة لمحركات البحث',
+				'دعم فني لمدة شهر'
+			],
+			en: [
+				'Unlimited products with categories',
+				'Shopping cart and order system',
+				'Payment gateways (Mada, STC Pay, Apple Pay)',
+				'Products and orders control panel',
+				'Search engine optimization',
+				'1 month technical support'
+			]
+		},
+		originalPrice: 4900,
+		salePercent: 50,
+		showOriginalPrice: true,
+		allowAddons: false,
+		popular: false
+	},
+	{
+		id: 'store-pro',
+		name: {
+			ar: 'متجر برو',
+			en: 'Pro Store'
+		},
+		description: {
+			ar: 'متجر متقدم بهوية مخصصة وأدوات نمو، جاهز خلال 10 أيام.',
+			en: 'An advanced store with a custom identity and growth tools, ready in 10 days.'
+		},
+		features: {
+			ar: [
+				'تصميم هوية مخصصة للمتجر',
+				'كل مميزات المتجر القياسي',
+				'ديزاينر فني لصفحات المنتوجات',
+				'تكامل مع الشحن (أرامكس، سمسا)',
+				'ربط أنظمة المحاسبة والمخزون',
+				'دعم فني لمدة 3 أشهر'
+			],
+			en: [
+				'Custom store branding',
+				'Everything in the Standard Store',
+				'Professional product page designer',
+				'Shipping integration (Aramex, SMSA)',
+				'Accounting and inventory integration',
+				'3 months technical support'
+			]
+		},
+		originalPrice: 8900,
+		salePercent: 50,
+		showOriginalPrice: true,
+		allowAddons: false,
+		popular: true
+	},
+	{
+		id: 'store-custom',
+		name: {
+			ar: 'متجر مخصص بالكامل',
+			en: 'Fully Custom Store'
+		},
+		description: {
+			ar: 'متجر مبني من الصفر باحتياجاتك الخاصة وخصائص متقدمة.',
+			en: 'A store built from scratch with your own requirements and advanced features.'
+		},
+		features: {
+			ar: [
+				'برمجة مخصصة من الصفر',
+				'كل مميزات متجر برو',
+				'خصائص متقدمة بتقنية الاشتراكات وحسابات البائعين',
+				'ربط مع الأنظمة التي تستخدمها',
+				'تهيئة متقدمة لمحركات البحث',
+				'دعم فني لمدة 6 أشهر'
+			],
+			en: [
+				'Custom development from scratch',
+				'Everything in the Pro Store',
+				'Advanced features like subscriptions and vendor accounts',
+				'Integration with the systems you use',
+				'Advanced SEO',
+				'6 months technical support'
+			]
+		},
+		originalPrice: 14900,
+		salePercent: 50,
+		showOriginalPrice: true,
+		allowAddons: false,
+		popular: false
 	}
 ];
 
@@ -194,37 +316,6 @@ export const ADDONS: PricingAddon[] = [
 		allowedPackages: ['corporate', 'animated']
 	},
 	{
-		id: 'ecommerce',
-		name: {
-			ar: 'متجر إلكتروني',
-			en: 'E-commerce'
-		},
-		description: {
-			ar: 'متجر كامل مع دفع وسلة و بوابة دفع',
-			en: 'Full store with payment and payment gateway'
-		},
-		features: {
-			ar: [
-				'سلة شراء',
-				'بوابات دفع متعددة',
-				'نظام طلبات',
-				'لوحة تحكم البائع',
-				'إشعارات فورية',
-				'تكامل الشحن'
-			],
-			en: [
-				'Shopping cart',
-				'Multiple payment gateways',
-				'Order management',
-				'Seller dashboard',
-				'Instant notifications',
-				'Shipping integration'
-			]
-		},
-		price: 1700,
-		allowedPackages: ['corporate', 'animated']
-	},
-	{
 		id: 'reservation',
 		name: {
 			ar: 'نظام حجوزات',
@@ -240,8 +331,8 @@ export const ADDONS: PricingAddon[] = [
 				'إدارة المواعيد',
 				'إشعارات العميل',
 				'لوحة التحكم',
-				'تارير مخصصة',
-				'تقريرات مفصلة'
+				'تواريخ مخصصة',
+				'تقارير مفصلة'
 			],
 			en: [
 				'Booking calendar',
@@ -257,19 +348,11 @@ export const ADDONS: PricingAddon[] = [
 	}
 ];
 
-export function calculatePrice(
-	price: number,
-	currency: CurrencyCode,
-	currencyConfig = CURRENCIES
-): number {
-	const convertedPrice = price / currencyConfig[currency].exchangeRate;
-	return Math.round(convertedPrice);
+export function calculatePrice(price: number, currency: CurrencyCode = 'sar'): number {
+	return Math.round(price / CURRENCIES[currency].exchangeRate);
 }
 
-export function formatPrice(price: number, currency: CurrencyCode): string {
+export function formatPrice(price: number, currency: CurrencyCode = 'sar'): string {
 	const config = CURRENCIES[currency];
-	if (currency === 'sar') {
-		return `${price.toLocaleString()} ${config.symbol}`;
-	}
-	return `${config.symbol}${price.toLocaleString()}`;
+	return `${price.toLocaleString()} ${config.symbol}`;
 }

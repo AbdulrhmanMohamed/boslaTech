@@ -1,0 +1,208 @@
+- generic [ref=f24e2]:
+  - generic [ref=f24e3]: شحن مجاني للطلبات فوق 200 ر.س • كوبون ASL10 يخصم 10%
+  - banner [ref=f24e4]:
+    - generic [ref=f24e5]:
+      - link "أصل ASL · عطور واحاجيات" [ref=f24e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f24e7]: أصل
+        - generic [ref=f24e8]: ASL · عطور واحاجيات
+      - navigation [ref=f24e9]:
+        - link "الرئيسية" [ref=f24e10] [cursor=pointer]:
+          - /url: /
+        - link "المتجر" [ref=f24e11] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f24e13] [cursor=pointer]:
+          - /url: /wishlist
+      - button "السلة" [ref=f24e15]
+  - main [ref=f24e19]:
+    - generic [ref=f24e20]:
+      - generic [ref=f24e21]:
+        - paragraph [ref=f24e22]: المتجر
+        - heading "كل المجموعة في مكان واحد" [level=1] [ref=f24e23]
+      - generic [ref=f24e24]:
+        - button "✦ الكل" [ref=f24e25] [cursor=pointer]
+        - button "🌸 عطور" [ref=f24e28] [cursor=pointer]
+        - button "🕯️ بخور وشموع" [ref=f24e30] [cursor=pointer]
+        - button "🎁 هدايا" [ref=f24e32] [cursor=pointer]
+        - textbox "دوّر على منتج…" [ref=f24e35]
+        - combobox [ref=f24e36] [cursor=pointer]:
+          - option "المميزة" [selected]
+          - option "الأرخص أول"
+          - option "الأغلى أول"
+          - option "الأعلى تقييمًا"
+      - paragraph [ref=f24e37]: 8 منتجات
+      - generic [ref=f24e38]:
+        - article [ref=f24e39]:
+          - link "عطر العنبر الفاخر خصم 24%" [ref=f24e40] [cursor=pointer]:
+            - /url: /product/1
+            - generic [ref=f24e41]:
+              - img "عطر العنبر الفاخر" [ref=f24e42]
+              - generic [ref=f24e43]: خصم 24%
+          - button "المفضلة" [active] [ref=f24e44]:
+            - generic [ref=f24e196]: ♡
+          - generic [ref=f24e46]:
+            - generic [ref=f24e47]:
+              - generic [ref=f24e48]: عطور
+              - generic [ref=f24e49]: ★ 4.8
+            - link "عطر العنبر الفاخر" [ref=f24e50] [cursor=pointer]:
+              - /url: /product/1
+            - paragraph [ref=f24e51]: عود وعنبر مع لمسة فانيليا دافئة
+            - generic [ref=f24e52]:
+              - generic [ref=f24e53]: ٢٤٩
+              - generic [ref=f24e54]: ر.س
+              - generic [ref=f24e55]: ٣٢٩
+            - button "أضف للسلة" [ref=f24e56] [cursor=pointer]
+        - article [ref=f24e57]:
+          - link [ref=f24e58] [cursor=pointer]:
+            - /url: /product/2
+            - img "عطر الورد والعود" [ref=f24e60]
+          - button "المفضلة" [ref=f24e61]:
+            - generic [ref=f24e62]: ♡
+          - generic [ref=f24e63]:
+            - generic [ref=f24e64]:
+              - generic [ref=f24e65]: عطور
+              - generic [ref=f24e66]: ★ 4.6
+            - link "عطر الورد والعود" [ref=f24e67] [cursor=pointer]:
+              - /url: /product/2
+            - paragraph [ref=f24e68]: وردة دمشقية مع مسك أبيض وعود خفيف
+            - generic [ref=f24e69]:
+              - generic [ref=f24e70]: ١٩٩
+              - generic [ref=f24e71]: ر.س
+            - button "أضف للسلة" [ref=f24e72] [cursor=pointer]
+        - article [ref=f24e73]:
+          - link "بخور العود الفيصلي 50 غم خصم 25% بقي 8 فقط" [ref=f24e74] [cursor=pointer]:
+            - /url: /product/3
+            - generic [ref=f24e75]:
+              - img "بخور العود الفيصلي 50 غم" [ref=f24e76]
+              - generic [ref=f24e77]: خصم 25%
+              - generic [ref=f24e78]: بقي 8 فقط
+          - button "المفضلة" [ref=f24e79]:
+            - generic [ref=f24e80]: ♡
+          - generic [ref=f24e81]:
+            - generic [ref=f24e82]:
+              - generic [ref=f24e83]: بخور وشموع
+              - generic [ref=f24e84]: ★ 4.9
+            - link "بخور العود الفيصلي 50 غم" [ref=f24e85] [cursor=pointer]:
+              - /url: /product/3
+            - paragraph [ref=f24e86]: عود كمبودي طبيعي يعمق الجلسة
+            - generic [ref=f24e87]:
+              - generic [ref=f24e88]: ١٤٩
+              - generic [ref=f24e89]: ر.س
+              - generic [ref=f24e90]: ١٩٩
+            - button "أضف للسلة" [ref=f24e91] [cursor=pointer]
+        - article [ref=f24e92]:
+          - link [ref=f24e93] [cursor=pointer]:
+            - /url: /product/4
+            - img "شمعة عود الليل 200 غم" [ref=f24e95]
+          - button "المفضلة" [ref=f24e96]:
+            - generic [ref=f24e97]: ♡
+          - generic [ref=f24e98]:
+            - generic [ref=f24e99]:
+              - generic [ref=f24e100]: بخور وشموع
+              - generic [ref=f24e101]: ★ 4.7
+            - link "شمعة عود الليل 200 غم" [ref=f24e102] [cursor=pointer]:
+              - /url: /product/4
+            - paragraph [ref=f24e103]: شُمعة صوية يدوية برائحة البخور
+            - generic [ref=f24e104]:
+              - generic [ref=f24e105]: ٨٩
+              - generic [ref=f24e106]: ر.س
+            - button "أضف للسلة" [ref=f24e107] [cursor=pointer]
+        - article [ref=f24e108]:
+          - link "صينية هدايا العروس خصم 20% بقي 5 فقط" [ref=f24e109] [cursor=pointer]:
+            - /url: /product/5
+            - generic [ref=f24e110]:
+              - img "صينية هدايا العروس" [ref=f24e111]
+              - generic [ref=f24e112]: خصم 20%
+              - generic [ref=f24e113]: بقي 5 فقط
+          - button "المفضلة" [ref=f24e114]:
+            - generic [ref=f24e115]: ♡
+          - generic [ref=f24e116]:
+            - generic [ref=f24e117]:
+              - generic [ref=f24e118]: هدايا
+              - generic [ref=f24e119]: ★ 5
+            - link "صينية هدايا العروس" [ref=f24e120] [cursor=pointer]:
+              - /url: /product/5
+            - paragraph [ref=f24e121]: عطر صغير + بخور + شُمعة — جاهزة للإهداء
+            - generic [ref=f24e122]:
+              - generic [ref=f24e123]: ٤٧٩
+              - generic [ref=f24e124]: ر.س
+              - generic [ref=f24e125]: ٥٩٩
+            - button "أضف للسلة" [ref=f24e126] [cursor=pointer]
+        - article [ref=f24e127]:
+          - link [ref=f24e128] [cursor=pointer]:
+            - /url: /product/6
+            - img "مزهرية زجاج مطفي" [ref=f24e130]
+          - button "المفضلة" [ref=f24e131]:
+            - generic [ref=f24e132]: ♡
+          - generic [ref=f24e133]:
+            - generic [ref=f24e134]:
+              - generic [ref=f24e135]: هدايا
+              - generic [ref=f24e136]: ★ 4.4
+            - link "مزهرية زجاج مطفي" [ref=f24e137] [cursor=pointer]:
+              - /url: /product/6
+            - paragraph [ref=f24e138]: لمسة عصرية للزهور المجففة والطبيعية
+            - generic [ref=f24e139]:
+              - generic [ref=f24e140]: ١٢٩
+              - generic [ref=f24e141]: ر.س
+            - button "أضف للسلة" [ref=f24e142] [cursor=pointer]
+        - article [ref=f24e143]:
+          - link "طقم كوبين زجاجي خصم 20%" [ref=f24e144] [cursor=pointer]:
+            - /url: /product/7
+            - generic [ref=f24e145]:
+              - img "طقم كوبين زجاجي" [ref=f24e146]
+              - generic [ref=f24e147]: خصم 20%
+          - button "المفضلة" [ref=f24e148]:
+            - generic [ref=f24e149]: ♡
+          - generic [ref=f24e150]:
+            - generic [ref=f24e151]:
+              - generic [ref=f24e152]: هدايا
+              - generic [ref=f24e153]: ★ 4.5
+            - link "طقم كوبين زجاجي" [ref=f24e154] [cursor=pointer]:
+              - /url: /product/7
+            - paragraph [ref=f24e155]: كوبان زجاجيان رقيّقان للقهوة العربية
+            - generic [ref=f24e156]:
+              - generic [ref=f24e157]: ١٥٩
+              - generic [ref=f24e158]: ر.س
+              - generic [ref=f24e159]: ١٩٩
+            - button "أضف للسلة" [ref=f24e160] [cursor=pointer]
+        - article [ref=f24e161]:
+          - link "طقم عطور رجالية 3 قطع خصم 17%" [ref=f24e162] [cursor=pointer]:
+            - /url: /product/8
+            - generic [ref=f24e163]:
+              - img "طقم عطور رجالية 3 قطع" [ref=f24e164]
+              - generic [ref=f24e165]: خصم 17%
+          - button "المفضلة" [ref=f24e166]:
+            - generic [ref=f24e167]: ♡
+          - generic [ref=f24e168]:
+            - generic [ref=f24e169]:
+              - generic [ref=f24e170]: عطور
+              - generic [ref=f24e171]: ★ 4.6
+            - link "طقم عطور رجالية 3 قطع" [ref=f24e172] [cursor=pointer]:
+              - /url: /product/8
+            - paragraph [ref=f24e173]: ثلاث روائح خشبية معقّدة — للسفر واليوم
+            - generic [ref=f24e174]:
+              - generic [ref=f24e175]: ٣٨٩
+              - generic [ref=f24e176]: ر.س
+              - generic [ref=f24e177]: ٤٦٩
+            - button "أضف للسلة" [ref=f24e178] [cursor=pointer]
+      - generic [ref=f24e179]:
+        - paragraph [ref=f24e180]: شدّ نفسك — كوبون ASL10 يخصم 10%
+        - paragraph [ref=f24e181]: أول طلب فوق ٢٠٠ ر.س يوصلك مع شحن مجاني
+  - contentinfo [ref=f24e182]:
+    - generic [ref=f24e184]:
+      - generic [ref=f24e185]: أصل
+      - paragraph [ref=f24e186]: عطور وبخور وهدايا فاخرة — المنتقاة بعناية، متجر تجريبي لأغراض العرض لا تتم فيه عمليات دفع حقيقية.
+      - generic [ref=f24e187]:
+        - link "المتجر" [ref=f24e188] [cursor=pointer]:
+          - /url: /shop
+        - link "المفضلة" [ref=f24e189] [cursor=pointer]:
+          - /url: /wishlist
+        - link "تواصل معنا" [ref=f24e190] [cursor=pointer]:
+          - /url: https://wa.me/966576944605
+      - generic [ref=f24e191]:
+        - paragraph [ref=f24e192]:
+          - text: برمجة وتطوير
+          - link "بوصلة تك · BOSLA TECH" [ref=f24e193] [cursor=pointer]:
+            - /url: https://hafatalnjom.com
+        - paragraph [ref=f24e194]: شحن مجاني فوق 200 ر.س • كوبون ASL10
+  - generic: «عطر العنبر الفاخر» خرجت من المفضلة

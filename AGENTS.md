@@ -4,7 +4,7 @@
 - **Business:** مؤسسة حافة النجوم (Hafat Alnjom) — CR 7050568158
 - **Brand:** BOSLA (short brand name), حافة النجوم (legal name)
 - **Location:** حي الملز، الرياض، المملكة العربية السعودية
-- **Phone:** +966576704683
+- **Phone:** +966576944605
 - **What you actually do:** WordPress websites, Shopify stores, Salla stores, Zid stores, custom e-commerce, SEO services, digital marketing, branding, maintenance
 - **Who you serve:** Saudi SMEs, e-commerce brands, service businesses in Riyadh + all KSA
 - **Language:** Arabic (default) + English via `?lang=en`

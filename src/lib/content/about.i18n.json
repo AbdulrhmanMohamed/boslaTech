@@ -1,27 +1,18 @@
 {
 	"en": {
 		"title": "About Us",
-		"subtitle": "BOSLA is your strategic partner in crafting the digital future. We fuse artistry with advanced technology to engineer exceptional experiences that transcend expectations and position your brand at the global forefront.",
+		"subtitle": "We chose the name \"Bosla\" — Arabic for compass — because that is exactly what we do: point your business in the right direction online. Bosla Tech builds websites and online stores from scratch with modern code, free from ready-made templates and monthly-subscription platforms, so you get a fast website designed for your brand and fully yours.",
 		"intro": [
-			"Our company name — BOSLA — often draws attention for its uniqueness; inspired by the royal orchid, our true distinction lies in the blend of specialized skills we deliver.",
-			"This spirit of distinction shapes our vision of digital marketing: BOSLA’s excellence is not just a slogan but a real commitment to delivering integrated, professional results that achieve marketing goals and increase returns.",
-			"We are dedicated to removing the barriers between you and success, building a genuine online presence across every channel.",
-			"We leverage the full potential of the web: outstanding website engineering, compelling social assets, engaging mobile apps, and everything that maximizes your ROI.",
-			"We enable smart communication so clients find you when they need you, feel cared for, and have their needs understood.",
-			"We help you surpass competitors decisively, aiming for remarkable differentiation rather than relative advantage.",
-			"We strive for deep customer satisfaction so your clients become your advocates, selling your brand full‑time without cost.",
-			"This mindset has allowed us to build a global client base.",
-			"Our clients span Egypt, Saudi Arabia, UAE, Qatar, Austria, Germany, and other multinational companies.",
-			"All this and more supports our vision and mission to raise awareness in the Arab market — individuals and companies — about the potential of digital marketing."
+			"We know business owners have no time to wait. That is why our process delivers your website in days, not months, with an easy control panel that lets you manage your content and products yourself — no developer needed.",
+			"Bosla Tech is a service of Hafat Al-Nujoom Establishment, a registered Saudi establishment, Commercial Registration No. 7050568158."
 		],
-		"services": [
-			"We deliver engineering‑first digital solutions: high‑quality websites, web applications, mobile apps, and e‑commerce platforms.",
-			"We build robust architectures and clean, accessible interfaces across web and mobile.",
-			"We integrate secure payments, inventory, and analytics to achieve measurable business outcomes."
-		],
-		"mission": "We believe digital success is no accident; it's the result of meticulous work, accumulated knowledge, and a true partnership with clients — translated into tangible outcomes.",
-		"stats": ["+1000 Completed Projects", "+15 Years Experience", "MENA"],
-		"phone": { "label": "Phone", "value": "+20 11 12419980" },
+		"services": [],
+		"mission": "For every Saudi business to own a professional website it deserves — fast, fairly priced, and theirs forever.",
+		"stats": [],
+		"phone": {
+			"label": "Phone",
+			"value": "+966 57 694 4605"
+		},
 		"heroImage": {
 			"url": "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80",
 			"alt": "Illustrative image for digital services"
@@ -36,28 +27,18 @@
 	},
 	"ar": {
 		"title": "من نحن",
-		"subtitle": "بوصلة هي شريكك الاستراتيجي في صياغة المستقبل الرقمي. نحن نمزج بين الفن والتكنولوجيا لنبتكر تجارب استثنائية تتجاوز التوقعات، وترسخ مكانة علامتك التجارية في الصدارة.",
+		"subtitle": "اخترنا اسم «بوصلة» لأن هذا بالضبط ما نقدمه: نوجّه مشروعك في الاتجاه الصحيح على الإنترنت. بوصلة تك متخصصة في بناء المواقع والمتاجر الإلكترونية من الصفر ببرمجة حديثة، بعيدًا عن القوالب الجاهزة والمنصات ذات الاشتراكات الشهرية، لتحصل على موقع سريع ومصمم لهويتك وملكك بالكامل.",
 		"intro": [
-			"عادة ما لفت اسم شركتنا – بوصلة – انتباه الجميع لغرابته وتميّزه؛ قد يكون التميّز هو سرّ اختيار الاسم، فهو منتقى من الزهرة الملكية: زهرة الأوركيد. ولكن التميّز الحقيقي هو ما نقدّمه من عطـر المهارات والتخصصات الخاصة، جعلها الملكة في مملكة الزهور.",
-			"يحقق هذا المبدأ روح التميّز ليجعل اسمنا يحمل معنى التسويق الرقمي؛ تميّز بوصلة ليس مجرد شعار، بل رؤية حقيقية نسعى لإيصالها، ورسالة نوجّهها لجمهور متعطش إلى لمس نتائج تسويقية احترافية متكاملة، تحقق أهدافه التسويقية، وترفع مكتسباته.",
-			"لذلك نحن حريصون في بوصلة على تحقيق كل الغايات التي نراها أنّها تفصل بينك وبين نجاح يتوجك على الامتياز الانتقائي ضمن المشهد.",
-			"لذلك نحن حريصون في بوصلة على تحطيم كل العقبات التي ترى أنها تفصل بينك وبين نجاح تواجدك على الإنترنت بأي شكل من الأشكال.",
-			"أن تصنع تواجد حقيقي على الإنترنت وليس وهماً؛ نستفيد بكل الإمكانيات التي تتيحها لك الشبكة العنقودية، فتحصل على برمجة رائعة لموقعك، وتصميم جذاب لملفاتك الاجتماعية، وتطبيق جوال تفاعلي نشط، وكل ما يحقق أعلى ROI لشركتك.",
-			"أن تتوافر لك وسائل وسبل تواصل ذكية مع العملاء فيجدك العميل وقتما يريد، فيشعر باهتمامك، وتتفهم احتياجاته.",
-			"أن تتفوق على منافسيك، ليس لغرض التفوق النسبي، ولكن لغرض التميز القاهر، فلا يستطيع منافسوك اللحاق بك أبداً.",
-			"أن تحقق أعلى درجات الإشباع والرضا لدى العملاء فيتحول عملاؤك إلى بائعين لك يعملون بدوام كامل بدون مقابل.",
-			"هذه هي العقلية التي سمحت لنا بتكوين قاعدة من العملاء من جميع أنحاء العالم.",
-			"عملاؤنا من مصر، السعودية، الإمارات، قطر، النمسا، ألمانيا، وغيرها من الشركات متعددة الجنسيات.",
-			"كل هذا وأكثر، دعماً لرؤيتنا وعملاً لرسالتنا في توعية السوق العربية – أفراداً وشركات – بالإمكانيات الكامنة في التسويق الرقمي."
+			"نؤمن أن صاحب المشروع لا يملك وقتًا للانتظار، لذلك صممنا طريقة عملنا لتسليم موقعك في أيام لا أشهر، مع لوحة تحكم سهلة تمكّنك من إدارة محتواك ومنتجاتك بنفسك دون الحاجة إلى مبرمج.",
+			"بوصلة تك إحدى خدمات مؤسسة حافة النجوم، مؤسسة سعودية مسجلة بسجل تجاري رقم 7050568158."
 		],
-		"services": [
-			"نقدّم حلولاً برمجية تركّز على الهندسة: مواقع إلكترونية عالية الجودة، تطبيقات ويب، تطبيقات جوال، ومنصّات تجارة إلكترونية.",
-			"نبني بنى تقنية قوية وواجهات نظيفة ومتوافقة مع معايير الوصول عبر الويب والجوال.",
-			"نوفّر تكاملات مدفوعات آمنة، إدارة منتجات ومخزون، وتحليلات لتحقيق نتائج أعمال ملموسة."
-		],
-		"mission": "نؤمن بأن النجاح الرقمي ليس صدفة؛ بل نتيجة عمل متقن ومعرفة متراكمة وشراكة حقيقية مع العميل، تُترجم إلى نتائج ملموسة.",
-		"stats": ["+1000 مشاريع منجزة", "+15 سنوات الخبرة", "MENA"],
-		"phone": { "label": "الهاتف", "value": "+20 11 12419980" },
+		"services": [],
+		"mission": "أن يمتلك كل مشروع سعودي موقعًا احترافيًا يليق به، بسرعة وسعر عادل، ويبقى ملكه للأبد.",
+		"stats": [],
+		"phone": {
+			"label": "الهاتف",
+			"value": "+966 57 694 4605"
+		},
 		"heroImage": {
 			"url": "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=1200&q=80",
 			"alt": "صورة توضيحية للخدمات الرقمية"

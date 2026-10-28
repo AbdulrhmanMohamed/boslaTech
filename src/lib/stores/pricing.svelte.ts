@@ -1,43 +1,11 @@
-import { type CurrencyCode, CURRENCIES, calculatePrice, formatPrice } from '$lib/data/pricing';
-import { detectCountry, detectFromTimezone } from '$lib/utils/geolocation';
-import { browser } from '$app/environment';
+import { type CurrencyCode, CURRENCIES, formatPrice, calculatePrice } from '$lib/data/pricing';
 
 class PricingStore {
-	currency = $state<CurrencyCode>('usd');
-	isLoading = $state(true);
+	// SAR only — no currency detection, no USD
+	currency = $state<CurrencyCode>('sar');
+	isLoading = $state(false);
 	isDetecting = $state(false);
 	detectionMethod = $state<'api' | 'timezone' | 'fallback' | null>(null);
-
-	constructor() {
-		if (browser) {
-			this.init();
-		}
-	}
-
-	async init() {
-		this.isLoading = true;
-		this.isDetecting = true;
-
-		try {
-			const result = await detectCountry();
-
-			this.currency = result.currency;
-			this.detectionMethod = result.cached ? 'api' : 'api';
-		} catch {
-			const timezoneCurrency = detectFromTimezone();
-
-			if (timezoneCurrency === 'sar') {
-				this.currency = 'sar';
-				this.detectionMethod = 'timezone';
-			} else {
-				this.currency = 'usd';
-				this.detectionMethod = 'fallback';
-			}
-		} finally {
-			this.isLoading = false;
-			this.isDetecting = false;
-		}
-	}
 
 	get currencyConfig() {
 		return CURRENCIES[this.currency];
@@ -52,22 +20,19 @@ class PricingStore {
 	}
 
 	display(priceInSAR: number): string {
-		const converted = this.convert(priceInSAR);
-		return formatPrice(converted, this.currency);
+		return formatPrice(this.convert(priceInSAR), this.currency);
 	}
 
 	salePrice(originalPrice: number, salePercent: number): number {
-		const salePrice = originalPrice * (1 - salePercent / 100);
-		return this.convert(salePrice);
+		return this.convert(originalPrice * (1 - salePercent / 100));
 	}
 
 	displaySalePrice(originalPrice: number, salePercent: number): string {
-		const price = this.salePrice(originalPrice, salePercent);
-		return formatPrice(price, this.currency);
+		return formatPrice(this.salePrice(originalPrice, salePercent), this.currency);
 	}
 
 	displayOriginal(priceInSAR: number): string {
-		return formatPrice(priceInSAR, this.currency);
+		return formatPrice(this.convert(priceInSAR), this.currency);
 	}
 }
 

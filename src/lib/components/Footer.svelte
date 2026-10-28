@@ -52,7 +52,7 @@
 
 				<div class="space-y-6">
 					<a
-						href="https://wa.me/966576704683?text=%D9%83%D9%86%D8%AA%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85%20%D8%A7%D9%84%D9%85%D9%88%D9%82%D8%B9"
+						href="https://wa.me/966576944605?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82"
 						target="_blank"
 						rel="noopener noreferrer"
 						use:inView
@@ -71,7 +71,7 @@
 								{data.lang === 'ar' ? 'اتصل بنا' : 'Call Us'}
 							</div>
 							<div class="text-lg font-bold tracking-tight text-[var(--color-text-base)]">
-								<span dir="ltr">+966 57 670 4683</span>
+								<span dir="ltr">+966 57 694 4605</span>
 							</div>
 						</div>
 					</a>
@@ -89,7 +89,13 @@
 							{data.lang === 'ar' ? 'التنقل' : 'Navigation'}
 						</h4>
 						<nav class="flex flex-col gap-4">
-							{#each [{ label: data.site?.nav?.home ?? 'Home', href: `${base}/` }, { label: data.site?.nav?.about ?? 'About', href: `${base}/about` }, { label: data.lang === 'ar' ? 'تواصل معنا' : 'Contact', href: `${base}/contact` }] as link}
+							{#each [
+									{ label: data.site?.nav?.home ?? 'Home', href: `${base}/` },
+									{ label: data.lang === 'ar' ? 'المتاجر الإلكترونية' : 'Online Stores', href: `${base}/stores` },
+									{ label: data.lang === 'ar' ? 'الباقات' : 'Pricing', href: `${base}/#pricing` },
+									{ label: data.site?.nav?.about ?? 'About', href: `${base}/about` },
+									{ label: data.lang === 'ar' ? 'تواصل معنا' : 'Contact', href: `${base}/contact` }
+								] as link}
 								<a
 									href={link.href}
 									use:inView
@@ -116,8 +122,13 @@
 							{data.lang === 'ar' ? 'خبراتنا' : 'Expertise'}
 						</h4>
 						<div class="grid gap-4">
-							{#each [{ label: data.lang === 'ar' ? 'تطوير المواقع' : 'Web Dev', icon: Globe }, { label: data.lang === 'ar' ? 'تطبيقات الجوال' : 'Mobile Apps', icon: Smartphone }, { label: data.lang === 'ar' ? 'التجارة الإلكترونية' : 'E-commerce', icon: ShoppingBag }] as service}
-								<div
+							{#each [
+									{ label: data.lang === 'ar' ? 'مواقع شركات' : 'Corporate Websites', icon: Globe, href: `${base}/services/web-development/custom-websites` },
+									{ label: data.lang === 'ar' ? 'متاجر إلكترونية' : 'Online Stores', icon: ShoppingBag, href: `${base}/stores` },
+									{ label: data.lang === 'ar' ? 'تحسين محركات البحث' : 'SEO Services', icon: Smartphone, href: `${base}/services/seo` }
+								] as service}
+								<a
+									href={service.href}
 									use:inView
 									class="obsidian-card group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-[var(--glass-border)] p-4 transition-[border-color] hover:border-brand-blue/30 [&.in-view]:border-brand-blue/30"
 								>
@@ -139,7 +150,7 @@
 										class="font-bold text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)]"
 										>{service.label}</span
 									>
-								</div>
+								</a>
 							{/each}
 						</div>
 					</div>
@@ -166,24 +177,26 @@
 							class:text-left={data.lang !== 'ar'}
 							class="max-w-md"
 						>
-							<h3
-								class="mb-4 text-3xl leading-tight font-black tracking-tight text-[var(--color-text-base)] md:text-4xl"
-							>
-								{data.lang === 'ar' ? 'هل أنت مستعد للبدء؟' : 'Ready to start?'}
-							</h3>
-							<p class="text-lg leading-relaxed font-medium text-[var(--color-text-muted)]">
-								{data.lang === 'ar'
-									? 'دعنا نحول رؤيتك إلى واقع رقمي مذهل.'
-									: 'Let’s turn your vision into a stunning digital reality.'}
-							</p>
-						</div>
-						<a
-							href={`${base}/contact`}
-							use:inView
-							class="w-full rounded-2xl bg-brand-blue px-12 py-6 text-center text-sm font-black tracking-widest text-white uppercase shadow-[0_20px_50px_rgba(0,119,255,0.3)] transition-[transform,box-shadow] duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,119,255,0.5)] md:w-auto [&.in-view]:-translate-y-2 [&.in-view]:shadow-[0_25px_60px_rgba(0,119,255,0.5)]"
+						<h3
+							class="mb-4 text-3xl leading-tight font-black tracking-tight text-[var(--color-text-base)] md:text-4xl"
 						>
-							{data.lang === 'ar' ? 'ابدأ مشروعك' : 'Start Project'}
-						</a>
+							{data.lang === 'ar' ? 'جاهز تطلق موقعك؟' : 'Ready to launch?'}
+						</h3>
+						<p class="text-lg leading-relaxed font-medium text-[var(--color-text-muted)]">
+							{data.lang === 'ar'
+								? 'ابدأ من واتساب اليوم.'
+								: 'Start with a WhatsApp message today.'}
+						</p>
+					</div>
+					<a
+						href="https://wa.me/966576944605?text=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%20%D8%A3%D8%A8%D8%BA%D9%89%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D8%B9%D8%B1%D8%B6%20%D8%A7%D9%84%D8%A5%D8%B7%D9%84%D8%A7%D9%82"
+						target="_blank"
+						rel="noopener noreferrer"
+						use:inView
+						class="group2 w-full rounded-2xl bg-brand-blue px-12 py-6 text-center text-sm font-black tracking-widest text-white uppercase shadow-[0_20px_50px_rgba(0,119,255,0.3)] transition-[transform,box-shadow] duration-500 hover:-translate-y-2 hover:shadow-[0_25px_60px_rgba(0,119,255,0.5)] md:w-auto [&.in-view]:-translate-y-2 [&.in-view]:shadow-[0_25px_60px_rgba(0,119,255,0.5)]"
+					>
+						{data.lang === 'ar' ? 'كلمنا واتساب' : 'Chat on WhatsApp'}
+					</a>
 					</div>
 				</div>
 			</div>

@@ -1,29 +1,20 @@
 <script lang="ts">
 	// @ts-ignore - lucide types declared in src/app.d.ts for Svelte projects
-	import { ArrowRight, Sparkles } from '@lucide/svelte';
+	import { Sparkles } from '@lucide/svelte';
 	import { onMount, getContext } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { inView } from '$lib/actions/inView';
-	import ServicesSection from '$lib/components/ServicesSection.svelte';
-	import CtaSection from '$lib/components/CtaSection.svelte';
-	import FeaturesSection from '$lib/components/FeaturesSection.svelte';
-	import SocialProofSection from '$lib/components/SocialProofSection.svelte';
+	import PricingSection from '$lib/components/PricingSection.svelte';
+	import OfferCountdown from '$lib/components/OfferCountdown.svelte';
 	import FAQSection from '$lib/components/FAQSection.svelte';
-	import WhyChooseUsSection from '$lib/components/WhyChooseUsSection.svelte';
+	import CtaSection from '$lib/components/CtaSection.svelte';
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-	// SplitType removed — using simple GSAP animations instead for performance
 	import { theme } from '$lib/stores/theme.svelte';
 	import { base } from '$app/paths';
 	import HomeScene from '$lib/components/scenes/HomeScene.svelte';
 
 	gsap.registerPlugin(ScrollTrigger);
-
-	// Analytics tracking helper
-	function trackClick(element: string) {
-		console.log(`Tracking click on: ${element}`);
-		// Integration with analytics provider could go here
-	}
 
 	let { data } = $props();
 	const currentTheme = $derived(theme.current);
@@ -31,7 +22,6 @@
 	// Magnetic Context
 	const mouse = getContext<{ x: number; y: number; scrollY: number }>('mouse');
 
-	// Magnetic refs
 	let heroGlassCard = $state<HTMLDivElement | null>(null);
 	let spotlightRef = $state<HTMLDivElement | null>(null);
 	let pageContainer = $state<HTMLDivElement | null>(null);
@@ -58,14 +48,12 @@
 
 		const headlineText = data.home?.hero?.headline;
 		const subheadlineText = data.home?.hero?.subheadline;
-		const badgeText = `${data.home?.hero?.trustBadge?.badge1} • ${data.home?.hero?.trustBadge?.badge2}`;
+		const badgeText = data.home?.hero?.launchBadge;
 		const cta1Text = data.home?.hero?.ctaPrimary?.label;
 		const cta2Text = data.home?.hero?.ctaSecondary?.label;
 		const lang = data.lang;
 
 		if (!headlineText) return;
-
-		
 
 		const ctx = gsap.context(() => {
 			const isAr = lang === 'ar';
@@ -84,11 +72,9 @@
 
 			headlineElement.innerHTML = headlineText;
 			subheadlineElement.textContent = subheadlineText;
-			if (badgeElement) badgeElement.textContent = badgeText;
+			if (badgeElement) badgeElement.textContent = badgeText ?? null;
 			if (cta1Element) cta1Element.textContent = cta1Text;
 			if (cta2Element) cta2Element.textContent = cta2Text;
-
-			
 
 			const badgeWrapper = document.querySelector('.hero-badge') as HTMLElement;
 			if (badgeWrapper) gsap.set(badgeWrapper, { y: -10 });
@@ -214,22 +200,17 @@
 
 	// Entrance Animation with Scroll Storytelling
 	onMount(() => {
-		// Delayed Canvas loading for faster FCP/LCP
-		// Show CSS gradient first, then load Three.js after content is visible
 		const isMobile = window.innerWidth < 768;
 
 		// Mobile-specific camera for better composition
 		if (isMobile) {
-			// Mobile: wider FOV, slightly above, closer
 			cameraPosition = [0, 0.5, 9];
 			cameraFov = 55;
 		} else {
-			// Desktop: standard view
 			cameraPosition = [0, 0, 10];
 			cameraFov = 45;
 		}
 
-		// GSAP animations work on both mobile and desktop
 		const sections = gsap.utils.toArray('section:not(.hero-section)');
 
 		sections.forEach((section: any) => {
@@ -294,16 +275,6 @@
 						boxShadow: `0 30px 60px rgba(11, 157, 217, 0.2)`,
 						borderColor: 'rgba(11, 157, 217, 0.4)'
 					});
-
-					const glow = card.querySelector('.bg-brand-blue\\/5');
-					if (glow) {
-						gsap.to(glow, {
-							opacity: 1,
-							x: x * 0.2,
-							y: y * 0.2,
-							duration: 0.4
-						});
-					}
 				});
 
 				card.addEventListener('mouseleave', () => {
@@ -318,16 +289,6 @@
 						boxShadow: 'none',
 						borderColor: 'rgba(255, 255, 255, 0.05)'
 					});
-
-					const glow = card.querySelector('.bg-brand-blue\\/5');
-					if (glow) {
-						gsap.to(glow, {
-							opacity: 0,
-							x: 0,
-							y: 0,
-							duration: 0.6
-						});
-					}
 				});
 			});
 		});
@@ -341,9 +302,7 @@
 			onUpdate: (self) => {
 				scrollProgress = self.progress;
 				sceneRotation = self.progress * Math.PI * 2;
-				// Zoom in/out effect - scale from 1.8 to 1.2 as you scroll down
 				sceneScale = 1.8 - self.progress * 0.6;
-				// Move scene backward as you scroll to create depth effect
 				scenePosition = [0, 0, -self.progress * 2];
 				ecosystemOpacity = 1 - self.progress * 0.15;
 				sceneRotationX = self.progress * Math.PI * 0.15;
@@ -364,7 +323,6 @@
 		if (window.location.hash) {
 			const id = window.location.hash.replace('#', '');
 
-			// Instant jump early
 			setTimeout(() => {
 				const el = document.getElementById(id);
 				if (el) {
@@ -372,7 +330,6 @@
 				}
 			}, 10);
 
-			// Fallback jump after canvas starts loading to skip scrolling transitions
 			setTimeout(() => {
 				const el = document.getElementById(id);
 				if (el) {
@@ -380,7 +337,6 @@
 				}
 			}, 300);
 
-			// Final strict instant jump
 			setTimeout(() => {
 				const el = document.getElementById(id);
 				if (el) {
@@ -393,6 +349,11 @@
 	function link(path: string) {
 		const currentLang = (data as any)?.lang;
 		let finalPath = path;
+
+		if (path.startsWith('#')) {
+			// Anchor links must stay on the current page
+			return path;
+		}
 
 		if (path.startsWith('/') && !path.startsWith(base)) {
 			finalPath = `${base}${path}`;
@@ -407,25 +368,51 @@
 		return finalPath;
 	}
 
+	// WhatsApp helper — one real number, launch-offer message
+	function waLink(customMsg?: string) {
+		const isAr = (data as any)?.lang === 'ar';
+		const msg = customMsg || (isAr ? 'مرحبًا، أبغى أستفسر عن عرض الإطلاق' : 'Hi, I would like to ask about the launch offer');
+		return `https://wa.me/966576944605?text=${encodeURIComponent(msg)}`;
+	}
+
 	let pageData = $derived(data as any);
 	let isAr = $derived(pageData?.lang === 'ar');
-	let metaTitle = $derived(isAr ? 'شركة تصميم مواقع في الرياض — BOSLA' : 'Web Design Company Riyadh — BOSLA');
-	let metaDesc = $derived(isAr ? 'شركة تصميم وتطوير مواقع إلكترونية في الرياض. نبني مواقع ووردبريس، متاجر شوبيفاي وسلة، ونقدم خدمات تحسين محركات البحث للشركات السعودية.' : 'Web design and development company in Riyadh. We build WordPress websites, Shopify and Salla stores, and provide SEO services for Saudi businesses.');
+	let metaTitle = $derived(isAr ? 'بوصلة تك — موقعك جاهز خلال 48 ساعة' : 'Bosla Tech — Your Website in 48 Hours');
+	let metaDesc = $derived(
+		isAr
+			? 'نبني مواقع ومتاجر إلكترونية من الصفر ببرمجة حديثة، نسلمها في وقت قياسي، وتبقى ملكك بالكامل بدون اشتراك شهري.'
+			: 'We build websites and online stores from scratch with modern code — delivered in record time, fully owned by you with no monthly subscription.'
+	);
+
+	// Work gallery items: project images with name + type only
+	const workItems = $derived.by(() => {
+		const clients = (pageData?.clients?.images || []) as string[];
+		const flat = clients.filter(Boolean).slice(0, 12);
+		return flat.map((src: string, i: number) => {
+			const name = decodeURIComponent(src.split('/').pop() || '')
+				.replace(/\.[a-zA-Z0-9-]+$/, '')
+				.replace(/[-_%\d\s]+/g, ' ')
+				.trim();
+			return {
+				src,
+				name: name || (isAr ? 'مشروعنا' : 'Our project'),
+				type: i % 2 === 0 ? (isAr ? 'موقع شركة' : 'Corporate website') : (isAr ? 'متجر إلكتروني' : 'Online store')
+			};
+		});
+	});
 </script>
 
 <svelte:head>
-	<title>{metaTitle || `${pageData?.site?.siteName} — ${pageData?.site?.tagline}`}</title>
-	<meta name="description" content={metaDesc || pageData?.site?.description} />
+	<title>{metaTitle}</title>
+	<meta name="description" content={metaDesc} />
 </svelte:head>
 
 <div
 	bind:this={pageContainer}
 	class="min-h-[100svh] w-full overflow-x-hidden bg-[var(--color-background)] text-[var(--color-text-base)] transition-colors duration-1000 selection:bg-brand-blue/30"
 >
-	<!-- 3D Sticky Scope: Hero + Features -->
+	<!-- 3D Sticky Scope: Hero + Benefits -->
 	<div class="relative">
-		<!-- 3D Background Layer - Fixed to viewport, covering hero section -->
-		<!-- Canvas loads after delay for fast FCP -->
 		<div
 			bind:this={hero3DContainer}
 			class="hero-3d pointer-events-none fixed top-0 left-0 z-0 h-[120svh] w-full overflow-hidden will-change-transform"
@@ -439,76 +426,73 @@
 			/>
 		</div>
 
-		<!-- Foreground Content -->
 		<div class="relative z-10">
-			<!-- Hero Section -->
+			<!-- 1. Hero Section -->
 			<section
 				class="hero-section relative flex min-h-[100svh] items-center pt-20"
 				dir={(data as any)?.lang === 'ar' ? 'rtl' : 'ltr'}
 			>
 				<div class="relative z-10 container mx-auto flex flex-col items-center px-6 md:px-12">
 					<div class="hero-content max-w-5xl text-center">
-						<!-- Glass Background Wrapper with 3D Tilt -->
 						<div
 							bind:this={heroGlassCard}
 							class="cinematic-glass group/card relative space-y-10 overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-8 md:p-16"
 						>
 							<div class="relative z-10 space-y-10" dir={data.lang === 'ar' ? 'rtl' : 'ltr'}>
-								<!-- Badge and CTAs stay outside {#key} to update instantly via Svelte reactivity -->
+								<!-- Launch offer badge -->
 								<div
-									class="hero-badge cinematic-glass relative z-10 mx-auto mb-4 inline-flex items-center gap-3 rounded-full border border-[var(--glass-border)] px-6 py-2"
+									class="hero-badge cinematic-glass relative z-10 mx-auto mb-4 inline-flex items-center gap-3 rounded-full border border-brand-orange/40 bg-brand-orange/10 px-6 py-2"
 								>
 									<Sparkles class="h-4 w-4 text-brand-orange" />
 									<span
-										class="hero-badge-text text-xs font-black tracking-widest text-[var(--color-text-base)] uppercase opacity-80"
+										class="hero-badge-text text-xs font-black tracking-widest text-[var(--color-text-base)] uppercase opacity-90"
 									>
-										{data.home?.hero?.trustBadge?.badge1} • {data.home?.hero?.trustBadge?.badge2}
+										{data.home?.hero?.launchBadge}
 									</span>
 								</div>
 
 								{#key data.lang}
 									<div class="space-y-6">
 										<h1
-											class="hero-headline text-5xl leading-tight font-black tracking-tighter text-[var(--color-text-base)] md:text-7xl"
+											class="hero-headline text-4xl leading-tight font-black tracking-tighter text-[var(--color-text-base)] md:text-6xl"
 										>
 											{@html data.home?.hero?.headline}
 										</h1>
 
 										<p
-											class="hero-subheadline mx-auto max-w-2xl text-xl leading-relaxed font-medium text-[var(--color-text-muted)] md:text-2xl"
+											class="hero-subheadline mx-auto max-w-2xl text-lg leading-relaxed font-medium text-[var(--color-text-muted)] md:text-xl"
 										>
 											{data.home?.hero?.subheadline}
 										</p>
+
+										<!-- Fixed countdown to the real offer deadline -->
+										<OfferCountdown lang={data.lang} />
 									</div>
 								{/key}
 
 								<div class="hero-buttons flex flex-wrap items-center justify-center gap-6 pt-4">
 									<a
 										use:inView
-										href={link(data.home?.hero?.ctaPrimary?.href || '/contact')}
+										href={waLink()}
+										target="_blank"
+										rel="noopener noreferrer"
 										class="btn-primary group"
 									>
-										<span class="relative z-10 flex items-center gap-3">
+										<span class="relative z-10">
 											{data.home?.hero?.ctaPrimary?.label}
-											<ArrowRight
-												class="h-6 w-6 transition-transform duration-500 group-hover:translate-x-2 group-[.in-view]:translate-x-2"
-											/>
 										</span>
 									</a>
 
 									<a
 										use:inView
-										href="#services"
+										href="#our-work"
 										onclick={(e) => {
 											e.preventDefault();
-											document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+											document.getElementById('our-work')?.scrollIntoView({ behavior: 'smooth' });
 										}}
 										class="cinematic-glass group flex items-center gap-3 rounded-2xl border border-[var(--glass-border)] px-8 py-4 font-black text-[var(--color-text-base)] transition-all group-[.in-view]:bg-[var(--color-text-base)]/5 hover:bg-[var(--color-text-base)]/5"
 									>
 										<span>{data.home?.hero?.ctaSecondary?.label}</span>
-										<Sparkles
-											class="h-5 w-5 text-brand-orange transition-transform duration-500 group-hover:rotate-12 group-[.in-view]:rotate-12"
-										/>
 									</a>
 								</div>
 							</div>
@@ -517,21 +501,94 @@
 				</div>
 			</section>
 
-			<FeaturesSection {data} />
+			<!-- 2. Why Bosla — 3 cards only -->
+			<section id="benefits" class="relative py-24 md:py-32">
+				<div class="container mx-auto px-6">
+					<div class="mb-16 text-center">
+						<h2 class="text-4xl font-black tracking-tight text-[var(--color-text-base)] md:text-5xl">
+							{data.home?.benefits?.title}
+						</h2>
+					</div>
+					<div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+						{#each data.home?.benefits?.cards || [] as card}
+							<div class="interactive-card cinematic-glass rounded-[2rem] border border-[var(--glass-border)] p-8 text-center md:text-start">
+								<h3 class="mb-3 text-xl font-black text-brand-orange">{card.head}</h3>
+								<p class="mb-2 leading-relaxed font-medium text-[var(--color-text-muted)]">{card.text}</p>
+								{#if card.small}
+									<p class="text-xs font-bold text-[var(--color-text-muted)] opacity-70">{card.small}</p>
+								{/if}
+							</div>
+						{/each}
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
 
 	<!-- Rest of Content Sections Flow -->
 	<div class="relative z-10 bg-[var(--color-background)] transition-colors duration-1000">
-		<ServicesSection {data} />
-		<WhyChooseUsSection {data} />
+		<!-- 3. Our Work -->
+		<section id="our-work" class="relative py-24 md:py-32">
+			<div class="container mx-auto px-6">
+				<div class="mb-16 text-center">
+					<h2 class="mb-4 text-4xl font-black tracking-tight text-[var(--color-text-base)] md:text-5xl">
+						{data.home?.ourWork?.title}
+					</h2>
+					<p class="mx-auto max-w-xl font-medium text-[var(--color-text-muted)]">
+						{data.home?.ourWork?.subtitle}
+					</p>
+				</div>
+				<div class="mx-auto grid max-w-6xl grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+					{#each workItems as item (item.src)}
+						<a use:inView href={waLink()} target="_blank" rel="noopener noreferrer"
+							class="group relative overflow-hidden rounded-3xl border border-[var(--glass-border)] bg-[var(--color-surface)]">
+							<div class="flex aspect-square items-center justify-center overflow-hidden bg-white/90 p-6">
+								<img src={item.src} alt={item.name} loading="lazy" class="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" />
+							</div>
+							<div class="flex items-center justify-between gap-2 p-4">
+								<div class="min-w-0">
+									<p class="truncate text-sm font-black text-[var(--color-text-base)]">{item.name}</p>
+									<p class="text-xs font-bold text-[var(--color-text-muted)]">{item.type}</p>
+								</div>
+							</div>
+						</a>
+					{/each}
+				</div>
+			</div>
+		</section>
 
-		<SocialProofSection {data} />
-		<CtaSection {data} />
+		<!-- 4. How We Work — 3 steps -->
+		<section id="how-we-work" class="relative py-24 md:py-32">
+			<div class="container mx-auto px-6">
+				<div class="mb-16 text-center">
+					<h2 class="text-4xl font-black tracking-tight text-[var(--color-text-base)] md:text-5xl">
+						{data.home?.howWeWork?.title}
+					</h2>
+				</div>
+				<div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+					{#each data.home?.howWeWork?.steps || [] as step, i}
+						<div class="interactive-card cinematic-glass rounded-[2rem] border border-[var(--glass-border)] p-8">
+							<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-orange/15 text-2xl font-black text-brand-orange">
+								{String(i + 1).padStart(2, '0')}
+							</div>
+							<h3 class="mb-2 text-lg font-black text-[var(--color-text-base)]">{step.head}</h3>
+							<p class="leading-relaxed font-medium text-[var(--color-text-muted)]">{step.text}</p>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</section>
 
+		<!-- 5. Pricing -->
+		<PricingSection {data} />
+
+		<!-- 6. FAQ -->
 		{#key data.lang}
 			<FAQSection {data} />
 		{/key}
+
+		<!-- 7. Final CTA -->
+		<CtaSection {data} />
 	</div>
 </div>
 
@@ -564,12 +621,10 @@
 		}
 	}
 
-	/* Prevent SplitType from breaking the block layout */
 	:global(.hero-headline .char, .hero-subheadline .char) {
 		display: inline-block !important;
 	}
 
-	/* Hero content visible on first paint for fast LCP; GSAP still animates entry */
 	.hero-headline,
 	.hero-subheadline,
 	.hero-badge,
