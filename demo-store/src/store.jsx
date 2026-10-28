@@ -1,30 +1,67 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
-import { COUPON_CODE, COUPON_RATE, FREE_SHIP, SHIP_COST } from "./data/products";
+import { COUPON_CODE, COUPON_RATE, FREE_SHIP, SHIP_COST, PRODUCTS } from "./data/products";
+import { hydrate, read, write } from "./lib/storage";
 
 const ShopCtx = createContext(null);
-const load = (k, d) => {
-  try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d }
+const KEYS = ["asl_cart", "asl_wish", "asl_coupon", "asl_user", "asl_orders", "asl_reviews"];
+
+const mergeCart = (a = [], b = []) => {
+  const map = new Map(a.map((i) => [i.key, i]));
+  for (const i of b) map.set(i.key, i);
+  return [...map.values()];
+};
+
+const mergeOrders = (a = [], b = []) => {
+  const map = new Map();
+  for (const o of [...a, ...b]) map.set(o.id, o);
+  return [...map.values()].sort((x, y) => (y.ts || 0) - (x.ts || 0));
+};
+
+const mergeReviews = (a = {}, b = {}) => {
+  const out = { ...a };
+  for (const key of Object.keys(b)) {
+    const seen = new Set((out[key] || []).map((r) => r.ts));
+    out[key] = [...(b[key] || []).filter((r) => !seen.has(r.ts)), ...(out[key] || [])];
+  }
+  return out;
 };
 
 export function ShopProvider({ children }) {
-  const [cart, setCart] = useState(() => load("asl_cart", []));
-  const [wish, setWish] = useState(() => load("asl_wish", []));
-  const [coupon, setCoupon] = useState(() => load("asl_coupon", false));
-  const [user, setUser] = useState(() => load("asl_user", null));
-  const [orders, setOrders] = useState(() => load("asl_orders", []));
-  const [reviews, setReviews] = useState(() => load("asl_reviews", {}));
+  const [cart, setCart] = useState(() => read("asl_cart", []));
+  const [wish, setWish] = useState(() => read("asl_wish", []));
+  const [coupon, setCoupon] = useState(() => read("asl_coupon", false));
+  const [user, setUser] = useState(() => read("asl_user", null));
+  const [orders, setOrders] = useState(() => read("asl_orders", []));
+  const [reviews, setReviews] = useState(() => read("asl_reviews", {}));
+  const [ready, setReady] = useState(false);
   const [drawer, setDrawer] = useState(false);
-  const [checkout, setCheckout] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [toast, setToast] = useState(null);
   const tidRef = useRef(0);
 
-  useEffect(() => { localStorage.setItem("asl_cart", JSON.stringify(cart)); }, [cart]);
-  useEffect(() => { localStorage.setItem("asl_wish", JSON.stringify(wish)); }, [wish]);
-  useEffect(() => { localStorage.setItem("asl_coupon", JSON.stringify(coupon)); }, [coupon]);
-  useEffect(() => { localStorage.setItem("asl_user", JSON.stringify(user)); }, [user]);
-  useEffect(() => { localStorage.setItem("asl_orders", JSON.stringify(orders)); }, [orders]);
-  useEffect(() => { localStorage.setItem("asl_reviews", JSON.stringify(reviews)); }, [reviews]);
+  useEffect(() => {
+    let alive = true;
+    hydrate(KEYS)
+      .then((saved) => {
+        if (!alive) return;
+        if ("asl_cart" in saved) setCart((cur) => mergeCart(saved.asl_cart, cur));
+        if ("asl_wish" in saved) setWish((cur) => [...new Set([...(saved.asl_wish || []), ...cur])]);
+        if ("asl_coupon" in saved) setCoupon((cur) => cur || saved.asl_coupon);
+        if ("asl_user" in saved) setUser((cur) => cur || saved.asl_user);
+        if ("asl_orders" in saved) setOrders((cur) => mergeOrders(saved.asl_orders, cur));
+        if ("asl_reviews" in saved) setReviews((cur) => mergeReviews(saved.asl_reviews, cur));
+      })
+      .catch(() => {})
+      .finally(() => { if (alive) setReady(true); });
+    return () => { alive = false; };
+  }, []);
+
+  useEffect(() => { if (ready) write("asl_cart", cart); }, [cart, ready]);
+  useEffect(() => { if (ready) write("asl_wish", wish); }, [wish, ready]);
+  useEffect(() => { if (ready) write("asl_coupon", coupon); }, [coupon, ready]);
+  useEffect(() => { if (ready) write("asl_user", user); }, [user, ready]);
+  useEffect(() => { if (ready) write("asl_orders", orders); }, [orders, ready]);
+  useEffect(() => { if (ready) write("asl_reviews", reviews); }, [reviews, ready]);
 
   const ping = useCallback((msg) => {
     const id = ++tidRef.current;
@@ -32,31 +69,29 @@ export function ShopProvider({ children }) {
     setTimeout(() => setToast((t) => (t && t.id === id ? null : t)), 2400);
   }, []);
 
-  const signup = useCallback(({ name, phone }) => {
-    setUser({ name: name.trim(), phone: phone.trim(), city: "", district: "", street: "" });
+  const signup = useCallback(({ name, phone, email }) => {
+    setUser({ name: name.trim(), phone: phone.trim(), email: (email || "").trim(), city: "", district: "", street: "" });
     setAuthOpen(false);
     ping(`أهلًا ${name.trim()}! حسابك جاهز ✓`);
     return true;
   }, [ping]);
 
-  const login = useCallback(({ name, phone }) => {
+  const login = useCallback(({ name, phone, email }) => {
     const nm = (name || "").trim();
     setUser((u) => ({
       name: nm || u?.name || "عميل أصل",
       phone: (phone || u?.phone || "").trim(),
+      email: (email || u?.email || "").trim(),
       city: u?.city || "", district: u?.district || "", street: u?.street || "",
     }));
     setAuthOpen(false);
     ping("تم تسجيل الدخول ✓");
     return true;
-  }, [ping]);const logout = useCallback(() => {
+  }, [ping]);
+
+  const logout = useCallback(() => {
     setUser(null);
-    // Clear cart and wishlist from state + localStorage so new session starts fresh
-    setCart([]);
-    setWish([]);
-    localStorage.removeItem("asl_cart");
-    localStorage.removeItem("asl_wish");
-    ping("تسجلت الخروج —نراك قريب");
+    ping("تم تسجيل الخروج — نراك قريبًا");
   }, [ping]);
 
   const updateUser = useCallback((patch) => {
@@ -68,6 +103,10 @@ export function ShopProvider({ children }) {
     setReviews((m) => ({ ...m, [pid]: [{ ...rv, ts: Date.now() }, ...(m[pid] || [])] }));
   }, [ping]);
 
+  const updateOrder = useCallback((id, patch) => {
+    setOrders((list) => list.map((o) => (o.id === id ? { ...o, ...patch } : o)));
+  }, []);
+
   const placeOrder = useCallback((order) => {
     setOrders((o) => [order, ...o]);
     setCart([]);
@@ -76,28 +115,34 @@ export function ShopProvider({ children }) {
   }, []);
 
   const addToCart = useCallback((p, opts = {}) => {
-    if (!user) { ping(`تسجيل الدخول أولاً لإضافة للسلة`); return; }
     const key = `${p.id}|${opts.color !== undefined ? opts.color : ""}|${opts.size !== undefined ? opts.size : ""}`;
+    const step = Math.max(1, opts.qty || 1);
+    const max = p.stock ?? 99;
     setCart((c) => {
       const i = c.findIndex((x) => x.key === key);
-      if (i > -1) { const n = [...c]; n[i] = { ...n[i], qty: n[i].qty + 1 }; return n }
-      return [...c, { key, id: p.id, qty: 1, color: opts.color, size: opts.size }];
+      if (i > -1) {
+        const n = [...c];
+        n[i] = { ...n[i], qty: Math.min(max, n[i].qty + step) };
+        return n;
+      }
+      return [...c, { key, id: p.id, qty: Math.min(max, step), color: opts.color, size: opts.size }];
     });
     ping(`«${p.name}» انضاف للسلة ✓`);
-  }, [ping, user]);
+  }, [ping]);
 
   const toggleWish = useCallback((p) => {
-    if (!user) { ping(`تسجيل الدخول أولاً للمفضلة`); return; }
     setWish((w) => {
       const has = w.includes(p.id);
-      ping(has ? `«${p.name}» خرجت من المفضلة` : `«${p.name}» دخلت المفضلة ♥`);
+      ping(has ? `«${p.name}» خرج من المفضلة` : `«${p.name}» انضاف للمفضلة ♥`);
       return has ? w.filter((i) => i !== p.id) : [...w, p.id];
     });
-  }, [ping, user]);
+  }, [ping]);
 
   const setQty = useCallback((key, d) => {
+    const id = Number(key.split("|")[0]);
+    const max = PRODUCTS.find((p) => p.id === id)?.stock ?? 99;
     setCart((c) => c
-      .map((i) => (i.key === key ? { ...i, qty: i.qty + d } : i))
+      .map((i) => (i.key === key ? { ...i, qty: Math.min(max, i.qty + d) } : i))
       .filter((i) => i.qty > 0));
   }, []);
 
@@ -112,11 +157,10 @@ export function ShopProvider({ children }) {
   return (
     <ShopCtx.Provider
       value={{
-        cart, wish, coupon, drawer, checkout, toast, user, orders, reviews, authOpen,
+        cart, wish, coupon, drawer, toast, user, orders, reviews, authOpen,
         openDrawer: () => setDrawer(true), closeDrawer: () => setDrawer(false),
-        openCheckout: () => setCheckout(true), closeCheckout: () => setCheckout(false),
         openAuth: () => setAuthOpen(true), closeAuth: () => setAuthOpen(false),
-        signup, login, logout, updateUser, addUserReview, placeOrder,
+        signup, login, logout, updateUser, addUserReview, placeOrder, updateOrder,
         addToCart, toggleWish, setQty, removeItem, applyCoupon, ping,
       }}
     >

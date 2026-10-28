@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import { useShop } from "../store";
@@ -7,7 +6,7 @@ import { riyal } from "../data/products";
 const STATUSES = ["قيد التجهيز", "تم الشحن", "تم التوصيل"];
 
 export default function Account() {
-  const { user, openAuth, orders, updateUser, logout, toast, ping } = useShop();
+  const { user, openAuth, orders, updateUser, logout } = useShop();
 
   // If user is not logged in, show login prompt and return early
   if (!user) {
@@ -15,21 +14,16 @@ export default function Account() {
       <div className="mx-auto max-w-md px-5 py-32 text-center">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="text-6xl mb-5">🔐</motion.div>
         <h1 className="text-2xl font-black mb-2">حسابك ينتظرك</h1>
-        <p className="text-muted font-bold text-[13.5px] mb-7 leading-7">سجّل أول — حساب تجريبي بأي رقم سعودي (05xxxxxxxx) وكلمة سر، بدقائق تلقى طلباتك وملفك الشخصي.</p>
+        <p className="text-muted font-bold text-[13.5px] mb-7 leading-7">سجّل أولًا — حساب تجريبي بأي رقم سعودي (05xxxxxxxx) وكلمة سر، بدقائق تلقى طلباتك وملفك الشخصي.</p>
         <motion.button whileTap={{ scale: 0.96 }} onClick={openAuth} className="bg-green2 text-cream font-black px-8 py-3.5 rounded-2xl cursor-pointer shadow-lg shadow-green2/20">فتح التسجيل</motion.button>
       </div>
     );
   }
 
-  const patch = ["name", "phone", "city", "district", "street"];
+  const patch = ["name", "phone", "email", "city", "district", "street"];
 
   return (
     <div className="mx-auto max-w-4xl px-5 pt-10 pb-24">
-      {toast && (
-        <div className="fixed top-4 right-4 bg-green2 text-cream px-6 py-3 rounded-3xl text-[13px] font-black shadow-lg shadow-green2/20 animate-in fade-in-0 duration-500 w-full max-w-xs z-50">
-          {toast.msg}
-        </div>
-      )}
       <div className="flex items-center justify-between mb-8 flex-wrap gap-3">
         <div>
           <p className="text-[12px] font-black text-gold mb-1">✦ حسابي</p>
@@ -49,6 +43,8 @@ export default function Account() {
               <input defaultValue={user.name} id="up-name" className="mt-1 w-full bg-cream border border-line rounded-2xl px-4 py-3 text-[13.5px] font-bold outline-none focus:border-green2" /></label>
             <label className="block"><span className="text-[11.5px] font-black text-muted">الجوال</span>
               <input defaultValue={user.phone} id="up-phone" dir="ltr" className="mt-1 w-full bg-cream border border-line rounded-2xl px-4 py-3 text-[13.5px] font-bold text-left outline-none focus:border-green2" /></label>
+            <label className="block"><span className="text-[11.5px] font-black text-muted">البريد الإلكتروني</span>
+              <input defaultValue={user.email} id="up-email" dir="ltr" type="email" className="mt-1 w-full bg-cream border border-line rounded-2xl px-4 py-3 text-[13.5px] font-bold text-left outline-none focus:border-green2" placeholder="name@example.com" /></label>
             <div className="grid grid-cols-2 gap-3">
               <label className="block"><span className="text-[11.5px] font-black text-muted">المدينة</span>
                 <input defaultValue={user.city} id="up-city" className="mt-1 w-full bg-cream border border-line rounded-2xl px-4 py-3 text-[13.5px] font-bold outline-none focus:border-green2" /></label>
@@ -74,8 +70,8 @@ export default function Account() {
           {orders.length === 0 ? (
             <div className="text-center py-8">
               <div className="text-4xl mb-3">📦</div>
-              <p className="text-muted font-bold text-[13px] mb-4">ما فيه طلبات بعد — حدودك تنتظرك في المتجر.</p>
-              <Link to="/shop" className="inline-block text-gold font-black text-[12.5px] underline underline-offset-4">تسوّق الحين ←</Link>
+              <p className="text-muted font-bold text-[13px] mb-4">ما فيه طلبات بعد — عطورنا تنتظرك في المتجر.</p>
+              <Link to="/shop" className="inline-block text-gold font-black text-[12.5px] underline underline-offset-4">تسوّق الآن ←</Link>
             </div>
           ) : (
             <div className="space-y-3 max-h-104 overflow-y-auto no-scrollbar">
@@ -92,7 +88,7 @@ export default function Account() {
                     {o.items.map((it) => `${it.name} ×${it.qty}`).join(" · ")}
                   </p>
                   <div className="flex justify-between text-[12.5px] font-black">
-                    <span className="text-muted">{new Date(o.ts).toLocaleDateString("ar-SA", { day: "numeric", month: "long" })}</span>
+                    <span className="text-muted">{new Date(o.ts).toLocaleDateString("ar-SA-u-ca-gregory-nu-latn", { day: "numeric", month: "long" })}</span>
                     <b className="text-green2">{riyal(o.totals.total)} ر.س</b>
                   </div>
                 </motion.div>

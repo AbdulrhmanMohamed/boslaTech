@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReducedMotion, useScroll, useTransform, useSpring, useMotionValue } from "motion/react";
 import { Link, useLocation } from "react-router";
 import { motion } from "motion/react";
@@ -8,6 +8,7 @@ const WA_NUMBER = "+966576944605";
 
 const heroImg = "https://images.pexels.com/photos/36389336/pexels-photo-36389336.jpeg?auto=compress&cs=tinysrgb&w=600";
 const oudImg = "https://images.pexels.com/photos/40382309/pexels-photo-40382309.jpeg?auto=compress&cs=tinysrgb&w=600";
+const heroVideoMP4 = "https://videos.pexels.com/video-files/8447560/8447560-hd_720_1366_25fps.mp4";
 
 function Lines({ lines, cls = "" }) {
   return (
@@ -32,12 +33,17 @@ export default function Contact() {
   const { pathname } = useLocation();
   const reduce = useReducedMotion();
   const heroRef = useRef(null);
+  const videoRef = useRef(null);
+  const [sent, setSent] = useState(false);
 
   // scroll-linked parallax for hero art
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
 
   // Scroll-driven video playback speed: 1.0 (start) to 0.5 (at end of hero) — subtle slowdown
   const heroVideoSpeed = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  useEffect(() => heroVideoSpeed.on("change", (v) => {
+    if (videoRef.current) videoRef.current.playbackRate = v;
+  }), [heroVideoSpeed]);
 
   // Video poster/image fallback for mute/autoplay issues
   const videoPoster = "https://images.pexels.com/photos/10924522/pexels-photo-10924522.jpeg?auto=compress&cs=tinysrgb&w=1600";
@@ -66,13 +72,11 @@ export default function Contact() {
     <div className="overflow-clip">
       {/* ══════════ HERO ══════════ */}
       <section ref={heroRef} onMouseMove={onMouse}
-        className="relative min-h-[100svh] flex items-center justify-center text-center px-5">
+        className="relative min-h-[72svh] md:min-h-[100svh] flex items-center justify-center text-center px-5">
         {/* video background with scroll interaction */}
-        <video autoPlay mute="true" loop preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ videoPlaybackSpeed: heroVideoSpeed }}
-        >
-          <img src={videoPoster} alt="اتصال وخدمة work" className="w-full h-full object-cover" />
+        <video ref={videoRef} autoPlay muted loop playsInline preload="metadata" poster={videoPoster}
+          aria-hidden="true" className="absolute inset-0 w-full h-full object-cover">
+          <source src={heroVideoMP4} type="video/mp4" />
         </video>
         {/* ambient */}
         <div className="absolute inset-0 -z-10">
@@ -98,7 +102,7 @@ export default function Contact() {
 
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75, duration: 0.7, ease }}
             className="mt-5 text-muted font-bold text-lg max-w-md mx-auto">
-            يمكنك التواصل معنا عبر الهاتف أو الواتساب أو إرسال-message، ونحن نرد خلال وقت سريع.
+            تقدر تتواصل معنا عبر الهاتف أو الواتساب أو ترسل رسالة، ونرد عليك في أقرب وقت.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.7, ease }}
@@ -107,7 +111,7 @@ export default function Contact() {
               href={`https://wa.me/${WA_NUMBER.replace("+", "")}`} >
               واتساب
             </motion.a>
-            <motion.a className="bg-white/80 border border-ink/70 font-black px-8 py-4 rounded-2xl" strength={0.25} whileHover={{ x: 10 }}
+            <motion.a className="bg-white/80 border border-ink/70 font-black px-8 py-4 rounded-2xl" whileHover={{ x: 10 }}
               href="tel:+966576944605">
               هاتف
             </motion.a>
@@ -218,11 +222,25 @@ export default function Contact() {
               className="text-[15px] font-bold text-cream/80 leading-8 mb-6">
               املأ النموذج التالي وسنتواصل معك في غضون ساعة.
             </motion.p>
-            <form className="space-y-4">
+            {sent ? (
+              <div className="text-center bg-cream/10 border border-gold/40 rounded-2xl p-8">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gold text-ink grid place-items-center text-xl font-black">✓</div>
+                <p className="font-black text-lg mb-2">وصلت رسالتك</p>
+                <p className="text-cream/75 text-[13px] font-bold leading-6">
+                  شكرًا لتواصلك، بنرد عليك خلال 24 ساعة. وإذا تحتاج رد أسرع، كلّمنا على واتساب مباشرة.
+                </p>
+                <button onClick={() => setSent(false)} className="mt-5 text-[12.5px] font-black text-gold underline underline-offset-4">
+                  إرسال رسالة أخرى
+                </button>
+              </div>
+            ) : (
+            <form className="space-y-4" onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
               <div>
                 <label className="block text-[12px] font-black mb-2 text-gold">اسمك الكامل</label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="اسمك الكامل"
                   className="w-full px-4 py-3 border border-green/30 rounded-xl bg-cream/10 text-cream placeholder:text-cream/50 outline-none focus:border-gold transition-colors"
                 />
@@ -231,6 +249,8 @@ export default function Contact() {
                 <label className="block text-[12px] font-black mb-2 text-gold">البريد الإلكتروني</label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="بريدك الإلكتروني"
                   className="w-full px-4 py-3 border border-green/30 rounded-xl bg-cream/10 text-cream placeholder:text-cream/50 outline-none focus:border-gold transition-colors"
                 />
@@ -239,7 +259,9 @@ export default function Contact() {
                 <label className="block text-[12px] font-black mb-2 text-gold">الرسالة</label>
                 <textarea
                   rows={3}
-                  placeholder="رسالَتكم معنا..."
+                  name="message"
+                  required
+                  placeholder="اكتب رسالتك هنا..."
                   className="w-full px-4 py-3 border border-green/30 rounded-xl bg-cream/10 text-cream placeholder:text-cream/50 outline-none focus:border-gold transition-colors resize-none"
                 />
               </div>
@@ -250,6 +272,7 @@ export default function Contact() {
                 إرسال الرسالة
               </button>
             </form>
+            )}
             <div className="mt-4 text-center">
               <Link
                 to="/"
@@ -269,7 +292,7 @@ export default function Contact() {
             <div>
               <div className="text-3xl text-gold mb-2">🕐</div>
               <div className="text-xl font-black">ساعات العمل</div>
-              <p className="text-[13px] text-ink/80">الأحد - الخميس: 9 صـــ 6 م</p>
+              <p className="text-[13px] text-ink/80">الأحد – الخميس: 9 صباحًا – 6 مساءً</p>
             </div>
             <div>
               <div className="text-3xl text-gold mb-2">📍</div>

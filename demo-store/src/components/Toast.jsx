@@ -12,7 +12,8 @@ export default function Toast() {
           animate={{ y: 0, opacity: 1, scale: 1 }}
           exit={{ y: 40, opacity: 0, scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 26 }}
-          className="fixed bottom-6 inset-x-0 mx-auto w-fit z-[110] bg-ink text-cream text-sm font-extrabold px-5 py-3 rounded-full shadow-xl pointer-events-none"
+          role="status" aria-live="polite"
+          className="fixed bottom-20 inset-x-0 mx-auto w-fit z-[110] bg-ink text-cream text-sm font-extrabold px-5 py-3 rounded-full shadow-xl pointer-events-none"
         >
           {toast.msg}
         </motion.div>

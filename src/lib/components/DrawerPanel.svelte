@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto, invalidate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { X, Globe, MessageSquare, ArrowRight, ChevronDown } from '@lucide/svelte';
+	import { X, Globe, MessageSquare, ArrowRight, ChevronDown, ExternalLink } from '@lucide/svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { cubicOut } from 'svelte/easing';
 	import ThemeToggle from './ThemeToggle.svelte';
@@ -238,6 +238,29 @@
 										{/if}
 									</a>
 								{/each}
+
+								<a
+									href="https://demo.boslatech.com"
+									target="_blank"
+									rel="noopener noreferrer"
+									onclick={handleNavClick}
+									class="group relative mt-2 flex items-center justify-between rounded-2xl border border-brand-orange/30 bg-brand-orange/10 px-6 py-4 text-brand-orange transition-all duration-300 hover:bg-brand-orange/15 {props.lang ===
+									'ar'
+										? 'flex-row-reverse'
+										: ''}"
+								>
+									<span class="flex items-center gap-2 text-lg font-black tracking-tight">
+										<span class="relative flex h-2 w-2">
+											<span
+												class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75"
+											></span>
+											<span class="relative inline-flex h-2 w-2 rounded-full bg-brand-orange"
+											></span>
+										</span>
+										{props.lang === 'ar' ? 'جرّب المتجر التجريبي' : 'Try the Demo Store'}
+									</span>
+									<ExternalLink class="h-5 w-5" />
+								</a>
 							</div>
 						{:else if currentView === 'categories'}
 							<div class="space-y-3">

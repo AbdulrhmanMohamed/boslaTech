@@ -27,8 +27,8 @@
 			"@context": "https://schema.org",
 			"@type": "BreadcrumbList",
 			"itemListElement": [
-				{ "@type": "ListItem", "position": 1, "name": isAr ? 'الرئيسية' : 'Home', "item": "https://hafatalnjom.com" },
-				{ "@type": "ListItem", "position": 2, "name": isAr ? 'الأدلة الشاملة' : 'Guides", "item": "https://hafatalnjom.com/guides" },
+				{ "@type": "ListItem", "position": 1, "name": isAr ? 'الرئيسية' : 'Home', "item": "https://boslatech.com" },
+				{ "@type": "ListItem", "position": 2, "name": isAr ? 'الأدلة الشاملة' : 'Guides', "item": "https://boslatech.com/guides" },
 				{ "@type": "ListItem", "position": 3, "name": guide?.title || '' }
 			]
 		})}

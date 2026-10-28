@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 
 /* Magnetic hover button — pulls toward the cursor, snaps back on leave */
-export default function Magnetic({ children, className = "", strength = 0.35, as = "button", glow = false, ...rest }) {
+export default function Magnetic({ children, className = "", strength = 0.35, as = "div", glow = false, ...rest }) {
   const ref = useRef(null);
   const x = useSpring(useMotionValue(0), { stiffness: 220, damping: 16, mass: 0.4 });
   const y = useSpring(useMotionValue(0), { stiffness: 220, damping: 16, mass: 0.4 });

@@ -112,6 +112,22 @@
 								</a>
 							{/each}
 						</nav>
+
+						<a
+							href="https://demo.boslatech.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-2 text-xs font-black text-brand-orange transition-colors hover:bg-brand-orange/20"
+						>
+							<span class="relative flex h-2 w-2">
+								<span
+									class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75"
+								></span>
+								<span class="relative inline-flex h-2 w-2 rounded-full bg-brand-orange"></span>
+							</span>
+							{data.lang === 'ar' ? 'جرّب المتجر التجريبي' : 'Try the Demo Store'}
+							<ArrowUpRight class="h-4 w-4" />
+						</a>
 					</div>
 
 					<!-- Services Mini Grid -->

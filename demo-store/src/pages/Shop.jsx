@@ -2,9 +2,16 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
 import ProductCard from "../components/ProductCard";
-import { PRODUCTS, CATEGORIES, riyal } from "../data/products";
+import { PRODUCTS, CATEGORIES, catName, riyal, FREE_SHIP } from "../data/products";
 
-const cats = CATEGORIES.filter((c) => c.id !== "all");
+const norm = (s) => s
+  .toLowerCase()
+  .replace(/[\u064B-\u0652\u0670]/g, "")
+  .replace(/[أإآ]/g, "ا")
+  .replace(/ة/g, "ه")
+  .replace(/ى/g, "ي")
+  .replace(/\s+/g, " ")
+  .trim();
 const sorts = [
   { id: "featured", label: "المميزة" },
   { id: "cheap", label: "الأرخص أول" },
@@ -20,7 +27,10 @@ export default function Shop() {
 
   const list = useMemo(() => {
     let l = cat === "all" ? PRODUCTS : PRODUCTS.filter((p) => p.cat === cat);
-    if (q.trim()) l = l.filter((p) => (p.name + p.brief).includes(q.trim()));
+    if (q.trim()) {
+      const needle = norm(q);
+      l = l.filter((p) => norm(`${p.name} ${p.brief} ${catName(p.cat)}`).includes(needle));
+    }
     if (sort === "cheap") l = [...l].sort((a, b) => a.price - b.price);
     if (sort === "pricey") l = [...l].sort((a, b) => b.price - a.price);
     if (sort === "rate") l = [...l].sort((a, b) => b.rating - a.rating);
@@ -52,8 +62,16 @@ export default function Shop() {
             </button>
           ))}
           <div className="h-6 w-px bg-line mx-1 max-sm:hidden" />
-          <input value={q} onChange={(e) => setQ(e.target.value)} dir="rtl" placeholder="دوّر على منتج…"
-            className="bg-white border border-line rounded-xl px-3.5 py-2 text-[13px] font-bold outline-none focus:border-gold w-40" />
+          <div className="relative">
+            <input value={q} onChange={(e) => setQ(e.target.value)} aria-label="ابحث في المتجر" placeholder="ابحث عن منتج…"
+              className="bg-white border border-line rounded-xl pl-8 pr-3.5 py-2 text-[13px] font-bold outline-none focus:border-gold w-44" />
+            {q && (
+              <button onClick={() => setQ("")} aria-label="مسح البحث"
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-5 h-5 grid place-items-center rounded-full bg-sand text-muted text-[11px] font-black hover:text-ink">
+                ✕
+              </button>
+            )}
+          </div>
           <select value={sort} onChange={(e) => setSort(e.target.value)}
             className="bg-white border border-line rounded-xl px-3 py-2 text-[13px] font-bold outline-none cursor-pointer focus:border-gold">
             {sorts.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
@@ -82,8 +100,8 @@ export default function Shop() {
 
       {/* micro banner */}
       <div className="mt-16 bg-white border border-line rounded-3xl p-8 text-center">
-        <p className="font-black text-xl">شدّ نفسك — كوبون <span dir="ltr" className="text-gold">ASL10</span> يخصم 10%</p>
-        <p className="text-muted font-bold text-[13px] mt-1.5">أول طلب فوق {riyal(200)} ر.س يوصلك مع شحن مجاني</p>
+        <p className="font-black text-xl">كوبون <span dir="ltr" className="text-gold">ASL10</span> يخصم 10% على أول طلب</p>
+        <p className="text-muted font-bold text-[13px] mt-1.5">وكل طلب فوق {riyal(FREE_SHIP)} ر.س يوصلك بشحن مجاني</p>
       </div>
     </div>
   );

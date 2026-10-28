@@ -13,15 +13,15 @@ export default function Wishlist() {
       <div className="text-center mb-12">
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-gold font-black text-[13px] mb-2">♥ المفضلة</motion.p>
         <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="text-4xl font-black">
-          {list.length ? "اللي جمعت قلبك علينا" : "المفضلة تنتظرك"}
+          {list.length ? "قطعك المفضلة" : "المفضلة تنتظرك"}
         </motion.h1>
       </div>
 
       {list.length === 0 ? (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center py-24 bg-white border border-line rounded-3xl">
           <motion.div className="text-6xl mb-4" animate={{ scale: [1, 1.15, 1] }} transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}>🤍</motion.div>
-          <p className="font-black text-xl mb-2">بدأ المفضلة فاضية</p>
-          <p className="text-muted font-bold text-sm mb-8">اضغط القلب ♡ على أي منتج وينلقي هنا</p>
+          <p className="font-black text-xl mb-2">قائمة المفضلة فاضية</p>
+          <p className="text-muted font-bold text-sm mb-8">اضغط ♡ على أي منتج ويظهر هنا</p>
           <Link to="/shop" className="inline-block bg-green2 text-cream font-black px-9 py-3.5 rounded-2xl">اكتشف المجموعة ←</Link>
         </motion.div>
       ) : (

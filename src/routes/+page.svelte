@@ -1,6 +1,6 @@
 <script lang="ts">
 	// @ts-ignore - lucide types declared in src/app.d.ts for Svelte projects
-	import { Sparkles } from '@lucide/svelte';
+	import { Sparkles, ArrowUpRight } from '@lucide/svelte';
 	import { onMount, getContext } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { inView } from '$lib/actions/inView';
@@ -429,7 +429,7 @@
 		<div class="relative z-10">
 			<!-- 1. Hero Section -->
 			<section
-				class="hero-section relative flex min-h-[100svh] items-center pt-20"
+				class="hero-section relative flex min-h-[100svh] items-center pt-36"
 				dir={(data as any)?.lang === 'ar' ? 'rtl' : 'ltr'}
 			>
 				<div class="relative z-10 container mx-auto flex flex-col items-center px-6 md:px-12">
@@ -527,6 +527,8 @@
 
 	<!-- Rest of Content Sections Flow -->
 	<div class="relative z-10 bg-[var(--color-background)] transition-colors duration-1000">
+		<div class="ambient-glow" aria-hidden="true"></div>
+
 		<!-- 3. Our Work -->
 		<section id="our-work" class="relative py-24 md:py-32">
 			<div class="container mx-auto px-6">
@@ -554,6 +556,40 @@
 						</a>
 					{/each}
 				</div>
+
+				<!-- Live Demo Store -->
+				<a
+					use:inView
+					href="https://demo.boslatech.com"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="group relative mx-auto mt-12 flex max-w-6xl flex-col items-center gap-6 overflow-hidden rounded-3xl border border-brand-blue/20 bg-brand-blue/[0.04] p-8 transition-all duration-500 hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-xl md:flex-row md:justify-between md:p-10"
+				>
+					<div class="absolute inset-0 bg-brand-blue/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+					<div class="relative z-10 text-center md:text-start">
+						<span class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-blue/20 bg-brand-blue/10 px-4 py-1.5 text-xs font-black text-brand-blue">
+							<span class="relative flex h-2 w-2">
+								<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-blue opacity-75"></span>
+								<span class="relative inline-flex h-2 w-2 rounded-full bg-brand-blue"></span>
+							</span>
+							{isAr ? 'نسخة تجريبية مباشرة' : 'Live demo'}
+						</span>
+						<h3 class="text-xl font-black text-[var(--color-text-base)] md:text-2xl">
+							{isAr
+								? 'جرّب متجر «أصل» للعطور — مبني بالكامل من الصفر'
+								: 'Try the ASL perfume store — built entirely from scratch'}
+						</h3>
+						<p class="mx-auto mt-2 max-w-xl text-sm font-medium text-[var(--color-text-muted)] md:mx-0">
+							{isAr
+								? 'تصفّح المنتجات، أضف للسلة، وأكمل الشراء كعميل حقيقي — بدون فيديو أو صور ثابتة.'
+								: 'Browse products, add to cart, and check out like a real customer — no video or static mockups.'}
+						</p>
+					</div>
+					<span class="relative z-10 inline-flex shrink-0 items-center gap-2 rounded-full bg-brand-blue px-7 py-3.5 text-sm font-black text-white shadow-lg shadow-brand-blue/30 transition-transform duration-300 group-hover:scale-105">
+						{isAr ? 'افتح المتجر' : 'Open the store'}
+						<ArrowUpRight class="h-4 w-4" />
+					</span>
+				</a>
 			</div>
 		</section>
 

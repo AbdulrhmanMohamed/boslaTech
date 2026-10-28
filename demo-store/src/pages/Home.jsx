@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router";
 import {
   motion, useScroll, useTransform, useSpring, useMotionValue, useReducedMotion,
@@ -36,12 +36,16 @@ function Lines({ lines, cls = "" }) {
 export default function Home() {
   const reduce = useReducedMotion();
   const heroRef = useRef(null);
+  const videoRef = useRef(null);
 
   // scroll-linked parallax for hero art
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
 
   // Scroll-driven video playback speed: 1.0 (start) to 0.5 (at end of hero) — subtle slowdown
   const heroVideoSpeed = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  useEffect(() => heroVideoSpeed.on("change", (v) => {
+    if (videoRef.current) videoRef.current.playbackRate = v;
+  }), [heroVideoSpeed]);
 
   // Video poster/image fallback for mute/autoplay issues
   const videoPoster = "https://images.pexels.com/photos/10924522/pexels-photo-10924522.jpeg?auto=compress&cs=tinysrgb&w=1600";
@@ -82,12 +86,10 @@ export default function Home() {
       <section ref={heroRef} onMouseMove={onMouse}
         className="relative min-h-[100svh] flex items-center justify-center text-center px-5">
         {/* video background with scroll interaction */}
-        <video autoPlay mute loop preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ videoPlaybackSpeed: heroVideoSpeed }}
-        >
+        <video ref={videoRef} autoPlay muted loop playsInline preload="metadata" poster={videoPoster}
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover">
           <source src={videoSourceMP4} type="video/mp4" />
-          <img src={videoPoster} alt="عطور فاخرة - أوركيدز واود" className="w-full h-full object-cover" />
         </video>
         {/* ambient */}
         <div className="absolute inset-0 -z-10">
@@ -121,15 +123,15 @@ export default function Home() {
 
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75, duration: 0.7, ease }}
             className="mt-6 text-muted font-bold text-lg md:text-xl max-w-md mx-auto leading-8">
-            عطور شرقية غنية، وبخور العود الفاخر، وهدايا مُصنّعة بعناية — منتقاة بعناية من أرقى المصادر.
+            عطور شرقية غنية، وبخور عود فاخر، وهدايا مُغلّفة بعناية — منتقاة من أرقى المصادر.
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.9, duration: 0.7, ease }}
             className="mt-9 flex flex-wrap justify-center gap-4">
-            <Magnetic className="bg-green2 text-cream font-black px-10 py-4 rounded-2xl shadow-lg shadow-green2/25 glow-button">
+            <Magnetic className="bg-green2 text-cream font-black px-10 py-4 rounded-2xl shadow-lg shadow-green2/25">
               <Link to="/shop" className="text-[15px]">تسوّق المجموعة ←</Link>
             </Magnetic>
-            <Magnetic className="bg-white/80 border border-ink/70 font-black px-8 py-4 rounded-2xl glow-button" strength={0.25}>
+            <Magnetic className="bg-white/80 border border-ink/70 font-black px-8 py-4 rounded-2xl" strength={0.25}>
               <a href={`https://wa.me/${WA_NUMBER}`} className="text-[15px]">تواصل معنا</a>
             </Magnetic>
           </motion.div>
@@ -171,7 +173,7 @@ export default function Home() {
       </section>
 
       {/* ══════════ MARQUEE / BANNER ══════════ */}
-      <div className="border-y border-line bg-white py-4 overflow-x-auto no-scrollbar snap-x snap-mandatory" aria-hidden>
+      <div className="border-y border-line bg-white py-4 overflow-x-auto no-scrollbar snap-x snap-mandatory">
         <div className="flex gap-10 px-10 min-w-max">
           {["شحن مجاني فوق 200 ر.س", "كوبون ASL10 يخصم 10%", "أصالة 100% — وكلاء معتمدون", "توصيل 48 ساعة لكل المملكة", "استبدال خلال 14 يوم", "تغليف هدايا مجاني"].map((t) => (
             <span key={t} className="flex items-center gap-3 snap-center text-[13px] font-black text-green2/80 whitespace-nowrap">
@@ -189,7 +191,7 @@ export default function Home() {
               مجموعاتنا
             </motion.p>
             <motion.h2 initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.08, ease }} className="text-3xl md:text-4xl font-black">
-              ثلاث عبق، ثلاث روائح، ثلاث ذكريات
+              ثلاث مجموعات، ثلاث روائح، ثلاث ذكريات
             </motion.h2>
           </div>
         </div>
@@ -225,7 +227,7 @@ export default function Home() {
           {best.map((p, i) => <ProductCard key={p.id} p={p} i={i} />)}
         </div>
         <div className="text-center mt-10">
-          <Magnetic className="bg-ink text-cream font-black px-9 py-3.5 rounded-2xl text-[14px]" strength={0.3} glow-button>
+          <Magnetic className="bg-ink text-cream font-black px-9 py-3.5 rounded-2xl text-[14px] glow-button" strength={0.3}>
             <Link to="/shop">شوف المجموعة كاملة ←</Link>
           </Magnetic>
         </div>
@@ -239,14 +241,14 @@ export default function Home() {
             <div className="p-10 md:p-16">
               <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-gold font-black text-[13px] mb-3">لماذا أصل؟</motion.p>
               <motion.h2 initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, ease }} className="text-3xl md:text-4xl font-black leading-snug mb-5">
-                نختار بغرابة، ونبيع ببخل الدمج
+                نختار بعناية، ونصنع ذكرى
               </motion.h2>
               <motion.p initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.1, ease }} className="text-[15px] font-bold text-cream/80 leading-8 mb-8">
-                من عين على العطور لصلها في المكان، مع باكّات رآل للبوكيه — أصلة رابح بالريف.
-                اجمع المطلب مع لفائف البخور المشميلة علب هدية للبراءة الباكرة، والنتيجة؟
+                من أول قطرة عطر إلى آخر خيط في تغليف الهدية، نختار كل تفصيلة بعناية.
+                عطور شرقية وبخور عود أصيل، تصل إليك في تغليف يليق بالمناسبة.
               </motion.p>
               <motion.ul className="space-y-3 text-[13.5px] font-extrabold">
-                {["أصل من وكلاء معتمدين 100%", "تغليف هدايا مجاني بأي طلب", "استبدال خلال 14 يوم بدون أسئلة", "دفع آمن: مدى · Apple Pay · Visa"].map((t, i) => (
+                {["أصالة 100% من وكلاء معتمدين", "تغليف هدايا مجاني بأي طلب", "استبدال خلال 14 يوم بدون أسئلة", "دفع آمن: مدى · Apple Pay · Visa"].map((t, i) => (
                   <motion.li key={t} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 + i * 0.1 }} className="flex gap-3 items-center">
                     <span className="w-5 h-5 grid place-items-center rounded-full bg-gold text-ink text-[11px] font-black shrink-0">✓</span>{t}
                   </motion.li>
@@ -270,9 +272,9 @@ export default function Home() {
         <div className="flex gap-3 px-3 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4">
           {[
             { t: "أفضل عطر طلبته أونلاين بالسعودية، وصل بتغليف فخم خلال يومين.", n: "نورة. م", c: "الرياض" },
-            { t: "البخور ريحته سكت الدار كامل، قريبة من اللي نشريه من المستورد.", n: "أبو فيصل", c: "جدة" },
-            { t: "صينية الهدايا كانت سكّة عرس بنتي، الجميع سأل من وين.", n: "أم عبدالله", c: "الدمام" },
-            { t: "دعم سريع واستبدال بلا وجع راس، تسلمون عليه.", n: "سارة", c: "الخبر" },
+            { t: "البخور عطّر البيت كله، وريحته قريبة من اللي نشتريه من المستورد.", n: "أبو فيصل", c: "جدة" },
+            { t: "صينية الهدايا كانت هدية عرس بنتي، والكل سأل من وين.", n: "أم عبدالله", c: "الدمام" },
+            { t: "دعم سريع واستبدال بدون أي تعقيد، شكرًا لكم.", n: "سارة", c: "الخبر" },
           ].map((q, i) => (
             <motion.blockquote key={i} 
               whileHover={{ y: -5 }} 
@@ -290,7 +292,7 @@ export default function Home() {
         <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }}>
           <h2 className="text-4xl md:text-5xl font-black leading-tight">جاهز تشمّ الفرق؟</h2>
           <p className="text-muted font-bold mt-4 max-w-md mx-auto">اطلب اليوم وتوصيلك يكون عندك خلال 48 ساعة — والدفع كما تشاء.</p>
-          <Magnetic className="mt-9 inline-block bg-green2 text-cream font-black px-12 py-4.5 rounded-2xl text-lg shadow-lg shadow-green2/25 glow-button">
+          <Magnetic className="mt-9 inline-block bg-green2 text-cream font-black px-12 py-4.5 rounded-2xl text-lg shadow-lg shadow-green2/25">
             <Link to="/shop">ابدأ التسوق ←</Link>
           </Magnetic>
         </motion.div>

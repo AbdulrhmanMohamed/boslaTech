@@ -124,8 +124,8 @@
 			"@context": "https://schema.org",
 			"@type": "BreadcrumbList",
 			"itemListElement": [
-				{ "@type": "ListItem", "position": 1, "name": lang === 'ar' ? 'الرئيسية' : 'Home', "item": "https://hafatalnjom.com" },
-				{ "@type": "ListItem", "position": 2, "name": lang === 'ar' ? 'خدماتنا' : 'Our Services', "item": "https://hafatalnjom.com/services" },
+				{ "@type": "ListItem", "position": 1, "name": lang === 'ar' ? 'الرئيسية' : 'Home', "item": "https://boslatech.com" },
+				{ "@type": "ListItem", "position": 2, "name": lang === 'ar' ? 'خدماتنا' : 'Our Services', "item": "https://boslatech.com/services" },
 				{ "@type": "ListItem", "position": 3, "name": category?.name || '' }
 			]
 		})}

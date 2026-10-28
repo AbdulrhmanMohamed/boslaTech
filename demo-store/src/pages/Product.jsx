@@ -51,11 +51,15 @@ export default function Product() {
   const related = PRODUCTS.filter((x) => x.cat === p.cat && x.id !== p.id).slice(0, 4);
 
   const add = () => {
-    addToCart(p, { color: p.colors ? p.colors[color] : undefined, size: size || (p.sizes ? p.sizes[0] : undefined) });
+    addToCart(p, {
+      qty,
+      color: p.colors ? p.colors[color] : undefined,
+      size: size || (p.sizes ? p.sizes[0] : undefined),
+    });
   };
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-10 overflow-clip">
+    <div className="mx-auto max-w-6xl px-5 pt-10 pb-24 lg:pb-10 overflow-clip">
       {/* breadcrumbs */}
       <div className="text-[12.5px] font-bold text-muted mb-8 flex gap-2 items-center">
         <Link to="/" className="hover:text-green2">الرئيسية</Link> /
@@ -100,6 +104,12 @@ export default function Product() {
           </div>
           <h1 className="text-3xl md:text-4xl font-black leading-snug">{p.name}</h1>
           <p className="text-muted font-bold mt-2">{p.brief}</p>
+          <div className="mt-3 flex items-center gap-2 text-[11.5px] font-black">
+            {p.stock > 8
+              ? <span className="text-green2">✓ متوفر</span>
+              : <span className="text-gold">⚡ بقي {p.stock} فقط</span>}
+            <span className="text-muted font-bold">· توصيل خلال 48 ساعة</span>
+          </div>
 
           <div className="flex items-baseline gap-3 mt-5">
             <b className="text-green2 text-3xl font-black">{riyal(p.price)}</b>
@@ -138,9 +148,11 @@ export default function Product() {
           {/* qty + add + wish */}
           <div className="flex gap-3 mt-8">
             <div className="flex items-center gap-4 border border-line bg-white rounded-2xl px-4">
-              <button onClick={() => setQty((v) => Math.max(1, v + 1))} className="text-green2 text-lg cursor-pointer">＋</button>
+              <button onClick={() => setQty((v) => Math.min(p.stock ?? 99, v + 1))} disabled={qty >= (p.stock ?? 99)}
+                aria-label="زيادة الكمية" className="text-green2 text-lg cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed">＋</button>
               <b className="min-w-6 text-center">{qty}</b>
-              <button onClick={() => setQty((v) => Math.max(1, v - 1))} className="text-green2 text-lg cursor-pointer">－</button>
+              <button onClick={() => setQty((v) => Math.max(1, v - 1))} disabled={qty <= 1}
+                aria-label="تقليل الكمية" className="text-green2 text-lg cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed">－</button>
             </div>
             <motion.button whileTap={{ scale: 0.96 }} onClick={add}
               className="flex-1 bg-green2 text-cream font-black py-3.5 rounded-2xl hover:bg-green transition-colors cursor-pointer text-[15px] shadow-lg shadow-green2/20 glow-button">
@@ -194,6 +206,20 @@ export default function Product() {
           {related.map((r, i) => <ProductCard key={r.id} p={r} i={i} />)}
         </div>
       </section>
+
+      {/* sticky mobile add-to-cart */}
+      <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-cream/95 backdrop-blur border-t border-line px-4 py-3 flex items-center gap-3">
+        <div className="flex-1 leading-tight">
+          <b className="text-green2 text-lg font-black">{riyal(p.price * qty)}</b>
+          <span className="text-[11px] font-bold text-muted"> ر.س</span>
+          {p.old && <s className="text-[11px] font-bold text-muted/70 mr-2">{riyal(p.old)}</s>}
+          <div className="text-[10.5px] font-bold text-muted">شحن مجاني فوق {FREE_SHIP} ر.س</div>
+        </div>
+        <motion.button whileTap={{ scale: 0.96 }} onClick={add}
+          className="bg-green2 text-cream font-black px-6 py-3 rounded-xl text-[13.5px] shadow-lg shadow-green2/20">
+          أضف للسلة
+        </motion.button>
+      </div>
     </div>
   );
 }
@@ -206,23 +232,23 @@ function Reviews({ name, rating }) {
   const mine = reviews[name] || [];
 
   const samples = [
-    { n: "عبدالرحمن", t: "صار عندي ثقة من أول طلب — الجودة مثل اللي بالوصف needless بالظبط.", r: 5 },
+    { n: "عبدالرحمن", t: "صار عندي ثقة من أول طلب — الجودة مثل اللي في الوصف بالضبط.", r: 5 },
     { n: "أمل", t: "التغليف فخم، يناسب الهدية مباشرة بدون تعب. الشكل خرافي.", r: 5 },
     { n: "خالد", t: "الرائحة ثابتة وتكفي طويلاً. لأول تجربة أونلاين، ما قصرو.", r: 4 },
   ];
-  const bars = [72, 40, 12, 4, 6].reverse();
+  const bars = [72, 16, 7, 3, 2];
   return (
     <div>
       {/* add a review */}
       <div className="border border-line rounded-2xl bg-sand/50 p-4 mb-5">
-        <b className="text-[13px] block mb-3">قيّم هذ المنتج ✦</b>
+        <b className="text-[13px] block mb-3">قيّم هذا المنتج ✦</b>
         <div className="flex gap-1 mb-3" dir="ltr">
           {[1, 2, 3, 4, 5].map((s) => (
             <button key={s} onClick={() => setStars(s)} aria-label={`${s} نجوم`}
               className={`text-2xl cursor-pointer transition-transform hover:scale-110 ${s <= stars ? "text-gold" : "text-line"}`}>★</button>
           ))}
         </div>
-        <textarea value={text} onChange={(e) => setText(e.target.value)} rows={2} placeholder="وش أقنعتك في العطر؟ الثبات، الفوحان، التغليف…"
+        <textarea value={text} onChange={(e) => setText(e.target.value)} rows={2} placeholder="وش أعجبك في المنتج؟ الثبات، الفوحان، التغليف…"
           className="w-full bg-white border border-line rounded-2xl px-4 py-3 text-[13px] font-bold outline-none focus:border-green2 resize-none" />
         <div className="flex gap-2 mt-2 flex-wrap">
           <input value={nick} onChange={(e) => setNick(e.target.value)} placeholder={user ? `بيظهر باسمك: ${user.name}` : "اسمك (اختياري)"}
@@ -230,7 +256,7 @@ function Reviews({ name, rating }) {
           <motion.button whileTap={{ scale: 0.96 }} onClick={() => {
             if (text.trim().length < 3) return ping("اكتب شوية كلام على الأقل في تقييمك");
             addUserReview(name, { n: nick.trim() || user?.name || "زائر", r: stars, t: text.trim() });
-            setText(""); setNick(""); ping("تقييمك انضاف — شكرًا يا وحش ✓");
+            setText(""); setNick(""); ping("شكرًا لك، تم نشر تقييمك ✓");
           }}
             className="bg-green2 text-cream font-black px-6 py-2.5 rounded-2xl text-[12.5px] cursor-pointer">
             نشر التقييم
@@ -265,7 +291,7 @@ function Reviews({ name, rating }) {
               <span className="text-gold text-[12px] font-black">{"★".repeat(s.r)}{"☆".repeat(5 - s.r)}</span>
             </div>
             <p className="text-[13px] font-bold text-ink/80">{s.t}</p>
-            <span className="text-[10px] font-bold text-muted">من الحين</span>
+            <span className="text-[10px] font-bold text-muted">الآن</span>
           </div>
         ))}
         {samples.map((s) => (

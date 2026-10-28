@@ -334,7 +334,7 @@
 
 <!-- Hero Section - Obsidian Design Alignment -->
 <section
-	class="relative flex min-h-[70vh] w-full items-center justify-center overflow-hidden transition-colors duration-1000"
+	class="relative flex min-h-[70vh] w-full items-start justify-center overflow-hidden transition-colors duration-1000"
 	dir={(data as any).lang === 'ar' ? 'rtl' : 'ltr'}
 >
 	<!-- Background Image -->
@@ -354,7 +354,7 @@
 	</div>
 
 	<!-- Background Accents Removed to use HeroBackground -->
-	<div class="relative z-10 container mx-auto px-6 py-24">
+	<div class="relative z-10 container mx-auto px-6 pt-32 pb-16">
 		<div class="flex justify-center pb-4">
 			<Breadcrumbs
 				lang={(data as any).lang}

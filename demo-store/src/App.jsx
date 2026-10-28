@@ -4,13 +4,17 @@ import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
 import { ShopProvider } from "./store";
 import Header from "./components/Header";
 import CartDrawer from "./components/CartDrawer";
-import CheckoutModal from "./components/CheckoutModal";
 import Toast from "./components/Toast";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Product from "./pages/Product";
 import CartPage from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Pay from "./pages/Pay";
+import PaymentCallback from "./pages/PaymentCallback";
+import OrderConfirmation from "./pages/OrderConfirmation";
+import ResetPassword from "./pages/ResetPassword";
 import Wishlist from "./pages/Wishlist";
 import Account from "./pages/Account";
 import About from "./pages/About";
@@ -67,6 +71,11 @@ function AnimatedRoutes() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/pay" element={<Pay />} />
+        <Route path="/payment/return" element={<PaymentCallback />} />
+        <Route path="/order/:id" element={<OrderConfirmation />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/account" element={<Account />} />
         <Route path="/about" element={<About />} />
@@ -85,13 +94,15 @@ export default function App() {
         <ScrollToTop />
         <Progress />
         <Cursor />
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:right-3 focus:z-[130] focus:bg-green2 focus:text-cream focus:px-4 focus:py-2 focus:rounded-xl focus:font-black focus:text-sm">
+          تجاوز إلى المحتوى
+        </a>
         <Header />
-        <main>
+        <main id="main">
           <AnimatedRoutes />
         </main>
         <Footer />
         <CartDrawer />
-        <CheckoutModal />
         <AuthModal />
         <Toast />
       </ShopProvider>

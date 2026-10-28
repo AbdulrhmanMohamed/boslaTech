@@ -165,6 +165,40 @@
 	</div>
 </section>
 
+<!-- Demo Store Showcase -->
+<section class="relative w-full bg-[var(--color-background)] pb-24 transition-colors duration-1000" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+	<div class="container mx-auto px-6">
+		<a
+			href="https://demo.boslatech.com"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="group relative mx-auto flex max-w-4xl flex-col items-center gap-6 overflow-hidden rounded-3xl border border-brand-blue/20 bg-brand-blue/[0.04] p-8 text-center transition-all duration-500 hover:-translate-y-1 hover:border-brand-blue/40 hover:shadow-xl md:flex-row md:justify-between md:text-start"
+		>
+			<div class="relative z-10">
+				<span class="mb-3 inline-flex items-center gap-2 rounded-full border border-brand-blue/20 bg-brand-blue/10 px-4 py-1.5 text-xs font-black text-brand-blue">
+					<span class="relative flex h-2 w-2">
+						<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-blue opacity-75"></span>
+						<span class="relative inline-flex h-2 w-2 rounded-full bg-brand-blue"></span>
+					</span>
+					{lang === 'ar' ? 'نسخة تجريبية مباشرة' : 'Live demo'}
+				</span>
+				<h3 class="text-xl font-black text-[var(--color-text-base)] md:text-2xl">
+					{lang === 'ar' ? 'شوف شغلنا على الطبيعة — متجر «أصل» للعطور' : 'See our work live — the ASL perfume store'}
+				</h3>
+				<p class="mx-auto mt-2 max-w-xl text-sm font-medium text-[var(--color-text-muted)] md:mx-0">
+					{lang === 'ar'
+						? 'متجر إلكتروني كامل: منتجات، سلة، ودفع — جرّبه بنفسك.'
+						: 'A complete online store: products, cart, and checkout — try it yourself.'}
+				</p>
+			</div>
+			<span class="relative z-10 inline-flex shrink-0 items-center gap-2 rounded-full bg-brand-blue px-6 py-3 text-sm font-black text-white shadow-lg shadow-brand-blue/30 transition-transform duration-300 group-hover:scale-105">
+				{lang === 'ar' ? 'افتح المتجر' : 'Open the store'}
+				<ArrowRight class="h-4 w-4 transition-transform group-hover:translate-x-1 {lang === 'ar' ? 'rotate-180' : ''}" />
+			</span>
+		</a>
+	</div>
+</section>
+
 <!-- FAQ -->
 <section class="relative w-full bg-[var(--color-background)] py-24 transition-colors duration-1000" id="faq" dir={lang === 'ar' ? 'rtl' : 'ltr'}>
 	<div class="container mx-auto px-6">

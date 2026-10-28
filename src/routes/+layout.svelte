@@ -14,7 +14,7 @@
 	import { page } from '$app/stores';
 	import ArrowUpRight from '@lucide/svelte/icons/arrow-up-right';
 
-	const siteUrl = 'https://hafatalnjom.com';
+	const siteUrl = 'https://boslatech.com';
 	const logoSrc = `${base}/images/boslalogo-web.webp`;
 	const favSrc = `${base}/images/bosla-fav.webp`;
 
@@ -209,13 +209,13 @@
 			"@type": "Organization",
 			"name": "مؤسسة حافة النجوم",
 			"alternateName": "BOSLA",
-			"url": "https://hafatalnjom.com",
-			"logo": "https://hafatalnjom.com/images/logos/bosla-logo.png",
-			"image": "https://hafatalnjom.com/images/logos/bosla-logo.png",
+			"url": "https://boslatech.com",
+			"logo": "https://boslatech.com/images/logos/bosla-logo.png",
+			"image": "https://boslatech.com/images/logos/bosla-logo.png",
 			"description": "شركة تصميم وتطوير مواقع إلكترونية وحلول رقمية في الرياض",
 			"taxID": "7050568158",
 			"telephone": "+966576944605",
-			"email": "info@hafatalnjom.com",
+			"email": "info@boslatech.com",
 			"address": {
 				"@type": "PostalAddress",
 				"addressLocality": "Riyadh",
@@ -235,7 +235,7 @@
 			"@type": "LocalBusiness",
 			"name": "مؤسسة حافة النجوم - Hafat Alnjom",
 			"description": "شركة تصميم وتطوير مواقع إلكترونية وحلول رقمية في الرياض",
-			"url": "https://hafatalnjom.com",
+			"url": "https://boslatech.com",
 			"telephone": "+966576944605",
 			"taxID": "7050568158",
 			"areaServed": ["SA", "GCC"],

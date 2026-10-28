@@ -75,8 +75,8 @@
 			"@context": "https://schema.org",
 			"@type": "BreadcrumbList",
 			"itemListElement": [
-				{ "@type": "ListItem", "position": 1, "name": isAr ? 'الرئيسية' : 'Home', "item": "https://hafatalnjom.com" },
-				{ "@type": "ListItem", "position": 2, "name": isAr ? 'المدونة' : 'Blog', "item": "https://hafatalnjom.com/blog" },
+				{ "@type": "ListItem", "position": 1, "name": isAr ? 'الرئيسية' : 'Home', "item": "https://boslatech.com" },
+				{ "@type": "ListItem", "position": 2, "name": isAr ? 'المدونة' : 'Blog', "item": "https://boslatech.com/blog" },
 				{ "@type": "ListItem", "position": 3, "name": post?.title || '' }
 			]
 		})}

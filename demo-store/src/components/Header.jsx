@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from "react-router";
 import { motion, AnimatePresence, useSpring, useMotionValueEvent } from "motion/react";
 import { useScroll } from "motion/react";
 import { useShop } from "../store";
+import useDialogBehavior from "../hooks/useDialogBehavior";
 import { CATEGORIES } from "../data/products";
 import Logo from "./Logo";
 
@@ -11,10 +12,11 @@ const links = [
   { to: "/about", label: "من نحن" },
   { to: "/shop", label: "المتجر" },
   { to: "/wishlist", label: "المفضلة" },
+  { to: "/contact", label: "تواصل" },
 ];
 
 export default function Header() {
-  const { cart, openDrawer, user, openAuth } = useShop();
+  const { cart, openDrawer, user, openAuth, logout } = useShop();
   const [solid, setSolid] = useState(false);
   const [menu, setMenu] = useState(false);
   const [acc, setAcc] = useState(false);
@@ -24,14 +26,13 @@ export default function Header() {
 
   const items = cart.reduce((s, i) => s + i.qty, 0);
   badgeSpring.set(items);
+  useDialogBehavior(menu, () => setMenu(false));
 
   return (
     <>
-      <div className="bg-green text-cream text-[12.5px] font-bold text-center py-2 px-4">
-        شحن مجاني للطلبات فوق 200 ر.س • كوبون <span dir="ltr" className="text-gold tracking-widest font-black">ASL10</span> يخصم 10%
-      </div>
-      <div className="bg-green2 text-cream text-[11px] font-bold text-center py-1 px-2">
-        📞 <a href="tel:+966576944605" className="text-gold hover:text-goldsoft transition-colors">+966 576 944 605</a> | 📍 الملز، الرياض
+      <div className="bg-green text-cream text-[12px] font-bold text-center py-2 px-4">
+        شحن مجاني فوق 200 ر.س • كوبون <span dir="ltr" className="text-gold tracking-widest font-black">ASL10</span> يخصم 10%
+        <a href="tel:+966576944605" className="text-gold hover:text-goldsoft transition-colors mx-1 max-sm:hidden" dir="ltr">• +966 576 944 605</a>
       </div>
       <motion.header
         className={`sticky top-0 z-50 border-b transition-colors duration-300 ${solid ? "glass border-line" : "bg-transparent border-transparent"}`}
@@ -61,7 +62,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             <motion.button
               onClick={openDrawer}
-              className="relative w-11 h-11 grid place-items-center rounded-2xl bg-white border border-line hover:border-green2 transition-colors cursor-none"
+              className="relative w-11 h-11 grid place-items-center rounded-2xl bg-white border border-line hover:border-green2 transition-colors"
               data-cursor
               whileTap={{ scale: 0.9 }}
               aria-label="السلة"
@@ -87,7 +88,7 @@ export default function Header() {
             <div className="relative hidden md:block">
               <motion.button
                 onClick={() => (user ? setAcc((v) => !v) : openAuth())}
-                className="w-11 h-11 grid place-items-center rounded-2xl bg-white border border-line hover:border-green2 transition-colors cursor-none"
+                className="w-11 h-11 grid place-items-center rounded-2xl bg-white border border-line hover:border-green2 transition-colors"
                 data-cursor whileTap={{ scale: 0.9 }} aria-label="حسابي"
               >
                 {user
@@ -107,7 +108,7 @@ export default function Header() {
                       <span dir="ltr" className="text-[11px] font-bold text-muted">{user.phone}</span>
                     </div>
                     <Link to="/account" onClick={() => setAcc(false)} className="flex gap-2.5 text-[12.5px] font-black text-ink rounded-xl px-2.5 py-2.5 hover:bg-sand transition-colors">👤 حسابي وطلباتي</Link>
-                    <button onClick={() => setAcc(false)} className="w-full text-right flex gap-2.5 text-[12.5px] font-black text-muted rounded-xl px-2.5 py-2.5 hover:bg-sand hover:text-ink transition-colors cursor-pointer">↩ الإغلاق السريع</button>
+                    <button onClick={() => { setAcc(false); logout(); }} className="w-full text-right flex gap-2.5 text-[12.5px] font-black text-muted rounded-xl px-2.5 py-2.5 hover:bg-sand hover:text-ink transition-colors cursor-pointer">↩ تسجيل الخروج</button>
                   </motion.div>
                 )}
               </AnimatePresence>

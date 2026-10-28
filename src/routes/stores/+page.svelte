@@ -140,11 +140,14 @@
 					{t?.hero?.ctaPrimary}
 				</a>
 				<a
-					href="#demo"
+					href={t?.demo?.url}
+					target="_blank"
+					rel="noopener noreferrer"
 					use:inView
-					class="w-full rounded-full border border-[var(--glass-border)] bg-[var(--glass-highlight)] px-10 py-5 text-center text-base font-black tracking-widest text-[var(--color-text-base)] uppercase transition-all duration-500 hover:-translate-y-1 hover:border-brand-blue/40 sm:w-auto [&.in-view]:-translate-y-1"
+					class="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-[var(--glass-border)] bg-[var(--glass-highlight)] px-10 py-5 text-center text-base font-black tracking-widest text-[var(--color-text-base)] uppercase transition-all duration-500 hover:-translate-y-1 hover:border-brand-blue/40 sm:w-auto [&.in-view]:-translate-y-1"
 				>
 					{t?.hero?.ctaSecondary}
+					<ExternalLink class="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
 				</a>
 			</div>
 		</div>
@@ -228,30 +231,118 @@
 	</section>
 
 	<!-- 4. Demo -->
-	<section id="demo" class="relative py-24">
+	<section id="demo" class="relative scroll-mt-28 py-24">
 		<div class="container mx-auto px-6">
 			<div
 				use:inView
-				class="cinematic-glass relative mx-auto max-w-4xl overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-10 text-center md:p-16"
+				class="cinematic-glass relative mx-auto max-w-6xl overflow-hidden rounded-[3rem] border border-[var(--glass-border)] p-6 md:p-12"
 			>
-				<h2 class="text-3xl font-black tracking-tight text-[var(--color-text-base)] md:text-4xl">
-					{t?.demo?.title}
-				</h2>
-				<p class="mx-auto mt-4 max-w-xl leading-relaxed font-medium text-[var(--color-text-muted)]">
-					{t?.demo?.text}
-				</p>
-				<a
-					href={t?.demo?.url}
-					target="_blank"
-					rel="noopener noreferrer"
-					class="group mt-8 inline-flex items-center gap-2 rounded-full bg-brand-orange px-10 py-5 text-base font-black tracking-widest text-white uppercase shadow-[0_20px_50px_rgba(255,107,0,0.3)] transition-transform duration-500 hover:-translate-y-1"
-				>
-					{t?.demo?.button}
-					<ExternalLink class="h-4 w-4 transition-transform group-hover:translate-y-1" />
-				</a>
-				<p class="mt-4 text-xs font-bold text-[var(--color-text-dim)] opacity-60">
-					{t?.demo?.small}
-				</p>
+				<div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+					<div class="text-center lg:text-start">
+						<span
+							class="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-1.5 text-[11px] font-black tracking-widest text-brand-orange uppercase"
+						>
+							<span class="relative flex h-2 w-2">
+								<span
+									class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-orange opacity-75"
+								></span>
+								<span class="relative inline-flex h-2 w-2 rounded-full bg-brand-orange"></span>
+							</span>
+							{lang === 'ar' ? 'متجر حقيقي — يعمل الآن' : 'Live store — running now'}
+						</span>
+						<h2
+							class="text-3xl font-black tracking-tight text-[var(--color-text-base)] md:text-4xl"
+						>
+							{t?.demo?.title}
+						</h2>
+						<p
+							class="mx-auto mt-4 max-w-xl leading-relaxed font-medium text-[var(--color-text-muted)] lg:mx-0"
+						>
+							{t?.demo?.text}
+						</p>
+
+						<ul class="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
+							{#each (lang === 'ar'
+								? ['تصفح المنتجات', 'سلة شراء', 'كوبونات خصم', 'صفحة دفع']
+								: ['Product browsing', 'Shopping cart', 'Coupons', 'Checkout']) as chip}
+								<li
+									class="rounded-full border border-[var(--glass-border)] bg-[var(--glass-highlight)] px-3.5 py-1.5 text-xs font-bold text-[var(--color-text-muted)]"
+								>
+									{chip}
+								</li>
+							{/each}
+						</ul>
+
+						<div class="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
+							<a
+								href={t?.demo?.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-orange px-8 py-4 text-sm font-black tracking-widest text-white uppercase shadow-[0_20px_50px_rgba(255,107,0,0.3)] transition-transform duration-500 hover:-translate-y-1 sm:w-auto"
+							>
+								{t?.demo?.button}
+								<ExternalLink
+									class="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+								/>
+							</a>
+							<a
+								href={waUrl(
+									lang === 'ar'
+										? 'مرحبًا، شفت المتجر التجريبي وأبغى متجر مثل هذا'
+										: 'Hi, I saw the demo store and I want a store like it'
+								)}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex w-full items-center justify-center gap-2 rounded-full border border-[var(--glass-border)] px-8 py-4 text-sm font-black text-[var(--color-text-base)] transition-colors hover:border-brand-blue/40 sm:w-auto"
+							>
+								{lang === 'ar' ? 'أبغى متجر مثل هذا' : 'I want a store like this'}
+							</a>
+						</div>
+
+						<p class="mt-4 text-xs font-bold text-[var(--color-text-dim)] opacity-60">
+							{t?.demo?.small}
+						</p>
+					</div>
+
+					<a
+						href={t?.demo?.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={t?.demo?.button}
+						class="group relative block overflow-hidden rounded-[2rem] border border-[var(--glass-border)] bg-[var(--color-surface)] shadow-2xl"
+					>
+						<div
+							class="flex items-center gap-1.5 border-b border-[var(--glass-border)] bg-[var(--glass-highlight)] px-4 py-3"
+						>
+							<span class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></span>
+							<span class="h-2.5 w-2.5 rounded-full bg-[#febc2e]"></span>
+							<span class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></span>
+							<span
+								dir="ltr"
+								class="mx-auto text-[11px] font-bold text-[var(--color-text-dim)]"
+								>demo.boslatech.com</span
+							>
+						</div>
+						<img
+							src={`${base}/images/demo-store-preview.webp`}
+							alt={lang === 'ar'
+								? 'لقطة من المتجر التجريبي — متجر أصل للعطور'
+								: 'Demo store preview — ASL perfume store'}
+							width="1200"
+							height="769"
+							loading="lazy"
+							class="w-full transition-transform duration-700 group-hover:scale-[1.03]"
+						/>
+						<div
+							class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+						></div>
+						<span
+							class="pointer-events-none absolute bottom-4 left-1/2 -translate-x-1/2 translate-y-3 rounded-full bg-white/95 px-5 py-2.5 text-xs font-black text-[#163e36] opacity-0 shadow-xl transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100"
+						>
+							{lang === 'ar' ? 'اضغط للتجربة' : 'Click to try'}
+						</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -291,8 +382,6 @@
 					<span class="text-xs font-black tracking-widest text-[var(--color-text-base)] uppercase">
 						{t?.packages?.offerText} {offerEndDate}
 					</span>
-					<span class="opacity-60">·</span>
-					<OfferCountdown {lang} />
 				</div>
 			</div>
 

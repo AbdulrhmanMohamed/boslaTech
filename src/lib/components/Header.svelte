@@ -6,7 +6,7 @@
 	import { clearLanguageCache } from '$lib/utils/language';
 	import { base } from '$app/paths';
 	import { inView } from '$lib/actions/inView';
-	import { ChevronDown, ChevronRight } from '@lucide/svelte';
+	import { ChevronDown, ChevronRight, ExternalLink } from '@lucide/svelte';
 
 	const props = $props<{ site?: any; lang: 'en' | 'ar' }>();
 	const site = $derived(props.site);
@@ -247,7 +247,22 @@
 		</div>
 
 		<!-- Right Section: Theme Toggle, Language Toggle & Mobile Menu -->
-		<div class="flex items-center justify-end gap-3">
+		<div class="flex items-center justify-end gap-2 md:gap-3">
+			<!-- Live Demo (mobile) -->
+			<a
+				href="https://demo.boslatech.com"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="relative inline-flex items-center gap-1.5 rounded-full bg-brand-orange px-3.5 py-2 text-[11px] font-black text-white shadow-[0_8px_20px_rgba(255,107,0,0.3)] transition-transform duration-300 hover:scale-105 md:hidden"
+			>
+				<span class="relative flex h-1.5 w-1.5">
+					<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+					<span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-white"></span>
+				</span>
+				{lang === 'ar' ? 'جرّب المتجر' : 'Live Demo'}
+				<ExternalLink class="h-3 w-3" />
+			</a>
+
 			<!-- Theme Toggle -->
 			<div class="hidden md:block">
 				<ThemeToggle />

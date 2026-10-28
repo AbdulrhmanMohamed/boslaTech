@@ -24,12 +24,21 @@
 	--color-text-muted: #ffffff;
 	--color-text-dim: rgba(255, 255, 255, 0.9);
 
-	/* Glassmorphism Tokens */
-	--glass-bg: rgba(15, 15, 20, 0.05);
-	--glass-blur: 4px;
-	--glass-border: rgba(255, 255, 255, 0.12);
+	/* Glassmorphism Tokens — see-through, text stays legible */
+	--glass-bg: rgba(255, 255, 255, 0.035);
+	--glass-blur: 10px;
+	--glass-border: rgba(255, 255, 255, 0.16);
 	--glass-highlight: rgba(255, 255, 255, 0.08);
-	--glass-text-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+	--glass-lip: rgba(255, 255, 255, 0.18);
+	--glass-sheen: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.07) 0%,
+		rgba(255, 255, 255, 0.015) 55%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	--glass-text-shadow:
+		0 1px 3px rgba(0, 0, 0, 0.85),
+		0 0 14px rgba(0, 0, 0, 0.55);
 
 	/* Premium Shadow */
 	--premium-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -79,11 +88,17 @@
 	--color-text-muted: #475569;
 	--color-text-dim: #94a3b8;
 
-	/* Reimagined Light Glass */
-	--glass-bg: rgba(255, 255, 255, 0.05);
-	--glass-blur: 4px;
-	--glass-border: rgba(11, 157, 217, 0.2);
+	/* Reimagined Light Glass — see-through, text stays legible */
+	--glass-bg: rgba(255, 255, 255, 0.38);
+	--glass-blur: 10px;
+	--glass-border: rgba(11, 157, 217, 0.22);
 	--glass-highlight: rgba(11, 157, 217, 0.1);
+	--glass-lip: rgba(255, 255, 255, 0.85);
+	--glass-sheen: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0.6) 0%,
+		rgba(255, 255, 255, 0.18) 100%
+	);
 	--glass-text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 10px rgba(255, 255, 255, 0.7);
 
 	/* Specific Light Cards */
@@ -136,8 +151,11 @@ body {
 section {
 	position: relative;
 	z-index: 0;
-	content-visibility: auto;
-	contain-intrinsic-size: 0 500px;
+}
+
+/* Anchor navigation: keep targets clear of the floating header */
+html {
+	scroll-padding-top: 7rem;
 }
 
 /* [dir='rtl'] body,
@@ -148,14 +166,15 @@ section {
 /* Premium Utilities */
 @layer components {
 	.cinematic-glass {
-		@apply backdrop-blur-[var(--glass-blur)] transition-all duration-700 ease-out;
-		contain: layout paint;
+		@apply transition-all duration-700 ease-out;
 		transform: translateZ(0);
-		will-change: transform;
-		background: var(--glass-bg);
+		background-color: var(--glass-bg);
+		background-image: var(--glass-sheen);
+		backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+		-webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
 		border: 1px solid var(--glass-border);
 		box-shadow:
-			inset 0 0 0 1px var(--glass-highlight),
+			inset 0 1px 0 var(--glass-lip),
 			var(--premium-shadow);
 		text-shadow: var(--glass-text-shadow);
 	}
@@ -164,20 +183,19 @@ section {
 	.cinematic-glass.in-view {
 		border-color: var(--color-primary);
 		box-shadow:
-			inset 0 0 0 1px var(--glass-highlight),
+			inset 0 1px 0 var(--glass-lip),
 			var(--glow-primary),
 			var(--premium-shadow);
 	}
 
 	.interactive-card {
 		@apply transition-all duration-500 ease-out;
-		background: linear-gradient(145deg, var(--glass-highlight) 0%, transparent 100%);
+		background-image: linear-gradient(145deg, var(--glass-highlight) 0%, transparent 100%);
 		border: 1px solid var(--glass-border);
 	}
 
 	.interactive-card:hover,
 	.interactive-card.in-view {
-		will-change: transform;
 		@apply -translate-y-1;
 		border-color: var(--color-primary);
 		box-shadow: var(--glow-primary);
@@ -218,12 +236,15 @@ section {
 	}
 
 	.btn-secondary {
-		@apply relative flex items-center justify-center overflow-hidden rounded-2xl px-10 py-5 text-lg font-black backdrop-blur-[var(--glass-blur)] transition-all duration-700 ease-out;
+		@apply relative flex items-center justify-center overflow-hidden rounded-2xl px-10 py-5 text-lg font-black transition-all duration-700 ease-out;
 		color: var(--color-text-base);
-		background: var(--glass-bg);
+		background-color: var(--glass-bg);
+		background-image: var(--glass-sheen);
+		backdrop-filter: blur(var(--glass-blur)) saturate(140%);
+		-webkit-backdrop-filter: blur(var(--glass-blur)) saturate(140%);
 		border: 1px solid var(--glass-border);
 		box-shadow:
-			inset 0 0 0 1px var(--glass-highlight),
+			inset 0 1px 0 var(--glass-lip),
 			var(--premium-shadow);
 	}
 
@@ -232,7 +253,7 @@ section {
 		@apply -translate-y-2;
 		border-color: var(--color-primary);
 		box-shadow:
-			inset 0 0 0 1px var(--glass-highlight),
+			inset 0 1px 0 var(--glass-lip),
 			var(--glow-primary),
 			var(--premium-shadow);
 	}
@@ -240,16 +261,14 @@ section {
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
-	.cinematic-glass {
-		backdrop-blur: 12px !important;
-		will-change: auto;
-		background: var(--glass-bg) !important;
-		border-color: var(--glass-border) !important;
+	.cinematic-glass,
+	.btn-secondary {
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);
 	}
 
-	.btn-secondary {
-		backdrop-blur: 12px !important;
-		background: var(--glass-bg) !important;
+	.cinematic-glass {
+		border-color: var(--glass-border);
 	}
 
 	.btn-primary {
@@ -266,28 +285,45 @@ section {
 	.interactive-card {
 		transform: translateZ(0);
 	}
-
-	.interactive-card {
-		background: var(--glass-bg) !important;
-	}
 }
 
 /* Very small screens - minimal effects */
 @media (max-width: 480px) {
+	.cinematic-glass,
+	.btn-secondary {
+		-webkit-backdrop-filter: blur(6px);
+		backdrop-filter: blur(6px);
+	}
+
 	.cinematic-glass {
-		backdrop-blur: 4px !important;
 		box-shadow: none !important;
 		border-color: var(--glass-border) !important;
 	}
 
 	.btn-secondary {
-		backdrop-blur: 4px !important;
 		box-shadow: none !important;
 	}
 
 	.btn-primary {
 		box-shadow: 0 2px 8px rgba(11, 157, 217, 0.2) !important;
 	}
+}
+
+/* Static ambient gradients behind glass cards (no filters, no JS) */
+.ambient-glow {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(52rem 34rem at 88% 2%, rgba(0, 119, 255, 0.1), transparent 62%),
+		radial-gradient(44rem 30rem at 4% 58%, rgba(251, 98, 32, 0.06), transparent 62%);
+}
+
+[data-theme='light'] .ambient-glow {
+	background:
+		radial-gradient(52rem 34rem at 88% 2%, rgba(0, 119, 255, 0.08), transparent 62%),
+		radial-gradient(44rem 30rem at 4% 58%, rgba(251, 98, 32, 0.05), transparent 62%);
 }
 
 /* Hero Gradient Placeholder - Fast FCP */

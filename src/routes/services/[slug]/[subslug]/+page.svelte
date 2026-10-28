@@ -57,9 +57,9 @@
 			"@context": "https://schema.org",
 			"@type": "BreadcrumbList",
 			"itemListElement": [
-				{ "@type": "ListItem", "position": 1, "name": isAr ? 'الرئيسية' : 'Home', "item": "https://hafatalnjom.com" },
-				{ "@type": "ListItem", "position": 2, "name": isAr ? 'خدماتنا' : 'Our Services', "item": "https://hafatalnjom.com/services" },
-				{ "@type": "ListItem", "position": 3, "name": category?.name || '', "item": `https://hafatalnjom.com/services/${category?.slug}` },
+				{ "@type": "ListItem", "position": 1, "name": isAr ? 'الرئيسية' : 'Home', "item": "https://boslatech.com" },
+				{ "@type": "ListItem", "position": 2, "name": isAr ? 'خدماتنا' : 'Our Services', "item": "https://boslatech.com/services" },
+				{ "@type": "ListItem", "position": 3, "name": category?.name || '', "item": `https://boslatech.com/services/${category?.slug}` },
 				{ "@type": "ListItem", "position": 4, "name": service?.title || '' }
 			]
 		})}

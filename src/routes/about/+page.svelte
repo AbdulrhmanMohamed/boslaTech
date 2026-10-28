@@ -435,7 +435,8 @@
 
 		<!-- Foreground Content -->
 		<div class="relative z-10">
-			<div class="container mx-auto px-6 pt-36 md:px-12">
+			<div class="ambient-glow" aria-hidden="true"></div>
+			<div class="container mx-auto px-6 pt-32 md:px-12">
 				<div class="flex justify-center">
 					<Breadcrumbs
 						lang={(data as any).lang}
@@ -447,7 +448,7 @@
 			</div>
 			<!-- Hero Section -->
 			<section
-				class="hero-section relative flex min-h-[100svh] w-full items-center overflow-hidden pt-20"
+				class="hero-section relative flex min-h-[100svh] w-full items-start overflow-hidden pt-4"
 				dir={(data as any).lang === 'ar' ? 'rtl' : 'ltr'}
 			>
 				<div class="relative z-10 container mx-auto flex flex-col items-center px-6 md:px-12">

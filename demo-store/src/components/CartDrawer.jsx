@@ -1,16 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { useShop, computeTotals } from "../store";
+import useDialogBehavior from "../hooks/useDialogBehavior";
 import { PRODUCTS, FREE_SHIP, riyal } from "../data/products";
 
 const priceOf = (id) => PRODUCTS.find((p) => p.id === id)?.price || 0;
 const pOf = (id) => PRODUCTS.find((p) => p.id === id);
 
 export default function CartDrawer() {
-  const { cart, wish, coupon, drawer, closeDrawer, setQty, removeItem, applyCoupon, openCheckout } = useShop();
+  const { cart, coupon, drawer, closeDrawer, setQty, removeItem, applyCoupon } = useShop();
+  const navigate = useNavigate();
   const [code, setCode] = useState("");
   const [msg, setMsg] = useState(null);
+  useDialogBehavior(drawer, closeDrawer);
+  const goCheckout = () => { closeDrawer(); navigate("/checkout"); };
   const { subtotal, disc, ship, total, left, items } = computeTotals({ cart, priceOf, couponOn: coupon });
 
   const tryCoupon = () => {
@@ -28,7 +32,7 @@ export default function CartDrawer() {
             initial={{ x: "-100%" }} animate={{ x: 0 }} exit={{ x: "-100%" }}
             transition={{ type: "spring", stiffness: 320, damping: 32 }}
             className="absolute top-0 bottom-0 left-0 w-[min(420px,100vw)] bg-cream flex flex-col shadow-2xl"
-            role="dialog" aria-label="سلة المشتريات" dir="rtl"
+            role="dialog" aria-modal="true" aria-label="سلة المشتريات" dir="rtl"
           >
             <div className="flex items-center justify-between p-5 border-b border-line">
               <h3 className="font-black text-lg">سلتك <span className="text-muted font-bold text-sm">({items})</span></h3>
@@ -82,11 +86,12 @@ export default function CartDrawer() {
                         </div>
                         <div className="flex justify-between items-center mt-2">
                           <div className="flex items-center gap-2.5 border border-line rounded-full px-2.5 py-0.5">
-                            <button onClick={() => setQty(it.key, 1)} className="text-green2 cursor-pointer">＋</button>
+                            <button onClick={() => setQty(it.key, 1)} disabled={it.qty >= (p.stock ?? 99)}
+                              aria-label="زيادة الكمية" className="text-green2 cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed">＋</button>
                             <b className="text-[13px] min-w-4 text-center">{it.qty}</b>
-                            <button onClick={() => setQty(it.key, -1)} className="text-green2 cursor-pointer">－</button>
+                            <button onClick={() => setQty(it.key, -1)} aria-label="تقليل الكمية" className="text-green2 cursor-pointer">－</button>
                           </div>
-                          <b className="text-[13.5px]">{riyal(p.price * it.qty)}</b>
+                          <b className="text-[13.5px]">{riyal(p.price * it.qty)} ر.س</b>
                         </div>
                       </div>
                     </motion.div>
@@ -118,7 +123,7 @@ export default function CartDrawer() {
                     <span key={c} className="border border-line rounded-lg px-2 py-0.5 text-[10.5px] font-extrabold text-muted">{c}</span>
                   ))}
                 </div>
-                <motion.button whileTap={{ scale: 0.97 }} onClick={openCheckout}
+                <motion.button whileTap={{ scale: 0.97 }} onClick={goCheckout}
                   className="w-full bg-green2 text-cream font-black py-3.5 rounded-2xl cursor-pointer">
                   إتمام الطلب
                 </motion.button>
