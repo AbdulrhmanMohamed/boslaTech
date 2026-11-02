@@ -87,6 +87,10 @@ const config = {
 				'/blog/saudi-google-ads-cost-guide?lang=ar',
 				'/blog/brand-identity-losing-clients-saudi-arabia?lang=en',
 				'/blog/brand-identity-losing-clients-saudi-arabia?lang=ar',
+				'/stores?lang=en',
+				'/stores?lang=ar',
+				'/stores/compare?lang=en',
+				'/stores/compare?lang=ar',
 			],
 			handleHttpError: 'warn'
 		},

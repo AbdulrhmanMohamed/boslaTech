@@ -567,6 +567,15 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
 						</svg>
 					</a>
+					<a
+						href={`${base}/stores/compare?lang=${data?.lang || 'ar'}`}
+						class="ml-4 inline-flex items-center gap-2 text-sm font-black text-brand-orange underline-offset-4 hover:text-brand-blue hover:underline"
+					>
+						{isAr ? 'مقارنة الباقات' : 'Compare packages'}
+						<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+						</svg>
+					</a>
 				</div>
 			{/if}
 
@@ -581,7 +590,7 @@
 			{/if}
 
 			<!-- Pricing Cards -->
-			<div class="mx-auto grid max-w-6xl items-start gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+			<div class="mx-auto grid max-w-6xl items-start gap-8 grid-cols-1 sm:grid-cols-2 {mode === 'stores' ? 'md:grid-cols-3' : 'md:grid-cols-3 lg:grid-cols-4'}">
 				{#each packages as pkg}
 					<!-- Card Wrapper for Scale/Layout Transforms -->
 					<div

@@ -224,12 +224,12 @@ export const STORE_PACKAGES: StorePackage[] = [
 	{
 		id: 'store-standard',
 		name: {
-			ar: 'متجر أساسي',
-			en: 'Starter Store'
+			ar: 'المتجر الأساسي',
+			en: 'Basic Store'
 		},
 		description: {
-			ar: 'متجر إلكتروني متكامل يعرض منتجاتك ويستقبل طلباتك، جاهز خلال أسبوع.',
-			en: 'A complete online store to showcase products and receive orders, ready in one week.'
+			ar: 'كل ما تحتاجه لتبدأ البيع أونلاين.',
+			en: 'Everything you need to start selling online.'
 		},
 		features: {
 			ar: [
@@ -258,12 +258,12 @@ export const STORE_PACKAGES: StorePackage[] = [
 	{
 		id: 'store-pro',
 		name: {
-			ar: 'متجر برو',
+			ar: 'المتجر الاحترافي',
 			en: 'Pro Store'
 		},
 		description: {
-			ar: 'متجر متقدم بهوية مخصصة وأدوات نمو، جاهز خلال 10 أيام.',
-			en: 'An advanced store with a custom identity and growth tools, ready in 10 days.'
+			ar: 'متجر بتصميم مخصص لعلامتك، وأدوات تزيد مبيعاتك.',
+			en: 'A store custom-designed for your brand, with tools that grow your sales.'
 		},
 		features: {
 			ar: [
@@ -292,12 +292,12 @@ export const STORE_PACKAGES: StorePackage[] = [
 	{
 		id: 'store-custom',
 		name: {
-			ar: 'متجر مخصص بالكامل',
-			en: 'Fully Custom Store'
+			ar: 'متجر مخصص',
+			en: 'Custom Store'
 		},
 		description: {
-			ar: 'متجر مبني من الصفر باحتياجاتك الخاصة وخصائص متقدمة.',
-			en: 'A store built from scratch with your own requirements and advanced features.'
+			ar: 'عندك فكرة أو احتياج خاص؟ نبرمج لك متجرك بالمميزات اللي تحتاجها بالضبط. تواصل معنا ونجهز لك عرض سعر.',
+			en: 'Have a special idea or requirement? We build your store with exactly the features you need. Contact us for a quote.'
 		},
 		features: {
 			ar: [
@@ -323,6 +323,32 @@ export const STORE_PACKAGES: StorePackage[] = [
 		allowAddons: false,
 		popular: false
 	}
+];
+
+export interface StoreComparisonRow {
+	feature: { ar: string; en: string };
+	basic: string;
+	pro: string;
+	custom: string;
+}
+
+export const STORE_COMPARISON: StoreComparisonRow[] = [
+	{ feature: { ar: 'المنتجات', en: 'Products' }, basic: 'غير محدودة', pro: 'غير محدودة', custom: 'غير محدودة' },
+	{ feature: { ar: 'التصنيفات', en: 'Categories' }, basic: 'حتى 5', pro: 'غير محدودة', custom: 'غير محدودة' },
+	{ feature: { ar: 'خيارات ووصف المنتج (leurs, مقاسات)', en: 'Product options & descriptions (colors, sizes)' }, basic: '✓', pro: '✓', custom: '✓' },
+	{ feature: { ar: 'أطقم المنتجات (باندل)', en: 'Product bundles' }, basic: '✗', pro: '✓', custom: '✓' },
+	{ feature: { ar: 'الخصومات', en: 'Discounts' }, basic: 'خصم مباشر', pro: 'كوبونات + فلاش سيل', custom: 'كل ما سبق + any system' },
+	{ feature: { ar: 'بوابات الدفع (مدى، STC Pay، Apple Pay)', en: 'Payment gateways (Mada, STC Pay, Apple Pay)' }, basic: '✓', pro: '✓', custom: '✓ + any' },
+	{ feature: { ar: 'ربط شركات الشحن', en: 'Shipping integration' }, basic: '✓', pro: '✓', custom: '✓' },
+	{ feature: { ar: 'تذكير السلة المتروكة بالإيميل', en: 'Abandoned cart email reminders' }, basic: '✗', pro: '✓', custom: '✓' },
+	{ feature: { ar: 'اللغة', en: 'Language' }, basic: 'لغة واحدة', pro: 'لغتين', custom: 'حسب الطلب' },
+	{ feature: { ar: 'مستخدمو لوحة التحكم', en: 'Control panel users' }, basic: 'مستخدم واحد', pro: 'متعددون', custom: 'حسب الطلب' },
+	{ feature: { ar: 'التقارير', en: 'Reports' }, basic: 'الطلبات والمبيعات', pro: 'تقارير مفصلة', custom: 'حسب الطلب' },
+	{ feature: { ar: 'التصميم', en: 'Design' }, basic: 'قالب بوصلة', pro: 'تصميم مخصص', custom: 'تصميم وبرمجة مخصصة' },
+	{ feature: { ar: 'تهيئة محركات البحث', en: 'Search engine setup' }, basic: '✓', pro: '✓', custom: '✓' },
+	{ feature: { ar: 'الدعم الفني', en: 'Technical support' }, basic: 'شهر', pro: '3 شهور', custom: 'حسب الاتفاق' },
+	{ feature: { ar: 'مدة التسليم', en: 'Delivery time' }, basic: 'أسبوع', pro: '10 أيام', custom: 'حسب حجم المشروع' },
+	{ feature: { ar: 'السعر', en: 'Price' }, basic: 'كما في الموقع', pro: 'كما في الموقع', custom: 'تواصل معنا' }
 ];
 
 export const ADDONS: PricingAddon[] = [

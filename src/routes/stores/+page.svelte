@@ -379,7 +379,7 @@
 				</div>
 			</div>
 
-			<div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
+			<div class="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
 				{#each pkgDisplay as pkg}
 					<div
 						use:inView
@@ -428,6 +428,17 @@
 						</a>
 					</div>
 				{/each}
+			</div>
+			<div class="mt-8 text-center">
+				<a
+					href={`${base}/stores/compare?lang=${lang}`}
+					class="inline-flex items-center gap-2 text-sm font-black text-brand-orange underline-offset-4 hover:text-brand-blue hover:underline"
+				>
+					{lang === 'ar' ? 'مقارنة الباقات بالتفصيل' : 'Compare packages in detail'}
+					<svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+					</svg>
+				</a>
 			</div>
 			{#if t?.packages?.customHint}
 				<p class="mt-8 text-center font-medium text-[var(--color-text-muted)]">
