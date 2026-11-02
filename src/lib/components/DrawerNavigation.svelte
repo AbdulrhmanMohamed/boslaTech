@@ -7,7 +7,7 @@
 
 <!-- Mobile Menu Button -->
 <button
-	class="cinematic-glass group relative flex items-center justify-center overflow-hidden rounded-2xl p-3 transition-transform active:scale-90 md:hidden"
+	class="cinematic-glass group relative flex items-center justify-center overflow-hidden rounded-2xl p-3 transition-transform active:scale-90 lg:hidden"
 	onclick={toggleDrawer}
 	aria-label="Toggle mobile menu"
 >

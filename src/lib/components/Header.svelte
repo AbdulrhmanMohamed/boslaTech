@@ -197,7 +197,7 @@
 		: ''}"
 >
 	<nav
-		class="cinematic-glass pointer-events-auto container grid max-w-5xl grid-cols-2 items-center rounded-full px-4 transition-[background-color,box-shadow,backdrop-filter] duration-500 md:grid-cols-3 md:px-8 {scrollY >
+		class="cinematic-glass pointer-events-auto container grid max-w-5xl grid-cols-2 items-center rounded-full px-4 transition-[background-color,box-shadow,backdrop-filter] duration-500 lg:grid-cols-3 lg:px-8 {scrollY >
 		20
 			? 'bg-[var(--glass-bg)]/90 py-3 shadow-xl backdrop-blur-xl'
 			: 'py-4'}"
@@ -230,7 +230,7 @@
 		</div>
 
 		<!-- Desktop Navigation - Centered -->
-		<div class="hidden items-center justify-center md:flex">
+		<div class="hidden items-center justify-center lg:flex">
 			<ul class="relative flex items-center gap-1">
 				<!-- Moving Highlight Pill -->
 				<div
@@ -260,7 +260,7 @@
 				href="https://demo.boslatech.com"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="relative inline-flex items-center gap-1.5 rounded-full bg-brand-orange px-3.5 py-2 text-[11px] font-black text-white shadow-[0_8px_20px_rgba(255,107,0,0.3)] transition-transform duration-300 hover:scale-105 md:hidden"
+				class="relative inline-flex items-center gap-1.5 rounded-full bg-brand-orange px-3.5 py-2 text-[11px] font-black text-white shadow-[0_8px_20px_rgba(255,107,0,0.3)] transition-transform duration-300 hover:scale-105 lg:hidden"
 			>
 				<span class="relative flex h-1.5 w-1.5">
 					<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
@@ -271,13 +271,13 @@
 			</a>
 
 			<!-- Theme Toggle -->
-			<div class="hidden md:block">
+			<div class="hidden lg:block">
 				<ThemeToggle />
 			</div>
 
 			<!-- Desktop Language Toggle -->
 			<div
-				class="hidden items-center gap-1 rounded-full border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-1 backdrop-blur-md md:flex"
+				class="hidden items-center gap-1 rounded-full border border-[var(--glass-border)] bg-[var(--glass-highlight)] p-1 backdrop-blur-md lg:flex"
 			>
 				<button
 					onclick={() => handleLanguageSwitch('en')}
@@ -302,7 +302,7 @@
 			</div>
 
 			<!-- Mobile Menu Trigger -->
-			<div class="md:hidden">
+			<div class="lg:hidden">
 				<DrawerNavigation />
 			</div>
 		</div>
