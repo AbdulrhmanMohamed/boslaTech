@@ -155,6 +155,46 @@ export const PACKAGES: PricingPackage[] = [
 		showOriginalPrice: true,
 		allowAddons: true,
 		popular: false
+	},
+	{
+		id: 'company-catalog',
+		name: {
+			ar: 'موقع شركة + كتالوج',
+			en: 'Corporate + Product Catalog'
+		},
+		description: {
+			ar: 'موقع شركتك مع كتالوج منتجات (بدون دفع)، جاهز خلال 5 أيام.',
+			en: 'Your company website with a product catalog (no payments), ready in 5 days.'
+		},
+		features: {
+			ar: [
+				'صفحات غير محدودة',
+				'كتالوج منتجات (منتجات غير محدودة + تصنيفات)',
+				'صفحات تفاصيل لكل منتج',
+				'تواصل عبر واتساب (بدون دفع)',
+				'لوحة تحكم لإدارة المنتجات والصفحات',
+				'نماذج تواصل متعددة',
+				'ربط بحسابات التواصل الاجتماعي',
+				'تهيئة متقدمة لمحركات البحث',
+				'دعم فني لمدة 3 أشهر'
+			],
+			en: [
+				'Unlimited pages',
+				'Product catalog (unlimited products + categories)',
+				'Product detail pages',
+				'WhatsApp contact (no payment)',
+				'Control panel for products & pages',
+				'Multiple contact forms',
+				'Social media integration',
+				'Advanced SEO',
+				'3 months technical support'
+			]
+		},
+		originalPrice: 3000,
+		salePercent: 50,
+		showOriginalPrice: true,
+		allowAddons: true,
+		popular: false
 	}
 ];
 

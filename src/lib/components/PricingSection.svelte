@@ -294,6 +294,8 @@
 							? isAr ? '4 أيام' : '4 days'
 							: pkg.id === 'animated'
 								? isAr ? 'أسبوع' : '1 week'
+								: pkg.id === 'company-catalog'
+									? isAr ? '5 أيام' : '5 days'
 								: pkg.id === 'store-standard'
 									? isAr ? 'أسبوع' : '1 week'
 									: pkg.id === 'store-pro'
@@ -572,14 +574,14 @@
 				<div class="mb-8 text-center">
 					<p class="text-sm text-[var(--color-text-muted)]">
 						{isAr
-							? '💡 اختر الباقة الثانية أو الثالثة لإضافة الإضافات (نظام حجوزات - كتالوج منتجات)'
-							: '💡 Select Package 2 or 3 to add extras (Reservation System - Product Catalog)'}
+							? '💡 اختر الباقة 2، 3 أو 4 لإضافة الإضافات (نظام حجوزات - كتالوج منتجات)'
+							: '💡 Select Package 2, 3 or 4 to add extras (Reservation System - Product Catalog)'}
 					</p>
 				</div>
 			{/if}
 
 			<!-- Pricing Cards -->
-			<div class="mx-auto grid max-w-6xl items-start gap-8 md:grid-cols-3">
+			<div class="mx-auto grid max-w-6xl items-start gap-8 md:grid-cols-2">
 				{#each packages as pkg}
 					<!-- Card Wrapper for Scale/Layout Transforms -->
 					<div
