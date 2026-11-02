@@ -76,7 +76,7 @@ export function ShopProvider({ children }) {
     return true;
   }, [ping]);
 
-  const login = useCallback(({ name, phone, email }) => {
+  const login = useCallback(({ name, phone, email, pass }) => {
     const nm = (name || "").trim();
     setUser((u) => ({
       name: nm || u?.name || "عميل أصل",

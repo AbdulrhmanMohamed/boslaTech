@@ -48,15 +48,21 @@ export default function AuthModal() {
   const submit = (e) => {
     e.preventDefault();
     if (forgot) return sendReset(e);
-    const phoneOk = /^(05|\+?9665)\d{8}$/.test(form.phone.replace(/\s|-/g, ""));
-    if (tab === "signup" && form.name.trim().length < 2) return setErr("اكتب اسمك الكامل");
-    if (!phoneOk) return setErr("اكتب رقم جوال سعودي صحيح (05xxxxxxxx)");
-    if (form.email.trim() && !emailOk) return setErr("البريد الإلكتروني غير صحيح");
+    if (tab === "signup") {
+      const phoneOk = /^(05|\+?9665)\d{8}$/.test(form.phone.replace(/\s|-/g, ""));
+      if (form.name.trim().length < 2) return setErr("اكتب اسمك الكامل");
+      if (!phoneOk) return setErr("اكتب رقم جوال سعودي صحيح (05xxxxxxxx)");
+      if (form.email.trim() && !emailOk) return setErr("البريد الإلكتروني غير صحيح");
+      if (form.pass.length < 4) return setErr("كلمة السر على الأقل 4 خانات (ديمو)");
+      setErr("");
+      signup({ name: form.name, phone: form.phone, email: form.email });
+      return;
+    }
+    // login: email + password only
+    if (!emailOk) return setErr("اكتب بريدًا إلكترونيًا صحيحًا");
     if (form.pass.length < 4) return setErr("كلمة السر على الأقل 4 خانات (ديمو)");
     setErr("");
-    tab === "signup"
-      ? signup({ name: form.name, phone: form.phone, email: form.email })
-      : login({ name: form.name, phone: form.phone, email: form.email });
+    login({ email: form.email, pass: form.pass });
   };
 
   return (
@@ -125,17 +131,21 @@ export default function AuthModal() {
 
                 <form onSubmit={submit} className="space-y-3.5" noValidate>
                   <motion.div key={tab} initial={{ opacity: 0, x: 14 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.25 }} className="space-y-3.5">
+                    {tab === "signup" && (
+                      <>
+                        <label className="block">
+                          <span className="text-[12px] font-black text-muted">اسمك</span>
+                          <input value={form.name} onChange={set("name")} autoComplete="name" placeholder="مثال: سعود الحربي" className={inp} />
+                        </label>
+                        <label className="block">
+                          <span className="text-[12px] font-black text-muted">رقم الجوال</span>
+                          <input value={form.phone} onChange={set("phone")} dir="ltr" inputMode="tel" autoComplete="tel-national" placeholder="05xxxxxxxx"
+                            className={`${inp} text-left`} />
+                        </label>
+                      </>
+                    )}
                     <label className="block">
-                      <span className="text-[12px] font-black text-muted">اسمك</span>
-                      <input value={form.name} onChange={set("name")} autoComplete="name" placeholder="مثال: سعود الحربي" className={inp} />
-                    </label>
-                    <label className="block">
-                      <span className="text-[12px] font-black text-muted">رقم الجوال</span>
-                      <input value={form.phone} onChange={set("phone")} dir="ltr" inputMode="tel" autoComplete="tel-national" placeholder="05xxxxxxxx"
-                        className={`${inp} text-left`} />
-                    </label>
-                    <label className="block">
-                      <span className="text-[12px] font-black text-muted">البريد الإلكتروني <span className="text-muted/70">(اختياري)</span></span>
+                      <span className="text-[12px] font-black text-muted">البريد الإلكتروني{tab === "signup" ? " (اختياري)" : ""}</span>
                       <input value={form.email} onChange={set("email")} dir="ltr" type="email" inputMode="email" autoComplete="email" placeholder="name@example.com"
                         className={`${inp} text-left`} />
                     </label>
