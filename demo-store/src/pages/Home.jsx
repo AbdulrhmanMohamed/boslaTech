@@ -173,10 +173,10 @@ export default function Home() {
       </section>
 
       {/* ══════════ MARQUEE / BANNER ══════════ */}
-      <div className="mt-6 border-y border-line bg-white overflow-x-auto no-scrollbar snap-x snap-mandatory">
-        <div className="flex gap-4 md:gap-10 px-4 md:px-10 min-w-max py-2 md:py-4">
+      <div className="border-y border-line bg-white py-4 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+        <div className="flex gap-10 px-10 min-w-max">
           {["شحن مجاني فوق 200 ر.س", "كوبون ASL10 يخصم 10%", "أصالة 100% — وكلاء معتمدون", "توصيل 48 ساعة لكل المملكة", "استبدال خلال 14 يوم", "تغليف هدايا مجاني"].map((t) => (
-            <span key={t} className="flex items-center gap-2 md:gap-3 snap-center text-[11px] md:text-[13px] font-black text-green2/80 whitespace-nowrap">
+            <span key={t} className="flex items-center gap-3 snap-center text-[13px] font-black text-green2/80 whitespace-nowrap">
               {t} <span className="text-gold">✦</span>
             </span>
           ))}

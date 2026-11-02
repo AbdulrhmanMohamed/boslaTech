@@ -35,8 +35,8 @@
 </script>
 
 <div
-	class="offer-countdown flex items-center justify-center gap-3 md:gap-5"
-	aria-label={lang === 'ar' ? 'الوقت المتبقي للعرض' : 'Time remaining for the offer'}
+		class="offer-countdown flex items-center justify-center gap-3 md:gap-5 mt-6"
+		aria-label={lang === 'ar' ? 'الوقت المتبقي للعرض' : 'Time remaining for the offer'}
 >
 	{#each units as unit, i (unit.label)}
 		{#if i > 0}
