@@ -49,9 +49,9 @@ export default function AuthModal() {
     e.preventDefault();
     if (forgot) return sendReset(e);
     if (tab === "signup") {
-      const phoneOk = /^(05|\+?9665)\d{8}$/.test(form.phone.replace(/\s|-/g, ""));
+      const phoneOk = /^\+?[\d\s-]{7,}$/.test(form.phone.replace(/\s/g, ""));
       if (form.name.trim().length < 2) return setErr("اكتب اسمك الكامل");
-      if (!phoneOk) return setErr("اكتب رقم جوال سعودي صحيح (05xxxxxxxx)");
+      if (!phoneOk) return setErr("اكتب رقم جوال صحيح");
       if (form.email.trim() && !emailOk) return setErr("البريد الإلكتروني غير صحيح");
       if (form.pass.length < 4) return setErr("كلمة السر على الأقل 4 خانات (ديمو)");
       setErr("");
@@ -139,7 +139,7 @@ export default function AuthModal() {
                         </label>
                         <label className="block">
                           <span className="text-[12px] font-black text-muted">رقم الجوال</span>
-                          <input value={form.phone} onChange={set("phone")} dir="ltr" inputMode="tel" autoComplete="tel-national" placeholder="05xxxxxxxx"
+                          <input value={form.phone} onChange={set("phone")} dir="ltr" inputMode="tel" autoComplete="tel-national" placeholder="+9665xxxxxxxx"
                             className={`${inp} text-left`} />
                         </label>
                       </>
