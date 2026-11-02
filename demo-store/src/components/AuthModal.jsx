@@ -8,8 +8,8 @@ const inp = "mt-1 w-full bg-white border border-line rounded-2xl px-4 py-3 text-
 
 export default function AuthModal() {
   const { authOpen, closeAuth, login, signup } = useShop();
-  const [tab, setTab] = useState("signup");
-  const [form, setForm] = useState({ name: "", phone: "", email: "", pass: "" });
+  const [tab, setTab] = useState("login");
+  const [form, setForm] = useState({ name: "Demo", phone: "", email: "demo@admin", pass: "admin123" });
   const [err, setErr] = useState("");
   const [forgot, setForgot] = useState(false);
   const [sent, setSent] = useState(false);
