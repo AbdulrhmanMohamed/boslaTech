@@ -581,7 +581,7 @@
 			{/if}
 
 			<!-- Pricing Cards -->
-			<div class="mx-auto grid max-w-6xl items-start gap-8 md:grid-cols-2">
+			<div class="mx-auto grid max-w-6xl items-start gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 				{#each packages as pkg}
 					<!-- Card Wrapper for Scale/Layout Transforms -->
 					<div
@@ -603,9 +603,9 @@
 						>
 							<!-- Radio Button on Left -->
 							{#if pkg.allowAddons}
-								<div class="absolute top-6 left-6 z-20 flex items-center gap-3">
+								<div class="absolute top-4 left-4 z-20 flex items-center gap-2">
 									<div
-										class="group relative flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-300 {pkg.isSelected
+										class="group relative flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-300 {pkg.isSelected
 											? 'border-brand-orange bg-brand-orange shadow-[0_0_25px_rgba(251,98,32,0.6)]'
 											: 'border-[var(--glass-border)] hover:border-brand-orange/70 hover:shadow-[0_0_15px_rgba(251,98,32,0.3)]'}"
 									>
@@ -626,7 +626,7 @@
 										{/if}
 									</div>
 									<span
-										class="text-xs font-bold {pkg.isSelected
+										class="text-[10px] font-bold {pkg.isSelected
 											? 'text-brand-orange'
 											: 'text-[var(--color-text-muted)]'}"
 									>
@@ -645,20 +645,20 @@
 							></div>
 
 							{#if pkg.popular}
-								<div class="absolute top-6 right-6 z-20">
+								<div class="absolute top-4 right-4 z-20">
 									<div
-										class="inline-flex animate-pulse items-center gap-2 rounded-full bg-brand-orange px-4 py-1.5 text-[10px] font-black tracking-widest text-white uppercase shadow-xl shadow-brand-orange/20"
+										class="inline-flex animate-pulse items-center gap-1.5 rounded-full bg-brand-orange px-3 py-1 text-[9px] font-black tracking-widest text-white uppercase shadow-xl shadow-brand-orange/20"
 									>
-										<Star class="h-3 w-3" />
+										<Star class="h-2.5 w-2.5" />
 										{isAr ? 'الأكثر طلباً' : 'Most Popular'}
 									</div>
 								</div>
 							{/if}
 
 							<!-- Package Header -->
-							<div class="relative z-10 p-10 pb-6">
+							<div class="relative z-10 p-6 pb-4">
 								<h3
-									class="mb-2 text-2xl font-black text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-orange group-[.active-card]:text-brand-orange"
+									class="mb-2 text-xl font-black text-[var(--color-text-base)] transition-colors duration-500 group-hover:text-brand-orange group-[.active-card]:text-brand-orange"
 								>
 									{pkg.name}
 								</h3>
@@ -678,7 +678,7 @@
 								<!-- Pricing -->
 								<div class="mb-8">
 									<div class="mb-4 flex items-baseline gap-2">
-										<span class="text-5xl font-black tracking-tighter text-[var(--color-text-base)]"
+										<span class="text-4xl font-black tracking-tighter text-[var(--color-text-base)]"
 											>{pkg.price}</span
 										>
 										<div class="flex flex-col">
@@ -714,13 +714,13 @@
 							</div>
 
 							<!-- Features List -->
-							<div class="relative z-10 flex flex-grow flex-col px-10 pb-10">
+							<div class="relative z-10 flex flex-grow flex-col px-6 pb-6">
 								<div class="mb-8 h-px w-full bg-[var(--glass-border)]"></div>
 
-								<ul class="mb-10 flex-grow space-y-4">
+								<ul class="mb-6 flex-grow space-y-2">
 									{#each pkg.features as feature}
 										<li
-											class="flex items-center gap-4 text-sm font-medium text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-text-base)] group-[.active-card]:text-[var(--color-text-base)]"
+											class="flex items-center gap-2 text-xs font-medium text-[var(--color-text-muted)] transition-colors group-hover:text-[var(--color-text-base)] group-[.active-card]:text-[var(--color-text-base)]"
 										>
 											<div
 												class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-brand-blue/20 bg-brand-blue/10 transition-colors duration-500 group-hover:border-brand-orange/20 group-hover:bg-brand-orange/10 group-[.active-card]:border-brand-orange/20 group-[.active-card]:bg-brand-orange/10"
@@ -735,7 +735,7 @@
 
 									{#each pkg.notIncluded as feature}
 										<li
-											class="flex items-center gap-4 text-sm font-medium text-[var(--color-text-muted)] opacity-40"
+											class="flex items-center gap-2 text-xs font-medium text-[var(--color-text-muted)] opacity-40"
 										>
 											<div
 												class="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-[var(--glass-border)] bg-[var(--glass-highlight)]"
