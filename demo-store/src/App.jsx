@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router";
 import { AnimatePresence, motion, useScroll, useSpring } from "motion/react";
-import { ShopProvider } from "./store";
+import { ShopProvider, useShop } from "./store";
 import Header from "./components/Header";
 import CartDrawer from "./components/CartDrawer";
 import Toast from "./components/Toast";
@@ -91,12 +91,13 @@ function AnimatedRoutes() {
 function Shell() {
   const { pathname } = useLocation();
   const isDashboard = pathname.startsWith("/dashboard");
+  const { authOpen } = useShop();
 
   return (
     <>
       <ScrollToTop />
       {!isDashboard && <Progress />}
-      <Cursor />
+      {!authOpen && <Cursor />}
       {!isDashboard && (
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:right-3 focus:z-[130] focus:bg-green2 focus:text-cream focus:px-4 focus:py-2 focus:rounded-xl focus:font-black focus:text-sm">
           تجاوز إلى المحتوى
