@@ -150,7 +150,7 @@
 
 	<!-- Drawer Panel -->
 	<div
-		class="fixed top-0 bottom-0 z-[110] flex min-h-screen w-80 max-w-[85vw] flex-col border-x border-[var(--glass-border)] bg-[var(--color-background)] shadow-2xl {drawerPositionClass}"
+		class="fixed top-0 bottom-0 z-[110] flex h-screen w-80 max-w-[85vw] flex-col border-x border-[var(--glass-border)] bg-[var(--color-background)] shadow-2xl {drawerPositionClass}"
 		role="dialog"
 		aria-label="Mobile navigation drawer"
 		transition:fly={{ x: props.lang === 'ar' ? 320 : -320, duration: 600, easing: cubicOut }}
