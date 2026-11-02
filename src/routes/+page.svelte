@@ -466,7 +466,9 @@
 										</p>
 
 										<!-- Fixed countdown to the real offer deadline -->
-										<OfferCountdown lang={data.lang} />
+										<div class="flex justify-center">
+											<OfferCountdown lang={data.lang} />
+										</div>
 									</div>
 								{/key}
 
