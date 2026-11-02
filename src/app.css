@@ -63,7 +63,7 @@
 }
 
 :root {
-	color-scheme: dark;
+	color-scheme: light;
 
 	/* Glows */
 	--glow-primary: 0 0 60px -15px var(--color-brand-blue-glow);
