@@ -6,6 +6,7 @@
 	import { clearLanguageCache } from '$lib/utils/language';
 	import { base } from '$app/paths';
 	import { inView } from '$lib/actions/inView';
+	import { onMount } from 'svelte';
 	import { ChevronDown, ChevronRight, ExternalLink } from '@lucide/svelte';
 
 	const props = $props<{ site?: any; lang: 'en' | 'ar' }>();
@@ -51,6 +52,10 @@
 	const currentTheme = $derived(theme.current);
 
 	let navRefs = $state<Record<string, HTMLElement>>({});
+	let mounted = $state(false);
+	onMount(() => {
+		mounted = true;
+	});
 	let pillStyles = $state({ left: 0, width: 0, height: 0, opacity: 0 });
 	let serviceMenuOpen = $state(false);
 	let serviceMenuRef = $state<HTMLElement | null>(null);
@@ -80,7 +85,7 @@
 		const active = isActive(path);
 		return `relative inline-flex items-center gap-1 text-sm md:text-base px-6 py-2 rounded-full transition-colors duration-500 group overflow-hidden whitespace-nowrap z-10 ${
 			active
-				? 'text-white font-black scale-105'
+				? 'bg-brand-blue text-white font-black scale-105'
 				: 'text-[var(--color-text-muted)] hover:text-[var(--color-text-base)] group-[.in-view]:text-[var(--color-text-base)] font-bold hover:bg-[var(--glass-highlight)] group-[.in-view]:bg-[var(--glass-highlight)]'
 		}`;
 	}
@@ -229,7 +234,9 @@
 			<ul class="relative flex items-center gap-1">
 				<!-- Moving Highlight Pill -->
 				<div
-					class="pointer-events-none absolute left-0 top-1/2 rounded-full bg-brand-blue shadow-[0_10px_20px_rgba(0,119,255,0.3)] transition-[transform,opacity] duration-500 ease-out"
+					class="pointer-events-none absolute left-0 top-1/2 rounded-full bg-brand-blue shadow-[0_10px_20px_rgba(0,119,255,0.3)] {mounted
+						? 'transition-[transform,opacity] duration-500 ease-out'
+						: ''}"
 					style="width: {pillStyles.width}px; height: {pillStyles.height}px; opacity: {pillStyles.opacity}; transform: translateX({pillStyles.left}px) translateY(-50%);"
 				></div>
 
