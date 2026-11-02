@@ -108,6 +108,7 @@ export default function Header() {
                       <span dir="ltr" className="text-[11px] font-bold text-muted">{user.phone}</span>
                     </div>
                     <Link to="/account" onClick={() => setAcc(false)} className="flex gap-2.5 text-[12.5px] font-black text-ink rounded-xl px-2.5 py-2.5 hover:bg-sand transition-colors">👤 حسابي وطلباتي</Link>
+                    <Link to="/dashboard" onClick={() => setAcc(false)} className="flex gap-2.5 text-[12.5px] font-black text-[#71540f] bg-goldsoft/60 rounded-xl px-2.5 py-2.5 hover:bg-goldsoft transition-colors">📊 لوحة التحكم</Link>
                     <button onClick={() => { setAcc(false); logout(); }} className="w-full text-right flex gap-2.5 text-[12.5px] font-black text-muted rounded-xl px-2.5 py-2.5 hover:bg-sand hover:text-ink transition-colors cursor-pointer">↩ تسجيل الخروج</button>
                   </motion.div>
                 )}
@@ -138,7 +139,12 @@ export default function Header() {
                 </NavLink>
               ))}
               {user
-                ? <NavLink to="/account" onClick={() => setMenu(false)} className="text-lg font-black py-3 border-b border-line text-green2">👤 حسابي ({user.name})</NavLink>
+                ? (
+                  <>
+                    <NavLink to="/account" onClick={() => setMenu(false)} className="text-lg font-black py-3 border-b border-line text-green2">👤 حسابي ({user.name})</NavLink>
+                    <NavLink to="/dashboard" onClick={() => setMenu(false)} className="text-lg font-black py-3 border-b border-line text-[#71540f]">📊 لوحة التحكم</NavLink>
+                  </>
+                )
                 : <button onClick={() => { setMenu(false); openAuth(); }} className="text-lg font-black py-3 border-b border-line text-ink cursor-pointer">👤 تسجيل / دخول</button>}
               <div className="mt-auto text-xs text-muted font-bold" dir="ltr">mada · Apple Pay · Visa</div>
             </motion.nav>

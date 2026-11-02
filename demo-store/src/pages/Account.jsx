@@ -3,8 +3,6 @@ import { motion } from "motion/react";
 import { useShop } from "../store";
 import { riyal } from "../data/products";
 
-const STATUSES = ["قيد التجهيز", "تم الشحن", "تم التوصيل"];
-
 export default function Account() {
   const { user, openAuth, orders, updateUser, logout } = useShop();
 
@@ -29,9 +27,14 @@ export default function Account() {
           <p className="text-[12px] font-black text-gold mb-1">✦ حسابي</p>
           <h1 className="text-2xl md:text-3xl font-black">يا هلا {user.name} 👋</h1>
         </div>
-        <button onClick={logout} className="text-[12.5px] font-black text-muted hover:text-red-500 border border-line bg-white rounded-2xl px-5 py-2.5 cursor-pointer transition-colors">
-          تسجيل خروج
-        </button>
+        <div className="flex items-center gap-2">
+          <Link to="/dashboard" className="text-[12.5px] font-black text-[#71540f] bg-goldsoft/70 hover:bg-goldsoft rounded-2xl px-5 py-2.5 transition-colors">
+            لوحة التحكم
+          </Link>
+          <button onClick={logout} className="text-[12.5px] font-black text-muted hover:text-red-500 border border-line bg-white rounded-2xl px-5 py-2.5 cursor-pointer transition-colors">
+            تسجيل خروج
+          </button>
+        </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 items-start">
@@ -81,7 +84,7 @@ export default function Account() {
                   <div className="flex items-center justify-between mb-2">
                     <b dir="ltr" className="text-[12.5px] font-black">{o.id}</b>
                     <span className="text-[10.5px] font-black px-2.5 py-1 rounded-full bg-goldsoft text-ink">
-                      {STATUSES[Math.min(orders.length - 1 - i, STATUSES.length - 1)]}
+                      {o.status || "قيد التجهيز"}
                     </span>
                   </div>
                   <p className="text-[12px] font-bold text-muted leading-5 mb-2">

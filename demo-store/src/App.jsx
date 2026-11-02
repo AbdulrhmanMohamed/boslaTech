@@ -17,6 +17,7 @@ import OrderConfirmation from "./pages/OrderConfirmation";
 import ResetPassword from "./pages/ResetPassword";
 import Wishlist from "./pages/Wishlist";
 import Account from "./pages/Account";
+import Dashboard from "./pages/Dashboard";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import AuthModal from "./components/AuthModal";
@@ -78,6 +79,7 @@ function AnimatedRoutes() {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
@@ -86,25 +88,41 @@ function AnimatedRoutes() {
   );
 }
 
+function Shell() {
+  const { pathname } = useLocation();
+  const isDashboard = pathname.startsWith("/dashboard");
+
+  return (
+    <>
+      <ScrollToTop />
+      {!isDashboard && <Progress />}
+      <Cursor />
+      {!isDashboard && (
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:right-3 focus:z-[130] focus:bg-green2 focus:text-cream focus:px-4 focus:py-2 focus:rounded-xl focus:font-black focus:text-sm">
+          تجاوز إلى المحتوى
+        </a>
+      )}
+      {!isDashboard && <Header />}
+      {isDashboard ? (
+        <AnimatedRoutes />
+      ) : (
+        <main id="main">
+          <AnimatedRoutes />
+        </main>
+      )}
+      {!isDashboard && <Footer />}
+      {!isDashboard && <CartDrawer />}
+      <AuthModal />
+      <Toast />
+    </>
+  );
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ShopProvider>
-        {/* page fade/slide wrapper */}
-        <ScrollToTop />
-        <Progress />
-        <Cursor />
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:right-3 focus:z-[130] focus:bg-green2 focus:text-cream focus:px-4 focus:py-2 focus:rounded-xl focus:font-black focus:text-sm">
-          تجاوز إلى المحتوى
-        </a>
-        <Header />
-        <main id="main">
-          <AnimatedRoutes />
-        </main>
-        <Footer />
-        <CartDrawer />
-        <AuthModal />
-        <Toast />
+        <Shell />
       </ShopProvider>
     </BrowserRouter>
   );
