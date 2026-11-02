@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 import type { SupportedLanguage } from '$lib/utils/language';
 
 // Reactive language store
-export const currentLanguage = writable<SupportedLanguage>('ar');
+export const currentLanguage = writable<SupportedLanguage>('en');
 
 // Store for language change listeners
 export const languageListeners = new Set<(lang: SupportedLanguage) => void>();
@@ -26,7 +26,7 @@ export function changeLanguage(newLang: SupportedLanguage) {
 export function initializeLanguage(): SupportedLanguage {
 	const url = new URL(window.location.href);
 	const langParam = url.searchParams.get('lang') as SupportedLanguage;
-	const lang = langParam === 'ar' || langParam === 'en' ? langParam : 'ar';
+	const lang = langParam === 'ar' || langParam === 'en' ? langParam : 'en';
 
 	currentLanguage.set(lang);
 	return lang;

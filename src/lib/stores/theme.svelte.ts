@@ -3,7 +3,7 @@ import { browser } from '$app/environment';
 export type Theme = 'light' | 'dark';
 
 function createTheme() {
-	let currentTheme = $state<Theme>((browser && (localStorage.getItem('theme') as Theme)) || 'dark');
+	let currentTheme = $state<Theme>((browser && (localStorage.getItem('theme') as Theme)) || 'light');
 
 	function setTheme(theme: Theme) {
 		currentTheme = theme;
@@ -23,7 +23,7 @@ function createTheme() {
 		if (savedTheme) {
 			document.documentElement.setAttribute('data-theme', savedTheme);
 		} else {
-			document.documentElement.setAttribute('data-theme', 'dark');
+			document.documentElement.setAttribute('data-theme', 'light');
 		}
 	}
 
