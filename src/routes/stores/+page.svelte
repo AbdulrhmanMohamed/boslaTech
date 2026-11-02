@@ -104,18 +104,12 @@
 			class="absolute inset-0 opacity-[0.04]"
 			style="background-image: radial-gradient(#000000 1px, transparent 1px); background-size: 32px 32px;"
 		></div>
-		<div class="container relative z-10 mx-auto px-6 text-center">
+		<div class="container relative z-10 mx-auto px-6 text-center mt-6">
 			<div
 				use:inView
 				class="mx-auto mb-8 inline-flex flex-wrap items-center justify-center gap-4 rounded-full border border-brand-blue/30 bg-brand-blue/10 px-6 py-3"
 			>
-				<span
-					class="text-xs font-black tracking-widest text-[var(--color-text-base)] uppercase opacity-90"
-				>
-					{t?.hero?.badge}
-				</span>
-				<span class="opacity-60">·</span>
-				<OfferCountdown {lang} />
+				<OfferCountdown {lang} text={t?.hero?.badge} />
 			</div>
 
 			<h1

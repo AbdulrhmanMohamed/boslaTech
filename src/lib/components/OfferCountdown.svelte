@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { OFFER_DEADLINE } from '$lib/data/pricing';
 
-	let { lang = 'ar' }: { lang?: 'ar' | 'en' } = $props();
+	let { lang = 'ar', text = '' }: { lang?: 'ar' | 'en'; text?: string } = $props();
 
 	const deadline = new Date(OFFER_DEADLINE).getTime();
 
@@ -35,22 +35,31 @@
 </script>
 
 <div
-		class="offer-countdown flex items-center justify-center gap-3 md:gap-5 mt-6"
-		aria-label={lang === 'ar' ? 'الوقت المتبقي للعرض' : 'Time remaining for the offer'}
+	class="offer-countdown mt-6 flex flex-col items-center gap-3 md:flex-row md:gap-4"
+	aria-label={lang === 'ar' ? 'الوقت المتبقي للعرض' : 'Time remaining for the offer'}
 >
-	{#each units as unit, i (unit.label)}
-		{#if i > 0}
-			<span class="text-lg font-black text-brand-orange opacity-70">:</span>
-		{/if}
-		<div
-			class="cinematic-glass flex min-w-[3.5rem] flex-col items-center rounded-xl border border-[var(--glass-border)] px-2 py-2 md:min-w-[4.5rem]"
+	{#if text}
+		<span
+			class="text-center text-xs font-black tracking-widest text-[var(--color-text-base)] uppercase opacity-90"
 		>
-			<span class="text-xl font-black tabular-nums text-[var(--color-text-base)] md:text-2xl">
-				{pad(unit.value)}
-			</span>
-			<span class="text-[10px] font-bold tracking-wider text-[var(--color-text-muted)] uppercase">
-				{unit.label}
-			</span>
-		</div>
-	{/each}
+			{text}
+		</span>
+	{/if}
+	<div class="flex items-center justify-center gap-2 md:gap-5">
+		{#each units as unit, i (unit.label)}
+			{#if i > 0}
+				<span class="text-lg font-black text-brand-orange opacity-70">:</span>
+			{/if}
+			<div
+				class="cinematic-glass flex min-w-[3rem] flex-col items-center rounded-xl border border-[var(--glass-border)] px-2 py-2 md:min-w-[4.5rem]"
+			>
+				<span class="text-xl font-black tabular-nums text-[var(--color-text-base)] md:text-2xl">
+					{pad(unit.value)}
+				</span>
+				<span class="text-[10px] font-bold tracking-wider text-[var(--color-text-muted)] uppercase">
+					{unit.label}
+				</span>
+			</div>
+		{/each}
+	</div>
 </div>
