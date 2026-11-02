@@ -69,5 +69,3 @@
 		</div>
 	</section>
 </div>
-EOF
-echo "created"
