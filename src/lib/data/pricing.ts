@@ -122,7 +122,7 @@ export const PACKAGES: PricingPackage[] = [
 		salePercent: 50,
 		showOriginalPrice: true,
 		allowAddons: true,
-		popular: true
+		popular: false
 	},
 	{
 		id: 'animated',
@@ -154,7 +154,7 @@ export const PACKAGES: PricingPackage[] = [
 		salePercent: 50,
 		showOriginalPrice: true,
 		allowAddons: true,
-		popular: false
+		popular: true
 	},
 	{
 		id: 'company-catalog',

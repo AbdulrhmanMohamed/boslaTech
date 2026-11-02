@@ -599,11 +599,13 @@
 							class="interactive-card cinematic-glass group relative flex h-full flex-col overflow-hidden rounded-[2.5rem] bg-[var(--color-surface)] transition-all duration-500
                         {pkg.isSelected && pkg.allowAddons
 								? 'border-2 !border-brand-orange !shadow-[0_0_40px_rgba(251,98,32,0.2)] ring-1 ring-brand-orange hover:!border-brand-orange hover:!shadow-[0_0_40px_rgba(251,98,32,0.2)]'
-								: 'border border-brand-blue/50 shadow-[0_0_30px_rgba(0,153,255,0.05)] group-[.active-card]:!border-brand-orange group-[.active-card]:!shadow-[0_20px_40px_rgba(251,98,32,0.15)] hover:!border-brand-orange hover:!shadow-[0_20px_40px_rgba(251,98,32,0.15)]'}"
+								: pkg.popular
+									? 'border-2 border-brand-orange shadow-[0_0_30px_rgba(251,98,32,0.15)] group-[.active-card]:!border-brand-orange group-[.active-card]:!shadow-[0_20px_40px_rgba(251,98,32,0.15)] hover:!border-brand-orange hover:!shadow-[0_20px_40px_rgba(251,98,32,0.15)]'
+									: 'border border-brand-blue/50 shadow-[0_0_30px_rgba(0,153,255,0.05)] group-[.active-card]:!border-brand-orange group-[.active-card]:!shadow-[0_20px_40px_rgba(251,98,32,0.15)] hover:!border-brand-orange hover:!shadow-[0_20px_40px_rgba(251,98,32,0.15)]'}"
 						>
 							<!-- Radio Button on Left -->
-							{#if pkg.allowAddons}
-								<div class="absolute top-4 left-4 z-20 flex items-center gap-2">
+							{#if !pkg.popular}
+								<div class="absolute top-6 left-4 z-30 flex items-center gap-2">
 									<div
 										class="group relative flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-2 transition-all duration-300 {pkg.isSelected
 											? 'border-brand-orange bg-brand-orange shadow-[0_0_25px_rgba(251,98,32,0.6)]'
@@ -634,6 +636,16 @@
 									</span>
 								</div>
 							{/if}
+							{#if pkg.popular}
+								<div
+									class="absolute top-4 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-brand-orange/15 ring-1 ring-brand-orange/40 {isAr
+										? 'left-4'
+										: 'right-4'}"
+								>
+									<Star class="h-5 w-5 text-brand-orange" />
+								</div>
+							{/if}
+
 							<!-- Dynamic Spotlight Glow -->
 							<div
 								class="card-glow pointer-events-none absolute h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-[.active-card]:opacity-100 group-[.in-view]:opacity-100"
@@ -643,17 +655,6 @@
 									? 'rgba(251, 98, 32, 0.05)'
 									: 'transparent'} 50%, transparent 80%);"
 							></div>
-
-							{#if pkg.popular}
-								<div class="absolute top-4 right-4 z-20">
-									<div
-										class="inline-flex animate-pulse items-center gap-1.5 rounded-full bg-brand-orange px-3 py-1 text-[9px] font-black tracking-widest text-white uppercase shadow-xl shadow-brand-orange/20"
-									>
-										<Star class="h-2.5 w-2.5" />
-										{isAr ? 'الأكثر طلباً' : 'Most Popular'}
-									</div>
-								</div>
-							{/if}
 
 							<!-- Package Header -->
 							<div class="relative z-10 p-6 pb-4">
