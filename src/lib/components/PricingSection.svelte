@@ -301,7 +301,14 @@
 									: pkg.id === 'store-pro'
 										? isAr ? '10 أيام' : '10 days'
 										: isAr ? '2-3 أسابيع' : '2-3 weeks',
-				cta: isAr ? 'اطلب الباقة عبر واتساب' : 'Order on WhatsApp',
+				cta:
+					pkg.id === 'store-custom'
+						? isAr
+							? 'تواصل معنا'
+							: 'Contact us'
+						: isAr
+							? 'اطلب الباقة عبر واتساب'
+							: 'Order on WhatsApp',
 				allowAddons: pkg.allowAddons ?? false,
 				salePriceRaw: pricing.convert(salePrice)
 			};
@@ -687,23 +694,29 @@
 
 								<!-- Pricing -->
 								<div class="mb-8">
-									<div class="mb-4 flex items-baseline gap-2">
-										<span class="text-4xl font-black tracking-tighter text-[var(--color-text-base)]"
-											>{pkg.price}</span
-										>
-										<div class="flex flex-col">
-											<span
-												class="text-[10px] font-black tracking-widest text-brand-blue uppercase transition-colors duration-500 group-hover:text-brand-orange group-[.active-card]:text-brand-orange"
-												>{pkg.duration}</span
-											>
-											{#if pkg.originalPrice}
-												<span
-													class="text-sm font-medium text-[var(--color-text-muted)] line-through opacity-40"
-													>{pkg.originalPrice}</span
-												>
-											{/if}
+									{#if pkg.id === 'store-custom'}
+										<div class="mb-4 text-2xl font-black text-brand-orange">
+											{isAr ? 'تواصل معنا' : 'Contact us'}
 										</div>
-									</div>
+									{:else}
+										<div class="mb-4 flex items-baseline gap-2">
+											<span class="text-4xl font-black tracking-tighter text-[var(--color-text-base)]"
+												>{pkg.price}</span
+											>
+											<div class="flex flex-col">
+												<span
+													class="text-[10px] font-black tracking-widest text-brand-blue uppercase transition-colors duration-500 group-hover:text-brand-orange group-[.active-card]:text-brand-orange"
+													>{pkg.duration}</span
+												>
+												{#if pkg.originalPrice}
+													<span
+														class="text-sm font-medium text-[var(--color-text-muted)] line-through opacity-40"
+														>{pkg.originalPrice}</span
+													>
+												{/if}
+											</div>
+										</div>
+									{/if}
 									<p class="text-sm leading-relaxed font-medium text-[var(--color-text-muted)]">
 										{pkg.description}
 									</p>

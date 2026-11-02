@@ -399,12 +399,18 @@
 						<h3 class="text-2xl font-black text-[var(--color-text-base)]">{pkg.name}</h3>
 						<p class="mt-2 font-medium text-[var(--color-text-muted)]">{pkg.subtitle}</p>
 
-						<div class="mt-6 flex items-end gap-3">
-							<span class="text-4xl font-black tracking-tight text-brand-blue">{pkg.sale}</span>
-							<span class="pb-1 text-sm font-bold text-[var(--color-text-dim)] line-through opacity-50">
-								{pkg.original}
-							</span>
-						</div>
+						{#if pkg.id === 'store-custom'}
+							<div class="mt-6 text-2xl font-black text-brand-orange">
+								{lang === 'ar' ? 'تواصل معنا' : 'Contact us'}
+							</div>
+						{:else}
+							<div class="mt-6 flex items-end gap-3">
+								<span class="text-4xl font-black tracking-tight text-brand-blue">{pkg.sale}</span>
+								<span class="pb-1 text-sm font-bold text-[var(--color-text-dim)] line-through opacity-50">
+									{pkg.original}
+								</span>
+							</div>
+						{/if}
 						<div class="mt-1 text-xs font-bold text-[var(--color-text-dim)]">
 							{t?.packages?.deliveryLabel}: {pkg.delivery}
 						</div>
@@ -424,7 +430,11 @@
 							rel="noopener noreferrer"
 							class="mt-8 block rounded-2xl bg-brand-blue px-6 py-4 text-center text-sm font-black tracking-widest text-white uppercase shadow-[0_15px_40px_rgba(0,119,255,0.3)] transition-transform duration-500 hover:-translate-y-1"
 						>
-							{t?.packages?.cta}
+							{pkg.id === 'store-custom'
+								? lang === 'ar'
+									? 'تواصل معنا'
+									: 'Contact us'
+								: t?.packages?.cta}
 						</a>
 					</div>
 				{/each}
